@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+    </head>
+    
+    <body>
+        <h1>
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $username = $_POST["username"];
+                    $password = $_POST["password"];
+                // Replace these with your actual username and password validation logic
+                    $validUsername = "example";
+                    $validPassword = "password";
+                }
+                if ($username == $validUsername && $password == $validPassword) {
+                // Redirect to the main index page
+                    header("Location: index.php");
+                    exit;
+                } else {
+                echo "Invalid username or password";
+                }
+            ?>
+        </h1>
+
+        <h2>Login Form</h2>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <label for="username">Username:</label>
+                <input type="text" name="username" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" required><br><br>
+                <input type="submit" value="Login">
+            </form>
+    </body>
+</html>
