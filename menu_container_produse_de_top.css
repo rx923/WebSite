@@ -1,0 +1,95 @@
+/* Style for the dropdown menu container */
+.menu_container_produse_de_top {
+    display:block;
+    border: 1px #000000;
+    border-width: 3px;
+    border-style: double;
+    border-radius: 0px;
+    box-sizing:content-box;
+    width: 45%;
+    margin: 20px;
+    list-style-type: none;
+    position: sticky;
+    flex: 1;
+    margin-bottom: 80px;
+}
+/* Style for the main menu item */
+.menu_container_produse_de_top .menu_container_1_produse_de_top {
+    list-style-type: none;
+    text-align: center;
+    border: 1px solid #000000;
+    border-style:inset;
+    border-color: blue;
+    border-radius: 0px;
+    box-sizing:unset;
+    position: relative;
+    display: block;
+    /* margin-bottom: 200px; */
+}
+/* Style for the dropdown content container */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
+    cursor: pointer;
+    position: relative;
+    list-style-type: none;
+}
+/* Style for the dropdown content */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ad9d9d;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    list-style-type: none;
+}
+/* Show dropdown content when hovering over the main menu item */
+.menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+    display: block;
+}
+/* Style for the dropdown links */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
+    display:block;
+    padding: 10px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    transition: background-color 0.3s ease;
+    list-style-type: none;
+}
+/* Add hover effect to the dropdown links */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
+    background-color: #ccc;
+    list-style-type: none;
+}
+/* Style for the images inside the dropdown content */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
+    max-width: 100%;
+    height: auto;
+    list-style-type: none;
+    border: 2px;
+    text-align: center;
+    text-rendering:optimizeSpeed;
+    text-shadow: bisque;
+}
+.dropdown-content_imagini_2 {
+    max-width: 100%;
+    height: auto;
+    list-style-type: none;
+    border: 2px;
+}
+.dropdown-content_imagini_3 {
+    max-width: 100%;
+    height: auto;
+    list-style-type: none;
+    border: 2px;
+}
+ol {
+    list-style-type: none;
+}

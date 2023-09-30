@@ -1,0 +1,8 @@
+ul {
+    left: auto;
+    right: 0;
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    margin-right: -4px;
+}
