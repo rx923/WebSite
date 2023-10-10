@@ -1,0 +1,873 @@
+@media screen and (max-width: 200px){
+    /* animations */
+    /* animations: Fade-In Effect */
+.fade-in-effect {
+    /* Start with opacity 0 (completely transparent) */
+    opacity: 0; 
+    /* Apply a smooth transition for opacity */
+    transition: opacity 0.5s ease; 
+}
+/* Define the hover behavior to make the elements visible */
+.fade-in-effect:hover {
+    opacity: 1; /* On hover, make the element fully visible */
+}
+.div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+    opacity: 1;
+    transition: opacity 0.5s ease; 
+}
+/* animations *//* animations *//* animations *//* animations */
+/* CSS Style */
+/* Icon bar*/
+/* Menu Icon*/
+/* Vertical - Tabs*/
+/* Tab Headers */
+
+/* Hover Tabs */
+a {
+    border: #a9bbab;
+    width: auto;
+}
+html {
+    max-height: auto;
+
+}
+body {
+    /* background-image: url(https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80); */
+    /* Prevent the image from repeating */
+    background-repeat: no-repeat; 
+    /* Cover the entire background */
+    background-size: cover;
+    /* display: flow-root; */
+    /* Center the background image */
+    /* background-position: center; */
+    /* background-color: #7dadce; */
+    /* You can add more background properties as needed */
+}
+/* Style for the dropdown links */
+/* Hover effect for the menu-container */
+/* Hide dropdown content by default */
+/* Style for #Produsetop1 */
+/* Style for #image-top-produse-1 */
+/* Style for #image-top-produse-2 */
+/*Style for #image-top-produse-3*/
+/*Title style*/
+
+h1 {
+    text-align: center;
+    border: 1px solid #fc0000;
+    border-radius: 25px; border-width: 3px;
+    padding: auto;
+    /* Ensure the parent is a positioned element for absolute positioning */
+    position: relative;
+    text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+}
+header {
+    padding-bottom: 10px;
+}
+.dropdown-image {
+    text-align: center;
+}
+.container-box {
+    background-color: #7dadce;
+    border: dashed;
+    border-style:solid;
+    border-width: auto;
+    border:10px, 10px, 10px, 10px color(srgb red green blue);
+    margin: auto;
+    padding-bottom: auto;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+.box-title h2 {
+    margin: 0;
+    color: #fff;
+}
+/* Style for the bordered-box */
+.bordered-box-style {
+    /* Add the border style you prefer */
+    border: 2px solid #f00;
+    /* Add the background color you prefer */
+    background-color: #eee;
+}
+/* Style for the <h2> element */
+h2 {
+    /* Align the text to the left */
+    text-align: left;
+    /* Make the <h2> element inline so it's positioned horizontally */
+    display: inline-block;
+    /* Add some right margin for spacing (adjust as needed)  */
+    margin-right: auto;
+}
+/* .select:hover {
+    background-color: #7dadce;
+} */
+/* Table body position/ type/ style */
+/* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
+
+/* Remove unnecessary styles for th elements in tbody */
+#Informatii-Aditionale-Template-Pentru-Linkuri {
+    position: sticky;
+    display: flex;
+}
+
+.slideshow {
+    display:inline-flex;
+    padding: auto;
+}
+.slideshow img {
+    padding: auto;
+    width: auto;
+    height: auto;
+}
+}
+@media screen and (max-width: 300px){
+    /* animations */
+    /* animations: Fade-In Effect */
+.fade-in-effect {
+    /* Start with opacity 0 (completely transparent) */
+    opacity: 0; 
+    /* Apply a smooth transition for opacity */
+    transition: opacity 0.5s ease; 
+}
+/* Define the hover behavior to make the elements visible */
+.fade-in-effect:hover {
+    opacity: 1; /* On hover, make the element fully visible */
+}
+.div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+    opacity: 1;
+    transition: opacity 0.5s ease; 
+}
+/* animations *//* animations *//* animations *//* animations */
+/* CSS Style */
+/* Icon bar*/
+/* Menu Icon*/
+/* Vertical - Tabs*/
+/* Tab Headers */
+
+/* Hover Tabs */
+a {
+    border: #a9bbab;
+    width: auto;
+}
+html {
+    max-height: auto;
+
+}
+body {
+    /* background-image: url(https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80); */
+    /* Prevent the image from repeating */
+    background-repeat: no-repeat; 
+    /* Cover the entire background */
+    background-size: cover;
+    /* display: flow-root; */
+    /* Center the background image */
+    /* background-position: center; */
+    /* background-color: #7dadce; */
+    /* You can add more background properties as needed */
+}
+/* Style for the dropdown links */
+/* Hover effect for the menu-container */
+/* Hide dropdown content by default */
+/* Style for #Produsetop1 */
+/* Style for #image-top-produse-1 */
+/* Style for #image-top-produse-2 */
+/*Style for #image-top-produse-3*/
+/*Title style*/
+
+h1 {
+    text-align: center;
+    border: 1px solid #fc0000;
+    border-radius: 25px; border-width: 3px;
+    padding: auto;
+    /* Ensure the parent is a positioned element for absolute positioning */
+    position: relative;
+    text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+}
+header {
+    padding-bottom: 10px;
+}
+.dropdown-image {
+    text-align: center;
+}
+.container-box {
+    background-color: #7dadce;
+    border: dashed;
+    border-style:solid;
+    border-width: auto;
+    border:10px, 10px, 10px, 10px color(srgb red green blue);
+    margin: auto;
+    padding-bottom: auto;
+    align-items: center;
+    position: relative;
+    height: auto;
+}
+.box-title h2 {
+    margin: 0;
+    color: #fff;
+}
+/* Style for the bordered-box */
+.bordered-box-style {
+    /* Add the border style you prefer */
+    border: 2px solid #f00;
+    /* Add the background color you prefer */
+    background-color: #eee;
+}
+/* Style for the <h2> element */
+h2 {
+    /* Align the text to the left */
+    text-align: left;
+    /* Make the <h2> element inline so it's positioned horizontally */
+    display: inline-block;
+    /* Add some right margin for spacing (adjust as needed)  */
+    margin-right: auto;
+}
+/* .select:hover {
+    background-color: #7dadce;
+} */
+/* Table body position/ type/ style */
+/* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
+
+/* Remove unnecessary styles for th elements in tbody */
+#Informatii-Aditionale-Template-Pentru-Linkuri {
+    position: sticky;
+    display: flex;
+}
+.canvas-container {
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: auto;
+    border-width: 0px;
+    /* display: flex; */
+    border-radius: auto;
+}
+/* Style for each canvas section */
+.canvas-section {
+    /* Equal width for both sections */
+    width: auto; 
+    /* Add borders for separation (optional) */
+    border: 1px solid #ccc; 
+    /* Add padding for spacing (optional) */
+    padding: auto; 
+}
+/* Style for the canvas element */
+canvas {
+    margin-top: auto;
+    position: sticky;
+    margin-bottom: auto;
+    margin-top: auto;
+    /* Make the canvas fill its container */
+    width: auto; 
+    /* Make the canvas fill its container */
+    height: auto; 
+}
+.slideshow {
+    display:inline-flex;
+    padding: auto;
+}
+.slideshow img {
+    padding: auto;
+    width: auto;
+    height: auto;
+}
+}
+@media screen and (max-width: 400px){
+        /* animations */
+        /* animations: Fade-In Effect */
+    .fade-in-effect {
+        /* Start with opacity 0 (completely transparent) */
+        opacity: 0; 
+        /* Apply a smooth transition for opacity */
+        transition: opacity 0.5s ease; 
+    }
+    /* Define the hover behavior to make the elements visible */
+    .fade-in-effect:hover {
+        opacity: 1; /* On hover, make the element fully visible */
+    }
+    .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+        opacity: 1;
+        transition: opacity 0.5s ease; 
+    }
+    /* animations *//* animations *//* animations *//* animations */
+    /* CSS Style */
+    /* Icon bar*/
+    /* Menu Icon*/
+    /* Vertical - Tabs*/
+    /* Tab Headers */
+
+    /* Hover Tabs */
+    a {
+        border: #a9bbab;
+        width: auto;
+    }
+    html {
+        max-height: auto;
+
+    }
+    body {
+        /* background-image: url(https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80); */
+        /* Prevent the image from repeating */
+        background-repeat: no-repeat; 
+        /* Cover the entire background */
+        background-size: cover;
+        /* display: flow-root; */
+        /* Center the background image */
+        /* background-position: center; */
+        /* background-color: #7dadce; */
+        /* You can add more background properties as needed */
+    }
+    /* Style for the dropdown links */
+    /* Hover effect for the menu-container */
+    /* Hide dropdown content by default */
+    /* Style for #Produsetop1 */
+    /* Style for #image-top-produse-1 */
+    /* Style for #image-top-produse-2 */
+    /*Style for #image-top-produse-3*/
+    /*Title style*/
+
+    h1 {
+        text-align: center;
+        border: 1px solid #fc0000;
+        border-radius: 25px; border-width: 3px;
+        padding: auto;
+        /* Ensure the parent is a positioned element for absolute positioning */
+        position: relative;
+        text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+    }
+    header {
+        padding-bottom: 10px;
+    }
+    .dropdown-image {
+        text-align: center;
+    }
+    .container-box {
+        background-color: #7dadce;
+        border: dashed;
+        border-style:solid;
+        border-width: auto;
+        border:10px, 10px, 10px, 10px color(srgb red green blue);
+        margin: auto;
+        padding-bottom: auto;
+        align-items: center;
+        position: relative;
+        height: auto;
+    }
+    .box-title h2 {
+        margin: 0;
+        color: #fff;
+    }
+    /* Style for the bordered-box */
+    .bordered-box-style {
+        /* Add the border style you prefer */
+        border: 2px solid #f00;
+        /* Add the background color you prefer */
+        background-color: #eee;
+    }
+    /* Style for the <h2> element */
+    h2 {
+        /* Align the text to the left */
+        text-align: left;
+        /* Make the <h2> element inline so it's positioned horizontally */
+        display: inline-block;
+        /* Add some right margin for spacing (adjust as needed)  */
+        margin-right: auto;
+    }
+    /* .select:hover {
+        background-color: #7dadce;
+    } */
+    /* Table body position/ type/ style */
+    /* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
+
+    /* Remove unnecessary styles for th elements in tbody */
+    #Informatii-Aditionale-Template-Pentru-Linkuri {
+        position: sticky;
+        display: flex;
+    }
+    .canvas-container {
+        margin-left: auto;
+        margin-top: 0px;
+        margin-bottom: auto;
+        border-width: 0px;
+        /* display: flex; */
+        border-radius: auto;
+    }
+    /* Style for each canvas section */
+    .canvas-section {
+        /* Equal width for both sections */
+        width: auto; 
+        /* Add borders for separation (optional) */
+        border: 1px solid #ccc; 
+        /* Add padding for spacing (optional) */
+        padding: auto; 
+    }
+    /* Style for the canvas element */
+    canvas {
+        margin-top: auto;
+        position: sticky;
+        margin-bottom: auto;
+        margin-top: auto;
+        /* Make the canvas fill its container */
+        width: auto; 
+        /* Make the canvas fill its container */
+        height: auto; 
+    }
+    .slideshow {
+        display:inline-flex;
+        padding: auto;
+    }
+    .slideshow img {
+        padding: auto;
+        width: auto;
+        height: auto;
+    }
+}
+@media screen and (max-width: 500px){
+        /* animations */
+        /* animations: Fade-In Effect */
+    .fade-in-effect {
+        /* Start with opacity 0 (completely transparent) */
+        opacity: 0; 
+        /* Apply a smooth transition for opacity */
+        transition: opacity 0.5s ease; 
+    }
+    /* Define the hover behavior to make the elements visible */
+    .fade-in-effect:hover {
+        opacity: 1; /* On hover, make the element fully visible */
+    }
+    .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+        opacity: 1;
+        transition: opacity 0.5s ease; 
+    }
+    /* animations *//* animations *//* animations *//* animations */
+    /* CSS Style */
+    /* Icon bar*/
+    /* Menu Icon*/
+    /* Vertical - Tabs*/
+    /* Tab Headers */
+
+    /* Hover Tabs */
+    a {
+        border: #a9bbab;
+        width: auto;
+    }
+    html {
+        max-height: auto;
+
+    }
+    body {
+        /* background-image: url(https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80); */
+        /* Prevent the image from repeating */
+        background-repeat: no-repeat; 
+        /* Cover the entire background */
+        background-size: cover;
+        /* display: flow-root; */
+        /* Center the background image */
+        /* background-position: center; */
+        /* background-color: #7dadce; */
+        /* You can add more background properties as needed */
+    }
+    /* Style for the dropdown links */
+    /* Hover effect for the menu-container */
+    /* Hide dropdown content by default */
+    /* Style for #Produsetop1 */
+    /* Style for #image-top-produse-1 */
+    /* Style for #image-top-produse-2 */
+    /*Style for #image-top-produse-3*/
+    /*Title style*/
+
+    h1 {
+        text-align: center;
+        border: 1px solid #fc0000;
+        border-radius: 25px; border-width: 3px;
+        padding: auto;
+        /* Ensure the parent is a positioned element for absolute positioning */
+        position: relative;
+        text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+    }
+    header {
+        padding-bottom: 10px;
+    }
+    .dropdown-image {
+        text-align: center;
+    }
+    .container-box {
+        background-color: #7dadce;
+        border: dashed;
+        border-style:solid;
+        border-width: auto;
+        border:10px, 10px, 10px, 10px color(srgb red green blue);
+        margin: auto;
+        padding-bottom: auto;
+        align-items: center;
+        position: relative;
+        height: auto;
+    }
+    .box-title h2 {
+        margin: 0;
+        color: #fff;
+    }
+    /* Style for the bordered-box */
+    .bordered-box-style {
+        /* Add the border style you prefer */
+        border: 2px solid #f00;
+        /* Add the background color you prefer */
+        background-color: #eee;
+    }
+    /* Style for the <h2> element */
+    h2 {
+        /* Align the text to the left */
+        text-align: left;
+        /* Make the <h2> element inline so it's positioned horizontally */
+        display: inline-block;
+        /* Add some right margin for spacing (adjust as needed)  */
+        margin-right: auto;
+    }
+    /* .select:hover {
+        background-color: #7dadce;
+    } */
+    /* Table body position/ type/ style */
+    /* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
+
+    /* Remove unnecessary styles for th elements in tbody */
+    #Informatii-Aditionale-Template-Pentru-Linkuri {
+        position: sticky;
+        display: flex;
+    }
+    .canvas-container {
+        margin-left: auto;
+        margin-top: 0px;
+        margin-bottom: auto;
+        border-width: 0px;
+        /* display: flex; */
+        border-radius: auto;
+    }
+    /* Style for each canvas section */
+    .canvas-section {
+        /* Equal width for both sections */
+        width: auto; 
+        /* Add borders for separation (optional) */
+        border: 1px solid #ccc; 
+        /* Add padding for spacing (optional) */
+        padding: auto; 
+    }
+    /* Style for the canvas element */
+    canvas {
+        margin-top: auto;
+        position: sticky;
+        margin-bottom: auto;
+        margin-top: auto;
+        /* Make the canvas fill its container */
+        width: auto; 
+        /* Make the canvas fill its container */
+        height: auto; 
+    }
+    .slideshow {
+        display:inline-flex;
+        padding: auto;
+    }
+    .slideshow img {
+        padding: auto;
+        width: auto;
+        height: auto;
+    }
+}
+@media screen and (max-width: 600px){
+        /* animations */
+        /* animations: Fade-In Effect */
+    .fade-in-effect {
+        /* Start with opacity 0 (completely transparent) */
+        opacity: 0; 
+        /* Apply a smooth transition for opacity */
+        transition: opacity 0.5s ease; 
+    }
+    /* Define the hover behavior to make the elements visible */
+    .fade-in-effect:hover {
+        opacity: 1; /* On hover, make the element fully visible */
+    }
+    .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+        opacity: 1;
+        transition: opacity 0.5s ease; 
+    }
+    /* animations *//* animations *//* animations *//* animations */
+    /* CSS Style */
+    /* Icon bar*/
+    /* Menu Icon*/
+    /* Vertical - Tabs*/
+    /* Tab Headers */
+
+    /* Hover Tabs */
+    a {
+        border: #a9bbab;
+        width: auto;
+    }
+    html {
+        max-height: auto;
+
+    }
+    body {
+        /* background-image: url(https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80); */
+        /* Prevent the image from repeating */
+        background-repeat: no-repeat; 
+        /* Cover the entire background */
+        background-size: cover;
+        /* display: flow-root; */
+        /* Center the background image */
+        /* background-position: center; */
+        /* background-color: #7dadce; */
+        /* You can add more background properties as needed */
+    }
+    /* Style for the dropdown links */
+    /* Hover effect for the menu-container */
+    /* Hide dropdown content by default */
+    /* Style for #Produsetop1 */
+    /* Style for #image-top-produse-1 */
+    /* Style for #image-top-produse-2 */
+    /*Style for #image-top-produse-3*/
+    /*Title style*/
+
+    h1 {
+        text-align: center;
+        border: 1px solid #fc0000;
+        border-radius: 25px; border-width: 3px;
+        padding: auto;
+        /* Ensure the parent is a positioned element for absolute positioning */
+        position: relative;
+        text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+    }
+    header {
+        padding-bottom: 10px;
+    }
+    .dropdown-image {
+        text-align: center;
+    }
+    .container-box {
+        background-color: #7dadce;
+        border: dashed;
+        border-style:solid;
+        border-width: auto;
+        border:10px, 10px, 10px, 10px color(srgb red green blue);
+        margin: auto;
+        padding-bottom: auto;
+        align-items: center;
+        position: relative;
+        height: auto;
+    }
+    .box-title h2 {
+        margin: 0;
+        color: #fff;
+    }
+    /* Style for the bordered-box */
+    .bordered-box-style {
+        /* Add the border style you prefer */
+        border: 2px solid #f00;
+        /* Add the background color you prefer */
+        background-color: #eee;
+    }
+    /* Style for the <h2> element */
+    h2 {
+        /* Align the text to the left */
+        text-align: left;
+        /* Make the <h2> element inline so it's positioned horizontally */
+        display: inline-block;
+        /* Add some right margin for spacing (adjust as needed)  */
+        margin-right: auto;
+    }
+    /* .select:hover {
+        background-color: #7dadce;
+    } */
+    /* Table body position/ type/ style */
+    /* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
+
+    /* Remove unnecessary styles for th elements in tbody */
+    #Informatii-Aditionale-Template-Pentru-Linkuri {
+        position: sticky;
+        display: flex;
+    }
+    .canvas-container {
+        margin-left: auto;
+        margin-top: 0px;
+        margin-bottom: auto;
+        border-width: 0px;
+        /* display: flex; */
+        border-radius: auto;
+    }
+    /* Style for each canvas section */
+    .canvas-section {
+        /* Equal width for both sections */
+        width: auto; 
+        /* Add borders for separation (optional) */
+        border: 1px solid #ccc; 
+        /* Add padding for spacing (optional) */
+        padding: auto; 
+    }
+    /* Style for the canvas element */
+    canvas {
+        margin-top: auto;
+        position: sticky;
+        margin-bottom: auto;
+        margin-top: auto;
+        /* Make the canvas fill its container */
+        width: auto; 
+        /* Make the canvas fill its container */
+        height: auto; 
+    }
+    .slideshow {
+        display:inline-flex;
+        padding: auto;
+    }
+    .slideshow img {
+        padding: auto;
+        width: auto;
+        height: auto;
+    }
+}
+@media screen and (max-width: 768px){
+        /* animations */
+        /* animations: Fade-In Effect */
+    .fade-in-effect {
+        /* Start with opacity 0 (completely transparent) */
+        opacity: 0; 
+        /* Apply a smooth transition for opacity */
+        transition: opacity 0.5s ease; 
+    }
+    /* Define the hover behavior to make the elements visible */
+    .fade-in-effect:hover {
+        opacity: 1; /* On hover, make the element fully visible */
+    }
+    .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+        opacity: 1;
+        transition: opacity 0.5s ease; 
+    }
+    /* animations *//* animations *//* animations *//* animations */
+    /* CSS Style */
+    /* Icon bar*/
+    /* Menu Icon*/
+    /* Vertical - Tabs*/
+    /* Tab Headers */
+
+    /* Hover Tabs */
+    a {
+        border: #a9bbab;
+        width: auto;
+    }
+    html {
+        max-height: auto;
+
+    }
+    body {
+        /* background-image: url(https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80); */
+        /* Prevent the image from repeating */
+        background-repeat: no-repeat; 
+        /* Cover the entire background */
+        background-size: cover;
+        /* display: flow-root; */
+        /* Center the background image */
+        /* background-position: center; */
+        /* background-color: #7dadce; */
+        /* You can add more background properties as needed */
+    }
+    /* Style for the dropdown links */
+    /* Hover effect for the menu-container */
+    /* Hide dropdown content by default */
+    /* Style for #Produsetop1 */
+    /* Style for #image-top-produse-1 */
+    /* Style for #image-top-produse-2 */
+    /*Style for #image-top-produse-3*/
+    /*Title style*/
+
+    h1 {
+        text-align: center;
+        border: 1px solid #fc0000;
+        border-radius: 25px; border-width: 3px;
+        padding: auto;
+        /* Ensure the parent is a positioned element for absolute positioning */
+        position: relative;
+        text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+    }
+    header {
+        padding-bottom: 10px;
+    }
+    .dropdown-image {
+        text-align: center;
+    }
+    .container-box {
+        background-color: #7dadce;
+        border: dashed;
+        border-style:solid;
+        border-width: auto;
+        border:10px, 10px, 10px, 10px color(srgb red green blue);
+        margin: auto;
+        padding-bottom: auto;
+        align-items: center;
+        position: relative;
+        height: auto;
+    }
+    .box-title h2 {
+        margin: 0;
+        color: #fff;
+    }
+    /* Style for the bordered-box */
+    .bordered-box-style {
+        /* Add the border style you prefer */
+        border: 2px solid #f00;
+        /* Add the background color you prefer */
+        background-color: #eee;
+    }
+    /* Style for the <h2> element */
+    h2 {
+        /* Align the text to the left */
+        text-align: left;
+        /* Make the <h2> element inline so it's positioned horizontally */
+        display: inline-block;
+        /* Add some right margin for spacing (adjust as needed)  */
+        margin-right: auto;
+    }
+    /* .select:hover {
+        background-color: #7dadce;
+    } */
+    /* Table body position/ type/ style */
+    /* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
+
+    /* Remove unnecessary styles for th elements in tbody */
+    #Informatii-Aditionale-Template-Pentru-Linkuri {
+        position: sticky;
+        display: flex;
+    }
+    .canvas-container {
+        margin-left: auto;
+        margin-top: 0px;
+        margin-bottom: auto;
+        border-width: 0px;
+        /* display: flex; */
+        border-radius: auto;
+    }
+    /* Style for each canvas section */
+    .canvas-section {
+        /* Equal width for both sections */
+        width: auto; 
+        /* Add borders for separation (optional) */
+        border: 1px solid #ccc; 
+        /* Add padding for spacing (optional) */
+        padding: auto; 
+    }
+    /* Style for the canvas element */
+    canvas {
+        margin-top: auto;
+        position: sticky;
+        margin-bottom: auto;
+        margin-top: auto;
+        /* Make the canvas fill its container */
+        width: auto; 
+        /* Make the canvas fill its container */
+        height: auto; 
+    }
+    .slideshow {
+        display:inline-flex;
+        padding: auto;
+    }
+    .slideshow img {
+        padding: auto;
+        width: auto;
+        height: auto;
+    }
+}

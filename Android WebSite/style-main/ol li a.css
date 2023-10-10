@@ -1,0 +1,163 @@
+/* @media screen and (max-width: 600px) {
+    body {
+        background: rgb(190, 178, 8);
+    }
+} */
+@media screen and (max-width: 768px) {
+    /* For mobile phones: */
+    /* width: 100%; */
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+/* If the screen size is 601px or more, set the font-size of <div> to 80px */
+@media only screen and (min-width: 601px) {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media only screen and (max-width: 600px) {
+    div.example {
+      font-size: 30px;
+    }
+}
+/* If the device is in landscape position, than set the background color to that */
+@media only screen and (orientation: landscape) {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+@keyframes moveCoffee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translate by the width of the box + border */
+        transform: translateX(calc(60% - 40px)); 
+    }
+}
+@media screen {
+    html {
+        background: local;        
+    }
+    
+    body {
+        background: local;
+    }
+    
+    header {
+        background: local;
+    }
+}
+@media print {
+    html {
+        background: local;
+    }
+    
+    body {
+        background: local;
+    }
+
+    header{
+        background: local;
+    }
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+}
+/* animations *//* animations *//* animations *//* animations *//* animations */

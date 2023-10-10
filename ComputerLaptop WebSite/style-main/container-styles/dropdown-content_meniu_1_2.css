@@ -1,0 +1,8 @@
+.dropdown-content_meniu_1_2 {
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 10px;
+    position: relative;
+    padding: 100px;
+}

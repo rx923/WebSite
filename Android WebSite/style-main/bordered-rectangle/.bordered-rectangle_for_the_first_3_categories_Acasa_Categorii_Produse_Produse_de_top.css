@@ -1,0 +1,91 @@
+@media screen and (max-width: 300){
+    .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+        border: 2px solid #000000;
+        border-style: double;
+        border-radius: auto;
+        margin: auto;
+        padding-top: 0px;
+        height: auto;
+        width: auto;
+        box-sizing: border-box;
+        position:sticky; 
+        display:block;
+        /* justify-content: right; */
+        list-style: none;
+        background-color: bisque;
+    }
+}
+
+@media screen and (max-width: 400){
+    .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+        border: 2px solid #000000;
+        border-style: double;
+        border-radius: auto;
+        margin: auto;
+        padding-top: 0px;
+        height: auto;
+        width: auto;
+        box-sizing: border-box;
+        position:sticky; 
+        display:block;
+        /* justify-content: right; */
+        list-style: none;
+        background-color: bisque;
+    }
+}
+
+
+@media screen and (max-width: 500){
+    .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+        border: 2px solid #000000;
+        border-style: double;
+        border-radius: auto;
+        margin: auto;
+        padding-top: 0px;
+        height: auto;
+        width: auto;
+        box-sizing: border-box;
+        position:sticky; 
+        display:block;
+        /* justify-content: right; */
+        list-style: none;
+        background-color: bisque;
+    }
+}
+
+
+@media screen and (max-width: 600){
+    .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+        border: 2px solid #000000;
+        border-style: double;
+        border-radius: auto;
+        margin: auto;
+        padding-top: 0px;
+        height: auto;
+        width: auto;
+        box-sizing: border-box;
+        position:sticky; 
+        display:block;
+        /* justify-content: right; */
+        list-style: none;
+        background-color: bisque;
+    }
+}
+
+@media screen and (max-width: 768){
+    .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+        border: 2px solid #000000;
+        border-style: double;
+        border-radius: auto;
+        margin: auto;
+        padding-top: 0px;
+        height: auto;
+        width: auto;
+        box-sizing: border-box;
+        position:sticky; 
+        display:block;
+        /* justify-content: right; */
+        list-style: none;
+        background-color: bisque;
+    }
+}

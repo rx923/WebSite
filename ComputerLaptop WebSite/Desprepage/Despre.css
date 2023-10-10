@@ -1,0 +1,15 @@
+.body .header .h1 {
+    text-align: center; 
+    border: 2px solid chocolate;
+}
+
+.border_box_text_descriere_GoodCoffeeStore{
+    border: 2px chocolate;
+    border-width: 1px;
+    border-style: solid;
+    display: block;
+}
+/* body{
+    background-color: rgb(184, 177, 169);
+} */
+

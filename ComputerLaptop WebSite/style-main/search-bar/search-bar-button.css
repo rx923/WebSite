@@ -1,0 +1,11 @@
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #c2b56e;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+    border-spacing: 2px;
+    border-left-width: 10px;
+    cursor: pointer;
+    left: 10px;
+}

@@ -1,0 +1,37 @@
+/* animations *//* animations *//* animations *//* animations *//* animations */
+h1::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 15px solid #a9bbab; /* Color of the circle */
+    border-radius: 50%; /* Make it a circle */
+    position: absolute;
+    left: 10px; /* Adjust this value to position the circle inside the border */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to vertically center the circle */
+}
+h1::after {
+    border-radius: 10px; /* Make it rounded */
+    content: ""; /* Empty content */
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 10px; /* Adjust this value to position the box inside the border */
+    top: 10px; /* Distance from the top */
+    overflow: hidden;
+    background: image("U:\\Plan Afacere\\WebSite\\LRAnimation image"); /* Replace with your coffee image path */
+    background-size: contain; /* Adjust background size as needed */
+    animation: moveCoffee 4s linear infinite; /* Apply animation */
+}
+h1::after::before {
+    content: ""; /* Empty content */
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background: image("U:\\Plan Afacere\\WebSite\\LRAnimation image"); /* Replace with your coffee image path */
+    background-size: contain; /* Adjust background size as needed */
+    animation: moveCoffee 4s linear infinite; /* Apply animation */
+}
+/* animations *//* animations *//* animations *//* animations *//* animations */

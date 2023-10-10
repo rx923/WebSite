@@ -1,0 +1,44 @@
+@media screen and (max-width: 300){
+    .div .image-container_produse_vandute_de_top_1{
+        border: 2px;
+        border-style: inset;
+        border-color: blue;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 400){
+    .div .image-container_produse_vandute_de_top_1{
+        border: 2px;
+        border-style: inset;
+        border-color: blue;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 500){
+    .div .image-container_produse_vandute_de_top_1{
+        border: 2px;
+        border-style: inset;
+        border-color: blue;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 600){
+    .div .image-container_produse_vandute_de_top_1{
+        border: 2px;
+        border-style: inset;
+        border-color: blue;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 768){
+    .div .image-container_produse_vandute_de_top_1{
+        border: 2px;
+        border-style: inset;
+        border-color: blue;
+        width: 100px;
+    }
+}

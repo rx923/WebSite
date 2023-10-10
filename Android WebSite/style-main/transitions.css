@@ -1,0 +1,280 @@
+/* animations *//* animations *//* animations *//* animations *//* animations */
+@media screen and (max-width: 300px){
+    h1::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        /* Color of the circle */
+        border: 15px solid #a9bbab; 
+        /* Make it a circle */
+        border-radius: 50%; 
+        position: absolute;
+        /* Adjust this value to position the circle inside the border */
+        left: 10px; 
+        /* Center vertically */
+        top: 50%; 
+        /* Adjust to vertically center the circle */
+        transform: translateY(-50%); 
+    }
+
+    h1::after {
+        /* Make it rounded */
+        border-radius: 10px; 
+        /* Empty content */
+        content: ""; 
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        /* Adjust this value to position the box inside the border */
+        right: 10px; 
+        /* Distance from the top */
+        top: 10px; 
+        overflow: hidden;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+
+    h1::after::before {
+        /* Empty content */
+        content: ""; 
+        display: flex;
+        width: 40px;
+        height: 40px;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+}
+/* animations *//* animations *//* animations *//* animations *//* animations */
+@media screen and (max-width: 400px){
+    h1::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        /* Color of the circle */
+        border: 15px solid #a9bbab; 
+        /* Make it a circle */
+        border-radius: 50%; 
+        position: absolute;
+        /* Adjust this value to position the circle inside the border */
+        left: 10px; 
+        /* Center vertically */
+        top: 50%; 
+        /* Adjust to vertically center the circle */
+        transform: translateY(-50%); 
+    }
+
+    h1::after {
+        /* Make it rounded */
+        border-radius: 10px; 
+        /* Empty content */
+        content: ""; 
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        /* Adjust this value to position the box inside the border */
+        right: 10px; 
+        /* Distance from the top */
+        top: 10px; 
+        overflow: hidden;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+    
+    h1::after::before {
+        /* Empty content */
+        content: ""; 
+        display: flex;
+        width: 40px;
+        height: 40px;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+}
+/* animations *//* animations *//* animations *//* animations *//* animations */
+@media screen and (max-width: 500px){
+    h1::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        /* Color of the circle */
+        border: 15px solid #a9bbab; 
+        /* Make it a circle */
+        border-radius: 50%; 
+        position: absolute;
+        /* Adjust this value to position the circle inside the border */
+        left: 10px; 
+        /* Center vertically */
+        top: 50%; 
+        /* Adjust to vertically center the circle */
+        transform: translateY(-50%); 
+    }
+
+    h1::after {
+        /* Make it rounded */
+        border-radius: 10px; 
+        /* Empty content */
+        content: ""; 
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        /* Adjust this value to position the box inside the border */
+        right: 10px; 
+        /* Distance from the top */
+        top: 10px; 
+        overflow: hidden;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+    
+    h1::after::before {
+        /* Empty content */
+        content: ""; 
+        display: flex;
+        width: 40px;
+        height: 40px;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+}
+/* animations *//* animations *//* animations *//* animations *//* animations */
+@media screen and (max-width: 600px){
+    h1::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        /* Color of the circle */
+        border: 15px solid #a9bbab; 
+        /* Make it a circle */
+        border-radius: 50%; 
+        position: absolute;
+        /* Adjust this value to position the circle inside the border */
+        left: 10px; 
+        /* Center vertically */
+        top: 50%; 
+        /* Adjust to vertically center the circle */
+        transform: translateY(-50%); 
+    }
+
+    h1::after {
+        /* Make it rounded */
+        border-radius: 10px; 
+        /* Empty content */
+        content: ""; 
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        /* Adjust this value to position the box inside the border */
+        right: 10px; 
+        /* Distance from the top */
+        top: 10px; 
+        overflow: hidden;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+    
+    h1::after::before {
+        /* Empty content */
+        content: ""; 
+        display: flex;
+        width: 40px;
+        height: 40px;
+        /* Replace with your coffee image path */
+        background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+}
+/* animations *//* animations *//* animations *//* animations *//* animations */
+@media screen and (max-width: 768){
+    h1::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        /* Color of the circle */
+        border: 15px solid #a9bbab; 
+        /* Make it a circle */
+        border-radius: 50%; 
+        position: absolute;
+        /* Adjust this value to position the circle inside the border */
+        left: 10px; 
+        /* Center vertically */
+        top: 50%; 
+        /* Adjust to vertically center the circle */
+        transform: translateY(-50%); 
+    }
+
+    h1::after {
+        /* Make it rounded */
+        border-radius: 10px; 
+        /* Empty content */
+        content: ""; 
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        /* Adjust this value to position the box inside the border */
+        right: 10px; 
+        /* Distance from the top */
+        top: 10px; 
+        overflow: hidden;
+        /* Replace with your coffee image path */
+        background: url("data:image/jpeg;base64,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"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+    
+    h1::after::before {
+        /* Empty content */
+        content: ""; 
+        display: flex;
+        width: 40px;
+        height: 40px;
+        /* Replace with your coffee image path */
+        background: url("data:image/jpeg;base64,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"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: moveCoffee 4s linear infinite; 
+    }
+}

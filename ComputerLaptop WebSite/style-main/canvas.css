@@ -1,0 +1,23 @@
+.canvas-container {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    border-width: 0px;
+    /* display: flex; */
+    border-radius: 10px;
+}
+/* Style for each canvas section */
+.canvas-section {
+    width: 1000px; /* Equal width for both sections */
+    border: 1px solid #ccc; /* Add borders for separation (optional) */
+    padding: 10px; /* Add padding for spacing (optional) */
+}
+/* Style for the canvas element */
+canvas {
+    margin-top: 80px;
+    position: sticky;
+    margin-bottom: 100px;
+    margin-top: 120px;
+    width: 200px; /* Make the canvas fill its container */
+    height: 100px; /* Make the canvas fill its container */
+}

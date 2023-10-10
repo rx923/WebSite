@@ -1,0 +1,77 @@
+/* Style for the container holding the elements */
+.table-container_lista_optiuni {
+    border: 2px solid;
+    border-style: solid;
+    border-width: 0px;
+    border-color: black;
+    margin-left: 0px;
+    /* border-color: burlywood; */
+    /* container-type:normal; */
+    display: inline-flex;
+    flex-direction: row;
+    position: static;
+    /* padding-right: 500px; */
+    /* align-items: flex-end; */
+    background-color: rgb(255, 255, 255);
+}
+/* Style for individual elements within the container */
+.table-container_lista_optiuni .tr {
+    /* Margin between elements */
+    flex-direction: row;
+    display: inline-block;
+    margin: 1px;
+    padding: 10px;
+    /* margin: 10px; */
+    /* position: absolute; */
+}
+.table-container_lista_optiuni .tr  #tableheader-Despre {
+    /* Margin between elements */
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /* margin-top: auto; */
+    margin: 1px;
+    /* margin: 10px; */
+    /* margin-right: 10px; */
+}
+.table-container_lista_optiuni .tr  #tableheader-Comenzi {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    position: sticky;
+    /* margin-top: 50px; */
+    /* margin-top: auto; */
+    margin: 1px;
+    /* margin: 10px; */
+    /* Margin between elements */
+    /* margin-right: 100px; */
+}
+.table-container_lista_optiuni .tr  #tableheader-Livrare {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    /* Margin between elements */
+    margin: 1px;
+    margin: 10px;
+}
+.table-container_lista_optiuni .tr  #tableheader-Suport {
+    border-radius: 10px;
+    border: 1px solid;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    /* Margin between elements */
+    margin: 1px;
+    /* margin: 10px; */
+}
+.table-container_lista_optiuni .tr  #tableheader-Informatii-Aditionale {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /* border-style: ; */
+    border: 1px solid;
+    /* Margin between elements */
+    /* margin: 10px; */
+}

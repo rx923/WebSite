@@ -1,0 +1,98 @@
+@media screen and (max-width: 300){
+    .container-produse_vandute_de_top_1 {
+        border-right: 1px;
+        border-left: 1px;
+        border-bottom: 2px;
+        border-top: 2px;
+        border-style: solid;
+        border-radius: 10px;
+        margin-top: 200px;
+        border-color: rgb(0, 132, 255);
+        position:sticky;
+        /* display:flex; */
+        box-sizing: content-box;
+        width: 70%;
+        height: 50%;
+        /* align-items: center; */
+    }
+}
+
+@media screen and (max-width: 400){
+    .container-produse_vandute_de_top_1 {
+        border-right: 1px;
+        border-left: 1px;
+        border-bottom: 2px;
+        border-top: 2px;
+        border-style: solid;
+        border-radius: 10px;
+        margin-top: 200px;
+        border-color: rgb(0, 132, 255);
+        position:sticky;
+        /* display:flex; */
+        box-sizing: content-box;
+        width: 70%;
+        height: 50%;
+        /* align-items: center; */
+    }
+}
+
+
+@media screen and (max-width: 500){
+    .container-produse_vandute_de_top_1 {
+        border-right: 1px;
+        border-left: 1px;
+        border-bottom: 2px;
+        border-top: 2px;
+        border-style: solid;
+        border-radius: 10px;
+        margin-top: 200px;
+        border-color: rgb(0, 132, 255);
+        position:sticky;
+        /* display:flex; */
+        box-sizing: content-box;
+        width: 70%;
+        height: 50%;
+        /* align-items: center; */
+    }
+}
+
+
+@media screen and (max-width: 600){
+    .container-produse_vandute_de_top_1 {
+        border-right: 1px;
+        border-left: 1px;
+        border-bottom: 2px;
+        border-top: 2px;
+        border-style: solid;
+        border-radius: 10px;
+        margin-top: 200px;
+        border-color: rgb(0, 132, 255);
+        position:sticky;
+        /* display:flex; */
+        box-sizing: content-box;
+        width: 70%;
+        height: 50%;
+        /* align-items: center; */
+    }
+}
+
+
+@media screen and (max-width: 768){
+    .container-produse_vandute_de_top_1 {
+        border-right: 1px;
+        border-left: 1px;
+        border-bottom: 2px;
+        border-top: 2px;
+        border-style: solid;
+        border-radius: 10px;
+        margin-top: 200px;
+        border-color: rgb(0, 132, 255);
+        position:sticky;
+        /* display:flex; */
+        box-sizing: content-box;
+        width: 70%;
+        height: 50%;
+        /* align-items: center; */
+    }
+}
+
