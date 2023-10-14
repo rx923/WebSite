@@ -4,34 +4,50 @@ h1::before {
     display: block;
     width: 15px;
     height: 15px;
-    border: 15px solid #a9bbab; /* Color of the circle */
-    border-radius: 50%; /* Make it a circle */
-    position: absolute;
-    left: 10px; /* Adjust this value to position the circle inside the border */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust to vertically center the circle */
+    /* Color of the circle */
+    border: 15px solid #a9bbab; 
+    /* Make it a circle */
+    border-radius: 50%; 
+    position: sticky;
+    /* Adjust this value to position the circle inside the border */
+    left: 10px; 
+    /* Center vertically */
+    top: 50%; 
+    /* Adjust to vertically center the circle */
+    transform: translateY(-30%); 
 }
 h1::after {
-    border-radius: 10px; /* Make it rounded */
-    content: ""; /* Empty content */
+    /* Make it rounded */
+    border-radius: 10px; 
+    /* Empty content */
+    content: ""; 
     display: block;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 10px; /* Adjust this value to position the box inside the border */
-    top: 10px; /* Distance from the top */
+    width: 50px;
+    height: 50px;
+    position: sticky;
+    /* Adjust this value to position the box inside the border */
+    right: 10px; 
+    /* Distance from the top */
+    top: 10px; 
     overflow: hidden;
-    background: image("U:\\Plan Afacere\\WebSite\\LRAnimation image"); /* Replace with your coffee image path */
-    background-size: contain; /* Adjust background size as needed */
-    animation: moveCoffee 4s linear infinite; /* Apply animation */
+    /* Replace with your coffee image path */
+    background-image: url("https://i.pinimg.com/736x/a5/05/98/a50598fc45f510719de2cf9a4044ea51.jpg"); 
+    /* Adjust background size as needed */
+    background-size: contain; 
+    /* Apply animation */
+    animation: moveCoffee 4s linear infinite; 
 }
 h1::after::before {
-    content: ""; /* Empty content */
+    /* Empty content */
+    content: ""; 
     display: flex;
-    width: 40px;
-    height: 40px;
-    background: image("U:\\Plan Afacere\\WebSite\\LRAnimation image"); /* Replace with your coffee image path */
-    background-size: contain; /* Adjust background size as needed */
-    animation: moveCoffee 4s linear infinite; /* Apply animation */
+    width: 50px;
+    height: 50px;
+    /* Replace with your coffee image path */
+    background-image: url("https://i.pinimg.com/736x/a5/05/98/a50598fc45f510719de2cf9a4044ea51.jpg"); 
+    /* Adjust background size as needed */
+    background-size: contain;
+    /* Apply animation */
+    animation: moveCoffee 4s linear infinite; 
 }
 /* animations *//* animations *//* animations *//* animations *//* animations */

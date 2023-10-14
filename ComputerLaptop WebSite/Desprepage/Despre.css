@@ -1,6 +1,10 @@
+body{
+    background-image: url("https:///i.cbc.ca//1.4313356.1683123165!//fileImage//httpImage//coffee-parkinsons.jpg; max-width100%; max-height100%");
+    background-size:cover;
+}
 .body .header .h1 {
     text-align: center; 
-    border: 2px solid chocolate;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .border_box_text_descriere_GoodCoffeeStore{
@@ -12,4 +16,3 @@
 /* body{
     background-color: rgb(184, 177, 169);
 } */
-

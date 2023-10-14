@@ -1,6 +1,6 @@
 * {box-sizing: border-box}
 .slideshow-container{
-    max-width: 550px; 
+    max-width: 50%; 
     position: sticky; 
     margin: 0px;
 }
