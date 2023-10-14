@@ -1,0 +1,9 @@
+.container-for-responsive-short-yt-video {
+    position: relative;
+    overflow: hidden;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    width: 36%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    padding-top: 26.25%;
+    /* padding-bottom: 56.25%;  */
+}
