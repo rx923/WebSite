@@ -1,77 +1,1702 @@
+/*Device	                    Pixel Size	                                    Viewport*/
 /* Style for the container holding the elements */
-.table-container_lista_optiuni {
-    border: 2px solid;
-    border-style: solid;
-    border-width: 0px;
-    border-color: black;
-    margin-left: 0px;
-    /* border-color: burlywood; */
-    /* container-type:normal; */
-    display: inline-flex;
-    flex-direction: row;
-    position: static;
-    /* padding-right: 500px; */
-    /* align-items: flex-end; */
-    background-color: rgb(255, 255, 255);
+/*Apple Devices */
+/**/
+    /**/
+        /**/
+            /**/
+                /**/
+                /**/
+    /**/
+        /**/
+            /**/
+                /**/
+                /**/
+    /**/
+        /**/
+            /**/
+                /**/
+                /**/
+                
+/*iPhone 5	640 x 1136	320 x 568*/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
 }
-/* Style for individual elements within the container */
-.table-container_lista_optiuni .tr {
-    /* Margin between elements */
-    flex-direction: row;
-    display: inline-block;
-    margin: 1px;
-    padding: 10px;
-    /* margin: 10px; */
-    /* position: absolute; */
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
 }
-.table-container_lista_optiuni .tr  #tableheader-Despre {
-    /* Margin between elements */
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    /* margin-top: auto; */
-    margin: 1px;
-    /* margin: 10px; */
-    /* margin-right: 10px; */
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
 }
-.table-container_lista_optiuni .tr  #tableheader-Comenzi {
-    border: 1px solid;
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    position: sticky;
-    /* margin-top: 50px; */
-    /* margin-top: auto; */
-    margin: 1px;
-    /* margin: 10px; */
-    /* Margin between elements */
-    /* margin-right: 100px; */
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
 }
-.table-container_lista_optiuni .tr  #tableheader-Livrare {
-    border: 1px solid;
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    /* Margin between elements */
-    margin: 1px;
-    margin: 10px;
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
 }
-.table-container_lista_optiuni .tr  #tableheader-Suport {
-    border-radius: 10px;
-    border: 1px solid;
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    /* Margin between elements */
-    margin: 1px;
-    /* margin: 10px; */
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
 }
-.table-container_lista_optiuni .tr  #tableheader-Informatii-Aditionale {
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    /* border-style: ; */
-    border: 1px solid;
-    /* Margin between elements */
-    /* margin: 10px; */
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 6/6S	750 x 1334	375 x 667*/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:320px) and (min-height:568px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 6 Plus/6S Plus	1080 x 1920	414 x 736*/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 7	750 x 1334	375 x 667*/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 7 Plus	1080 x 1920	414 x 736*/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 8	750 x 1334	375 x 667*/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:375px) and (min-height:667px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 8 Plus	1080 x 1920	414 x 736*/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:414px) and (min-height:736px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone X	1125 x 2436	375 x 812*/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone XS Max	1242 x 2688	414 x 896*/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone XS	1125 x 2436	375 x 812*/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:375px) and (min-height:812px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone XR	828 x 1792	414 x 896*/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:414px) and (min-height:896px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 11	1792 x 828	390 x 844*/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 12	2532 x 1170	414 x 895*/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:414px) and (min-height:895px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:895px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:414px) and (min-height:895px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:414px) and (min-height:895px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:414px) and (min-height:895px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:414px) and (min-height:895px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:414px) and (min-height:895px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 12 Pro	2532 x 1170	 390 x 844*/
+/**/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:390px) and (min-height:844px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/*iPhone 12 Pro Max	2778 x 1284	 428 x 926*/
+/**/
+/**/
+/**/
+/**/
+@media screen and (min-width:428px) and (min-height:926px) {
+    .table-container_lista_optiuni 
+    .tr {
+        /* Margin between elements */
+        flex-direction: row;
+        flex: 1;
+        min-width: 100px;
+        box-sizing: border-box;
+        display: inline-flex;
+        /* margin: 1px; */
+        /* padding: 10px; */
+        padding-right: 220px;
+        /* margin: 10px; */
+        /* position: absolute; */
+    }
+}
+@media screen and (min-width:428px) and (min-height:926px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Despre {
+        /* Margin between elements */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* margin-right: 10px; */
+    }   
+}
+@media screen and (min-width:428px) and (min-height:926px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Comenzi {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        position: sticky;
+        /* margin-top: 50px; */
+        /* margin-top: auto; */
+        margin: 1px;
+        /* margin: 10px; */
+        /* Margin between elements */
+        /* margin-right: 100px; */
+    }
+}
+@media screen and (min-width:428px) and (min-height:926px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }
+}
+@media screen and (min-width:428px) and (min-height:926px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Livrare {
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        margin: 10px;
+    }    
+}
+@media screen and (min-width:428px) and (min-height:926px) {
+    .table-container_lista_optiuni 
+    .tr  
+    #tableheader-Suport {
+        border-radius: 10px;
+        border: 1px solid;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        /* Margin between elements */
+        margin: 1px;
+        /* margin: 10px; */
+    }    
+}
+@media screen and (min-width:428px) and (min-height:926px) {
+    .table-container_lista_optiuni
+    .tr  
+    #tableheader-Informatii-Aditionale {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        /* border-style: ; */
+        border: 1px solid;
+        /* Margin between elements */
+        /* margin: 10px; */
+    }    
 }

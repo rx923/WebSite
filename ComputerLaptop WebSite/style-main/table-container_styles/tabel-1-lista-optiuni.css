@@ -1,0 +1,7 @@
+.tabel-1-lista-optiuni {
+    /* padding: 20px; */
+    /* margin: 1000px; */
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    flex-direction: row;
+}

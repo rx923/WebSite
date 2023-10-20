@@ -60,11 +60,11 @@ html {
     height: auto;
 } */
 body {
-    /* background-image: url(https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80); */
-    /* Prevent the image from repeating */
-    background-repeat: no-repeat; 
+    background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
     /* Cover the entire background */
-    /* background-size: cover; */
+    background-size: cover;
+    /* Prevent the image from repeating */
+    /* background-repeat: no-repeat; */
     /* display: flow-root; */
     /* Center the background image */
     /* background-position: center; */
