@@ -1,0 +1,21 @@
+body{
+    background-image: url("https://images.unsplash.com/photo-1563557588-1075d53350e0?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D;");
+    background-size:auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-block:auto;
+}
+.body .header .h1 {
+    scroll-snap-type: mandatory;
+    text-align: center; 
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.border_box_text_descriere_GoodCoffeeStore{
+    border: 2px chocolate;
+    border-width: 1px;
+    border-style: solid;
+    display: block;
+}
+/* body{
+    background-color: rgb(184, 177, 169);
+} */

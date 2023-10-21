@@ -1,0 +1,139 @@
+/* Apple Devices  */
+@media all and (min-width: 1284px) and (min-height:2778px) or 
+            (min-width:2532px) and (min-height:1170px) or 
+            (min-width:2532px) and (min-height:1170px) or
+            (min-width:1792px) and (min-height:828px) or
+            (min-width:828px) and (min-height:1792px) or 
+            (min-width:1125px) and (min-height:2436px) or
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:2048px) and (min-height:2732px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:768px) and (min-height:1024px)
+			
+			{
+				table {
+                    /* Remove unnecessary positioning and margin */
+                    margin: 0; /* Remove margin */
+                    padding-top: 90px; /* Adjust padding as needed */
+                    width: 80px; /* Set a reasonable width for the table */
+                    max-width: 800px; /* Set a maximum width for responsiveness */
+                    border-collapse: collapse; /* Improve table cell spacing */
+                }
+                th, td {
+                    /* border: 2px solid rgb(255, 255, 255); */
+                    border-style: double;
+                    padding: 8px;
+                    text-align: left;
+                }
+                /* Remove unnecessary styles for th elements in tbody */
+                table tbody th {
+                    padding: 30px;
+                    position: static;
+                    vertical-align: bottom;
+                }
+                /* Remove unnecessary styles for tr elements */
+                tr {
+                    border: 3px rgb(255, 0, 0);
+                    border-top: 10px #000000;
+                    border-bottom: 10px #000000;
+                    border-right:10px #000000;
+                    border-left:#000000;
+                }
+}
+
+/* Android Devices  */
+@media all and (min-width: 1440px) and (min-height:2560px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or
+            (min-width:1080px) and (min-height:2160px) or
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px) or
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:1440px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px)
+            {
+                table {
+                    /* Remove unnecessary positioning and margin */
+                    margin: 0; /* Remove margin */
+                    padding-top: 90px; /* Adjust padding as needed */
+                    width: 80px; /* Set a reasonable width for the table */
+                    max-width: 800px; /* Set a maximum width for responsiveness */
+                    border-collapse: collapse; /* Improve table cell spacing */
+                }
+                th, td {
+                    /* border: 2px solid rgb(255, 255, 255); */
+                    border-style: double;
+                    padding: 8px;
+                    text-align: left;
+                }
+                /* Remove unnecessary styles for th elements in tbody */
+                table tbody th {
+                    padding: 30px;
+                    position: static;
+                    vertical-align: bottom;
+                }
+                /* Remove unnecessary styles for tr elements */
+                tr {
+                    border: 3px rgb(255, 0, 0);
+                    border-top: 10px #000000;
+                    border-bottom: 10px #000000;
+                    border-right:10px #000000;
+                    border-left:#000000;
+                }
+}
+
+/*Tablets*/
+@media all and (min-width: 1536px) and (min-height:2048px) or 
+            (min-width:1200px) and (min-height:1920px) or 
+            (min-width:800px) and (min-height:1280px) or
+            (min-width:1700px) and (min-height:2560px)
+            {
+                table {
+                    /* Remove unnecessary positioning and margin */
+                    margin: 0; /* Remove margin */
+                    padding-top: 90px; /* Adjust padding as needed */
+                    width: 80px; /* Set a reasonable width for the table */
+                    max-width: 800px; /* Set a maximum width for responsiveness */
+                    border-collapse: collapse; /* Improve table cell spacing */
+                }
+                th, td {
+                    /* border: 2px solid rgb(255, 255, 255); */
+                    border-style: double;
+                    padding: 8px;
+                    text-align: left;
+                }
+                /* Remove unnecessary styles for th elements in tbody */
+                table tbody th {
+                    padding: 30px;
+                    position: static;
+                    vertical-align: bottom;
+                }
+                /* Remove unnecessary styles for tr elements */
+                tr {
+                    border: 3px rgb(255, 0, 0);
+                    border-top: 10px #000000;
+                    border-bottom: 10px #000000;
+                    border-right:10px #000000;
+                    border-left:#000000;
+                }
+				
+}
+
+
+

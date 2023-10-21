@@ -1,0 +1,399 @@
+
+/* animations *//* animations *//* animations *//* animations *//* animations */
+/* animations: Fade-In Effect */
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/* Apple Devices  */
+@media all and (min-width: 1284px) and (min-height:2778px) or 
+            (min-width:2532px) and (min-height:1170px) or 
+            (min-width:2532px) and (min-height:1170px) or
+            (min-width:1792px) and (min-height:828px) or
+            (min-width:828px) and (min-height:1792px) or 
+            (min-width:1125px) and (min-height:2436px) or
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:2048px) and (min-height:2732px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:768px) and (min-height:1024px)  
+             {
+                html {
+                    max-height: auto;
+                }
+                body {
+                    background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
+                    /* Cover the entire background */
+                    /* background-size: cover; */
+                    /* Prevent the image from repeating */
+                    /* background-repeat: no-repeat; */
+                    /* display: flow-root; */
+                    /* Center the background image */
+                    /* background-position: center; */
+                    /* background-color: #7dadce; */
+                    /* You can add more background properties as needed */
+                }
+                .fade-in-effect {
+                    /* Start with opacity 0 (completely transparent) */
+                    opacity: 0; 
+                    /* Apply a smooth transition for opacity */
+                    transition: opacity 0.5s ease; 
+                }
+                /* Define the hover behavior to make the elements visible */
+                .fade-in-effect:hover {
+                    opacity: 1; /* On hover, make the element fully visible */
+                }
+                .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+                    opacity: 1;
+                    transition: opacity 0.5s ease; 
+                }
+                h1 {
+                    text-align: center;
+                    border: 1px solid #fc0000;
+                    border-radius: 25px; border-width: 3px;
+                    padding: 10px;
+                    /* Ensure the parent is a positioned element for absolute positioning */
+                    position: relative;
+                    text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+                }
+                header {
+                    border-top: 2px slategrey;
+                    margin-bottom: 2px;
+                    /* border-style: ; */
+                    /* padding-bottom: 10px; */
+                }
+                .dropdown-image {
+                    text-align: center;
+                }
+                .container-box {
+                    background-color: #7dadce;
+                    border: dashed;
+                    border-style:solid;
+                    border-width: 10px;
+                    border:10px, 10px, 10px, 10px color(srgb red green blue);
+                    margin: 200px;
+                    padding-bottom: 20px;
+                    align-items: center;
+                    position: relative;
+                    height: 100px;
+                }
+                .box-title h2 {
+                    margin: 0;
+                    color: #fff;
+                }
+                /* Style for the bordered-box */
+                .bordered-box-style {
+                    /* Add the border style you prefer */
+                    border: 2px solid #f00;
+                    /* Add the background color you prefer */
+                    background-color: #eee;
+                }
+                /* Style for the <h2> element */
+                h2 {
+                    /* Align the text to the left */
+                    text-align: left;
+                    /* Make the <h2> element inline so it's positioned horizontally */
+                    display: inline-block;
+                    /* Add some right margin for spacing (adjust as needed)  */
+                    margin-right: 20px;
+                }
+                #Informatii-Aditionale-Template-Pentru-Linkuri {
+                    position: sticky;
+                    display: flex;
+                }
+                .slideshow {
+                    display:inline-flex;
+                    padding: 100px;
+                }
+                .slideshow img {
+                    padding: 60px;
+                    width: 100%;
+                    height: auto;
+                }
+}
+/* Android Devices  */
+@media all and (min-width: 1440px) and (min-height:2560px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or
+            (min-width:1080px) and (min-height:2160px) or
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px) or
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:1440px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px) { 
+                html {
+                    max-height: auto;
+                }
+                body {
+                    background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
+                    /* Cover the entire background */
+                    /* background-size: cover; */
+                    /* Prevent the image from repeating */
+                    /* background-repeat: no-repeat; */
+                    /* display: flow-root; */
+                    /* Center the background image */
+                    /* background-position: center; */
+                    /* background-color: #7dadce; */
+                    /* You can add more background properties as needed */
+                }
+                .fade-in-effect {
+                    /* Start with opacity 0 (completely transparent) */
+                    opacity: 0; 
+                    /* Apply a smooth transition for opacity */
+                    transition: opacity 0.5s ease; 
+                }
+                /* Define the hover behavior to make the elements visible */
+                .fade-in-effect:hover {
+                    opacity: 1; /* On hover, make the element fully visible */
+                }
+                .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+                    opacity: 1;
+                    transition: opacity 0.5s ease; 
+                }
+                h1 {
+                    text-align: center;
+                    border: 1px solid #fc0000;
+                    border-radius: 25px; border-width: 3px;
+                    padding: 10px;
+                    /* Ensure the parent is a positioned element for absolute positioning */
+                    position: relative;
+                    text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+                }
+                header {
+                    border-top: 2px slategrey;
+                    margin-bottom: 2px;
+                    /* border-style: ; */
+                    /* padding-bottom: 10px; */
+                }
+                .dropdown-image {
+                    text-align: center;
+                }
+                .container-box {
+                    background-color: #7dadce;
+                    border: dashed;
+                    border-style:solid;
+                    border-width: 10px;
+                    border:10px, 10px, 10px, 10px color(srgb red green blue);
+                    margin: 200px;
+                    padding-bottom: 20px;
+                    align-items: center;
+                    position: relative;
+                    height: 100px;
+                }
+                .box-title h2 {
+                    margin: 0;
+                    color: #fff;
+                }
+                /* Style for the bordered-box */
+                .bordered-box-style {
+                    /* Add the border style you prefer */
+                    border: 2px solid #f00;
+                    /* Add the background color you prefer */
+                    background-color: #eee;
+                }
+                /* Style for the <h2> element */
+                h2 {
+                    /* Align the text to the left */
+                    text-align: left;
+                    /* Make the <h2> element inline so it's positioned horizontally */
+                    display: inline-block;
+                    /* Add some right margin for spacing (adjust as needed)  */
+                    margin-right: 20px;
+                }
+                #Informatii-Aditionale-Template-Pentru-Linkuri {
+                    position: sticky;
+                    display: flex;
+                }
+                .slideshow {
+                    display:inline-flex;
+                    padding: 100px;
+                }
+                .slideshow img {
+                    padding: 60px;
+                    width: 100%;
+                    height: auto;
+                }
+}
+
+
+/*Tablets*/
+@media all and (min-width: 1536px) and (min-height:2048px) or 
+            (min-width:1200px) and (min-height:1920px) or 
+            (min-width:800px) and (min-height:1280px) or
+            (min-width:1700px) and (min-height:2560px) { 
+                html {
+                    max-height: auto;
+                }
+                body {
+                    background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
+                    /* Cover the entire background */
+                    /* background-size: cover; */
+                    /* Prevent the image from repeating */
+                    /* background-repeat: no-repeat; */
+                    /* display: flow-root; */
+                    /* Center the background image */
+                    /* background-position: center; */
+                    /* background-color: #7dadce; */
+                    /* You can add more background properties as needed */
+                }
+                .fade-in-effect {
+                    /* Start with opacity 0 (completely transparent) */
+                    opacity: 0; 
+                    /* Apply a smooth transition for opacity */
+                    transition: opacity 0.5s ease; 
+                }
+                /* Define the hover behavior to make the elements visible */
+                .fade-in-effect:hover {
+                    opacity: 1; /* On hover, make the element fully visible */
+                }
+                .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
+                    opacity: 1;
+                    transition: opacity 0.5s ease; 
+                }
+                h1 {
+                    text-align: center;
+                    border: 1px solid #fc0000;
+                    border-radius: 25px; border-width: 3px;
+                    padding: 10px;
+                    /* Ensure the parent is a positioned element for absolute positioning */
+                    position: relative;
+                    text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+                }
+                header {
+                    border-top: 2px slategrey;
+                    margin-bottom: 2px;
+                    /* border-style: ; */
+                    /* padding-bottom: 10px; */
+                }
+                .dropdown-image {
+                    text-align: center;
+                }
+                .container-box {
+                    background-color: #7dadce;
+                    border: dashed;
+                    border-style:solid;
+                    border-width: 10px;
+                    border:10px, 10px, 10px, 10px color(srgb red green blue);
+                    margin: 200px;
+                    padding-bottom: 20px;
+                    align-items: center;
+                    position: relative;
+                    height: 100px;
+                }
+                .box-title h2 {
+                    margin: 0;
+                    color: #fff;
+                }
+                /* Style for the bordered-box */
+                .bordered-box-style {
+                    /* Add the border style you prefer */
+                    border: 2px solid #f00;
+                    /* Add the background color you prefer */
+                    background-color: #eee;
+                }
+                /* Style for the <h2> element */
+                h2 {
+                    /* Align the text to the left */
+                    text-align: left;
+                    /* Make the <h2> element inline so it's positioned horizontally */
+                    display: inline-block;
+                    /* Add some right margin for spacing (adjust as needed)  */
+                    margin-right: 20px;
+                }
+                #Informatii-Aditionale-Template-Pentru-Linkuri {
+                    position: sticky;
+                    display: flex;
+                }
+                .slideshow {
+                    display:inline-flex;
+                    padding: 100px;
+                }
+                .slideshow img {
+                    padding: 60px;
+                    width: 100%;
+                    height: auto;
+                }
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/* animations *//* animations *//* animations *//* animations */
+/* CSS Style */
+/* Icon bar*/
+/* Menu Icon*/
+/* Vertical - Tabs*/
+/* Tab Headers */
+
+/* Hover Tabs */
+/* a {
+    border: #a9bbab;
+    width: auto;
+} */
+
+/* #image-top-produse-1 {
+    display: inline-block;
+    max-width: 40px;
+    max-height: 40px;
+    border-left: 10px;
+    display: block;
+    margin: auto;
+    offset: 10px;
+} */
+/* #image-top-produse-2 {
+    display: inline-block;
+    text-align: center;
+    max-width: 40px;
+    max-height: 40px;
+}
+#image-top-produse-3 {
+    display: inline-block;
+    text-align: center;
+    max-width: 40px;
+    max-height: 40px;
+}
+.menu-image p {
+    margin-top: 5px;
+}
+.menu-image img {
+    max-width: 100%;
+    height: auto;
+} */
+
+/* Style for the dropdown links */
+/* Hover effect for the menu-container */
+/* Hide dropdown content by default */
+/* Style for #Produsetop1 */
+/* Style for #image-top-produse-1 */
+/* Style for #image-top-produse-2 */
+/*Style for #image-top-produse-3*/
+/*Title style*/
+
+
+
+/* .select:hover {
+    background-color: #7dadce;
+} */
+/* Table body position/ type/ style */
+/* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
+
+/* Remove unnecessary styles for th elements in tbody */
