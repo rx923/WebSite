@@ -1,9 +1,79 @@
-.container-for-responsive-short-yt-video {
-    position: relative;
-    overflow: hidden;
-    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-    width: 36%;
-    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-    padding-top: 26.25%;
-    /* padding-bottom: 56.25%;  */
+/* Apple Devices  */
+@media all and (min-width: 1284px) and (min-height:2778px) or 
+            (min-width:2532px) and (min-height:1170px) or 
+            (min-width:2532px) and (min-height:1170px) or
+            (min-width:1792px) and (min-height:828px) or
+            (min-width:828px) and (min-height:1792px) or 
+            (min-width:1125px) and (min-height:2436px) or
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:2048px) and (min-height:2732px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:768px) and (min-height:1024px)
+			{
+                .container-for-responsive-short-yt-video {
+                    position: relative;
+                    overflow: hidden;
+                    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+                    width: 36%;
+                    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+                    padding-top: 26.25%;
+                    /* padding-bottom: 56.25%;  */
+                }
 }
+
+/* Android Devices  */
+@media all and (min-width: 1440px) and (min-height:2560px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or
+            (min-width:1080px) and (min-height:2160px) or
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px) or
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:1440px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px)
+			{
+                .container-for-responsive-short-yt-video {
+                    position: relative;
+                    overflow: hidden;
+                    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+                    width: 36%;
+                    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+                    padding-top: 26.25%;
+                    /* padding-bottom: 56.25%;  */
+                }
+}
+
+/*Tablets*/
+@media all and (min-width: 1536px) and (min-height:2048px) or 
+            (min-width:1200px) and (min-height:1920px) or 
+            (min-width:800px) and (min-height:1280px) or
+            (min-width:1700px) and (min-height:2560px)
+			{
+                .container-for-responsive-short-yt-video {
+                    position: relative;
+                    overflow: hidden;
+                    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+                    width: 36%;
+                    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+                    padding-top: 26.25%;
+                    /* padding-bottom: 56.25%;  */
+                }
+				
+}
+

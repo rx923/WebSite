@@ -1,48 +1,200 @@
-/* animations *//* animations *//* animations *//* animations *//* animations */
-h1::before {
-    content: "";
-    display: block;
-    width: 15px;
-    height: 15px;
-    /* Color of the circle */
-    border: 15px solid #000000; 
-    /* Make it a circle */
-    border-radius: 50%; 
-    position: absolute;
-    /* Adjust this value to position the circle inside the border */
-    left: 10px; 
-    /* Center vertically */
-    top: 50%; 
-    /* Adjust to vertically center the circle */
-    transform: translateY(-50%); 
+/* Apple Devices  */
+@media all and (min-width: 1284px) and (min-height:2778px) or 
+            (min-width:2532px) and (min-height:1170px) or 
+            (min-width:2532px) and (min-height:1170px) or
+            (min-width:1792px) and (min-height:828px) or
+            (min-width:828px) and (min-height:1792px) or 
+            (min-width:1125px) and (min-height:2436px) or
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:2048px) and (min-height:2732px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:768px) and (min-height:1024px)
+			{
+                /* animations *//* animations *//* animations *//* animations *//* animations */
+                h1::before {
+                    content: "";
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    /* Color of the circle */
+                    border: 15px solid #000000; 
+                    /* Make it a circle */
+                    border-radius: 50%; 
+                    position: absolute;
+                    /* Adjust this value to position the circle inside the border */
+                    left: 10px; 
+                    /* Center vertically */
+                    top: 50%; 
+                    /* Adjust to vertically center the circle */
+                    transform: translateY(-50%); 
+                }
+                h1::after {
+                    /* Make it rounded */
+                    border-radius: 10px; 
+                    /* Empty content */
+                    content: ""; 
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    /* Adjust this value to position the box inside the border */
+                    right: 10px; 
+                    /* Distance from the top */
+                    top: 10px; 
+                    overflow: hidden;
+                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
+                    /* Adjust background size as needed */
+                    background-size: contain; 
+                    /* Apply animation */
+                    animation: moveCoffee 4s linear infinite; 
+                }
+                h1::after::before {
+                    content: ""; /* Empty content */
+                    display: flex;
+                    width: 40px;
+                    height: 40px;
+                    /* Replace with your coffee image path */
+                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+                    background-size: contain; /* Adjust background size as needed */
+                    animation: moveCoffee 4s linear infinite; /* Apply animation */
+                }
+                
+				
 }
-h1::after {
-    /* Make it rounded */
-    border-radius: 10px; 
-    /* Empty content */
-    content: ""; 
-    display: block;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    /* Adjust this value to position the box inside the border */
-    right: 10px; 
-    /* Distance from the top */
-    top: 10px; 
-    overflow: hidden;
-    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
-    /* Adjust background size as needed */
-    background-size: contain; 
-    /* Apply animation */
-    animation: moveCoffee 4s linear infinite; 
+
+/* Android Devices  */
+@media all and (min-width: 1440px) and (min-height:2560px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or
+            (min-width:1080px) and (min-height:2160px) or
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px) or
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:1440px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px)
+			{
+            /* animations *//* animations *//* animations *//* animations *//* animations */
+                h1::before {
+                    content: "";
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    /* Color of the circle */
+                    border: 15px solid #000000; 
+                    /* Make it a circle */
+                    border-radius: 50%; 
+                    position: absolute;
+                    /* Adjust this value to position the circle inside the border */
+                    left: 10px; 
+                    /* Center vertically */
+                    top: 50%; 
+                    /* Adjust to vertically center the circle */
+                    transform: translateY(-50%); 
+                }
+                h1::after {
+                    /* Make it rounded */
+                    border-radius: 10px; 
+                    /* Empty content */
+                    content: ""; 
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    /* Adjust this value to position the box inside the border */
+                    right: 10px; 
+                    /* Distance from the top */
+                    top: 10px; 
+                    overflow: hidden;
+                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
+                    /* Adjust background size as needed */
+                    background-size: contain; 
+                    /* Apply animation */
+                    animation: moveCoffee 4s linear infinite; 
+                }
+                h1::after::before {
+                    content: ""; /* Empty content */
+                    display: flex;
+                    width: 40px;
+                    height: 40px;
+                    /* Replace with your coffee image path */
+                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+                    background-size: contain; /* Adjust background size as needed */
+                    animation: moveCoffee 4s linear infinite; /* Apply animation */
+                }
 }
-h1::after::before {
-    content: ""; /* Empty content */
-    display: flex;
-    width: 40px;
-    height: 40px;
-    /* Replace with your coffee image path */
-    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
-    background-size: contain; /* Adjust background size as needed */
-    animation: moveCoffee 4s linear infinite; /* Apply animation */
+
+/*Tablets*/
+@media all and (min-width: 1536px) and (min-height:2048px) or 
+            (min-width:1200px) and (min-height:1920px) or 
+            (min-width:800px) and (min-height:1280px) or
+            (min-width:1700px) and (min-height:2560px)
+			{
+            /* animations *//* animations *//* animations *//* animations *//* animations */
+                h1::before {
+                    content: "";
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    /* Color of the circle */
+                    border: 15px solid #000000; 
+                    /* Make it a circle */
+                    border-radius: 50%; 
+                    position: absolute;
+                    /* Adjust this value to position the circle inside the border */
+                    left: 10px; 
+                    /* Center vertically */
+                    top: 50%; 
+                    /* Adjust to vertically center the circle */
+                    transform: translateY(-50%); 
+                }
+                h1::after {
+                    /* Make it rounded */
+                    border-radius: 10px; 
+                    /* Empty content */
+                    content: ""; 
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    /* Adjust this value to position the box inside the border */
+                    right: 10px; 
+                    /* Distance from the top */
+                    top: 10px; 
+                    overflow: hidden;
+                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
+                    /* Adjust background size as needed */
+                    background-size: contain; 
+                    /* Apply animation */
+                    animation: moveCoffee 4s linear infinite; 
+                }
+                h1::after::before {
+                    content: ""; /* Empty content */
+                    display: flex;
+                    width: 40px;
+                    height: 40px;
+                    /* Replace with your coffee image path */
+                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+                    background-size: contain; /* Adjust background size as needed */
+                    animation: moveCoffee 4s linear infinite; /* Apply animation */
+                }
+				
 }
+
+
+

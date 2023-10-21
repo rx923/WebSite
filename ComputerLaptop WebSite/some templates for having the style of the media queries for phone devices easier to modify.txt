@@ -19,11 +19,6 @@
             (min-width:1536px) and (min-height:2048px) or 
             (min-width:768px) and (min-height:1024px)
 			{
-                .div .bordered-box_produse_vandute_de_top_1 .h3 {
-                    position: sticky;
-                    text-overflow: unset;
-                    text-align: right;
-                }
 				
 }
 
@@ -45,11 +40,6 @@
             (min-width:1440px) and (min-height:2560px) or 
             (min-width:1440px) and (min-height:2560px)
 			{
-                .div .bordered-box_produse_vandute_de_top_1 .h3 {
-                    position: sticky;
-                    text-overflow: unset;
-                    text-align: right;
-                }
 }
 
 /*Tablets*/
@@ -58,10 +48,5 @@
             (min-width:800px) and (min-height:1280px) or
             (min-width:1700px) and (min-height:2560px)
 			{
-                .div .bordered-box_produse_vandute_de_top_1 .h3 {
-                    position: sticky;
-                    text-overflow: unset;
-                    text-align: right;
-                }
+				
 }
-

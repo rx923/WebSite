@@ -1,99 +1,349 @@
-/* Style for the dropdown menu container */
-.menu_container_produse_de_top {
-    border: 1px #000000;
-    border-width: 4px;
-    border-style: double;
-    border-radius: 40px;
-    box-sizing:content-box;
-    width: 400px;
-    margin: 20px;
-    list-style-type: none;
-    position: relative;
-    display:inline-block;
-    flex: 1;
-    margin-bottom: 80px;
+/* Apple Devices  */
+@media all and (min-width: 1284px) and (min-height:2778px) or 
+            (min-width:2532px) and (min-height:1170px) or 
+            (min-width:2532px) and (min-height:1170px) or
+            (min-width:1792px) and (min-height:828px) or
+            (min-width:828px) and (min-height:1792px) or 
+            (min-width:1125px) and (min-height:2436px) or
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:750px) and (min-height:1334px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:640px) and (min-height:1136px) or 
+            (min-width:2048px) and (min-height:2732px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:1536px) and (min-height:2048px) or 
+            (min-width:768px) and (min-height:1024px)
+			{
+                /* Style for the dropdown menu container */
+                .menu_container_produse_de_top {
+                    border: 1px #000000;
+                    border-width: 4px;
+                    border-style: double;
+                    border-radius: 40px;
+                    box-sizing:content-box;
+                    width: 400px;
+                    margin: 20px;
+                    list-style-type: none;
+                    position: relative;
+                    display:inline-block;
+                    flex: 1;
+                    margin-bottom: 80px;
+                }
+                /* Style for the main menu item */
+                .menu_container_produse_de_top .menu_container_1_produse_de_top {
+                    list-style-type: none;
+                    text-align: center;
+                    /* border: 1px solid #0011a7; */
+                    /* border-style:solid; */
+                    /* border-radius: 10px; */
+                    box-sizing:border-box;
+                    position: sticky;
+                    display: block;
+                }
+                /* Style for the dropdown content container */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
+                    cursor: pointer;
+                    position: relative;
+                    list-style-type: none;
+                    
+                }
+                /* Style for the dropdown content */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: transparent;
+                    background-blend-mode: color-dodge;
+                    min-width: 200px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    border-radius: 5px;
+                    z-index: 1;
+                    list-style-type: none;
+                }
+                /* Show dropdown content when hovering over the main menu item */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+                    display: block;
+                }
+                /* Style for the dropdown links */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
+                    display:block;
+                    padding: 10px;
+                    border-top: 4px solid #000;
+                    border-right: 3px solid #000;
+                    border-left: 2px solid #000;
+                    border-bottom: 1px solid #000;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: #000;
+                    list-style-type: none;
+                    transition:ease-in-out 2s;
+                }
+                /* Add hover effect to the dropdown links */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
+                    /* background-color: #c51414; */
+                    list-style-type: none;
+                    transition:ease-in-out 2s;
+                }
+                /* Style for the images inside the dropdown content */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                    text-align: center;
+                    text-rendering:optimizeSpeed;
+                    text-shadow: bisque;
+                    transition:ease-in-out 2s;
+                }
+                .dropdown-content_imagini_2 {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                }
+                .dropdown-content_imagini_3 {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                }
+                ol {
+                    background-color: rgb(184, 116, 34);
+                    border-radius: 10px;
+                    list-style-type: none;
+                }
+				
 }
-/* Style for the main menu item */
-.menu_container_produse_de_top .menu_container_1_produse_de_top {
-    list-style-type: none;
-    text-align: center;
-    /* border: 1px solid #0011a7; */
-    /* border-style:solid; */
-    /* border-radius: 10px; */
-    box-sizing:border-box;
-    position: sticky;
-    display: block;
+
+/* Android Devices  */
+@media all and (min-width: 1440px) and (min-height:2560px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or
+            (min-width:1080px) and (min-height:2160px) or
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px) or
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:1440px) or 
+            (min-width:1080px) and (min-height:1920px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2960px) or 
+            (min-width:1440px) and (min-height:2560px) or 
+            (min-width:1440px) and (min-height:2560px)
+			{
+                /* Style for the dropdown menu container */
+                .menu_container_produse_de_top {
+                    border: 1px #000000;
+                    border-width: 4px;
+                    border-style: double;
+                    border-radius: 40px;
+                    box-sizing:content-box;
+                    width: 400px;
+                    margin: 20px;
+                    list-style-type: none;
+                    position: relative;
+                    display:inline-block;
+                    flex: 1;
+                    margin-bottom: 80px;
+                }
+                /* Style for the main menu item */
+                .menu_container_produse_de_top .menu_container_1_produse_de_top {
+                    list-style-type: none;
+                    text-align: center;
+                    /* border: 1px solid #0011a7; */
+                    /* border-style:solid; */
+                    /* border-radius: 10px; */
+                    box-sizing:border-box;
+                    position: sticky;
+                    display: block;
+                }
+                /* Style for the dropdown content container */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
+                    cursor: pointer;
+                    position: relative;
+                    list-style-type: none;
+                    
+                }
+                /* Style for the dropdown content */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: transparent;
+                    background-blend-mode: color-dodge;
+                    min-width: 200px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    border-radius: 5px;
+                    z-index: 1;
+                    list-style-type: none;
+                }
+                /* Show dropdown content when hovering over the main menu item */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+                    display: block;
+                }
+                /* Style for the dropdown links */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
+                    display:block;
+                    padding: 10px;
+                    border-top: 4px solid #000;
+                    border-right: 3px solid #000;
+                    border-left: 2px solid #000;
+                    border-bottom: 1px solid #000;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: #000;
+                    list-style-type: none;
+                    transition:ease-in-out 2s;
+                }
+                /* Add hover effect to the dropdown links */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
+                    /* background-color: #c51414; */
+                    list-style-type: none;
+                    transition:ease-in-out 2s;
+                }
+                /* Style for the images inside the dropdown content */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                    text-align: center;
+                    text-rendering:optimizeSpeed;
+                    text-shadow: bisque;
+                    transition:ease-in-out 2s;
+                }
+                .dropdown-content_imagini_2 {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                }
+                .dropdown-content_imagini_3 {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                }
+                ol {
+                    background-color: rgb(184, 116, 34);
+                    border-radius: 10px;
+                    list-style-type: none;
+                }
 }
-/* Style for the dropdown content container */
-.menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
-    cursor: pointer;
-    position: relative;
-    list-style-type: none;
-    
-}
-/* Style for the dropdown content */
-.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: transparent;
-    background-blend-mode: color-dodge;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    z-index: 1;
-    list-style-type: none;
-}
-/* Show dropdown content when hovering over the main menu item */
-.menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
-    display: block;
-}
-/* Style for the dropdown links */
-.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
-    display:block;
-    padding: 10px;
-    border-top: 4px solid #000;
-    border-right: 3px solid #000;
-    border-left: 2px solid #000;
-    border-bottom: 1px solid #000;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #000;
-    list-style-type: none;
-    transition:ease-in-out 2s;
-}
-/* Add hover effect to the dropdown links */
-.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
-    /* background-color: #c51414; */
-    list-style-type: none;
-    transition:ease-in-out 2s;
-}
-/* Style for the images inside the dropdown content */
-.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
-    max-width: 100%;
-    height: auto;
-    list-style-type: none;
-    border: 2px;
-    text-align: center;
-    text-rendering:optimizeSpeed;
-    text-shadow: bisque;
-    transition:ease-in-out 2s;
-}
-.dropdown-content_imagini_2 {
-    max-width: 100%;
-    height: auto;
-    list-style-type: none;
-    border: 2px;
-}
-.dropdown-content_imagini_3 {
-    max-width: 100%;
-    height: auto;
-    list-style-type: none;
-    border: 2px;
-}
-ol {
-    background-color: rgb(184, 116, 34);
-    border-radius: 10px;
-    list-style-type: none;
+
+/*Tablets*/
+@media all and (min-width: 1536px) and (min-height:2048px) or 
+            (min-width:1200px) and (min-height:1920px) or 
+            (min-width:800px) and (min-height:1280px) or
+            (min-width:1700px) and (min-height:2560px)
+			{
+            /* Style for the dropdown menu container */
+            .menu_container_produse_de_top {
+                border: 1px #000000;
+                border-width: 4px;
+                border-style: double;
+                border-radius: 40px;
+                box-sizing:content-box;
+                width: 400px;
+                margin: 20px;
+                list-style-type: none;
+                position: relative;
+                display:inline-block;
+                flex: 1;
+                margin-bottom: 80px;
+            }
+            /* Style for the main menu item */
+            .menu_container_produse_de_top .menu_container_1_produse_de_top {
+                list-style-type: none;
+                text-align: center;
+                /* border: 1px solid #0011a7; */
+                /* border-style:solid; */
+                /* border-radius: 10px; */
+                box-sizing:border-box;
+                position: sticky;
+                display: block;
+            }
+            /* Style for the dropdown content container */
+            .menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
+                cursor: pointer;
+                position: relative;
+                list-style-type: none;
+                
+            }
+            /* Style for the dropdown content */
+            .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: transparent;
+                background-blend-mode: color-dodge;
+                min-width: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                z-index: 1;
+                list-style-type: none;
+            }
+            /* Show dropdown content when hovering over the main menu item */
+            .menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+                display: block;
+            }
+            /* Style for the dropdown links */
+            .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
+                display:block;
+                padding: 10px;
+                border-top: 4px solid #000;
+                border-right: 3px solid #000;
+                border-left: 2px solid #000;
+                border-bottom: 1px solid #000;
+                border-radius: 10px;
+                text-decoration: none;
+                color: #000;
+                list-style-type: none;
+                transition:ease-in-out 2s;
+            }
+            /* Add hover effect to the dropdown links */
+            .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
+                /* background-color: #c51414; */
+                list-style-type: none;
+                transition:ease-in-out 2s;
+            }
+            /* Style for the images inside the dropdown content */
+            .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
+                max-width: 100%;
+                height: auto;
+                list-style-type: none;
+                border: 2px;
+                text-align: center;
+                text-rendering:optimizeSpeed;
+                text-shadow: bisque;
+                transition:ease-in-out 2s;
+            }
+            .dropdown-content_imagini_2 {
+                max-width: 100%;
+                height: auto;
+                list-style-type: none;
+                border: 2px;
+            }
+            .dropdown-content_imagini_3 {
+                max-width: 100%;
+                height: auto;
+                list-style-type: none;
+                border: 2px;
+            }
+            ol {
+                background-color: rgb(184, 116, 34);
+                border-radius: 10px;
+                list-style-type: none;
+            }
+				
 }
