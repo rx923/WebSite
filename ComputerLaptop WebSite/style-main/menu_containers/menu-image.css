@@ -25,6 +25,10 @@
                 }
 				
 }
+.menu-image img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

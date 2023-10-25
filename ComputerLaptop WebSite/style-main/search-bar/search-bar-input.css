@@ -28,6 +28,13 @@
                 }
 				
 }
+.search-bar input {
+    padding: 5px 10px;
+    border: 1px double #ccc;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 0px;
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

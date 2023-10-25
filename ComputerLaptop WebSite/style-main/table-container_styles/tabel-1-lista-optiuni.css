@@ -28,6 +28,14 @@
                 }
 				
 }
+.tabel-1-lista-optiuni {
+    /* padding: 20px; */
+    /* margin: 1000px; */
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

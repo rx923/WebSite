@@ -24,6 +24,9 @@
                     background-color: #000000;
                 }
 }
+.select:hover{
+    background-color: #000000;
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

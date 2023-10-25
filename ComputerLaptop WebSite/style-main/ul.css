@@ -28,6 +28,14 @@
                     margin-right: -4px;
                 }
 }
+ul {
+    left: auto;
+    right: 0;
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    margin-right: -4px;
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

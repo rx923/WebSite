@@ -25,6 +25,11 @@
                 }
 				
 }
+.canvas-container {
+    position: sticky;
+    display: inline-block;
+}
+
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

@@ -31,6 +31,16 @@
                 }
 				
 }
+.div{
+    max-width: 100px;
+    max-height: 100px;
+} 
+.imgcontainer {
+    width: 250px;
+    height: 35px; 
+    width: 35px;
+    
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

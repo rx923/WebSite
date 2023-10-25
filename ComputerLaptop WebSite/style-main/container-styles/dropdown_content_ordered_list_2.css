@@ -24,6 +24,9 @@
                 }
 				
 }
+.dropdown_content_ordered_list_2{
+    margin-top: 10px;
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 
