@@ -26,6 +26,12 @@
                     border-width: 1px;
                 }
 }
+.content {
+    border: 2px; 
+    border-style: solid;
+    color: black; 
+    border-width: 1px;
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

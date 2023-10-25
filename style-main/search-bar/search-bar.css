@@ -30,6 +30,15 @@
                 }
 				
 }
+.search-bar {
+    position: sticky;
+    width: 20px;
+    inline-size: 300px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    display:inline-block;
+    /* text-justify: inter-cluster; */
+}
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px) or 

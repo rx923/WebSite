@@ -67,6 +67,19 @@
                     transition: 0.5s;
                 }
 }
+.footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    padding: 3px;
+    margin-bottom: 10px;
+    width: 50%;
+    background-color: red;
+    color: rgb(211, 0, 0);
+    text-align: center;
+    /*Adding a smooth transition effect*/
+    transition: 0.5s;
+}
 
 /*Tablets*/
 @media all and (min-width: 1536px) and (min-height:2048px) or 
