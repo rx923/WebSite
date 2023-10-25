@@ -127,9 +127,9 @@ html {
     background-color: #7dadce;
 }
 body {
-    /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
+    background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
     /* Cover the entire background */
-    /* background-size: cover; */
+    background-size: cover;
     /* Prevent the image from repeating */
     /* background-repeat: no-repeat; */
     /* display: flow-root; */
