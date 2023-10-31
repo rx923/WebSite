@@ -34,8 +34,10 @@
     border-style: solid;
     border-color: black;
     border-spacing: 10px;
-    position: relative;
+    position: sticky;
     padding: 20px;
+    background: local;
+    background-color: lightblue;
     /* margin-left: 20px; */
 }
 /* Android Devices  */
