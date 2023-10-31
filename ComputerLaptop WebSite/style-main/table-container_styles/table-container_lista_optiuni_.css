@@ -25,9 +25,12 @@
 /**/
 /**/
 /**/
+.tr{
+    margin-right: 20px;
+    margin-left: 20px;
+}
 @media screen and (min-width:320px) and (min-height:568px) {
-    .table-container_lista_optiuni 
-    .tr {
+    .table-container_lista_optiuni .tr {
         /* Margin between elements */
         flex-direction: row;
         flex: 1;
@@ -41,8 +44,7 @@
         /* position: absolute; */
     }
 }
-.table-container_lista_optiuni 
-.tr {
+.table-container_lista_optiuni .tr {
     /* Margin between elements */
     flex-direction: row;
     flex: 1;
@@ -54,6 +56,19 @@
     padding-right: 220px;
     /* margin: 10px; */
     /* position: absolute; */
+}
+.table-container_lista_optiuni {
+    border: 1px;
+    border-radius: 25px;
+    margin-right: 450px;
+    margin-left: 450px;
+    position: relative;
+    -ms-layout-grid-line: auto;
+    border-style: solid;
+    background-attachment: unset;
+    border-color: black;
+    -webkit-background-composite: border;
+    background-color: rgb(216, 186, 140);
 }
 @media screen and (min-width:320px) and (min-height:568px) {
     .table-container_lista_optiuni 
@@ -74,12 +89,12 @@
 .tr  
 #tableheader-Despre {
     /* Margin between elements */
-    padding: 10px;
+    padding-left: 10px;
     border: 1px solid;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(203, 62, 62);
     /* margin-top: auto; */
-    margin: 1px;
+    margin-left: 10px;
     /* margin: 10px; */
     /* margin-right: 10px; */
 } 
@@ -100,6 +115,16 @@
         /* margin-right: 100px; */
     }
 }
+#tableheader-Livrare  {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    /* Margin between elements */
+    margin: 1px;
+    margin: 0px;
+}
+
 @media screen and (min-width:320px) and (min-height:568px) {
     .table-container_lista_optiuni 
     .tr  
@@ -1517,8 +1542,7 @@
 /**/
 /**/
 @media screen and (min-width:390px) and (min-height:844px) {
-    .table-container_lista_optiuni 
-    .tr {
+    .table-container_lista_optiuni .tr {
         /* Margin between elements */
         flex-direction: row;
         flex: 1;
@@ -1533,9 +1557,7 @@
     }
 }
 @media screen and (min-width:390px) and (min-height:844px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Despre {
+    .table-container_lista_optiuni .tr  #tableheader-Despre {
         /* Margin between elements */
         padding: 10px;
         border: 1px solid;
@@ -1548,9 +1570,7 @@
     }   
 }
 @media screen and (min-width:390px) and (min-height:844px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Comenzi {
+    .table-container_lista_optiuni .tr  #tableheader-Comenzi {
         border: 1px solid;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -1565,9 +1585,7 @@
     }
 }
 @media screen and (min-width:390px) and (min-height:844px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Livrare {
+    .table-container_lista_optiuni .tr  #tableheader-Livrare {
         border: 1px solid;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -1578,9 +1596,7 @@
     }
 }
 @media screen and (min-width:390px) and (min-height:844px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Livrare {
+    .table-container_lista_optiuni .tr  #tableheader-Livrare {
         border: 1px solid;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -1591,9 +1607,7 @@
     }    
 }
 @media screen and (min-width:390px) and (min-height:844px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Suport {
+    .table-container_lista_optiuni .tr  #tableheader-Suport {
         border-radius: 10px;
         border: 1px solid;
         background-color: rgb(255, 255, 255);
@@ -1604,9 +1618,7 @@
     }    
 }
 @media screen and (min-width:390px) and (min-height:844px) {
-    .table-container_lista_optiuni
-    .tr  
-    #tableheader-Informatii-Aditionale {
+    .table-container_lista_optiuni .tr  #tableheader-Informatii-Aditionale {
         padding: 10px;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -1628,8 +1640,7 @@
 /**/
 /**/
 @media screen and (min-width:428px) and (min-height:926px) {
-    .table-container_lista_optiuni 
-    .tr {
+    .table-container_lista_optiuni .tr {
         /* Margin between elements */
         flex-direction: row;
         flex: 1;
@@ -1644,9 +1655,7 @@
     }
 }
 @media screen and (min-width:428px) and (min-height:926px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Despre {
+    .table-container_lista_optiuni .tr  #tableheader-Despre {
         /* Margin between elements */
         padding: 10px;
         border: 1px solid;
@@ -1659,9 +1668,7 @@
     }   
 }
 @media screen and (min-width:428px) and (min-height:926px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Comenzi {
+    .table-container_lista_optiuni .tr  #tableheader-Comenzi {
         border: 1px solid;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -1676,9 +1683,7 @@
     }
 }
 @media screen and (min-width:428px) and (min-height:926px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Livrare {
+    .table-container_lista_optiuni .tr  #tableheader-Livrare {
         border: 1px solid;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -1689,9 +1694,7 @@
     }
 }
 @media screen and (min-width:428px) and (min-height:926px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Livrare {
+    .table-container_lista_optiuni .tr  #tableheader-Livrare {
         border: 1px solid;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -1702,9 +1705,7 @@
     }    
 }
 @media screen and (min-width:428px) and (min-height:926px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Suport {
+    .table-container_lista_optiuni .tr  #tableheader-Suport {
         border-radius: 10px;
         border: 1px solid;
         background-color: rgb(255, 255, 255);
@@ -1715,9 +1716,7 @@
     }    
 }
 @media screen and (min-width:428px) and (min-height:926px) {
-    .table-container_lista_optiuni
-    .tr  
-    #tableheader-Informatii-Aditionale {
+    .table-container_lista_optiuni .tr  #tableheader-Informatii-Aditionale {
         padding: 10px;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
