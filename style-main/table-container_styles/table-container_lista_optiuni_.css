@@ -25,10 +25,6 @@
 /**/
 /**/
 /**/
-.tr{
-    margin-right: 20px;
-    margin-left: 20px;
-}
 @media screen and (min-width:320px) and (min-height:568px) {
     .table-container_lista_optiuni .tr {
         /* Margin between elements */
@@ -119,7 +115,7 @@
     border: 1px solid;
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    padding: 10px;
+    padding: 0px;
     /* Margin between elements */
     margin: 1px;
     margin: 0px;
@@ -1701,7 +1697,7 @@
         padding: 10px;
         /* Margin between elements */
         margin: 1px;
-        margin: 10px;
+        margin: 0px;
     }    
 }
 @media screen and (min-width:428px) and (min-height:926px) {
