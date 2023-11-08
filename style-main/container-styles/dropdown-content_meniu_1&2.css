@@ -34,7 +34,7 @@
     border-style: solid;
     border-color: black;
     border-spacing: 10px;
-    position: sticky;
+    position: relative;
     padding: 20px;
     background: local;
     background-color: lightblue;

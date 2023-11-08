@@ -3,10 +3,11 @@
     padding: 10px 20px;
     /* padding-top: 100px; */
     color: rgb(0, 0, 0);
+    background-color: antiquewhite;
     border: solid;
     margin-top: 100px;
     border-width: 3px;
-    border-radius: 30px;
+    border-radius: 7px;
     cursor: pointer;
     display:inline-block;
     /* margin-right: 30px; */
@@ -21,8 +22,9 @@
     border-radius: 0px;
 }
 .search-bar input {
-    border: 1px solid #ccc;
-    border-radius: 0px;
+    border: 2px solid #5c4545;
+    background-color: bisque;
+    border-radius: 10px;
     width: 0px;
     padding: 5px 10px;
     outline: none;
@@ -34,10 +36,10 @@
 }
 .search-bar #submit-cauta {
     padding: 2px 4px; /* Adjust padding as needed */
-    background-color: #636053;
-    color: rgb(247, 248, 247);
+    background-color: rgb(235, 232, 228);
+    color: rgb(3, 4, 3);
     border:solid;
-    border-width: 1px;
+    border-width: 2px;
     border-radius: 30px;
     cursor: pointer;
     width: 80px; /* Adjust the width as needed */
