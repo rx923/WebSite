@@ -129,7 +129,7 @@
     border-style:solid;
     border-radius: 40px;
     box-sizing:content-box;
-    width: 400px;
+    width: 500px;
     margin: 20px;
     list-style-type: none;
     position: sticky;
@@ -250,7 +250,7 @@
                     border-style:solid;
                     border-radius: 40px;
                     box-sizing:content-box;
-                    width: 400px;
+                    width: 80px;
                     margin: 20px;
                     list-style-type: none;
                     position: sticky;
@@ -360,7 +360,7 @@
                     border-style:solid;
                     border-radius: 40px;
                     box-sizing:content-box;
-                    width: 400px;
+                    width: 200px;
                     margin: 20px;
                     list-style-type: none;
                     position: sticky;

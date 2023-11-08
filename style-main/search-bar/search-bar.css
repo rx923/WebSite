@@ -31,11 +31,12 @@
 				
 }
 .search-bar {
-    position: sticky;
+    position: relative;
     width: 20px;
     inline-size: 300px;
     margin-right: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+    padding-top: 100px;
     display:inline-block;
     /* text-justify: inter-cluster; */
 }
