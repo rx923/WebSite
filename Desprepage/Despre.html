@@ -7,6 +7,7 @@
       <link rel="icon" href="U:\Plan Afacere\WebSite\Icon\imagine-categorii.ico" type="icon/ico">
       <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\main.css" type="text/css" media="screen"> -->
       <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.css" type="text/css" media="screen">
+      <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre-Chat-Suport.js" type="text/javascript/js/JavaScript/javascript" media="screen">
       <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
       <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
   </head>
@@ -131,6 +132,18 @@
 
         </nav>
       <footer>
+        
+        <div class="chat-popup" id="myForm">
+          <form action="/support_page.php" class="form-container" method="get" style="border: 2px solid; border-color: black; background-color: aquamarine;">
+            <h1>Chat</h1>
+        
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+        
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
       </footer>
     </main>
   </body>
