@@ -137,18 +137,24 @@ form {
     background-color: rgba(252, 252, 252, 0.8);
     box-sizing: border-box;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
-    display: inline-block; /* Change to inline-block */
-    width: auto; /* Remove fixed width */
-    padding-bottom: 100px; /* Add padding */
-    margin-top: 90px; /* Move margin to the form container */
-    text-align: center; /* Center form content */
+    /* Change to inline-block */
+    display: inline-block; 
+    /* Remove fixed width */
+    width: auto; 
+    /* Add padding */
+    padding-bottom: 100px;
+    /* Move margin to the form container */ 
+    margin-top: 90px; 
+    /* Center form content */
+    text-align: center; 
 }
 .container {
     padding: 10px;
 }
 /* Adjust the input fields and button styles */
 input[type="text"], input[type="password"] {
-    width: 200px; /* Make input fields full width */
+    /* Make input fields full width */
+    width: 90px; 
     padding: 2px;
     margin: 0px 0px;
     border: 1px solid #772727;
@@ -165,7 +171,7 @@ input[type="text"], input[type="password"] {
 }
   /* Adjust the image size */
 .imgcontainer img {
-    width: 50%;
+    width: 45%;
     height: 50%;
 }
   /* Remove unnecessary styles */
