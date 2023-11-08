@@ -245,7 +245,7 @@
     border-style: double;
     border-radius: 40px;
     box-sizing:content-box;
-    width: 400px;
+    width: 500px;
     margin: 20px;
     list-style-type: none;
     position: relative;
@@ -336,6 +336,7 @@ ol {
     background-color: rgb(184, 116, 34);
     border-radius: 10px;
     list-style-type: none;
+    border-width: 100px;
 }
 
 /*Tablets*/
@@ -351,7 +352,7 @@ ol {
                 border-style: double;
                 border-radius: 40px;
                 box-sizing:content-box;
-                width: 400px;
+                width: 300px;
                 margin: 20px;
                 list-style-type: none;
                 position: relative;
