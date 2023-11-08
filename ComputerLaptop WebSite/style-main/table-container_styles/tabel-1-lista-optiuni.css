@@ -34,6 +34,7 @@
     /* border: 2px solid black; */
     box-sizing: border-box;
     flex-direction: row;
+    position: sticky;
 }
 
 
@@ -83,3 +84,7 @@
     margin-left: 10px;
     position: sticky;
 }
+
+/* #upper-side-table-style{
+    position: -webkit-sticky;
+} */

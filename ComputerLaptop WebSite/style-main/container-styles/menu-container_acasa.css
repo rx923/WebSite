@@ -345,50 +345,48 @@
 }
 
 .li_continut_1_tip_lista{
-    border-top: lightskyblue solid;
-    border-top-width: 1px;
+    border-top: rgb(255, 251, 0) solid;
+    border-top-width: 2px;
     border-top-right-radius: 10px;
-    border-bottom: lightskyblue solid;
-    border-bottom-width: 1px;
+    border-bottom-width: 2px;
     border-bottom-right-radius: 10px;
-    border-right: lightskyblue solid;
+    border-top: rgb(255, 251, 0) solid;
     border-top-left-radius: 10px;
-    border-right-width: 1px;
-    border-left: lightskyblue solid;
+    border-right-width: 2px;
     border-bottom-left-radius: 10px;
-    border-left-width: 1px;
+    border-left-width: 2px;
     margin-bottom: 10px;
 }
 
-.li_continut_2_tip_lista{
-    border-top: lightskyblue solid;
-    border-top-width: 1px;
+.li_continut_2_tip_lista {
+    border-top: rgb(255, 251, 0) solid;
+    border-top-width: 2px;
     border-top-right-radius: 10px;
-    border-bottom: lightskyblue solid;
-    border-bottom-width: 1px;
+    border-bottom: rgb(255, 251, 0) solid;
+    border-bottom-width: 2px;
     border-bottom-right-radius: 10px;
-    border-right: lightskyblue solid;
+    border-right: rgb(255, 251, 0) solid;
     border-top-left-radius: 10px;
-    border-right-width: 1px;
-    border-left: lightskyblue solid;
+    border-right-width: 2px;
+    border-left: rgb(255, 251, 0) solid;
     border-bottom-left-radius: 10px;
-    border-left-width: 1px;
+    border-left-width: 2px;
     margin-bottom: 10px;
 }
 
 .li_continut_3_tip_lista{
-    border-top: lightskyblue solid;
-    border-top-width: 1px;
+    border-left: rgb(255, 251, 0) solid;
+    border-top-width: 2px;
     border-top-right-radius: 10px;
-    border-bottom: lightskyblue solid;
-    border-bottom-width: 1px;
+    border-left: rgb(255, 251, 0) solid;
+    border-bottom-width: 2px;
     border-bottom-right-radius: 10px;
-    border-right: lightskyblue solid;
+    border-left: rgb(255, 251, 0) solid;
     border-top-left-radius: 10px;
-    border-right-width: 1px;
-    border-left: lightskyblue solid;
+    border-right-width: 2px;
+    border-left: rgb(255, 251, 0) solid;
     border-bottom-left-radius: 10px;
-    border-left-width: 1px;
+    border-left-width: 2px;
     margin-bottom: 10px;
 }
 
