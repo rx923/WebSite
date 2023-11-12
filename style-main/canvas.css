@@ -43,6 +43,7 @@
                 }
 }
 .canvas-container {
+    background: linear-gradient(55deg, rgb(110, 100, 100) 0%, #e38b8b 51%, #c47181 85%);
     margin-left: 0px;
     margin-top: 0px;
     margin-bottom: 30px;
