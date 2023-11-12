@@ -53,7 +53,7 @@
 /* Style for each canvas section */
 .canvas-section {
     /* Equal width for both sections */
-    width: 1000px; 
+    width: 900px; 
     /* Add borders for separation (optional) */
     border: 10px solid #000000;
     /* border-inline-start-width: 2px; */
