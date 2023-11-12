@@ -122,6 +122,7 @@
                 }
 }
 html {
+    scroll-behavior: smooth;
     max-height: auto;
     scroll-behavior:smooth;
     background-color: #7dadce;
@@ -207,11 +208,11 @@ h2 {
     display: flex;
 }
 .slideshow {
-    display:inline-flex;
-    padding: 100px;
+    display: inline-flex;
+    padding: 30px;
 }
 .slideshow img {
-    padding: 60px;
+    padding: 30px;
     width: 100%;
     height: auto;
 }
