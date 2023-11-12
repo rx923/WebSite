@@ -68,11 +68,10 @@
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
   </head>
 
-  <body style="background-color:rgb(255, 255, 255);
-                /* height: 3000px;  */
-                /* background: linear-gradient(25deg, #d8d6a1 0%, rgb(129, 202, 122)) 51%, rgb(118, 137, 40) 55%;"> */
+  <body style="/* height: 3000px;  */
+                background: linear-gradient(25deg, #d8d6a1 20%, rgb(255, 255, 255)) 51%, rgb(156, 157, 151) 55%;">
     <header style="margin-bottom: 80px;">
-      <h1 style="background-color: rgb(92, 115, 123);"> Good Store Coffee </h1>
+      <h1 style="background: linear-gradient(55deg, #62472a 0%, #ffffff 51%, #084f66 85%);;"> Good Store Coffee </h1>
       <div class="table-container_lista_optiuni" 
             id="tabel-tip-lista-optiuni">
       <div class ="tabel-1-lista-optiuni" 
@@ -515,24 +514,51 @@
         // }
   
         //Automatically changing the slides:
-         let slideIndex = 0;
-         showSlides();
-  
-         function showSlides() {
-           let i;
-           let slides = document.getElementsByClassName("mySlides");
-             for (i = 0; i < slides.length; i++) {
-               slides[i].style.display = "none";
-               }
-               slideIndex++;
-               if (slideIndex > slides.length) {slideIndex = 1}
-               slides[slideIndex-1].style.display = "block";
-               // Change image every 2 seconds
-               setTimeout(showSlides, 2000);
-             }
+        let slideIndex = 0;
+          showSlides();
+
+          function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.opacity = 0; // Set opacity to 0 for all slides
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            fadeIn(slides[slideIndex - 1], 0); // Call fadeIn function
+
+            // Change image every 2 seconds
+            setTimeout(() => {
+              fadeOut(slides[slideIndex - 1], 0); // Call fadeOut function
+              setTimeout(showSlides, 1000); // Adjust the delay based on the fade duration
+            }, 3000);
+          }
+
+          function fadeIn(element, opacity) {
+            element.style.opacity = opacity;
+            if (opacity < 1) {
+              opacity += 2; // Adjust the increment to control the fade speed
+              setTimeout(() => fadeIn(element, opacity), 1);
+            }
+          }
+
+          function fadeOut(element, opacity) {
+            element.style.opacity = opacity;
+            if (opacity > 0) {
+              opacity -= 2; // Adjust the decrement to control the fade speed
+              setTimeout(() => fadeOut(element, opacity), 10);
+            } else {
+              element.style.display = "none";
+            }
+          }
+
       </script>
-
-
     <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000" method="post">
       <div class="container_pagina_inregistrare">
         <h2>Inregistrare</h2>

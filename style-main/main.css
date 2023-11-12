@@ -155,8 +155,13 @@ body {
 }
 h1 {
     text-align: center;
-    border: 1px solid #fc0000;
-    border-radius: 25px; border-width: 3px;
+    border: 1px solid #031e39;
+    border-top-style: ridge;
+    border-right-style: ridge;
+    border-left-style: ridge;
+    border-bottom-style: ridge;
+    border-radius: 25px; 
+    border-width: 3px;
     padding: 10px;
     /* Ensure the parent is a positioned element for absolute positioning */
     position: relative;
