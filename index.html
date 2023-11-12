@@ -522,9 +522,8 @@
             let slides = document.getElementsByClassName("mySlides");
 
             for (i = 0; i < slides.length; i++) {
-              // Set opacity to 0 for all slides
               slides[i].style.opacity = 0;
-              slides[i].style.position = "relative"; 
+              slides[i].style.position = "absolute";
             }
 
             slideIndex++;
@@ -532,39 +531,44 @@
               slideIndex = 1;
             }
 
-            slides[slideIndex - 1].style.display = "block";
-            // Call fadeIn function
-            fadeIn(slides[slideIndex - 1], 0); 
+            slides[slideIndex - 1].style.position = "relative";
+            fadeIn(slides[slideIndex - 1], 0);
 
-            // Change image every 2 seconds
+            // Set a timer to start fading out after 2 seconds
             setTimeout(() => {
-              // Call fadeOut function
-              fadeOut(slides[slideIndex - 1], 0); 
-              // Adjust the delay based on the fade duration
-              setTimeout(showSlides, 1000); 
-            }, 3000);
+              fadeOut(slides[slideIndex - 1], 0);
+            }, 2000);
           }
 
           function fadeIn(element, opacity) {
             element.style.opacity = opacity;
             if (opacity < 1) {
-              // Adjust the increment to control the fade speed
-              opacity += 10; 
+              opacity += 0.1;
               setTimeout(() => fadeIn(element, opacity), 100);
             }
           }
 
           function fadeOut(element, opacity) {
+            let placeholder = document.createElement("div");
+            placeholder.style.width = element.offsetWidth + "0px";
+            placeholder.style.height = element.offsetHeight + "0px";
+            element.parentNode.insertBefore(placeholder, element.nextSibling);
             element.style.opacity = opacity;
-            if (opacity > 0) {
-              // Adjust the decrement to control the fade speed
-              opacity -= 10; 
-              setTimeout(() => fadeOut(element, opacity), 100);
-            } else {
-              element.style.display = "none";
-            }
-          }
+            let timer = 0;
 
+            let fadeOutInterval = setInterval(() => {
+              if (timer >= 0.09) {
+                clearInterval(fadeOutInterval);
+                element.style.display = "block";
+                placeholder.remove();
+                showSlides(); // Move to the next slide
+              } else {
+                opacity -= 0.1;
+                element.style.opacity = opacity;
+                timer += 0.9; // Adjust the increment to control the timer speed
+              }
+            }, 1000);
+          }
       </script>
     <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000" method="post">
       <div class="container_pagina_inregistrare">
