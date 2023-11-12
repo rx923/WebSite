@@ -522,7 +522,9 @@
             let slides = document.getElementsByClassName("mySlides");
 
             for (i = 0; i < slides.length; i++) {
-              slides[i].style.opacity = 1; // Set opacity to 0 for all slides
+              // Set opacity to 0 for all slides
+              slides[i].style.opacity = 0;
+              slides[i].style.position = "relative"; 
             }
 
             slideIndex++;
@@ -531,28 +533,33 @@
             }
 
             slides[slideIndex - 1].style.display = "block";
-            fadeIn(slides[slideIndex - 1], 0); // Call fadeIn function
+            // Call fadeIn function
+            fadeIn(slides[slideIndex - 1], 0); 
 
             // Change image every 2 seconds
             setTimeout(() => {
-              fadeOut(slides[slideIndex - 1], 0); // Call fadeOut function
-              setTimeout(showSlides, 1000); // Adjust the delay based on the fade duration
+              // Call fadeOut function
+              fadeOut(slides[slideIndex - 1], 0); 
+              // Adjust the delay based on the fade duration
+              setTimeout(showSlides, 1000); 
             }, 3000);
           }
 
           function fadeIn(element, opacity) {
             element.style.opacity = opacity;
             if (opacity < 1) {
-              opacity += 2; // Adjust the increment to control the fade speed
-              setTimeout(() => fadeIn(element, opacity), 1);
+              // Adjust the increment to control the fade speed
+              opacity += 10; 
+              setTimeout(() => fadeIn(element, opacity), 100);
             }
           }
 
           function fadeOut(element, opacity) {
             element.style.opacity = opacity;
             if (opacity > 0) {
-              opacity -= 2; // Adjust the decrement to control the fade speed
-              setTimeout(() => fadeOut(element, opacity), 10);
+              // Adjust the decrement to control the fade speed
+              opacity -= 10; 
+              setTimeout(() => fadeOut(element, opacity), 100);
             } else {
               element.style.display = "none";
             }
