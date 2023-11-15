@@ -71,7 +71,7 @@
   <body style="/* height: 3000px;  */
                 background: linear-gradient(25deg, #d8d6a1 20%, rgb(255, 255, 255)) 51%, rgb(156, 157, 151) 55%;">
     <header style="margin-bottom: 80px;">
-      <h1 style="background: linear-gradient(55deg, #62472a 0%, #ffffff 51%, #084f66 85%);;"> Good Store Coffee </h1>
+      <h1 style="background: linear-gradient(55deg, #edcfae 0%,rgb(198, 218, 224)1%, #084f66 85%);"> Good Store Coffee </h1>
       <div class="table-container_lista_optiuni" 
             id="tabel-tip-lista-optiuni">
       <div class ="tabel-1-lista-optiuni" 
@@ -128,6 +128,98 @@
         <button type="submit" id="submit-cauta">Cauta:</button>
     </div>
   </header>
+
+    <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000" method="post">
+      <div class="container_pagina_inregistrare">
+        <h2>Inregistrare</h2>
+          <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
+        <hr>
+    
+        <label for="email">
+          <b>Email</b>
+        </label>
+
+        <input type="text" placeholder="Introdu adresa de Email" name="email" required>
+    
+        <label for="psw">
+          <b>Parola</b>
+        </label>
+
+        <input type="password" placeholder="Introdu Parola:" name="psw" required>
+          <label for="psw-repeat">
+            <b>Repeta Parola</b>
+          </label>
+        <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
+    
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Tine minte datele de conectare
+        </label>
+    
+        <p>Creandu-ti un cont, esti de acord cu <a href="#link" style="color:dodgerblue">Termenele & Conditiile</a>.</p>
+    
+        <div class="clearfix">
+          <button type="button" class="cancelbtn">Anuleaza</button>
+          <button type="submit" class="signupbtn">Inregistreaza-te</button>
+        </div>
+      </div>
+    </form>
+    <form action="Pagina_Logare.php" id="login-initial-form-1" method="get" >
+      <div class="imgcontainer">
+        <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" 
+              type="img" 
+              media="all" 
+              alt="Avatar" 
+              class="img" 
+              style="height: 31px; width: 31px;" 
+              loading="lazy">
+      </div>
+      <div class="container-pagina-logare" id="form-container-1">
+        <label for="uname">
+          <b>Nume Utilizator</b>
+        </label>
+        <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
+          <label for="password">
+            <b>Parola:</b>
+          </label>
+        <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
+          <button type="submit" id="submit-button-form">Logheaza-te</button>
+          <label>
+            <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
+        </label>
+      </div>
+
+      <div class="container" style="background-color:#444741">
+        <button type="button" class="cancelbtn">Anuleaza</button>
+          <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
+      </div>
+    </form>
+    <script>
+      function validateForm() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('psw').value;
+        const confirmPassword = document.getElementById('psw-repeat').value;
+    
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert('Introduceti o adresa de email valida');
+          return false;
+        }
+    
+        // Validate password length and match
+        if (password.length < 6) {
+          alert('Parola trebuie sa aiba cel putin 6 caractere');
+          return false;
+        }
+      
+        if (password !== confirmPassword) {
+          alert('Parolele nu coincid');
+          return false;
+        }
+      
+        return true; // Submit the form if validation passes
+      }
+    </script>
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <div class = "container-content-Menu-produse-1" style="display:inline-block; 
                                                               position: -webkit-sticky; 
@@ -359,7 +451,8 @@
           </div>
           <img src="https://media.istockphoto.com/id/639140452/photo/coffee.webp?b=1&s=170667a&w=0&k=20&c=mA_BwSjttEEPxG3R5m9P2w5zrZoU1MUYRcgKvCMC_10=" 
                 style="width: 850px; 
-                      height: 650px; 
+                      height: 650px;
+                      position: relative; 
                       border: solid #ffffff 2px;
                       border-radius:10px; 
                       padding-left: 500px; 
@@ -374,9 +467,11 @@
                                     border-spacing: 2px;
                                     border-collapse: collapse;
                                     border-top-width: 1px;
+                                    margin-bottom: 10px;
                                     border-bottom-width: 1px;
                                     background-color: #d4a539;
-                                    text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
+                                    position: relative;
+                                    text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159)">
             În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. 
             Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister. 
             Lichidul negru și bogat curge din filtru, dezvăluind o bogăție de arome care promite să trezească simțurile. 
@@ -404,7 +499,8 @@
                                           ">Produs_slide_2
           </div>
           <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                style="width: 850px; 
+                style="width: 850px;
+                        position: relative; 
                         height: 650px; 
                         border: solid #ffffff 2px; 
                         border-radius:10px; 
@@ -449,7 +545,8 @@
                                           ">Produs_slide_3
           </div>
           <img src="https://images.unsplash.com/photo-1553742198-6eea5ac42a24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                style="width: 850px; 
+                style="width: 850px;
+                        position: relative; 
                         height: 650px; 
                         border: solid #ffffff 2px; 
                         border-radius: 10px; 
@@ -484,39 +581,9 @@
           <span class="dot" onclick="currentSlide(3)">@</span>
         </div>
        <script>
-      //   let slideIndex = 1;
-      //     showSlides(slideIndex);
-      // Next/previous controls
-      //     function plusSlides(n) {
-      //       showSlides(slideIndex += n);
-      //     }
-  
-         //Thumbnail image controls
-          // function currentSlide(n) {
-          //   showSlides(slideIndex = n);
-          // }
-  
-          // Manually changing the slides
-          // function showSlides(n) {
-          //   let i;
-        //   let slides = document.getElementsByClassName("mySlides");
-        //   let dots = document.getElementsByClassName("dot");
-        //     if (n > slides.length) {slideIndex = 1}
-        //     if (n < 1) {slideIndex = slides.length}
-        //     for (i = 0; i < slides.length; i++) {
-        //       slides[i].style.display = "none";
-        //     }
-        //     for (i = 0; i < dots.length; i++) {
-        //       dots[i].className = dots[i].className.replace(" active", "");
-        //     }
-        //   slides[slideIndex-1].style.display = "block";
-        //   dots[slideIndex-1].className += " active";
-        // }
-  
         //Automatically changing the slides:
-        let slideIndex = 0;
+          let slideIndex = 0;
           showSlides();
-
           function showSlides() {
             let i;
             let slides = document.getElementsByClassName("mySlides");
@@ -548,14 +615,15 @@
             }
           }
 
-          function fadeOut(element, opacity) {
             let placeholder = document.createElement("div");
             placeholder.style.width = "320px";
             placeholder.style.height = "50px";
             placeholder.style.padding = "10px";
             placeholder.style.border = "5px solid gray";
             placeholder.style.margin = "0";
-            element.parentNode.insertBefore(placeholder, element.nextSibling);
+            document.querySelector('.canvas').appendChild(placeholder);
+
+          function fadeOut(element, opacity) {
             element.style.opacity = opacity;
             let timer = 0;
 
@@ -563,82 +631,18 @@
               if (timer >= 0.09) {
                 clearInterval(fadeOutInterval);
                 element.style.display = "block";
-                placeholder.remove();
+                placeholder.style.display = "none"; // Hide the placeholder
                 // Move to the next slide
-                showSlides(); 
+                showSlides();
               } else {
                 opacity -= 0.1;
                 element.style.opacity = opacity;
                 // Adjust the increment to control the timer speed
-                timer += 0.9; 
+                timer += 0.9;
               }
             }, 1000);
           }
       </script>
-    <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000" method="post">
-      <div class="container_pagina_inregistrare">
-        <h2>Inregistrare</h2>
-          <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
-        <hr>
-    
-        <label for="email">
-          <b>Email</b>
-        </label>
-
-        <input type="text" placeholder="Introdu adresa de Email" name="email" required>
-    
-        <label for="psw">
-          <b>Parola</b>
-        </label>
-
-        <input type="password" placeholder="Introdu Parola:" name="psw" required>
-          <label for="psw-repeat">
-            <b>Repeta Parola</b>
-          </label>
-        <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
-    
-        <label>
-          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Tine minte datele de conectare
-        </label>
-    
-        <p>Creandu-ti un cont, esti de acord cu <a href="#link" style="color:dodgerblue">Termenele & Conditiile</a>.</p>
-    
-        <div class="clearfix">
-          <button type="button" class="cancelbtn">Anuleaza</button>
-          <button type="submit" class="signupbtn">Inregistreaza-te</button>
-        </div>
-      </div>
-    </form>
-    <form action="Pagina_Logare.php" id="login-initial-form-1" method="get" >
-      <div class="imgcontainer">
-        <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" 
-              type="img" 
-              media="all" 
-              alt="Avatar" 
-              class="img" 
-              style="height: 31px; width: 31px;" 
-              loading="lazy">
-      </div>
-      <div class="container-pagina-logare" id="form-container-1">
-        <label for="uname">
-          <b>Nume Utilizator</b>
-        </label>
-        <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
-          <label for="password">
-            <b>Parola:</b>
-          </label>
-        <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
-          <button type="submit" id="submit-button-form">Logheaza-te</button>
-          <label>
-            <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
-        </label>
-      </div>
-
-      <div class="container" style="background-color:#444741">
-        <button type="button" class="cancelbtn">Anuleaza</button>
-          <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
-      </div>
-    </form>
     <nav>
       <div class="is-mobile-preview"></div>
       <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design">
