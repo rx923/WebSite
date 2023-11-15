@@ -33,11 +33,12 @@
 				
 }
 .search-bar button {
+    position: sticky;
     padding: 10px 15px;
     background-color: #c2b56e;
     color: rgb(255, 255, 255);
     border: none;
-    border-radius: 10px;
+    border-radius: 25px;
     border-spacing: 2px;
     border-left-width: 10px;
     cursor: pointer;

@@ -29,6 +29,7 @@
 				
 }
 .search-bar input {
+    position: sticky;
     padding: 5px 10px;
     border: 1px double #ccc;
     border-radius: 20px;

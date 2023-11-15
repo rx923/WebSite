@@ -31,14 +31,20 @@
 				
 }
 .search-bar {
+    margin-left: 50%;
+    float: none;
     position: relative;
     width: 20px;
-    inline-size: 300px;
+    inline-size: 400px;
     margin-right: 0px;
     margin-bottom: 10px;
     padding-top: 100px;
     display:inline-block;
+    background: linear-gradient(23deg, rgb(174, 188, 103) 23%, #bae14f 51%, #c0b468 85%);
     /* text-justify: inter-cluster; */
+}
+#bara-de-cautare-principala{
+    display:inline-block;
 }
 
 /* Android Devices  */
