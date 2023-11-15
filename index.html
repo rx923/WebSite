@@ -550,8 +550,11 @@
 
           function fadeOut(element, opacity) {
             let placeholder = document.createElement("div");
-            placeholder.style.width = element.offsetWidth + "0px";
-            placeholder.style.height = element.offsetHeight + "0px";
+            placeholder.style.width = "320px";
+            placeholder.style.height = "50px";
+            placeholder.style.padding = "10px";
+            placeholder.style.border = "5px solid gray";
+            placeholder.style.margin = "0";
             element.parentNode.insertBefore(placeholder, element.nextSibling);
             element.style.opacity = opacity;
             let timer = 0;
@@ -561,11 +564,13 @@
                 clearInterval(fadeOutInterval);
                 element.style.display = "block";
                 placeholder.remove();
-                showSlides(); // Move to the next slide
+                // Move to the next slide
+                showSlides(); 
               } else {
                 opacity -= 0.1;
                 element.style.opacity = opacity;
-                timer += 0.9; // Adjust the increment to control the timer speed
+                // Adjust the increment to control the timer speed
+                timer += 0.9; 
               }
             }, 1000);
           }
@@ -727,16 +732,34 @@
     <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
       <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse vandute top">
         <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
-          <h3 style="border: 2px #d4a539 solid; 
-                      border-width: 3px; 
-                      margin-left: 320px; 
-                      margin-right: 320px; 
-                      background-color:rgb(226, 239, 144); 
-                      border-top-right-radius: 10px;
-                      border-top-left-radius: 10px; 
-                      border-bottom-left-radius: 10px; 
-                      border-bottom-right-radius: 10px;
-                      text-align: center;">Cele mai vandute produse</h3>
+          <h3 style="@media all and (min-width: 1440px) and (min-height:2560px) or 
+                      (min-width:1080px) and (min-height:1920px) or 
+                      (min-width:1440px) and (min-height:2960px) or
+                      (min-width:1080px) and (min-height:2160px) or
+                      (min-width:1440px) and (min-height:2560px) or 
+                      (min-width:1440px) and (min-height:2560px) or
+                      (min-width:1440px) and (min-height:2960px) or 
+                      (min-width:1440px) and (min-height:2560px) or 
+                      (min-width:1440px) and (min-height:1440px) or 
+                      (min-width:1080px) and (min-height:1920px) or 
+                      (min-width:1440px) and (min-height:2960px) or 
+                      (min-width:1440px) and (min-height:2960px) or 
+                      (min-width:1440px) and (min-height:2960px) or 
+                      (min-width:1440px) and (min-height:2960px) or 
+                      (min-width:1440px) and (min-height:2560px) or 
+                      (min-width:1440px) and (min-height:2560px)  {
+                      }
+                        border: 2px #d4a539 solid; 
+                        border-width: 3px;
+                        margin-left: 320px;
+                        margin-right: 320px;
+                        background-color:rgb(226, 239, 144);
+                        border-top-right-radius: 10px;
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        text-align: center;"
+                        >Cele mai vandute produse</h3>
           <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
             <div class="image-container_produse_vandute_de_top_1" id="container-imagine-stanga">
               <a>
