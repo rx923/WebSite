@@ -142,9 +142,9 @@ form {
     /* Remove fixed width */
     width: auto; 
     /* Add padding */
-    padding-bottom: 100px;
+    padding-bottom: 0px;
     /* Move margin to the form container */ 
-    margin-top: 90px; 
+    margin-top: 18px; 
     /* Center form content */
     text-align: center; 
 }
@@ -154,7 +154,7 @@ form {
 /* Adjust the input fields and button styles */
 input[type="text"], input[type="password"] {
     /* Make input fields full width */
-    width: 90px; 
+    width: 160px; 
     padding: 2px;
     margin: 0px 0px;
     border: 1px solid #772727;
