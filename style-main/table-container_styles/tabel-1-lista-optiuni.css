@@ -173,12 +173,16 @@
 .th {
     display: table-cell;
     position: sticky;
-    background-color: rgb(92, 115, 123);
-    padding: 10px;
+    background-color: unset;
+    border-radius: 20px;
+    border-style: outset;
+    border: 2px solid;
+    padding: 21px;
     text-align: center;
 }
 .th a {
-    color:rgb(0, 0, 0);
-    text-decoration: none;
-    margin-top: 100px;
+    color:black;
+    text-decoration: wavy;
+    /* margin-top: 200px; */
+    background-blend-mode:darken;
 }
