@@ -68,8 +68,8 @@
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
   </head>
 
-  <body style="/* height: 3000px;  */
-                background: linear-gradient(25deg, #d8d6a1 20%, rgb(255, 255, 255)) 51%, rgb(156, 157, 151) 55%;">
+  <body style="
+                background: linear-gradient(55deg, #8a8854 20%, rgb(116, 43, 43) 21%, rgb(156, 157, 151)) 55%;">
     <header style="margin-bottom: 80px;">
       <h1 style="background: linear-gradient(55deg, #edcfae 0%,rgb(198, 218, 224)1%, #084f66 85%);"> Good Store Coffee </h1>
       <div class="table-container_lista_optiuni" 
@@ -83,7 +83,7 @@
               <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" 
                   rel="noopener noreferrer" 
                   id="style-first-link-Despre" 
-                  style="position: sticky;">Despre</a>
+                  style="position: relative; background: linear-gradient(55deg, #ebd77c 51%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)51%;">Despre</a>
           </div>
         </div>
         <div class="tr">
@@ -93,7 +93,7 @@
             <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.html" 
                 rel="noopener noreferrer" 
                 id="style-second-link-Comenzi" 
-                style="position: sticky;">Comenzi</a>
+                style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Comenzi</a>
           </div>
         </div>
         <div class="tr">
@@ -102,7 +102,7 @@
             <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Livrarepage\Livrare.html" 
                 rel="noopener noreferrer" 
                 id="style-third-link-Livrare" 
-                style="position: sticky;">Livrare</a>
+                style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Livrare</a>
           </div>
         </div>
         <div class="tr">
@@ -111,14 +111,15 @@
             <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\Suport.html" 
                 rel="noopener noreferrer" 
                 id="style-fourth-link-Suport" 
-                style="position: sticky;">Suport</a>
+                style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Suport</a>
           </div>
         </div>
         <div class="tr">
           <div class="th" 
               id="tableheader-Informatii-Aditionale">
             <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\Informatii Aditionale.html" 
-                rel="noopener noreferrer-Informatii-Aditionale">Informatii Aditionale</a>
+                rel="noopener noreferrer-Informatii-Aditionale"
+                style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Informatii Aditionale</a>
           </div>
         </div>
       </div>
@@ -129,7 +130,7 @@
     </div>
   </header>
 
-    <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000; background: linear-gradient(25deg, #86725d 39%,rgb(193, 198, 139)10%, rgb(143, 144, 135)35%);" method="post">
+    <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
       <div class="container_pagina_inregistrare">
         <h2>Inregistrare</h2>
           <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
@@ -163,7 +164,7 @@
         </div>
       </div>
     </form>
-    <form action="Pagina_Logare.php" id="login-initial-form-1" method="get" style="width: auto; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%" >
+    <form action="Pagina_Logare.php" id="login-initial-form-1" method="get" style="width: auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
       <div class="imgcontainer">
         <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" 
               type="img" 
@@ -175,11 +176,21 @@
       </div>
       <div class="container-pagina-logare" id="form-container-1" style="width: auto; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
         <label for="uname">
-          <b>Nume Utilizator</b>
+          <b style="background:#537d8b; 
+                    border-style: outset; 
+                    border-radius: 0px; 
+                    margin-bottom: 10px; 
+                    border: 3px; 
+                    text-align: center; 
+                    text-wrap: wrap; 
+                    position: sticky;">Nume Utilizator:</b>
         </label>
-        <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
+        <input type="text" 
+                placeholder="Username/ User" 
+                id="uname" 
+                name="uname" required>
           <label for="password">
-            <b>Parola:</b>
+            <b style="background:#537d8b; border-style: outset; border-radius: 20px; border: 2px;">Parola:</b>
           </label>
         <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
           <button type="submit" id="submit-button-form">Logheaza-te</button>
