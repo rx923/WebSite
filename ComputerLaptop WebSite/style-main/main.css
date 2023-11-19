@@ -497,3 +497,25 @@ h2 {
 /* div settings for having the div class of the class table-container of the div.table class configured in a certain way and to a certain position */
 
 /* Remove unnecessary styles for th elements in tbody */
+
+.cursor {
+    z-index: 999;
+    position: fixed;
+    background-color: greenyellow;
+    width: 10px;
+    height: 10px;
+    border-radius: 25%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #7dadce;
+    animation: colors 5s infinite;
+}
+@keyframes colors{
+    0% {
+        filter: hue-rotate(0deg);
+
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
