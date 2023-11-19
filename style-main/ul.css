@@ -38,21 +38,21 @@ ul {
 }
 
 /* Android Devices  */
-@media all and (min-width: 1440px) and (min-height:2560px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:1440px) and (min-height:2960px) or
-            (min-width:1080px) and (min-height:2160px) or
-            (min-width:1440px) and (min-height:2560px) or 
-            (min-width:1440px) and (min-height:2560px) or
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2560px) or 
-            (min-width:1440px) and (min-height:1440px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2560px) or 
+@media all and (min-width: 1440px) and (min-height:2560px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:1440px) and (min-height:2960px),
+            (min-width:1080px) and (min-height:2160px),
+            (min-width:1440px) and (min-height:2560px), 
+            (min-width:1440px) and (min-height:2560px),
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2560px), 
+            (min-width:1440px) and (min-height:1440px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:2560px)
 			{
                 ul {
