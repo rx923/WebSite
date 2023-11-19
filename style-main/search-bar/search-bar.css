@@ -23,7 +23,7 @@
 }
 .search-bar {
     margin-left: 0%;
-    position: sticky;
+    position: relative;
     width: 100%;
     inline-size: 400px;
     margin-right: 0px;
