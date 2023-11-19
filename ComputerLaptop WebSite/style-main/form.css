@@ -1,22 +1,22 @@
 /* Apple Devices  */
-@media all and (min-width: 1284px) and (min-height:2778px) or 
-            (min-width:2532px) and (min-height:1170px) or 
-            (min-width:2532px) and (min-height:1170px) or
-            (min-width:1792px) and (min-height:828px) or
-            (min-width:828px) and (min-height:1792px) or 
-            (min-width:1125px) and (min-height:2436px) or
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:750px) and (min-height:1334px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:750px) and (min-height:1334px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:750px) and (min-height:1334px) or 
-            (min-width:640px) and (min-height:1136px) or 
-            (min-width:640px) and (min-height:1136px) or 
-            (min-width:2048px) and (min-height:2732px) or 
-            (min-width:1536px) and (min-height:2048px) or 
-            (min-width:1536px) and (min-height:2048px) or 
-            (min-width:1536px) and (min-height:2048px) or 
+@media all and (min-width: 1284px) and (min-height:2778px), 
+            (min-width:2532px) and (min-height:1170px), 
+            (min-width:2532px) and (min-height:1170px),
+            (min-width:1792px) and (min-height:828px),
+            (min-width:828px) and (min-height:1792px), 
+            (min-width:1125px) and (min-height:2436px),
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:750px) and (min-height:1334px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:750px) and (min-height:1334px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:750px) and (min-height:1334px), 
+            (min-width:640px) and (min-height:1136px), 
+            (min-width:640px) and (min-height:1136px), 
+            (min-width:2048px) and (min-height:2732px), 
+            (min-width:1536px) and (min-height:2048px), 
+            (min-width:1536px) and (min-height:2048px), 
+            (min-width:1536px) and (min-height:2048px), 
             (min-width:768px) and (min-height:1024px)
 			{
                 form {
@@ -68,21 +68,21 @@
 }
 
 /* Android Devices  */
-@media all and (min-width: 1440px) and (min-height:2560px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:1440px) and (min-height:2960px) or
-            (min-width:1080px) and (min-height:2160px) or
-            (min-width:1440px) and (min-height:2560px) or 
-            (min-width:1440px) and (min-height:2560px) or
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2560px) or 
-            (min-width:1440px) and (min-height:1440px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2560px) or 
+@media all and (min-width: 1440px) and (min-height:2560px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:1440px) and (min-height:2960px),
+            (min-width:1080px) and (min-height:2160px),
+            (min-width:1440px) and (min-height:2560px), 
+            (min-width:1440px) and (min-height:2560px),
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2560px), 
+            (min-width:1440px) and (min-height:1440px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:2560px)
             {
                 form {
@@ -184,9 +184,9 @@ label {
 }
 
 /*Tablets*/
-@media all and (min-width: 1536px) and (min-height:2048px) or 
-            (min-width:1200px) and (min-height:1920px) or 
-            (min-width:800px) and (min-height:1280px) or
+@media all and (min-width: 1536px) and (min-height:2048px), 
+            (min-width:1200px) and (min-height:1920px), 
+            (min-width:800px) and (min-height:1280px),
             (min-width:1700px) and (min-height:2560px)
             {
                 form {

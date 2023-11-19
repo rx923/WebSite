@@ -81,9 +81,7 @@
         /* margin-right: 10px; */
     }   
 }
-.table-container_lista_optiuni 
-.tr  
-#tableheader-Despre {
+.table-container_lista_optiuni .tr  #tableheader-Despre {
     /* Margin between elements */
     padding-left: 10px;
     border: 1px solid;
@@ -94,10 +92,7 @@
     /* margin: 10px; */
     /* margin-right: 10px; */
 } 
-@media screen and (min-width:320px) and (min-height:568px) {
-    .table-container_lista_optiuni 
-    .tr  
-    #tableheader-Comenzi {
+@media screen and (min-width:320px) and (min-height:568px) {.table-container_lista_optiuni .tr  #tableheader-Comenzi {
         border: 1px solid;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -273,9 +268,7 @@
     }    
 }
 @media screen and (min-width:320px) and (min-height:568px) {
-    .table-container_lista_optiuni
-    .tr  
-    #tableheader-Informatii-Aditionale {
+    .table-container_lista_optiuni .tr  #tableheader-Informatii-Aditionale {
         padding: 10px;
         border-radius: 10px;
         background-color: rgb(255, 255, 255);
@@ -301,9 +294,7 @@
 /**/
 /**/
 
-@media screen and (min-width:414px) and (min-height:736px) {
-    .table-container_lista_optiuni 
-    .tr {
+@media screen and (min-width:414px) and (min-height:736px) {.table-container_lista_optiuni .tr {
         /* Margin between elements */
         flex-direction: row;
         flex: 1;
