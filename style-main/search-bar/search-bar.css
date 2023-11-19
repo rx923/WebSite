@@ -22,15 +22,14 @@
 				
 }
 .search-bar {
-    margin-left: 50%;
-    float: none;
+    margin-left: 0%;
     position: relative;
-    width: 20px;
+    width: 100%;
     inline-size: 400px;
     margin-right: 0px;
     margin-bottom: 10px;
     padding-top: 100px;
-    display:inline-block;
+    /* display:inline-block; */
     background: linear-gradient(23deg, rgb(174, 188, 103) 23%, #bae14f 51%, #c0b468 85%);
     /* text-justify: inter-cluster; */
 }
@@ -48,17 +47,17 @@
     (min-width: 1200px) and (min-height: 1920px),
     (min-width: 800px) and (min-height: 1280px),
     (min-width: 1700px) and (min-height: 2560px)
-     {
-    .search-bar {
-        position: sticky;
-        width: 20px;
-        inline-size: 300px;
-        margin-right: 0px;
-        margin-bottom: 0px;
-        display:inline-block;
-        /* text-justify: inter-cluster; */
+    {
+        .search-bar {
+            position: sticky;
+            width: 20px;
+            inline-size: 300px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            display:inline-block;
+            /* text-justify: inter-cluster; */
+        }
     }
-}
 
 /*Tablets*/
 @media all and 
