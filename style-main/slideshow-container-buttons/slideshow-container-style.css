@@ -187,10 +187,18 @@
 
 /* * {box-sizing: border-box} */
 .slideshow-container{
-    max-width: 250px; 
-    position: static; 
-    margin: 0px;
+    max-width: 100%; 
+    position: relative; 
+    margin: auto;
+    overflow: hidden;
+    display: block;
 }
+ /* Define CSS styles for slideshow images */
+ .slideshow-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 /* Next & previous buttons */
 .prev, .next {
     cursor: pointer;

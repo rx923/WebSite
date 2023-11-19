@@ -128,6 +128,7 @@ html {
     background-color: #7dadce;
 }
 body {
+    transition: transform 0.3s ease-out;
     background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
     /* Cover the entire background */
     background-size: cover;

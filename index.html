@@ -157,7 +157,7 @@
   </script> -->
 
 
-  <body style="background: linear-gradient(55deg, #8a8854 20%, rgb(116, 43, 43) 21%, rgb(156, 157, 151)) 55%;">
+  <body style="background: linear-gradient(55deg, #8a8854 20%, rgb(116, 43, 43) 21%, rgb(156, 157, 151)) 55%; transition: transform 0.3s ease-out;" >
     <header style="margin-bottom: 80px;">
       <h1 style="background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); max-width: auto; max-height: auto;"> Good Store Coffee </h1>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni">
@@ -350,17 +350,7 @@
         // Find the respective container element based on the number parameter
         const container = document.querySelector(`.container-content-Menu-produse-${number}`);
         
-        // Follow cursor on mousemove
-        document.addEventListener("mousemove", (e) => {
-          let x = e.pageX;
-          let y = e.pageY;
-
-          cursor.style.top = y + "px";
-          cursor.style.left = x + "px";
-        });
-
-        trail.style.left = event.pageX + 'px';
-        trail.style.top = event.pageY + 'px';
+        // Add trail to the respective container
         container.appendChild(trail);
 
         let opacity = 1;
@@ -372,6 +362,19 @@
             trail.remove();
           }
         }, 10); // Adjust the interval for smoother or faster fading
+
+        // Follow cursor on mousemove within the container
+        container.addEventListener("mousemove", (e) => {
+          let x = e.pageX;
+          let y = e.pageY;
+
+          cursor.style.top = y + "px";
+          cursor.style.left = x + "px";
+
+          // Update trail position based on cursor movement
+          trail.style.left = e.pageX - container.offsetLeft + 'px';
+          trail.style.top = e.pageY - container.offsetTop + 'px';
+        });
       }
       </script>
     <!-- Slideshow container -->
@@ -379,8 +382,7 @@
         <div class="mySlides fade" style="display: none; margin-bottom: auto; ">
           <div class="numbertext" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); text-align: center; border-width: 2px; border-inline-end-style: groove; border-top-left-radius: 10px; border-bottom-right-radius: 10px; padding-bottom: 10px; padding-top: 10px; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:medium; background: linear-gradient(20deg, #CE503C 23%, #DAD99A 70%, #CCCCE4 85%);">Produs_slide_1
           </div>
-          <img src="https://media.istockphoto.com/id/639140452/photo/coffee.webp?b=1&s=170667a&w=0&k=20&c=mA_BwSjttEEPxG3R5m9P2w5zrZoU1MUYRcgKvCMC_10=" 
-                style="width: 850px; height: 650px; position: relative; border: solid #ffffff 2px; border-radius:10px; padding-left: 500px; padding-right: 500px;" loading="lazy">
+          <img src="https://media.istockphoto.com/id/639140452/photo/coffee.webp?b=1&s=170667a&w=0&k=20&c=mA_BwSjttEEPxG3R5m9P2w5zrZoU1MUYRcgKvCMC_10=" style="max-width: fit-content; max-height: fit-content; position: relative; border: solid #ffffff 2px; border-radius:10px; padding-left: 500px; padding-right: 500px;" loading="lazy">
           <div class="text" style="text-align: center; font-size: medium; font-weight: lighter; border: solid; border-style: 2px; border-color: #ffffff; border-spacing: 2px; border-collapse: collapse; border-top-width: 1px; margin-bottom: 10px; border-bottom-width: 1px; background-color: #d4a539; position: relative; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159)">
             În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. 
             Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister. 
@@ -392,7 +394,7 @@
         <div class="mySlides fade" style="display: none; margin-bottom: auto">
           <div class="numbertext" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); border-top-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; border-inline-end-style: groove; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:medium; background: linear-gradient(50deg, #A27986  23%, #D8CD8C 70%, #6C919D  85%);">Produs_slide_2
           </div>
-          <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" style="width: 850px; position: relative; height: 650px; border: solid #ffffff 2px; border-radius:10px; padding-left: 500px; padding-right: 500px;" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" style="max-width: fit-content; max-height: fit-content; position: relative; border: solid #ffffff 2px; border-radius:10px; padding-left: 500px; padding-right: 500px;" loading="lazy">
           <div class="text" style="text-align: center; font-size: medium; font-weight: lighter; border: solid; border-style: 2px; border-color: #ffffff; border-spacing: 2px; border-top-width: 1px; border-bottom-width: 1px; background-color: #d4a539; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
             Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. 
             Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter. 
@@ -404,7 +406,7 @@
         <div class="mySlides fade" style="display: none; margin-bottom: auto">
           <div class="numbertext" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); border-top-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; border-inline-end-style: groove; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:medium; background: linear-gradient(23deg, #A27986  23%, #D8CD8C 70%, #6C919D  85%);">Produs_slide_3
           </div>
-          <img src="https://images.unsplash.com/photo-1553742198-6eea5ac42a24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" style="max-width: 100%; position: relative; height: auto; border: solid #ffffff 2px; border-radius: 10px; padding-left: 500px; padding-right: 500px;" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1553742198-6eea5ac42a24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" style="max-width: fit-content; position: relative; max-height: fit-content; max-width: auto; border: solid #ffffff 2px; border-radius: 10px; padding-left: 500px; padding-right: 500px;" loading="lazy">
           <div class="text" style="text-align: center; font-size: medium; font-weight: lighter; border: solid; border-style: 2px; border-color: #ffffff; border-spacing: 2px; border-bottom-width: 1px; border-top-width: 1px; background-color: #d4a539; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
             Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. 
             Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate. 
@@ -643,7 +645,7 @@
     </div>
     <div class="canvas" id="myCanvas"></div>
     <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
-      <div class="canvas-section" id="leftCanvas">
+      <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
           <h4 style="text-align: center;">Sectiunea Stanga</h4>
             <div class="slideshow" id="leftSlideshow">
               <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" style="height: 165px; width: 160px;" loading="lazy">
@@ -652,7 +654,7 @@
             </div>
       </div>
 
-      <div class="canvas-section" id="rightCanvas">
+      <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
           <h5 style="text-align: center;">Sectiunea Dreapta</h5>
             <div class="slideshow" id="rightSlideshow">
               <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" style="height: 165px; width: 160px;">
@@ -661,6 +663,25 @@
             </div>
       </div>
     </div>
+    <script>
+      // Function to adjust the size of canvas sections based on screen size
+      function adjustCanvasSections() {
+        const canvasContainer = document.getElementById('Informatii-Aditionale-Template-Pentru-Linkuri');
+        const leftCanvas = document.getElementById('leftCanvas');
+        const rightCanvas = document.getElementById('rightCanvas');
+    
+        const containerWidth = canvasContainer.offsetWidth;
+    
+        leftCanvas.style.width = containerWidth / 2 + 'px';
+        rightCanvas.style.width = containerWidth / 2 + 'px';
+      }
+    
+      // Call the adjustCanvasSections function when the window is resized
+      window.addEventListener('resize', adjustCanvasSections);
+    
+      // Call adjustCanvasSections initially to set sizes based on the initial window size
+      adjustCanvasSections();
+    </script>
     <!-- <script type="text/javascript" src="style.js"></script> -->
     <footer>
       <section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 600px; ">
@@ -669,4 +690,33 @@
         </section>
     </footer>
   </body>
+  <script>
+    function applyUpDownEffect(startY, currentY) {
+      const diffY = currentY - startY;
+    
+      if (diffY > 0) {
+        document.body.style.transform = `translateY(${diffY}px)`;
+      } else {
+        document.body.style.transform = `translateY(${diffY}px)`;
+      }
+    }
+    
+    function resetTransform() {
+      document.body.style.transform = 'translateY(0)';
+    }
+    
+    document.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+      const currentY = e.touches[0].clientY;
+      applyUpDownEffect(startY, currentY);
+    });
+    
+    document.addEventListener('touchend', () => {
+      resetTransform();
+    });
+  </script>
+  
 </html>
