@@ -120,9 +120,9 @@ canvas {
 }
 
 /*Tablets*/
-@media all and (min-width: 1536px) and (min-height:2048px) or 
-            (min-width:1200px) and (min-height:1920px) or 
-            (min-width:800px) and (min-height:1280px) or
+@media all and (min-width: 1536px) and (min-height:2048px), 
+            (min-width:1200px) and (min-height:1920px), 
+            (min-width:800px) and (min-height:1280px),
             (min-width:1700px) and (min-height:2560px) {
                 .canvas-container {
                     margin-left: 0px;
