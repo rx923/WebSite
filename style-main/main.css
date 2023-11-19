@@ -155,6 +155,7 @@ body {
     transition: opacity 0.5s ease; 
 }
 h1 {
+    background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); max-width: auto; max-height: auto;
     text-align: center;
     border: 1px solid #031e39;
     border-top-style: ridge;
@@ -223,21 +224,21 @@ h2 {
     height: auto;
 }
 /* Android Devices  */
-@media all and (min-width: 1440px) and (min-height:2560px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:1440px) and (min-height:2960px) or
-            (min-width:1080px) and (min-height:2160px) or
-            (min-width:1440px) and (min-height:2560px) or 
-            (min-width:1440px) and (min-height:2560px) or
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2560px) or 
-            (min-width:1440px) and (min-height:1440px) or 
-            (min-width:1080px) and (min-height:1920px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2960px) or 
-            (min-width:1440px) and (min-height:2560px) or 
+@media all and (min-width: 1440px) and (min-height:2560px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:1440px) and (min-height:2960px),
+            (min-width:1080px) and (min-height:2160px),
+            (min-width:1440px) and (min-height:2560px), 
+            (min-width:1440px) and (min-height:2560px),
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2560px), 
+            (min-width:1440px) and (min-height:1440px), 
+            (min-width:1080px) and (min-height:1920px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2960px), 
+            (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:2560px) { 
                 html {
                     max-height: auto;
@@ -335,9 +336,9 @@ h2 {
 
 
 /*Tablets*/
-@media all and (min-width: 1536px) and (min-height:2048px) or 
-            (min-width:1200px) and (min-height:1920px) or 
-            (min-width:800px) and (min-height:1280px) or
+@media all and (min-width: 1536px) and (min-height:2048px), 
+            (min-width:1200px) and (min-height:1920px), 
+            (min-width:800px) and (min-height:1280px),
             (min-width:1700px) and (min-height:2560px) { 
                 html {
                     max-height: auto;
