@@ -23,7 +23,7 @@
 }
 
 /* Android Devices */
-@media all and (
+@media all and 
     (min-width: 1440px) and (min-height: 2560px),
     (min-width: 1080px) and (min-height: 1920px),
     (min-width: 1440px) and (min-height: 2960px),
@@ -32,15 +32,15 @@
     (min-width: 1200px) and (min-height: 1920px),
     (min-width: 800px) and (min-height: 1280px),
     (min-width: 1700px) and (min-height: 2560px)
-) {
-    ul {
-        left: auto;
-        right: 0;
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        margin-right: 0px;
-    }
+    {
+        ul {
+            left: auto;
+            right: 0;
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            margin-right: 0px;
+        }
 }
 
 /*Tablets*/
