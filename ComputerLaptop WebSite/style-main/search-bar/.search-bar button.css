@@ -42,7 +42,7 @@
     position: sticky;
 }
 .search-bar #introducere-text {
-    width: 700px;
+    width: auto;
 }
 .search-bar #submit-cauta {
     padding: 2px 4px; /* Adjust padding as needed */
