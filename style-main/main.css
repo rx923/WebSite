@@ -163,7 +163,7 @@ h1 {
     border-left-style: ridge;
     border-bottom-style: ridge;
     border-radius: 25px; 
-    border-width: 3px;
+    border-width: 1px;
     padding: 10px;
     /* Ensure the parent is a positioned element for absolute positioning */
     position: relative;
