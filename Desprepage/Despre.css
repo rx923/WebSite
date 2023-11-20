@@ -35,7 +35,8 @@ body{
 }
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
-    position: static;
+    float: right;
+    position: relative;
     right: 0;
     bottom: 0;
     width: 100%;
