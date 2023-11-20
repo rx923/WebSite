@@ -15,29 +15,93 @@
       <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
   </head>
   
-  <body style="background-color: rgb(255, 255, 255);">
+  <body style="background: linear-gradient(23deg, #A27986  23%, #D8CD8C 70%, #6C919D  85%)">
     <style>
-      .container {
-        display: inline-block;
-        cursor: pointer;
-      }
-      .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #333;
-        margin: 6px 0;
-        transition: 0.4s;
-      }
-      /* Rotate first bar */
-      .change .bar1 {
-        transform: translate(0, 11px) rotate(-45deg);
-      }
-      /* Fade out the second bar */
-      .change .bar2 {opacity: 0;}
-      /* Rotate last bar */
-      .change .bar3 {
-        transform: translate(0, -11px) rotate(45deg);
-      }
+    /* Media queries for Android devices */
+      @media only screen and (max-width: 1440px) and (min-height: 2560px),
+        only screen and (max-width: 1080px) and (min-height: 1920px),
+        only screen and (max-width: 1440px) and (min-height: 2960px) {
+          .container {
+            display: inline-block;
+            cursor: pointer;
+          }
+
+          .bar1, .bar2, .bar3 {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+          }
+
+          /* Rotate first bar */
+          .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+          }
+
+          /* Fade out the second bar */
+          .change .bar2 {opacity: 0;}
+          /* Rotate last bar */
+          .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+          }
+
+        }
+
+    /* Media queries for iOS devices */
+      @media only screen and (max-width: 1284px) and (min-height: 2778px),
+        only screen and (max-width: 2532px) and (min-height: 1170px),
+        only screen and (max-width: 1792px) and (min-height: 828px),
+        only screen and (max-width: 1125px) and (min-height: 2436px) 
+        {
+          /* Styles specific to iOS devices */
+          .container {
+            display: inline-block;
+            cursor: pointer;
+          }
+          .bar1, .bar2, .bar3 {
+            width: 15px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+          }
+          /* Rotate first bar */
+          .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+          }
+          /* Fade out the second bar */
+          .change .bar2 {opacity: 0;}
+          /* Rotate last bar */
+          .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+          }
+        }
+    /* Common styles for small screens (phones, etc.) */
+      @media only screen and (max-width: 767px) {
+        /* Styles for smaller screens */
+        .container {
+            display: inline-block;
+            cursor: pointer;
+          }
+          .bar1, .bar2, .bar3 {
+            width: 12px;
+            height: 2px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+          }
+          /* Rotate first bar */
+          .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+          }
+          /* Fade out the second bar */
+          .change .bar2 {opacity: 0;}
+          /* Rotate last bar */
+          .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+          }
+        }
     </style>
     <div class="container" onclick="myFunction(this)">
       <div class="bar1"></div>
