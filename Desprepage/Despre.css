@@ -71,14 +71,6 @@ body{
 h1 {
     color: rgb(196, 58, 58);
 }
-
-
-
-
-
-
-
-
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
@@ -138,7 +130,6 @@ h1 {
     margin-bottom:10px;
     opacity: 0.8;
 }
-
   /* Add a red background color to the cancel button */
 .form-container .cancel {
     background-color: red;
@@ -148,7 +139,24 @@ h1 {
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
 }
-
-/* #myform{
-    
-} */
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+    width: 50px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.11s;
+}
+/* Rotate first bar */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+/* Rotate last bar */
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
