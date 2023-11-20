@@ -186,10 +186,12 @@
 }
 
 /* * {box-sizing: border-box} */
-.slideshow-container{
-    max-width: 100%; 
+.slideshow-container {
+    /* max-width: 100%; */
+    margin-right: 400px; 
+    margin-left: 400px; 
     position: relative; 
-    margin: auto;
+    /* margin: auto; */
     overflow: hidden;
     display: block;
 }
