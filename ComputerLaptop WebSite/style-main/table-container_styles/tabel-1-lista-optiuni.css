@@ -53,6 +53,7 @@
     border: 1px solid black;
     box-sizing: border-box;
     flex-direction: none;
+    background: linear-gradient(55deg, rgb(222, 152, 152) 41%, rgb(171, 78, 78)51%, #722d2d 55%);
     position:static;
     background-color:transparent;
     align-content: center;

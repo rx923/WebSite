@@ -146,8 +146,8 @@ h1::before {
     /* Color of the circle */
     border: 15px solid #000000; 
     /* Make it a circle */
-    border-radius: 50%; 
-    position: absolute;
+    border-radius: 50px; 
+    position: -webkit-sticky;
     /* Adjust this value to position the circle inside the border */
     left: 10px; 
     /* Center vertically */
@@ -169,7 +169,7 @@ h1::after {
     /* Distance from the top */
     top: 10px; 
     overflow: hidden;
-    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
+    background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
     /* Adjust background size as needed */
     background-size: contain; 
     /* Apply animation */
@@ -177,13 +177,13 @@ h1::after {
 }
 h1::after::before {
     content: ""; /* Empty content */
-    display: flex;
-    width: 40px;
-    height: 40px;
+    display:inline;
+    width: 60px;
+    height: 60px;
     /* Replace with your coffee image path */
-    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
+    background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
     background-size: contain; /* Adjust background size as needed */
-    animation: moveCoffee 4s linear infinite; /* Apply animation */
+    animation-direction: moveCoffee 3s right infinite; /* Apply animation */
 }
 
 
