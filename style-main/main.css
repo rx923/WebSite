@@ -61,7 +61,7 @@
                     text-align: center;
                     border: 1px solid #fc0000;
                     border-radius: 25px; border-width: 3px;
-                    padding: 10px;
+                    padding: 30px;
                     /* Ensure the parent is a positioned element for absolute positioning */
                     position: relative;
                     text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
@@ -128,10 +128,10 @@ html {
     background-color: #7dadce;
 }
 body {
-    
-    background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
+    background-color: #edcfae;
+    /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
     /* Cover the entire background */
-    background-size: cover;
+    /* background-size: cover; */
     /* Prevent the image from repeating */
     /* background-repeat: no-repeat; */
     /* display: flow-root; */
