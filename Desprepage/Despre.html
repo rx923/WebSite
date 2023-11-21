@@ -280,7 +280,7 @@
     </main>
     <div id="cup-container"></div>
     <script>
-                // Create a scene
+     // Create a scene
         const scene = new THREE.Scene();
 
         // Create a camera
@@ -299,16 +299,56 @@
         });
 
         // Create cup geometry
-        const cupGeometry = new THREE.CylinderGeometry(1, 1, 2, 32);
+        const cupGeometry = new THREE.BufferGeometry();
+        const cupVertices = [];
+        const radiusTop = 1;
+        const radiusBottom = 1;
+        const height = 2;
+        const radialSegments = 32;
+        const heightSegments = 1;
+        const openEnded = false;
         const cupMaterial = new THREE.MeshPhongMaterial({ color: 0x8B4513 });
         const cup = new THREE.Mesh(cupGeometry, cupMaterial);
         scene.add(cup);
 
+
+        for (let y = 0; y <= heightSegments; y++) 
+          {
+            for (let x = 0; x <= radialSegments; x++) {
+              const u = x / radialSegments;
+              const v = y / heightSegments;
+              const theta = u * Math.PI * 2;
+
+              const sinTheta = Math.sin(theta);
+              const cosTheta = Math.cos(theta);
+
+              const radius = v * (radiusBottom - radiusTop) + radiusTop;
+
+              const xPosition = sinTheta * radius;
+              const yPosition = v * height;
+              const zPosition = cosTheta * radius;
+
+              cupVertices.push(xPosition, yPosition, zPosition);
+            }
+          }
+          cupGeometry.setAttribute('position', new THREE.Float32BufferAttribute(cupVertices, 3));
+cupGeometry.setIndex(
+    new THREE.BufferAttribute(
+        new Uint16Array(
+            Array.from({ length: radialSegments * heightSegments * 6 }, (_, idx) => idx % (radialSegments + 1) + (idx > radialSegments ? radialSegments + 1 : 0))
+        ),
+        1
+    )
+);
+
+        
+
         // Create handle geometry (custom shape)
         const handleShape = new THREE.Shape();
-        handleShape.moveTo(0, 0);
-        handleShape.bezierCurveTo(0, 1, 1, 1, 1, 0);
+          handleShape.moveTo(0, 0);
+          handleShape.bezierCurveTo(0, 1, 1, 1, 1, 0);
 
+        const holeShape = new THREE.Shape();
         const extrudeSettings = {
           steps: 2,
           depth: 0.5,
@@ -343,11 +383,8 @@
           coffee.rotation.y += 0.01;
 
           renderer.render(scene, camera);
+
         }
-
-        animate();
-
-        // Create a plane geometry for the glowing background
         const planeGeometry = new THREE.PlaneGeometry(10, 10);
         const planeMaterial = new THREE.ShaderMaterial({
           uniforms: {
@@ -361,7 +398,7 @@
               gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
             }
           `,
-          fragmentShader:`
+          fragmentShader: `
             varying vec2 vUv;
             uniform float time;
             uniform vec2 resolution;
@@ -398,9 +435,7 @@
         }
 
         animate();
-
       </script>
-
   </body>
   
   
