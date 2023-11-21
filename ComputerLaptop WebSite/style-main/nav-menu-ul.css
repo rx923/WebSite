@@ -5,12 +5,8 @@
             (min-width:1792px) and (min-height:828px),
             (min-width:828px) and (min-height:1792px), 
             (min-width:1125px) and (min-height:2436px),
-            (min-width:1080px) and (min-height:1920px), 
             (min-width:750px) and (min-height:1334px), 
             (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
             (min-width:640px) and (min-height:1136px), 
             (min-width:640px) and (min-height:1136px), 
             (min-width:2048px) and (min-height:2732px), 
@@ -34,20 +30,11 @@ nav.menu.ul {
 
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px), 
-            (min-width:1080px) and (min-height:1920px), 
             (min-width:1440px) and (min-height:2960px),
             (min-width:1080px) and (min-height:2160px),
-            (min-width:1440px) and (min-height:2560px), 
-            (min-width:1440px) and (min-height:2560px),
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:1440px), 
             (min-width:1080px) and (min-height:1920px), 
             (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:2560px) {
                 nav.menu.ul {
                     border: #a9bbab;
