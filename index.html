@@ -351,9 +351,58 @@
               }
             }
     </style>
+    <canvas id="myCanvas" width="240" height="240"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+      let size = 30;
+      const pulseAmount = 2; // How much the heart will pulse (in pixels)
+      const pulseSpeed = 0.02; // Pulse speed factor
+      const frameRate = 13.33; // Frame rate for 30 fps (in milliseconds)
+  
+      function setCanvasSize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+  
+      function drawHeart() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'darkblue'; // Change color to dark blue
+  
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 4, canvas.height / 4);
+        ctx.bezierCurveTo(canvas.width / 4 + 10, canvas.height / 4 - 10, canvas.width / 4 + 20, canvas.height / 4 - 10, canvas.width / 4 + 30, canvas.height / 4);
+        ctx.bezierCurveTo(canvas.width / 4 + 40, canvas.height / 4 + 15, canvas.width / 4 + 30, canvas.height / 4 + 40, canvas.width / 4, canvas.height / 4 + 60);
+        ctx.bezierCurveTo(canvas.width / 4 - 30, canvas.height / 4 + 40, canvas.width / 4 - 40, canvas.height / 4 + 15, canvas.width / 4 - 30, canvas.height / 4);
+        ctx.bezierCurveTo(canvas.width / 4 - 20, canvas.height / 4 - 10, canvas.width / 4 - 10, canvas.height / 4 - 10, canvas.width / 4, canvas.height / 4);
+        ctx.closePath();
+  
+        ctx.fill();
+  
+        // Draw the light green vertical line from the bottom of the heart
+        ctx.strokeStyle = 'lightgreen';
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 4, canvas.height / 4 + 60);
+        ctx.lineTo(canvas.width / 4, canvas.height / 4 + 80); // Extend the line 20px down
+        ctx.stroke();
+      }
+  
+      function animateHeart() {
+        size = 30 + pulseAmount * Math.sin(performance.now() * pulseSpeed);
+  
+        setCanvasSize();
+        drawHeart();
+  
+        requestAnimationFrame(animateHeart);
+      }
+  
+      animateHeart();
+  
+      window.addEventListener('resize', setCanvasSize);
+    </script>
     <header style="margin-bottom: 80px;">
-      <h1 style="margin-left: 450px; 
-                  margin-right: 450px; 
+      <h1 style="margin-left: auto; 
+                  margin-right: auto; 
                   text-align: center; 
                   font-size: medium;
                   padding-top: 10px;"> Good Store Coffee </h1>

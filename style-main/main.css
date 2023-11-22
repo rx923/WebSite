@@ -16,15 +16,8 @@
             (min-width:1125px) and (min-height:2436px),
             (min-width:1080px) and (min-height:1920px), 
             (min-width:750px) and (min-height:1334px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
-            (min-width:640px) and (min-height:1136px), 
             (min-width:640px) and (min-height:1136px), 
             (min-width:2048px) and (min-height:2732px), 
-            (min-width:1536px) and (min-height:2048px), 
-            (min-width:1536px) and (min-height:2048px), 
             (min-width:1536px) and (min-height:2048px), 
             (min-width:768px) and (min-height:1024px)  
              {
@@ -57,15 +50,14 @@
                     opacity: 1;
                     transition: opacity 0.5s ease; 
                 }
-                h1 {
+                /* h1 {
                     text-align: center;
                     border: 1px solid #fc0000;
                     border-radius: 25px; border-width: 3px;
                     padding: 30px;
-                    /* Ensure the parent is a positioned element for absolute positioning */
                     position: relative;
                     text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-                }
+                } */
                 header {
                     border-top: 2px slategrey;
                     margin-bottom: 2px;

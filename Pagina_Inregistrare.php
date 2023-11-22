@@ -2,7 +2,10 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $psw = $_POST['psw'];
+    $servername = "localhost";
     $pswRepeat = $_POST['psw-repeat'];
+    $conn = new mysqli($servername, $username, $password);
+
 
     // Perform server-side validation
     if (empty($email) || empty($psw) || empty($pswRepeat)) {
@@ -21,6 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If validation passes, proceed with further actions (e.g., saving to database)
     // ...
+    // Check connection
+    if ($conn->connect_error) {
+        exit("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
 
     // Respond with success message or redirect
     http_response_code(200);
