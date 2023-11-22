@@ -145,7 +145,8 @@ h1::before {
     /* Center vertically */
     top: 50%; 
     /* Adjust to vertically center the circle */
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
+    animation: pulse 2s infinite alternate;
 }
 h1::after {
     /* Make it rounded */
