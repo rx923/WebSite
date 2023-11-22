@@ -48,8 +48,7 @@
                     /* Adjust background size as needed */
                     background-size: contain; 
                     /* Apply animation */
-                    animation: moveCoffee 4s linear infinite; 
-                }
+                    animation: pulse 2s infinite alternate;                }
                 h1::after::before {
                     /* Empty content */
                     content: ""; 
@@ -61,7 +60,7 @@
                     /* Adjust background size as needed */
                     background-size: contain;
                     /* Apply animation */
-                    animation: moveCoffee 4s linear infinite; 
+                    animation: pulse 2s infinite alternate;
                 }
                 /* animations *//* animations *//* animations *//* animations *//* animations */
 }
@@ -110,7 +109,7 @@
                     /* Adjust background size as needed */
                     background-size: contain; 
                     /* Apply animation */
-                    animation: moveCoffee 4s linear infinite; 
+                    /* animation: pulse 2s infinite alternate;                 */
                 }
                 h1::after::before {
                     /* Empty content */
@@ -123,9 +122,7 @@
                     /* Adjust background size as needed */
                     background-size: contain;
                     /* Apply animation */
-                    animation: moveCoffee 4s linear infinite; 
-                }
-                /* animations *//* animations *//* animations *//* animations *//* animations */
+                    /* animation: pulse 2s infinite alternate;                } */
 }
 h1::before {
     content: "";
@@ -163,7 +160,7 @@ h1::after {
     /* Adjust background size as needed */
     background-size: contain; 
     /* Apply animation */
-    animation: moveCoffee 4s linear infinite; 
+    /* animation: moveCoffee 4s linear infinite;  */
 }
 h1::after::before {
     /* Empty content */
@@ -176,7 +173,7 @@ h1::after::before {
     /* Adjust background size as needed */
     background-size: contain;
     /* Apply animation */
-    animation: moveCoffee 4s linear infinite; 
+    /* animation: moveCoffee 4s linear infinite;  */
 }
 /* animations *//* animations *//* animations *//* animations *//* animations */
 

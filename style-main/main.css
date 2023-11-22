@@ -25,7 +25,8 @@
                     max-height: auto;
                 }
                 body {
-                    background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
+                    background: local;
+                    /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
                     /* Cover the entire background */
                     /* background-size: cover; */
                     /* Prevent the image from repeating */
@@ -59,7 +60,7 @@
                     text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
                 } */
                 header {
-                    border-top: 2px slategrey;
+                    border-top: 2px slategrey solid;
                     margin-bottom: 2px;
                     /* border-style: ; */
                     /* padding-bottom: 10px; */
@@ -116,8 +117,7 @@
 html {
     scroll-behavior: smooth;
     max-height: auto;
-    scroll-behavior:smooth;
-    background-color: #7dadce;
+    /* background-color: #7dadce; */
 }
 body {
     background-color: #edcfae;
@@ -146,21 +146,7 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease; 
 }
-h1 {
-    background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); max-width: 650px; max-height: 200px;
-    text-align: center;
-    border: 1px solid #031e39;
-    border-top-style: ridge;
-    border-right-style: ridge;
-    border-left-style: ridge;
-    border-bottom-style: ridge;
-    border-radius: 25px; 
-    border-width: 1px;
-    /* padding: 10px; */
-    /* Ensure the parent is a positioned element for absolute positioning */
-    position: sticky;
-    text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-}
+
 header {
     border-top: 2px slategrey;
     margin-bottom: 2px;
@@ -257,7 +243,7 @@ h2 {
         }
         h1 {
             text-align: center;
-            border: 1px solid #fc0000;
+            /* border: 1px solid #fc0000; */
             border-radius: 20px; border-width: 3px;
             padding: 10px;
             /* Ensure the parent is a positioned element for absolute positioning */
