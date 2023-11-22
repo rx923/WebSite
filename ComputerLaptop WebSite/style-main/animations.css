@@ -184,7 +184,8 @@ h1::after::before {
 @media all and (min-width: 1536px) and (min-height:2048px), 
             (min-width:1200px) and (min-height:1920px), 
             (min-width:800px) and (min-height:1280px),
-            (min-width:1700px) and (min-height:2560px) {
+            (min-width:1700px) and (min-height:2560px) 
+            {
                 h1::before {
                     content: "";
                     display: block;
