@@ -7,15 +7,8 @@
             (min-width:1125px) and (min-height:2436px),
             (min-width:1080px) and (min-height:1920px), 
             (min-width:750px) and (min-height:1334px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
-            (min-width:640px) and (min-height:1136px), 
             (min-width:640px) and (min-height:1136px), 
             (min-width:2048px) and (min-height:2732px), 
-            (min-width:1536px) and (min-height:2048px), 
-            (min-width:1536px) and (min-height:2048px), 
             (min-width:1536px) and (min-height:2048px), 
             (min-width:768px) and (min-height:1024px)
 			{
@@ -82,14 +75,7 @@
             (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:2560px),
             (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:1440px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2560px), 
             (min-width:1440px) and (min-height:2560px)
 			{
             /* animations *//* animations *//* animations *//* animations *//* animations */
@@ -159,7 +145,8 @@ h1::before {
     /* Center vertically */
     top: 50%; 
     /* Adjust to vertically center the circle */
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
+    animation: pulse 2s infinite alternate;
 }
 h1::after {
     /* Make it rounded */
@@ -179,7 +166,8 @@ h1::after {
     /* Adjust background size as needed */
     background-size: contain; 
     /* Apply animation */
-    animation: moveCoffee 4s linear infinite; 
+    /* animation: moveCoffee 4s linear infinite; */
+    animation: pulse 2s infinite alternate; 
 }
 h1::after::before {
     /* Empty content */
@@ -196,6 +184,24 @@ h1::after::before {
 }
 
 
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+	}
+
+	70% {
+		transform: scale(1);
+		/* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
+	}
+
+	100% {
+		transform: scale(0.95);
+		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+	}
+}
+
+
 /*Tablets*/
 @media all and (min-width: 1536px) and (min-height:2048px), 
             (min-width:1200px) and (min-height:1920px), 
@@ -204,7 +210,7 @@ h1::after::before {
 			{
             /* animations *//* animations *//* animations *//* animations *//* animations */
                 h1::before {
-                    content: "";
+                    /* content: ""; */
                     display: block;
                     width: 15px;
                     height: 15px;
