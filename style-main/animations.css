@@ -219,7 +219,7 @@ h1::after::before {
                     /* Adjust background size as needed */
                     background-size: contain; 
                     /* Apply animation */
-                    animation: moveCoffee 4s linear infinite; 
+                    /* animation: moveCoffee 4s linear infinite;  */
                 }
                 h1::after::before {
                     /* Empty content */
@@ -232,7 +232,7 @@ h1::after::before {
                     /* Adjust background size as needed */
                     background-size: contain;
                     /* Apply animation */
-                    animation: moveCoffee 4s linear infinite; 
+                    /* animation: moveCoffee 4s linear infinite;  */
                 }
-                /* animations *//* animations *//* animations *//* animations *//* animations */
-}
+            }
+        }
