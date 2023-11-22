@@ -351,14 +351,14 @@
               }
             }
     </style>
-    <canvas id="myCanvas" width="240" height="240"></canvas>
+    <canvas id="myCanvas"></canvas>
     <script>
       const canvas = document.getElementById('myCanvas');
       const ctx = canvas.getContext('2d');
-      let size = 30;
-      const pulseAmount = 2; // How much the heart will pulse (in pixels)
-      const pulseSpeed = 0.02; // Pulse speed factor
-      const frameRate = 13.33; // Frame rate for 30 fps (in milliseconds)
+      let size = window.innerWidth > 768 ? 60 : 30; // Adjust the size based on screen width
+      const pulseAmount = 10; // How much the heart will pulse (in pixels)
+      const pulseSpeed = 0.005; // Pulse speed factor
+      const frameRate = 1000 / 30; // Frame rate for 30 fps (in milliseconds)
   
       function setCanvasSize() {
         canvas.width = window.innerWidth;
@@ -369,26 +369,41 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = 'darkblue'; // Change color to dark blue
   
+        const x = canvas.width / 2;
+        const y = canvas.height / 2 - 20;
+  
         ctx.beginPath();
-        ctx.moveTo(canvas.width / 4, canvas.height / 4);
-        ctx.bezierCurveTo(canvas.width / 4 + 10, canvas.height / 4 - 10, canvas.width / 4 + 20, canvas.height / 4 - 10, canvas.width / 4 + 30, canvas.height / 4);
-        ctx.bezierCurveTo(canvas.width / 4 + 40, canvas.height / 4 + 15, canvas.width / 4 + 30, canvas.height / 4 + 40, canvas.width / 4, canvas.height / 4 + 60);
-        ctx.bezierCurveTo(canvas.width / 4 - 30, canvas.height / 4 + 40, canvas.width / 4 - 40, canvas.height / 4 + 15, canvas.width / 4 - 30, canvas.height / 4);
-        ctx.bezierCurveTo(canvas.width / 4 - 20, canvas.height / 4 - 10, canvas.width / 4 - 10, canvas.height / 4 - 10, canvas.width / 4, canvas.height / 4);
+        ctx.moveTo(x, y + size / 4);
+        ctx.quadraticCurveTo(x, y, x + size / 4, y);
+        ctx.quadraticCurveTo(x + size / 2, y, x + size / 2, y + size / 4);
+        ctx.quadraticCurveTo(x + size / 2, y, x + size * 3 / 4, y);
+        ctx.quadraticCurveTo(x + size, y, x + size, y + size / 4);
+        ctx.quadraticCurveTo(x + size, y + size / 2, x + size * 3 / 4, y + size * 3 / 4);
+        ctx.lineTo(x + size / 2, y + size);
+        ctx.lineTo(x + size / 4, y + size * 3 / 4);
+        ctx.quadraticCurveTo(x, y + size / 2, x, y + size / 4);
         ctx.closePath();
   
         ctx.fill();
   
-        // Draw the light green vertical line from the bottom of the heart
-        ctx.strokeStyle = 'lightgreen';
+        // Draw the glowing curved line with a slight 3D effect
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = 'lightgreen';
+        ctx.lineCap = 'round';
+        const gradient = ctx.createLinearGradient(x, y + size / 4, x, y - size / 2);
+        gradient.addColorStop(0, 'rgba(0,255,0,0)');
+        gradient.addColorStop(0.5, 'rgba(0,255,0,0.8)');
+        gradient.addColorStop(1, 'rgba(0,255,0,0)');
+        ctx.strokeStyle = gradient;
+  
         ctx.beginPath();
-        ctx.moveTo(canvas.width / 4, canvas.height / 4 + 60);
-        ctx.lineTo(canvas.width / 4, canvas.height / 4 + 80); // Extend the line 20px down
+        ctx.moveTo(x, y + size / 4);
+        ctx.bezierCurveTo(x - size / 2, y + size / 3, x + size / 2, y - size / 2, x, y - size / 2);
         ctx.stroke();
       }
   
       function animateHeart() {
-        size = 30 + pulseAmount * Math.sin(performance.now() * pulseSpeed);
+        size = window.innerWidth > 768 ? 60 + pulseAmount * Math.sin(performance.now() * pulseSpeed) : 30 + pulseAmount * Math.sin(performance.now() * pulseSpeed);
   
         setCanvasSize();
         drawHeart();
@@ -396,6 +411,7 @@
         requestAnimationFrame(animateHeart);
       }
   
+      setCanvasSize();
       animateHeart();
   
       window.addEventListener('resize', setCanvasSize);
@@ -546,7 +562,8 @@
         return true; // Submit the form if validation passes
       }
     </script>
-    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
+    <div class="dropdown-content_meniu_1si2" 
+        id="dropdown-content-menu-1&2">
       <div class = "container-content-Menu-produse-1" style="display:inline-block; position: -webkit-sticky; max-width: fit-content; max-height: fit-content; padding-left: 30px;" onmouseover="createTrail(event, 1)">
         <div class="trail-element" style="border: 1px solid transparent;">
           <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Meniu-Produse-1-10\Meniu Produse 1.html" rel="noopener noreferrer" class="glowing-background" style="margin-left: auto; position: -webkit-sticky; text-decoration: none; border-style:groove; border-color: transparent; border-width: 1px; padding-top: 10px; padding-bottom: 10px; border-top-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; /* background-image: linear-gradient(20deg, #e8e1a6 23%, #c7c401 70%, rgb(198, 100, 78) 85%); */ box-shadow: 0 0 10px 5px rgb(255, 255, 255); border-top-right-radius: 10px;">Meniu Produse 1</a>
