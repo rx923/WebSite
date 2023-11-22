@@ -16,4 +16,3 @@ All the design has been set by me.
 *****************************
 *****************************
 *****************************
-I think I have already been read by the system & my profile has also been set.
