@@ -69,14 +69,8 @@
     padding: 10px;
     background-color: #ccc;
     height: 250px;
-  }
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-      height: auto;
-    }
 }
+
 /* Style links inside the columns */
 .column a {
     float: none;
@@ -113,3 +107,11 @@
 .glowing-background:hover {
     box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
 }
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      height: auto;
+    }
+} */
