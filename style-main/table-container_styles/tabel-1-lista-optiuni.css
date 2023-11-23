@@ -41,27 +41,6 @@
                     margin-top: 100px;
                 }
 }
-.table-container_lista_optiuni {
-    border: 1px solid black;
-    box-sizing: border-box;
-    flex-direction: none;
-    background: linear-gradient(55deg, rgb(222, 152, 152) 41%, rgb(171, 78, 78)51%, #722d2d 55%);
-    position:static;
-    background-color:transparent;
-    align-content: center;
-    margin-bottom: 100px;
-    margin-left: 350px;
-    margin-right: 350px;
-    width: 600px
-    /* height: 600px; */
-}
-.tabel-1-lista-optiuni {
-    /* padding: 200px; */
-    /* margin: 1000px; */
-    position: sticky;
-    width: 100%;
-    height: 100%;
-}
 /* Android Devices  */
 @media all and (min-width: 1440px) and (min-height:2560px), 
             (min-width:1080px) and (min-height:1920px), 
@@ -150,7 +129,7 @@
 /* #upper-side-table-style{
     position: -webkit-sticky;
 } */
-.tr{
+.tr {
     display: table-row;
     margin: 10px;
 }
