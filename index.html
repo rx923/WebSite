@@ -4,6 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+    <style>
+      /* Apple iOS 14 Pro Max style */
+      @media screen and (min-width: 430px) and (min-height:932px) 
+        {
+          header 
+            {
+              background: linear-gradient(30deg, #333a41 25%, #3c7499 35%), #034156 60%;
+              border-top: 2px slategrey groove;
+              border-left: 2px slategrey groove;
+              border-right: 2px slategrey groove;
+              border-bottom: 2px slategrey groove;
+              margin-bottom: 10px;
+              margin-bottom: 1px;
+              /* border-style: ; */
+              /* padding-bottom: 10px; */
+            }
+        }
+    </style>
+    <style>
+      /* Android Samsung Galaxy S20 Ultra 5G Style */
+      @media screen and (max-width: 412px) and (max-height:915px) 
+        {
+          header {
+            background: linear-gradient(30deg, #8d99a5 25%, #5bb1eb 35%, #031e27 60%);
+            border-top: 5px rgb(237, 239, 240) groove;
+            border-left: 5px slategrey groove;
+            border-right: 5px slategrey groove;
+            border-bottom: 5px slategrey groove;
+            margin-bottom: 10px;
+            margin-bottom: 1px;
+            /* margin-top: 50px; */
+            /* border-style: ; */
+            padding-top: 10px;
+            }
+        }
+    </style>
+  <style>
+    @media screen and (min-width:412px) and (min-height: 915px) {
+      h1::before {
+        content: "";
+        display: inline;
+        width: 15px;
+        height: 15px;
+        /* Color of the circle */
+        border: 15px solid #c45858; 
+        /* Make it a circle */
+        border-radius: 50px; 
+        float: left;
+        bottom: 10px;
+        position:sticky;
+        position: -webkit-sticky;
+        /* position: -webkit-sticky; */
+        /* Adjust this value to position the circle inside the border */
+        right: 10px; 
+        /* Center vertically */
+        top: 55px;
+        /* bottom: 20px;  */
+        /* Adjust to vertically center the circle */
+        /* transform: translateY(-2%); */
+        /* animation: pulse 2s infinite alternate; */
+      }
+      h1::after {
+        /* Make it rounded */
+        border-radius: 12px; 
+        /* Empty content */
+        content: ""; 
+        display: block;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        /* Adjust this value to position the box inside the border */
+        right: 10px; 
+        /* Distance from the top */
+        top: 12px; 
+        overflow: auto;
+        background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        /* animation: moveCoffee 4s linear infinite; */
+      }
+      h1::after::before {
+        /* Empty content */
+        content: ""; 
+        display:inline;
+        width: 50px;
+        height: 50px;
+        /* Replace with your coffee image path */
+        background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+        /* Adjust background size as needed */
+        background-size: contain; 
+        /* Apply animation */
+        animation: pulse 2s infinite alternate;
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(0.95);
+          /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+          /* Add webkit prefix for older iOS devices */
+          -webkit-transform: scale(0.95); 
+        }
+
+        70% {
+          transform: scale(1);
+          /* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
+          -webkit-transform: scale(1);
+        }
+
+        100% {
+          transform: scale(0.95);
+          /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+          -webkit-transform: scale(0.95);
+        }
+      }
+    }
+    </style>
     <title>Good Store Coffee</title>
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all"> -->
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all"> -->
@@ -36,19 +152,19 @@
 
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\selectors.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\tables.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\transitions.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\transitions.css" type="text/css" media="all">
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.css" type="text/css" media="all"> -->
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Javascript\style.js" type="js/text" media="all"> -->
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\Javascript\bordered-rectangle.js" type="js/text" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\footer-style\footer.css" type="css/text" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\bordered-rectangle\U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\bordered-rectangle\.bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\bordered-rectangle\.bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css" type="text/css" media="all"> -->
     
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\container-produse_vandute_de_top_1.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-container_produse_vandute_de_top_1.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu_container_produse_de_top.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-content_meniu_1&2.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_acasa.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_categories.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_categories.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container-modified-content.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\table-container_lista_optiuni_.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\tabel-1-lista-optiuni.css" type="text/css" media="all">
@@ -152,195 +268,7 @@
       ctx.rotate(-pos);
     }
   </script> -->
-  <body style="background: linear-gradient(25deg, #fafafa 20%, rgb(125, 40, 40) 21%rgb(87, 99, 35)) 55%;">
-    <style>
-      /* Apple Devices  */
-      @media all and (min-width: 1284px) and (min-height:2778px), 
-        (min-width:2532px) and (min-height:1170px),
-        (min-width:1792px) and (min-height:828px),
-        (min-width:828px) and (min-height:1792px), 
-        (min-width:1125px) and (min-height:2436px),
-        (min-width:1080px) and (min-height:1920px), 
-        (min-width:750px) and (min-height:1334px), 
-        (min-width:640px) and (min-height:1136px), 
-        (min-width:2048px) and (min-height:2732px), 
-        (min-width:1536px) and (min-height:2048px), 
-        (min-width:768px) and (min-height:1024px)
-          {
-            h1::before {
-              /* content: ""; */
-              display: block;
-              width: 35px;
-              height: 35px;
-              /* Color of the circle */
-              border: 15px solid #b3b3b3; 
-              /* Make it a circle */
-              border-radius: 50%; 
-              position: fixed;
-              /* Adjust this value to position the circle inside the border */
-              left: 10px; 
-              /* Center vertically */
-              top: 60px; 
-              /* Adjust to vertically center the circle */
-              transform: translateY(-30%); 
-            }
-            h1::after {
-              /* Make it rounded */
-              border-radius: 10px; 
-              /* Empty content */
-              content: ""; 
-              display: block;
-              width: 50px;
-              height: 50px;
-              position: sticky;
-              /* Adjust this value to position the box inside the border */
-              right: 140px; 
-              /* Distance from the top */
-              top: 10px; 
-              overflow: auto;
-              /* Replace with your coffee image path */
-              background-image: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-              /* Adjust background size as needed */
-              background-size: contain; 
-              /* Apply animation */
-              /* animation: moveCoffee 4s linear infinite;  */
-            }
-            h1::after::before {
-              /* Empty content */
-              /* content: "";  */
-              display: -webkit-inline-box;
-              width: 50px;
-              height: 50px;
-              /* Replace with your coffee image path */
-              background-image: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-              /* Adjust background size as needed */
-              background-size: contain;
-              /* Apply animation */
-              animation: pulse 2s infinite alternate;
-            }
-          }
-      /* Android Devices  */
-      @media all and (min-width: 1440px) and (min-height:2560px), 
-        (min-width:1080px) and (min-height:2160px),
-        (min-width:1440px) and (min-height:1440px), 
-        (min-width:1080px) and (min-height:1920px), 
-        (min-width:1440px) and (min-height:2960px), 
-        (min-width:1440px) and (min-height:2560px),
-        (min-width:360px) and (min-height:640px)
-          { 
-            h1::before {
-                content: "";
-                display: block;
-                width: 15px;
-                height: 15px;
-                /* Color of the circle */
-                border: 15px solid #a9bbab; 
-                /* Make it a circle */
-                border-radius: 50%; 
-                position: sticky;
-                /* Adjust this value to position the circle inside the border */
-                left: 10px; 
-                /* Center vertically */
-                top: 50%; 
-                /* Adjust to vertically center the circle */
-                transform: translateY(-30%); 
-              }
-            h1::after {
-                /* Make it rounded */
-                border-radius: 10px; 
-                /* Empty content */
-                content: ""; 
-                /* display: block; */
-                /* width: 50px; */
-                /* height: 50px; */
-                /* Adjust this value to position the box inside the border */
-                position: sticky;
-                /* right: 200px;  */
-                /* Distance from the top */
-                top: 20px; 
-                float: right;
-                overflow: auto;
-                /* Replace with your coffee image path */
-                background-image: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-                /* Adjust background size as needed */
-                background-size: contain; 
-                /* Apply animation */
-                animation: moveCoffee 4s linear infinite; 
-              }
-            h1::after::before {
-                /* Empty content */
-                content: ""; 
-                display: flex;
-                width: auto;
-                height: auto;
-                /* Replace with your coffee image path */
-                background-image: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-                /* Adjust background size as needed */
-                background-size: contain;
-                /* Apply animation */
-                animation: pulse 2s infinite alternate;
-              }
-          }
-      /*Tablets*/
-      @media all and (min-width: 1536px) and (min-height:2048px), 
-        (min-width:1200px) and (min-height:1920px), 
-        (min-width:800px) and (min-height:1280px),
-        (min-width:1700px) and (min-height:2560px)
-          {
-            /* animations *//* animations *//* animations *//* animations *//* animations */
-            h1::before {
-                content: "";
-                display: block;
-                width: 25px;
-                height: 25px;
-                /* Color of the circle */
-                border: 15px solid #000000; 
-                /* Make it a circle */
-                border-radius: 50%; 
-                position: sticky;
-                /* Adjust this value to position the circle inside the border */
-                left: 10px; 
-                /* Center vertically */
-                top: 50%; 
-                /* Adjust to vertically center the circle */
-                transform: translateY(-50%); 
-              }
-            h1::after {
-                /* Make it rounded */
-                border-radius: 10px; 
-                /* Empty content */
-                content: ""; 
-                display: block;
-                width: 60px;
-                height: 70px;
-                position: sticky;
-                /* Adjust this value to position the box inside the border */
-                right: 10px; 
-                /* Distance from the top */
-                top: 10px; 
-                overflow: auto;
-                /* Replace with your coffee image path */
-                background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-                /* Adjust background size as needed */
-                background-size: contain; 
-                /* Apply animation */
-                animation: pulse 2s infinite alternate; 
-              }
-            h1::after::before {
-                /* Empty content */
-                content: ""; 
-                display: flex;
-                width: 60px;
-                height: 70px;
-                /* Replace with your coffee image path */
-                background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-                /* Adjust background size as needed */
-                background-size: contain; 
-                /* Apply animation */
-                animation: pulse 2s infinite alternate; 
-              }
-          }
-    </style>
+  <body>
     <!-- <canvas id="myCanvas"></canvas>
     <script>
       const canvas = document.getElementById('myCanvas');
@@ -407,19 +335,6 @@
       window.addEventListener('resize', setCanvasSize);
     </script> -->
     <header style="margin-bottom: 80px;">
-      <style>
-        header 
-          {
-            border-top: 1px slategrey solid;
-            border-left: 1px slategrey solid;
-            border-right: 1px slategrey solid;
-            border-bottom: 1px slategrey solid;
-            margin-bottom: 10px;
-            margin-bottom: 2px;
-            /* border-style: ; */
-            /* padding-bottom: 10px; */
-          }
-        </style>
       <h1> Big Store Coffee </h1>
       <style>
         h1 {
@@ -641,17 +556,17 @@
         .dropdown-content_meniu_1si2 
           {
             display: flex;
-            border: 2px solid;
+            border: 1px solid;
             margin-top: 20px;
             margin-bottom: 20px;
             /* border-style: calc(); */
             flex-direction: row; /* Display elements horizontally */
           }
         /* Style for individual links within the dropdown menu */
-        .dropdown-content_meniu_1si2 a 
+        .dropdown-content_meniu_1si2 .a 
           {
             /* Margin between links */
-            margin-right: 10px; 
+            margin-right: 0px; 
           }
         </style>
         <style>
@@ -661,8 +576,8 @@
             {
               display: flex;
               border: 2px solid;
-              margin-top: 0px;
-              margin-bottom: 0px;
+              margin-top: 20px;
+              margin-bottom: 20px;
               /* border-style: calc(); */
               flex-direction: row; /* Display elements horizontally */
             }
@@ -701,7 +616,7 @@
           /* Dropdown button */
           .dropdown .dropbtn 
             {
-              font-size: 16px;
+              font-size: 11px;
               border: none;
               outline: none;
               color: rgb(255, 255, 255);
@@ -1526,19 +1441,410 @@
     <nav>
       <div class="is-mobile-preview"></div>
       <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design">
+        <style>
+          .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+            border: 1px solid #000000;
+            border-style: solid;
+            border-radius: 20px;
+            margin: 20px;
+            padding-top: 0px;
+            height: 1000px;
+            width: 400px;
+            height: 120px;
+            box-sizing: border-box;
+            position:sticky; 
+            display:inline-block;
+            justify-content: right;
+            list-style: none;
+            background-color: rgb(204, 161, 5);
+          }
+          </style>
+        <style>
+          @media screen and (min-width:412px) and(max-width:915px){
+           .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+              border: 2px solid #000000;
+              border-style: solid;
+              border-radius: 20px;
+              margin: 0px;
+              padding-top: 0px;
+              height: 30px;
+              width: 880px;
+              box-sizing: border-box;
+              position:sticky; 
+              display:inline-block;
+              /* justify-content: right; */
+              list-style: none;
+              background-color: rgb(204, 161, 5);
+            }
+          }
+          </style>
         <div class="menu-container_acasa" id="Acasa_menu_container">
+          <style>
+            .menu-container_acasa {
+              border: 1px #000000;
+              border-width: 4px;
+              border-style: double;
+              border-radius: 40px;
+              box-sizing:content-box;
+              width: 100px;
+              /* margin: 20px; */
+              list-style-type: none;
+              position: relative;
+              display:inline-block;
+              flex: 1;
+              margin-bottom: 80px;
+            }
+            .menu-container_acasa .menu-ordered_list_1 {
+              list-style-type: none;
+              text-align: center;
+              border: 1px solid blue;
+              border-radius: 20px;
+              border-style:solid;
+              box-sizing:border-box;
+              position: sticky;
+              display: block;
+            }
+            #continut_acasa_dropdown{
+              border-radius: 15px;
+              padding-top: 2px;
+              justify-items: center;
+              text-align: center;
+              font-display: auto;
+              border-color: rgb(59, 42, 42);
+            }
+            .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
+              list-style-type: none;
+              text-align: center;
+              margin-right: 10px;
+              padding-top: 0px;
+              border: 1px #000000;
+              border-style: solid;
+              border-radius: 0px;
+              /* display: flexbox; */
+              position: absolute;
+              margin-top: 20px;
+              background-color:#a3a074;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+              z-index: 1;
+              display: none;
+            }
+            .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
+              display:block;
+              text-align: center;
+              inline-size: 2px;
+              border: 1px #000000 solid;
+              list-style-type: none;
+              margin-top: 0px;
+            }
+            .ol .dropdown-content_ordered_list_categories {
+              border: #c71b1b;
+              border-style: solid 2px;
+            }
+            .li_continut_1_tip_lista{
+              border-top: rgb(255, 251, 0) solid;
+              border-top-width: 2px;
+              border-top-right-radius: 10px;
+              border-bottom-width: 2px;
+              border-bottom-right-radius: 10px;
+              border-top: rgb(255, 251, 0) solid;
+              border-top-left-radius: 10px;
+              border-right-width: 2px;
+              border-bottom-left-radius: 10px;
+              border-left-width: 2px;
+              margin-bottom: 10px;
+            }
+            .li_continut_2_tip_lista {
+              border-top: rgb(255, 251, 0) solid;
+              border-top-width: 2px;
+              border-top-right-radius: 10px;
+              border-bottom: rgb(255, 251, 0) solid;
+              border-bottom-width: 2px;
+              border-bottom-right-radius: 10px;
+              border-right: rgb(255, 251, 0) solid;
+              border-top-left-radius: 10px;
+              border-right-width: 2px;
+              border-left: rgb(255, 251, 0) solid;
+              border-bottom-left-radius: 10px;
+              border-left-width: 2px;
+              margin-bottom: 10px;
+            }
+            .li_continut_3_tip_lista{
+              border-left: rgb(255, 251, 0) solid;
+              border-top-width: 2px;
+              border-top-right-radius: 10px;
+              border-left: rgb(255, 251, 0) solid;
+              border-bottom-width: 2px;
+              border-bottom-right-radius: 10px;
+              border-left: rgb(255, 251, 0) solid;
+              border-top-left-radius: 10px;
+              border-right-width: 2px;
+              border-left: rgb(255, 251, 0) solid;
+              border-bottom-left-radius: 10px;
+              border-left-width: 2px;
+              margin-bottom: 10px;
+            }
+            
+          </style>
+          <style>
+            @media screen and (max-width: 412px) and (max-height:915px)
+            { 
+              .menu-container_acasa 
+                {
+                  border: 1px; 
+                  border-color:#000000;
+                  border-width: 1px;
+                  border-style: groove;
+                  border-radius: 20px;
+                  box-sizing:content-box;
+                  /* box-shadow: wheat; */
+                  width: 500px;
+                  margin: 5px;
+                  list-style-type: none;
+                  position: sticky;
+                  display:inline-block;
+                  flex: 1;
+                  margin-bottom: 20px;
+                }
+              .menu-container_acasa .menu-ordered_list_1 
+                {
+                  list-style-type: none;
+                  text-align: center;
+                  border: 1px solid blue;
+                  border-radius: 20px;
+                  border-style:solid;
+                  box-sizing:border-box;
+                  position: sticky;
+                  display: block;
+                }
+              #continut_acasa_dropdown
+                {
+                  border-radius: 15px;
+                  padding-top: 2px;
+                  justify-items: center;
+                  text-align: center;
+                  font-display: auto;
+                  border-color: rgb(59, 42, 42);
+                }
+              .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories 
+                {
+                  list-style-type: none;
+                  text-align: center;
+                  margin-right: 10px;
+                  padding-top: 0px;
+                  border: 1px #000000;
+                  border-style: solid;
+                  border-radius: 0px;
+                  /* display: flexbox; */
+                  position: absolute;
+                  margin-top: 20px;
+                  background-color:#a3a074;
+                  min-width: 160px;
+                  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                  z-index: 1;
+                  display: none;
+                }
+              .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories 
+                {
+                  display:block;
+                  text-align: center;
+                  inline-size: 2px;
+                  border: 1px #000000 solid;
+                  list-style-type: none;
+                  /* box-shadow: #537d8b; */
+                  margin-top: 0px;
+                }
+              .ol .dropdown-content_ordered_list_categories 
+                {
+                  border: #c71b1b;
+                  border-style: solid 2px;
+                }
+              .li_continut_1_tip_lista 
+                {
+                  border-top: rgb(255, 251, 0) solid;
+                  border-top-width: 2px;
+                  border-top-right-radius: 10px;
+                  border-bottom-width: 2px;
+                  border-bottom-right-radius: 10px;
+                  border-top: rgb(255, 251, 0) solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 2px;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 2px;
+                  margin-bottom: 10px;
+                }
+              .li_continut_2_tip_lista 
+                {
+                  border-top: rgb(255, 251, 0) solid;
+                  border-top-width: 2px;
+                  border-top-right-radius: 10px;
+                  border-bottom: rgb(255, 251, 0) solid;
+                  border-bottom-width: 2px;
+                  border-bottom-right-radius: 10px;
+                  border-right: rgb(255, 251, 0) solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 2px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 2px;
+                  margin-bottom: 10px;
+                }
+              .li_continut_3_tip_lista
+                {
+                  border-left: rgb(255, 251, 0) solid;
+                  border-top-width: 2px;
+                  border-top-right-radius: 10px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-bottom-width: 2px;
+                  border-bottom-right-radius: 10px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 2px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 2px;
+                  margin-bottom: 10px;
+                }
+            }
+          </style>
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
               <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Acasapage\Acasa.html" rel="noopener noreferrer">Acasa</a>
                 <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
-                  <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.html" rel="noopener noreferrer">Produse1</a></div>
-                  <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-2-tip-lista\Continut2tiplista.html" rel="noopener noreferrer">Produse2</a></div>
-                  <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-3-tip-lista\Continut3tiplista.html" rel="noopener noreferrer">Produse3</a></div>
+                  <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.html" rel="noopener noreferrer">Produse1
+                    </a>
+                  </div>
+                  <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-2-tip-lista\Continut2tiplista.html" rel="noopener noreferrer">Produse2
+                    </a>
+                  </div>
+                  <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-3-tip-lista\Continut3tiplista.html" rel="noopener noreferrer">Produse3
+                    </a>
+                  </div>
                 </ol>
             </li>  
           </ol>
         </div>
         <div class="menu-container_categories" id="Menu_Categories">
+          <style>
+            @media screen and (max-width:412px) and (max-height: 915px) 
+              {
+                .menu-container_categories 
+                  {
+                    border: 1px; 
+                    border-color:#000000;
+                    border-width: 1px;
+                    border-style: groove;
+                    border-radius: 20px;
+                    box-sizing:content-box;
+                    /* box-shadow: wheat; */
+                    width: 80px;
+                    margin: 5px;
+                    list-style-type: none;
+                    position: sticky;
+                    display:inline-block;
+                    flex: 1;
+                    margin-bottom: 20px;
+                  }
+              .menu-container_categories .menu-ordered_list_2 
+                {
+                  list-style-type: none;
+                  text-align: center;
+                  border: 1px solid blue;
+                  border-radius: 20px;
+                  border-style:solid;
+                  box-sizing:border-box;
+                  position: sticky;
+                  display: block;
+                }
+              .menu-ordered_list_2 .dropdown-list_items_2 .dropdown_content_ordered_list_2 
+                {
+                  list-style-type: none;
+                  text-align: center;
+                  margin-right: 10px;
+                  padding-top: 0px;
+                  padding: 0px;
+                  border: 1px #000000;
+                  border-style: solid;
+                  border-radius: 0px;
+                  /* display: flexbox; */
+                  position: sticky;
+                  /* margin-top: 20px; */
+                  background-color:#ffffff;
+                  min-width: 60px;
+                  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                  z-index: 1;
+                  display: none;
+                }
+              .menu-ordered_list_2:hover 
+              .dropdown-list_items_2:hover 
+              .dropdown_content_ordered_list_2 
+                {
+                  display:block;
+                  text-align: center;
+                  inline-size: 2px;
+                  list-style: none;
+                  position: absolute;
+                  padding-top: 10px;
+                }
+              .ol .dropdown_content_ordered_list_2 
+                {
+                  border: #000000;
+                  border-style: solid 2px;
+                  padding-top: 10px;
+                } 
+              .li_categoria_1_lista 
+                {
+                  border-top: #0011ff solid;
+                  border-top-width: 1px;
+                  border-top-right-radius: 10px;
+                  border-bottom: #0011ff solid;
+                  border-bottom-width: 1px;
+                  border-bottom-right-radius: 10px;
+                  border-right: #0011ff solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 1px;
+                  border-left: #0011ff solid;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 1px;
+                  margin-bottom: 10px;
+                } 
+              .li_categoria_2_lista
+                {
+                  border-top: #0011ff solid;
+                  border-top-width: 1px;
+                  border-top-right-radius: 10px;
+                  border-bottom: #0011ff solid;
+                  border-bottom-width: 1px;
+                  border-bottom-right-radius: 10px;
+                  border-right: #0011ff solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 1px;
+                  border-left: #0011ff solid;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 1px;
+                  margin-bottom: 10px;
+                }
+              .li_categoria_3_lista
+                {
+                  border-top: #0011ff inset;
+                  border-top-width: 1px;
+                  border-top-right-radius: 10px;
+                  border-bottom: #0011ff inset;
+                  border-bottom-width: 1px;
+                  border-bottom-right-radius: 10px;
+                  border-right: #0011ff inset;
+                  border-top-left-radius: 10px;
+                  border-right-width: 1px;
+                  border-left: #0011ff inset;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 1px;
+                  margin-bottom: 10px;
+                }
+            }
+          </style>
           <ol class="menu-ordered_list_2" id="#meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
               <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii">Categorii Produse
@@ -1552,6 +1858,120 @@
           </ol>
         </div>
         <div class="menu_container_produse_de_top" id="menu_produse_top">
+          <style>
+            @media screen and (max-width: 412px) and (max-height: 915px) 
+              {
+                .menu_container_produse_de_top 
+                  {
+                    border: 1px #000000;
+                    border-width: 1px;
+                    border-style: groove;
+                    border-radius: 20px;
+                    box-sizing:content-box;
+                    width: 80px;
+                    margin: 10px;
+                    list-style-type: none;
+                    position: sticky;
+                    display:inline-block;
+                    flex: 1;
+                    margin-bottom: 20px;
+                  }
+                /* Style for the main menu item */
+                .menu_container_produse_de_top .menu_container_1_produse_de_top 
+                {
+                  list-style-type: none;
+                  text-align: center;
+                  /* border: 1px solid #0011a7; */
+                  /* border-style:solid; */
+                  /* border-radius: 10px; */
+                  box-sizing:border-box;
+                  position: sticky;
+                  display: block;
+                }
+                /* Style for the dropdown content container */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .a 
+                  {
+                    cursor: pointer;
+                    position: relative;
+                    list-style-type: none;
+                  }
+                /* Style for the dropdown content */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 
+                  {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: transparent;
+                    background-blend-mode: color-dodge;
+                    min-width: 200px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    border-radius: 5px;
+                    z-index: 1;
+                    list-style-type: none;
+                  }
+                /* Show dropdown content when hovering over the main menu item */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 
+                  {
+                    display: block;
+                  }
+                /* Style for the dropdown links */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a 
+                  {
+                    display:block;
+                    padding: 10px;
+                    border-top: 4px solid #000;
+                    border-right: 3px solid #000;
+                    border-left: 2px solid #000;
+                    border-bottom: 1px solid #000;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: #000;
+                    list-style-type: none;
+                    transition:ease-in-out 2s;
+                  }
+                /* Add hover effect to the dropdown links */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover 
+                  {
+                    /* background-color: #c51414; */
+                    list-style-type: none;
+                    transition:ease-in-out 2s;
+                  } 
+                /* Style for the images inside the dropdown content */
+                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 
+                  {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                    text-align: center;
+                    text-rendering:optimizeSpeed;
+                    text-shadow: bisque;
+                    transition:ease-in-out 2s;
+                  }
+                .dropdown-content_imagini_2 
+                  {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                  }
+                .dropdown-content_imagini_3 
+                  {
+                    max-width: 100%;
+                    height: auto;
+                    list-style-type: none;
+                    border: 2px;
+                  }
+                ol 
+                  {
+                    background-color: rgb(184, 116, 34);
+                    border-radius: 10px;
+                    list-style-type: none;
+                    border-width: 100px;
+                  }
+              }
+          </style>
           <div class="menu_container_1_produse_de_top" id="Produsetop1">
             <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">

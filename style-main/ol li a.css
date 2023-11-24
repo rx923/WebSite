@@ -112,40 +112,6 @@
         background: local;
     } */
 }
-@keyframes moveCoffee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(60% - 40px)); /* Translate by the width of the box + border */
-    }
-}
-@media screen {
-    /* html {
-        background: local;        
-    }
-    
-    body {
-        background: local;
-    }
-    
-    header {
-        background: local;
-    } */
-}
-@media print {
-    /* html {
-        background: local;
-    }
-    
-    body {
-        background: local;
-    }
-
-    header{
-        background: local;
-    } */
-}
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
@@ -157,5 +123,6 @@
     }
 }
 
-/* @media only screen and (max-width: 600px) {
-} */
+.ol .a{
+    text-align: left;
+}
