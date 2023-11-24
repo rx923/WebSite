@@ -8,115 +8,10 @@
 /**/
 /**/
 /* Apple Devices  */
-@media all and (min-width: 1284px) and (min-height:2778px), 
-            (min-width:2532px) and (min-height:1170px), 
-            (min-width:2532px) and (min-height:1170px),
-            (min-width:1792px) and (min-height:828px),
-            (min-width:828px) and (min-height:1792px), 
-            (min-width:1125px) and (min-height:2436px),
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
-            (min-width:640px) and (min-height:1136px), 
-            (min-width:2048px) and (min-height:2732px), 
-            (min-width:1536px) and (min-height:2048px), 
-            (min-width:768px) and (min-height:1024px)  
-             {
-                html {
-                    max-height: auto;
-                }
-                body {
-                    background: local;
-                    /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
-                    /* Cover the entire background */
-                    /* background-size: cover; */
-                    /* Prevent the image from repeating */
-                    /* background-repeat: no-repeat; */
-                    /* display: flow-root; */
-                    /* Center the background image */
-                    /* background-position: center; */
-                    /* background-color: #7dadce; */
-                    /* You can add more background properties as needed */
-                }
-                .fade-in-effect {
-                    /* Start with opacity 0 (completely transparent) */
-                    opacity: 0; 
-                    /* Apply a smooth transition for opacity */
-                    transition: opacity 0.5s ease; 
-                }
-                /* Define the hover behavior to make the elements visible */
-                .fade-in-effect:hover {
-                    opacity: 1; /* On hover, make the element fully visible */
-                }
-                .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
-                    opacity: 1;
-                    transition: opacity 0.5s ease; 
-                }
-                /* h1 {
-                    text-align: center;
-                    border: 1px solid #fc0000;
-                    border-radius: 25px; border-width: 3px;
-                    padding: 30px;
-                    position: relative;
-                    text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-                } */
-                header {
-                    border-top: 2px slategrey solid;
-                    margin-bottom: 2px;
-                    /* border-style: ; */
-                    /* padding-bottom: 10px; */
-                }
-                .dropdown-image {
-                    text-align: center;
-                }
-                .container-box {
-                    background-color: #7dadce;
-                    border: dashed;
-                    border-style:solid;
-                    border-width: 10px;
-                    border:10px, 10px, 10px, 10px color(srgb red green blue);
-                    margin: 200px;
-                    padding-bottom: 20px;
-                    align-items: center;
-                    position: relative;
-                    height: 100px;
-                }
-                .box-title h2 {
-                    margin: 0;
-                    color: #fff;
-                }
-                /* Style for the bordered-box */
-                .bordered-box-style {
-                    /* Add the border style you prefer */
-                    border: 2px solid #f00;
-                    /* Add the background color you prefer */
-                    background-color: #eee;
-                }
-                /* Style for the <h2> element */
-                h2 {
-                    /* Align the text to the left */
-                    text-align: left;
-                    /* Make the <h2> element inline so it's positioned horizontally */
-                    display: inline-block;
-                    /* Add some right margin for spacing (adjust as needed)  */
-                    margin-right: 20px;
-                }
-                #Informatii-Aditionale-Template-Pentru-Linkuri {
-                    position: sticky;
-                    display: flex;
-                }
-                .slideshow {
-                    display:inline-flex;
-                    padding: 100px;
-                }
-                .slideshow img {
-                    padding: 60px;
-                    width: 100%;
-                    height: auto;
-                }
-}
 html {
     scroll-behavior: smooth;
     max-height: auto;
+    max-width: auto;
     /* background-color: #7dadce; */
 }
 body {
@@ -200,212 +95,6 @@ h2 {
     padding: 30px;
     width: 100%;
     height: auto;
-}
-/* Android Devices */
-@media all and
-    (min-width: 1440px) and (min-height: 2560px),
-    (min-width: 1080px) and (min-height: 1920px),
-    (min-width: 1440px) and (min-height: 2960px),
-    (min-width: 1440px) and (min-height: 1440px),
-    (min-width: 1536px) and (min-height: 2048px),
-    (min-width: 1200px) and (min-height: 1920px),
-    (min-width: 800px) and (min-height: 1280px),
-    (min-width: 1700px) and (min-height: 2560px)
-     { 
-        html {
-            max-height: auto;
-        }
-        body {
-            background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
-            /* Cover the entire background */
-            /* background-size: cover; */
-            /* Prevent the image from repeating */
-            /* background-repeat: no-repeat; */
-            /* display: flow-root; */
-            /* Center the background image */
-            /* background-position: center; */
-            /* background-color: #7dadce; */
-            /* You can add more background properties as needed */
-        }
-        .fade-in-effect {
-            /* Start with opacity 0 (completely transparent) */
-            opacity: 0; 
-            /* Apply a smooth transition for opacity */
-            transition: opacity 0.5s ease; 
-        }
-        /* Define the hover behavior to make the elements visible */
-        .fade-in-effect:hover {
-            opacity: 1; /* On hover, make the element fully visible */
-        }
-        .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
-            opacity: 1;
-            transition: opacity 0.5s ease; 
-        }
-        h1 {
-            text-align: center;
-            /* border: 1px solid #fc0000; */
-            border-radius: 20px; border-width: 3px;
-            padding: 10px;
-            /* Ensure the parent is a positioned element for absolute positioning */
-            position: relative;
-            text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-        }
-        header {
-            border-top: 2px slategrey;
-            margin-bottom: 2px;
-            /* border-style: ; */
-            /* padding-bottom: 10px; */
-        }
-        .dropdown-image {
-            text-align: center;
-        }
-        .container-box {
-            background-color: #7dadce;
-            border: dashed;
-            border-style:solid;
-            border-width: 10px;
-            border:10px, 10px, 10px, 10px color(srgb red green blue);
-            margin: 200px;
-            padding-bottom: 20px;
-            align-items: center;
-            position: relative;
-            height: 100px;
-        }
-        .box-title h2 {
-            margin: 0;
-            color: #fff;
-        }
-        /* Style for the bordered-box */
-        .bordered-box-style {
-            /* Add the border style you prefer */
-            border: 2px solid #f00;
-            /* Add the background color you prefer */
-            background-color: #eee;
-        }
-        /* Style for the <h2> element */
-        h2 {
-            /* Align the text to the left */
-            text-align: left;
-            /* Make the <h2> element inline so it's positioned horizontally */
-            display: inline-block;
-            /* Add some right margin for spacing (adjust as needed)  */
-            margin-right: 20px;
-        }
-        #Informatii-Aditionale-Template-Pentru-Linkuri {
-            position: sticky;
-            display: flex;
-        }
-        .slideshow {
-            display:inline-flex;
-            padding: 100px;
-        }
-        .slideshow img {
-            padding: 60px;
-            width: 100%;
-            height: auto;
-        }
-}
-
-
-/* Tablets */
-@media all and
-    (min-width: 1536px) and (min-height: 2048px),
-    (min-width: 1200px) and (min-height: 1920px),
-    (min-width: 800px) and (min-height: 1280px),
-    (min-width: 1700px) and (min-height: 2560px)
-    {
-        html {
-            max-height: auto;
-        }
-        body {
-            background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg");
-            /* Cover the entire background */
-            /* background-size: cover; */
-            /* Prevent the image from repeating */
-            /* background-repeat: no-repeat; */
-            /* display: flow-root; */
-            /* Center the background image */
-            /* background-position: center; */
-            /* background-color: #7dadce; */
-            /* You can add more background properties as needed */
-        }
-        .fade-in-effect {
-            /* Start with opacity 0 (completely transparent) */
-            opacity: 0; 
-            /* Apply a smooth transition for opacity */
-            transition: opacity 0.5s ease; 
-        }
-        /* Define the hover behavior to make the elements visible */
-        .fade-in-effect:hover {
-            opacity: 1; /* On hover, make the element fully visible */
-        }
-        .div .li_continut_1_tip_lista .fade-in-effect .fade-in-effect:hover{
-            opacity: 1;
-            transition: opacity 0.5s ease; 
-        }
-        h1 {
-            text-align: center;
-            border: 1px solid #fc0000;
-            border-radius: 25px; border-width: 3px;
-            padding: 10px;
-            /* Ensure the parent is a positioned element for absolute positioning */
-            position: relative;
-            text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-        }
-        header {
-            border-top: 2px slategrey;
-            margin-bottom: 2px;
-            /* border-style: ; */
-            /* padding-bottom: 10px; */
-        }
-        .dropdown-image {
-            text-align: center;
-        }
-        .container-box {
-            background-color: #7dadce;
-            border: dashed;
-            border-style:solid;
-            border-width: 10px;
-            border:10px, 10px, 10px, 10px color(srgb red green blue);
-            margin: 200px;
-            padding-bottom: 20px;
-            align-items: center;
-            position: relative;
-            height: 100px;
-        }
-        .box-title h2 {
-            margin: 0;
-            color: #fff;
-        }
-        /* Style for the bordered-box */
-        .bordered-box-style {
-            /* Add the border style you prefer */
-            border: 2px solid #f00;
-            /* Add the background color you prefer */
-            background-color: #eee;
-        }
-        /* Style for the <h2> element */
-        h2 {
-            /* Align the text to the left */
-            text-align: left;
-            /* Make the <h2> element inline so it's positioned horizontally */
-            display: inline-block;
-            /* Add some right margin for spacing (adjust as needed)  */
-            margin-right: 20px;
-        }
-        #Informatii-Aditionale-Template-Pentru-Linkuri {
-            position: sticky;
-            display: flex;
-        }
-        .slideshow {
-            display:inline-flex;
-            padding: 100px;
-        }
-        .slideshow img {
-            padding: 60px;
-            width: 100%;
-            height: auto;
-        }
 }
 /**/
 /**/
@@ -495,3 +184,911 @@ h2 {
         filter: hue-rotate(360deg);
     }
 }
+
+header {
+    background: linear-gradient(30deg, #8d99a5 25%, #5bb1eb 35%, #031e27 60%);
+    border-top: 5px rgb(237, 239, 240) groove;
+    border-left: 5px rgb(255, 255, 255) groove;
+    border-right: 5px rgb(255, 255, 255) groove;
+    border-bottom: 5px rgb(255, 255, 255) groove;
+    margin-bottom: 10px;
+    margin-bottom: 1px;
+    /* margin-top: 50px; */
+    /* border-style: ; */
+    padding-top: 10px;
+}
+.bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+border: 2px solid #000000;
+border-style: solid;
+border-radius: 20px;
+margin: 0px;
+padding-top: 0px;
+height: 30px;
+width: 880px;
+box-sizing: border-box;
+position:sticky; 
+display:inline-block;
+/* justify-content: right; */
+list-style: none;
+background-color: rgb(204, 161, 5);
+}
+.container-content-Menu-produse-1 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    padding-left: 0px;
+}
+
+#upper-side-table-style .tr .a {
+/* margin-left: 10px; */
+position: -webkit-sticky;
+position: sticky;
+offset-position: auto;
+}
+.tr {
+display: table-row;
+margin: 10px;
+}
+/* TableHeader colors for #Despre #Comenzi #Livrare #Suport #Informatii Aditionale Pages */
+.th {
+display: table-cell;
+position: sticky;
+background-color: white;
+border-radius: 20px;
+border-style: outset;
+border: 2px solid;
+padding: 21px;
+text-align: center;
+}
+.th a {
+color:rgb(0, 0, 0);
+text-decoration:wavy;
+margin-top: 100px;
+border-radius: 15px;
+background-blend-mode:hard-light;
+}
+.menu-container_acasa {
+border: 1px; 
+border-color:#000000;
+border-width: 1px;
+border-style: groove;
+border-radius: 20px;
+box-sizing:content-box;
+/* box-shadow: wheat; */
+width: 80px;
+margin: 5px;
+list-style-type: none;
+position: sticky;
+display:inline-block;
+flex: 1px;
+margin-bottom: 20px;
+}
+.menu-container_acasa .menu-ordered_list_1 {
+list-style-type: none;
+text-align: center;
+border: 1px solid blue;
+border-radius: 20px;
+border-style:solid;
+box-sizing:border-box;
+position: sticky;
+display: block;
+}
+#continut_acasa_dropdown {
+border-radius: 15px;
+padding-top: 2px;
+justify-items: center;
+text-align: center;
+font-display: auto;
+border-color: rgb(59, 42, 42);
+}
+.dropdown-content_meniu_1si2 {
+display: flex;
+border: 2px solid;
+margin-top: 20px;
+margin-bottom: 20px;
+/* border-style: calc(); */
+flex-direction: row; /* Display elements horizontally */
+}
+/* Style for individual links within the dropdown menu */
+.dropdown-content_meniu_1si2 a {
+/* Margin between links */
+margin-right: 10px; 
+}
+.menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
+list-style-type: none;
+text-align: center;
+margin-right: 10px;
+padding-top: 0px;
+border: 1px #000000;
+border-style: solid;
+border-radius: 0px;
+/* display: flexbox; */
+position: absolute;
+margin-top: 20px;
+background-color:#a3a074;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+display: none;
+}
+.menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
+display:block;
+text-align: center;
+inline-size: 2px;
+border: 1px #000000 solid;
+list-style-type: none;
+/* box-shadow: #537d8b; */
+margin-top: 0px;
+}   
+.ol .dropdown-content_ordered_list_categories {
+border: #c71b1b;
+border-style: solid 2px;
+}
+.li_continut_1_tip_lista {
+border-top: rgb(255, 251, 0) solid;
+border-top-width: 2px;
+border-top-right-radius: 10px;
+border-bottom-width: 2px;
+border-bottom-right-radius: 10px;
+border-top: rgb(255, 251, 0) solid;
+border-top-left-radius: 10px;
+border-right-width: 2px;
+border-bottom-left-radius: 10px;
+border-left-width: 2px;
+margin-bottom: 10px;
+}
+.li_continut_2_tip_lista {
+border-top: rgb(255, 251, 0) solid;
+border-top-width: 2px;
+border-top-right-radius: 10px;
+border-bottom: rgb(255, 251, 0) solid;
+border-bottom-width: 2px;
+border-bottom-right-radius: 10px;
+border-right: rgb(255, 251, 0) solid;
+border-top-left-radius: 10px;
+border-right-width: 2px;
+border-left: rgb(255, 251, 0) solid;
+border-bottom-left-radius: 10px;
+border-left-width: 2px;
+margin-bottom: 10px;
+}
+.li_continut_3_tip_lista {
+border-left: rgb(255, 251, 0) solid;
+border-top-width: 2px;
+border-top-right-radius: 10px;
+border-left: rgb(255, 251, 0) solid;
+border-bottom-width: 2px;
+border-bottom-right-radius: 10px;
+border-left: rgb(255, 251, 0) solid;
+border-top-left-radius: 10px;
+border-right-width: 2px;
+border-left: rgb(255, 251, 0) solid;
+border-bottom-left-radius: 10px;
+border-left-width: 2px;
+margin-bottom: 10px;
+}
+.menu-ordered_list_2 .dropdown-list_items_2 .dropdown_content_ordered_list_2 {
+list-style-type: none;
+text-align: center;
+margin-right: 10px;
+padding-top: 0px;
+padding: 0px;
+border: 1px #000000;
+border-style: solid;
+border-radius: 0px;
+/* display: flexbox; */
+position: sticky;
+/* margin-top: 20px; */
+background-color:#ffffff;
+min-width: 60px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+display: none;
+}
+.menu-ordered_list_2:hover .dropdown-list_items_2:hover .dropdown_content_ordered_list_2 {
+display:block;
+text-align: center;
+inline-size: 2px;
+list-style: none;
+position: sticky;
+padding-top: 0px;
+}
+.ol .dropdown_content_ordered_list_2 {
+border: #000000;
+border-style: solid 2px;
+padding-top: 10px;
+} 
+.li_categoria_1_lista {
+border-top: #0011ff solid;
+border-top-width: 1px;
+border-top-right-radius: 10px;
+border-bottom: #0011ff solid;
+border-bottom-width: 1px;
+border-bottom-right-radius: 10px;
+border-right: #0011ff solid;
+border-top-left-radius: 10px;
+border-right-width: 1px;
+border-left: #0011ff solid;
+border-bottom-left-radius: 10px;
+border-left-width: 1px;
+margin-bottom: 10px;
+} 
+.li_categoria_2_lista {
+border-top: #0011ff solid;
+border-top-width: 1px;
+border-top-right-radius: 10px;
+border-bottom: #0011ff solid;
+border-bottom-width: 1px;
+border-bottom-right-radius: 10px;
+border-right: #0011ff solid;
+border-top-left-radius: 10px;
+border-right-width: 1px;
+border-left: #0011ff solid;
+border-bottom-left-radius: 10px;
+border-left-width: 1px;
+margin-bottom: 10px;
+}
+.li_categoria_3_lista {
+border-top: #0011ff inset;
+border-top-width: 1px;
+border-top-right-radius: 10px;
+border-bottom: #0011ff inset;
+border-bottom-width: 1px;
+border-bottom-right-radius: 10px;
+border-right: #0011ff inset;
+border-top-left-radius: 10px;
+border-right-width: 1px;
+border-left: #0011ff inset;
+border-bottom-left-radius: 10px;
+border-left-width: 1px;
+margin-bottom: 10px;
+}
+#upper-side-table-style .tr .a {
+/* margin-left: 10px; */
+position: -webkit-sticky;
+position: sticky;
+offset-position: auto;
+}
+.tr {
+display: table-row;
+margin: 10px;
+}
+/* TableHeader colors for #Despre #Comenzi #Livrare #Suport #Informatii Aditionale Pages */
+.th {
+display: table-cell;
+position: sticky;
+background-color: white;
+border-radius: 20px;
+border-style: outset;
+border: 2px solid;
+padding: 21px;
+text-align: center;
+}
+.th a {
+color:rgb(0, 0, 0);
+text-decoration:wavy;
+margin-top: 100px;
+border-radius: 15px;
+background-blend-mode:hard-light;
+}
+h1::before {
+content: "";
+display: inline;
+width: 15px;
+height: 15px;
+/* Color of the circle */
+border: 15px solid #c45858; 
+/* Make it a circle */
+border-radius: 50px; 
+float: left;
+bottom: 10px;
+position:sticky;
+position: -webkit-sticky;
+/* position: -webkit-sticky; */
+/* Adjust this value to position the circle inside the border */
+right: 10px; 
+/* Center vertically */
+top: 55px;
+/* bottom: 20px;  */
+/* Adjust to vertically center the circle */
+/* transform: translateY(-2%); */
+/* animation: pulse 2s infinite alternate; */
+}
+h1::after {
+/* Make it rounded */
+border-radius: 12px; 
+/* Empty content */
+content: ""; 
+display: block;
+width: 50px;
+height: 50px;
+position: sticky;
+/* Adjust this value to position the box inside the border */
+right: 10px; 
+/* Distance from the top */
+top: 12px; 
+overflow: auto;
+background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+/* Adjust background size as needed */
+background-size: contain; 
+/* Apply animation */
+/* animation: moveCoffee 4s linear infinite; */
+}
+h1::after::before {
+/* Empty content */
+content: ""; 
+display:inline;
+width: 50px;
+height: 50px;
+/* Replace with your coffee image path */
+background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+/* Adjust background size as needed */
+background-size: contain; 
+/* Apply animation */
+animation: pulse 2s infinite alternate;
+}
+@keyframes pulse {
+0% {
+transform: scale(0.95);
+/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+/* Add webkit prefix for older iOS devices */
+-webkit-transform: scale(0.95); 
+}
+70% {
+transform: scale(1.5);
+/* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
+-webkit-transform: scale(1);
+}
+100% {
+transform: scale(0.95);
+/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+-webkit-transform: scale(0.95);
+}
+}
+.table-container_lista_optiuni {
+width: 200px;
+height: 320px;
+position: relative;
+border: 1px groove whitesmoke;
+border-radius: 30px;
+box-sizing: border-box;
+flex-direction: none;
+grid-auto-flow: dense;
+background: linear-gradient(35deg, #ffffff 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255) 95%);
+position:sticky;
+background-color:transparent;
+align-content: left;
+margin-bottom: 10px;
+margin-left: 10px;
+margin-right: 0px;
+animation: glowBorder 1s infinite alternate-reverse;
+/* height: 600px; */
+}
+@keyframes glowBorder {
+0% {
+border-color: rgb(255, 255, 255);
+box-shadow: 0 0 0 0 rgb(0, 0, 0);
+}
+100% {
+border-color: rgb(255, 255, 255);
+box-shadow: 0 0 0 10px rgb(255, 255, 255);
+}
+}
+.tabel-1-lista-optiuni {
+/* padding: 200px; */
+/* margin: 1000px; */
+border: 2px solid ridge;
+border-radius: 20px;
+position: -webkit-sticky;
+ruby-position:after;
+width: 100px;
+margin-top: 50px;
+margin-left: 50px;
+height: auto;
+box-sizing: border-box;
+flex-direction: row;
+}
+.tr {
+display: table-row;
+margin: 10px;
+}
+.table-container_lista_optiuni #tr {
+/* Margin between elements */
+flex-direction: row;
+flex: 1;
+width: 2px;
+box-sizing: border-box;
+display: inline-flex;
+/* margin: 1px; */
+/* padding: 10px; */
+padding-right: 40px;
+/* margin: 10px; */
+/* position: absolute; */
+}
+.table-container_lista_optiuni 
+.tr  
+#tableheader-Despre {
+/* Margin between elements */
+padding: 10px;
+border: 1px transparent;
+border-radius: 10px;
+background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+/* margin-top: auto; */
+margin: 1px;
+/* margin: 10px; */
+/* margin-right: 10px; */
+}
+.glowing-background {
+transition: box-shadow 1s ease-in-out;
+background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+background-size: 200% 200%;
+animation: glowing 2s ease-in;
+}
+#tableheader-Comenzi {
+border: 1px solid;
+border-radius: 10px;
+background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+padding: 10px;
+position: sticky;
+/* margin-top: 50px; */
+/* margin-top: auto; */
+margin: 1px;
+/* margin: 10px; */
+/* Margin between elements */
+/* margin-right: 100px; */
+}
+/* Style for the Livrare Element linking to the Actual Livrare Page */
+#tableheader-Livrare  {
+border: 1px solid;
+border-radius: 10px;
+background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+padding: 0px;
+/* Margin between elements */
+margin: 1px;
+margin: 0px;
+}
+#tableheader-Livrare {
+border: 1px solid;
+border-radius: 10px;
+background-color: rgb(255, 255, 255);
+padding: 10px;
+/* Margin between elements */
+margin: 0px;
+margin: 0px;
+}
+.table-container_lista_optiuni .tr  #tableheader-Suport {
+border-radius: 10px;
+border: 1px solid;
+background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+padding: 10px;
+/* Margin between elements */
+margin: 1px;
+/* margin: 10px; */
+}
+.table-container_lista_optiuni .tr #tableheader-Informatii-Aditionale {
+padding: 3px;
+border-radius: 10px;
+background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+/* border-style: ; */
+border: 1px inset;
+}
+/* Navbar container */
+.navbar 
+{
+overflow: hidden;
+background-color: #333;
+font-family: Arial;
+}
+/* Links inside the navbar */
+.navbar a {
+float: left;
+font-size: 16px;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+/* The dropdown container */
+.dropdown {
+float: left;
+overflow: hidden;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+font-size: 11px;
+border: none;
+outline: none;
+color: rgb(255, 255, 255);
+padding: 14px 16px;
+background-color: inherit;
+font: inherit; /* Important for vertical align on mobile phones */
+margin: 0; /* Important for vertical align on mobile phones */
+}
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+background-color: red;
+}
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+width: 100%;
+left: 0;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+/* Mega Menu header, if needed */
+.dropdown-content .header {
+background: red;
+padding: 2px;
+color: white;
+width: auto;
+float: none;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+float: left;
+width: 33.33%;
+padding: 10px;
+background-color: #ccc;
+height: 250px;
+}
+/* Style links inside the columns */
+.column a {
+float: none;
+color: black;
+padding: 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+/* Add a background color on hover */
+.column a:hover {
+background-color: #ddd;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+@keyframes glowing  {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+.glowing-background {
+background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
+background-size: 300% 350%;
+animation: glowing 3s ease-in-out infinite;
+}
+.glowing-background {
+transition: box-shadow 1s ease-in-out;
+}
+.glowing-background:hover {
+box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+}
+/* Navbar container */
+.navbar {
+overflow: hidden;
+background-color: #333;
+font-family: Arial;
+}
+/* Links inside the navbar */
+.navbar a {
+float: left;
+font-size: 16px;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+/* The dropdown container */
+.dropdown {
+float: left;
+overflow: hidden;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+font-size: 16px;
+border: none;
+outline: none;
+color: rgb(255, 255, 255);
+padding: 14px 16px;
+background-color: inherit;
+font: inherit; /* Important for vertical align on mobile phones */
+margin: 0; /* Important for vertical align on mobile phones */
+}
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+background-color: red;
+}
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+width: 100%;
+left: 0;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+/* Mega Menu header, if needed */
+.dropdown-content .header {
+background: red;
+padding: 2px;
+color: white;
+width: auto;
+float: none;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+float: left;
+width: 33.33%;
+padding: 10px;
+background-color: #ccc;
+height: 250px;
+}
+/* Style links inside the columns */
+.column a {
+float: none;
+color: black;
+padding: 0px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+/* Add a background color on hover */
+.column a:hover {
+background-color: #ddd;
+}
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+@keyframes glowing {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+.glowing-background {
+background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
+background-size: 300% 350%;
+animation: glowing 3s ease-in-out infinite;
+}
+.glowing-background {
+transition: box-shadow 1s ease-in-out;
+}
+.glowing-background:hover {
+box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+}
+.menu-container_categories {
+border: 1px; 
+border-color:#000000;
+border-width: 1px;
+border-style: groove;
+border-radius: 20px;
+box-sizing:content-box;
+/* box-shadow: wheat; */
+width: 80px;
+margin: 5px;
+list-style-type: none;
+position: sticky;
+display:inline-block;
+flex: 1;
+margin-bottom: 20px;
+}
+.menu-container_categories .menu-ordered_list_2 {
+list-style-type: none;
+text-align: center;
+border: 1px solid blue;
+border-radius: 20px;
+border-style:solid;
+box-sizing:border-box;
+position: sticky;
+display: block;
+}
+
+h1::before {
+content: "";
+display: inline;
+width: 15px;
+height: 15px;
+/* Color of the circle */
+border: 15px solid #c45858; 
+/* Make it a circle */
+border-radius: 50px; 
+float: left;
+bottom: 10px;
+position:sticky;
+position: -webkit-sticky;
+/* position: -webkit-sticky; */
+/* Adjust this value to position the circle inside the border */
+right: 10px; 
+/* Center vertically */
+top: 55px;
+/* bottom: 20px;  */
+/* Adjust to vertically center the circle */
+/* transform: translateY(-2%); */
+/* animation: pulse 2s infinite alternate; */
+}
+h1::after {
+/* Make it rounded */
+border-radius: 12px; 
+/* Empty content */
+content: ""; 
+display: block;
+width: 50px;
+height: 50px;
+position: fixed;
+/* Adjust this value to position the box inside the border */
+right: 10px; 
+/* Distance from the top */
+top: 12px; 
+overflow: auto;
+background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+/* Adjust background size as needed */
+background-size: contain; 
+/* Apply animation */
+/* animation: moveCoffee 4s linear infinite; */
+}
+h1::after::before {
+/* Empty content */
+content: ""; 
+display:inline;
+width: 30px;
+height: 30px;
+/* Replace with your coffee image path */
+background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+/* Adjust background size as needed */
+background-size: contain; 
+/* Apply animation */
+animation: pulse 2s infinite alternate;
+}
+@keyframes pulse {
+0% {
+transform: scale(0.95);
+box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+/* Add webkit prefix for older iOS devices */
+-webkit-transform: scale(0.95); 
+}
+
+50% {
+transform: scale(1.5);
+box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+-webkit-transform: scale(1);
+}
+
+100% {
+transform: scale(0.95);
+box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+-webkit-transform: scale(0.95);
+}
+}
+h1 {
+background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); 
+max-width: auto; 
+max-height: auto; 
+text-align: center; 
+font-weight: lighter; 
+text-size-adjust: auto; 
+border: 1px solid #031e39; 
+border-top-style: ridge; 
+border-right-style: ridge; 
+border-left-style: ridge; 
+border-bottom-style: ridge; 
+border-radius: 25px; 
+border-width: 1px; /* padding: 10px; */ /* Ensure the parent is a positioned element for absolute positioning */ 
+position: sticky; 
+text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+}
+.menu_container_produse_de_top {
+border: 1px #000000;
+border-width: 1px;
+border-style: groove;
+border-radius: 20px;
+box-sizing:content-box;
+width: 80px;
+margin: 10px;
+list-style-type: none;
+position: sticky;
+display:inline-block;
+flex: 1;
+margin-bottom: 20px;
+}
+/* Style for the main menu item */
+.menu_container_produse_de_top .menu_container_1_produse_de_top {
+list-style-type: none;
+text-align: center;
+/* border: 1px solid #0011a7; */
+/* border-style:solid; */
+/* border-radius: 10px; */
+box-sizing:border-box;
+position: sticky;
+display: block;
+}
+/* Style for the dropdown content container */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
+cursor: pointer;
+position: relative;
+list-style-type: none;
+}
+/* Style for the dropdown content */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: transparent;
+background-blend-mode: color-dodge;
+min-width: 200px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+z-index: 1;
+list-style-type: none;
+}
+/* Show dropdown content when hovering over the main menu item */
+.menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+display: block;
+}
+/* Style for the dropdown links */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
+display:block;
+padding: 10px;
+border-top: 4px solid #000;
+border-right: 3px solid #000;
+border-left: 2px solid #000;
+border-bottom: 1px solid #000;
+border-radius: 10px;
+text-decoration: none;
+color: #000;
+list-style-type: none;
+transition:ease-in-out 2s;
+}
+/* Add hover effect to the dropdown links */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
+/* background-color: #c51414; */
+list-style-type: none;
+transition:ease-in-out 2s;
+} 
+/* Style for the images inside the dropdown content */
+.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
+max-width: 100%;
+height: auto;
+list-style-type: none;
+border: 2px;
+text-align: center;
+text-rendering:optimizeSpeed;
+text-shadow: bisque;
+transition:ease-in-out 2s;
+}
+.dropdown-content_imagini_2 {
+max-width: 100%;
+height: auto;
+list-style-type: none;
+border: 2px;
+}
+.dropdown-content_imagini_3 {
+max-width: 100%;
+height: auto;
+list-style-type: none;
+border: 2px;
+}
+ol {
+background-color: rgb(184, 116, 34);
+border-radius: 10px;
+list-style-type: none;
+border-width: 100px;
+}  
