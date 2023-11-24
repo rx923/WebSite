@@ -11,11 +11,11 @@
           header 
             {
               background: linear-gradient(30deg, #333a41 25%, #3c7499 35%), #034156 60%;
-              border-top: 2px slategrey groove;
-              border-left: 2px slategrey groove;
-              border-right: 2px slategrey groove;
-              border-bottom: 2px slategrey groove;
-              margin-bottom: 10px;
+              border-top: 5px rgb(255, 255, 255)144, 123 groove;
+              border-left: 5px rgb(255, 255, 255) groove;
+              border-right: 5px rgb(255, 255, 255) groove;
+              border-bottom: 5px rgb(255, 255, 255) groove;
+              /* margin-bottom: 10px; */
               margin-bottom: 1px;
               /* border-style: ; */
               /* padding-bottom: 10px; */
@@ -29,9 +29,9 @@
           header {
             background: linear-gradient(30deg, #8d99a5 25%, #5bb1eb 35%, #031e27 60%);
             border-top: 5px rgb(237, 239, 240) groove;
-            border-left: 5px slategrey groove;
-            border-right: 5px slategrey groove;
-            border-bottom: 5px slategrey groove;
+            border-left: 5px rgb(255, 255, 255) groove;
+            border-right: 5px rgb(255, 255, 255) groove;
+            border-bottom: 5px rgb(255, 255, 255) groove;
             margin-bottom: 10px;
             margin-bottom: 1px;
             /* margin-top: 50px; */
@@ -107,7 +107,7 @@
         }
 
         70% {
-          transform: scale(1);
+          transform: scale(1.5);
           /* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
           -webkit-transform: scale(1);
         }
@@ -117,6 +117,86 @@
           /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
           -webkit-transform: scale(0.95);
         }
+      }
+    }
+    </style>
+
+
+    <style>
+    h1::before {
+      content: "";
+      display: inline;
+      width: 15px;
+      height: 15px;
+      /* Color of the circle */
+      border: 15px solid #c45858; 
+      /* Make it a circle */
+      border-radius: 50px; 
+      float: left;
+      bottom: 10px;
+      position:sticky;
+      position: -webkit-sticky;
+      /* position: -webkit-sticky; */
+      /* Adjust this value to position the circle inside the border */
+      right: 10px; 
+      /* Center vertically */
+      top: 55px;
+      /* bottom: 20px;  */
+      /* Adjust to vertically center the circle */
+      /* transform: translateY(-2%); */
+      /* animation: pulse 2s infinite alternate; */
+    }
+    h1::after {
+      /* Make it rounded */
+      border-radius: 12px; 
+      /* Empty content */
+      content: ""; 
+      display: block;
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      /* Adjust this value to position the box inside the border */
+      right: 10px; 
+      /* Distance from the top */
+      top: 12px; 
+      overflow: auto;
+      background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+      /* Adjust background size as needed */
+      background-size: contain; 
+      /* Apply animation */
+      /* animation: moveCoffee 4s linear infinite; */
+    }
+    h1::after::before {
+      /* Empty content */
+      content: ""; 
+      display:inline;
+      width: 50px;
+      height: 50px;
+      /* Replace with your coffee image path */
+      background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+      /* Adjust background size as needed */
+      background-size: contain; 
+      /* Apply animation */
+      animation: pulse 2s infinite alternate;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+        /* Add webkit prefix for older iOS devices */
+        -webkit-transform: scale(0.95); 
+      }
+
+      70% {
+        transform: scale(1.5);
+        /* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
+        -webkit-transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0.95);
+        /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+        -webkit-transform: scale(0.95);
       }
     }
     </style>
@@ -166,7 +246,7 @@
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_acasa.css" type="text/css" media="all">
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_categories.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container-modified-content.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\table-container_lista_optiuni_.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\table-container_lista_optiuni_.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\tabel-1-lista-optiuni.css" type="text/css" media="all">
     
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\image-containers-styles\image-container_produse_vandute_de_top_1.css" type="text/css" media="all">
@@ -469,18 +549,32 @@
             {
               .table-container_lista_optiuni 
                 {
-                  border: 1px groove black;
+                  width: 380px;
+                  height: 340px;
+                  position: relative;
+                  border: 1px solid transparent;
                   box-sizing: border-box;
                   flex-direction: none;
-                  background: linear-gradient(55deg, rgb(222, 152, 152) 41%, rgb(171, 78, 78)51%, #722d2d 55%);
+                  grid-auto-flow: dense;
+                  background: linear-gradient(55deg, #0011ff 27%, rgb(248, 0, 0)41%, rgb(0, 0, 0) 65%);
                   position:static;
                   background-color:transparent;
                   align-content: center;
-                  margin-bottom: 100px;
-                  margin-left: 150px;
-                  margin-right: 150px;
-                  width: 400px
-                  /* height: 600px; */
+                  margin-bottom: 40px;
+                  margin-left: 10px;
+                  margin-right: 0px;
+                  animation: glowBorder 2s infinite alternate-reverse;
+                }
+
+                @keyframes glowBorder {
+                  0% {
+                    border-color: darkgreen;
+                    box-shadow: 0 0 0 0 rgb(1, 131, 1);
+                  }
+                  75% {
+                    border-color: darkgreen;
+                    box-shadow: 0 0 0 10px rgb(255, 180, 180);
+                  }
                 }
             }
           </style>
