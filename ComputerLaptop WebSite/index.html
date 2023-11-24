@@ -38,7 +38,123 @@
             /* border-style: ; */
             padding-top: 10px;
             }
-        }
+            .menu-container_acasa 
+                {
+                  border: 1px; 
+                  border-color:#000000;
+                  border-width: 1px;
+                  border-style: groove;
+                  border-radius: 20px;
+                  box-sizing:content-box;
+                  /* box-shadow: wheat; */
+                  width: 80px;
+                  margin: 5px;
+                  list-style-type: none;
+                  position: sticky;
+                  display:inline-block;
+                  flex: 1px;
+                  margin-bottom: 20px;
+                }
+              .menu-container_acasa .menu-ordered_list_1 
+                {
+                  list-style-type: none;
+                  text-align: center;
+                  border: 1px solid blue;
+                  border-radius: 20px;
+                  border-style:solid;
+                  box-sizing:border-box;
+                  position: sticky;
+                  display: block;
+                }
+              #continut_acasa_dropdown
+                {
+                  border-radius: 15px;
+                  padding-top: 2px;
+                  justify-items: center;
+                  text-align: center;
+                  font-display: auto;
+                  border-color: rgb(59, 42, 42);
+                }
+              .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories 
+                {
+                  list-style-type: none;
+                  text-align: center;
+                  margin-right: 10px;
+                  padding-top: 0px;
+                  border: 1px #000000;
+                  border-style: solid;
+                  border-radius: 0px;
+                  /* display: flexbox; */
+                  position: absolute;
+                  margin-top: 20px;
+                  background-color:#a3a074;
+                  min-width: 160px;
+                  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                  z-index: 1;
+                  display: none;
+                }
+              .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories 
+                {
+                  display:block;
+                  text-align: center;
+                  inline-size: 2px;
+                  border: 1px #000000 solid;
+                  list-style-type: none;
+                  /* box-shadow: #537d8b; */
+                  margin-top: 0px;
+                }
+              .ol .dropdown-content_ordered_list_categories 
+                {
+                  border: #c71b1b;
+                  border-style: solid 2px;
+                }
+              .li_continut_1_tip_lista 
+                {
+                  border-top: rgb(255, 251, 0) solid;
+                  border-top-width: 2px;
+                  border-top-right-radius: 10px;
+                  border-bottom-width: 2px;
+                  border-bottom-right-radius: 10px;
+                  border-top: rgb(255, 251, 0) solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 2px;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 2px;
+                  margin-bottom: 10px;
+                }
+              .li_continut_2_tip_lista 
+                {
+                  border-top: rgb(255, 251, 0) solid;
+                  border-top-width: 2px;
+                  border-top-right-radius: 10px;
+                  border-bottom: rgb(255, 251, 0) solid;
+                  border-bottom-width: 2px;
+                  border-bottom-right-radius: 10px;
+                  border-right: rgb(255, 251, 0) solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 2px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 2px;
+                  margin-bottom: 10px;
+                }
+              .li_continut_3_tip_lista
+                {
+                  border-left: rgb(255, 251, 0) solid;
+                  border-top-width: 2px;
+                  border-top-right-radius: 10px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-bottom-width: 2px;
+                  border-bottom-right-radius: 10px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-top-left-radius: 10px;
+                  border-right-width: 2px;
+                  border-left: rgb(255, 251, 0) solid;
+                  border-bottom-left-radius: 10px;
+                  border-left-width: 2px;
+                  margin-bottom: 10px;
+                }
+            }
     </style>
   <style>
     /* Android Samsung Galaxy S20 Ultra 5G Style */
@@ -235,24 +351,24 @@
       .navbar a:hover, .dropdown:hover .dropbtn {
         background-color: red;
       }
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      width: 100%;
-      left: 0;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    /* Mega Menu header, if needed */
-    .dropdown-content .header {
-      background: red;
-      padding: 2px;
-      color: white;
-      width: auto;
-      float: none;
-    }
+      /* Dropdown content (hidden by default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 100%;
+        left: 0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      /* Mega Menu header, if needed */
+      .dropdown-content .header {
+        background: red;
+        padding: 2px;
+        color: white;
+        width: auto;
+        float: none;
+      }
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {
         display: block;
@@ -1760,122 +1876,6 @@
           <style>
             @media screen and (max-width: 412px) and (max-height:915px)
             { 
-              .menu-container_acasa 
-                {
-                  border: 1px; 
-                  border-color:#000000;
-                  border-width: 1px;
-                  border-style: groove;
-                  border-radius: 20px;
-                  box-sizing:content-box;
-                  /* box-shadow: wheat; */
-                  width: 500px;
-                  margin: 5px;
-                  list-style-type: none;
-                  position: sticky;
-                  display:inline-block;
-                  flex: 1;
-                  margin-bottom: 20px;
-                }
-              .menu-container_acasa .menu-ordered_list_1 
-                {
-                  list-style-type: none;
-                  text-align: center;
-                  border: 1px solid blue;
-                  border-radius: 20px;
-                  border-style:solid;
-                  box-sizing:border-box;
-                  position: sticky;
-                  display: block;
-                }
-              #continut_acasa_dropdown
-                {
-                  border-radius: 15px;
-                  padding-top: 2px;
-                  justify-items: center;
-                  text-align: center;
-                  font-display: auto;
-                  border-color: rgb(59, 42, 42);
-                }
-              .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories 
-                {
-                  list-style-type: none;
-                  text-align: center;
-                  margin-right: 10px;
-                  padding-top: 0px;
-                  border: 1px #000000;
-                  border-style: solid;
-                  border-radius: 0px;
-                  /* display: flexbox; */
-                  position: absolute;
-                  margin-top: 20px;
-                  background-color:#a3a074;
-                  min-width: 160px;
-                  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                  z-index: 1;
-                  display: none;
-                }
-              .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories 
-                {
-                  display:block;
-                  text-align: center;
-                  inline-size: 2px;
-                  border: 1px #000000 solid;
-                  list-style-type: none;
-                  /* box-shadow: #537d8b; */
-                  margin-top: 0px;
-                }
-              .ol .dropdown-content_ordered_list_categories 
-                {
-                  border: #c71b1b;
-                  border-style: solid 2px;
-                }
-              .li_continut_1_tip_lista 
-                {
-                  border-top: rgb(255, 251, 0) solid;
-                  border-top-width: 2px;
-                  border-top-right-radius: 10px;
-                  border-bottom-width: 2px;
-                  border-bottom-right-radius: 10px;
-                  border-top: rgb(255, 251, 0) solid;
-                  border-top-left-radius: 10px;
-                  border-right-width: 2px;
-                  border-bottom-left-radius: 10px;
-                  border-left-width: 2px;
-                  margin-bottom: 10px;
-                }
-              .li_continut_2_tip_lista 
-                {
-                  border-top: rgb(255, 251, 0) solid;
-                  border-top-width: 2px;
-                  border-top-right-radius: 10px;
-                  border-bottom: rgb(255, 251, 0) solid;
-                  border-bottom-width: 2px;
-                  border-bottom-right-radius: 10px;
-                  border-right: rgb(255, 251, 0) solid;
-                  border-top-left-radius: 10px;
-                  border-right-width: 2px;
-                  border-left: rgb(255, 251, 0) solid;
-                  border-bottom-left-radius: 10px;
-                  border-left-width: 2px;
-                  margin-bottom: 10px;
-                }
-              .li_continut_3_tip_lista
-                {
-                  border-left: rgb(255, 251, 0) solid;
-                  border-top-width: 2px;
-                  border-top-right-radius: 10px;
-                  border-left: rgb(255, 251, 0) solid;
-                  border-bottom-width: 2px;
-                  border-bottom-right-radius: 10px;
-                  border-left: rgb(255, 251, 0) solid;
-                  border-top-left-radius: 10px;
-                  border-right-width: 2px;
-                  border-left: rgb(255, 251, 0) solid;
-                  border-bottom-left-radius: 10px;
-                  border-left-width: 2px;
-                  margin-bottom: 10px;
-                }
             }
           </style>
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
