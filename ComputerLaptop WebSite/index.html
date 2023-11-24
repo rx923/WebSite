@@ -6,15 +6,15 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <style>
       /* Apple iOS 14 Pro Max style */
-      @media screen and (min-width: 430px) and (min-height:932px) {
+      @media screen and (max-width: 430px) and (max-height:932px) {
         header {
-          background: linear-gradient(30deg, #333a41 25%, #3c7499 35%), #034156 60%;
-          border-top: 5px rgb(255, 255, 255)144, 123 groove;
-          border-left: 5px rgb(255, 255, 255) groove;
-          border-right: 5px rgb(255, 255, 255) groove;
-          border-bottom: 5px rgb(255, 255, 255) groove;
+          background: linear-gradient(2deg, #333a41 25%, #3c7499 35%), #034156 60%;
+          border-top: 2px rgb(255, 255, 255) groove;
+          border-left: 2px rgb(255, 255, 255) groove;
+          border-right: 2px rgb(255, 255, 255) groove;
+          border-bottom: 2px rgb(255, 255, 255) groove;
           /* margin-bottom: 10px; */
-          margin-bottom: 1px;
+          margin-bottom: 10px;
           /* border-style: ; */
           /* padding-bottom: 10px; */
         }
@@ -224,16 +224,16 @@
         }
       }
 
-      .table-container_lista_optiuni .tr {
+      .table-container_lista_optiuni #tr {
         /* Margin between elements */
         flex-direction: row;
         flex: 1;
-        min-width: 100px;
+        width: 2px;
         box-sizing: border-box;
         display: inline-flex;
         /* margin: 1px; */
         /* padding: 10px; */
-        padding-right: 220px;
+        padding-right: 40px;
         /* margin: 10px; */
         /* position: absolute; */
       }
@@ -648,6 +648,7 @@
       #upper-side-table-style .tr .a {
         /* margin-left: 10px; */
         position: -webkit-sticky;
+        position: sticky;
         offset-position: auto;
       }
 
@@ -896,15 +897,72 @@
             }
         }
         </style>
-      <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni"><div class ="tabel-1-lista-optiuni" id="upper-side-table-style"><div class="tr"><div class="th" id="tableheader-Despre" style="position: sticky;"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: relative; background: linear-gradient(55deg, #ebd77c 51%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)51%;">Despre</a></div></div><div class="tr"><div class="th" id="tableheader-Comenzi" style="position: sticky;"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Comenzi</a></div></div><div class="tr"><div class="th" id="tableheader-Livrare"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Livrarepage\Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Livrare</a></div></div><div class="tr"><div class="th" id="tableheader-Suport"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Suport</a></div></div><div class="tr"><div class="th" id="tableheader-Informatii-Aditionale"><a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\Informatii Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Informatii Aditionale</a></div></div></div></div><div class="search-bar" id="bara-de-cautare-principala"><input type="text" placeholder="Search..." id="introducere-text"><button type="submit" id="submit-cauta">Cauta:</button></div>
+      <div class="table-container_lista_optiuni" 
+            id="tabel-tip-lista-optiuni">
+        <div class ="tabel-1-lista-optiuni" 
+            id="upper-side-table-style">
+          <div class="tr">
+            <div class="th" 
+                  id="tableheader-Despre" 
+                  style="position: sticky;">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" 
+                  rel="noopener noreferrer" 
+                  id="style-first-link-Despre" 
+                  style="position: relative; background: linear-gradient(55deg, #ebd77c 51%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)51%;">Despre
+              </a>
+            </div>
+          </div>
+          <div class="tr">
+            <div class="th" 
+                  id="tableheader-Comenzi" 
+                  style="position: sticky;">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.html" 
+                  rel="noopener noreferrer" 
+                  id="style-second-link-Comenzi" 
+                  style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Comenzi
+                </a>
+            </div>
+          </div>
+        <div class="tr">
+          <div class="th" 
+                id="tableheader-Livrare">
+            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Livrarepage\Livrare.html" 
+                rel="noopener noreferrer" 
+                id="style-third-link-Livrare" 
+                style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Livrare
+              </a>
+            </div>
+          </div>
+        <div class="tr">
+          <div class="th" 
+                id="tableheader-Suport">
+            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\Suport.html" 
+                rel="noopener noreferrer" 
+                id="style-fourth-link-Suport" 
+                style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Suport
+            </a>
+          </div>
+        </div>
+        <div class="tr">
+          <div class="th" 
+                id="tableheader-Informatii-Aditionale">
+            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\Informatii Aditionale.html" 
+                rel="noopener noreferrer-Informatii-Aditionale" 
+                style="position: relative; background: linear-gradient(25deg, #ebd77c 80%, rgb(176, 140, 140)) 51%, rgb(219, 238, 120)35%;">Informatii Aditionale
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-bar" id="bara-de-cautare-principala"><input type="text" placeholder="Search..." id="introducere-text"><button type="submit" id="submit-cauta">Cauta:</button></div>
       <style>
-        .table-container_lista_optiuni 
-          {
+        .table-container_lista_optiuni {
             border: 1px groove black;
             box-sizing: border-box;
             flex-direction: none;
             background: linear-gradient(55deg, rgb(222, 152, 152) 41%, rgb(171, 78, 78)51%, #722d2d 55%);
-            position:static;
+            position:sticky;
             background-color:transparent;
             align-content: center;
             margin-bottom: 0px;
@@ -916,82 +974,64 @@
           .tabel-1-lista-optiuni {
             /* padding: 200px; */
             /* margin: 1000px; */
+            border: 2px solid transparent;
+            border-radius: 20px;
             position: sticky;
-            width: 100%;
-            height: 100%;
-
+            width: auto;
+            height: auto;
+            box-sizing: border-box;
+            flex-direction: row;
           }
-
-          .tabel-1-lista-optiuni 
-            {
-              /* padding: 20px; */
-              /* margin: 1000px; */
-              /* border: 2px solid black; */
-              box-sizing: border-box;
-              flex-direction: row;
-            }
-
-            #upper-side-table-style .tr .a 
-              {
-                /* margin-left: 10px; */
-                position: sticky;
-              }
-                /* #upper-side-table-style{
-                position: -webkit-sticky;
-                } */
-              .tr
-                {
-                    display: table-row;
-                    margin: 10px;
-                }
-                .th {
-                    display: table-cell;
-                    position: sticky;
-                    background-color: rgb(92, 115, 123);
-                    padding: 10px;
-                    text-align: center;
-                }
-                .th a {
-                    color:rgb(0, 0, 0);
-                    text-decoration: none;
-                    margin-top: 100px;
-                    background-blend-mode:darken;
-                }
+          .tr {
+            display: table-row;
+            margin: 10px;
+          }
+          .th {
+            display: table-cell;
+            position: sticky;
+            background-color: rgb(92, 115, 123);
+            padding: 10px;
+            text-align: center;
+          }
+          .th a {
+            color:rgb(0, 0, 0);
+            text-decoration: none;
+            margin-top: 100px;
+            background-blend-mode:darken;
+          }
         </style>
 
         <style>
-          @media screen and (min-width: 412px) and (min-height:915px) 
-            {
-              .table-container_lista_optiuni 
-                {
-                  width: 380px;
-                  height: 340px;
-                  position: relative;
-                  border: 1px solid transparent;
-                  box-sizing: border-box;
-                  flex-direction: none;
-                  grid-auto-flow: dense;
-                  background: linear-gradient(55deg, #0011ff 27%, rgb(248, 0, 0)41%, rgb(0, 0, 0) 65%);
-                  position:static;
-                  background-color:transparent;
-                  align-content: center;
-                  margin-bottom: 40px;
-                  margin-left: 10px;
-                  margin-right: 0px;
-                  animation: glowBorder 2s infinite alternate-reverse;
-                }
-
-                @keyframes glowBorder {
-                  0% {
-                    border-color: darkgreen;
-                    box-shadow: 0 0 0 0 rgb(1, 131, 1);
-                  }
-                  75% {
-                    border-color: darkgreen;
-                    box-shadow: 0 0 0 10px rgb(255, 180, 180);
-                  }
-                }
+          @media screen and (min-width: 412px) and (min-height:915px) {
+            .table-container_lista_optiuni {
+              width: 200px;
+              height: 320px;
+              position: relative;
+              border: 1px groove whitesmoke;
+              border-radius: 30px;
+              box-sizing: border-box;
+              flex-direction: none;
+              grid-auto-flow: dense;
+              background: linear-gradient(35deg, #ffffff 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255) 95%);
+              position:static;
+              background-color:transparent;
+              align-content: left;
+              margin-bottom: 40px;
+              margin-left: 10px;
+              margin-right: 0px;
+              animation: glowBorder 1s infinite alternate-reverse;
             }
+            @keyframes glowBorder {
+              0% {
+                border-color: rgb(255, 255, 255);
+                box-shadow: 0 0 0 0 rgb(0, 0, 0);
+              }
+              100% {
+                border-color: rgb(255, 255, 255);
+                box-shadow: 0 0 0 10px rgb(255, 255, 255);
+              }
+            }
+          }
           </style>
     </header>
 
@@ -1888,120 +1928,111 @@
         </div>
         <div class="menu-container_categories" id="Menu_Categories">
           <style>
-            @media screen and (max-width:412px) and (max-height: 915px) 
-              {
-                .menu-container_categories 
-                  {
-                    border: 1px; 
-                    border-color:#000000;
-                    border-width: 1px;
-                    border-style: groove;
-                    border-radius: 20px;
-                    box-sizing:content-box;
-                    /* box-shadow: wheat; */
-                    width: 80px;
-                    margin: 5px;
-                    list-style-type: none;
-                    position: sticky;
-                    display:inline-block;
-                    flex: 1;
-                    margin-bottom: 20px;
-                  }
-              .menu-container_categories .menu-ordered_list_2 
-                {
-                  list-style-type: none;
-                  text-align: center;
-                  border: 1px solid blue;
-                  border-radius: 20px;
-                  border-style:solid;
-                  box-sizing:border-box;
-                  position: sticky;
-                  display: block;
-                }
-              .menu-ordered_list_2 .dropdown-list_items_2 .dropdown_content_ordered_list_2 
-                {
-                  list-style-type: none;
-                  text-align: center;
-                  margin-right: 10px;
-                  padding-top: 0px;
-                  padding: 0px;
-                  border: 1px #000000;
-                  border-style: solid;
-                  border-radius: 0px;
-                  /* display: flexbox; */
-                  position: sticky;
-                  /* margin-top: 20px; */
-                  background-color:#ffffff;
-                  min-width: 60px;
-                  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                  z-index: 1;
-                  display: none;
-                }
+            @media screen and (max-width:412px) and (max-height: 915px) {
+              .menu-container_categories {
+                border: 1px; 
+                border-color:#000000;
+                border-width: 1px;
+                border-style: groove;
+                border-radius: 20px;
+                box-sizing:content-box;
+                /* box-shadow: wheat; */
+                width: 80px;
+                margin: 5px;
+                list-style-type: none;
+                position: sticky;
+                display:inline-block;
+                flex: 1;
+                margin-bottom: 20px;
+              }
+              .menu-container_categories .menu-ordered_list_2 {
+                list-style-type: none;
+                text-align: center;
+                border: 1px solid blue;
+                border-radius: 20px;
+                border-style:solid;
+                box-sizing:border-box;
+                position: sticky;
+                display: block;
+              }
+              .menu-ordered_list_2 .dropdown-list_items_2 .dropdown_content_ordered_list_2 {
+                list-style-type: none;
+                text-align: center;
+                margin-right: 10px;
+                padding-top: 0px;
+                padding: 0px;
+                border: 1px #000000;
+                border-style: solid;
+                border-radius: 0px;
+                /* display: flexbox; */
+                position: sticky;
+                /* margin-top: 20px; */
+                background-color:#ffffff;
+                min-width: 60px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                display: none;
+              }
               .menu-ordered_list_2:hover 
               .dropdown-list_items_2:hover 
-              .dropdown_content_ordered_list_2 
-                {
-                  display:block;
-                  text-align: center;
-                  inline-size: 2px;
-                  list-style: none;
-                  position: absolute;
-                  padding-top: 10px;
-                }
-              .ol .dropdown_content_ordered_list_2 
-                {
-                  border: #000000;
-                  border-style: solid 2px;
-                  padding-top: 10px;
-                } 
-              .li_categoria_1_lista 
-                {
-                  border-top: #0011ff solid;
-                  border-top-width: 1px;
-                  border-top-right-radius: 10px;
-                  border-bottom: #0011ff solid;
-                  border-bottom-width: 1px;
-                  border-bottom-right-radius: 10px;
-                  border-right: #0011ff solid;
-                  border-top-left-radius: 10px;
-                  border-right-width: 1px;
-                  border-left: #0011ff solid;
-                  border-bottom-left-radius: 10px;
-                  border-left-width: 1px;
-                  margin-bottom: 10px;
-                } 
-              .li_categoria_2_lista
-                {
-                  border-top: #0011ff solid;
-                  border-top-width: 1px;
-                  border-top-right-radius: 10px;
-                  border-bottom: #0011ff solid;
-                  border-bottom-width: 1px;
-                  border-bottom-right-radius: 10px;
-                  border-right: #0011ff solid;
-                  border-top-left-radius: 10px;
-                  border-right-width: 1px;
-                  border-left: #0011ff solid;
-                  border-bottom-left-radius: 10px;
-                  border-left-width: 1px;
-                  margin-bottom: 10px;
-                }
-              .li_categoria_3_lista
-                {
-                  border-top: #0011ff inset;
-                  border-top-width: 1px;
-                  border-top-right-radius: 10px;
-                  border-bottom: #0011ff inset;
-                  border-bottom-width: 1px;
-                  border-bottom-right-radius: 10px;
-                  border-right: #0011ff inset;
-                  border-top-left-radius: 10px;
-                  border-right-width: 1px;
-                  border-left: #0011ff inset;
-                  border-bottom-left-radius: 10px;
-                  border-left-width: 1px;
-                  margin-bottom: 10px;
-                }
+              .dropdown_content_ordered_list_2 {
+                display:block;
+                text-align: center;
+                inline-size: 2px;
+                list-style: none;
+                position: sticky;
+                padding-top: 0px;
+              }
+              .ol .dropdown_content_ordered_list_2 {
+                border: #000000;
+                border-style: solid 2px;
+                padding-top: 10px;
+              } 
+              .li_categoria_1_lista {
+                border-top: #0011ff solid;
+                border-top-width: 1px;
+                border-top-right-radius: 10px;
+                border-bottom: #0011ff solid;
+                border-bottom-width: 1px;
+                border-bottom-right-radius: 10px;
+                border-right: #0011ff solid;
+                border-top-left-radius: 10px;
+                border-right-width: 1px;
+                border-left: #0011ff solid;
+                border-bottom-left-radius: 10px;
+                border-left-width: 1px;
+                margin-bottom: 10px;
+              } 
+              .li_categoria_2_lista {
+                border-top: #0011ff solid;
+                border-top-width: 1px;
+                border-top-right-radius: 10px;
+                border-bottom: #0011ff solid;
+                border-bottom-width: 1px;
+                border-bottom-right-radius: 10px;
+                border-right: #0011ff solid;
+                border-top-left-radius: 10px;
+                border-right-width: 1px;
+                border-left: #0011ff solid;
+                border-bottom-left-radius: 10px;
+                border-left-width: 1px;
+                margin-bottom: 10px;
+              }
+              .li_categoria_3_lista {
+                border-top: #0011ff inset;
+                border-top-width: 1px;
+                border-top-right-radius: 10px;
+                border-bottom: #0011ff inset;
+                border-bottom-width: 1px;
+                border-bottom-right-radius: 10px;
+                border-right: #0011ff inset;
+                border-top-left-radius: 10px;
+                border-right-width: 1px;
+                border-left: #0011ff inset;
+                border-bottom-left-radius: 10px;
+                border-left-width: 1px;
+                margin-bottom: 10px;
+              }
             }
           </style>
           <ol class="menu-ordered_list_2" id="#meniu_ordered_2">
