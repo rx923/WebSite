@@ -27,35 +27,3 @@ nav.menu.ul {
     border-radius: 10px;
     width: 100px;
 }
-
-/* Android Devices  */
-@media all and (min-width: 1440px) and (min-height:2560px), 
-            (min-width:1440px) and (min-height:2960px),
-            (min-width:1080px) and (min-height:2160px),
-            (min-width:1440px) and (min-height:1440px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:2560px) {
-                nav.menu.ul {
-                    border: #a9bbab;
-                    border-radius: 10px;
-                    width: 100px;
-                }
-}
-
-/*Tablets*/
-@media all and (min-width: 1536px) and (min-height:2048px), 
-            (min-width:1200px) and (min-height:1920px), 
-            (min-width:800px) and (min-height:1280px),
-            (min-width:1700px) and (min-height:2560px) 
-            {
-                nav.menu.ul {
-                    border: #a9bbab;
-                    border-radius: 10px;
-                    width: 100px;
-                }
-				
-}
-
-
-

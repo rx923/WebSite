@@ -21,112 +21,176 @@
       }
     </style>
     <style>
-      /* Android Samsung Galaxy S20 Ultra 5G Style */
-      @media screen and (max-width: 412px) and (max-height:915px) {
-          header {
-            background: linear-gradient(30deg, #8d99a5 25%, #5bb1eb 35%, #031e27 60%);
-            border-top: 5px rgb(237, 239, 240) groove;
-            border-left: 5px rgb(255, 255, 255) groove;
-            border-right: 5px rgb(255, 255, 255) groove;
-            border-bottom: 5px rgb(255, 255, 255) groove;
-            margin-bottom: 10px;
-            margin-bottom: 1px;
-            /* margin-top: 50px; */
-            /* border-style: ; */
-            padding-top: 10px;
+    /* Android Samsung Galaxy S20 Ultra 5G Style */
+      @media screen and (min-width: 412px) and (min-height:915px) {
+        header {
+          background: linear-gradient(30deg, #8d99a5 25%, #5bb1eb 35%, #031e27 60%);
+          border-top: 5px rgb(237, 239, 240) groove;
+          border-left: 5px rgb(255, 255, 255) groove;
+          border-right: 5px rgb(255, 255, 255) groove;
+          border-bottom: 5px rgb(255, 255, 255) groove;
+          margin-bottom: 10px;
+          margin-bottom: 1px;
+          /* margin-top: 50px; */
+          /* border-style: ; */
+          padding-top: 10px;
+        }
+        .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+          border: 2px solid #000000;
+          border-style: solid;
+          border-radius: 20px;
+          margin: 0px;
+          padding-top: 0px;
+          height: 30px;
+          width: 880px;
+          box-sizing: border-box;
+          position:sticky; 
+          display:inline-block;
+          /* justify-content: right; */
+          list-style: none;
+          background-color: rgb(204, 161, 5);
+        }
+        .container-content-Menu-produse-1 {
+                display: inline-block;
+                position: -webkit-sticky;
+                max-width: fit-content;
+                max-height: fit-content;
+                padding-left: 0px;
+            }
+
+        #upper-side-table-style .tr .a {
+          /* margin-left: 10px; */
+          position: -webkit-sticky;
+          position: sticky;
+          offset-position: auto;
+        }
+        .tr {
+          display: table-row;
+          margin: 10px;
+        }
+        /* TableHeader colors for #Despre #Comenzi #Livrare #Suport #Informatii Aditionale Pages */
+        .th {
+          display: table-cell;
+          position: sticky;
+          background-color: white;
+          border-radius: 20px;
+          border-style: outset;
+          border: 2px solid;
+          padding: 21px;
+          text-align: center;
+        }
+        .th a {
+          color:rgb(0, 0, 0);
+          text-decoration:wavy;
+          margin-top: 100px;
+          border-radius: 15px;
+          background-blend-mode:hard-light;
+        }
+        .menu-container_acasa {
+          border: 1px; 
+          border-color:#000000;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          /* box-shadow: wheat; */
+          width: 80px;
+          margin: 5px;
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          flex: 1px;
+          margin-bottom: 20px;
+        }
+        .menu-container_acasa .menu-ordered_list_1 {
+          list-style-type: none;
+          text-align: center;
+          border: 1px solid blue;
+          border-radius: 20px;
+          border-style:solid;
+          box-sizing:border-box;
+          position: sticky;
+          display: block;
+        }
+        #continut_acasa_dropdown {
+          border-radius: 15px;
+          padding-top: 2px;
+          justify-items: center;
+          text-align: center;
+          font-display: auto;
+          border-color: rgb(59, 42, 42);
+        }
+        .dropdown-content_meniu_1si2 {
+          display: flex;
+          border: 2px solid;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          /* border-style: calc(); */
+          flex-direction: row; /* Display elements horizontally */
           }
-          .menu-container_acasa {
-            border: 1px; 
-            border-color:#000000;
-            border-width: 1px;
-            border-style: groove;
-            border-radius: 20px;
-            box-sizing:content-box;
-            /* box-shadow: wheat; */
-            width: 80px;
-            margin: 5px;
-            list-style-type: none;
-            position: sticky;
-            display:inline-block;
-            flex: 1px;
-            margin-bottom: 20px;
+          /* Style for individual links within the dropdown menu */
+        .dropdown-content_meniu_1si2 a {
+          /* Margin between links */
+          margin-right: 10px; 
           }
-          .menu-container_acasa .menu-ordered_list_1 {
-            list-style-type: none;
-            text-align: center;
-            border: 1px solid blue;
-            border-radius: 20px;
-            border-style:solid;
-            box-sizing:border-box;
-            position: sticky;
-            display: block;
-          }
-          #continut_acasa_dropdown {
-            border-radius: 15px;
-            padding-top: 2px;
-            justify-items: center;
-            text-align: center;
-            font-display: auto;
-            border-color: rgb(59, 42, 42);
-          }
-          .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
-            list-style-type: none;
-            text-align: center;
-            margin-right: 10px;
-            padding-top: 0px;
-            border: 1px #000000;
-            border-style: solid;
-            border-radius: 0px;
-            /* display: flexbox; */
-            position: absolute;
-            margin-top: 20px;
-            background-color:#a3a074;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            display: none;
-          }
-          .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
-            display:block;
-            text-align: center;
-            inline-size: 2px;
-            border: 1px #000000 solid;
-            list-style-type: none;
-            /* box-shadow: #537d8b; */
-            margin-top: 0px;
-          }   
-          .ol .dropdown-content_ordered_list_categories {
-            border: #c71b1b;
-            border-style: solid 2px;
-          }
-          .li_continut_1_tip_lista {
-            border-top: rgb(255, 251, 0) solid;
-            border-top-width: 2px;
-            border-top-right-radius: 10px;
-            border-bottom-width: 2px;
-            border-bottom-right-radius: 10px;
-            border-top: rgb(255, 251, 0) solid;
-            border-top-left-radius: 10px;
-            border-right-width: 2px;
-            border-bottom-left-radius: 10px;
-            border-left-width: 2px;
-            margin-bottom: 10px;
-          }
-          .li_continut_2_tip_lista {
-            border-top: rgb(255, 251, 0) solid;
-            border-top-width: 2px;
-            border-top-right-radius: 10px;
-            border-bottom: rgb(255, 251, 0) solid;
-            border-bottom-width: 2px;
-            border-bottom-right-radius: 10px;
-            border-right: rgb(255, 251, 0) solid;
-            border-top-left-radius: 10px;
-            border-right-width: 2px;
-            border-left: rgb(255, 251, 0) solid;
-            border-bottom-left-radius: 10px;
-            border-left-width: 2px;
-            margin-bottom: 10px;
-          }
+        .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
+          list-style-type: none;
+          text-align: center;
+          margin-right: 10px;
+          padding-top: 0px;
+          border: 1px #000000;
+          border-style: solid;
+          border-radius: 0px;
+          /* display: flexbox; */
+          position: absolute;
+          margin-top: 20px;
+          background-color:#a3a074;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          display: none;
+        }
+        .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
+          display:block;
+          text-align: center;
+          inline-size: 2px;
+          border: 1px #000000 solid;
+          list-style-type: none;
+          /* box-shadow: #537d8b; */
+          margin-top: 0px;
+        }   
+        .ol .dropdown-content_ordered_list_categories {
+          border: #c71b1b;
+          border-style: solid 2px;
+        }
+        .li_continut_1_tip_lista {
+          border-top: rgb(255, 251, 0) solid;
+          border-top-width: 2px;
+          border-top-right-radius: 10px;
+          border-bottom-width: 2px;
+          border-bottom-right-radius: 10px;
+          border-top: rgb(255, 251, 0) solid;
+          border-top-left-radius: 10px;
+          border-right-width: 2px;
+          border-bottom-left-radius: 10px;
+          border-left-width: 2px;
+          margin-bottom: 10px;
+        }
+        .li_continut_2_tip_lista {
+          border-top: rgb(255, 251, 0) solid;
+          border-top-width: 2px;
+          border-top-right-radius: 10px;
+          border-bottom: rgb(255, 251, 0) solid;
+          border-bottom-width: 2px;
+          border-bottom-right-radius: 10px;
+          border-right: rgb(255, 251, 0) solid;
+          border-top-left-radius: 10px;
+          border-right-width: 2px;
+          border-left: rgb(255, 251, 0) solid;
+          border-bottom-left-radius: 10px;
+          border-left-width: 2px;
+          margin-bottom: 10px;
+        }
         .li_continut_3_tip_lista {
           border-left: rgb(255, 251, 0) solid;
           border-top-width: 2px;
@@ -142,455 +206,732 @@
           border-left-width: 2px;
           margin-bottom: 10px;
         }
-      }
-    </style>
-  <style>
-    /* Android Samsung Galaxy S20 Ultra 5G Style */
-    @media screen and (min-width:412px) and (min-height: 915px) {
-      h1::before {
-        content: "";
-        display: inline;
-        width: 15px;
-        height: 15px;
-        /* Color of the circle */
-        border: 15px solid #c45858; 
-        /* Make it a circle */
-        border-radius: 50px; 
-        float: left;
-        bottom: 10px;
-        position:sticky;
-        position: -webkit-sticky;
-        /* position: -webkit-sticky; */
-        /* Adjust this value to position the circle inside the border */
-        right: 10px; 
-        /* Center vertically */
-        top: 55px;
-        /* bottom: 20px;  */
-        /* Adjust to vertically center the circle */
-        /* transform: translateY(-2%); */
-        /* animation: pulse 2s infinite alternate; */
-      }
-      h1::after {
-        /* Make it rounded */
-        border-radius: 12px; 
-        /* Empty content */
-        content: ""; 
-        display: block;
-        width: 50px;
-        height: 50px;
-        position: sticky;
-        /* Adjust this value to position the box inside the border */
-        right: 10px; 
-        /* Distance from the top */
-        top: 12px; 
-        overflow: auto;
-        background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
-        /* Adjust background size as needed */
-        background-size: contain; 
-        /* Apply animation */
-        /* animation: moveCoffee 4s linear infinite; */
-      }
-      h1::after::before {
-        /* Empty content */
-        content: ""; 
-        display:inline;
-        width: 50px;
-        height: 50px;
-        /* Replace with your coffee image path */
-        background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-        /* Adjust background size as needed */
-        background-size: contain; 
-        /* Apply animation */
-        animation: pulse 2s infinite alternate;
-      }
-      @keyframes pulse {
-        0% {
-          transform: scale(0.95);
-          /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
-          /* Add webkit prefix for older iOS devices */
-          -webkit-transform: scale(0.95); 
+        .menu-ordered_list_2 .dropdown-list_items_2 .dropdown_content_ordered_list_2 {
+          list-style-type: none;
+          text-align: center;
+          margin-right: 10px;
+          padding-top: 0px;
+          padding: 0px;
+          border: 1px #000000;
+          border-style: solid;
+          border-radius: 0px;
+          /* display: flexbox; */
+          position: sticky;
+          /* margin-top: 20px; */
+          background-color:#ffffff;
+          min-width: 60px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          display: none;
         }
-
-        70% {
-          transform: scale(1.5);
-          /* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
-          -webkit-transform: scale(1);
+        .menu-ordered_list_2:hover .dropdown-list_items_2:hover .dropdown_content_ordered_list_2 {
+          display:block;
+          text-align: center;
+          inline-size: 2px;
+          list-style: none;
+          position: sticky;
+          padding-top: 0px;
         }
-
-        100% {
-          transform: scale(0.95);
-          /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
-          -webkit-transform: scale(0.95);
+        .ol .dropdown_content_ordered_list_2 {
+          border: #000000;
+          border-style: solid 2px;
+          padding-top: 10px;
+        } 
+        .li_categoria_1_lista {
+          border-top: #0011ff solid;
+          border-top-width: 1px;
+          border-top-right-radius: 10px;
+          border-bottom: #0011ff solid;
+          border-bottom-width: 1px;
+          border-bottom-right-radius: 10px;
+          border-right: #0011ff solid;
+          border-top-left-radius: 10px;
+          border-right-width: 1px;
+          border-left: #0011ff solid;
+          border-bottom-left-radius: 10px;
+          border-left-width: 1px;
+          margin-bottom: 10px;
+        } 
+        .li_categoria_2_lista {
+          border-top: #0011ff solid;
+          border-top-width: 1px;
+          border-top-right-radius: 10px;
+          border-bottom: #0011ff solid;
+          border-bottom-width: 1px;
+          border-bottom-right-radius: 10px;
+          border-right: #0011ff solid;
+          border-top-left-radius: 10px;
+          border-right-width: 1px;
+          border-left: #0011ff solid;
+          border-bottom-left-radius: 10px;
+          border-left-width: 1px;
+          margin-bottom: 10px;
         }
-      }
-
-      .table-container_lista_optiuni #tr {
-        /* Margin between elements */
-        flex-direction: row;
-        flex: 1;
-        width: 2px;
-        box-sizing: border-box;
-        display: inline-flex;
-        /* margin: 1px; */
-        /* padding: 10px; */
-        padding-right: 40px;
-        /* margin: 10px; */
-        /* position: absolute; */
-      }
-      .table-container_lista_optiuni 
-      .tr  
-      #tableheader-Despre {
-        /* Margin between elements */
-        padding: 10px;
-        border: 1px transparent;
-        border-radius: 10px;
-        background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
-        /* margin-top: auto; */
-        margin: 1px;
-        /* margin: 10px; */
-        /* margin-right: 10px; */
-      }
-      .glowing-background{
-        transition: box-shadow 1s ease-in-out;
-        background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
-        background-size: 200% 200%;
-        animation: glowing 2s ease-in;
-      }
-      .table-container_lista_optiuni .tr  
-      #tableheader-Comenzi {
-        border: 1px solid;
-        border-radius: 10px;
-        background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
-        padding: 10px;
-        position: sticky;
-        /* margin-top: 50px; */
-        /* margin-top: auto; */
-        margin: 1px;
-        /* margin: 10px; */
-        /* Margin between elements */
-        /* margin-right: 100px; */
-      }
-      /* Style for the Livrare Element linking to the Actual Livrare Page */
-      #tableheader-Livrare  {
-        border: 1px solid;
-        border-radius: 10px;
-        background-color: rgb(255, 255, 255);
-        padding: 0px;
-        /* Margin between elements */
-        margin: 1px;
-        margin: 0px;
-      }
-      .table-container_lista_optiuni .tr  #tableheader-Livrare {
-        border: 1px solid;
-        border-radius: 10px;
-        background-color: rgb(255, 255, 255);
-        padding: 10px;
-        /* Margin between elements */
-        margin: 0px;
-        margin: 0px;
-      }
-      .table-container_lista_optiuni 
-      .tr  
-      #tableheader-Suport {
-        border-radius: 10px;
-        border: 1px solid;
-        background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
-        padding: 10px;
-        /* Margin between elements */
-        margin: 1px;
-        /* margin: 10px; */
-      }
-      .table-container_lista_optiuni
-      .tr  
-      #tableheader-Informatii-Aditionale {
-        padding: 3px;
-        border-radius: 10px;
-        background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
-        /* border-style: ; */
-        border: 1px inset;
-      }
-      /* Navbar container */
-      .navbar 
+        .li_categoria_3_lista {
+          border-top: #0011ff inset;
+          border-top-width: 1px;
+          border-top-right-radius: 10px;
+          border-bottom: #0011ff inset;
+          border-bottom-width: 1px;
+          border-bottom-right-radius: 10px;
+          border-right: #0011ff inset;
+          border-top-left-radius: 10px;
+          border-right-width: 1px;
+          border-left: #0011ff inset;
+          border-bottom-left-radius: 10px;
+          border-left-width: 1px;
+          margin-bottom: 10px;
+        }
+        #upper-side-table-style .tr .a {
+          /* margin-left: 10px; */
+          position: -webkit-sticky;
+          position: sticky;
+          offset-position: auto;
+        }
+        .tr {
+          display: table-row;
+          margin: 10px;
+        }
+        /* TableHeader colors for #Despre #Comenzi #Livrare #Suport #Informatii Aditionale Pages */
+        .th {
+          display: table-cell;
+          position: sticky;
+          background-color: white;
+          border-radius: 20px;
+          border-style: outset;
+          border: 2px solid;
+          padding: 21px;
+          text-align: center;
+        }
+        .th a {
+          color:rgb(0, 0, 0);
+          text-decoration:wavy;
+          margin-top: 100px;
+          border-radius: 15px;
+          background-blend-mode:hard-light;
+        }
+        h1::before {
+          content: "";
+          display: inline;
+          width: 15px;
+          height: 15px;
+          /* Color of the circle */
+          border: 15px solid #c45858; 
+          /* Make it a circle */
+          border-radius: 50px; 
+          float: left;
+          bottom: 10px;
+          position:sticky;
+          position: -webkit-sticky;
+          /* position: -webkit-sticky; */
+          /* Adjust this value to position the circle inside the border */
+          right: 10px; 
+          /* Center vertically */
+          top: 55px;
+          /* bottom: 20px;  */
+          /* Adjust to vertically center the circle */
+          /* transform: translateY(-2%); */
+          /* animation: pulse 2s infinite alternate; */
+        }
+        h1::after {
+          /* Make it rounded */
+          border-radius: 12px; 
+          /* Empty content */
+          content: ""; 
+          display: block;
+          width: 50px;
+          height: 50px;
+          position: sticky;
+          /* Adjust this value to position the box inside the border */
+          right: 10px; 
+          /* Distance from the top */
+          top: 12px; 
+          overflow: auto;
+          background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+          /* Adjust background size as needed */
+          background-size: contain; 
+          /* Apply animation */
+          /* animation: moveCoffee 4s linear infinite; */
+        }
+        h1::after::before {
+          /* Empty content */
+          content: ""; 
+          display:inline;
+          width: 50px;
+          height: 50px;
+          /* Replace with your coffee image path */
+          background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+          /* Adjust background size as needed */
+          background-size: contain; 
+          /* Apply animation */
+          animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+          0% {
+            transform: scale(0.95);
+            /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+            /* Add webkit prefix for older iOS devices */
+            -webkit-transform: scale(0.95); 
+          }
+          70% {
+            transform: scale(1.5);
+            /* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
+            -webkit-transform: scale(1);
+          }
+          100% {
+            transform: scale(0.95);
+            /* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+            -webkit-transform: scale(0.95);
+          }
+        }
+        .table-container_lista_optiuni {
+          width: 200px;
+          height: 320px;
+          position: relative;
+          border: 1px groove whitesmoke;
+          border-radius: 30px;
+          box-sizing: border-box;
+          flex-direction: none;
+          grid-auto-flow: dense;
+          background: linear-gradient(35deg, #ffffff 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255) 95%);
+          position:sticky;
+          background-color:transparent;
+          align-content: left;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 0px;
+          animation: glowBorder 1s infinite alternate-reverse;
+          /* height: 600px; */
+        }
+        @keyframes glowBorder {
+          0% {
+            border-color: rgb(255, 255, 255);
+            box-shadow: 0 0 0 0 rgb(0, 0, 0);
+          }
+          100% {
+            border-color: rgb(255, 255, 255);
+            box-shadow: 0 0 0 10px rgb(255, 255, 255);
+          }
+        }
+        .tabel-1-lista-optiuni {
+          /* padding: 200px; */
+          /* margin: 1000px; */
+          border: 2px solid ridge;
+          border-radius: 20px;
+          position: -webkit-sticky;
+          ruby-position:after;
+          width: 100px;
+          margin-top: 50px;
+          margin-left: 50px;
+          height: auto;
+          box-sizing: border-box;
+          flex-direction: row;
+        }
+        .tr {
+          display: table-row;
+          margin: 10px;
+        }
+        .table-container_lista_optiuni #tr {
+          /* Margin between elements */
+          flex-direction: row;
+          flex: 1;
+          width: 2px;
+          box-sizing: border-box;
+          display: inline-flex;
+          /* margin: 1px; */
+          /* padding: 10px; */
+          padding-right: 40px;
+          /* margin: 10px; */
+          /* position: absolute; */
+        }
+        .table-container_lista_optiuni 
+        .tr  
+        #tableheader-Despre {
+          /* Margin between elements */
+          padding: 10px;
+          border: 1px transparent;
+          border-radius: 10px;
+          background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+          /* margin-top: auto; */
+          margin: 1px;
+          /* margin: 10px; */
+          /* margin-right: 10px; */
+        }
+        .glowing-background {
+          transition: box-shadow 1s ease-in-out;
+          background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+          background-size: 200% 200%;
+          animation: glowing 2s ease-in;
+        }
+        #tableheader-Comenzi {
+          border: 1px solid;
+          border-radius: 10px;
+          background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+          padding: 10px;
+          position: sticky;
+          /* margin-top: 50px; */
+          /* margin-top: auto; */
+          margin: 1px;
+          /* margin: 10px; */
+          /* Margin between elements */
+          /* margin-right: 100px; */
+        }
+        /* Style for the Livrare Element linking to the Actual Livrare Page */
+        #tableheader-Livrare  {
+          border: 1px solid;
+          border-radius: 10px;
+          background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+          padding: 0px;
+          /* Margin between elements */
+          margin: 1px;
+          margin: 0px;
+        }
+        #tableheader-Livrare {
+          border: 1px solid;
+          border-radius: 10px;
+          background-color: rgb(255, 255, 255);
+          padding: 10px;
+          /* Margin between elements */
+          margin: 0px;
+          margin: 0px;
+        }
+        .table-container_lista_optiuni .tr  #tableheader-Suport {
+          border-radius: 10px;
+          border: 1px solid;
+          background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+          padding: 10px;
+          /* Margin between elements */
+          margin: 1px;
+          /* margin: 10px; */
+        }
+        .table-container_lista_optiuni .tr #tableheader-Informatii-Aditionale {
+          padding: 3px;
+          border-radius: 10px;
+          background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
+          /* border-style: ; */
+          border: 1px inset;
+        }
+        /* Navbar container */
+        .navbar 
           {
             overflow: hidden;
             background-color: #333;
             font-family: Arial;
           }
-      /* Links inside the navbar */
-      .navbar a {
-        float: left;
-        font-size: 16px;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-      /* The dropdown container */
-      .dropdown {
+        /* Links inside the navbar */
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* The dropdown container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        /* Dropdown button */
+        .dropdown .dropbtn {
+          font-size: 11px;
+          border: none;
+          outline: none;
+          color: rgb(255, 255, 255);
+          padding: 14px 16px;
+          background-color: inherit;
+          font: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+        }
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: red;
+        }
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          width: 100%;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        /* Mega Menu header, if needed */
+        .dropdown-content .header {
+          background: red;
+          padding: 2px;
+          color: white;
+          width: auto;
+          float: none;
+        }
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          background-color: #ccc;
+          height: 250px;
+        }
+        /* Style links inside the columns */
+        .column a {
+          float: none;
+          color: black;
+          padding: 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        /* Add a background color on hover */
+        .column a:hover {
+          background-color: #ddd;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        @keyframes glowing  {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .glowing-background {
+          background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
+          background-size: 300% 350%;
+          animation: glowing 3s ease-in-out infinite;
+        }
+        .glowing-background {
+          transition: box-shadow 1s ease-in-out;
+        }
+        .glowing-background:hover {
+          box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+        }
+        /* Navbar container */
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial;
+        }
+        /* Links inside the navbar */
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* The dropdown container */
+        .dropdown {
           float: left;
           overflow: hidden;
-      }
-      /* Dropdown button */
-      .dropdown .dropbtn {
-        font-size: 11px;
-        border: none;
-        outline: none;
-        color: rgb(255, 255, 255);
-        padding: 14px 16px;
-        background-color: inherit;
-        font: inherit; /* Important for vertical align on mobile phones */
-        margin: 0; /* Important for vertical align on mobile phones */
-      }
-      /* Add a red background color to navbar links on hover */
-      .navbar a:hover, .dropdown:hover .dropbtn {
+        }
+        /* Dropdown button */
+        .dropdown .dropbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          color: rgb(255, 255, 255);
+          padding: 14px 16px;
+          background-color: inherit;
+          font: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+        }
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
         background-color: red;
-      }
-      /* Dropdown content (hidden by default) */
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        width: 100%;
-        left: 0;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-      /* Mega Menu header, if needed */
-      .dropdown-content .header {
-        background: red;
-        padding: 2px;
-        color: white;
-        width: auto;
-        float: none;
-      }
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      /* Create three equal columns that floats next to each other */
-    .column {
-        float: left;
-        width: 33.33%;
-        padding: 10px;
-        background-color: #ccc;
-        height: 250px;
-      }
-    /* Style links inside the columns */
-    .column a {
-        float: none;
-        color: black;
-        padding: 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-      }
-    /* Add a background color on hover */
-    .column a:hover {
-        background-color: #ddd;
-      }
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-    @keyframes glowing  
-      {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-    .glowing-background {
-      background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
-      background-size: 300% 350%;
-      animation: glowing 3s ease-in-out infinite;
+        }
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          width: 100%;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        /* Mega Menu header, if needed */
+        .dropdown-content .header {
+          background: red;
+          padding: 2px;
+          color: white;
+          width: auto;
+          float: none;
+        }
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          background-color: #ccc;
+          height: 250px;
+        }
+        /* Style links inside the columns */
+        .column a {
+          float: none;
+          color: black;
+          padding: 0px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        /* Add a background color on hover */
+        .column a:hover {
+          background-color: #ddd;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        @keyframes glowing {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .glowing-background {
+          background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
+          background-size: 300% 350%;
+          animation: glowing 3s ease-in-out infinite;
+        }
+        .glowing-background {
+          transition: box-shadow 1s ease-in-out;
+        }
+        .glowing-background:hover {
+          box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+        }
+        .menu-container_categories {
+          border: 1px; 
+          border-color:#000000;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          /* box-shadow: wheat; */
+          width: 80px;
+          margin: 5px;
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          flex: 1;
+          margin-bottom: 20px;
+        }
+        .menu-container_categories .menu-ordered_list_2 {
+          list-style-type: none;
+          text-align: center;
+          border: 1px solid blue;
+          border-radius: 20px;
+          border-style:solid;
+          box-sizing:border-box;
+          position: sticky;
+          display: block;
+        }
+
+        h1::before {
+          content: "";
+          display: inline;
+          width: 15px;
+          height: 15px;
+          /* Color of the circle */
+          border: 15px solid #c45858; 
+          /* Make it a circle */
+          border-radius: 50px; 
+          float: left;
+          bottom: 10px;
+          position:sticky;
+          position: -webkit-sticky;
+          /* position: -webkit-sticky; */
+          /* Adjust this value to position the circle inside the border */
+          right: 10px; 
+          /* Center vertically */
+          top: 55px;
+          /* bottom: 20px;  */
+          /* Adjust to vertically center the circle */
+          /* transform: translateY(-2%); */
+          /* animation: pulse 2s infinite alternate; */
+        }
+        h1::after {
+          /* Make it rounded */
+          border-radius: 12px; 
+          /* Empty content */
+          content: ""; 
+          display: block;
+          width: 50px;
+          height: 50px;
+          position: fixed;
+          /* Adjust this value to position the box inside the border */
+          right: 10px; 
+          /* Distance from the top */
+          top: 12px; 
+          overflow: auto;
+          background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+          /* Adjust background size as needed */
+          background-size: contain; 
+          /* Apply animation */
+          /* animation: moveCoffee 4s linear infinite; */
+        }
+        h1::after::before {
+          /* Empty content */
+          content: ""; 
+          display:inline;
+          width: 30px;
+          height: 30px;
+          /* Replace with your coffee image path */
+          background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+          /* Adjust background size as needed */
+          background-size: contain; 
+          /* Apply animation */
+          animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+          0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            /* Add webkit prefix for older iOS devices */
+            -webkit-transform: scale(0.95); 
+          }
+
+          50% {
+            transform: scale(1.5);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            -webkit-transform: scale(1);
+          }
+
+          100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            -webkit-transform: scale(0.95);
+          }
+        }
+        h1 {
+          background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); 
+          max-width: auto; 
+          max-height: auto; 
+          text-align: center; 
+          font-weight: lighter; 
+          text-size-adjust: auto; 
+          border: 1px solid #031e39; 
+          border-top-style: ridge; 
+          border-right-style: ridge; 
+          border-left-style: ridge; 
+          border-bottom-style: ridge; 
+          border-radius: 25px; 
+          border-width: 1px; /* padding: 10px; */ /* Ensure the parent is a positioned element for absolute positioning */ 
+          position: sticky; 
+          text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
+        }
+        .menu_container_produse_de_top {
+          border: 1px #000000;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          width: 80px;
+          margin: 10px;
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          flex: 1;
+          margin-bottom: 20px;
+        }
+        /* Style for the main menu item */
+        .menu_container_produse_de_top .menu_container_1_produse_de_top {
+          list-style-type: none;
+          text-align: center;
+          /* border: 1px solid #0011a7; */
+          /* border-style:solid; */
+          /* border-radius: 10px; */
+          box-sizing:border-box;
+          position: sticky;
+          display: block;
+        }
+        /* Style for the dropdown content container */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
+          cursor: pointer;
+          position: relative;
+          list-style-type: none;
+        }
+        /* Style for the dropdown content */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: transparent;
+          background-blend-mode: color-dodge;
+          min-width: 200px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
+          z-index: 1;
+          list-style-type: none;
+        }
+        /* Show dropdown content when hovering over the main menu item */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+            display: block;
+        }
+        /* Style for the dropdown links */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
+          display:block;
+          padding: 10px;
+          border-top: 4px solid #000;
+          border-right: 3px solid #000;
+          border-left: 2px solid #000;
+          border-bottom: 1px solid #000;
+          border-radius: 10px;
+          text-decoration: none;
+          color: #000;
+          list-style-type: none;
+          transition:ease-in-out 2s;
+        }
+        /* Add hover effect to the dropdown links */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
+          /* background-color: #c51414; */
+          list-style-type: none;
+          transition:ease-in-out 2s;
+        } 
+        /* Style for the images inside the dropdown content */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
+          max-width: 100%;
+          height: auto;
+          list-style-type: none;
+          border: 2px;
+          text-align: center;
+          text-rendering:optimizeSpeed;
+          text-shadow: bisque;
+          transition:ease-in-out 2s;
+        }
+        .dropdown-content_imagini_2 {
+          max-width: 100%;
+          height: auto;
+          list-style-type: none;
+          border: 2px;
+        }
+        .dropdown-content_imagini_3 {
+          max-width: 100%;
+          height: auto;
+          list-style-type: none;
+          border: 2px;
+        }
+        ol {
+          background-color: rgb(184, 116, 34);
+          border-radius: 10px;
+          list-style-type: none;
+          border-width: 100px;
+        }  
     }
-    .glowing-background {
-      transition: box-shadow 1s ease-in-out;
-    }
-    .glowing-background:hover {
-      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
-    }
-    /* Navbar container */
-    .navbar {
-      overflow: hidden;
-      background-color: #333;
-      font-family: Arial;
-    }
-    /* Links inside the navbar */
-    .navbar a {
-      float: left;
-      font-size: 16px;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    /* The dropdown container */
-    .dropdown {
-        float: left;
-        overflow: hidden;
-      }
-    /* Dropdown button */
-    .dropdown .dropbtn {
-      font-size: 16px;
-      border: none;
-      outline: none;
-      color: rgb(255, 255, 255);
-      padding: 14px 16px;
-      background-color: inherit;
-      font: inherit; /* Important for vertical align on mobile phones */
-      margin: 0; /* Important for vertical align on mobile phones */
-    }
-    /* Add a red background color to navbar links on hover */
-    .navbar a:hover, .dropdown:hover .dropbtn {
-      background-color: red;
-    }
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      width: 100%;
-      left: 0;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-    /* Mega Menu header, if needed */
-    .dropdown-content .header {
-      background: red;
-      padding: 2px;
-      color: white;
-      width: auto;
-      float: none;
-    }
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
-      }
-    /* Create three equal columns that floats next to each other */
-    .column {
-        float: left;
-        width: 33.33%;
-        padding: 10px;
-        background-color: #ccc;
-        height: 250px;
-      }
-    /* Style links inside the columns */
-    .column a {
-        float: none;
-        color: black;
-        padding: 0px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-      }
-    /* Add a background color on hover */
-    .column a:hover {
-        background-color: #ddd;
-      }
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-    @keyframes glowing {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-    .glowing-background {
-        background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
-        background-size: 300% 350%;
-        animation: glowing 3s ease-in-out infinite;
-      }
-    .glowing-background {
-        transition: box-shadow 1s ease-in-out;
-      }
-    .glowing-background:hover {
-        box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
-      }
-  }
   </style>
-    <style>
-    h1::before {
-      content: "";
-      display: inline;
-      width: 15px;
-      height: 15px;
-      /* Color of the circle */
-      border: 15px solid #c45858; 
-      /* Make it a circle */
-      border-radius: 50px; 
-      float: left;
-      bottom: 10px;
-      position:sticky;
-      position: -webkit-sticky;
-      /* position: -webkit-sticky; */
-      /* Adjust this value to position the circle inside the border */
-      right: 10px; 
-      /* Center vertically */
-      top: 55px;
-      /* bottom: 20px;  */
-      /* Adjust to vertically center the circle */
-      /* transform: translateY(-2%); */
-      /* animation: pulse 2s infinite alternate; */
-    }
-    h1::after {
-      /* Make it rounded */
-      border-radius: 12px; 
-      /* Empty content */
-      content: ""; 
-      display: block;
-      width: 50px;
-      height: 50px;
-      position: fixed;
-      /* Adjust this value to position the box inside the border */
-      right: 10px; 
-      /* Distance from the top */
-      top: 12px; 
-      overflow: auto;
-      background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
-      /* Adjust background size as needed */
-      background-size: contain; 
-      /* Apply animation */
-      /* animation: moveCoffee 4s linear infinite; */
-    }
-    h1::after::before {
-      /* Empty content */
-      content: ""; 
-      display:inline;
-      width: 30px;
-      height: 30px;
-      /* Replace with your coffee image path */
-      background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
-      /* Adjust background size as needed */
-      background-size: contain; 
-      /* Apply animation */
-      animation: pulse 2s infinite alternate;
-    }
-    @keyframes pulse {
-      0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-        /* Add webkit prefix for older iOS devices */
-        -webkit-transform: scale(0.95); 
-      }
-
-      50% {
-        transform: scale(1.5);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-        -webkit-transform: scale(1);
-      }
-
-      100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-        -webkit-transform: scale(0.95);
-      }
-    }
-    </style>
     <title>Good Store Coffee</title>
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all"> -->
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all"> -->
@@ -613,7 +954,7 @@
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\images-animations.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\images-containers\imgcontainer.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\menu-image.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\nav-menu-ul.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\nav-menu-ul.css" type="text/css" media="all"> -->
     
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\ol li a.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\ul.css" type="text/css" media="all">
@@ -633,7 +974,7 @@
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-container_produse_vandute_de_top_1.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu_container_produse_de_top.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-content_meniu_1&2.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_acasa.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_acasa.css" type="text/css" media="all"> -->
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_categories.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container-modified-content.css" type="text/css" media="all">
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\tabel-1-lista-optiuni.css" type="text/css" media="all"> -->
@@ -649,39 +990,6 @@
     <link rel="login" href="U:\Plan Afacere\WebSite\Pagina de Login - Avatar login, Avatar Account\Login-Users-Account\action_page.php" media="all">
     <!-- <script src="Javascript/main.js"></script> -->
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
-
-    <style>
-      #upper-side-table-style .tr .a {
-        /* margin-left: 10px; */
-        position: -webkit-sticky;
-        position: sticky;
-        offset-position: auto;
-      }
-
-        /* #upper-side-table-style{
-          position: -webkit-sticky;
-      } */
-      .tr {
-          display: table-row;
-          margin: 10px;
-        }
-      .th {
-        display: table-cell;
-        position: sticky;
-        background-color: unset;
-        border-radius: 20px;
-        border-style: outset;
-        border: 2px solid;
-        padding: 21px;
-        text-align: center;
-      }
-      .th a {
-        color:black;
-        text-decoration: wavy;
-        /* margin-top: 200px; */
-        background-blend-mode:darken;
-      }
-      </style>
   </head>
 
   <!-- <button onclick="history.back()">Go Back</button> -->
@@ -838,71 +1146,6 @@
     </script> -->
     <header style="margin-bottom: 80px;">
       <h1> Big Store Coffee </h1>
-      <style>
-        h1 {
-          background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); 
-          max-width: auto; 
-          max-height: auto; 
-          text-align: center; 
-          font-weight: lighter; 
-          text-size-adjust: auto; 
-          border: 1px solid #031e39; 
-          border-top-style: ridge; 
-          border-right-style: ridge; 
-          border-left-style: ridge; 
-          border-bottom-style: ridge; 
-          border-radius: 25px; 
-          border-width: 1px; /* padding: 10px; */ /* Ensure the parent is a positioned element for absolute positioning */ 
-          position: sticky; 
-          text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-          }
-      </style>
-      <style>
-      /* For smaller devices */
-      @media screen and (max-width: 768px) {
-        /* Adjust styles for smaller screens */
-        /* ... */
-        h1 {
-          background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); 
-          max-width: auto; 
-          max-height: auto; 
-          text-align: center; 
-          font-weight: lighter; 
-          text-size-adjust: auto; 
-          border: 1px solid #031e39; 
-          border-top-style: ridge; 
-          border-right-style: ridge; 
-          border-left-style: ridge; 
-          border-bottom-style: ridge; 
-          border-radius: 25px; 
-          border-width: 1px; /* padding: 10px; */ /* Ensure the parent is a positioned element for absolute positioning */ 
-          position: sticky; 
-          text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-        }
-      }
-      </style>
-      <style>
-        @media screen and (min-width: 915px) and (min-height: 412px) 
-        {
-          h1 {
-              background: linear-gradient(55deg, #ffffff 21%,rgb(4, 173, 225)31%, rgb(16, 53, 66)5%); 
-              max-width: auto; 
-              max-height: auto; 
-              text-align: center; 
-              font-weight: lighter; 
-              text-size-adjust: auto; 
-              border: 1px solid #000000; 
-              border-top-style: ridge; 
-              border-right-style: ridge; 
-              border-left-style: ridge; 
-              border-bottom-style: ridge; 
-              border-radius: 25px; 
-              border-width: 1px; /* padding: 10px; */ /* Ensure the parent is a positioned element for absolute positioning */ 
-              position: sticky; 
-              text-shadow: 1px 1px 2px rgb(204, 125, 7), 0 0 25px rgb(236, 182, 1), 0 0 5px rgb(70, 102, 243);
-            }
-        }
-        </style>
       <div class="table-container_lista_optiuni" 
             id="tabel-tip-lista-optiuni">
         <div class ="tabel-1-lista-optiuni" 
@@ -962,87 +1205,12 @@
       </div>
     </div>
 
-    <div class="search-bar" id="bara-de-cautare-principala"><input type="text" placeholder="Search..." id="introducere-text"><button type="submit" id="submit-cauta">Cauta:</button></div>
-      <style>
-        .table-container_lista_optiuni {
-            border: 1px groove black;
-            box-sizing: border-box;
-            flex-direction: none;
-            background: linear-gradient(55deg, rgb(222, 152, 152) 41%, rgb(171, 78, 78)51%, #722d2d 55%);
-            position:sticky;
-            background-color:transparent;
-            align-content: center;
-            margin-bottom: 0px;
-            margin-left: 0px;
-            margin-right: 0px;
-            /* height: 600px; */
-          }
-          .tabel-1-lista-optiuni {
-            /* padding: 200px; */
-            /* margin: 1000px; */
-            border: 2px solid ridge;
-            border-radius: 20px;
-            position: -webkit-sticky;
-            ruby-position:after;
-            width: 100px;
-            margin-top: 50px;
-            margin-left: 50px;
-            height: auto;
-            box-sizing: border-box;
-            flex-direction: row;
-          }
-          .tr {
-            display: table-row;
-            margin: 10px;
-          }
-          .th {
-            display: table-cell;
-            position: sticky;
-            background-color: rgb(92, 115, 123);
-            padding: 10px;
-            text-align: center;
-          }
-          .th a {
-            color:rgb(0, 0, 0);
-            text-decoration:wavy;
-            margin-top: 100px;
-            border-radius: 15px;
-            background-blend-mode:hard-light;
-          }
-        </style>
-
-        <style>
-          @media screen and (min-width: 412px) and (min-height:915px) {
-            .table-container_lista_optiuni {
-              width: 200px;
-              height: 320px;
-              position: relative;
-              border: 1px groove whitesmoke;
-              border-radius: 30px;
-              box-sizing: border-box;
-              flex-direction: none;
-              grid-auto-flow: dense;
-              background: linear-gradient(35deg, #ffffff 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255) 95%);
-              position:static;
-              background-color:transparent;
-              align-content: left;
-              margin-bottom: 10px;
-              margin-left: 10px;
-              margin-right: 0px;
-              animation: glowBorder 1s infinite alternate-reverse;
-            }
-            @keyframes glowBorder {
-              0% {
-                border-color: rgb(255, 255, 255);
-                box-shadow: 0 0 0 0 rgb(0, 0, 0);
-              }
-              100% {
-                border-color: rgb(255, 255, 255);
-                box-shadow: 0 0 0 10px rgb(255, 255, 255);
-              }
-            }
-          }
-          </style>
+    <div class="search-bar" id="bara-de-cautare-principala">
+      <input type="text" 
+              placeholder="Search..." 
+              id="introducere-text">
+              <button type="submit" id="submit-cauta">Cauta:</button>
+            </div>
     </header>
 
     <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
@@ -1112,44 +1280,19 @@
     </script>
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <style>
-        .dropdown-content_meniu_1si2 
-          {
-            display: flex;
-            border: 1px solid;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            /* border-style: calc(); */
-            flex-direction: row; /* Display elements horizontally */
-          }
+        .dropdown-content_meniu_1si2 {
+          display: flex;
+          border: 1px solid;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          /* border-style: calc(); */
+          flex-direction: row; /* Display elements horizontally */
+        }
         /* Style for individual links within the dropdown menu */
-        .dropdown-content_meniu_1si2 .a 
-          {
-            /* Margin between links */
-            margin-right: 0px; 
-          }
         </style>
         <style>
-          @media screen and (min-width:412px) and (min-height:915px)
-          {
-            .dropdown-content_meniu_1si2 
-            {
-              display: flex;
-              border: 2px solid;
-              margin-top: 20px;
-              margin-bottom: 20px;
-              /* border-style: calc(); */
-              flex-direction: row; /* Display elements horizontally */
-            }
-          /* Style for individual links within the dropdown menu */
-          .dropdown-content_meniu_1si2 a 
-            {
-              /* Margin between links */
-              margin-right: 10px; 
-           }  
+          @media screen and (min-width:412px) and (min-height:915px) {
           }
-        </style>
-        <style>
-          
       </style>
       <div class = "container-content-Menu-produse-1"
             style="display:inline-block; 
@@ -1181,25 +1324,6 @@
                     Meniu Produse 1</a>
         </div>
       </div>
-      <style>
-        .div .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
-      </style>
       <div class = "container-content-Menu-produse-2" 
             style="display:inline-block; 
                   position: -webkit-sticky; 
@@ -1230,24 +1354,6 @@
           </a>
         </div>
       </div>
-      <style>
-        .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
-      </style>
       <div class = "container-content-Menu-produse-3" 
             style="display:inline-block; 
                   position: -webkit-sticky; 
@@ -1279,25 +1385,6 @@
             </a>
         </div>
       </div>
-      <style>
-        .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
-      </style>
       <div class = "container-content-Menu-produse-4" 
             style="display:inline-block; 
                   position: -webkit-sticky; 
@@ -1329,23 +1416,6 @@
       </div>
       </div>
       <style>
-        .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
       </style>
       <div class = "container-content-Menu-produse-5" 
             style="display:inline-block; 
@@ -1376,27 +1446,6 @@
           </a>
         </div>
       </div>
-      <style>
-        .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) 
-        {
-            .container-content-Menu-produse-1 
-            {
-              display: inline-block;
-              position: -webkit-sticky;
-              max-width: fit-content;
-              max-height: fit-content;
-              padding-left: 0px;
-            }
-        }
-      </style>
       <div class = "container-content-Menu-produse-6" 
             style="display:inline-block; 
                   position: -webkit-sticky; 
@@ -1427,25 +1476,6 @@
           </a>
         </div>
       </div>
-      <style>
-        .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
-      </style>
       <div class = "container-content-Menu-produse-7" 
             style="display:inline-block; 
                   position: -webkit-sticky; 
@@ -1476,25 +1506,6 @@
           </a>
         </div>
       </div>
-      <style>
-        .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
-      </style>
       <div class = "container-content-Menu-produse-8" 
             style="display:inline-block; 
                   position: -webkit-sticky; 
@@ -1524,25 +1535,6 @@
           </a>
         </div>
       </div>
-      <style>
-        .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-          }
-      </style>
       <div class = "container-content-Menu-produse-9" 
             style="display:inline-block; 
                     position: -webkit-sticky; 
@@ -1572,25 +1564,6 @@
           </a>
         </div>
       </div>
-      <style>
-        .div .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 1px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
-      </style>
       <div class = "container-content-Menu-produse-10" 
             style="display:inline-block; 
                     position: -webkit-sticky; 
@@ -1622,25 +1595,6 @@
           </a>
         </div>
       </div>
-      <style>
-        .div .container-content-Menu-produse-1 {
-            display: inline-block;
-            position: -webkit-sticky;
-            max-width: fit-content;
-            max-height: fit-content;
-            padding-left: 0px;
-        }
-
-        @media screen and (min-width: 412px) and (min-height: 915px) {
-            .container-content-Menu-produse-1 {
-                display: inline-block;
-                position: -webkit-sticky;
-                max-width: fit-content;
-                max-height: fit-content;
-                padding-left: 0px;
-            }
-        }
-      </style>
     </div>
     <!-- <script>
       function createTrail(event, number) {
@@ -1784,138 +1738,7 @@
             background-color: rgb(204, 161, 5);
           }
           </style>
-        <style>
-          @media screen and (min-width:412px) and(max-width:915px){
-           .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
-              border: 2px solid #000000;
-              border-style: solid;
-              border-radius: 20px;
-              margin: 0px;
-              padding-top: 0px;
-              height: 30px;
-              width: 880px;
-              box-sizing: border-box;
-              position:sticky; 
-              display:inline-block;
-              /* justify-content: right; */
-              list-style: none;
-              background-color: rgb(204, 161, 5);
-            }
-          }
-          </style>
         <div class="menu-container_acasa" id="Acasa_menu_container">
-          <style>
-            .menu-container_acasa {
-              border: 1px #000000;
-              border-width: 4px;
-              border-style: double;
-              border-radius: 40px;
-              box-sizing:content-box;
-              width: 100px;
-              /* margin: 20px; */
-              list-style-type: none;
-              position: relative;
-              display:inline-block;
-              flex: 1;
-              margin-bottom: 80px;
-            }
-            .menu-container_acasa .menu-ordered_list_1 {
-              list-style-type: none;
-              text-align: center;
-              border: 1px solid blue;
-              border-radius: 20px;
-              border-style:solid;
-              box-sizing:border-box;
-              position: sticky;
-              display: block;
-            }
-            #continut_acasa_dropdown{
-              border-radius: 15px;
-              padding-top: 2px;
-              justify-items: center;
-              text-align: center;
-              font-display: auto;
-              border-color: rgb(59, 42, 42);
-            }
-            .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
-              list-style-type: none;
-              text-align: center;
-              margin-right: 10px;
-              padding-top: 0px;
-              border: 1px #000000;
-              border-style: solid;
-              border-radius: 0px;
-              /* display: flexbox; */
-              position: absolute;
-              margin-top: 20px;
-              background-color:#a3a074;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-              z-index: 1;
-              display: none;
-            }
-            .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
-              display:block;
-              text-align: center;
-              inline-size: 2px;
-              border: 1px #000000 solid;
-              list-style-type: none;
-              margin-top: 0px;
-            }
-            .ol .dropdown-content_ordered_list_categories {
-              border: #c71b1b;
-              border-style: solid 2px;
-            }
-            .li_continut_1_tip_lista{
-              border-top: rgb(255, 251, 0) solid;
-              border-top-width: 2px;
-              border-top-right-radius: 10px;
-              border-bottom-width: 2px;
-              border-bottom-right-radius: 10px;
-              border-top: rgb(255, 251, 0) solid;
-              border-top-left-radius: 10px;
-              border-right-width: 2px;
-              border-bottom-left-radius: 10px;
-              border-left-width: 2px;
-              margin-bottom: 10px;
-            }
-            .li_continut_2_tip_lista {
-              border-top: rgb(255, 251, 0) solid;
-              border-top-width: 2px;
-              border-top-right-radius: 10px;
-              border-bottom: rgb(255, 251, 0) solid;
-              border-bottom-width: 2px;
-              border-bottom-right-radius: 10px;
-              border-right: rgb(255, 251, 0) solid;
-              border-top-left-radius: 10px;
-              border-right-width: 2px;
-              border-left: rgb(255, 251, 0) solid;
-              border-bottom-left-radius: 10px;
-              border-left-width: 2px;
-              margin-bottom: 10px;
-            }
-            .li_continut_3_tip_lista{
-              border-left: rgb(255, 251, 0) solid;
-              border-top-width: 2px;
-              border-top-right-radius: 10px;
-              border-left: rgb(255, 251, 0) solid;
-              border-bottom-width: 2px;
-              border-bottom-right-radius: 10px;
-              border-left: rgb(255, 251, 0) solid;
-              border-top-left-radius: 10px;
-              border-right-width: 2px;
-              border-left: rgb(255, 251, 0) solid;
-              border-bottom-left-radius: 10px;
-              border-left-width: 2px;
-              margin-bottom: 10px;
-            }
-            
-          </style>
-          <style>
-            @media screen and (max-width: 412px) and (max-height:915px)
-            { 
-            }
-          </style>
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
               <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Acasapage\Acasa.html" rel="noopener noreferrer">Acasa</a>
@@ -1937,114 +1760,6 @@
           </ol>
         </div>
         <div class="menu-container_categories" id="Menu_Categories">
-          <style>
-            @media screen and (max-width:412px) and (max-height: 915px) {
-              .menu-container_categories {
-                border: 1px; 
-                border-color:#000000;
-                border-width: 1px;
-                border-style: groove;
-                border-radius: 20px;
-                box-sizing:content-box;
-                /* box-shadow: wheat; */
-                width: 80px;
-                margin: 5px;
-                list-style-type: none;
-                position: sticky;
-                display:inline-block;
-                flex: 1;
-                margin-bottom: 20px;
-              }
-              .menu-container_categories .menu-ordered_list_2 {
-                list-style-type: none;
-                text-align: center;
-                border: 1px solid blue;
-                border-radius: 20px;
-                border-style:solid;
-                box-sizing:border-box;
-                position: sticky;
-                display: block;
-              }
-              .menu-ordered_list_2 .dropdown-list_items_2 .dropdown_content_ordered_list_2 {
-                list-style-type: none;
-                text-align: center;
-                margin-right: 10px;
-                padding-top: 0px;
-                padding: 0px;
-                border: 1px #000000;
-                border-style: solid;
-                border-radius: 0px;
-                /* display: flexbox; */
-                position: sticky;
-                /* margin-top: 20px; */
-                background-color:#ffffff;
-                min-width: 60px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                z-index: 1;
-                display: none;
-              }
-              .menu-ordered_list_2:hover 
-              .dropdown-list_items_2:hover 
-              .dropdown_content_ordered_list_2 {
-                display:block;
-                text-align: center;
-                inline-size: 2px;
-                list-style: none;
-                position: sticky;
-                padding-top: 0px;
-              }
-              .ol .dropdown_content_ordered_list_2 {
-                border: #000000;
-                border-style: solid 2px;
-                padding-top: 10px;
-              } 
-              .li_categoria_1_lista {
-                border-top: #0011ff solid;
-                border-top-width: 1px;
-                border-top-right-radius: 10px;
-                border-bottom: #0011ff solid;
-                border-bottom-width: 1px;
-                border-bottom-right-radius: 10px;
-                border-right: #0011ff solid;
-                border-top-left-radius: 10px;
-                border-right-width: 1px;
-                border-left: #0011ff solid;
-                border-bottom-left-radius: 10px;
-                border-left-width: 1px;
-                margin-bottom: 10px;
-              } 
-              .li_categoria_2_lista {
-                border-top: #0011ff solid;
-                border-top-width: 1px;
-                border-top-right-radius: 10px;
-                border-bottom: #0011ff solid;
-                border-bottom-width: 1px;
-                border-bottom-right-radius: 10px;
-                border-right: #0011ff solid;
-                border-top-left-radius: 10px;
-                border-right-width: 1px;
-                border-left: #0011ff solid;
-                border-bottom-left-radius: 10px;
-                border-left-width: 1px;
-                margin-bottom: 10px;
-              }
-              .li_categoria_3_lista {
-                border-top: #0011ff inset;
-                border-top-width: 1px;
-                border-top-right-radius: 10px;
-                border-bottom: #0011ff inset;
-                border-bottom-width: 1px;
-                border-bottom-right-radius: 10px;
-                border-right: #0011ff inset;
-                border-top-left-radius: 10px;
-                border-right-width: 1px;
-                border-left: #0011ff inset;
-                border-bottom-left-radius: 10px;
-                border-left-width: 1px;
-                margin-bottom: 10px;
-              }
-            }
-          </style>
           <ol class="menu-ordered_list_2" id="#meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
               <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii">Categorii Produse
@@ -2058,120 +1773,6 @@
           </ol>
         </div>
         <div class="menu_container_produse_de_top" id="menu_produse_top">
-          <style>
-            @media screen and (max-width: 412px) and (max-height: 915px) 
-              {
-                .menu_container_produse_de_top 
-                  {
-                    border: 1px #000000;
-                    border-width: 1px;
-                    border-style: groove;
-                    border-radius: 20px;
-                    box-sizing:content-box;
-                    width: 80px;
-                    margin: 10px;
-                    list-style-type: none;
-                    position: sticky;
-                    display:inline-block;
-                    flex: 1;
-                    margin-bottom: 20px;
-                  }
-                /* Style for the main menu item */
-                .menu_container_produse_de_top .menu_container_1_produse_de_top 
-                {
-                  list-style-type: none;
-                  text-align: center;
-                  /* border: 1px solid #0011a7; */
-                  /* border-style:solid; */
-                  /* border-radius: 10px; */
-                  box-sizing:border-box;
-                  position: sticky;
-                  display: block;
-                }
-                /* Style for the dropdown content container */
-                .menu-container_2_ordered_list .dropdown-continut_lista_1 .a 
-                  {
-                    cursor: pointer;
-                    position: relative;
-                    list-style-type: none;
-                  }
-                /* Style for the dropdown content */
-                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 
-                  {
-                    display: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background-color: transparent;
-                    background-blend-mode: color-dodge;
-                    min-width: 200px;
-                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                    border-radius: 5px;
-                    z-index: 1;
-                    list-style-type: none;
-                  }
-                /* Show dropdown content when hovering over the main menu item */
-                .menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 
-                  {
-                    display: block;
-                  }
-                /* Style for the dropdown links */
-                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a 
-                  {
-                    display:block;
-                    padding: 10px;
-                    border-top: 4px solid #000;
-                    border-right: 3px solid #000;
-                    border-left: 2px solid #000;
-                    border-bottom: 1px solid #000;
-                    border-radius: 10px;
-                    text-decoration: none;
-                    color: #000;
-                    list-style-type: none;
-                    transition:ease-in-out 2s;
-                  }
-                /* Add hover effect to the dropdown links */
-                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover 
-                  {
-                    /* background-color: #c51414; */
-                    list-style-type: none;
-                    transition:ease-in-out 2s;
-                  } 
-                /* Style for the images inside the dropdown content */
-                .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 
-                  {
-                    max-width: 100%;
-                    height: auto;
-                    list-style-type: none;
-                    border: 2px;
-                    text-align: center;
-                    text-rendering:optimizeSpeed;
-                    text-shadow: bisque;
-                    transition:ease-in-out 2s;
-                  }
-                .dropdown-content_imagini_2 
-                  {
-                    max-width: 100%;
-                    height: auto;
-                    list-style-type: none;
-                    border: 2px;
-                  }
-                .dropdown-content_imagini_3 
-                  {
-                    max-width: 100%;
-                    height: auto;
-                    list-style-type: none;
-                    border: 2px;
-                  }
-                ol 
-                  {
-                    background-color: rgb(184, 116, 34);
-                    border-radius: 10px;
-                    list-style-type: none;
-                    border-width: 100px;
-                  }
-              }
-          </style>
           <div class="menu_container_1_produse_de_top" id="Produsetop1">
             <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
