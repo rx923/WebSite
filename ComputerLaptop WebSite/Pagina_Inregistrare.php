@@ -1,6 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
+    $_SERVER = [""];
     $psw = $_POST['psw'];
     $servername = "localhost";
     $pswRepeat = $_POST['psw-repeat'];
