@@ -1,5 +1,5 @@
 /* Apple Devices  */
-@media all and (min-width: 1284px) and (min-height:2778px), 
+/* @media all and (min-width: 1284px) and (min-height:2778px), 
             (min-width:2532px) and (min-height:1170px), 
             (min-width:2532px) and (min-height:1170px),
             (min-width:1792px) and (min-height:828px),
@@ -30,12 +30,12 @@
                     box-sizing: border-box;
                     position:sticky; 
                     display:inline-block;
-                    /* justify-content: right; */
+                    justify-content: right;
                     list-style: none;
                     background-color: rgb(204, 161, 5);
                 }
 				
-}
+} */
 .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
     border: 2px solid #000000;
     border-style: solid;
@@ -47,13 +47,13 @@
     box-sizing: border-box;
     position:sticky; 
     display:inline-block;
-    /* justify-content: right; */
+    justify-content: right;
     list-style: none;
     background-color: rgb(204, 161, 5);
 }
 
 /* Android Devices  */
-@media all and (min-width: 1440px) and (min-height:2560px), 
+/* @media all and (min-width: 1440px) and (min-height:2560px), 
             (min-width:1080px) and (min-height:1920px), 
             (min-width:1440px) and (min-height:2960px),
             (min-width:1080px) and (min-height:2160px),
@@ -81,14 +81,14 @@
                     box-sizing: border-box;
                     position:sticky; 
                     display:inline-block;
-                    /* justify-content: right; */
+                    justify-content: right;
                     list-style: none;
                     background-color: rgb(204, 161, 5);
                 }
-}
+} */
 
 /*Tablets*/
-@media all and (min-width: 1536px) and (min-height:2048px), 
+/* @media all and (min-width: 1536px) and (min-height:2048px), 
             (min-width:1200px) and (min-height:1920px), 
             (min-width:800px) and (min-height:1280px),
             (min-width:1700px) and (min-height:2560px)
@@ -104,9 +104,9 @@
                     box-sizing: border-box;
                     position:sticky; 
                     display:inline-block;
-                    /* justify-content: right; */
+                    justify-content: right;
                     list-style: none;
                     background-color: rgb(204, 161, 5);
                 }
 				
-}
+} */

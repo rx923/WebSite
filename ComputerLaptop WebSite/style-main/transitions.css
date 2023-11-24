@@ -1,167 +1,40 @@
-/* Apple Devices  */
-@media all and (min-width: 1284px) and (min-height:2778px), 
-            (min-width:2532px) and (min-height:1170px), 
-            (min-width:2532px) and (min-height:1170px),
-            (min-width:1792px) and (min-height:828px),
-            (min-width:828px) and (min-height:1792px), 
-            (min-width:1125px) and (min-height:2436px),
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:750px) and (min-height:1334px), 
-            (min-width:640px) and (min-height:1136px), 
-            (min-width:2048px) and (min-height:2732px), 
-            (min-width:1536px) and (min-height:2048px), 
-            (min-width:768px) and (min-height:1024px)
-			{
-                /* animations *//* animations *//* animations *//* animations *//* animations */
-                h1::before {
-                    content: "";
-                    display: block;
-                    width: 15px;
-                    height: 15px;
-                    /* Color of the circle */
-                    border: 15px solid #000000; 
-                    /* Make it a circle */
-                    border-radius: 50%; 
-                    position: absolute;
-                    /* Adjust this value to position the circle inside the border */
-                    left: 10px; 
-                    /* Center vertically */
-                    top: 50%; 
-                    /* Adjust to vertically center the circle */
-                    transform: translateY(-50%); 
-                }
-                h1::after {
-                    /* Make it rounded */
-                    border-radius: 10px; 
-                    /* Empty content */
-                    content: ""; 
-                    display: block;
-                    width: 40px;
-                    height: 40px;
-                    position: absolute;
-                    /* Adjust this value to position the box inside the border */
-                    right: 10px; 
-                    /* Distance from the top */
-                    top: 10px; 
-                    overflow: hidden;
-                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
-                    /* Adjust background size as needed */
-                    background-size: contain; 
-                    /* Apply animation */
-                    /* animation: moveCoffee 4s linear infinite;  */
-                }
-                h1::after::before {
-                    /* Empty content */
-                    content: ""; 
-                    display: flex;
-                    width: 40px;
-                    height: 40px;
-                    /* Replace with your coffee image path */
-                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
-                    /* Adjust background size as needed */
-                    background-size: contain; 
-                    /* Apply animation */
-                    /* animation: moveCoffee 4s linear infinite;  */
-                }
-                
-				
-}
-
-/* Android Devices  */
-@media all and (min-width: 1440px) and (min-height:2560px), 
-            (min-width:1080px) and (min-height:1920px), 
-            (min-width:1440px) and (min-height:2960px),
-            (min-width:1080px) and (min-height:2160px),
-            (min-width:1440px) and (min-height:2560px), 
-            (min-width:1440px) and (min-height:2560px),
-            (min-width:1440px) and (min-height:2960px), 
-            (min-width:1440px) and (min-height:1440px), 
-            (min-width:1440px) and (min-height:2560px)
-			{
-            /* animations *//* animations *//* animations *//* animations *//* animations */
-                h1::before {
-                    content: "";
-                    display: block;
-                    width: 15px;
-                    height: 15px;
-                    /* Color of the circle */
-                    border: 15px solid #000000; 
-                    /* Make it a circle */
-                    border-radius: 50%; 
-                    position: absolute;
-                    /* Adjust this value to position the circle inside the border */
-                    left: 10px; 
-                    /* Center vertically */
-                    top: 50%; 
-                    /* Adjust to vertically center the circle */
-                    transform: translateY(-50%); 
-                }
-                h1::after {
-                    /* Make it rounded */
-                    border-radius: 10px; 
-                    /* Empty content */
-                    content: ""; 
-                    display: block;
-                    width: 40px;
-                    height: 40px;
-                    position: absolute;
-                    /* Adjust this value to position the box inside the border */
-                    right: 10px; 
-                    /* Distance from the top */
-                    top: 10px; 
-                    overflow: hidden;
-                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
-                    /* Adjust background size as needed */
-                    background-size: contain; 
-                    /* Apply animation */
-                    /* animation: moveCoffee 4s linear infinite;  */
-                }
-                h1::after::before {
-                    /* Empty content */
-                    content: ""; 
-                    display: flex;
-                    width: 40px;
-                    height: 40px;
-                    /* Replace with your coffee image path */
-                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
-                    /* Adjust background size as needed */
-                    background-size: contain; 
-                    /* Apply animation */
-                    /* animation: moveCoffee 4s linear infinite;  */
-                }
-}
 h1::before {
     content: "";
-    display: block;
+    display: inline;
     width: 15px;
     height: 15px;
     /* Color of the circle */
     border: 15px solid #000000; 
     /* Make it a circle */
     border-radius: 50px; 
+    float: left;
+    bottom: 10px;
+    position:sticky;
     position: -webkit-sticky;
+    /* position: -webkit-sticky; */
     /* Adjust this value to position the circle inside the border */
-    left: 10px; 
+    right: 10px; 
     /* Center vertically */
-    top: 50%; 
+    top: 55px;
+    /* bottom: 20px;  */
     /* Adjust to vertically center the circle */
-    transform: translateY(-50%);
+    /* transform: translateY(-2%); */
     /* animation: pulse 2s infinite alternate; */
 }
 h1::after {
     /* Make it rounded */
-    border-radius: 10px; 
+    border-radius: 12px; 
     /* Empty content */
     content: ""; 
     display: block;
-    width: 40px;
-    height: 40px;
-    position: sticky;
+    width: 50px;
+    height: 50px;
+    position: fixed;
     /* Adjust this value to position the box inside the border */
     right: 10px; 
     /* Distance from the top */
-    top: 10px; 
-    overflow: hidden;
+    top: 12px; 
+    overflow: auto;
     background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
     /* Adjust background size as needed */
     background-size: contain; 
@@ -179,7 +52,8 @@ h1::after::before {
     /* Adjust background size as needed */
     background-size: contain; 
     /* Apply animation */
-    animation: pulse 2s infinite alternate; 
+    animation: pulse 2s infinite alternate;
+    position: -webkit-sticky;
 }
 
 
@@ -187,76 +61,19 @@ h1::after::before {
 	0% {
 		transform: scale(0.95);
 		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+        /* Add webkit prefix for older iOS devices */
+        -webkit-transform: scale(0.95); 
 	}
 
 	70% {
 		transform: scale(1);
 		/* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
-	}
+        -webkit-transform: scale(1);
+    }
 
 	100% {
 		transform: scale(0.95);
 		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+        -webkit-transform: scale(0.95);
 	}
-}
-
-
-/*Tablets*/
-@media all and (min-width: 1536px) and (min-height:2048px), 
-            (min-width:1200px) and (min-height:1920px), 
-            (min-width:800px) and (min-height:1280px),
-            (min-width:1700px) and (min-height:2560px)
-			{
-            /* animations *//* animations *//* animations *//* animations *//* animations */
-                h1::before {
-                    /* content: ""; */
-                    display: block;
-                    width: 15px;
-                    height: 15px;
-                    /* Color of the circle */
-                    border: 15px solid #000000; 
-                    /* Make it a circle */
-                    border-radius: 50%; 
-                    position: absolute;
-                    /* Adjust this value to position the circle inside the border */
-                    left: 10px; 
-                    /* Center vertically */
-                    top: 50%; 
-                    /* Adjust to vertically center the circle */
-                    transform: translateY(-50%); 
-                }
-                h1::after {
-                    /* Make it rounded */
-                    border-radius: 10px; 
-                    /* Empty content */
-                    content: ""; 
-                    display: block;
-                    width: 40px;
-                    height: 40px;
-                    position: absolute;
-                    /* Adjust this value to position the box inside the border */
-                    right: 10px; 
-                    /* Distance from the top */
-                    top: 10px; 
-                    overflow: hidden;
-                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); /* Replace with your coffee image path */
-                    /* Adjust background size as needed */
-                    background-size: contain; 
-                    /* Apply animation */
-                    /* animation: moveCoffee 4s linear infinite;  */
-                }
-                h1::after::before {
-                    /* Empty content */
-                    content: ""; 
-                    display: flex;
-                    width: 40px;
-                    height: 40px;
-                    /* Replace with your coffee image path */
-                    background: url("U:\\Plan Afacere\\WebSite\\animation image\\dagmara-dombrovska.jpg"); 
-                    /* Adjust background size as needed */
-                    background-size: contain;
-                    /* Apply animation */ 
-                    /* animation: moveCoffee 4s linear infinite;  */
-                }
-				
 }
