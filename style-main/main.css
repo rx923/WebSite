@@ -11,6 +11,7 @@
 html {
     scroll-behavior: smooth;
     max-height: auto;
+    max-width: auto;
     /* background-color: #7dadce; */
 }
 body {
