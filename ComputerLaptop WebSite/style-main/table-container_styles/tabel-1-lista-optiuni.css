@@ -121,31 +121,3 @@
                     margin-top: 100px;
                 }
 }
-
-#upper-side-table-style .tr .a {
-    /* margin-left: 10px; */
-    position: sticky;
-}
-/* #upper-side-table-style{
-    position: -webkit-sticky;
-} */
-.tr {
-    display: table-row;
-    margin: 10px;
-}
-.th {
-    display: table-cell;
-    position: sticky;
-    background-color: unset;
-    border-radius: 20px;
-    border-style: outset;
-    border: 2px solid;
-    padding: 21px;
-    text-align: center;
-}
-.th a {
-    color:black;
-    text-decoration: wavy;
-    /* margin-top: 200px; */
-    background-blend-mode:darken;
-}
