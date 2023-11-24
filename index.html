@@ -224,7 +224,7 @@
         }
       }
 
-      .table-container_lista_optiuni .tr {
+      .table-container_lista_optiuni #tr {
         /* Margin between elements */
         flex-direction: row;
         flex: 1;
@@ -233,7 +233,7 @@
         display: inline-flex;
         /* margin: 1px; */
         /* padding: 10px; */
-        padding-right: 220px;
+        padding-right: 40px;
         /* margin: 10px; */
         /* position: absolute; */
       }
@@ -648,6 +648,7 @@
       #upper-side-table-style .tr .a {
         /* margin-left: 10px; */
         position: -webkit-sticky;
+        position: sticky;
         offset-position: auto;
       }
 
@@ -953,11 +954,10 @@
         </div>
       </div>
     </div>
-    
+
     <div class="search-bar" id="bara-de-cautare-principala"><input type="text" placeholder="Search..." id="introducere-text"><button type="submit" id="submit-cauta">Cauta:</button></div>
       <style>
-        .table-container_lista_optiuni 
-          {
+        .table-container_lista_optiuni {
             border: 1px groove black;
             box-sizing: border-box;
             flex-direction: none;
