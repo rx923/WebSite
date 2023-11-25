@@ -912,7 +912,7 @@ h1::before {
     float: left;
     bottom: 10px;
     position:sticky;
-    position: -webkit-sticky;
+    /* position: -webkit-sticky; */
     /* position: -webkit-sticky; */
     /* Adjust this value to position the circle inside the border */
     right: 10px; 
@@ -929,13 +929,13 @@ h1::after {
     /* Empty content */
     content: ""; 
     display: block;
-    width: 50px;
-    height: 50px;
-    position: fixed;
+    width: 40px;
+    height: 40px;
+    position: relative;
     /* Adjust this value to position the box inside the border */
     right: 10px; 
     /* Distance from the top */
-    top: 12px; 
+    top: 20px; 
     overflow: auto;
     background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
     /* Adjust background size as needed */
@@ -947,8 +947,8 @@ h1::after::before {
 /* Empty content */
     content: ""; 
     display:inline;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     /* Replace with your coffee image path */
     background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
     /* Adjust background size as needed */
@@ -977,13 +977,15 @@ h1::after::before {
     }
 }
 h1 {
-    background: linear-gradient(55deg, #edcfae 21%,rgb(198, 218, 224)31%, #084f66 85%); 
-    max-width: auto; 
-    max-height: auto; 
+    background: linear-gradient(55deg, #ffffff 21%,rgb(0, 124, 161)31%, #4b7f91 85%); 
+    max-width: 400px;
+    /* max-height: 270px;  */
+    margin-left: 60px; 
+    margin-right: 60px;
     text-align: center; 
     font-weight: lighter; 
     text-size-adjust: auto; 
-    border: 1px solid #031e39; 
+    border: 2px solid #ffffff; 
     border-top-style: ridge; 
     border-right-style: ridge; 
     border-left-style: ridge; 
