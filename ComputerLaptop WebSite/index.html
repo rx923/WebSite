@@ -25,8 +25,8 @@
       @media screen and (min-width:412px) and (min-height: 915px) and (orientation:landscape) {
         /* Adjusting the html page size for Android type of devices */
         html {
-          max-width: 1600px;
-          max-height: 1200px;
+          max-width: auto;
+          max-height: auto;
         }
         header {
             background: linear-gradient(30deg, #8d99a5 25%, #5bb1eb 35%, #031e27 60%);
@@ -426,7 +426,8 @@
             /* margin: 10px; */
             /* position: absolute; */
           }
-          .table-container_lista_optiuni .tr  #tableheader-Despre {
+
+          #tableheader-Despre {
             /* Margin between elements */
             padding: 10px;
             border: 1px transparent;
@@ -443,7 +444,7 @@
             background-size: 200% 200%;
             animation: glowing 2s ease-in;
           }
-          .table-container_lista_optiuni .tr  #tableheader-Comenzi {
+          #tableheader-Comenzi {
             border: 1px solid;
             border-radius: 10px;
             background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
@@ -466,7 +467,7 @@
             margin: 1px;
             margin: 0px;
           }
-          .table-container_lista_optiuni .tr  #tableheader-Livrare {
+          #tableheader-Livrare {
             border: 1px solid;
             border-radius: 10px;
             background-color: rgb(255, 255, 255);
@@ -475,8 +476,6 @@
             margin: 0px;
             margin: 0px;
           }
-          .table-container_lista_optiuni 
-          .tr  
           #tableheader-Suport {
             border-radius: 10px;
             border: 1px solid;
@@ -516,7 +515,7 @@
             overflow: hidden;
           }
           /* Dropdown button */
-          .dropdown .dropbtn {
+          .dropdown, .dropbtn {
             font-size: 11px;
             border: none;
             outline: none;
@@ -930,7 +929,6 @@
             /* Make the canvas fill its container */
             height: 100px; 
           }
-
           /* //style ofthe image1, image2, image3 but not in containers. */
           #image-top-produse-1 {
               display: inline-block;
@@ -953,7 +951,6 @@
               max-width: 40px;
               max-height: 40px;
           }
-
           /* // general styles for div elements modification */
           .div{
               max-width: 100px;
@@ -964,7 +961,6 @@
               width: 250px;
               height: 35px; 
               width: 35px;
-              
           }
           /* //image_container_produse_vandute_de_top_1.css */
           .div .image-container_produse_vandute_de_top_1{
@@ -1258,10 +1254,10 @@
       }
     </style>
     <title>Good Store Coffee</title>
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\InformatiiAditionalepage.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\type-device-style.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\type-device-style.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\support.css" type="text/css" media="all">
@@ -1272,42 +1268,42 @@
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\navigation.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\bordered-box.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\box-model-styles\box-model_produse_vandute_de_top_1.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\animations.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\animations.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\Contact.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\Echipa.css" type="text/css" media="all">
 
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\images-animations.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\images-animations.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\images-containers\imgcontainer.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\menu-image.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\nav-menu-ul.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\nav-menu-ul.css" type="text/css" media="all">
     
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\ol li a.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\ul.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\ol li a.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\ul.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Meniu-Produse-1-10\Meniu Produse 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\search-bar\search-bar.css" type="text/css" media="all">
 
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\selectors.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\tables.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\transitions.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Javascript\style.js" type="js/text" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\Javascript\bordered-rectangle.js" type="js/text" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Javascript\style.js" type="js/text" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\Javascript\bordered-rectangle.js" type="js/text" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\footer-style\footer.css" type="css/text" media="all">
 
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\container-produse_vandute_de_top_1.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-container_produse_vandute_de_top_1.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu_container_produse_de_top.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-content_meniu_1&2.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_acasa.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_categories.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\container-produse_vandute_de_top_1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-container_produse_vandute_de_top_1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu_container_produse_de_top.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-content_meniu_1&2.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_acasa.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container_categories.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\menu-container-modified-content.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\tabel-1-lista-optiuni.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\tabel-1-lista-optiuni.css" type="text/css" media="all">
     
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\image-containers-styles\image-container_produse_vandute_de_top_1.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\images-containers\images-animations.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\#menu-container3 .modified-dropdown .dropdown-image.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\#menu-container3 .modified-dropdown.css" type="text/css" media="all"> -->
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\menu.css" type="text/css" media="all"> -->
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\image-containers-styles\image-container_produse_vandute_de_top_1.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\images-containers\images-animations.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\#menu-container3 .modified-dropdown .dropdown-image.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\#menu-container3 .modified-dropdown.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\menu_containers\menu.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\style paragraph.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\bordered-box-styles\bordered-box_produse_vandute_de_top_1.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\content-styles\content.css" type="text/css" media="all">
@@ -1474,10 +1470,8 @@
         <div class ="tabel-1-lista-optiuni" 
             id="upper-side-table-style">
           <div class="tr">
-            <div class="th" 
-                  id="tableheader-Despre" 
-                  style="position: sticky;"
-                  class="glowing-background">
+            <div class="th glowing-background" 
+                  id="tableheader-Despre">
               <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" 
                   rel="noopener noreferrer"
                   id="style-first-link-Despre" 
