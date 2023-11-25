@@ -41,7 +41,6 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease; 
 }
-
 header {
     border-top: 2px slategrey;
     margin-bottom: 2px;
