@@ -1,39 +1,4 @@
 .search-bar {
-    margin-left: 0%;
-    position: relative;
-    width: 100%;
-    inline-size: 400px;
-    margin-right: 0px;
-    margin-bottom: 10px;
-    padding-top: 100px;
-    /* display:inline-block; */
-    background: linear-gradient(23deg, rgb(174, 188, 103) 23%, #bae14f 51%, #c0b468 85%);
-    /* text-justify: inter-cluster; */
-}
-#bara-de-cautare-principala{
-    display:inline-block;
-}
-.search-bar input {
-    position: sticky;
-    padding: 5px 10px;
-    border: 1px double #ccc;
-    border-radius: 20px;
-    outline: none;
-    margin-right: 0px;
-}
-.search-bar button {
-    position: sticky;
-    padding: 10px 15px;
-    background-color: #c2b56e;
-    color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 25px;
-    border-spacing: 2px;
-    border-left-width: 10px;
-    cursor: pointer;
-    left: 10px;
-}
-.search-bar {
     background-color: #b3b3b3be;
     padding: 5px 10px;
     /* padding-top: 100px; */
@@ -58,6 +23,29 @@
     position: sticky;
     cursor: pointer;
 }
+#bara-de-cautare-principala{
+    display:inline-block;
+}
+.search-bar input {
+    position: sticky;
+    padding: 5px 10px;
+    border: 1px double #ccc;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 0px;
+}
+.search-bar button {
+    position: sticky;
+    padding: 10px 15px;
+    background-color: #c2b56e;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 25px;
+    border-spacing: 2px;
+    border-left-width: 10px;
+    cursor: pointer;
+    left: 10px;
+}
 .search-bar .button {
     padding-left: 10px;
     border: wheat;
@@ -77,7 +65,8 @@
     position: relative;
 }
 .search-bar #introducere-text {
-    width: 600px;
+    width: 100px;
+    /* width: auto; */
     float:none;
 }
 .search-bar #submit-cauta {
