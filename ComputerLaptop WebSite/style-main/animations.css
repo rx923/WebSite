@@ -10,37 +10,42 @@ h1::before {
     border-radius: 40px; 
     float: left;
     bottom: 10px;
-    position:sticky;
+    position:static;
+    position: -webkit-sticky;
     /* position: -webkit-sticky; */
     /* position: -webkit-sticky; */
     /* Adjust this value to position the circle inside the border */
     right: 10px; 
     /* Center vertically */
-    top: 55px;
+    top: 25px;
+    bottom: 10px;
     /* bottom: 20px;  */
     /* Adjust to vertically center the circle */
     /* transform: translateY(-2%); */
-    /* animation: pulse 2s infinite alternate; */
+    animation: pulse 2s linear alternate;
 }
 h1::after {
     /* Make it rounded */
     border-radius: 12px; 
     /* Empty content */
     content: ""; 
-    display: block;
+    position: sticky;
+    display: flow-root;
     width: 70px;
     height: 70px;
+    margin-left: auto;
+    margin-top: 0px;
     /* position: sticky; */
     /* Adjust this value to position the box inside the border */
     /* right: 410px;  */
     /* Distance from the top */
-    top: 40px; 
-    overflow: auto;
+    top: 70px; 
+    /* overflow: auto; */
     background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
     /* Adjust background size as needed */
-    background-size: contain; 
+    background-size:cover; 
     /* Apply animation */
-    /* animation: moveCoffee 4s linear infinite; */
+    animation: pulse 4s linear infinite;
 }
 h1::after::before {
 /* Empty content */
@@ -48,6 +53,7 @@ h1::after::before {
     display:inline;
     width: 20px;
     height: 20px;
+    position: sticky;
     /* Replace with your coffee image path */
     background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
     /* Adjust background size as needed */
@@ -57,21 +63,21 @@ h1::after::before {
 }
 @keyframes pulse {
 	0% {
-		transform: scale(0.95);
+		transform: scale(0.35);
 		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
         /* Add webkit prefix for older iOS devices */
-        -webkit-transform: scale(0.95); 
+        -webkit-transform: scale(0.35); 
 	}
 
 	70% {
 		transform: scale(1);
-		/* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
+		/* box-shadow: 10 10 10 10px rgba(255, 255, 255, 0); */
         -webkit-transform: scale(1);
     }
 
 	100% {
-		transform: scale(0.95);
-		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
-        -webkit-transform: scale(0.95);
+		transform: scale(0.35);
+		/* box-shadow: 0 0 0 0 rgb(235, 0, 0); */
+        -webkit-transform: scale(0.35);
 	}
 }
