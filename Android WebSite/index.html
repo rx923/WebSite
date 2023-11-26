@@ -30,6 +30,7 @@
           body {
             width: auto;
             height: auto;
+            background:linear-gradient(40deg, #000000 35%, #ffffff 55%, rgb(0, 0, 0)) 30%;
           }
 
           footer{
@@ -179,14 +180,14 @@
               clear: both;
           }
           @keyframes glowing  {
-              0% { background-position: 0% 50%; }
-              50% { background-position: 100% 50%; }
-              100% { background-position: 0% 50%; }
+              0% { background-position: 20% 30%; }
+              50% { background-position: 40% 50%; }
+              100% { background-position: 30% 40%; }
           }
           .glowing-background {
               background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
-              background-size: 300% 350%;
-              animation: glowing 3s ease-in-out infinite;
+              background-size: 100% 550%;
+              animation: glowing 1s ease-in-out infinite;
           }
           .glowing-background {
               transition: box-shadow 1s ease-in-out;
@@ -205,7 +206,7 @@
           .th {
             display: table-cell;
             position: sticky;
-            background-color: white;
+            background-color: unset;
             border-radius: 20px;
             border-style: outset;
             border: 2px solid;
@@ -1270,14 +1271,14 @@
       }
     </style>
     <title>Good Store Coffee</title>
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\InformatiiAditionalepage.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\type-device-style.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\support.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\main.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\main.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\form.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\canvas.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Creare-cont\Account-creation.css" type="text/css" media="all">
@@ -1481,58 +1482,31 @@
     </script> -->
     <header>
       <h1> Big Store Coffee </h1>
-      <div class="table-container_lista_optiuni" 
-            id="tabel-tip-lista-optiuni">
-        <div class ="tabel-1-lista-optiuni" 
-            id="upper-side-table-style">
+      <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni">
+        <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
-            <div class="th glowing-background" 
-                  id="tableheader-Despre">
-              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" 
-                  rel="noopener noreferrer"
-                  id="style-first-link-Despre" 
-                  style="position: -webkit-sticky;">Despre
-              </a>
+            <div class="th glowing-background" id="tableheader-Despre">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky;">Despre</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th" 
-                  id="tableheader-Comenzi" 
-                  style="position: sticky;">
-              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.html" 
-                  rel="noopener noreferrer" 
-                  id="style-second-link-Comenzi" 
-                  style="position: -webkit-sticky;">Comenzi
-                </a>
+            <div class="th glowing-background" id="tableheader-Comenzi">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky;">Comenzi</a>
             </div>
           </div>
         <div class="tr">
-          <div class="th" 
-                id="tableheader-Livrare">
-            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Livrarepage\Livrare.html" 
-                rel="noopener noreferrer" 
-                id="style-third-link-Livrare" 
-                style="position: -webkit-sticky;">Livrare
-              </a>
+          <div class="th glowing-background">
+            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Livrarepage\Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky;">Livrare</a>
             </div>
           </div>
         <div class="tr">
-          <div class="th" 
-                id="tableheader-Suport">
-            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\Suport.html" 
-                rel="noopener noreferrer" 
-                id="style-fourth-link-Suport" 
-                style="position: -webkit-sticky;">Suport
-            </a>
+          <div class="th glowing-background" id="tableheader-Suport">
+            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky;">Suport</a>
           </div>
         </div>
         <div class="tr">
-          <div class="th" 
-                id="tableheader-Informatii-Aditionale">
-            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\Informatii Aditionale.html" 
-                rel="noopener noreferrer-Informatii-Aditionale" 
-                style="position: relative;">Informatii Aditionale
-            </a>
+          <div class="th glowing-background" id="tableheader-Informatii-Aditionale">
+            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\Informatii Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative;">Informatii Aditionale</a>
           </div>
         </div>
       </div>
