@@ -15,7 +15,7 @@ html {
     /* background-color: #7dadce; */
 }
 body {
-    background:linear-gradient(40deg, #000000 35%, #ffffff 55%, rgb(0, 0, 0) 30%);
+    background:linear-gradient(30deg, #918989 35%, rgb(38, 38, 143) 35%, rgb(165, 157, 157) 60%);
     /* box-shadow:steelblue */
     /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
     /* Cover the entire background */
@@ -499,9 +499,9 @@ header {
     box-sizing: border-box;
     flex-direction: none;
     grid-auto-flow: dense;
-    background: linear-gradient(35deg, #ffffff 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255) 95%);
+    background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
     position:sticky;
-    background-color:transparent;
+    background-color:unset;
     align-content: left;
     margin-bottom: 10px;
     margin-left: 10px;

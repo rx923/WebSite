@@ -1,83 +1,81 @@
 /* Bara de cautare stil pentru tip device PC. */
+
+/* Search bar container */
 .search-bar {
-    /* background-color: #e70000be; */
     padding: 5px 10px;
-    /* padding-top: 100px; */
     color: rgb(0, 0, 0);
-    background-color: antiquewhite;
-    border: solid;
-    /* margin-top: -20px; */
-    /* border-width: 2px; */
-    border-bottom-width: 0.3vw;
-    border-right-width: 0.16vw;
-    border-right-color: rgb(21, 64, 106);
-    border-bottom-color: rgb(21, 64, 106);
-    border-bottom-width: 2px;
-    border-top-color:rgb(21, 64, 106);
-    border-left-width: 0.2vw;
+    background-color: rgb(0, 23, 137);
+    border: outset;
+    border-width: 0.5vw 0.5vw;
+    border-color: rgb(68, 162, 255);
     border-radius: 30px;
-    border: top left radius 25px;;
+    position: absolute;
+    /* margin-top: 100px; */
+    /* bottom: 350px; */
+    left: 1500px;
+    bottom: 777px;
+    z-index: 1000; /* Added z-index to ensure it's above other elements */
     cursor: pointer;
-    display:inline-block;
-    /* margin-right: 30px; */
-    width: auto;
-    position: sticky;
-    cursor: pointer;
+    display: inline-block;
 }
-#bara-de-cautare-principala{
-    display:inline-block;
+/* Make the container fixed within the viewport */
+.fixed-search-bar {
+    position: fixed;
+    left: 1500px; /* Adjusted positioning */
+    bottom: 777px; /* Adjusted positioning */
+    z-index: 1000;
 }
-.search-bar input {
-    position: sticky;
+
+/* Input field */
+.search-bar input[type="text"] {
     padding: 5px 10px;
-    border: 1px double #ccc;
-    border-radius: 20px;
-    outline: none;
-    margin-right: 0px;
-}
-.search-bar button {
-    position: sticky;
-    padding: 10px 15px;
-    /* background-color: #c2b56e; */
-    /* color: rgb(255, 255, 255); */
-    border: none;
+    border: 3px outset rgb(0, 123, 255);
+    background-color: whitesmoke;
+    /* text-decoration: crimson; */
     border-radius: 25px;
-    border-spacing: 2px;
-    border-left-width: 10px;
-    cursor: pointer;
-    left: 10px;
-}
-.search-bar .button {
-    padding-left: 10px;
-    border: wheat;
-    width: auto;
-    border-radius: 0px;
-}
-.search-bar input {
-    /* float: right; */
-    border: 2px solid #ffffff;
-    /* background-color: rgb(224, 121, 95); */
-    /* background: linear-gradient(20deg, #ffffff 21%, rgba(128, 125, 153, 0.989)61%, rgb(37, 36, 36) 95%); */
-    border-radius: 25px;
-    width: 0px;
-    padding: 5px 10px;
+    /* Adjusted width with margin-left accounted for */
+    width: calc(100% - 250px); 
     outline: none;
-    margin-left: 230px;
     position: relative;
 }
-.search-bar #introducere-text {
-    width: 100px;
-    /* width: auto; */
-    float:none;
-}
-.search-bar #submit-cauta {
-    padding: 2px 4px; /* Adjust padding as needed */
-    /* background: linear-gradient(20deg, rgb(37, 36, 36) 21%, rgba(128, 125, 153, 0.989)61%, #ffffff 95%); */
-    color: rgb(3, 4, 3);
-    border:solid;
-    border-width: 2px;
-    border-radius: 30px;
+
+/* Search button */
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
-    width: 100px; /* Adjust the width as needed */
-    height: 40px; /* Adjust the height as needed */
+}
+
+/* Specific styles for certain IDs */
+#introducere-text-bara-de-cautare-principala {
+    width: 100px;
+}
+
+#submit-cauta-bara-de-cautare {
+    padding: 2px 4px;
+    color: rgb(255, 255, 255);
+    border: 2px outset;
+    border-radius: 30px;
+    background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+/* Container display */
+#bara-de-cautare-principala {
+    display: inline-block;
+}
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 412px) {
+    .search-bar {   
+        /* Adjusted width for smaller screens */
+        width: 20%; 
+        /* Adjusted positioning for smaller screens */
+        left: 75%; 
+        /* Adjusted positioning for smaller screens */
+        bottom: 80%; 
+    }
 }
