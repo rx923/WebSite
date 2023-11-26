@@ -22,7 +22,7 @@ h1::before {
     /* bottom: 20px;  */
     /* Adjust to vertically center the circle */
     /* transform: translateY(-2%); */
-    /* animation: pulse 2s infinite alternate; */
+    animation: pulse 2s linear alternate;
 }
 h1::after {
     /* Make it rounded */
@@ -33,18 +33,19 @@ h1::after {
     display: flow-root;
     width: 70px;
     height: 70px;
-    margin-left: 500px;
+    margin-left: auto;
+    margin-top: 0px;
     /* position: sticky; */
     /* Adjust this value to position the box inside the border */
     /* right: 410px;  */
     /* Distance from the top */
-    top: 40px; 
-    overflow: auto;
+    top: 70px; 
+    /* overflow: auto; */
     background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
     /* Adjust background size as needed */
-    background-size: contain; 
+    background-size:cover; 
     /* Apply animation */
-    /* animation: moveCoffee 4s linear infinite; */
+    animation: pulse 4s linear infinite;
 }
 h1::after::before {
 /* Empty content */
@@ -62,21 +63,21 @@ h1::after::before {
 }
 @keyframes pulse {
 	0% {
-		transform: scale(0.95);
+		transform: scale(0.35);
 		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
         /* Add webkit prefix for older iOS devices */
-        -webkit-transform: scale(0.95); 
+        -webkit-transform: scale(0.35); 
 	}
 
 	70% {
-		transform: scale(0.6);
+		transform: scale(1);
 		/* box-shadow: 10 10 10 10px rgba(255, 255, 255, 0); */
         -webkit-transform: scale(1);
     }
 
 	100% {
-		transform: scale(0.95);
-		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
-        -webkit-transform: scale(0.95);
+		transform: scale(0.35);
+		/* box-shadow: 0 0 0 0 rgb(235, 0, 0); */
+        -webkit-transform: scale(0.35);
 	}
 }
