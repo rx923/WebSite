@@ -1,5 +1,6 @@
+/* Bara de cautare stil pentru tip device PC. */
 .search-bar {
-    background-color: #b3b3b3be;
+    /* background-color: #e70000be; */
     padding: 5px 10px;
     /* padding-top: 100px; */
     color: rgb(0, 0, 0);
@@ -37,8 +38,8 @@
 .search-bar button {
     position: sticky;
     padding: 10px 15px;
-    background-color: #c2b56e;
-    color: rgb(255, 255, 255);
+    /* background-color: #c2b56e; */
+    /* color: rgb(255, 255, 255); */
     border: none;
     border-radius: 25px;
     border-spacing: 2px;
@@ -55,8 +56,8 @@
 .search-bar input {
     /* float: right; */
     border: 2px solid #ffffff;
-    background-color: rgb(224, 121, 95);
-    background: linear-gradient(20deg, #ffffff 21%, rgba(128, 125, 153, 0.989)61%, rgb(37, 36, 36) 95%);
+    /* background-color: rgb(224, 121, 95); */
+    /* background: linear-gradient(20deg, #ffffff 21%, rgba(128, 125, 153, 0.989)61%, rgb(37, 36, 36) 95%); */
     border-radius: 25px;
     width: 0px;
     padding: 5px 10px;
@@ -71,7 +72,7 @@
 }
 .search-bar #submit-cauta {
     padding: 2px 4px; /* Adjust padding as needed */
-    background: linear-gradient(20deg, rgb(37, 36, 36) 21%, rgba(128, 125, 153, 0.989)61%, #ffffff 95%);
+    /* background: linear-gradient(20deg, rgb(37, 36, 36) 21%, rgba(128, 125, 153, 0.989)61%, #ffffff 95%); */
     color: rgb(3, 4, 3);
     border:solid;
     border-width: 2px;

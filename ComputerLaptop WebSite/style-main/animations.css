@@ -1,28 +1,24 @@
 /* Top left animation a simple circle  */
 h1::before {
-    content: "";
-    display: inline;
-    width: 25px;
-    height: 25px;
+    /* display: flow-root; */
+    /* width: 25px;
+    height: 25px; */
     /* Color of the circle */
-    border: 15px solid #c45858; 
+    /* border: 15px solid #c45858;  */
     /* Make it a circle */
-    border-radius: 40px; 
-    float: left;
-    bottom: 10px;
-    position:static;
+    /* border-radius: 40px;  */
+    /* float:left; */
     position: -webkit-sticky;
     /* position: -webkit-sticky; */
     /* position: -webkit-sticky; */
     /* Adjust this value to position the circle inside the border */
-    right: 10px; 
+    /* right: 10px;  */
     /* Center vertically */
-    top: 25px;
-    bottom: 10px;
-    /* bottom: 20px;  */
+    /* top: 25px; */
+    /* bottom: 10px; */
     /* Adjust to vertically center the circle */
     /* transform: translateY(-2%); */
-    animation: pulse 2s linear alternate;
+    /* animation: pulse  4s infinite alternate; */
 }
 h1::after {
     /* Make it rounded */
@@ -31,9 +27,9 @@ h1::after {
     content: ""; 
     position: sticky;
     display: flow-root;
-    width: 70px;
-    height: 70px;
-    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    float: right;
     margin-top: 0px;
     /* position: sticky; */
     /* Adjust this value to position the box inside the border */
@@ -63,21 +59,21 @@ h1::after::before {
 }
 @keyframes pulse {
 	0% {
-		transform: scale(0.35);
+		transform: scale(0.85);
 		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
         /* Add webkit prefix for older iOS devices */
-        -webkit-transform: scale(0.35); 
+        -webkit-transform: scale(0.85); 
 	}
 
 	70% {
-		transform: scale(1);
+		transform: scale(0.9);
 		/* box-shadow: 10 10 10 10px rgba(255, 255, 255, 0); */
-        -webkit-transform: scale(1);
+        -webkit-transform: scale(0.9);
     }
 
 	100% {
-		transform: scale(0.35);
+		transform: scale(1.5);
 		/* box-shadow: 0 0 0 0 rgb(235, 0, 0); */
-        -webkit-transform: scale(0.35);
+        -webkit-transform: scale(1);
 	}
 }
