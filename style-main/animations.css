@@ -28,13 +28,13 @@ h1::after {
     /* Empty content */
     content: ""; 
     display: block;
-    width: 40px;
-    height: 40px;
-    position: relative;
+    width: 70px;
+    height: 70px;
+    /* position: sticky; */
     /* Adjust this value to position the box inside the border */
-    right: 10px; 
+    /* right: 410px;  */
     /* Distance from the top */
-    top: 20px; 
+    top: 40px; 
     overflow: auto;
     background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
     /* Adjust background size as needed */
