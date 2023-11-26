@@ -410,11 +410,11 @@
           #tableheader-Despre {
             /* Margin between elements */
             padding: 10px;
-            border: 1px transparent;
+            border: 1px solid black;
             border-radius: 10px;
             background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%);
             /* margin-top: auto; */
-            margin: 1px;
+            margin: 0px;
             /* margin: 10px; */
             /* margin-right: 10px; */
           }
@@ -1444,71 +1444,42 @@
   
       window.addEventListener('resize', setCanvasSize);
     </script> -->
-    <header style="margin-bottom: 80px;">
+    <header>
       <h1> Big Store Coffee </h1>
-      <div class="table-container_lista_optiuni" 
-            id="tabel-tip-lista-optiuni">
-        <div class ="tabel-1-lista-optiuni" 
-            id="upper-side-table-style">
+      <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni">
+        <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
-            <div class="th glowing-background" 
-                  id="tableheader-Despre">
-              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" 
-                  rel="noopener noreferrer"
-                  id="style-first-link-Despre" 
-                  style="position: -webkit-sticky;">Despre
-              </a>
+            <div class="th glowing-background" id="tableheader-Despre">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky;">Despre</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" 
-                  id="tableheader-Comenzi" 
-                  style="position: sticky;">
-              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.html" 
-                  rel="noopener noreferrer" 
-                  id="style-second-link-Comenzi" 
-                  style="position: -webkit-sticky;">Comenzi
-                </a>
+            <div class="th glowing-background" id="tableheader-Comenzi" style="position: sticky;">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky;">Comenzi</a>
             </div>
           </div>
-        <div class="tr">
-          <div class="th glowing-background" 
-                id="tableheader-Livrare">
-            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Livrarepage\Livrare.html" 
-                rel="noopener noreferrer" 
-                id="style-third-link-Livrare" 
-                style="position: -webkit-sticky;">Livrare
-              </a>
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Livrare">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Livrarepage\Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky;">Livrare</a>
             </div>
           </div>
-        <div class="tr">
-          <div class="th glowing-background" 
-                id="tableheader-Suport">
-            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\Suport.html" 
-                rel="noopener noreferrer" 
-                id="style-fourth-link-Suport" 
-                style="position: -webkit-sticky;">Suport
-            </a>
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Suport">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Suportpage\Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky;">Suport</a>
+            </div>
           </div>
-        </div>
-        <div class="tr">
-          <div class="th glowing-background" 
-                id="tableheader-Informatii-Aditionale">
-            <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\Informatii Aditionale.html" 
-                rel="noopener noreferrer-Informatii-Aditionale" 
-                style="position: relative;">Informatii Aditionale
-            </a>
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Informatii-Aditionale">
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\Informatii Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative;">Informatii Aditionale</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="search-bar" id="bara-de-cautare-principala">
-      <input type="text" 
-              placeholder="Search..." 
-              id="introducere-text">
-              <button type="submit" id="submit-cauta">Cauta:</button>
-            </div>
+      <div class="search-bar" id="bara-de-cautare-principala">
+        <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala">
+          <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
+        </input>
+      </div>
     </header>
 
     <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
@@ -1882,7 +1853,12 @@
       adjustCanvasSections();
     </script>
     <!-- <script type="text/javascript" src="style.js"></script> -->
-    <footer><section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 600px; "><button style="width: 100px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button><button style="width: 100px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button></section></footer>
+    <footer>
+      <section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 600px; ">
+        <button style="width: 100px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button>
+        <button style="width: 100px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button>
+      </section>
+    </footer>
   </body>
   <script>
     function applyUpDownEffect(startY, currentY) {
