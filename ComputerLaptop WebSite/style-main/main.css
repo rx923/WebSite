@@ -15,7 +15,8 @@ html {
     /* background-color: #7dadce; */
 }
 body {
-    background-color: #edcfae;
+    background:linear-gradient(40deg, #000000 35%, #ffffff 55%, rgb(0, 0, 0)) 30%;
+    /* box-shadow:steelblue */
     /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
     /* Cover the entire background */
     /* background-size: cover; */
