@@ -4,7 +4,7 @@
     border-style: double;
     border-radius: 40px;
     box-sizing:content-box;
-    width: 500px;
+    width: 300px;
     margin: 20px;
     list-style-type: none;
     position: relative;
@@ -92,7 +92,7 @@
     border: 2px;
 }
 ol {
-    background-color: rgb(184, 116, 34);
+    background-color: rgb(0, 61, 142);
     border-radius: 10px;
     list-style-type: none;
     border-width: 100px;
