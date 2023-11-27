@@ -9,12 +9,14 @@
     border-width: 0.5vw 0.5vw;
     border-color: rgb(68, 162, 255);
     border-radius: 30px;
-    position: absolute;
+    position: sticky;
     /* margin-top: 100px; */
     /* bottom: 350px; */
     left: 1500px;
     bottom: 777px;
-    z-index: 1000; /* Added z-index to ensure it's above other elements */
+    width: 550px;
+    /* Added z-index to ensure it's above other elements */
+    z-index: 1000; 
     cursor: pointer;
     display: inline-block;
 }
