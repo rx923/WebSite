@@ -1061,6 +1061,9 @@ h1 {
     position: relative;
     list-style-type: none;
 }
+.menu-container_2_ordered_list{
+    border: 2px solid white;
+}
 /* Style for the dropdown content */
 .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
     display: none;
@@ -1127,4 +1130,19 @@ ol {
     border-radius: 10px;
     list-style-type: none;
     border-width: 100px;
-}  
+}
+.a {
+    color: white;
+}
+h3{
+    border: 2px #000000 solid; 
+    border-width: 3px; 
+    margin-left: 320px; 
+    margin-right: 320px; 
+    background: linear-gradient(15deg, rgb(255, 255, 255) 35%, rgb(4, 46, 63)45%, rgb(255, 255, 255) 65%);
+    border-top-right-radius: 10px; 
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px; 
+    text-align: center;
+}
