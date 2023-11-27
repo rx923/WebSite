@@ -41,13 +41,17 @@
     /* display: flexbox; */
     position: absolute;
     margin-top: 20px;
-    background-color:#a3a074;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgb(253, 149, 149);
     z-index: 1;
     display: none;
 }
 
+
+#continut_acasa_dropdown{
+    background: scroll;
+
+}
 
 .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
     display:block;
