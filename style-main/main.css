@@ -382,7 +382,7 @@ header {
     justify-items: center;
     text-align: center;
     font-display: auto;
-    border-color: rgb(59, 42, 42);
+    border-color: rgb(255, 255, 255);
 }
 .dropdown-content_meniu_1si2 {
     background-color: #0053a6;
@@ -1069,7 +1069,7 @@ h1 {
     border: 2px;
     text-align: center;
     text-rendering:optimizeSpeed;
-    text-shadow: bisque;
+    text-shadow: rgb(255, 255, 255);
     transition:ease-in-out 2s;
 }
 .dropdown-content_imagini_2 {
