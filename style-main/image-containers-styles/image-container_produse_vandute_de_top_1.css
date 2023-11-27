@@ -1,7 +1,9 @@
-.div .image-container_produse_vandute_de_top_1{
-    /* border: 2px; */
-    /* border-style: inset; */
-    /* border-color: blue; */
-    width: 100px;
-    margin-left: 100px;
+#container-imagine-stanga {
+    width: auto;
+}
+#container-imagine-dreapta{
+    width: auto;
+}
+#container-imagine-centru{
+    width: auto;
 }
