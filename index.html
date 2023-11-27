@@ -1346,7 +1346,7 @@
     </script> -->
     <header>
       <h1> Big Store Coffee </h1>
-      <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni">
+      <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
             <div class="th glowing-background" id="tableheader-Despre">
@@ -1519,13 +1519,13 @@
     }
     /* The sidenav */
     .sidenav {
-      height: 600px;
-      width: 300px;
+      height: 100%;
+      width: 200px;
       position: fixed;
       z-index: 1;
       top: 0;
       left: 0;
-      background-color: #111;
+      background-color: #ffffff;
       overflow-x: hidden;
       padding-top: 20px;
     }
@@ -1632,7 +1632,20 @@
         </div>
       </div>
     </form>
-    <form action="Pagina_Logare.php" id="login-initial-form-1" method="get" class="form-container" style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
+    <script>
+      // Function to load the content of Pagina_Inregistrare.php
+      function loadPage(pageName) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("content").innerHTML = this.responseText;
+          }
+        };
+      xhttp.open("GET", pageName, true);
+      xhttp.send();
+    }
+    </script>
+    <form action="Pagina_Logare.php" id="Logheaza-teForm" method="get" class="form-container" style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
       <div class="imgcontainer">
         <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
       </div>
