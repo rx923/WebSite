@@ -382,7 +382,7 @@ header {
     justify-items: center;
     text-align: center;
     font-display: auto;
-    border-color: rgb(59, 42, 42);
+    border-color: rgb(255, 255, 255);
 }
 .dropdown-content_meniu_1si2 {
     background-color: #0053a6;
@@ -423,54 +423,13 @@ header {
     list-style-type: none;
     /* box-shadow: #537d8b; */
     margin-top: 0px;
-    }   
-    .ol .dropdown-content_ordered_list_categories {
+}   
+
+.ol .dropdown-content_ordered_list_categories {
     border: #c71b1b;
     border-style: solid 2px;
 }
-.li_continut_1_tip_lista {
-    border-top: rgb(255, 251, 0) solid;
-    border-top-width: 2px;
-    border-top-right-radius: 10px;
-    border-bottom-width: 2px;
-    border-bottom-right-radius: 10px;
-    border-top: rgb(255, 251, 0) solid;
-    border-top-left-radius: 10px;
-    border-right-width: 2px;
-    border-bottom-left-radius: 10px;
-    border-left-width: 2px;
-    margin-bottom: 10px;
-}
-.li_continut_2_tip_lista {
-    border-top: rgb(255, 251, 0) solid;
-    border-top-width: 2px;
-    border-top-right-radius: 10px;
-    border-bottom: rgb(255, 251, 0) solid;
-    border-bottom-width: 2px;
-    border-bottom-right-radius: 10px;
-    border-right: rgb(255, 251, 0) solid;
-    border-top-left-radius: 10px;
-    border-right-width: 2px;
-    border-left: rgb(255, 251, 0) solid;
-    border-bottom-left-radius: 10px;
-    border-left-width: 2px;
-    margin-bottom: 10px;
-}
-.li_continut_3_tip_lista {
-    border-left: rgb(255, 251, 0) solid;
-    border-top-width: 2px;
-    border-top-right-radius: 10px;
-    border-left: rgb(255, 251, 0) solid;
-    border-bottom-width: 2px;
-    border-bottom-right-radius: 10px;
-    border-left: rgb(255, 251, 0) solid;
-    border-top-left-radius: 10px;
-    border-right-width: 2px;
-    border-left: rgb(255, 251, 0) solid;
-    border-bottom-left-radius: 10px;
-    border-left-width: 2px;
-    margin-bottom: 10px;
-}
+
 .menu-ordered_list_2 .dropdown-list_items_2 .dropdown_content_ordered_list_2 {
     list-style-type: none;
     text-align: center;
@@ -1110,7 +1069,7 @@ h1 {
     border: 2px;
     text-align: center;
     text-rendering:optimizeSpeed;
-    text-shadow: bisque;
+    text-shadow: rgb(255, 255, 255);
     transition:ease-in-out 2s;
 }
 .dropdown-content_imagini_2 {
@@ -1126,7 +1085,6 @@ h1 {
     border: 2px;
 }
 ol {
-    background-color: rgb(184, 116, 34);
     border-radius: 10px;
     list-style-type: none;
     border-width: 100px;
@@ -1134,7 +1092,7 @@ ol {
 .a {
     color: white;
 }
-h3{
+h3 {
     border: 2px #000000 solid; 
     border-width: 3px; 
     margin-left: 320px; 

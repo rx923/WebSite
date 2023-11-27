@@ -27,7 +27,7 @@
     justify-items: center;
     text-align: center;
     font-display: auto;
-    border-color: rgb(59, 42, 42);
+    border-color: rgb(255, 255, 255);
 }
 
 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
@@ -41,13 +41,17 @@
     /* display: flexbox; */
     position: absolute;
     margin-top: 20px;
-    background-color:#a3a074;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgb(253, 149, 149);
     z-index: 1;
     display: none;
 }
 
+
+#continut_acasa_dropdown{
+    background: scroll;
+
+}
 
 .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
     display:block;
@@ -59,47 +63,46 @@
 }
 
 .li_continut_1_tip_lista{
-    border-top: rgb(255, 251, 0) solid;
-    border-top-width: 2px;
+    border-top-width: 1px;
     border-top-right-radius: 10px;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-right-radius: 10px;
-    border-top: rgb(255, 251, 0) solid;
+    border-top: rgb(255, 255, 255) solid;
+    border-bottom: rgb(255, 255, 255) solid;
     border-top-left-radius: 10px;
-    border-right-width: 2px;
+    border-right-width: 1px;
     border-bottom-left-radius: 10px;
-    border-left-width: 2px;
+    border-left-width: 1px;
     margin-bottom: 10px;
+    align-content: center;
 }
 
 .li_continut_2_tip_lista {
-    border-top: rgb(255, 251, 0) solid;
-    border-top-width: 2px;
+    border-top-width: 1px;
     border-top-right-radius: 10px;
-    border-bottom: rgb(255, 251, 0) solid;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-right-radius: 10px;
-    border-right: rgb(255, 251, 0) solid;
+    border-top: rgb(255, 255, 255) solid;
+    border-bottom: rgb(255, 255, 255) solid;
     border-top-left-radius: 10px;
-    border-right-width: 2px;
-    border-left: rgb(255, 251, 0) solid;
+    border-right-width: 1px;
     border-bottom-left-radius: 10px;
-    border-left-width: 2px;
+    border-left-width: 1px;
     margin-bottom: 10px;
+    align-content: center;
 }
 
 .li_continut_3_tip_lista{
-    border-left: rgb(255, 251, 0) solid;
-    border-top-width: 2px;
+    border-top-width: 1px;
     border-top-right-radius: 10px;
-    border-left: rgb(255, 251, 0) solid;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-right-radius: 10px;
-    border-left: rgb(255, 251, 0) solid;
+    border-top: rgb(255, 255, 255) solid;
+    border-bottom: rgb(255, 255, 255) solid;
     border-top-left-radius: 10px;
-    border-right-width: 2px;
-    border-left: rgb(255, 251, 0) solid;
+    border-right-width: 1px;
     border-bottom-left-radius: 10px;
-    border-left-width: 2px;
+    border-left-width: 1px;
     margin-bottom: 10px;
+    align-content: center;
 }
