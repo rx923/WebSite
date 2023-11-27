@@ -1431,24 +1431,34 @@
     // Change background color if necessary
     document.body.style.backgroundColor = "white"; 
   }
+    // Function to show/hide forms based on formId
+  function showForm(formId) {
+    var forms = document.getElementsByClassName("form-container");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].style.display = "none";
+    }
+    document.getElementById(formId).style.display = "block";
+    openNav(); // Open the side nav menu when showing the form
+  }
 
   </script>
     <style>
     /* The side navigation menu */
     .sidenav {
       /* 100% Full-height */
-      height: 100%; 
+      height: 50px; 
       /* 0 width - change this with JavaScript */
-      width: 0; 
+      width: 50px; 
       /* Stay in place */
       position: fixed; 
       /* Stay on top */
       z-index: 1; 
       /* Stay at the top */
       top: 0; 
-      left: 0;
+      margin-left: 10px;
+      margin-top: 10px;
       /* Black*/
-      background-color: #111; 
+      background-color: black; 
       /* Disable horizontal scroll */
       overflow-x: hidden; 
       /* Place content 60px from the top */
@@ -1459,9 +1469,9 @@
 
     /* The navigation menu links */
     .sidenav a {
-      padding: 8px 8px 8px 32px;
+      padding: 16px;
       text-decoration: none;
-      font-size: 25px;
+      font-size: 20px;
       color: #818181;
       display: block;
       transition: 0.3s;
@@ -1470,6 +1480,11 @@
     /* When you mouse over the navigation links, change their color */
     .sidenav a:hover {
       color: #f1f1f1;
+    }
+       /* Highlight the current link */
+    .sidenav a.active {
+      background-color: #04aa6d;
+      color: white;
     }
 
     /* Position and style the close button (top right corner) */
@@ -1480,19 +1495,32 @@
       font-size: 36px;
       margin-left: 50px;
     }
-
+        /* Close button style */
+    .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      cursor: pointer;
+      color: white;
+    }
+    .form-container {
+      display: none;
+      width: 80%; /* Set the width of the form container */
+      margin: 50px auto; /* Center the form */
+      margin-right: 10px; /* Margin to the right side */
+      float: right; /* Align forms to the right */
+    }
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
     #main {
       transition: margin-left .5s;
       padding: 20px;
     }
-
-
-
     /* The sidenav */
     .sidenav {
-      height: 100%;
-      width: 200px;
+      height: 600px;
+      width: 300px;
       position: fixed;
       z-index: 1;
       top: 0;
@@ -1501,41 +1529,78 @@
       overflow-x: hidden;
       padding-top: 20px;
     }
-
     /* Page content */
     .main {
       margin-left: 200px; /* Same as the width of the sidenav */
     }
     .openTriangle {
+      position: relative;
       display: inline-block;
       width: 0;
       height: 0;
       /* Left side of the triangle */
-      border-left: 25px solid transparent; 
+      border-left: 25px solid transparent;
       /* Right side of the triangle */
       border-right: 25px solid transparent;
-      /* Bottom side of the triangle */ 
-      border-bottom: 43.3px solid white; 
+      /* Bottom side of the triangle */
+      border-bottom: 43.3px groove rgb(255, 255, 255);
       /* Change cursor on hover */
-      cursor: pointer; 
-    } 
-    
+      cursor: pointer;
+    }
+    /* Style for the text "open" */
+    .openText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+      color: black;
+    }
     </style>
+      <script>
+        // Function to load the content dynamically
+        function loadPage(pageName, formId) {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("content").innerHTML = this.responseText;
+              if (formId) {
+                hideAllForms();
+                document.getElementById(formId).style.display = "block";
+              }
+            }
+          };
+          xhttp.open("GET", pageName, true);
+          xhttp.send();
+        }
+    
+        // Function to hide all forms
+        function hideAllForms() {
+          var forms = document.getElementsByClassName("form-container");
+          for (var i = 0; i < forms.length; i++) {
+            forms[i].style.display = "none";
+          }
+        }
+      </script>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+      <a href="#" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
+      <a href="#" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+      <a href="#link">Clients</a>
+      <a href="#link">Echipa</a>
     </div>
     <!-- Using any element to open the sidenav -->
-    <span class="openTriangle" onclick="openNav()">open
+    <span class="openTriangle" onclick="openNav()">
+      <span class="openText" style="margin-top: 30px;">open</span>  
     </span>
-    <!-- Adding all page content inside the div if side nav needs to push the page content tot he right -->
-    <div id="main">
-
+    <!-- Content area to display the page content -->
+    <div id="content">
+      <!-- Adding all page content inside the div if side nav needs to push the page content tot he right -->
+      <div id="main">
       </div>
-    <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
+    </div>
+
+    <form action="Pagina_Inregistrare.php"  id="InregistrareForm" class="form-container" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
       <div class="container_pagina_inregistrare">
       <h2 style="border-style: solid; border:0.1em ridge; border-color: #585151; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 2px; border-top-width: 2px; border-radius: 20vw; padding-top: 10px; padding-bottom: 10px; text-indent: 10px; padding-right: 10px; background: linear-gradient(20deg, rgb(37, 36, 36) 21%, rgba(128, 125, 153, 0.989)61%, #ffffff 95%);">Inregistrare</h2><p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
         <label for="email">
@@ -1567,7 +1632,7 @@
         </div>
       </div>
     </form>
-    <form action="Pagina_Logare.php" id="login-initial-form-1" method="get" style="width: auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
+    <form action="Pagina_Logare.php" id="login-initial-form-1" method="get" class="form-container" style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
       <div class="imgcontainer">
         <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
       </div>
