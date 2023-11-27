@@ -1061,6 +1061,9 @@ h1 {
     position: relative;
     list-style-type: none;
 }
+.menu-container_2_ordered_list{
+    border: 2px solid white;
+}
 /* Style for the dropdown content */
 .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
     display: none;
