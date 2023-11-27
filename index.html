@@ -76,7 +76,9 @@
           display: table-row;
           margin: 10px;
         }
-
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        .sidenav {padding-top: 30px; width: 200px;}
+        .sidenav a {font-size: 18px;}
         #meniu-produse-number-1, #meniu-produse-number-2, #meniu-produse-number-3, #meniu-produse-number-4, #meniu-produse-number-5, #meniu-produse-number-6, #meniu-produse-number-7, #meniu-produse-number-8, #meniu-produse-number-9, #meniu-produse-number-10  {
           text-decoration: none; 
           position: sticky; 
@@ -1379,7 +1381,164 @@
         </input>
       </div>
     </header>
+    <script>
+  // Sidenav Overaly Example
+  /* Set the width of the side navigation to 250px */
+  // JavaScript function to toggle the side navigation menu
+  function toggleNav() {
+    var sidenav = document.getElementById("mySidenav");
+    var main = document.getElementById("main");
+    var body = document.body;
 
+    if (sidenav.style.width === "250px") {
+      // Close the side navigation menu
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+      body.style.backgroundColor = "white";
+    } else {
+      // Open the side navigation menu
+      sidenav.style.width = "250px";
+      main.style.marginLeft = "250px";
+      body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+      console.log('Side nav opened.');
+    }
+  }
+  // Ensure the side nav menu is closed when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    var sidenav = document.getElementById("mySidenav");
+    var main = document.getElementById("main");
+    var body = document.body;
+
+    sidenav.style.width = "0";
+    main.style.marginLeft = "0";
+    body.style.backgroundColor = "white";
+  });
+  // Sidenav Push Content w/ opacity
+  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    console.log('Side nav opened.');
+    document.getElementByID("OpenTriangle")
+  }
+  
+  // JavaScript function to close the side nav menu
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    // Adjust the element ID as needed
+    document.getElementById("main").style.marginLeft = "0"; 
+    // Change background color if necessary
+    document.body.style.backgroundColor = "white"; 
+  }
+
+  </script>
+    <style>
+    /* The side navigation menu */
+    .sidenav {
+      /* 100% Full-height */
+      height: 100%; 
+      /* 0 width - change this with JavaScript */
+      width: 0; 
+      /* Stay in place */
+      position: fixed; 
+      /* Stay on top */
+      z-index: 1; 
+      /* Stay at the top */
+      top: 0; 
+      left: 0;
+      /* Black*/
+      background-color: #111; 
+      /* Disable horizontal scroll */
+      overflow-x: hidden; 
+      /* Place content 60px from the top */
+      padding-top: 60px; 
+      /* 0.5 second transition effect to slide in the sidenav */
+      transition: 0.5s; 
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      transition: margin-left .5s;
+      padding: 20px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+
+    /* The sidenav */
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    /* Page content */
+    .main {
+      margin-left: 200px; /* Same as the width of the sidenav */
+    }
+    .openTriangle {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      /* Left side of the triangle */
+      border-left: 25px solid transparent; 
+      /* Right side of the triangle */
+      border-right: 25px solid transparent;
+      /* Bottom side of the triangle */ 
+      border-bottom: 43.3px solid white; 
+      /* Change cursor on hover */
+      cursor: pointer; 
+    } 
+    
+    </style>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+    <!-- Using any element to open the sidenav -->
+    <span class="openTriangle" onclick="openNav()">open
+    </span>
+    <!-- Adding all page content inside the div if side nav needs to push the page content tot he right -->
+    <div id="main">
+
+      </div>
     <form action="Pagina_Inregistrare.php"  id="Register_page_1" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
       <div class="container_pagina_inregistrare">
       <h2 style="border-style: solid; border:0.1em ridge; border-color: #585151; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 2px; border-top-width: 2px; border-radius: 20vw; padding-top: 10px; padding-bottom: 10px; text-indent: 10px; padding-right: 10px; background: linear-gradient(20deg, rgb(37, 36, 36) 21%, rgba(128, 125, 153, 0.989)61%, #ffffff 95%);">Inregistrare</h2><p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
@@ -1387,13 +1546,28 @@
           <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Email
           </b>
         </label>
-        <input type="text" placeholder="Introdu adresa de Email" name="email" required><label for="psw"><b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Parola</b></label>
-        <input type="password" placeholder="Introdu Parola:" name="psw" required><label for="psw-repeat"><b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Repeta Parola</b></label>
-        <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required><label>
-        <input type="checkbox" checked="checked" name="remember" style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine minte datele de conectare</label><p>Creandu-ti un cont, esti de acord cu <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%">Termenele & Conditiile</a>.</p>
+        <input type="text" placeholder="Introdu adresa de Email" name="email" required>
+        <label for="psw">
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Parola
+          </b>
+        </label>
+        <input type="password" placeholder="Introdu Parola:" name="psw" required>
+        <label for="psw-repeat">
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Repeta Parola
+          </b>
+        </label>
+        <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
+        <label>
+        <input type="checkbox" checked="checked" name="remember" style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine minte datele de conectare
+        </label>
+        <p>Creandu-ti un cont, esti de acord cu 
+          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%">Termenele & Conditiile
+          </a>.</p>
         <div class="clearfix">
-          <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza</button>
-          <button type="submit" class="signupbtn" style="background: linear-gradient(35deg, #ffefde 55%,rgb(58, 155, 188)70%, #00171f) 80%;">Inregistreaza-te</button>
+          <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza
+          </button>
+          <button type="submit" class="signupbtn" style="background: linear-gradient(35deg, #ffefde 55%,rgb(58, 155, 188)70%, #00171f) 80%;">Inregistreaza-te
+          </button>
         </div>
       </div>
     </form>
