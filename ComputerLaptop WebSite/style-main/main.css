@@ -191,6 +191,7 @@ header {
     border-left: 5px rgb(255, 255, 255) groove;
     border-right: 5px rgb(255, 255, 255) groove;
     border-bottom: 5px rgb(255, 255, 255) groove;
+    border-radius: 25px;
     margin-bottom: 10px;
     margin-bottom: 1px;
     /* margin-top: 50px; */
@@ -499,17 +500,56 @@ header {
     box-sizing: border-box;
     flex-direction: none;
     grid-auto-flow: dense;
-    background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+    background: 
+        linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%),
+        linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
     position:sticky;
     background-color:unset;
     align-content: left;
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 0px;
-    animation: glowBorder 1s infinite alternate-reverse;
+    /* animation: vibrateBackground 2s infinite linear; */
+    /* animation: glowBorder 1s infinite alternate-reverse; */
     /* height: 600px; */
+    animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+    background-size: 200% 200%;
 }
-@keyframes glowBorder {
+
+@keyframes flowWaves {
+    0% {
+      background-position: 0% 50%;
+      background-size: 200% 200%;
+    }
+    50% {
+      background-position: 100% 50%;
+      background-size: 150% 150%;
+
+    }
+    100% {
+      background-position: 0% 50%;
+      background-size: 200% 200%;
+
+    }
+  }
+  
+  @keyframes flowWavesDepth {
+    0% {
+      background-position: 0% 50%;
+      background-size: 200% 200%;
+
+    }
+    50% {
+      background-position: 100% 50%;
+      background-size: 180% 180%;
+
+    }
+    100% {
+      background-position: 0% 50%;
+      background-size: 200% 200%;
+    }
+  }  
+/* @keyframes glowBorder {
     0% {
         border-color: rgb(255, 255, 255);
         box-shadow: 0 0 0 0 rgb(0, 0, 0);
@@ -518,7 +558,7 @@ header {
         border-color: rgb(255, 255, 255);
         box-shadow: 0 0 0 10px rgb(255, 255, 255);
     }
-}
+} */
 .tabel-1-lista-optiuni {
     /* padding: 200px; */
     /* margin: 1000px; */
