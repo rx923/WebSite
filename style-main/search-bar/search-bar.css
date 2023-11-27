@@ -14,7 +14,9 @@
     /* bottom: 350px; */
     left: 1500px;
     bottom: 777px;
-    z-index: 1000; /* Added z-index to ensure it's above other elements */
+    width: 550px;
+    /* Added z-index to ensure it's above other elements */
+    z-index: 1000; 
     cursor: pointer;
     display: inline-block;
 }
