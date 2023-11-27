@@ -1,4 +1,5 @@
 // JavaScript to toggle the dropdown menu on button click
+// JavaScript code for getting the class button myButton over the dropDown.
 document.getElementById("myButton").addEventListener("click", function() {
     var dropdown = document.getElementById("myDropdown");
     if (dropdown.style.display === "block") {
