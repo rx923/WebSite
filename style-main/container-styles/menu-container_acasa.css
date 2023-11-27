@@ -1,10 +1,6 @@
 .menu-container_acasa {
-    border: 1px #000000;
-    border-width: 4px;
-    border-style: double;
     border-radius: 40px;
     box-sizing:content-box;
-    width: 300px;
     margin: 20px;
     list-style-type: none;
     position: relative;
@@ -14,10 +10,10 @@
 }
 
 
-.menu-container_acasa .menu-ordered_list_1 {
+#meniu_ordered_1 {
     list-style-type: none;
     text-align: center;
-    border: 1px solid blue;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
     border-style:solid;
     box-sizing:border-box;
