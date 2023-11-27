@@ -15,7 +15,8 @@ html {
     /* background-color: #7dadce; */
 }
 body {
-    background:linear-gradient(30deg, #918989 35%, rgb(38, 38, 143) 35%, rgb(165, 157, 157) 60%);
+    background:#003d51;
+    /* background:linear-gradient(30deg, #918989 35%, rgb(38, 38, 143) 35%, rgb(165, 157, 157) 60%); */
     /* box-shadow:steelblue */
     /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
     /* Cover the entire background */
@@ -24,7 +25,7 @@ body {
     /* background-repeat: no-repeat; */
     /* display: flow-root; */
     /* Center the background image */
-    /* background-position: center; */
+    background-position: center;
     /* background-color: #7dadce;   */
     /* You can add more background properties as needed */
 }
@@ -174,9 +175,27 @@ h2 {
     box-shadow: 0 0 20px #7dadce;
     animation: colors 5s infinite;
 }
+.trail {
+    /* Add styling for the trail element */
+    position: absolute;
+    /* Add appropriate styling for the trail, such as width, height, color, etc. */
+    /* Example: */
+    background-color: rgb(255, 0, 0);
+    width: 2px;
+    height: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 998; /* Ensure trail appears below cursor */
+    /* Additional styling for trail animation or appearance */
+}
+/* Animation for the hovering over the Meniu-Produse1, Produse2, Produse3, Produse4, Produse5, Produse6, Produse7, Produse8, Produse9, Produse10. */
 @keyframes colors{
     0% {
         filter: hue-rotate(0deg);
+
+    }
+    75% {
+        filter: hue-rotate(180deg);
 
     }
 
@@ -200,26 +219,111 @@ header {
 }
 .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
     border: 2px solid #000000;
-    border-style: solid;
+    border-style: transparent;
     border-radius: 20px;
     margin: 0px;
-    padding-top: 0px;
-    height: 30px;
-    width: 880px;
+    padding: 0px;
+    height: 40%;
+    width: 100%;
+    margin-right: 20px;
     box-sizing: border-box;
     position:sticky; 
     display:inline-block;
     /* justify-content: right; */
     list-style: none;
-    background-color: rgb(204, 161, 5);
+    background: linear-gradient(30deg, #3c3c3c 35%, #1d577d 55%, #006f93 80%);
 }
+/* Style for containers */
 .container-content-Menu-produse-1 {
     display: inline-block;
     position: -webkit-sticky;
     max-width: fit-content;
     max-height: fit-content;
-    padding-left: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
+/* Style for containers */
+.container-content-Menu-produse-2 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-3 {
+    display: inline-block;
+    position: sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-4 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-5 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-6 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-7 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-8 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-9 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+/* Style for containers */
+.container-content-Menu-produse-10 {
+    display: inline-block;
+    position: -webkit-sticky;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 
 #upper-side-table-style .tr .a {
     /* margin-left: 10px; */
@@ -284,17 +388,19 @@ header {
     border-color: rgb(59, 42, 42);
 }
 .dropdown-content_meniu_1si2 {
-    display: flex;
-    border: 2px solid;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    background-color: #0053a6;
+    display: block;
+    /* margin-top: 60px; */
+    border-radius: 25px;
+    margin-bottom: 10px;
+    /* justify-self: stretch; */
     /* border-style: calc(); */
     flex-direction: row; /* Display elements horizontally */
 }
 /* Style for individual links within the dropdown menu */
 .dropdown-content_meniu_1si2 a {
     /* Margin between links */
-    margin-right: 10px; 
+    margin-right: 0px; 
 }
 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
     list-style-type: none;
@@ -305,9 +411,9 @@ header {
     border-style: solid;
     border-radius: 0px;
     /* display: flexbox; */
-    position: absolute;
+    position: sticky;
     margin-top: 20px;
-    background-color:#a3a074;
+    /* background-color:#535024; */
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
