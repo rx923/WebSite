@@ -1,11 +1,14 @@
 #container-imagine-stanga {
     width: auto;
     padding: 20px;
+    position: sticky;
 }
 #container-imagine-dreapta{
     width: auto;
+    position: sticky;
 }
 #container-imagine-centru{
     width: auto;
     padding: 20px;
+    position: sticky;
 }
