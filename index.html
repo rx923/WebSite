@@ -1585,8 +1585,8 @@
       </script>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
-      <a href="#" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+      <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
+      <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
       <a href="#link">Clients</a>
       <a href="#link">Echipa</a>
     </div>
@@ -1635,11 +1635,18 @@
     </form>
     <script>
       // Function to load the content of Pagina_Inregistrare.php
-      function loadPage(pageName) {
+      function loadPage(pageName, formId) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("content").innerHTML = this.responseText;
+          }
+          if (formId) {
+            hideAllForms();
+            document.getElementById(formId).style.display = "dropdown";
+            // Add any additional styling manipulations if needed
+            // For example:
+            document.getElementById(formId).classList.add("form-container");
           }
         };
       xhttp.open("GET", pageName, true);
@@ -2026,17 +2033,33 @@
           <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
             <div class="image-container_produse_vandute_de_top_1" id="container-imagine-stanga">
               <a>
-                <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 250px; width:320px; position: sticky;" loading="lazy">
+                <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 100px; width:100px; position: sticky;" loading="eager">
               </a>
+              <p style="text-align: center; text-rendering: optimizeSpeed; background-color: whitesmoke; border: #ff0000 2px solid; border-radius: 20px; position: sticky;"> Experimentează rafinamentul și energia pură a unei cafele premium, în capsulele noastre de cafea cu valoare energetică mare și aromă intensă! Fiecare înghițitură este o călătorie către savoarea autentică a boabelor de cafea proaspăt prăjite, oferindu-ți o explozie de gusturi și arome unice.
+                Acest produs este soluția perfectă pentru cei ce caută o doză rapidă de energie în fiecare dimineață sau în timpul unei zile agitate. Cu o combinație perfect echilibrată între forța cafelei și aroma sa inconfundabilă, aceste capsule sunt partenerul tău ideal pentru a începe ziua în forță sau pentru a-ți recăpăta energia în orice moment al zilei.
+                Fă pași în fața oboselii și trăiește intensitatea fiecărei zile cu gustul irezistibil al cafelei din aceste capsule. Profită de aroma bogată și caracterul energizant al acestei cafele premium pentru a te bucura de o experiență de degustare excepțională.
+                Nu rata șansa de a transforma fiecare dimineață într-o experiență plină de gust și energie! Alege capsulele noastre de cafea cu valoare energetică mare și descoperă savoarea autentică a cafelei care te revitalizează într-un mod unic și plăcut.
+                </p>
             </div>
             <div class="image-container_produse_vandute_de_top_2" id="container-imagine-dreapta">
               <a>
-                <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 250px; width:320px; position: sticky;" loading="lazy"></a>
+                <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 100px; width:100px; position: sticky;" loading="eager">
+              </a>
+              <p style="text-align: center; text-rendering: optimizeSpeed; background-color: whitesmoke; border: #ff0000 2px solid; border-radius: 20px; position: sticky;"> Bucură-te de o călătorie senzorială prin universul cafelei cu boabele noastre de cafea de tip Excelsa - un veritabil deliciu pentru pasionații de cafea! Cultivate în cele mai prielnice zone, aceste boabe sunt o combinație perfectă între aromă exotică și gust rafinat.
+                Excelsa, o varietate rară și prețioasă, te îmbie cu o paletă amplă de arome și un profil gustativ remarcabil. Cu nuanțe distincte de fructe și flori exotice, această cafea oferă o experiență unică, captivantă și plină de profunzime.
+                Aceste boabe de cafea reprezintă o alegere inspirată pentru cei ce apreciază cafeaua de cea mai înaltă calitate. Cu fiecare înghițitură, vei fi transportat într-o călătorie a simțurilor, descoperind straturi bogate de gust și arome complexe, ce redefinesc plăcerea unei cafele autentice.
+                Experimentează aroma distinctivă și calitatea excepțională a boabelor noastre de cafea de tip Excelsa, o alegere premium pentru cei ce caută o cafea cu caracter unic și o savoare deosebită. Delectează-ți simțurile și descoperă o cafea de excepție ce îți va răsfăța gusturile și te va fascina la fiecare ceașcă.
+                </p>
               </div>
               <div class="image-container_produse_vandute_de_top_3" id="container-imagine-centru">
                 <a>
-                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 250px; width:320px; position: sticky;" loading="lazy">
+                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 100px; width:100px; position: relative;" loading="eager">
                 </a>
+                <p style="text-align: center; text-rendering: optimizeSpeed; background-color: whitesmoke; border: #ff0000 2px solid; border-radius: 20px; position: sticky;"> Bucură-te de perfecțiunea gustului cu macinarea extra fină dedicată cafelei Arabica! Această măcinătură de excepție este special creată pentru a evidenția toate subtilitățile și aromele rafinate ale boabelor de cafea Arabica, oferindu-ți o experiență senzorială de neegalat.
+                  Cu o granulație extrem de fină, această macinătură este perfectă pentru a extrage în mod optim aromele distincte ale cafelei Arabica. Fiecare ceașcă preparată devine o călătorie gustativă, plină de bogăția notelor florale, fructate și dulci, ce definește caracterul acestei cafele de excepție.
+                  Experimentează ritualul preparării cafelei la cel mai înalt nivel cu macinarea extra fină pentru cafea Arabica. Fiecare cafea preparată devine o operă de artă a gustului, ce te va încânta cu profunzimea și complexitatea sa.
+                  Descoperă lumea bogată și captivantă a cafelei Arabica prin intermediul acestei macinături extra fine, ce te va învălui într-o experiență aromatică inegalabilă. Savurează fiecare înghițitură și lasă-te purtat de notele subtile și elegante ce definesc cafeaua Arabica într-o manieră autentică și sofisticată.
+                  </p>
               </div>
             </div>
           </div>
