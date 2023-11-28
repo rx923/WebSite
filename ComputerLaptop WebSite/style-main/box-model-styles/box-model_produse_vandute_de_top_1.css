@@ -3,4 +3,6 @@
     border: 2px;
     border-style: solid;
     display: block;
+    width: auto;
+    height: auto;
 }
