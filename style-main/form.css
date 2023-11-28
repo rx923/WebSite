@@ -25,7 +25,7 @@ input[type="text"], input[type="password"] {
     padding: 2px;
     margin: 0px 0px;
     border: 1px solid #772727;
-    border-radius: 20px;
+    border-radius: 20px;        
 }
 #submit-button-form {
     background-color: #875050;
