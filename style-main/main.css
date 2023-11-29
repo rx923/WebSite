@@ -442,7 +442,7 @@ header {
     /* display: flexbox; */
     position: sticky;
     /* margin-top: 20px; */
-    background-color:#ffffff;
+    /* background-color:#ffffff; */
     min-width: 60px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;

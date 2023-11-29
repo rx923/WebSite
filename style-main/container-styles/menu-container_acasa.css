@@ -41,7 +41,7 @@
     /* display: flexbox; */
     position: absolute;
     margin-top: 20px;
-    min-width: 160px;
+    min-width: 500px;
     box-shadow: 0px 8px 16px 0px rgb(253, 149, 149);
     z-index: 1;
     display: none;
@@ -49,7 +49,8 @@
 
 
 #continut_acasa_dropdown{
-    background: scroll;
+    background: white;
+
 
 }
 
@@ -77,6 +78,7 @@
     border-left-width: 1px;
     margin-bottom: 10px;
     align-content: center;
+    margin-left: 0px;
 }
 
 .li_continut_2_tip_lista {
