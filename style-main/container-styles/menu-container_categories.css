@@ -5,11 +5,9 @@
     border-radius: 40px;
     box-sizing:content-box;
     width: 300px;
-    margin: 20px;
     list-style-type: none;
     position: sticky;
     flex: 1;
-    margin-bottom: 80px;
     /* float: inline-start; */
     display:inline-block;
     /* padding-right: 100px; */
@@ -69,7 +67,6 @@
 .ol .dropdown_content_ordered_list_2 {
     border: #000000;
     border-style: solid 2px;
-    padding-top: 10px;
 }
 .li_categoria_1_lista{
     border-top: #ffffff outset;

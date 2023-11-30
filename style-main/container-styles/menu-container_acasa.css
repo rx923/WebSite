@@ -46,6 +46,13 @@
     border-color: rgb(255, 255, 255);
 }
 
+.menu-container_acasa .menu-ordered_list_1 {
+    list-style-type: none;
+    text-align: center;
+    border-style:solid;
+    position: sticky;
+    box-sizing:border-box;
+}
 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
     list-style-type: none;
     text-align: center;

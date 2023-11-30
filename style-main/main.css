@@ -9,6 +9,7 @@
 /**/
 /* Apple Devices  */
 html {
+    touch-action: manipulation;
     scroll-behavior: smooth;
     max-height: auto;
     max-width: auto;
