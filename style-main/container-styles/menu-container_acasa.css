@@ -56,15 +56,18 @@
 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
     list-style-type: none;
     text-align: center;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     padding-top: 0px;
+    margin-left: 30px;
+    margin-right: 20px;
     border: 1px #000000;
+    background-color: rgb(141, 186, 255);
     border-style: solid;
     border-radius: 0px;
     /* display: flexbox; */
     position: absolute;
     margin-top: 20px;
-    min-width: 500px;
+    min-width: 300px;
     box-shadow: 0px 8px 16px 0px rgb(253, 149, 149);
     z-index: 1;
     display: none;
@@ -80,8 +83,9 @@
 .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
     display:block;
     text-align: center;
-    inline-size: 2px;
+    /* inline-size: 2px; */
     border: 1px #000000 solid;
+    background-color: rgb(141, 186, 255);
     list-style-type: none;
     margin-top: 0px;
 }
