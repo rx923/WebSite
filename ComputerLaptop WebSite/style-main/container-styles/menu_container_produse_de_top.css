@@ -12,6 +12,21 @@
     flex: 1;
     margin-bottom: 80px;
 }
+/* Style for meniu container produse de top */
+#menu_produse_top {
+    border: 1px #ffffff;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 20px;
+    box-sizing:content-box;
+    width: 500px;
+    margin: 0px;
+    list-style-type: none;
+    position: sticky;
+    display:inline-block;
+    flex: 1;
+    margin-bottom: 0px;
+}
 /* Style for the main menu item */
 .menu_container_produse_de_top .menu_container_1_produse_de_top {
     list-style-type: none;
