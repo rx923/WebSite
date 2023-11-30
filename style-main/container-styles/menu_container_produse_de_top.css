@@ -19,7 +19,7 @@
     border-style: groove;
     border-radius: 20px;
     box-sizing:content-box;
-    width: 500px;
+    width: 680px;
     margin: 0px;
     list-style-type: none;
     position: sticky;
@@ -110,4 +110,8 @@ ol {
     border-radius: 10px;
     list-style-type: none;
     border-width: 100px;
+}
+#continut-lista-dropdown{
+    width: auto;
+    height: auto;
 }
