@@ -40,18 +40,19 @@
     list-style-type: none;
     text-align: center;
     /* margin-right: 10px; */
-    margin-left: 0px;
-    padding-top: 2px;
+    margin-left: 30px;
+    margin-right: 20px;
+    padding-top: 20px;
     padding: 0px;
     border: 1px #ffffff;
     border-style: solid;
-    background-color: white;
+    background-color: rgb(141, 186, 255);
     border-radius: 20px;
     /* display: flexbox; */
     position: sticky;
     /* margin-top: 20px; */
     /* background-color:#ffffff; */
-    min-width: 500px;
+    min-width: 350px;
     box-shadow: 0px 8px 16px 0px rgb(253, 149, 149);
     z-index: 1;
     display: none;

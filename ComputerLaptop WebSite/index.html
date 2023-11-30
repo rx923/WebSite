@@ -46,7 +46,7 @@
           padding-top: 10px;
         }
         body {
-          background:#003d51;
+          background:#30a7cf;
           /* background:linear-gradient(40deg, #f7c0c0 35%, #ff0000 55%, rgb(0, 0, 0) 30%); */
         }
         .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
@@ -83,8 +83,146 @@
           margin: 10px;
         }
         /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        .sidenav {padding-top: 30px; width: 200px;}
-        .sidenav a {font-size: 18px;}
+        #container_scrolling_for_the_side_nav{
+          /* Adjust this to the desired width */
+          width: 300px; 
+          /* Adjust this to the desired height */
+          height: 400px;
+          margin-bottom: auto; 
+          margin-top: 20px; 
+          margin-right: auto; 
+          margin-left: auto; 
+          overflow: auto;
+          background: linear-gradient(35deg, rgb(215, 214, 214) 30%, rgb(39, 54, 83) 70%);
+          /* Optional: Add a border for visualization */
+          border: 1px solid rgb(74, 3, 3);
+          border-top-right-radius: 30px; 
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          border-bottom-left-radius: 30px; 
+
+        }
+        
+        .sidenav {
+          scroll-margin: 200px;
+          scroll-padding-top: 40%;
+          scroll-behavior: smooth;
+          touch-action: auto;
+          border: ridge 1px white;
+          border-radius: 30px;
+          padding-top: 30px; 
+          width: 200px;
+          /* 100% Full-height */
+          height:auto; 
+          /* 0 width - change this with JavaScript */
+          /* Stay in place */
+          position: sticky; 
+          /* Stay on top */
+          z-index: 1; 
+          /* Stay at the top */
+          top: 0; 
+          margin-left: 1px;
+          margin-top: 1px;
+          /* Black*/
+          background: linear-gradient(to top left, rgb(98, 69, 69) 0%, rgb(22, 61, 133) 100%);
+          /* Disable horizontal scroll */
+          overflow-x: hidden; 
+          /* Place content 60px from the top */
+          padding-top: 60px; 
+          /* 0.5 second transition effect to slide in the sidenav */
+          transition: 0.5s; 
+        }
+
+        .closeArrow {
+          /* Styles for the left arrow */
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          border-right: 25px solid #000;
+          transform: rotate(180deg);
+        }
+        .arrow{
+          /* Adjust the margin as needed */
+          margin-right: 5px; 
+          /* Adjust the size of the arrow */
+          font-size: 14px; 
+        }
+        .sidenav a {
+          padding: 16px;
+          text-decoration: double;
+          font-size: 20px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        /* The side navigation menu */
+        /* The navigation menu links */
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+          /* Highlight the current link */
+        .sidenav a.active {
+          background-color: #04aa6d;
+          color: white;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+            /* Close button style */
+        .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+          cursor: pointer;
+          color: white;
+        }
+        .form-container {
+          display: none;
+          width: 40%; /* Set the width of the form container */
+          margin: 50px auto; /* Center the form */
+          margin-right: 10px; /* Margin to the right side */
+          float: right; /* Align forms to the right */
+        }
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+          transition: margin-left .5s;
+          padding: 20px;
+        }
+        /* Page content */
+        .main {
+          margin-left: 200px; /* Same as the width of the sidenav */
+        }
+        .openTriangle {
+          position: relative;
+          display: inline-block;
+          width: 0;
+          height: 0;
+          /* Left side of the triangle */
+          border-left: 25px solid transparent;
+          /* Right side of the triangle */
+          border-right: 25px solid transparent;
+          /* Bottom side of the triangle */
+          border-bottom: 43.3px groove rgb(196, 57, 57);
+          /* Change cursor on hover */
+          cursor: pointer;
+        }
+        /* Style for the text "open" */
+        .openText {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          color: black;
+        }
         #meniu-produse-number-1, #meniu-produse-number-2, #meniu-produse-number-3, #meniu-produse-number-4, #meniu-produse-number-5, #meniu-produse-number-6, #meniu-produse-number-7, #meniu-produse-number-8, #meniu-produse-number-9, #meniu-produse-number-10  {
           text-decoration: none; 
           position: sticky; 
@@ -254,6 +392,55 @@
           border-radius: 15px;
           background-blend-mode:hard-light;
         }
+
+        /* Style for main page containers: */
+        #Acasa_menu_container {
+          border: 1px; 
+          border-color:#ffffff;
+          border-width: 1px;
+          border-style: groove;
+          background-color: royalblue;
+          border-radius: 20px;
+          /* box-sizing:content-box; */
+          /* box-shadow: wheat; */
+          width: 230px;
+          /* margin: 50px; */
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          /* margin-bottom: 20px; */
+        }
+
+        #Menu_Categories {
+          border: 1px; 
+          border-color:#ffffff;
+          background-color: royalblue;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          /* box-shadow: wheat; */
+          width: 230px;
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          flex: 1;
+        }
+        #menu_produse_top {
+          border: 1px #ffffff;
+          border-width: 1px;
+          background-color: royalblue;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          width: 230px;
+          margin: 0px;
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          flex: 1;
+          margin-bottom: 0px;
+        }
         .menu-container_acasa {
           border: 1px; 
           border-color:#000000;
@@ -310,9 +497,8 @@
           border-style: solid;
           border-radius: 0px;
           /* display: flexbox; */
-          position: absolute;
+          position: sticky;
           margin-top: 20px;
-          min-width: 160px;
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           z-index: 1;
           display: none;
@@ -345,9 +531,6 @@
           align-content: center;
         }
         /* Centering the links within <a> tags */
-        .menu-ordered_list_1 .dropdown-content_ordered_list_categories {
-          text-align: center;
-        }
         .li_continut_2_tip_lista {
           border-top-width: 1px;
           border-top-right-radius: 10px;
@@ -1144,7 +1327,7 @@
     </style>
     <title>Good Store Coffee</title>
 
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\InformatiiAditionalepage.css" type="text/css" media="all">
@@ -1392,103 +1575,141 @@
         </input>
       </div>
     </header>
+
     <script>
-  // Sidenav Overaly Example
-  /* Set the width of the side navigation to 250px */
-  // JavaScript function to toggle the side navigation menu
-  function toggleNav() {
-    var sidenav = document.getElementById("mySidenav");
-    var main = document.getElementById("main");
-    var body = document.body;
-
-    if (sidenav.style.width === "250px") {
-      // Close the side navigation menu
-      sidenav.style.width = "0";
-      main.style.marginLeft = "0";
-      body.style.backgroundColor = "white";
-    } else {
-      // Open the side navigation menu
-      sidenav.style.width = "250px";
-      main.style.marginLeft = "250px";
-      body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-      console.log('Side nav opened.');
-    }
-  }
-  // Ensure the side nav menu is closed when the page loads
-  document.addEventListener('DOMContentLoaded', function() {
-    var sidenav = document.getElementById("mySidenav");
-    var main = document.getElementById("main");
-    var body = document.body;
-
-    sidenav.style.width = "0";
-    main.style.marginLeft = "0";
-    body.style.backgroundColor = "white";
-  });
-  // Sidenav Push Content w/ opacity
-  /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    console.log('Side nav opened.');
-    document.getElementByID("OpenTriangle")
-  }
-  
-  // JavaScript function to close the side nav menu
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    // Adjust the element ID as needed
-    document.getElementById("main").style.marginLeft = "0"; 
-    // Change background color if necessary
-    document.body.style.backgroundColor = "white"; 
-  }
-    // Function to show/hide forms based on formId
-  function showForm(formId) {
-    var forms = document.getElementsByClassName("form-container");
-    for (var i = 0; i < forms.length; i++) {
-      forms[i].style.display = "none";
-    }
-    document.getElementById(formId).style.display = "block";
-    openNav(); // Open the side nav menu when showing the form
-  }
-
-  </script>
-    </style>
-      <script>
-        // Function to load the content dynamically
-        function loadPage(pageName, formId) {
-          var xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("content").innerHTML = this.responseText;
-              if (formId) {
-                hideAllForms();
-                document.getElementById(formId).style.display = "block";
-              }
+      // Function to load the content dynamically
+      function loadPage(pageName, formId) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("content").innerHTML = this.responseText;
+            if (formId) {
+              hideAllForms();
+              document.getElementById(formId).style.display = "block";
             }
-          };
-          xhttp.open("GET", pageName, true);
-          xhttp.send();
-        }
-    
-        // Function to hide all forms
-        function hideAllForms() {
-          var forms = document.getElementsByClassName("form-container");
-          for (var i = 0; i < forms.length; i++) {
-            forms[i].style.display = "none";
           }
+        };
+        xhttp.open("GET", pageName, true);
+        xhttp.send();
+      }
+  
+      // Function to hide all forms
+      function hideAllForms() {
+        var forms = document.getElementsByClassName("form-container");
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].style.display = "none";
         }
-      </script>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
-      <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
-      <a href="#link">Clients</a>
-      <a href="#link">Echipa</a>
+      }
+    </script>
+    <div id="container_scrolling_for_the_side_nav" class="container">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
+        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+        <a href="#link">Clients</a>
+        <a href="#link">Echipa</a>
+      </div>
     </div>
+    <script>
+      // Sidenav Overaly Example
+      /* Set the width of the side navigation to 250px */
+      // JavaScript function to toggle the side navigation menu
+      function toggleNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openText = document.getElementByID("openText");
+        var openTriangle = document.getElementById(".openTriangle");
+        var body = document.body;
+        var main = document.getElementById("openText");
+
+
+        if (sidenav.style.width === "250px") {
+          // Close the side navigation menu
+          sidenav.style.width = "0";
+          setTimeout(function() {
+            openText.innerText="open";
+            openTriangle.classList.remove("closeArrow");
+          }, 500);
+          main.style.marginLeft = "0";
+          console.log('Side nav closed.');
+          // body.style.backgroundColor = "white";
+          // openText.innerText="open";
+        } else {
+          // Open the side navigation menu
+          sidenav.style.width = "250px";
+          setTimeout(function() {
+            openText.innerText = "close";
+            openTriangle.classList.add("closeArrow");
+            // Changing the appearance after 0.5s animation duration
+          }, 500);
+          console.log('Side nav opened.');
+          main.style.marginLeft = "250px";
+          body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+          openText.innerText = "close side navigation menu";
+        }
+      }
+      // Ensure the side nav menu is closed when the page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        var sidenav = document.getElementById("mySidenav");
+        var main = document.getElementById("main");
+        var body = document.body;
+
+        sidenav.style.width = "0";
+        main.style.marginLeft = "0";
+        body.style.backgroundColor = "white";
+      });
+      // Sidenav Push Content w/ opacity
+      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+      // Function to open the side nav menu when showing the form
+      function openNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openText = document.getElementById("openText");
+        var openTriangle = document.querySelector(".openTriangle");
+        var closeArrow = document.querySelector("closeArrow");
+        sidenav.style.width = "250px";
+        setTimeout(function() {
+          openText.innerText = "close";
+          openTriangle.classList.add("closeArrow");
+        }, 500);
+        console.log('Side nav opened.');
+
+        openText.innerText = "close side navigation menu";
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        console.log('Side nav opened.');
+        document.getElementByID("OpenTriangle")
+      }
+      
+      // JavaScript function to close the side nav menu
+      function closeNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openText = document.getElementById("openText");
+
+        sidenav.style.width = "0";
+        openText.innerText = "open";
+        console.log('Side nav closed.');
+
+
+        document.getElementById("mySidenav").style.width = "0";
+        // Adjust the element ID as needed
+        document.getElementById("main").style.marginLeft = "0"; 
+        // Change background color if necessary
+        document.body.style.backgroundColor = "white"; 
+      }
+        // Function to show/hide forms based on formId
+      function showForm(formId) {
+        var forms = document.getElementsByClassName("form-container");
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].style.display = "none";
+        }
+        document.getElementById(formId).style.display = "block";
+        // Open the side nav menu when showing the form
+        openNav(); 
+      }
+    </script>
     <!-- Using any element to open the sidenav -->
     <span class="openTriangle" onclick="openNav()">
-      <span class="openText" style="margin-top: 30px;">open</span>  
+      <span class="openText" id="openText">open</span>
     </span>
     <!-- Content area to display the page content -->
     <div id="content">
@@ -1496,6 +1717,9 @@
       <div id="main">
       </div>
     </div>
+
+
+    
 
     <form action="Pagina_Inregistrare.php"  id="InregistrareForm" class="form-container" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
       <div class="container_pagina_inregistrare">
@@ -1531,7 +1755,7 @@
     </form>
     <script>
       // Function to load the content of Pagina_Inregistrare.php
-      function loadPage(pageName, formId) {
+      function loadPage(url, pageName, formId) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
@@ -1547,6 +1771,8 @@
         };
       xhttp.open("GET", pageName, true);
       xhttp.send();
+      console.log("Loading page:", url);
+
     }
     </script>
     <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
@@ -1568,7 +1794,7 @@
         </label>
       </div>
 
-      <div class="container" style="background-color:#444741">
+      <div class="container" id ="container_for_Cancel&Forgotten_Password" style="background-color:#444741">
         <button type="button" class="cancelbtn">Anuleaza</button>
           <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
       </div>
@@ -1845,10 +2071,10 @@
         <div class="menu-container_acasa" id="Acasa_menu_container">
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
-              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Acasapage\Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="color: white;">Acasa
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Acasapage\Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa">Acasa
               </a>
                 <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
-                  <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista" style="text-align: center;">
+                  <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
                     <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.html" rel="noopener noreferrer">Produse1
                     </a>
                   </div>
