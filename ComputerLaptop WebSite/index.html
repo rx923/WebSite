@@ -7,6 +7,11 @@
     <style type="text/css">
       /* Apple iOS 14 Pro Max style */
       @media only screen and (min-width: 430px) and (min-height:932px) and (orientation:landscape) {
+        html {
+          max-width: fit-content;
+          max-height: fit-content;
+        }
+
         header {
           background: linear-gradient(2deg, #333a41 25%, #3c7499 35%), #034156 60%;
           border-top: 2px rgb(255, 255, 255) groove;
@@ -17,7 +22,7 @@
           margin-bottom: 10px;
           /* border-style: ; */
           /* padding-bottom: 10px; */
-        }
+          }
       }
     </style>
     <style>
@@ -25,8 +30,8 @@
       @media only screen and (max-width:412px) and (max-height: 915px), (orientation:landscape) {
         /* Adjusting the html page size for Android type of devices */
         html {
-          max-width: auto;
-          max-height: auto;
+          max-width: fit-content;
+          max-height: fit-content;
         }
         header {
           background: linear-gradient(30deg, #8d99a5 25%, #5bb1eb 35%, #031e27 60%);
