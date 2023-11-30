@@ -11,7 +11,18 @@
     border-bottom-right-radius: 30px; 
     /* border-inline-color: green; */
 }
+.table{
+    margin-left: 200px;
+    position: sticky;
+}
 
 .Continut1tiplista {
     background-color: rgb(109, 81, 44);
+}
+#Produs_11_design{
+    position: sticky;
+    margin-left: 2000px;
+    /* float: right; */
+    /* margin: auto; */
+    /* padding: auto; */
 }

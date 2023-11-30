@@ -14,6 +14,20 @@
     display:inline-block;
     /* padding-right: 100px; */
 }
+#Menu_Categories {
+    border: 1px; 
+    border-color:#ffffff;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 20px;
+    box-sizing:content-box;
+    /* box-shadow: wheat; */
+    width: 500px;
+    list-style-type: none;
+    position: sticky;
+    display:inline-block;
+    flex: 1;
+}
 .menu-container_categories .menu-ordered_list_2 {
     list-style-type: none;
     text-align: center;

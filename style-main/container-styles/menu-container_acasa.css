@@ -1,14 +1,30 @@
 .menu-container_acasa {
     border-radius: 40px;
     box-sizing:content-box;
-    margin: 20px;
+    /* margin: 20px; */
     list-style-type: none;
-    position: relative;
+    position: sticky;
     display:inline-block;
     flex: 1;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
 }
 
+/* Style for the container #Acasa_menu_container  */
+#Acasa_menu_container {
+    border: 1px; 
+    border-color:#ffffff;
+    border-width: 1px;
+    border-style: groove;
+    border-radius: 20px;
+    /* box-sizing:content-box; */
+    /* box-shadow: wheat; */
+    width: 500px;
+    /* margin: 50px; */
+    list-style-type: none;
+    position: sticky;
+    display:inline-block;
+    /* margin-bottom: 20px; */
+}
 
 #meniu_ordered_1 {
     list-style-type: none;
