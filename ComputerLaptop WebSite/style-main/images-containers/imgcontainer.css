@@ -1,10 +1,21 @@
-.div{
-    max-width: 100px;
-    max-height: 100px;
-} 
-.imgcontainer {
-    width: 250px;
-    height: 35px; 
-    width: 35px;
-    
+#container_imagine-dropdown-1 {
+    margin-right: 800px;
+    background-color: antiquewhite;
+    padding: 20px;
+    border: 2px solid black;
+}
+#container_imagine-dropdown-2 {
+    margin-right: 600px;
+    right: 20px;
+    background-color: antiquewhite;
+    padding: 20px;
+    border: 2px solid black;
+}
+#container_imagine-dropdown-3 {
+    margin-right: 600px;
+    background-color: antiquewhite;
+    position: sticky;
+    padding: 20px;
+    border: 2px solid black;
+
 }

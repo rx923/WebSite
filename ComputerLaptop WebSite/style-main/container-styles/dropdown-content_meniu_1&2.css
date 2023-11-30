@@ -3,10 +3,11 @@
     align-content: center;
     border-style: solid;
     border-color: rgb(255, 0, 0);
-    border-spacing: 10px;
-    position: static;
-    padding: 10px;
+    /* border-spacing: 10px; */
+    position: sticky;
+    padding: 20px;
     /* background: local; */
     /* background-color: rgb(0, 0, 0); */
     /* margin-left: 20px; */
+    flex-direction: row; 
 }

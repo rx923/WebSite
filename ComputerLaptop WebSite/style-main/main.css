@@ -44,12 +44,6 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease; 
 }
-header {
-    border-top: 2px rgb(0, 128, 255);
-    margin-bottom: 2px;
-    /* border-style: ; */
-    /* padding-bottom: 10px; */
-}
 .dropdown-image {
     text-align: center;
 }
@@ -209,13 +203,14 @@ header {
     border: 2px solid #000000;
     border-style: transparent;
     border-radius: 20px;
-    margin: 0px;
+    margin-top: 100px;
     padding: 0px;
-    height: 40%;
-    width: 100%;
-    margin-right: 20px;
+    height: 300px;
+    width:2100px;
+    margin-right: 30px;
+    margin-left: 0px;
     box-sizing: border-box;
-    position:sticky; 
+    position:relative; 
     display:inline-block;
     /* justify-content: right; */
     list-style: none;
@@ -351,20 +346,18 @@ header {
     border-color: rgb(255, 255, 255);
 }
 .dropdown-content_meniu_1si2 {
-    background-color: #0053a6;
+    background: linear-gradient(to top left, rgb(243, 185, 185) 30%, rgb(22, 61, 133) 100%);
     display: block;
     /* margin-top: 60px; */
     border-radius: 25px;
-    margin-bottom: 10px;
+    /* position: sticky; */
+    padding: 30px;
+    margin-bottom: 0%;
     /* justify-self: stretch; */
     /* border-style: calc(); */
-    flex-direction: row; /* Display elements horizontally */
+    /* Display elements horizontally */
 }
 /* Style for individual links within the dropdown menu */
-.dropdown-content_meniu_1si2 a {
-    /* Margin between links */
-    margin-right: 0px; 
-}
 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
     list-style-type: none;
     text-align: center;
@@ -664,7 +657,6 @@ header {
 /* Dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
-    position: absolute;
     background-color: #f9f9f9;
     width: 100%;
     left: 0;
@@ -711,16 +703,11 @@ header {
     clear: both;
 }
 
-.glowing-background {
-    background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
-    background-size: 300% 350%;
-    animation: glowing 3s ease-in-out infinite;
-}
-.glowing-background {
+/* .glowing-background {
     transition: box-shadow 1s ease-in-out;
-}
+} */
 .glowing-background:hover {
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px 10px rgba(255, 100, 100, 0.8);
 }
 /* Navbar container */
 .navbar {
@@ -876,13 +863,13 @@ h1 {
 /* Style for the dropdown content */
 .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
     display: none;
-    position: absolute;
+    position: sticky;
     top: 100%;
     left: 0;
     background-color: transparent;
-    background-blend-mode: color-dodge;
+    /* background-blend-mode: color-dodge; */
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
     border-radius: 5px;
     z-index: 1;
     list-style-type: none;
