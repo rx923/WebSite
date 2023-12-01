@@ -58,12 +58,3 @@
     max-width: 100px; /* Set maximum width if needed */
     height: 40px;
 }
-
-#bara-de-cautare-principala {
-    top: 60%; /* Adjust top position */
-    display: block; /* Use block level element */
-    position: relative;
-    text-align: center; /* Center align the content */
-    margin: 0 auto; /* Center the block element */
-}
-  

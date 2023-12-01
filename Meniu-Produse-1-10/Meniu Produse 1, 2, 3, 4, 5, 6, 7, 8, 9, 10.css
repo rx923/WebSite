@@ -96,7 +96,8 @@
     100% { background-position: 0% 50%; }
 }
 .glowing-background {
-    background: linear-gradient(20deg, #d08132 32%, rgb(155, 173, 196)70%, rgb(139, 66, 47) 85%);
+    border-radius: 20px;
+    background: linear-gradient(20deg, #ffffff 32%, rgb(0, 53, 122)70%, rgb(255, 255, 255) 85%);
     background-size: 300% 350%;
     animation: glowing 3s ease-in-out infinite;
 }

@@ -1,14 +1,3 @@
-.menu-container_acasa {
-    border-radius: 40px;
-    box-sizing:content-box;
-    /* margin: 20px; */
-    list-style-type: none;
-    position: sticky;
-    display:inline-block;
-    flex: 1;
-    /* margin-bottom: 80px; */
-}
-
 /* Style for the container #Acasa_menu_container  */
 #Acasa_menu_container {
     border: 1px; 
@@ -18,15 +7,15 @@
     border-radius: 20px;
     /* box-sizing:content-box; */
     /* box-shadow: wheat; */
-    width: 680px;
+    width: 400px;
     /* margin: 50px; */
     list-style-type: none;
     position: sticky;
     display:inline-block;
     margin-left: 12px;
-    background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+    background:linear-gradient(35deg, #ffffff 27%, rgb(1, 112, 168)66%, rgb(255, 255, 255) 75%);
     animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
-    background-size: 200% 200%;
+    /* background-size: 200% 200%; */
 }
 
 #meniu_ordered_1 {
@@ -42,7 +31,7 @@
 
 #continut_acasa_dropdown{
     border-radius: 15px;
-    padding-top: 2px;
+    padding-top: 10px;
     justify-items: center;
     text-align: center;
     font-display: auto;
@@ -61,7 +50,7 @@
     text-align: center;
     /* margin-right: 10px; */
     padding-top: 0px;
-    margin-left: 50px;
+    margin-left: 0px;
     margin-right: 145px;
     border: 1px #000000;
     border-style: solid;
@@ -122,34 +111,39 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) groove;
-    border-bottom: rgb(255, 255, 255) groove;
-    border-right: rgb(255, 255, 255) groove;
-    border-left: rgb(255, 255, 255) groove;
+    border-top: rgb(255, 255, 255), outset;
+    border-bottom: rgb(255, 255, 255) outset;
+    border-right: rgb(255, 255, 255) outset;
+    border-left: rgb(255, 255, 255) outset;
     border-right-width: 1px;
     border-left-width: 1px;
     margin-left: 10px;
     margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-content: center;
     font:menu;
 }
 
 .li_continut_3_tip_lista{
     border-top-width: 1px;
-    background-color: aquamarine;
+    background-color: rgb(253, 255, 184);
+    padding: 4px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) groove;
-    border-bottom: rgb(255, 255, 255) groove;
-    border-right: rgb(255, 255, 255) groove;
-    border-left: rgb(255, 255, 255) groove;
+    border-top: rgb(255, 255, 255) outset;
+    border-bottom: rgb(255, 255, 255) outset;
+    border-right: rgb(255, 255, 255) outset;
+    border-left: rgb(255, 255, 255) outset;
     border-right-width: 1px;
     border-left-width: 1px;
     margin-left: 10px;
     margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-content: center;
     font:menu;
 }

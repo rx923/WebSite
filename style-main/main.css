@@ -72,6 +72,19 @@ body {
 }
 /* Style for the <h2> element */
 h2 {
+    border-style: solid; 
+    border:0.1em ridge; 
+    border-color: #585151; 
+    border-left-width: 1px; 
+    border-right-width: 1px; 
+    border-bottom-width: 2px; 
+    border-top-width: 2px; 
+    border-radius: 20vw; 
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+    text-indent: 10px; 
+    padding-right: 10px; 
+    background: linear-gradient(20deg, rgb(37, 36, 36) 21%, rgba(128, 125, 153, 0.989)61%, #ffffff 95%);
     /* Align the text to the left */
     text-align: left;
     /* Make the <h2> element inline so it's positioned horizontally */
@@ -187,7 +200,7 @@ h2 {
 
 
 header {
-    background: linear-gradient(30deg, #7cb1e7 25%, #01416c 35%, rgb(255, 0, 0) 100%);
+    background: linear-gradient(30deg, #7cb1e7 25%, #01416c 35%, rgb(255, 255, 255) 100%);
     border-top: 5px rgb(237, 239, 240) groove;
     border-left: 5px rgb(255, 255, 255) groove;
     border-right: 5px rgb(255, 255, 255) groove;
@@ -206,7 +219,7 @@ header {
     margin-top: 100px;
     padding: 0px;
     height: 300px;
-    width:2100px;
+    width:auto;
     margin-right: 30px;
     margin-left: 0px;
     box-sizing: border-box;
@@ -345,18 +358,7 @@ header {
     font-display: auto;
     border-color: rgb(255, 255, 255);
 }
-.dropdown-content_meniu_1si2 {
-    background: linear-gradient(to top left, rgb(243, 185, 185) 30%, rgb(22, 61, 133) 100%);
-    display: block;
-    /* margin-top: 60px; */
-    border-radius: 25px;
-    /* position: sticky; */
-    padding: 30px;
-    margin-bottom: 0%;
-    /* justify-self: stretch; */
-    /* border-style: calc(); */
-    /* Display elements horizontally */
-}
+
 /* Style for individual links within the dropdown menu */
 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
     list-style-type: none;
@@ -820,7 +822,7 @@ header {
 
 
 h1 {
-    background: linear-gradient(55deg, #ffffff 21%,rgb(0, 124, 161)31%, #4b7f91 85%); 
+    background: linear-gradient(55deg, #ffffff 21%,rgb(0, 124, 161)31%, #46a7bf 85%); 
     max-width: auto;
     /* max-height: 270px;  */
     margin-left: 40px; 

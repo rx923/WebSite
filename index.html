@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-    <style type="text/css">
-      /* Apple iOS 14 Pro Max style */
-      @media only screen and (min-width: 430px) and (min-height:932px) and (orientation:landscape) {
-        html {
-          max-width: fit-content;
-          max-height: fit-content;
-        }
 
     <style>
       /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
@@ -240,7 +233,8 @@
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all">
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all"> -->
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\InformatiiAditionalepage.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Inregistrare_user\Inregistrare-forma-design.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Inregistrare&Logare_user\Inregistrare-forma-design.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Inregistrare&Logare_user\Logare-forma-design.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\type-device-style.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.css" type="text/css" media="all">
@@ -451,6 +445,11 @@
     <header>
 
       <h1> Big Store Coffee </h1>
+      <div class="search-bar" id="bara-de-cautare-principala" class="fixed-search-bar">
+        <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala">
+          <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
+        </input>
+      </div>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
@@ -480,11 +479,7 @@
           </div>
         </div>
       </div>
-      <div class="search-bar" id="bara-de-cautare-principala" class="fixed-search-bar">
-        <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala">
-          <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
-        </input>
-      </div>
+      
     </header>
 
     <script>
@@ -630,7 +625,6 @@
     </div>
 
 
-
     <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container" method="post">
       <div class="flowWavesDepth flowWaves container_pagina_inregistrare">
       <h2>Inregistrare</h2>
@@ -654,7 +648,7 @@
         <input type="checkbox" checked="checked" name="remember" style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine minte datele de conectare
         </label>
         <p>Creandu-ti un cont, esti de acord cu 
-          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%">Termenele & Conditiile
+          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(0, 61, 81)70%, #000000) 80%; text-decoration: wavy;">Termenele & Conditiile
           </a>.</p>
         <div class="clearfix">
           <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza
@@ -686,7 +680,7 @@
 
     }
     </script>
-    <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
+    <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto;" >
       <div class="imgcontainer">
         <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
       </div>
@@ -705,7 +699,7 @@
         </label>
       </div>
 
-      <div class="container" id ="container_for_Cancel&Forgotten_Password" style="background-color:#444741">
+      <div class="container" id ="container_for_Cancel&Forgotten_Password" style="background-color:#005f6a; border-radius: 20px;">
         <button type="button" class="cancelbtn">Anuleaza</button>
           <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
       </div>
@@ -982,19 +976,18 @@
         <div class="menu-container_acasa" id="Acasa_menu_container">
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
-              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Acasapage\Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa">Acasa
-              </a>
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Acasapage\Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
                 <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
                   <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
-                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.html" rel="noopener noreferrer">Produse1
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Produse1
                     </a>
                   </div>
                   <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
-                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-2-tip-lista\Continut2tiplista.html" rel="noopener noreferrer">Produse2
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-2-tip-lista\Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Produse2
                     </a>
                   </div>
                   <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
-                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-3-tip-lista\Continut3tiplista.html" rel="noopener noreferrer">Produse3
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-3-tip-lista\Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Produse3
                     </a>
                   </div>
                 </ol>
@@ -1004,18 +997,18 @@
         <div class="menu-container_categories" id="Menu_Categories">
           <ol class="menu-ordered_list_2" id="meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
-              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii" style="color: white;">Categorii Produse
+              <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii" style="text-decoration: wavy blue;">Categorii Produse
                 <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown"> 
                   <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
-                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii\Produse-Categoria-Cafea-1\Categoria-1-tip-lista.html" rel="noopener noreferrer">Category 1
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii\Produse-Categoria-Cafea-1\Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
                     </a>
                   </div>
                   <div class="li_categoria_2_lista" id="Categoria_2_tip_lista">
-                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii\Produse-Categoria-IceCoffe-2\Categoria-2-tip-lista.html" rel="noopener noreferrer">Category 2
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii\Produse-Categoria-IceCoffe-2\Categoria-2-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 2
                     </a>
                   </div>
                   <div class="li_categoria_3_lista" id="Categoria_3_tip_lista">
-                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii\Produse-Categoria-Espresso-3\Categoria-3-tip-lista.html" rel="noopener noreferrer">Category 3
+                    <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii\Produse-Categoria-Espresso-3\Categoria-3-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 3
                     </a>
                   </div>
                 </ol>
@@ -1045,10 +1038,7 @@
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-3">
                       <img src="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\tai-s-captures--DRC1OsqoiU-unsplash.jpg" style="width: 350px; height: 200px;" alt="Coffee3" loading="lazy">
-                      <em>
-                        <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" rel="noopener noreferrer">Produsul de top 3
-                        </a>
-                      </em>
+                      <em><a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" rel="noopener noreferrer">Produsul de top 3</a></em>
                     </div>
                   </div>
                 </div>
