@@ -1,24 +1,14 @@
-.menu-container_categories {
-    border-radius: 40px;
-    box-sizing:content-box;
-    /* margin: 20px; */
-    list-style-type: none;
-    position: sticky;
-    display:inline-block;
-    flex: 1;
-    /* margin-bottom: 80px; */
-}
 #Menu_Categories {
     border: 1px; 
     border-color:#ffffff;
-    background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+    background:linear-gradient(35deg, #ffffff 27%, rgb(1, 112, 168)66%, rgb(255, 255, 255) 75%);
     animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
     border-width: 1px;
     border-style: groove;
     border-radius: 20px;
     /* box-sizing:content-box; */
     /* box-shadow: wheat; */
-    width: 680px;
+    width: 580px;
     /* margin: 50px; */
     list-style-type: none;
     position: sticky;
@@ -39,19 +29,18 @@
     list-style-type: none;
     text-align: center;
     /* margin-right: 10px; */
-    margin-left: 30px;
-    margin-right: 20px;
-    padding-top: 20px;
+    margin-left: 90px;
+    margin-right: 145px;
+    padding-top: 0px;
     padding: 0px;
     border: 1px #ffffff;
     border-style: solid;
-
     border-radius: 20px;
     /* display: flexbox; */
-    position: sticky;
+    position: absolute;
     /* margin-top: 20px; */
     /* background-color:#ffffff; */
-    min-width: 300px;
+    min-width: 350px;
     box-shadow: 0px 8px 16px 0px rgb(255, 255, 255);
     z-index: 1;
     display: none;
@@ -62,6 +51,10 @@
     inline-size: 2px;
     list-style: none;
     position: absolute;
+    box-shadow: 2px 2px 16px 2px rgb(3, 3, 3);
+    background-color: rgb(141, 186, 255);
+    
+
 }
 .ol .dropdown_content_ordered_list_2 {
     border: #000000;
@@ -69,58 +62,67 @@
 }
 .li_categoria_1_lista{
     border-top-width: 1px;
-    background-color: aquamarine;
+    background-color: rgb(253, 255, 184);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) groove;
-    border-bottom: rgb(255, 255, 255) groove;
-    border-right: rgb(255, 255, 255) groove;
-    border-left: rgb(255, 255, 255) groove;
+    border-top: rgb(255, 255, 255) outset;
+    border-bottom: rgb(255, 255, 255) outset;
+    border-right: rgb(255, 255, 255) outset;
+    border-left: rgb(255, 255, 255) outset;
     border-right-width: 1px;
     border-left-width: 1px;
-    margin-left: 40px;
+    padding: 4px;
     margin-right: 40px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-content: center;
     font:menu;
 }
 .li_categoria_2_lista{
     border-top-width: 1px;
-    background-color: aquamarine;
+    background-color: rgb(253, 255, 184);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) groove;
-    border-bottom: rgb(255, 255, 255) groove;
-    border-right: rgb(255, 255, 255) groove;
-    border-left: rgb(255, 255, 255) groove;
+    border-top: rgb(255, 255, 255) outset;
+    border-bottom: rgb(255, 255, 255) outset;
+    border-right: rgb(255, 255, 255) outset;
+    border-left: rgb(255, 255, 255) outset;
     border-right-width: 1px;
     border-left-width: 1px;
+    padding: 4px;
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-content: center;
     font:menu;
 }
 .li_categoria_3_lista{
     border-top-width: 1px;
-    background-color: aquamarine;
+    background-color: rgb(253, 255, 184);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) groove;
-    border-bottom: rgb(255, 255, 255) groove;
-    border-right: rgb(255, 255, 255) groove;
-    border-left: rgb(255, 255, 255) groove;
+    border-top: rgb(255, 255, 255) outset;
+    border-bottom: rgb(255, 255, 255) outset;
+    border-right: rgb(255, 255, 255) outset;
+    border-left: rgb(255, 255, 255) outset;
     border-right-width: 1px;
     border-left-width: 1px;
+    padding: 4px;
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-content: center;
     font:menu;
 }
