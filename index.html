@@ -27,7 +27,7 @@
     </style>
     <style>
       /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
-      @media only screen and (max-width:412px) and (max-height: 915px), (orientation:landscape) {
+      @media only screen and (max-width:412px) and (max-height: 915px) {
         /* Adjusting the html page size for Android type of devices */
         html {
           max-width: fit-content;
@@ -49,14 +49,14 @@
           background:#30a7cf;
           /* background:linear-gradient(40deg, #f7c0c0 35%, #ff0000 55%, rgb(0, 0, 0) 30%); */
         }
-        .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+        #bordered_rectangle-for-design {
           border: 2px solid #000000;
           border-style: solid;
           border-radius: 20px;
           margin: 0px;
-          padding-top: 0px;
-          height: 30px;
-          width: 480px;
+          margin-top: 20px;
+          height: 1000px;
+          width: 395px;
           box-sizing: border-box;
           position:relative; 
           display:inline-block;
@@ -66,11 +66,11 @@
         }
         .container-content-Menu-produse-1 {
           display: inline-block;
-          position: -webkit-sticky;
-          max-width: fit-content;
-          max-height: fit-content;
+          position: sticky;
+          position: relative;
           padding-left: 0px;
           width: 395px;
+          height: 500px;
         }
 
         #upper-side-table-style .tr .a {
@@ -410,38 +410,43 @@
           list-style-type: none;
           position: sticky;
           display:inline-block;
-          /* margin-bottom: 20px; */
+          margin-bottom: 200px;
         }
 
         #Menu_Categories {
           border: 1px; 
           border-color:#ffffff;
-          background-color: royalblue;
           border-width: 1px;
           border-style: groove;
+          background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+          animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
           border-radius: 20px;
-          box-sizing:content-box;
+          /* box-sizing:content-box; */
           /* box-shadow: wheat; */
-          width: 230px;
+          width: 365px;
+          /* margin: 50px; */
           list-style-type: none;
           position: sticky;
           display:inline-block;
-          flex: 1;
+          margin-bottom: 200px;
         }
         #menu_produse_top {
-          border: 1px #ffffff;
+          border: 1px; 
+          border-color:#ffffff;
           border-width: 1px;
-          background-color: royalblue;
           border-style: groove;
+          background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+          animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
           border-radius: 20px;
-          box-sizing:content-box;
-          width: 230px;
-          margin: 0px;
+          /* box-sizing:content-box; */
+          /* box-shadow: wheat; */
+          width: 365px;
+          /* margin: 50px; */
           list-style-type: none;
           position: sticky;
           display:inline-block;
-          flex: 1;
-          margin-bottom: 0px;
+          /* margin-top: 200px; */
+          /* margin-bottom: 20px; */
         }
         .menu-container_acasa {
           border: 1px; 
@@ -481,7 +486,7 @@
         .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
           list-style-type: none;
           text-align: center;
-          margin-right: 10px;
+          /* margin-right: 10px; */
           padding-top: 0px;
           border: 1px #000000;
           border-style: solid;
@@ -831,22 +836,7 @@
         .glowing-background:hover {
           box-shadow: 0 0 20px 10px rgba(145, 68, 68, 0.8);
         }
-        .menu-container_categories {
-          border: 1px; 
-          border-color:#000000;
-          border-width: 1px;
-          border-style: groove;
-          border-radius: 20px;
-          box-sizing:content-box;
-          /* box-shadow: wheat; */
-          width: 80px;
-          margin: 5px;
-          list-style-type: none;
-          position: sticky;
-          display:inline-block;
-          flex: 1px;
-          margin-bottom: 20px;
-        }
+
         .menu-container_categories .menu-ordered_list_2 {
           list-style-type: none;
           text-align: center;
@@ -2069,7 +2059,7 @@
           </ol>
         </div>
         <div class="menu-container_categories" id="Menu_Categories">
-          <ol class="menu-ordered_list_2" id="#meniu_ordered_2">
+          <ol class="menu-ordered_list_2" id="meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
               <a href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\ProduseCategorii" style="color: white;">Categorii Produse
                 <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown"> 
