@@ -24,6 +24,8 @@
     list-style-type: none;
     position: sticky;
     display:inline-block;
+    background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+    animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
     flex: 1;
     margin-bottom: 0px;
 }

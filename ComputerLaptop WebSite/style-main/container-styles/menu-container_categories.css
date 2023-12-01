@@ -1,30 +1,29 @@
 .menu-container_categories {
-    border: 1px #000000;
-    border-width: 4px;
-    border-style:double;
     border-radius: 40px;
     box-sizing:content-box;
-    width: 300px;
+    /* margin: 20px; */
     list-style-type: none;
     position: sticky;
-    flex: 1;
-    /* float: inline-start; */
     display:inline-block;
-    /* padding-right: 100px; */
+    flex: 1;
+    /* margin-bottom: 80px; */
 }
 #Menu_Categories {
     border: 1px; 
     border-color:#ffffff;
+    background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+    animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
     border-width: 1px;
     border-style: groove;
     border-radius: 20px;
-    box-sizing:content-box;
+    /* box-sizing:content-box; */
     /* box-shadow: wheat; */
     width: 680px;
+    /* margin: 50px; */
     list-style-type: none;
     position: sticky;
     display:inline-block;
-    flex: 1;
+    margin-left: 12px;
 }
 .menu-container_categories .menu-ordered_list_2 {
     list-style-type: none;
@@ -46,14 +45,14 @@
     padding: 0px;
     border: 1px #ffffff;
     border-style: solid;
-    background-color: rgb(141, 186, 255);
+
     border-radius: 20px;
     /* display: flexbox; */
     position: sticky;
     /* margin-top: 20px; */
     /* background-color:#ffffff; */
-    min-width: 350px;
-    box-shadow: 0px 8px 16px 0px rgb(253, 149, 149);
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgb(255, 255, 255);
     z-index: 1;
     display: none;
 }
@@ -63,54 +62,65 @@
     inline-size: 2px;
     list-style: none;
     position: absolute;
-    padding-top: 10px;
 }
 .ol .dropdown_content_ordered_list_2 {
     border: #000000;
     border-style: solid 2px;
 }
 .li_categoria_1_lista{
-    border-top: #ffffff outset;
     border-top-width: 1px;
-    border-top-right-radius: 10px;
-    border-bottom: #ffffff outset;
+    background-color: aquamarine;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-bottom-right-radius: 10px;
-    border-right: #ffffff outset;
-    border-top-left-radius: 10px;
+    border-top: rgb(255, 255, 255) groove;
+    border-bottom: rgb(255, 255, 255) groove;
+    border-right: rgb(255, 255, 255) groove;
+    border-left: rgb(255, 255, 255) groove;
     border-right-width: 1px;
-    border-left: #ffffff outset;
-    border-bottom-left-radius: 10px;
     border-left-width: 1px;
-    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    align-content: center;
+    font:menu;
 }
 .li_categoria_2_lista{
-    border-top: #ffffff outset;
     border-top-width: 1px;
-    border-top-right-radius: 10px;
-    border-bottom: #ffffff outset;
+    background-color: aquamarine;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-bottom-right-radius: 10px;
-    border-right: #ffffff outset;
-    border-top-left-radius: 10px;
+    border-top: rgb(255, 255, 255) groove;
+    border-bottom: rgb(255, 255, 255) groove;
+    border-right: rgb(255, 255, 255) groove;
+    border-left: rgb(255, 255, 255) groove;
     border-right-width: 1px;
-    border-left: #ffffff outset;
-    border-bottom-left-radius: 10px;
     border-left-width: 1px;
-    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    align-content: center;
+    font:menu;
 }
 .li_categoria_3_lista{
-    border-top: #ffffff outset;
     border-top-width: 1px;
-    border-top-right-radius: 10px;
-    border-bottom: #ffffff outset;
+    background-color: aquamarine;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-bottom-right-radius: 10px;
-    border-right: #ffffff outset;
-    border-top-left-radius: 10px;
+    border-top: rgb(255, 255, 255) groove;
+    border-bottom: rgb(255, 255, 255) groove;
+    border-right: rgb(255, 255, 255) groove;
+    border-left: rgb(255, 255, 255) groove;
     border-right-width: 1px;
-    border-left: #ffffff outset;
-    border-bottom-left-radius: 10px;
     border-left-width: 1px;
-    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    align-content: center;
+    font:menu;
 }

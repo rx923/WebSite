@@ -24,6 +24,9 @@
     position: sticky;
     display:inline-block;
     margin-left: 12px;
+    background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+    animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+    background-size: 200% 200%;
 }
 
 #meniu_ordered_1 {
@@ -61,24 +64,17 @@
     margin-left: 30px;
     margin-right: 20px;
     border: 1px #000000;
-    background-color: rgb(141, 186, 255);
     border-style: solid;
     border-radius: 0px;
     /* display: flexbox; */
     position: absolute;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgb(253, 149, 149);
+    box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
     z-index: 1;
     display: none;
 }
 
-
-#continut_acasa_dropdown{
-    background: white;
-
-
-}
 
 .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
     display:block;
@@ -92,52 +88,64 @@
 
 .li_continut_1_tip_lista{
     border-top-width: 1px;
-    border-top-right-radius: 10px;
+    background-color: aquamarine;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 20px;
     border-top: rgb(255, 255, 255) groove;
     border-bottom: rgb(255, 255, 255) groove;
     border-right: rgb(255, 255, 255) groove;
     border-left: rgb(255, 255, 255) groove;
-    border-top-left-radius: 10px;
+    border-top-left-radius: 20px;
     border-right-width: 1px;
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 20px;
     border-left-width: 1px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     align-content: center;
-    margin-left: 0px;
+    margin-left: 10px;
+    margin-right: 40px;
+    font:menu;
 }
 
 .li_continut_2_tip_lista {
     border-top-width: 1px;
-    border-top-right-radius: 10px;
+    background-color: aquamarine;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-bottom-right-radius: 10px;
     border-top: rgb(255, 255, 255) groove;
     border-bottom: rgb(255, 255, 255) groove;
     border-right: rgb(255, 255, 255) groove;
     border-left: rgb(255, 255, 255) groove;
-    border-top-left-radius: 10px;
     border-right-width: 1px;
-    border-bottom-left-radius: 10px;
     border-left-width: 1px;
-    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 40px;
     align-content: center;
+    font:menu;
 }
 
 .li_continut_3_tip_lista{
     border-top-width: 1px;
-    border-top-right-radius: 10px;
+    background-color: aquamarine;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     border-bottom-width: 1px;
-    border-bottom-right-radius: 10px;
     border-top: rgb(255, 255, 255) groove;
     border-bottom: rgb(255, 255, 255) groove;
     border-right: rgb(255, 255, 255) groove;
     border-left: rgb(255, 255, 255) groove;
-    border-top-left-radius: 10px;
     border-right-width: 1px;
-    border-bottom-left-radius: 10px;
     border-left-width: 1px;
-    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 40px;
     align-content: center;
+    font:menu;
 }
