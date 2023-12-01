@@ -1,31 +1,49 @@
-.search-bar {
-    padding: 5px 10px;
+
+#bara-de-cautare-principala {
+    padding: 1px;
     color: rgb(0, 0, 0);
     background-color: rgb(0, 23, 137);
     border: outset;
     border-width: 0.5vw 0.5vw;
     border-color: rgb(68, 162, 255);
     border-radius: 30px;
-    position: sticky;
-    left: 50%; /* Center the search bar horizontally */
-    transform: translateX(-50%); /* Adjust to properly center */
+    /* Center the search bar horizontally */
+    left: 231px;
+    /* Adjust to properly center */
+    /* transform: translateX(-50%);  */
     z-index: 1;
     cursor: pointer;
-    display: inline-block;
-    width: 70%; /* Set the width of the search bar */
-    max-width: 700px; /* Set maximum width if needed */
+    /* display: ruby-base-container; */
+    /* Set the width of the search bar */
+    /* Set maximum width if needed *
+    /* Adjust top position */
+    transform: translateY(-300%);
+    top: 270px;
+    margin-top: 0px;
+    margin-bottom: 20px; 
+    /* Use block level element */
+    display: inline-block; 
+    position: absolute;
+    /* Center align the content */
+    /* text-align: center; */
+    /* Center the block element */
+    margin:0px;
+
 }
+  
 .search-bar input[type="text"] {
-    padding: 5px 10px;
     border: 3px outset rgb(0, 123, 255);
     background-color: whitesmoke;
     border-radius: 25px;
-    width: calc(100% - 120px); /* Adjust input field width */
+    /* Adjust input field width */
+    width: 500px;
+    padding: 10px;
     outline: none;
 }
 
 #introducere-text-bara-de-cautare-principala {
-    width: 60%;
+    width: 500px;
+    padding-bottom: 2px;
 }
 
 #submit-cauta-bara-de-cautare {
@@ -35,16 +53,8 @@
     border-radius: 30px;
     background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
     cursor: pointer;
-    width: 20%; /* Adjust button width */
+    /* Adjust button width */
+    width: 200px; 
     max-width: 100px; /* Set maximum width if needed */
     height: 40px;
 }
-
-#bara-de-cautare-principala {
-    top: 60%; /* Adjust top position */
-    display: block; /* Use block level element */
-    position: relative;
-    text-align: center; /* Center align the content */
-    margin: 0 auto; /* Center the block element */
-}
-  
