@@ -79,6 +79,11 @@
     text-decoration: none;
     display: block;
     text-align: left;
+    
+}
+.a {
+    text-decoration: wavy;
+    font: menu;
 }
 /* Add a background color on hover */
 .column a:hover {
