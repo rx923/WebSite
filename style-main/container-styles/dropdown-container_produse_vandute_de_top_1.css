@@ -6,9 +6,10 @@
 #dropdown-content-images3 {
     position:absolute;
     display:none;
-    padding-block: 40px;
-    padding-right: 700px;
-    padding-top: 300px;
+    padding-block: 140px;
+    padding-right: 687px;
+    /* border: 3px solid black; */
+    padding-top: 30px;
     right: 30px;
     padding-block: 100px;
     /* left: 0; */
@@ -29,6 +30,9 @@
     display:block;
     /* position: relative; */
     padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
     border-top: 1px solid #000;
     border-right: 1px solid #000;
     border-left: 1px solid #000;
