@@ -1,28 +1,35 @@
 #container_imagine-dropdown-1 {
     margin-right: 0px;
     width: 300px;
-    background-color: antiquewhite;
+    border-radius: 30px;
+    background-color: rgb(166, 205, 218);
     padding: 0px;
+    left: 20px;
+    position: relative;
     border: 2px solid black;
+    border-radius: 30px;
 }
 #container_imagine-dropdown-2 {
     margin-right: 0px;
     width: 300px;
     position: relative;
-    left: 370px;
-    bottom: 250px;
-    background-color: antiquewhite;
+    left: 350px;
+    bottom: 255px;
+    border-radius: 30px;
+    background-color: rgb(166, 205, 218);
     padding: 0px;
     border: 2px solid black;
+    border-radius: 30px;
 }
 #container_imagine-dropdown-3 {
     margin-right: auto;
-    background-color: antiquewhite;
+    border-radius: 30px;
+    background-color: rgb(166, 205, 218);
     position: relative;
-    left: 740px;
-    bottom: 499px;
+    left: 679px;
+    bottom: 510px;
     padding: 0px;
     width: 300px;
     border: 2px solid black;
-
+    border-radius: 30px;
 }
