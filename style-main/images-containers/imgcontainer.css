@@ -3,14 +3,16 @@
     width: 300px;
     background-color: antiquewhite;
     padding: 0px;
+    position: relative;
+    right: 430px;
     border: 2px solid black;
 }
 #container_imagine-dropdown-2 {
     margin-right: 0px;
     width: 300px;
     position: relative;
-    left: 370px;
-    bottom: 250px;
+    right: 80px;
+    bottom: 249px;
     background-color: antiquewhite;
     padding: 0px;
     border: 2px solid black;
@@ -19,8 +21,8 @@
     margin-right: auto;
     background-color: antiquewhite;
     position: relative;
-    left: 740px;
-    bottom: 499px;
+    left: 240px;
+    bottom: 497px;
     padding: 0px;
     width: 300px;
     border: 2px solid black;
