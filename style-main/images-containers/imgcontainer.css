@@ -1,21 +1,28 @@
 #container_imagine-dropdown-1 {
-    margin-right: 800px;
+    margin-right: 0px;
+    width: 300px;
     background-color: antiquewhite;
-    padding: 20px;
+    padding: 0px;
     border: 2px solid black;
 }
 #container_imagine-dropdown-2 {
-    margin-right: 600px;
-    right: 20px;
+    margin-right: 0px;
+    width: 300px;
+    position: relative;
+    left: 370px;
+    bottom: 250px;
     background-color: antiquewhite;
-    padding: 20px;
+    padding: 0px;
     border: 2px solid black;
 }
 #container_imagine-dropdown-3 {
-    margin-right: 600px;
+    margin-right: auto;
     background-color: antiquewhite;
-    position: sticky;
-    padding: 20px;
+    position: relative;
+    left: 740px;
+    bottom: 499px;
+    padding: 0px;
+    width: 300px;
     border: 2px solid black;
 
 }

@@ -863,23 +863,8 @@ h1 {
     border: 2px solid white;
 }
 /* Style for the dropdown content */
-.menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
-    display: none;
-    position: sticky;
-    top: 100%;
-    left: 0;
-    background-color: transparent;
-    /* background-blend-mode: color-dodge; */
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
-    border-radius: 5px;
-    z-index: 1;
-    list-style-type: none;
-}
 /* Show dropdown content when hovering over the main menu item */
-.menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
-    display: block;
-}
+
 /* Style for the dropdown links */
 .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
     display:block;
