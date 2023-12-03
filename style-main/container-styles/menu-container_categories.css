@@ -6,8 +6,6 @@
     border-width: 1px;
     border-style: groove;
     border-radius: 20px;
-    /* box-sizing:content-box; */
-    /* box-shadow: wheat; */
     width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -53,7 +51,7 @@
     list-style: none;
     position: absolute;
     box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
-    background-color: rgb(141, 186, 255);
+    background-color: none;
     
 
 }
@@ -62,20 +60,10 @@
     border-style: solid 2px;
 }
 .li_categoria_1_lista{
-    border-top-width: 1px;
-    background-color: rgb(253, 255, 184);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) outset;
-    border-bottom: rgb(255, 255, 255) outset;
-    border-right: rgb(255, 255, 255) outset;
-    border-left: rgb(255, 255, 255) outset;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 3px black outset;
+    border-radius: 30px;
+    padding: 1px;
     margin-right: 40px;
     margin-left: 40px;
     margin-top: 10px;
@@ -84,20 +72,10 @@
     font:menu;
 }
 .li_categoria_2_lista{
-    border-top-width: 1px;
-    background-color: rgb(253, 255, 184);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) outset;
-    border-bottom: rgb(255, 255, 255) outset;
-    border-right: rgb(255, 255, 255) outset;
-    border-left: rgb(255, 255, 255) outset;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 3px black outset;
+    border-radius: 30px;
+    padding: 1px;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 10px;
@@ -106,20 +84,10 @@
     font:menu;
 }
 .li_categoria_3_lista{
-    border-top-width: 1px;
-    background-color: rgb(253, 255, 184);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) outset;
-    border-bottom: rgb(255, 255, 255) outset;
-    border-right: rgb(255, 255, 255) outset;
-    border-left: rgb(255, 255, 255) outset;
-    border-right-width: 1px;
-    border-left-width: 1px;
-    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    border: 3px black outset;
+    border-radius: 30px;
+    padding: 1px;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 10px;

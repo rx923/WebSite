@@ -4,26 +4,29 @@
 }
 /* Style for the dropdown content */
 #dropdown-content-images3 {
-    position:absolute;
-    display:none;
-    padding-block: 140px;
-    padding-right: 687px;
-    /* border: 3px solid black; */
-    padding-top: 30px;
-    right: 30px;
-    padding-block: 100px;
-    /* left: 0; */
+    position: absolute;
+    /* Using flexbox */
+    flex-wrap: nowrap;
+    display: none;
+    /* Consider reducing this value */
+    /* padding-block: 100px;  */
+    /* padding-right: 687px;     */
+    /* Adjust this value to reduce the top padding */
+    padding: 39px;
+    left: -103px;
+    right: -382px;
     background-blend-mode: color-dodge;
+    background: transparent;
     border-radius: 30px;
-    box-shadow: 20px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    /* box-shadow: 20px 8px 16px 0px rgba(0, 0, 0, 0.2); */
     z-index: 1;
     list-style-type: none;
 }
+
 /* Show dropdown content when hovering over the main menu item */
 .dropdown-continut_lista_1:hover #dropdown-content-images3 {
     display: block;
-    position: absolute;
+    position:-ms-page;
 }
 /* Style for the dropdown links */
 #dropdown-content-images3 a {
@@ -84,6 +87,14 @@
 
 /* Style for the images inside the dropdown content */
 .dropdown-content_imagini img {
+    width: 200px;
+    height: 200px;
+}
+.dropdown-container {
+    margin-right: 20px;
+}
+
+.dropdown-container img {
     width: 200px;
     height: 200px;
 }
