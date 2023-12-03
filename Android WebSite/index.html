@@ -398,19 +398,23 @@
         }
         /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
         #main {
-          transition: margin-left .5s;
-          padding: 20px;
+          border: 2px solid;
+          width: 500px;
+          height: 500px;
+          position: relative;
+          animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+          background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(96 199 251) 70%, rgb(145 255 115) 85%);
         }
         /* Page content */
         .main {
           margin-left: 200px; /* Same as the width of the sidenav */
         }
         .openTriangle {
-          position: relative;
+          position: relative; 
           display: inline;
           width: 0;
           height: 0;
-          bottom: 955px;
+          bottom: 555px;
           left: 10px;
           /* Left side of the triangle */
           border-left: 25px solid transparent;
@@ -434,19 +438,167 @@
           text-decoration: none; 
           position: sticky; 
           border-style:groove; 
-          border-color: transparent; 
-          border-width: 1px; 
-          padding-top: 0px; 
-          padding-bottom: 0px; 
-          border-top-left-radius: 10px; 
-          border-bottom-right-radius: 10px; 
-          border-bottom-left-radius: 10px; 
-          border-bottom-right-radius: 10px; 
-          /* background-image: linear-gradient(20deg, #e8e1a6 23%, #c7c401 70%, rgb(198, 100, 78) 85%); */
-          box-shadow: 0 0 10px 5px rgb(255, 255, 255); 
-          border-top-right-radius: 10px;
-          margin-right: 25px;
+          border-color: #000;
+          border-width: 1px;
+          left: 7px;
+          padding: 6px;
+          bottom: 39px;
+          padding-bottom: 20px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+          margin-right: 3px;
         }
+        #meniu-produse-number-2 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 7px;
+          padding: 20px;
+          bottom: 492px;
+          margin-top: 4px;
+          padding: 0px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-3 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 7px;
+          padding: 0px;
+          bottom: 488px;
+          padding: 0px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-4 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          padding: 6px;
+          bottom: 484px;
+          padding: 0px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-5 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 479px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-6 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 9px;
+          bottom: 474px;
+          margin-top: 1px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-7 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 469px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-8 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 9px;
+          bottom: 465px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-9 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 461px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-10 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 455px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 0px;
+        }
+        #meniu-produse-number-3
         /* Navbar container */
         .navbar {
           overflow: hidden;
@@ -1663,8 +1815,18 @@
           <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
         </input>
       </div>
+      <section>
+        <div class="wave wave1">
+        </div>
+        <div class="wave wave2">
+        </div>
+        <div class="wave wave3">
+        </div>
+        <div class="wave wave4">
+        </div>
+      </section>
       <h1> Big Store Coffee </h1>
-      <div class="glowing-background table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
+      <div class="table-container_lista_optiuni flowWaves" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
             <div class="th glowing-background " id="tableheader-Despre">
