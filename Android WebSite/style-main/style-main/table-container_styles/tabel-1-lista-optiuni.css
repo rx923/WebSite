@@ -1,0 +1,29 @@
+.tabel-1-lista-optiuni {
+    /* padding: 20px; */
+    /* margin: 1000px; */
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    flex-direction: row;
+}
+#upper-side-table-style .tr .a {
+    /* margin-left: 10px; */
+    position: sticky;
+}
+    /* #upper-side-table-style{
+    position: -webkit-sticky;
+} */
+.tr{
+    display: table-row;
+}
+.th {
+    display: table-cell;
+    position: sticky;
+    background-color: rgb(92, 115, 123);
+    padding: 10px;
+    text-align: center;
+}
+.th a {
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    margin-top: 100px;
+}

@@ -1,0 +1,99 @@
+.h2 {
+    text-decoration: dotted;
+    font: optional;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 2px solid chocolate;
+}
+.container-produse_vandute_de_top_1 {
+    border-right: 1px;
+    border-right-width: 6px;
+    border-left: 1px;
+    border-left-width: 6px;
+    border-bottom: 2px;
+    border-top: 2px;
+    padding-left: 0px;
+    border-style: outset;
+    /* display: block; */
+    border-radius: 10px;
+    margin-top: 500px;
+    margin-left: 250px;
+    margin-right: 250px;
+    /* margin-top: 285px; */
+    margin-bottom: 20px;
+    border-color: rgb(34, 60, 84);
+    position:relative;
+    /* display:flex; */
+    box-sizing:border-box;
+    /* width: 1850px; */
+    /* height: max-content; */
+    /* align-items: center; */
+}
+#container-imagine-dreapta {
+    background-color: rgb(59, 122, 238);
+    border-left: 1px;
+    padding: 20px;
+    margin-left: 20px;
+    border-bottom: 2px;
+    border-top: 1px;
+    border-style: outset;
+    border-radius: 35px;
+    border-color: rgb(0, 0, 0);
+    border-right: 1px;
+    margin-top: 10px;
+    width: auto;
+    margin-bottom: 10px;
+    /* border-color: rgb(0, 132, 255); */
+    position:sticky;
+    /* display:flex; */
+    box-sizing:border-box;
+    /* width: 600px; */
+    margin-left: 100px;
+    margin-right: 100px;
+    /* height: max-content; */
+    /* align-items: center; */
+    
+}
+#container-imagine-centru {
+    background-color: rgb(59, 122, 238);
+    border-left: 1px;
+    border-bottom: 2px;
+    border-top: 1px;
+    border-style: outset;
+    border-radius: 35px;
+    border-color: rgb(0, 0, 0);
+    border-right: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* border-color: rgb(0, 132, 255); */
+    position:sticky;
+    /* display:flex; */
+    box-sizing:border-box;
+    /* width: 600px; */
+    margin-left: 100px;
+    margin-right: 100px;
+    /* height: max-content; */
+    /* align-items: center; */
+}
+#container-imagine-stanga {
+    background-color: rgb(59, 122, 238);
+    border-left: 1px;
+    border-bottom: 2px;
+    border-top: 1px;
+    border-style: outset;
+    border-radius: 35px;
+    border-color: rgb(0, 0, 0);
+    border-right: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* border-color: rgb(0, 132, 255); */
+    position:sticky;
+    /* display:flex; */
+    box-sizing:border-box;
+    /* width: 600px; */
+    padding: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
+    /* height: max-content; */
+    /* align-items: center; */
+}

@@ -1,0 +1,12 @@
+.dropdown-content_meniu_1si2 {
+    border: 2px;
+    align-content: center;
+    border-style: solid;
+    border-color: rgb(126, 126, 126);
+    border-radius: 25px;
+    position: sticky;
+    padding: 20px;
+    flex-direction: row; 
+    display: block;
+    background: linear-gradient(to top left, rgb(255, 255, 255) 30%, rgb(36, 102, 224) 100%);
+}

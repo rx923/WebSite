@@ -1,0 +1,55 @@
+form {
+    border: 1px solid #c58e8e;
+    border-radius: 20px;
+    background-color: rgba(252, 252, 252, 0.8);
+    box-sizing: border-box;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+    /* Change to inline-block */
+    display: inline-block; 
+    /* Remove fixed width */
+    width: auto; 
+    /* Add padding */
+    padding-bottom: 0px;
+    /* Move margin to the form container */ 
+    margin-top: 18px; 
+    /* Center form content */
+    text-align: center; 
+}
+.container {
+    padding: 10px;
+}
+/* Adjust the input fields and button styles */
+input[type="text"], input[type="password"] {
+    /* Make input fields full width */
+    width: 160px; 
+    padding: 2px;
+    margin: 0px 0px;
+    border: 1px solid #772727;
+    border-radius: 20px;        
+}
+#submit-button-form {
+    background-color: #875050;
+    border-radius: 20px;
+    padding: 10px 20px; /* Add padding */
+    margin: 10px 0; /* Add margin */
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+  /* Adjust the image size */
+.imgcontainer img {
+    width: 40px;
+    height: 50px;
+    border: 1px solid rgb(255, 0, 0);
+    border-spacing: 20px;
+    background-color: lightskyblue;
+    border-radius: 20px;
+}
+  /* Remove unnecessary styles */
+  
+  /* Center the "Remember me" checkbox */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
