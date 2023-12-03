@@ -12,7 +12,8 @@
     list-style-type: none;
     position: sticky;
     display:inline-block;
-    margin-left: 12px;
+    margin-left: auto;
+    margin-right: auto;
     background:linear-gradient(35deg, #ffffff 27%, rgb(1, 112, 168)66%, rgb(255, 255, 255) 75%);
     animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
     /* background-size: 200% 200%; */
@@ -51,10 +52,10 @@
     /* margin-right: 10px; */
     padding-top: 0px;
     margin-left: 0px;
-    margin-right: 145px;
+    margin-right: 0px;
     border: 1px #000000;
     border-style: solid;
-    border-radius: 0px;
+    border-radius: 30px;
     /* display: flexbox; */
     position: absolute;
     /* margin-top: 20px; */
@@ -70,29 +71,21 @@
     text-align: center;
     /* inline-size: 2px; */
     border: 1px #000000 solid;
-    background-color: rgb(141, 186, 255);
+    background-color: none;
     list-style-type: none;
     margin-top: 0px;
 }
 
 .li_continut_1_tip_lista{
     border-top-width: 1px;
-    padding: 4px;
-    background-color: rgb(253, 255, 184);
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-width: 1px;
-    border-bottom-right-radius: 20px;
-    border-top: rgb(255, 255, 255) outset;
-    border-bottom: rgb(255, 255, 255) outset;
-    border-right: rgb(255, 255, 255) outset;
-    border-left: rgb(255, 255, 255) outset;
-    border-top-left-radius: 20px;
-    border-right-width: 1px;
-    border-bottom-left-radius: 20px;
-    border-left-width: 1px;
+    padding: 1px;
+    background-color: rgb(255, 255, 255);
+    border: 1px rgb(0, 0, 0);
+    border-radius: 30px;
+    border-top: rgb(0, 0, 0) outset;
+    border-bottom: rgb(0, 0, 0) outset;
+    border-right: rgb(0, 0, 0) outset;
+    border-left: rgb(0, 0, 0) outset;
     /* margin-bottom: 10px; */
     align-content: center;
     margin-left: 10px;
@@ -103,16 +96,12 @@
 }
 
 .li_continut_2_tip_lista {
-    border-top-width: 1px;
-    background-color: rgb(253, 255, 184);
-    padding: 4px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255), outset;
-    border-bottom: rgb(255, 255, 255) outset;
+    background-color: rgb(255, 255, 255);
+    padding: 1px;
+    border: 1px black;
+    border-radius: 30px;
+    border-top: rgb(0, 0, 0), outset;
+    border-bottom: rgb(0, 0, 0) outset;
     border-right: rgb(255, 255, 255) outset;
     border-left: rgb(255, 255, 255) outset;
     border-right-width: 1px;
@@ -126,20 +115,14 @@
 }
 
 .li_continut_3_tip_lista{
-    border-top-width: 1px;
-    background-color: rgb(253, 255, 184);
-    padding: 4px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-width: 1px;
-    border-top: rgb(255, 255, 255) outset;
-    border-bottom: rgb(255, 255, 255) outset;
-    border-right: rgb(255, 255, 255) outset;
-    border-left: rgb(255, 255, 255) outset;
-    border-right-width: 1px;
-    border-left-width: 1px;
+    background-color: rgb(255, 255, 255);
+    padding: 1px;
+    border: 1px black;
+    border-radius: 30px;
+    border-top: rgb(0, 0, 0) outset;
+    border-bottom: rgb(0, 0, 0) outset;
+    border-right: rgb(0, 0, 0) outset;
+    border-left: rgb(0, 0, 0) outset;
     margin-left: 10px;
     margin-right: 40px;
     margin-top: 10px;

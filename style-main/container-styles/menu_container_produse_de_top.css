@@ -6,7 +6,8 @@
     border-radius: 20px;
     box-sizing:content-box;
     width: 400px;
-    margin: 0px;
+    margin-left: auto;
+    margin-right: auto;
     list-style-type: none;
     position: sticky;
     display:inline-block;

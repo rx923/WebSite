@@ -9,7 +9,8 @@
     /* box-sizing:content-box; */
     /* box-shadow: wheat; */
     width: 400px;
-    /* margin: 50px; */
+    margin-left: auto;
+    margin-right: auto;
     list-style-type: none;
     position: sticky;
     display:inline-block;
@@ -30,7 +31,7 @@
     text-align: center;
     /* margin-right: 10px; */
     margin-left: 0px;
-    margin-right: 145px;
+    margin-right: 0px;
     padding-top: 0px;
     padding: 0px;
     border: 1px #ffffff;
