@@ -12,16 +12,23 @@
           max-height: fit-content;
         }
         header {
-          background: linear-gradient(30deg, #1b83d500 35%, rgb(0, 170, 255) 65%, rgba(0, 0, 0, 0) 70%);
-          animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+          position: relative;
+          background-color: #3586ff;
+          /* Adjust header height as needed */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          height: 200px; 
           border-top: 5px rgb(237, 239, 240) groove;
           border-left: 5px rgb(255, 255, 255) groove;
           border-right: 5px rgb(255, 255, 255) groove;
           border-bottom: 5px rgb(255, 255, 255) groove;
+          border-radius: 25px;
           margin-bottom: 10px;
           margin-bottom: 1px;
-          position: relative;
           /* margin-top: 50px; */
+          /* border-style: ; */
           padding-top: 350px;
         }
       }
@@ -46,14 +53,16 @@
           margin-bottom: 1px;
           position: relative;
           /* margin-top: 50px; */
+          /* border-style: ; */
           padding-top: 350px;
         }
         /* Style for heading 1 which includes the title and a pulsing kind of animation to the right side and left side of the h1 heading*/
         h1 {
           background: linear-gradient(55deg, #ffffff6e 21%,rgb(91 191 221 / 36%)31%, #084f669c 85%);
+          /* max-width: auto;  */
           text-align: center;
           font-weight: lighter;
-          text-size-adjust: initial;
+          text-size-adjust:initial;
           border: 2px ridge rgba(0, 0, 0, 0.2);
           fallback: inherit;
           border-top-style: ridge;
@@ -67,7 +76,7 @@
           height: 89px;
           width: 300px;
           border-width: 1px;
-          /* padding: 10px; */
+          /* padding: 10px; */ /* Ensure the parent is a positioned element for absolute positioning */
           position: relative;
           text-shadow: 3px 3px 2px rgb(0 85 127), 0px 0px 25px rgb(116, 46, 46), 0px 0px 5px rgb(255, 255, 255);
         }
@@ -122,24 +131,26 @@
           right: 0px;
           animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
           position: relative;
+          /* background-size: 200% 200%; */
         }
         #tableheader-Despre {
+          /* Margin between elements */
           padding: 10px;
           background: steelblue;
           bottom: 1px;
-          border: 2px outset black;
+          border: 2px  outset black;
           position: static;
           border-radius: 30px;
           /* bottom: 1px; */
           /* background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%); */
           /* margin-top: auto; */
           /* bottom: 2px; */
-          /* margin-right: 10px;*/
+          /* margin-right: 10px; */
         }
         #tableheader-Comenzi {
           padding: 10px;
           bottom: 1px;
-          border: 2px outset black;
+          border: 2px  outset black;
           position: static;
           border-radius: 30px;
           top: 1px;
@@ -149,7 +160,7 @@
         #tableheader-Livrare  {
           padding: 10px;
           background: steelblue;
-          border: 2px outset black;
+          border: 2px  outset black;
           position: static;
           bottom: 1px;
           border-radius: 30px;
@@ -157,8 +168,8 @@
         }
         #tableheader-Suport {
           padding: 10px;
-          background: rgba(70, 131, 180, 0.548);
-          border: 2px outset black;
+          background: steelblue;
+          border: 2px  outset black;
           position: static;
           bottom: 1px;
           border-radius: 30px;
@@ -167,7 +178,7 @@
         #tableheader-Informatii-Aditionale {
           padding: 10px;
           background: #4682b4e3;
-          border: 2px ridge rgb(0, 170, 255);
+          border: 2px  ridge rgb(0, 170, 255);
           position: static;
           bottom: 1px;
           border-radius: 30px;
@@ -218,24 +229,34 @@
           border-width: 0.5vw 0.5vw;
           border-color: rgb(68, 162, 255);
           border-radius: 30px;
+          /* Center the search bar horizontally */
           left: 0%;
-          /* transform: translateX(-50%); */
+          /* Adjust to properly center */
+          /* transform: translateX(-50%);  */
           z-index: 1;
           cursor: pointer;
+          /* display: ruby-base-container; */
+          /* Set the width of the search bar */
+          /* Set maximum width if needed *
+          /* Adjust top position */
           /* transform: translateY(-100%); */
           bottom: 161px;
           left: 62px;
           width: 316px;
           margin-top: 0px;
-          margin-bottom: 20px;
+          margin-bottom: 20px; 
+          /* Use block level element */
           position: relative;
+          /* Center align the content */
           /* text-align: center; */
-          margin: 0px;
+          /* Center the block element */
+          margin:0px;
         }
         .search-bar input[type="text"] {
           border: 3px outset rgba(0,0,0,0.2);
           background-color: rgba(0, 0, 0, 0);
           border-radius: 25px;
+          /* Adjust input field width */
           width: 100px;
           margin-left: 0px;
           padding: 0px;
@@ -252,6 +273,7 @@
           border-radius: 30px;
           background: repeating-linear-gradient(22deg, rgb(86 86 255 / 50%) 75%, rgb(0 0 0 / 59%) 80%, rgb(255 0 0 / 16%) 50%);
           cursor: pointer;
+          /* Adjust button width */
           width: 67px;
           height: 30px;
           padding: 6px;
@@ -301,19 +323,28 @@
           border-radius: 30px;
           /* padding-top: 30px; */
           width: 250px;
+          /* 100% Full-height */
           height: 280px;
           overflow-y: auto;
+          /* 0 width - change this with JavaScript */
+          /* Stay in place */
           top: 20px;
-          position: absolute;
-          z-index: 1;
+          position: absolute; 
+          /* Stay on top */
+          z-index: 1; 
+          /* Stay at the top */
           top: 0px;
           bottom: 0px;
           margin-left: 60px;
           margin-top: 154px;
+          /* Black*/
           margin-right: 1px;
           background: linear-gradient(to top right, rgb(0 85 127 / 97%) 39%, #ccc 90%);
-          overflow-x: hidden;
-          padding-top: 120px;
+          /* Disable horizontal scroll */
+          overflow-x: hidden; 
+          /* Place content 60px from the top */
+          padding-top: 120px; 
+          /* 0.5 second transition effect to slide in the sidenav */
           transition: 0.5s;
         }
 
@@ -412,9 +443,13 @@
           height: 0;
           bottom: 840px;
           left: 10px;
+          /* Left side of the triangle */
           border-left: 25px solid transparent;
+          /* Right side of the triangle */
           border-right: 25px solid transparent;
+          /* Bottom side of the triangle */
           border-bottom: 43.3px groove rgb(196 57 57 / 59%);
+          /* Change cursor on hover */
           cursor: pointer;
         }
         /* Style for the text "open" */
@@ -737,11 +772,11 @@
           border-left:#000000;
         }
         .th a {
-          color: rgb(0, 0, 0);
-          text-decoration: wavy;
+          color:rgb(0, 0, 0);
+          text-decoration:wavy;
           background: #f5f5f575;
           border-radius: 15px;
-          background-blend-mode: hard-light;
+          background-blend-mode:hard-light;
           padding-block: 7px;
         }
 
@@ -922,16 +957,22 @@
           display: inline;
           width: 30px;
           height: 30px;
-          border: 15px groove #ff0000;
-          border-radius: 50px;
+          /* Color of the circle */
+          border: 15px groove #ff0000; 
+          /* Make it a circle */
+          border-radius: 50px; 
           float: left;
           bottom: 10px;
-          position: relative;
-          left: 10px;
+          position:relative;
+          /* position: -webkit-sticky; */
+          /* Adjust this value to position the circle inside the border */
+          left: 10px; 
+          /* Center vertically */
           /* top: 59px; */
-          top: 10px;
+          top: 10px; 
+          /* Adjust to vertically center the circle */
           /* transform: translateY(-2%); */
-          /* animation: pulse 2s infinite alternate;
+          /* animation: pulse 2s infinite alternate; */
         }
         .table-container_lista_optiuni #tr {
           /* Margin between elements */
@@ -1160,18 +1201,24 @@
           display: block;
         }
         h1::after {
-          border-radius: 1px;
+          /* Make it rounded */
+          border-radius: 1px; 
+          /* Empty content */
           content: "";
           display: block;
           width: 50px;
           height: 50px;
           position: relative;
-          left: 170px;
+          /* Adjust this value to position the box inside the border */
+          left: 170px; 
+          /* Distance from the top */
           bottom: 3px;
           overflow: auto;
-          background: url(https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png);
-          background-size: contain;
-          animation: pulse 4s ease-in-out infinite;
+          background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+          /* Adjust background size as needed */
+          background-size: contain; 
+          /* Apply animation */
+          animation: pulse 4s  ease-in-out infinite;
         }
         h1::after::before {
           /* Empty content */
