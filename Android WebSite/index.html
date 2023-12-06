@@ -7,28 +7,6 @@
     <style type="text/css">
       /* Apple iOS 14 Pro Max style */
       @media only screen and (min-width: 430px) and (min-height:932px) and (orientation:landscape) {
-        html {
-          max-width: fit-content;
-          max-height: fit-content;
-        }
-        header {
-          background: linear-gradient(30deg, #1b83d500 35%, rgb(0, 170, 255) 65%, rgba(0, 0, 0, 0) 70%);
-          animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
-          border-top: 5px rgb(237, 239, 240) groove;
-          border-left: 5px rgb(255, 255, 255) groove;
-          border-right: 5px rgb(255, 255, 255) groove;
-          border-bottom: 5px rgb(255, 255, 255) groove;
-          margin-bottom: 10px;
-          margin-bottom: 1px;
-          position: relative;
-          /* margin-top: 50px; */
-          padding-top: 350px;
-        }
-      }
-    </style>
-    <style>
-      /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
-      @media only screen and ((max-width:412px) and (max-height: 915px)), (orientation: landscape) and (min-width:915px) and (min-height:412px) {
         /* Adjusting the html page size for Android type of devices */
         html {
           max-width: fit-content;
@@ -113,7 +91,7 @@
           margin-top: auto;
           margin-bottom: auto;
           padding: 10px;
-          background: linear-gradient(20deg, rgb(255 0 0 / 43%) 23%, rgb(0 73 255 / 57%) 70%, rgb(0 170 255 / 0%) 85%);
+          background: linear-gradient(to top left 20deg, rgb(255, 255, 255) 255, 0.43), rgb(0, 67, 108)5, 0.57,rgb(141, 68, 68) 85%;
           border: 0px;
           border-radius: 30px;
           width: 160px;
@@ -128,7 +106,7 @@
           background: steelblue;
           bottom: 1px;
           border: 2px outset black;
-          position: static;
+          position: relative;
           border-radius: 30px;
           /* bottom: 1px; */
           /* background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%); */
@@ -140,7 +118,7 @@
           padding: 10px;
           bottom: 1px;
           border: 2px outset black;
-          position: static;
+          position: relative;
           border-radius: 30px;
           top: 1px;
           background: steelblue;
@@ -150,7 +128,7 @@
           padding: 10px;
           background: steelblue;
           border: 2px outset black;
-          position: static;
+          position: relative;
           bottom: 1px;
           border-radius: 30px;
           top: 1px;
@@ -159,16 +137,16 @@
           padding: 10px;
           background: rgba(70, 131, 180, 0.548);
           border: 2px outset black;
-          position: static;
+          position: relative;
           bottom: 1px;
           border-radius: 30px;
           top: 2px;
         }
         #tableheader-Informatii-Aditionale {
           padding: 10px;
-          background: #4682b4e3;
-          border: 2px ridge rgb(0, 170, 255);
-          position: static;
+          background: #008cff6c;
+          border: 2px outset rgba(0,0,0,0.2);          
+          position: relative;
           bottom: 1px;
           border-radius: 30px;
           top: 3px;
@@ -210,7 +188,7 @@
 
         /* Search-bar styles */
                 
-        #bara-de-cautare-principala {
+        #searchBar {
           padding: 1px;
           color: rgb(0, 0, 0);
           background-color: rgb(0 23 137 / 35%);
@@ -252,7 +230,7 @@
           border-radius: 30px;
           background: repeating-linear-gradient(22deg, rgb(86 86 255 / 50%) 75%, rgb(0 0 0 / 59%) 80%, rgb(255 0 0 / 16%) 50%);
           cursor: pointer;
-          width: 67px;
+          width: 90px;
           height: 30px;
           padding: 6px;
           margin-left: 65px;
@@ -410,8 +388,8 @@
           display: inline;
           width: 0;
           height: 0;
-          bottom: 840px;
-          left: 10px;
+          bottom: 1025px;
+          left: 15px;
           border-left: 25px solid transparent;
           border-right: 25px solid transparent;
           border-bottom: 43.3px groove rgb(196 57 57 / 59%);
@@ -746,10 +724,1579 @@
         }
 
         #tabel-tip-lista-optiuni {
-          bottom: 340px;
+          bottom: 430px;
+          background: #0033ff4a;
           background-color: none;
           max-width: fit-content;
           border-radius: 35px;
+          shape-outside: margin-box;
+          border: 3px groove rgba(0, 0, 0, 0.335);
+          position: relative;
+        }
+        /* Style for main page containers: */
+        #Menu_Categories {
+          border: 1px;
+          left: 135px;
+          /* top: 20px; */
+          bottom: 261px;
+          right: 0px;
+          margin: 5px;
+          border-color: #ffffff;
+          border-width: 1px;
+          border-style: groove;
+          background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+          animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+          border-radius: 30px;
+          /* box-sizing: content-box; */
+          width: 140px;
+          height: 48px;
+          /* margin: 50px; */
+          list-style-type: none;
+          position: relative;
+          display: block;
+        }
+        #menu_produse_top {
+          border: 1px; 
+          border-color:#ffffff;
+          border-width: 1px;
+          border-style: groove;
+          background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+          animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+          border-radius: 20px;
+          /* box-sizing:content-box; */
+          /* box-shadow: wheat; */
+          width: 365px;
+          /* margin: 50px; */
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          /* margin-top: 200px; */
+          /* margin-bottom: 20px; */
+        }
+        .menu-container_acasa {
+          border: 1px; 
+          border-color:#000000;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          /* box-shadow: wheat; */
+          width: 80px;
+          margin: 5px;
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          flex: 1px;
+          margin-bottom: 20px;
+        }
+        .menu-container_acasa .menu-ordered_list_1 {
+          list-style-type: none;
+          text-align: center;
+          border: 1px solid blue;
+          border-radius: 20px;
+          border-style:solid;
+          box-sizing:border-box;
+          position: sticky;
+          display: block;
+        }
+        #continut_acasa_dropdown {
+          border-radius: 15px;
+          padding-top: 2px;
+          justify-items: center;
+          text-align: center;
+          font-display: auto;
+          border-color: rgb(59, 42, 42);
+        }
+          /* Style for individual links within the dropdown menu */
+        .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
+          list-style-type: none;
+          text-align: center;
+          /* margin-right: 10px; */
+          padding-top: 0px;
+          border: 1px #000000;
+          border-style: solid;
+          border-radius: 0px;
+          /* display: flexbox; */
+          position: sticky;
+          margin-top: 20px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+          display: none;
+        }
+        .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
+          display:block;
+          text-align: center;
+          position: absolute;
+          inline-size: 2px;
+          border: 1px #000000 solid;
+          list-style-type: none;
+          background-color:rgb(141, 186 255);
+          box-shadow: 2px 2px 16px 2px, rgb(rgb(104, 50, 50));
+          /* box-shadow: #537d8b; */
+          margin-top: 0px;
+          z-index: inherit;
+          display: none;
+        }
+        .ol .dropdown-content_ordered_list_categories {
+          border: #c71b1b;
+          border-style: solid 2px;
+        }
+        .li_continut_1_tip_lista {
+          border-top-width: 1px;
+          border-top-right-radius: 10px;
+          border-bottom-width: 1px;
+          border-bottom-right-radius: 10px;
+          border-top: rgb(255, 255, 255) solid;
+          border-bottom: rgb(255, 255, 255) solid;
+          border-top-left-radius: 10px;
+          border-right-width: 1px;
+          border-bottom-left-radius: 10px;
+          border-left-width: 1px;
+          margin-bottom: 10px;
+          align-content: center;
+        }
+        /* Centering the links within <a> tags */
+        .li_continut_2_tip_lista {
+          border-top-width: 1px;
+          border-top-right-radius: 10px;
+          border-bottom-width: 1px;
+          border-bottom-right-radius: 10px;
+          border-top: rgb(255, 255, 255) solid;
+          border-bottom: rgb(255, 255, 255) solid;
+          border-top-left-radius: 10px;
+          border-right-width: 1px;
+          border-bottom-left-radius: 10px;
+          border-left-width: 1px;
+          margin-bottom: 10px;
+          align-content: center;
+        }
+        .li_continut_3_tip_lista {
+          border-top-width: 1px;
+          border-top-right-radius: 10px;
+          border-bottom-width: 1px;
+          border-bottom-right-radius: 10px;
+          border-top: rgb(255, 255, 255) solid;
+          border-bottom: rgb(255, 255, 255) solid;
+          border-top-left-radius: 10px;
+          border-right-width: 1px;
+          border-bottom-left-radius: 10px;
+          border-left-width: 1px;
+          margin-bottom: 10px;
+          align-content: center;
+        }
+        h1::before {
+          content: "";
+          display: inline;
+          width: 30px;
+          height: 30px;
+          border: 15px groove #ff0000;
+          border-radius: 50px;
+          float: left;
+          bottom: 10px;
+          position: relative;
+          left: 10px;
+          /* top: 59px; */
+          top: 10px;
+          /* transform: translateY(-2%); */
+          /* animation: pulse 2s infinite alternate;
+        }
+        .table-container_lista_optiuni #tr {
+          /* Margin between elements */
+          flex-direction: row;
+          flex: 1;
+          width: 2px;
+          position: relative;
+          box-sizing: border-box;
+          display: none;
+          /* margin: 1px; */
+          /* padding: 10px; */
+          /* padding-right: 40px; */
+          bottom: 380px;
+          /* margin: 10px; */
+          /* position: absolute; */
+        }
+
+
+        .glowing-background{
+          transition: box-shadow 3s ease-in-out;
+          /* background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%); */
+          background-size: 200% 200%;
+          animation: glowing 0.2s ease-in-out;
+        }
+
+
+
+        /* Navbar container */
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial;
+        }
+        /* Links inside the navbar */
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* The dropdown container */
+        /* Dropdown button */
+        .dropdown, .dropbtn {
+          font-size: 11px;
+          border: none;
+          outline: none;
+          color: rgb(255, 255, 255);
+          padding: 14px 16px;
+          background-color: inherit;
+          font: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+        }
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: red;
+        }
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          width: 100%;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        /* Mega Menu header, if needed */
+        .dropdown-content .header {
+          background: red;
+          padding: 2px;
+          color: white;
+          width: auto;
+          float: none;
+        }
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          background-color: #ccc;
+          height: 250px;
+        }
+        /* Style links inside the columns */
+        .column a {
+          float: none;
+          color: black;
+          padding: 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        /* Add a background color on hover */
+        .column a:hover {
+          background-color: #ddd;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .glowing-background {
+          background: linear-gradient(20deg, #d08132 62%, rgb(46, 100, 170)70%, rgb(139, 66, 47) 85%);
+          background-size: 300% 350%;
+          animation: glowing 3s ease-in-out infinite;
+        }
+        .glowing-background {
+          transition: box-shadow 1s ease-in-out;
+        }
+        .glowing-background:hover {
+          box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.8);
+        }
+        /* Navbar container */
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial;
+        }
+        /* Links inside the navbar */
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* The dropdown container */
+        /* Dropdown button */
+        .dropdown .dropbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          color: rgb(255, 255, 255);
+          padding: 14px 16px;
+          background-color: inherit;
+          font: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+        }
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+        }
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          width: 100%;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        /* Mega Menu header, if needed */
+        .dropdown-content .header {
+          background: red;
+          padding: 2px;
+          color: white;
+          width: auto;
+          float: none;
+        }
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          background-color: #ccc;
+          height: 250px;
+        }
+        /* Style links inside the columns */
+        .column a {
+          float: none;
+          color: black;
+          padding: 0px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        /* Add a background color on hover */
+        .column a:hover {
+          background-color: #ddd;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .glowing-background {
+          background: linear-gradient(20deg, #ffffff 32%, rgb(0 60 137)70%, rgb(255 255 255) 85%);
+          background-size: 300% 350%;
+          animation: glowing 3s ease-in-out infinite;
+        }
+        .glowing-background {
+          transition: box-shadow 1s ease-in-out;
+        }
+        .glowing-background:hover {
+          box-shadow: 0 0 20px 10px rgba(145, 68, 68, 0.8);
+        }
+
+        .menu-container_categories .menu-ordered_list_2 {
+          list-style-type: none;
+          text-align: center;
+          padding-right: 60px;
+          border: 1px solid blue;
+          border-radius: 20px;
+          border-style:solid;
+          box-sizing:border-box;
+          position: sticky;
+          display: block;
+        }
+        #meniu_ordered_2{
+          /* margin-right: 20px; */
+          display: block;
+        }
+        h1::after {
+          border-radius: 1px;
+          content: "";
+          display: block;
+          width: 50px;
+          height: 50px;
+          position: relative;
+          left: 170px;
+          bottom: 3px;
+          overflow: auto;
+          background: url(https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png);
+          background-size: contain;
+          animation: pulse 4s ease-in-out infinite;
+        }
+        h1::after::before {
+          /* Empty content */
+          content: ""; 
+          display:inline;
+          width: 30px;
+          height: 30px;
+          /* Replace with your coffee image path */
+          background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+          /* Adjust background size as needed */
+          background-size: contain; 
+          /* Apply animation */
+          animation: pulse 2s  ease-in-out infinite alternate;
+        }
+        @keyframes pulse {
+          0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            /* Add webkit prefix for older iOS devices */
+            -webkit-transform: scale(0.95); 
+          }
+
+          50% {
+            transform: scale(1.5);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            -webkit-transform: scale(1);
+          }
+
+          100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            -webkit-transform: scale(0.95);
+          }
+        }
+
+        .menu_container_produse_de_top {
+          border: 1px #000000;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          width: 10px;
+          margin: 10px;
+          list-style-type: none;
+          position: sticky;
+          display:inline-block;
+          flex: 1;
+          margin-bottom: 20px;
+        }
+        /* Style for the main menu item */
+        .menu_container_produse_de_top .menu_container_1_produse_de_top {
+          list-style-type: none;
+          text-align: center;
+          /* border: 1px solid #0011a7; */
+          /* border-style:solid; */
+          /* border-radius: 10px; */
+          box-sizing:border-box;
+          position: sticky;
+          display: block;
+        }
+        /* Style for the dropdown content container */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .a {
+          cursor: pointer;
+          position: relative;
+          list-style-type: none;
+        }
+        /* Style for the dropdown content */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: transparent;
+          background-blend-mode: color-dodge;
+          min-width: 200px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
+          z-index: 1;
+          list-style-type: none;
+        }
+        /* Show dropdown content when hovering over the main menu item */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+            display: block;
+        }
+        /* Style for the dropdown links */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a {
+          display:block;
+          padding: 10px;
+          border-top: 4px solid #000;
+          border-right: 3px solid #000;
+          border-left: 2px solid #000;
+          border-bottom: 1px solid #000;
+          border-radius: 10px;
+          text-decoration: none;
+          color: #000;
+          list-style-type: none;
+          transition:ease-in-out 2s;
+        }
+        /* Add hover effect to the dropdown links */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 a:hover {
+          /* background-color: #c51414; */
+          list-style-type: none;
+          transition:ease-in-out 2s;
+        } 
+        /* Style for the images inside the dropdown content */
+        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini_1 .image-container_dropdown_1 {
+          max-width: 100%;
+          height: auto;
+          list-style-type: none;
+          border: 2px;
+          text-align: center;
+          text-rendering:optimizeSpeed;
+          text-shadow: bisque;
+          transition:ease-in-out 2s;
+        }
+        .dropdown-content_imagini_2 {
+          max-width: 100%;
+          height: auto;
+          list-style-type: none;
+          border: 2px;
+        }
+        .dropdown-content_imagini_3 {
+          max-width: 100%;
+          height: auto;
+          list-style-type: none;
+          border: 2px;
+        }
+        /* ol {
+          background-color: rgb(184, 116, 34);
+          border-radius: 10px;
+          list-style-type: none;
+          border-width: 100px;
+        } */
+        /* //canvas container style */
+        .canvas-container {
+          background: linear-gradient(55deg, rgb(110, 100, 100) 0%, #e38b8b 51%, #c47181 85%);
+          margin-left: 0px;
+          margin-top: 0px;
+          margin-bottom: 30px;
+          border-width: 0px;
+          /* display: flex; */
+          border-radius: 10px;
+          position: sticky;
+          display: inline-block;
+        }
+        /* Style for each canvas section */
+        .canvas-section {
+          /* Equal width for both sections */
+          width: 900px; 
+          /* Add borders for separation (optional) */
+          border: 10px solid #000000;
+          /* border-inline-start-width: 2px; */
+          border-left-style: ridge;
+          border-right-style: ridge;
+          border-top-style: ridge;
+          border-bottom-style: ridge;
+          /* Add padding for spacing (optional) */
+          padding: 10px; 
+        }
+        /* Style for the canvas element */
+        canvas {
+          margin-top: 80px;
+          position: fixed;
+          margin-bottom: 80px;
+          margin-top: 100px;
+          /* Make the canvas fill its container */
+          width: 200px; 
+          /* Make the canvas fill its container */
+          height: 100px; 
+        }
+        /* //style ofthe image1, image2, image3 but not in containers. */
+        #image-top-produse-1 {
+            display: inline-block;
+            max-width: 40px;
+            max-height: 40px;
+            border-left: 10px;
+            display: block;
+            margin: auto;
+            offset: 10px;
+        }
+        #image-top-produse-2 {
+            display: inline-block;
+            text-align: center;
+            max-width: 40px;
+            max-height: 40px;
+        }
+        #image-top-produse-3 {
+            display: inline-block;
+            text-align: center;
+            max-width: 40px;
+            max-height: 40px;
+        }
+        /* // general styles for div elements modification */
+        .div{
+            max-width: 100px;
+            max-height: 100px;
+        }
+        /* // container images for the top sold products.  */
+        .imgcontainer {
+            width: 250px;
+            height: 35px; 
+            width: 35px;
+        }
+        /* //image_container_produse_vandute_de_top_1.css */
+        .div .image-container_produse_vandute_de_top_1{
+            /* border: 2px; */
+            /* border-style: inset; */
+            /* border-color: blue; */
+            width: 100px;
+            margin-left: 100px;
+        }
+        /* //box model produse vandute de top 1 */
+        .box-model_produse_vandute_de_top_1 {
+            /* align-items:start; */
+            /* border: 2px; */
+            border-style: solid;
+            display: block;
+        }
+        /* //bordered box produse vandute de top_1 and heading 3 styles: */
+        .div .bordered-box_produse_vandute_de_top_1 .h3 {
+            position: sticky;
+            text-overflow: unset;
+            text-align: right;
+            border: 2px #d4a539 solid; 
+            border-width: 3px; 
+            margin-left: 320px; 
+            margin-right: 320px; 
+            background-color:rgb(226, 255, 39); 
+            border-top-right-radius: 10px; 
+            border-top-left-radius: 10px; 
+            border-bottom-left-radius: 10px; 
+            border-bottom-right-radius: 10px;
+        }
+        /* // style for the border box for produse_vandute_de_top_1 */
+        .bordered-box_produse_vandute_de_top_1 {
+            width: auto;
+            position: relative;
+            border-radius: 20px;
+            /* padding-right: 100px; */
+            /* padding-left: 100px; */
+            background-color: rgb(31, 31, 61);
+        }
+        /* //style of the heading for the h3 */
+        .h3 {
+            position: sticky;
+            text-overflow: unset;
+            text-align: right;
+            position: sticky; 
+            text-align: center; 
+            border: 2px #d4a539 solid; 
+            border-width: 3px; 
+            margin-left: 320px; 
+            margin-right: 320px; 
+            background-color:rgb(226, 255, 39); 
+            border-top-right-radius: 10px; 
+            border-top-left-radius: 10px; 
+            border-bottom-left-radius: 10px; 
+            border-bottom-right-radius: 10px;
+        }
+        ul {
+          left: auto;
+          right: 0;
+          display: block;
+          opacity: 1;
+          visibility: visible;
+          margin-right: 0px;
+        }
+        /* Style for the login form and the sign up form */
+        form {
+          border: 1px solid #c58e8e;
+          border-radius: 20px;
+          background-color: rgba(252, 252, 252, 0.8);
+          box-sizing: border-box;
+          box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
+          /* Change to inline-block */
+          display: inline-block; 
+          /* Remove fixed width */
+          width: auto; 
+          /* Add padding */
+          padding-bottom: 0px;
+          /* Move margin to the form container */ 
+          margin-top: 18px; 
+          /* Center form content */
+          text-align: center; 
+        }
+        .container {
+          padding: 10px;
+        }
+        /* Adjust the input fields and button styles */
+        input[type="text"], input[type="password"] {
+          /* Make input fields full width */
+          width: 160px; 
+          padding: 2px;
+          margin: 0px 0px;
+          border: 1px solid #772727;
+          border-radius: 20px;
+        }
+        #submit-button-form {
+          background-color: #875050;
+          border-radius: 20px;
+          padding: 10px 20px; /* Add padding */
+          margin: 10px 0; /* Add margin */
+          border: none;
+          cursor: pointer;
+          width: auto;
+        }
+        /* Adjust the image size */
+        .imgcontainer img {
+          width: 45%;
+          height: 50%;
+        }
+        /* Remove unnecessary styles */
+        /* Center the "Remember me" checkbox */
+        label {
+          display: block;
+          text-align: left;
+          margin-top: 10px;
+        }
+        .select:hover{
+          background-color: #000000;
+        }
+        /* styles for slideshow-container */
+        /* * {box-sizing: border-box} */
+        .slideshow-container {
+          /* max-width: 100%; */
+          margin-right: 400px; 
+          margin-left: 400px; 
+          position: relative; 
+          /* margin: auto; */
+          overflow: hidden;
+          display: block;
+        }
+        /* Define CSS styles for slideshow images */
+        .slideshow-container img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: relative;
+          top: 50px;
+          width: auto;
+          margin-top: -22px;
+          padding: 16px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        /* Position the "next button" to the right */
+        .next{
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        /* The dots/bullets/indicators */
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+        /* Fading animation */
+        .fade {
+          animation-name:fade;
+          animation-duration: 1ms;
+        }
+        @keyframes fade {
+          from {opacity: 4}
+          to {opacity: 1}
+        }
+          
+      }
+    </style>
+    <style>
+      /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
+      @media only screen and ((max-width:412px) and (max-height: 915px)), (orientation: landscape) and (min-width:915px) and (min-height:412px) {
+        /* Adjusting the html page size for Android type of devices */
+        html {
+          max-width: fit-content;
+          max-height: fit-content;
+        }
+        /* Main header positioning background color and length and width */
+        header {
+          background: linear-gradient(30deg, #1b83d5de 35%, #05334e91 65%, rgb(255 255 255 / 58%) 70%);
+          animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+          border-top: 5px rgb(237, 239, 240) groove;
+          border-left: 5px rgb(255, 255, 255) groove;
+          border-right: 5px rgb(255, 255, 255) groove;
+          border-bottom: 5px rgb(255, 255, 255) groove;
+          margin-bottom: 10px;
+          margin-bottom: 1px;
+          position: relative;
+          /* margin-top: 50px; */
+          padding-top: 350px;
+        }
+        /* Style for heading 1 which includes the title and a pulsing kind of animation to the right side and left side of the h1 heading*/
+        h1 {
+          background: linear-gradient(55deg, #ffffff6e 21%,rgb(91 191 221 / 36%)31%, #084f669c 85%);
+          text-align: center;
+          font-weight: lighter;
+          text-size-adjust: initial;
+          border: 2px ridge rgba(0, 0, 0, 0.2);
+          fallback: inherit;
+          border-top-style: ridge;
+          border-right-style: ridge;
+          border-left-style: ridge;
+          border-bottom-style: ridge;
+          border-radius: 30px;
+          margin-bottom: 199px;
+          bottom: 395px;
+          left: 80px;
+          height: 89px;
+          width: 300px;
+          border-width: 1px;
+          /* padding: 10px; */
+          position: relative;
+          text-shadow: 3px 3px 2px rgb(0 85 127), 0px 0px 25px rgb(116, 46, 46), 0px 0px 5px rgb(255, 255, 255);
+        }
+
+        @keyframes flowWaves {
+          0% {
+            background-position: 0% 50%;
+            background-size: 200% 200%;
+          }
+          50% {
+            background-position: 100% 50%;
+            background-size: 150% 150%;
+
+          }
+          100% {
+            background-position: 0% 50%;
+            background-size: 200% 200%;
+
+          }
+        }
+
+        /* Animation for wave kind like flow wave with depth   */
+        @keyframes flowWavesDepth {
+          0% {
+            background-position: 0% 50%;
+            background-size: 200% 200%;
+
+          }
+          50% {
+            background-position: 100% 50%;
+            background-size: 180% 180%;
+
+          }
+          100% {
+            background-position: 0% 50%;
+            background-size: 200% 200%;
+          }
+        }  
+        /* Table sizes and styles for: Despre, Comenzi, Livrare, Suport, Informatii Aditionale  */
+        #upper-side-table-style{
+          margin-left: 5px;
+          margin-right: auto;
+          margin-top: auto;
+          margin-bottom: auto;
+          padding: 10px;
+          background: linear-gradient(20deg, rgb(255 0 0 / 43%) 23%, rgb(0 73 255 / 57%) 70%, rgb(0 170 255 / 0%) 85%);
+          border: 0px;
+          border-radius: 30px;
+          width: 160px;
+          /* bottom: 356px; */
+          left: 0px;
+          right: 0px;
+          animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+          position: relative;
+        }
+        #tableheader-Despre {
+          padding: 10px;
+          background: steelblue;
+          bottom: 1px;
+          border: 2px outset black;
+          position: static;
+          border-radius: 30px;
+          /* bottom: 1px; */
+          /* background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%); */
+          /* margin-top: auto; */
+          /* bottom: 2px; */
+          /* margin-right: 10px;*/
+        }
+        #tableheader-Comenzi {
+          padding: 10px;
+          bottom: 1px;
+          border: 2px outset black;
+          position: static;
+          border-radius: 30px;
+          top: 1px;
+          background: steelblue;
+        }
+        /* Style for the Livrare Element linking to the Actual Livrare Page */
+        #tableheader-Livrare  {
+          padding: 10px;
+          background: steelblue;
+          border: 2px outset black;
+          position: static;
+          bottom: 1px;
+          border-radius: 30px;
+          top: 1px;
+        }
+        #tableheader-Suport {
+          padding: 10px;
+          background: rgba(70, 131, 180, 0.548);
+          border: 2px outset black;
+          position: static;
+          bottom: 1px;
+          border-radius: 30px;
+          top: 2px;
+        }
+        #tableheader-Informatii-Aditionale {
+          padding: 10px;
+          background: #008cff6c;
+          border: 2px outset rgba(0,0,0,0.2);          
+          position: relative;
+          bottom: 1px;
+          border-radius: 30px;
+          top: 3px;
+        }
+
+        body {
+          background:#30a7cf;
+          /* background:linear-gradient(40deg, #f7c0c0 35%, #ff0000 55%, rgb(0, 0, 0) 30%); */
+        }
+        #bordered_rectangle-for-design {
+          border: 2px solid #000000;
+          border-style: solid;
+          border-radius: 20px;
+          margin: 0px;
+          margin-top: 1px;
+          height: 770px;
+          width: 395px;
+          box-sizing: border-box;
+          position:relative;
+          display:inline-block;
+          /* justify-content: right; */
+          list-style: none;
+          /* background-color: rgb(204, 161, 5); */
+        }
+        .container-content-Menu-produse-1 {
+          display: inline;
+          position: sticky;
+          position: relative;
+          padding-left: 0px;
+          width: 0px;
+          height: 1px;
+        }
+
+        /* Navigation Styles */
+
+
+        /* footer styles */
+
+
+        /* Search-bar styles */
+                
+        #Bara_de_Cautare {
+          padding: 1px;
+          color: rgb(0, 0, 0);
+          background-color: rgb(0 23 137 / 35%);
+          border: outset;
+          border-width: 0.5vw 0.5vw;
+          border-color: rgb(68, 162, 255);
+          border-radius: 30px;
+          left: 0%;
+          /* transform: translateX(-50%); */
+          z-index: 1;
+          cursor: pointer;
+          /* transform: translateY(-100%); */
+          bottom: 161px;
+          left: 62px;
+          width: 316px;
+          margin-top: 0px;
+          margin-bottom: 20px;
+          position: relative;
+          /* text-align: center; */
+          margin: 0px;
+        }
+        .search-bar input[type="text"] {
+          border: 3px outset rgba(0,0,0,0.2);
+          background-color: rgba(0, 0, 0, 0);
+          border-radius: 25px;
+          width: 100px;
+          margin-left: 0px;
+          padding: 0px;
+          outline: none;
+        }
+        #searchInput {
+          border: 2px outset rgba(0, 0, 0, 0.2);
+          background-color: rgba(0, 23, 137, 0.35);
+          border-radius: 30px;
+          width: 100px;
+          position: relative;
+          padding-bottom: 0px;
+          bottom: 2px;
+          top: 3px;
+          height: 29px;
+          height: 30px;
+        }
+        #submit-cauta-bara-de-cautare {
+          padding: 2px 4px;
+          color: #ccc;
+          border: 2px groove rgba(0, 0, 0, 0);
+          border-radius: 30px;
+          background: repeating-linear-gradient(22deg, rgb(86 86 255 / 50%) 75%, rgb(0 0 0 / 59%) 80%, rgb(255 0 0 / 16%) 50%);
+          cursor: pointer;
+          width: 90px;
+          height: 30px;
+          position: relative;
+          margin-bottom: 0px;
+          padding: 5px;
+          margin-left: 135px;
+          bottom: 20px;
+        }
+
+        #upper-side-table-style .tr .a {
+          /* margin-left: 10px; */
+          position: -webkit-sticky;
+          position: sticky;
+          offset-position: auto;
+          
+        }
+
+        .tr {
+          display: table-row;
+          margin: 10px;
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        #container_scrolling_for_the_side_nav{
+          /* Adjust this to the desired width */
+          width: 300px; 
+          /* Adjust this to the desired height */
+          height: 400px;
+          margin-bottom: auto; 
+          margin-top: 20px; 
+          margin-right: auto; 
+          margin-left: auto; 
+          overflow: auto;
+          background: linear-gradient(35deg, rgb(215, 214, 214) 30%, rgb(39, 54, 83) 70%);
+          /* Optional: Add a border for visualization */
+          border: 1px solid rgb(74, 3, 3);
+          border-top-right-radius: 30px; 
+          border-top-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+          border-bottom-left-radius: 30px; 
+
+        }
+        
+        .sidenav {
+          scroll-margin: 269px;
+          bottom: 175px;
+          /* scroll-padding-top: 40%; */
+          scroll-behavior: smooth;
+          touch-action: pan-up;
+          border: ridge 3px rgba(0, 0, 0, 0);
+          border-radius: 30px;
+          /* padding-top: 30px; */
+          width: 250px;
+          height: 280px;
+          overflow-y: auto;
+          top: 20px;
+          position: absolute;
+          z-index: 1;
+          top: 0px;
+          bottom: 0px;
+          margin-left: 60px;
+          margin-top: 154px;
+          margin-right: 1px;
+          background: linear-gradient(to top right, rgb(0 85 127 / 97%) 39%, #ccc 90%);
+          overflow-x: hidden;
+          padding-top: 120px;
+          transition: 0.5s;
+        }
+
+        .closeArrow {
+          /* Styles for the left arrow */
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          border-right: 25px solid #000;
+          transform: rotate(180deg);
+        }
+        .arrow{
+          /* Adjust the margin as needed */
+          margin-right: 5px; 
+          /* Adjust the size of the arrow */
+          font-size: 14px; 
+        }
+        .sidenav a {
+          padding: 15px;
+          text-align: -webkit-left;
+          margin: 14px;
+          scroll-margin: inherit;
+          text-decoration: wavy;
+          scroll-behavior: smooth;
+          /* padding: 20px; */
+          font-size: 12px;
+          color: rgb(255, 255, 255);
+          border: 1px groove rgba(0, 0, 0, 0.2);
+          display: block;
+          padding: 10px;
+          transition: 2s;
+          border-radius: 30px;
+          background: linear-gradient(to top right, #01545705 39%, #00f6ff 90%);
+        }
+        /* The side navigation menu */
+        /* The navigation menu links */
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+          color:#00e1ff;
+        }
+          /* Highlight the current link */
+        .sidenav a.active {
+          background-color: #00d688;
+          color: white;
+        }
+
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+          position: relative;
+          font-size: 30px;
+          margin-left: 0px;
+          right: 5px;
+          top: -105px;
+          bottom: 26px;
+          left: 166px;
+          padding-left: 25px;
+          background: linear-gradient(45deg, rgb(103 255 252 / 68%) 40%, rgb(0 170 255 / 42%) 95%);
+          border-radius: 20px;
+          border: 2px rgba(0,0,0,0.2) groove;
+          width: 28px;
+        }
+            /* Close button style */
+        .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+          cursor: pointer;
+          /* background: green; */
+          color: rgb(255, 0, 0);
+        }
+        .form-container {
+          display: none;
+          width: 40%; /* Set the width of the form container */
+          margin: 50px auto; /* Center the form */
+          margin-right: 10px; /* Margin to the right side */
+          float: right; /* Align forms to the right */
+        }
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+          border: 2px solid;
+          width: 500px;
+          height: 500px;
+          position: relative;
+          animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+          background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(96 199 251) 70%, rgb(145 255 115) 85%);
+        }
+        /* Page content */
+        .main {
+          margin-left: 200px; /* Same as the width of the sidenav */
+        }
+        .openTriangle {
+          position: relative;
+          display: inline;
+          width: 0;
+          height: 0;
+          bottom: 840px;
+          left: 10px;
+          border-left: 25px solid transparent;
+          border-right: 25px solid transparent;
+          border-bottom: 43.3px groove rgb(196 57 57 / 59%);
+          cursor: pointer;
+        }
+        /* Style for the text "open" */
+        .openText {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          color: black;
+        }
+
+        #dropdown-content-menu-1-2{
+          border: 1px solid #ff0000;
+          margin: 20px;
+          height: 420px;
+          width: 500px;
+          margin-left: 2px;
+          scroll-behavior: smooth;
+          scroll-margin-right: 9px;
+          scroll-margin-top: 5px;
+          scroll-margin-bottom: 11px;
+          scroll-margin-left: 2px;
+        }
+
+        #meniu-produse-number-1 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 7px;
+          padding: 6px;
+          bottom: 39px;
+          padding-bottom: 20px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px rgb(255, 255, 255);
+          margin-right: 3px;
+        }
+        #meniu-produse-number-2 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 7px;
+          padding: 20px;
+          bottom: 492px;
+          margin-top: 4px;
+          padding: 0px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-3 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 7px;
+          padding: 0px;
+          bottom: 488px;
+          padding: 0px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-4 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          padding: 6px;
+          bottom: 484px;
+          padding: 0px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-5 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 479px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-6 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 9px;
+          bottom: 474px;
+          margin-top: 1px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-7 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 469px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-8 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 9px;
+          bottom: 465px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-9 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 461px;
+          /* padding: 20px; */
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 3px;
+        }
+        #meniu-produse-number-10 {
+          display: -webkit-inline-box;
+          position: relative;
+          border-style:groove;
+          border-color: #000;
+          border-width: 1px;
+          left: 8px;
+          bottom: 455px;
+          border-radius: 30px;
+          text-decoration: wavy;
+          text-decoration-color: black;
+          background: linear-gradient(20deg, rgb(0, 85, 127) 23%, rgb(0, 170, 255) 70%, rgb(0, 170, 255) 85%);
+          box-shadow: 0 0 10px 5px #000;
+          margin-right: 0px;
+        }
+        #meniu-produse-number-3
+        /* Navbar container */
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial;
+        }
+        /* Links inside the navbar */
+        .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        /* The dropdown container */
+        .dropdown {
+          float: left;
+          overflow: hidden;
+        }
+        /* Dropdown button */
+        .dropdown .dropbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          color: rgb(255, 255, 255);
+          padding: 14px 16px;
+          background-color: inherit;
+          font: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+        }
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+          
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          width: 100%;
+          left: 0;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        /* Mega Menu header, if needed */
+        .dropdown-content .header {
+          background: red;
+          padding: 2px;
+          color: white;
+          width: auto;
+          float: none;
+        }
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+          /* Create three equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          background-color: #ccc;
+          height: 250px;
+        }
+        /* Style links inside the columns */
+        .column a {
+          float: none;
+          color: black;
+          padding: 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        /* Add a background color on hover */
+        .column a:hover {
+          background-color: #ddd;
+        }
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        .glowing-background {
+          background: linear-gradient(20deg, #ffffff 32%, rgb(2, 70, 158)70%, rgb(92, 21, 3)85%);
+          background-size: 100% 100%;
+          animation: glowing 2s ease-in-out infinite;
+        }
+        .glowing-background {
+          transition: box-shadow 2s ease-in-out;
+        }
+
+        .glowing-background:hover {
+          box-shadow: 0 0 20px 10px rgba(0, 145, 255, 0.986);
+        }
+
+        nav.menu.ul {
+          border: #a9bbab;
+          border-radius: 10px;
+          width: 100px;
+        }
+        /* TableHeader colors for #Despre #Comenzi #Livrare #Suport #Informatii Aditionale Pages */
+        .th {
+          display: table-cell;
+          position: sticky;
+          background-color: white;
+          border-radius: 20px;
+          border-style: outset;
+          border: 2px solid;
+          padding: 21px;
+          text-align: center;
+        }
+        .ol .a{
+          text-align: left;
+        }
+        table {
+          /* Remove unnecessary positioning and margin */
+          margin: 0; /* Remove margin */
+          padding-top: 90px; /* Adjust padding as needed */
+          width: 80px; /* Set a reasonable width for the table */
+          max-width: 800px; /* Set a maximum width for responsiveness */
+          border-collapse: collapse; /* Improve table cell spacing */
+        }
+        th, td {
+          /* border: 2px solid rgb(255, 255, 255); */
+          border-style: double;
+          padding: 8px;
+          text-align: left;
+        }
+        /* Remove unnecessary styles for th elements in tbody */
+        table tbody th {
+          padding: 30px;
+          position: relative;
+          vertical-align: bottom;
+        }
+        /* Remove unnecessary styles for tr elements */
+        tr {
+          border: 3px rgb(255, 0, 0);
+          border-top: 10px #000000;
+          border-bottom: 10px #000000;
+          border-right:10px #000000;
+          border-left:#000000;
+        }
+        .th a {
+          color: rgb(0, 0, 0);
+          text-decoration: wavy;
+          background: #f5f5f575;
+          border-radius: 15px;
+          background-blend-mode: hard-light;
+          padding-block: 7px;
+        }
+
+        #tabel-tip-lista-optiuni {
+          bottom: 430px;
+          background: rgb(0, 95, 220);
+          background-color: none;
+          max-width: fit-content;
+          border-radius: 35px;
+          border: 3px groove rgba(0, 0, 0, 0.335);
+          shape-outside: margin-box;
           position: relative;
         }
         /* Style for main page containers: */
@@ -826,10 +2373,17 @@
           list-style-type: none;
           text-align: center;
           border: 1px solid blue;
-          border-radius: 20px;
+          border-radius: 30px;
           border-style:solid;
           box-sizing:border-box;
-          position: sticky;
+          position: relative;
+          display: block;
+        }
+        .menu-container_acasa .menu-ordered_list_1 .a {
+          margin-right: 40px;
+          color: black;
+          padding: 1px 0px;
+          text-decoration: none;
           display: block;
         }
         #continut_acasa_dropdown {
@@ -1791,11 +3345,95 @@
       window.addEventListener('resize', setCanvasSize);
     </script> -->
     <header class="header">
-      <div class="search-bar" id="bara-de-cautare-principala" class="fixed-search-bar">
-        <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala">
+      <div class="search-bar" id="Bara_de_Cautare" class="fixed-search-bar">
+        <div id="searchDropdown" class="dropdown-content"></div>
+        <input type="text" placeholder="Cauta..." id="introducere-text-bara-de-cautare-principala">
           <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
-        </input>
       </div>
+      <script>
+        const searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
+        const searchDropDown = document.getElementById('searchDropdown');
+        // Array to store previous search terms ((or an empty list)(Python))
+        let previousSearches = [];
+        // Set default styles for the search bar and its elements
+        searchBar.style.border = '3px outset rgba(0,0,0,0.2)';
+        searchBar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        searchBar.style.borderRadius = '25px';
+        searchBar.style.width = '170px';
+        searchBar.style.paddingBottom = '2px'; 
+        // Event listener for input in the search bar
+        searchBar.addEventListener('input', function(){
+          // Get the typed search term
+          const searchTerm = searchBar.value.toLowerCase();
+          // Clearing the previous searches
+          previousSearches = [];
+          // Call a function to fetch or generate product recommendations based on the SearchTerm
+          const recommendations = getRecommendations(searchTerm);
+          // Display recommendations in the dropdown
+          displayRecommendations(recommendations);
+        });
+
+        // Function to dispaly previous searches in the dropdown
+        function displayPreviousSearches(){
+          // Replace dropdown content with previous searches
+          searchDropDown.innerHTML = '';
+
+          previousSearches.forEach((item, index) => {
+            const dropdownItem = document.createElement('div');
+            dropdownItem.classList.add('dropdown-item');
+            dropdownItem.textContent = item;
+            // Different width for each item
+            dropdownItem.style.width = `${100 + index * 10}px`;
+            // Different height for each item
+            dropdownItem.style.height = `${50 + index * 10}px`;
+            // Different background color for each item 
+            dropdownItem.style.backgroundColor = `rgba(0,0,0,0.${index + 2})`;
+            dropdownItem.addEventListener('click', function(){
+              searchBar.value = item;
+              searchDropDown.style.display = 'none';
+            });
+
+            searchDropDown.appendChild(dropdownItem);
+          });
+
+          searchDropDown.style.display = 'block';
+        }
+        // Function to display recommendations in the dropdown
+        function displayRecommendations(recommendations){
+          if (recommendations.length > 0) {
+            // Clear previous recommendations
+            searchDropDown.innerHTML = '';
+            recommendations.forEach((item) => {
+              const dropdownItem = document.createElement('div');
+              dropdownItem.classList.add('dropdown-item');
+              dropdownItem.textContent = item;
+
+              // Event listener for clicking on a recommendation
+              dropdownItem.addEventListener('click', function(){
+                searchBar.value = item;
+                searchDropDown.style.display = 'none';
+              });
+
+              searchDropDown.appendChild(dropdownItem);
+            });
+            searchDropDown.style.display = 'block';
+          } else {
+            searchDropDown.style.display = 'none';
+          }
+        }
+        // Function to fetch or generate recommendations based on the search term
+        function getRecommendations(searchTerm){
+          // Perform logic to retrieve or generate recommendations based on the search term 
+          // This might involve querying a database or using predefined data
+          // Return an array of recommended products/items
+          // Example:
+          const products = ['Product 1', 'Product 2', 'Product 3', 'Product 4'];
+          const filteredProducts = products.filter((product) =>
+          product.toLowerCase().includes(searchTerm)
+          );
+          return filteredProducts;
+        }
+      </script>
       <div class="wave-container">
         <h1> Big Store Coffee </h1>
       </div>
@@ -2040,34 +3678,34 @@
     </script>
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <div class = "container-content-Menu-produse-1">
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)">Meniu Produse 1</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)">MP 1</a>
       </div>
       <div class = "container-content-Menu-produse-2" >
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">MP 2</a>
       </div>
       <div class = "container-content-Menu-produse-3">
-          <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
+          <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">MP 3</a>
       </div>
       <div class = "container-content-Menu-produse-4">
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4" onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4" onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">MP 4</a>
       </div>
       <div class = "container-content-Menu-produse-5">
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">MP 5</a>
       </div>
       <div class = "container-content-Menu-produse-6" >
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">MP 6</a>
       </div>
       <div class = "container-content-Menu-produse-7" >
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">MP 7</a>
       </div>
       <div class = "container-content-Menu-produse-8" >
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" onmouseover="createTrail(event, 8)"onmouseout="removeTrail(this)">Meniu Produse 8</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" onmouseover="createTrail(event, 8)"onmouseout="removeTrail(this)">MP 8</a>
       </div>
       <div class = "container-content-Menu-produse-9" >
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">MP 9</a>
       </div>
       <div class = "container-content-Menu-produse-10" >
-        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
+        <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">MP 10</a>
       </div>
     </div>
     <!-- <script>
@@ -2365,13 +4003,87 @@
       // Call adjustCanvasSections initially to set sizes based on the initial window size
       adjustCanvasSections();
     </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- <script type="text/javascript" src="style.js"></script> -->
     <footer>
       <section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 600px; ">
         <button style="width: 100px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button>
         <button style="width: 100px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button>
       </section>
-    </footer>
+    </footer> -->
+
+    <style>
+      .dropbtn {
+        background-color: #3498db;
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      /* Style the dropdown content (hidden by default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      /* Show the dropdown content when the dropdown button is clicked */
+      .show {
+        display: block;
+      }
+      /* Style the categories */
+      a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      a:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+    <div class="dropdown">
+      <button onclick="toggleDropdown()" class="dropbtn">Categories</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#Link" class="category1">Category 1</a>
+        <a href="#Link" class="category2">Category 2</a>
+        <a href="#Link" class="category3">Category 3</a>
+      </div>
+    </div>
+    <script>
+      function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    </script>
   </body>
   <script>
     function applyUpDownEffect(startY, currentY) {

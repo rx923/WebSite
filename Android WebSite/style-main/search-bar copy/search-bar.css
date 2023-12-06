@@ -58,3 +58,11 @@
     max-width: 100px; /* Set maximum width if needed */
     height: 40px;
 }
+
+#searchDropdown{
+    display: none;
+    
+}
+.dropdown-item{
+    display: inline-block;
+}
