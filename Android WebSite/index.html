@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-    <style type="text/css">
+    <style>
       /* Apple iOS 14 Pro Max style */
-      @media only screen and (min-width: 430px) and (min-height:932px) and (orientation:landscape) {
+      @media only screen and ((max-width:430px) and (max-height: 932px)), 
+      (orientation: landscape) and (min-width:932px) and (min-height:430px) 
+      {
         /* Adjusting the html page size for Android type of devices */
         html {
           max-width: fit-content;
           max-height: fit-content;
         }
+        /* body{
+        } */
         /* Main header positioning background color and length and width */
         header {
           background: linear-gradient(30deg, #1b83d5de 35%, #05334e91 65%, rgb(255 255 255 / 58%) 70%);
@@ -188,27 +192,29 @@
 
         /* Search-bar styles */
                 
-        #searchBar {
+        #Bara_de_Cautare {
           padding: 1px;
           color: rgb(0, 0, 0);
           background-color: rgb(0 23 137 / 35%);
           border: outset;
           border-width: 0.5vw 0.5vw;
-          border-color: rgb(68, 162, 255);
+          border-color: rgba(0,0,0,0.2);
           border-radius: 30px;
           left: 0%;
           /* transform: translateX(-50%); */
           z-index: 1;
           cursor: pointer;
           /* transform: translateY(-100%); */
-          bottom: 161px;
-          left: 62px;
-          width: 316px;
+          bottom: 204px;
+          left: 140px;
+          height: 45px;
+          width: 233px;
           margin-top: 0px;
           margin-bottom: 20px;
           position: relative;
           /* text-align: center; */
           margin: 0px;
+        }
         }
         .search-bar input[type="text"] {
           border: 3px outset rgba(0,0,0,0.2);
@@ -219,9 +225,17 @@
           padding: 0px;
           outline: none;
         }
-        #introducere-text-bara-de-cautare-principala {
-          width: 170px;
-          padding-bottom: 2px;
+        #searchInput {
+          border: 2px outset rgba(0, 0, 0, 0.2);
+          background-color: rgba(0, 23, 137, 0.35);
+          border-radius: 30px;
+          width: 144px;
+          position: relative;
+          padding-bottom: 0px;
+          bottom: 2px;
+          top: 3px;
+          height: 29px;
+          height: 30px;
         }
         #submit-cauta-bara-de-cautare {
           padding: 2px 4px;
@@ -232,8 +246,11 @@
           cursor: pointer;
           width: 90px;
           height: 30px;
-          padding: 6px;
-          margin-left: 65px;
+          position: relative;
+          margin-bottom: 0px;
+          padding: 5px;
+          margin-left: 135px;
+          bottom: 20px;
         }
 
         #upper-side-table-style .tr .a {
@@ -655,7 +672,7 @@
           clear: both;
         }
         .glowing-background {
-          background: linear-gradient(20deg, #ffffff 32%, rgb(2, 70, 158)70%, rgb(92, 21, 3)85%);
+          background: linear-gradient(20deg, #9d0101 32%, rgb(2, 70, 158)70%, rgb(92, 21, 3)85%);
           background-size: 100% 100%;
           animation: glowing 2s ease-in-out infinite;
         }
@@ -765,7 +782,7 @@
           border-radius: 20px;
           /* box-sizing:content-box; */
           /* box-shadow: wheat; */
-          width: 365px;
+          width: 130px;
           /* margin: 50px; */
           list-style-type: none;
           position: sticky;
@@ -791,6 +808,7 @@
         }
         .menu-container_acasa .menu-ordered_list_1 {
           list-style-type: none;
+          margin: 20px;
           text-align: center;
           border: 1px solid blue;
           border-radius: 20px;
@@ -898,22 +916,22 @@
           /* top: 59px; */
           top: 10px;
           /* transform: translateY(-2%); */
-          /* animation: pulse 2s infinite alternate;
+          animation: pulse 2s infinite alternate;
         }
         .table-container_lista_optiuni #tr {
-          /* Margin between elements */
+          /* /* Margin between elements */
           flex-direction: row;
           flex: 1;
           width: 2px;
           position: relative;
           box-sizing: border-box;
           display: none;
-          /* margin: 1px; */
-          /* padding: 10px; */
-          /* padding-right: 40px; */
+          margin: 1px;
+          padding: 10px;
+          padding-right: 40px;
           bottom: 380px;
-          /* margin: 10px; */
-          /* position: absolute; */
+          margin: 10px;
+          position: absolute;
         }
 
 
@@ -1114,13 +1132,26 @@
         .menu-container_categories .menu-ordered_list_2 {
           list-style-type: none;
           text-align: center;
-          padding-right: 60px;
+          padding-right: 0px;
+          margin: 4px;
+          right: 0px;
+          left: 0px;
+          height: 40px;
           border: 1px solid blue;
-          border-radius: 20px;
-          border-style:solid;
-          box-sizing:border-box;
+          border-radius: 30px;
+          border-style: solid;
+          /* box-sizing: border-box; */
           position: sticky;
-          display: block;
+          display: -webkit-inline-box;
+        }
+
+        .menu-container_categories .menu-ordered_list_2 .a {
+          color: white;
+          text-align: center;
+          padding: 3px;
+          margin-left: -10px;
+          margin-right: 30px;
+          right: 0px;
         }
         #meniu_ordered_2{
           /* margin-right: 20px; */
@@ -1542,8 +1573,6 @@
           from {opacity: 4}
           to {opacity: 1}
         }
-          
-      }
     </style>
     <style>
       /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
@@ -1632,7 +1661,7 @@
           margin-top: auto;
           margin-bottom: auto;
           padding: 10px;
-          background: linear-gradient(20deg, rgb(255 0 0 / 43%) 23%, rgb(0 73 255 / 57%) 70%, rgb(0 170 255 / 0%) 85%);
+          background: linear-gradient(to top left 20deg, rgb(255, 255, 255) 255, 0.43), rgb(0, 67, 108)5, 0.57,rgb(141, 68, 68) 85%;
           border: 0px;
           border-radius: 30px;
           width: 160px;
@@ -1647,7 +1676,7 @@
           background: steelblue;
           bottom: 1px;
           border: 2px outset black;
-          position: static;
+          position: relative;
           border-radius: 30px;
           /* bottom: 1px; */
           /* background: linear-gradient(25deg, rgb(255, 255, 255) 27%, rgb(255, 0, 0)66%, rgb(255, 255, 255)95%); */
@@ -1659,7 +1688,7 @@
           padding: 10px;
           bottom: 1px;
           border: 2px outset black;
-          position: static;
+          position: relative;
           border-radius: 30px;
           top: 1px;
           background: steelblue;
@@ -1669,7 +1698,7 @@
           padding: 10px;
           background: steelblue;
           border: 2px outset black;
-          position: static;
+          position: relative;
           bottom: 1px;
           border-radius: 30px;
           top: 1px;
@@ -1678,7 +1707,7 @@
           padding: 10px;
           background: rgba(70, 131, 180, 0.548);
           border: 2px outset black;
-          position: static;
+          position: relative;
           bottom: 1px;
           border-radius: 30px;
           top: 2px;
@@ -1764,7 +1793,7 @@
           border: 2px outset rgba(0, 0, 0, 0.2);
           background-color: rgba(0, 23, 137, 0.35);
           border-radius: 30px;
-          width: 100px;
+          width: 144px;
           position: relative;
           padding-bottom: 0px;
           bottom: 2px;
@@ -2284,7 +2313,7 @@
           color: rgb(0, 0, 0);
           text-decoration: wavy;
           background: #f5f5f575;
-          border-radius: 15px;
+          border-radius: 30px;
           background-blend-mode: hard-light;
           padding-block: 7px;
         }
@@ -2310,7 +2339,7 @@
           border-radius: 20px;
           /* box-sizing:content-box; */
           /* box-shadow: wheat; */
-          width: 365px;
+          width: 120px;
           /* margin: 50px; */
           list-style-type: none;
           position: sticky;
@@ -2318,23 +2347,6 @@
           margin-bottom: 200px;
         }
 
-        #Menu_Categories {
-          border: 1px; 
-          border-color:#ffffff;
-          border-width: 1px;
-          border-style: groove;
-          background:linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
-          animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
-          border-radius: 20px;
-          /* box-sizing:content-box; */
-          /* box-shadow: wheat; */
-          width: 365px;
-          /* margin: 50px; */
-          list-style-type: none;
-          position: sticky;
-          display:inline-block;
-          margin-bottom: 200px;
-        }
         #menu_produse_top {
           border: 1px; 
           border-color:#ffffff;
@@ -2374,13 +2386,16 @@
           text-align: center;
           border: 1px solid blue;
           border-radius: 30px;
+          margin: 2px;
+          height: 45px;
           border-style:solid;
-          box-sizing:border-box;
+          /* box-sizing:border-box; */
           position: relative;
           display: block;
         }
         .menu-container_acasa .menu-ordered_list_1 .a {
           margin-right: 40px;
+          text-align: center;
           color: black;
           padding: 1px 0px;
           text-decoration: none;
@@ -2708,6 +2723,12 @@
           box-sizing:border-box;
           position: sticky;
           display: block;
+        }
+        .ol{
+          display: none;
+        }
+        .menu-container_categories .menu-ordered_list_2 .ol{
+          display: none;
         }
         #meniu_ordered_2{
           /* margin-right: 20px; */
@@ -3178,7 +3199,7 @@
     <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\container-styles\menu-container_acasa.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\container-styles\menu-container_categories.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\container-styles\menu-container-modified-content.css" type="text/css" media="all">
-    <!-- <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\table-container_styles\tabel-1-lista-optiuni.css" type="text/css" media="all"> -->
+    <!-- <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\table-container_styles\tabel-1-lista-optiuni.css" type="text/css" media="all">
     
     <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\image-containers-styles\image-container_produse_vandute_de_top_1.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\images-containers\images-animations.css" type="text/css" media="all">
@@ -3346,21 +3367,44 @@
     </script> -->
     <header class="header">
       <div class="search-bar" id="Bara_de_Cautare" class="fixed-search-bar">
+        <div id="recommendationDropdown" style="display: none;"></div>
         <div id="searchDropdown" class="dropdown-content"></div>
-        <input type="text" placeholder="Cauta..." id="introducere-text-bara-de-cautare-principala">
+        <input type="text" placeholder="Cauta..." id="searchInput">
           <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
       </div>
       <script>
-        const searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
-        const searchDropDown = document.getElementById('searchDropdown');
-        // Array to store previous search terms ((or an empty list)(Python))
+
+        const searchBar = document.style.getElementById('searchInput');
+        const searchInput = document.style.getElementById('searchInput');
+        const recommedationDropdown = document.style.getElementById('recommendationDropdown');
+        const searchDropdown = document.style.getElementById('searchDropdown');
+        const searchSubmitButton = document.style.getElementById('submit-cauta-bara-de-cautare');
         let previousSearches = [];
-        // Set default styles for the search bar and its elements
-        searchBar.style.border = '3px outset rgba(0,0,0,0.2)';
-        searchBar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-        searchBar.style.borderRadius = '25px';
-        searchBar.style.width = '170px';
-        searchBar.style.paddingBottom = '2px'; 
+        // Array to store previous search terms ((or an empty list)(Python))
+        // Get computed styles for #searchBar and apply them to the search input
+        // Function to get computed styles and apply them to an element
+        // Get computed styles for #searchBar and apply them to the search input
+        const searchBarStyles = getComputedStyle(document.getElementById('Bara_de_Cautare'));
+        // searchBar.style.border = searchBarStyles.border;
+        // searchBar.style.backgroundColor = searchBarStyles.backgroundColor;
+        // searchBar.style.borderRadius = searchBarStyles.borderRadius;
+        // searchBar.style.width = searchBarStyles.width;
+        // searchBar.style.paddingBottom = searchBarStyles.paddingBottom;
+
+        // Apply styles to the submit button if needed
+        // const submitButtonStyles = getComputedStyle(document.getElementById('submit-cauta-bara-de-cautare'));
+        // searchSubmitButton.style.color = submitButtonStyles.color;
+        // searchSubmitButton.style.border = submitButtonStyles.border;
+        // searchSubmitButton.style.borderRadius = submitButtonStyles.borderRadius;
+        // searchSubmitButton.style.background = submitButtonStyles.background;
+        // ... (apply other styles to the submit button if necessary)
+
+        // Apply styles to the search dropdown if needed
+        const searchDropdownStyles = getComputedStyle(document.getElementById('recommendationDropdown'));
+        searchDropdown.style.backgroundColor = searchDropdownStyles.backgroundColor;
+        searchDropdown.style.border = searchDropdownStyles.border;
+        searchDropdown.style.borderRadius = searchDropdownStyles.borderRadius;
+        // ... (apply other styles to the search dropdown if necessary)
         // Event listener for input in the search bar
         searchBar.addEventListener('input', function(){
           // Get the typed search term
@@ -3371,6 +3415,24 @@
           const recommendations = getRecommendations(searchTerm);
           // Display recommendations in the dropdown
           displayRecommendations(recommendations);
+        });
+        // Add an event listener for the input field
+        searchInput.addEventListener('input', function() {
+          // Show the dropdown when the user starts typing
+          if (searchInput.value.trim().length > 0) {
+            recommendationDropdown.style.display = 'block';
+            // Call a function to populate recommendation items based on the input
+            // For example: populateRecommendations(searchInput.value);
+          } else {
+            recommendationDropdown.style.display = 'none';
+          }
+        });
+
+        // Add an event listener to hide the dropdown when clicking outside the input
+        document.addEventListener('click', function(event) {
+          if (event.target !== searchInput) {
+            recommendationDropdown.style.display = 'none';
+          }
         });
 
         // Function to dispaly previous searches in the dropdown
@@ -3564,7 +3626,7 @@
     </div>
     <!-- Using any element to open the sidenav -->
     <span class="openTriangle" onclick="openNav()">
-      <span class="openText" style="margin-top: 30px;">open</span>  
+      <span class="openText" style="margin-top: 30px;"></span>  
     </span>
     <!-- Content area to display the page content -->
     <div id="content">
@@ -3575,7 +3637,27 @@
 
     <form action="Pagina_Inregistrare.php"  id="InregistrareForm" class="form-container" style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" method="post">
       <div class="container_pagina_inregistrare">
-      <h2 style="border-style: solid; border:0.1em ridge; border-color: #585151; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 2px; border-top-width: 2px; border-radius: 20vw; padding-top: 10px; padding-bottom: 10px; text-indent: 10px; padding-right: 10px; background: linear-gradient(20deg, rgb(37, 36, 36) 21%, rgba(128, 125, 153, 0.989)61%, #ffffff 95%);">Inregistrare</h2><p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
+        <a href="U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php" id="my_sound_Link">
+          <h2>Inregistrare</h2>
+        </a>
+        <audio id="clickSound" src="U:\Plan Afacere\WebSite\Sound files\Sound for Login menu\melancholy-ui-chime-47804.mp3"></audio>
+        <script>
+          document.getElementById('my_sound_Link').addEventListener('click', function(event){
+            event.preventDefault(); // Prevent default anchor behavior (in this case, navigating)
+        
+            var audio = document.getElementById('clickSound');
+            audio.currentTime = 0; // Reset audio to start if already playing
+            audio.play();
+        
+            setTimeout(function() {
+              audio.pause();
+            }, 6000); // Pause audio after 6 seconds (6000 milliseconds)
+          });
+        </script>
+        <script>
+          const pupeteer = 
+          </script>
+      <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
         <label for="email">
           <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Email
           </b>
@@ -3676,7 +3758,7 @@
         return true; // Submit the form if validation passes
       }
     </script>
-    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
+    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1-2">
       <div class = "container-content-Menu-produse-1">
         <a href="U:\Plan Afacere\Android WebSite\Meniu-Produse-1-10\Meniu Produse 1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)">MP 1</a>
       </div>
@@ -3926,7 +4008,7 @@
       </div>
     </nav>
 
-    <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
+    <!-- <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
       <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse vandute top">
         <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
           <h3>Cele mai vandute produse</h3>
@@ -3964,8 +4046,8 @@
             </div>
           </div>
         </div>
-      </div>
-    <div class="canvas" id="myCanvas"></div>
+      </div> -->
+    <!-- <div class="canvas" id="myCanvas"></div>
     <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
       <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
         <h4 style="text-align: center;">Sectiunea Stanga</h4>
@@ -3983,7 +4065,7 @@
           <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" style="height: 165px; width: 160px;">
         </div>
       </div>
-    </div>
+    </div> -->
     <script>
       // Function to adjust the size of canvas sections based on screen size
       function adjustCanvasSections() {
@@ -4019,7 +4101,7 @@
     <br>
     <br>
     <!-- <script type="text/javascript" src="style.js"></script> -->
-    <footer>
+    <!-- <footer>
       <section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 600px; ">
         <button style="width: 100px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button>
         <button style="width: 100px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button>

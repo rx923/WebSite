@@ -17,7 +17,7 @@
     margin-bottom: 0px;
 }
 /* Style for the main menu item */
-.menu_container_produse_de_top .menu_container_1_produse_de_top {
+.menu_container_produse_de_top:hover .menu_container_1_produse_de_top:hover {
     list-style-type: none;
     text-align: center;
     /* border: 1px solid #0011a7; */

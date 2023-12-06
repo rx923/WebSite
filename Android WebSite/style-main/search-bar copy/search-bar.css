@@ -1,5 +1,5 @@
 
-#bara-de-cautare-principala {
+#searchBar {
     padding: 1px;
     color: rgb(0, 0, 0);
     background-color: rgb(0, 23, 137);
@@ -60,7 +60,7 @@
 }
 
 #searchDropdown{
-    display: none;
+    display: inline-block;
     
 }
 .dropdown-item{
