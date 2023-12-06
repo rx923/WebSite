@@ -1,0 +1,12 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "This is the main page for the website that I am building.\r *****************************\r *****************************\r Yet I am technically writing the lines of code while learning.\r *****************************\r *****************************\r The code files are being written.\r This is actually the main website for dropshipping.\r Products are actually imported from other producers.\r All pages are custom made.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
