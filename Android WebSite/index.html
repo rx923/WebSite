@@ -107,7 +107,7 @@
         }
         #tableheader-Despre {
           padding: 10px;
-          background: steelblue;
+          background: #05334e;;
           bottom: 1px;
           border: 2px outset black;
           position: relative;
@@ -125,12 +125,12 @@
           position: relative;
           border-radius: 30px;
           top: 1px;
-          background: steelblue;
+          background: #05334e;
         }
         /* Style for the Livrare Element linking to the Actual Livrare Page */
         #tableheader-Livrare  {
           padding: 10px;
-          background: steelblue;
+          background: #05334e;
           border: 2px outset black;
           position: relative;
           bottom: 1px;
@@ -139,7 +139,7 @@
         }
         #tableheader-Suport {
           padding: 10px;
-          background: rgba(70, 131, 180, 0.548);
+          background: #05334e;
           border: 2px outset black;
           position: relative;
           bottom: 1px;
@@ -148,7 +148,7 @@
         }
         #tableheader-Informatii-Aditionale {
           padding: 10px;
-          background: #008cff6c;
+          background: #05334ef7;
           border: 2px outset rgba(0,0,0,0.2);          
           position: relative;
           bottom: 1px;
@@ -198,17 +198,16 @@
           background-color: rgb(0 23 137 / 35%);
           border: outset;
           border-width: 0.5vw 0.5vw;
-          border-color: rgba(0,0,0,0.2);
+          border-color: rgb(68, 162, 255);
           border-radius: 30px;
           left: 0%;
           /* transform: translateX(-50%); */
           z-index: 1;
           cursor: pointer;
           /* transform: translateY(-100%); */
-          bottom: 204px;
-          left: 140px;
-          height: 45px;
-          width: 233px;
+          bottom: 220px;
+          left: 77px;
+          width: 300px;
           margin-top: 0px;
           margin-bottom: 20px;
           position: relative;
@@ -234,8 +233,7 @@
           padding-bottom: 0px;
           bottom: 2px;
           top: 3px;
-          height: 29px;
-          height: 30px;
+          height: 36px;
         }
         #submit-cauta-bara-de-cautare {
           padding: 2px 4px;
@@ -245,12 +243,14 @@
           background: repeating-linear-gradient(22deg, rgb(86 86 255 / 50%) 75%, rgb(0 0 0 / 59%) 80%, rgb(255 0 0 / 16%) 50%);
           cursor: pointer;
           width: 90px;
-          height: 30px;
+          height: 35px;
           position: relative;
           margin-bottom: 0px;
           padding: 5px;
-          margin-left: 135px;
-          bottom: 20px;
+          position: relative;
+          top: -35px;
+          bottom: 0px;
+          left: 75px;
         }
 
         #upper-side-table-style .tr .a {
@@ -287,28 +287,29 @@
         }
         
         .sidenav {
-          scroll-margin: 269px;
+          scroll-margin: 80px;
           bottom: 175px;
           /* scroll-padding-top: 40%; */
           scroll-behavior: smooth;
           touch-action: pan-up;
-          border: ridge 3px rgba(0, 0, 0, 0);
+          border: outset 3px rgb(0 0 0 / 50%);          
           border-radius: 30px;
           /* padding-top: 30px; */
           width: 250px;
-          height: 280px;
+          height: 170px;
           overflow-y: auto;
           top: 20px;
           position: absolute;
           z-index: 1;
           top: 0px;
-          bottom: 0px;
-          margin-left: 60px;
-          margin-top: 154px;
-          margin-right: 1px;
+          left: 10px;
+          margin-bottom: 1px;
+          margin-left: 2px;
+          margin-top: 215px;
+          margin-right: 7px;
           background: linear-gradient(to top right, rgb(0 85 127 / 97%) 39%, #ccc 90%);
-          overflow-x: hidden;
-          padding-top: 120px;
+          overflow-x: scroll;
+          padding-top: 0px;
           transition: 0.5s;
         }
 
@@ -328,19 +329,19 @@
         .sidenav a {
           padding: 15px;
           text-align: -webkit-left;
-          margin: 14px;
-          scroll-margin: inherit;
+          margin: 20px;
+          scroll-margin: 20px;
           text-decoration: wavy;
           scroll-behavior: smooth;
           /* padding: 20px; */
-          font-size: 12px;
-          color: rgb(255, 255, 255);
-          border: 1px groove rgba(0, 0, 0, 0.2);
+          font-size: 10px;
+          color: rgb(0, 170, 255);
+          border: 3px groove #05334e;
           display: block;
-          padding: 10px;
-          transition: 2s;
+          padding: 5px;
+          transition: 5s;
           border-radius: 30px;
-          background: linear-gradient(to top right, #01545705 39%, #00f6ff 90%);
+          background: linear-gradient(to top right, #0f1515de 39%, #05334e 90%);
         }
         /* The side navigation menu */
         /* The navigation menu links */
@@ -357,17 +358,17 @@
         /* Position and style the close button (top right corner) */
         .sidenav .closebtn {
           position: relative;
-          font-size: 30px;
+          /* font-size: 40px; */
           margin-left: 0px;
           right: 5px;
-          top: -105px;
-          bottom: 26px;
-          left: 166px;
-          padding-left: 25px;
-          background: linear-gradient(45deg, rgb(103 255 252 / 68%) 40%, rgb(0 170 255 / 42%) 95%);
+          top: 2px;
+          bottom: 0px;
+          left: 90px;
+          padding-left: 22px;
+          background: linear-gradient(45deg, rgb(255 103 103 / 36%) 40%, rgb(0 170 255 / 42%) 95%);
           border-radius: 20px;
           border: 2px rgba(0,0,0,0.2) groove;
-          width: 28px;
+          width: 30px;
         }
             /* Close button style */
         .closebtn {
@@ -741,14 +742,14 @@
         }
 
         #tabel-tip-lista-optiuni {
-          bottom: 430px;
-          background: #0033ff4a;
-          background-color: none;
+          bottom: 500px;
+          background: #1b83d542;         
           max-width: fit-content;
           border-radius: 35px;
+          border: 3px outset rgba(0, 0, 0, 0.5);          
           shape-outside: margin-box;
-          border: 3px groove rgba(0, 0, 0, 0.335);
           position: relative;
+          left: 190px;
         }
         /* Style for main page containers: */
         #Menu_Categories {
@@ -1673,7 +1674,7 @@
         }
         #tableheader-Despre {
           padding: 10px;
-          background: steelblue;
+          background: #05334e;;
           bottom: 1px;
           border: 2px outset black;
           position: relative;
@@ -1691,12 +1692,12 @@
           position: relative;
           border-radius: 30px;
           top: 1px;
-          background: steelblue;
+          background: #05334e;
         }
         /* Style for the Livrare Element linking to the Actual Livrare Page */
         #tableheader-Livrare  {
           padding: 10px;
-          background: steelblue;
+          background: #05334e;
           border: 2px outset black;
           position: relative;
           bottom: 1px;
@@ -1705,7 +1706,7 @@
         }
         #tableheader-Suport {
           padding: 10px;
-          background: rgba(70, 131, 180, 0.548);
+          background: #05334e;
           border: 2px outset black;
           position: relative;
           bottom: 1px;
@@ -1714,7 +1715,7 @@
         }
         #tableheader-Informatii-Aditionale {
           padding: 10px;
-          background: #008cff6c;
+          background: #05334ef7;
           border: 2px outset rgba(0,0,0,0.2);          
           position: relative;
           bottom: 1px;
@@ -1759,26 +1760,26 @@
         /* Search-bar styles */
                 
         #Bara_de_Cautare {
-          padding: 1px;
-          color: rgb(0, 0, 0);
-          background-color: rgb(0 23 137 / 35%);
-          border: outset;
-          border-width: 0.5vw 0.5vw;
-          border-color: rgb(68, 162, 255);
-          border-radius: 30px;
-          left: 0%;
-          /* transform: translateX(-50%); */
-          z-index: 1;
-          cursor: pointer;
-          /* transform: translateY(-100%); */
-          bottom: 161px;
-          left: 62px;
-          width: 316px;
-          margin-top: 0px;
-          margin-bottom: 20px;
-          position: relative;
-          /* text-align: center; */
-          margin: 0px;
+        padding: 1px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(0 23 137 / 35%);
+        border: outset;
+        border-width: 0.5vw 0.5vw;
+        border-color: rgb(68, 162, 255);
+        border-radius: 30px;
+        left: 0%;
+        /* transform: translateX(-50%); */
+        z-index: 1;
+        cursor: pointer;
+        /* transform: translateY(-100%); */
+        bottom: 220px;
+        left: 77px;
+        width: 300px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        position: relative;
+        /* text-align: center; */
+        margin: 0px;
         }
         .search-bar input[type="text"] {
           border: 3px outset rgba(0,0,0,0.2);
@@ -1798,8 +1799,7 @@
           padding-bottom: 0px;
           bottom: 2px;
           top: 3px;
-          height: 29px;
-          height: 30px;
+          height: 36px;
         }
         #submit-cauta-bara-de-cautare {
           padding: 2px 4px;
@@ -1809,12 +1809,14 @@
           background: repeating-linear-gradient(22deg, rgb(86 86 255 / 50%) 75%, rgb(0 0 0 / 59%) 80%, rgb(255 0 0 / 16%) 50%);
           cursor: pointer;
           width: 90px;
-          height: 30px;
+          height: 35px;
           position: relative;
           margin-bottom: 0px;
           padding: 5px;
-          margin-left: 135px;
-          bottom: 20px;
+          position: relative;
+          top: -35px;
+          bottom: 0px;
+          left: 75px;
         }
 
         #upper-side-table-style .tr .a {
@@ -1851,28 +1853,29 @@
         }
         
         .sidenav {
-          scroll-margin: 269px;
+          scroll-margin: 80px;
           bottom: 175px;
           /* scroll-padding-top: 40%; */
           scroll-behavior: smooth;
+          width: 168px;
           touch-action: pan-up;
-          border: ridge 3px rgba(0, 0, 0, 0);
+          border: outset 3px rgb(0 0 0 / 50%);          
           border-radius: 30px;
           /* padding-top: 30px; */
           width: 250px;
-          height: 280px;
+          height: 170px;
           overflow-y: auto;
           top: 20px;
           position: absolute;
           z-index: 1;
           top: 0px;
-          bottom: 0px;
-          margin-left: 60px;
-          margin-top: 154px;
+          margin-bottom: 1px;
+          margin-left: 5px;
+          margin-top: 215px;
           margin-right: 1px;
           background: linear-gradient(to top right, rgb(0 85 127 / 97%) 39%, #ccc 90%);
-          overflow-x: hidden;
-          padding-top: 120px;
+          overflow-x: scroll;
+          padding-top: 0px;
           transition: 0.5s;
         }
 
@@ -1892,19 +1895,19 @@
         .sidenav a {
           padding: 15px;
           text-align: -webkit-left;
-          margin: 14px;
-          scroll-margin: inherit;
+          margin: 20px;
+          scroll-margin: 20px;
           text-decoration: wavy;
           scroll-behavior: smooth;
           /* padding: 20px; */
-          font-size: 12px;
-          color: rgb(255, 255, 255);
-          border: 1px groove rgba(0, 0, 0, 0.2);
+          font-size: 10px;
+          color: rgb(0, 170, 255);
+          border: 3px groove #05334e;
           display: block;
-          padding: 10px;
-          transition: 2s;
+          padding: 5px;
+          transition: 5s;
           border-radius: 30px;
-          background: linear-gradient(to top right, #01545705 39%, #00f6ff 90%);
+          background: linear-gradient(to top right, #0f1515de 39%, #05334e 90%);
         }
         /* The side navigation menu */
         /* The navigation menu links */
@@ -1921,13 +1924,12 @@
         /* Position and style the close button (top right corner) */
         .sidenav .closebtn {
           position: relative;
-          font-size: 30px;
           margin-left: 0px;
           right: 5px;
-          top: -105px;
-          bottom: 26px;
-          left: 166px;
-          padding-left: 25px;
+          top: 2px;
+          bottom: 0px;
+          left: 90px;
+          padding-left: 22px;
           background: linear-gradient(45deg, rgb(103 255 252 / 68%) 40%, rgb(0 170 255 / 42%) 95%);
           border-radius: 20px;
           border: 2px rgba(0,0,0,0.2) groove;
@@ -2312,21 +2314,21 @@
         .th a {
           color: rgb(0, 0, 0);
           text-decoration: wavy;
-          background: #f5f5f575;
+          background: #05334e;
           border-radius: 30px;
           background-blend-mode: hard-light;
           padding-block: 7px;
         }
 
         #tabel-tip-lista-optiuni {
-          bottom: 430px;
-          background: rgb(0, 95, 220);
-          background-color: none;
+          bottom: 500px;
+          background: #1b83d542;
           max-width: fit-content;
           border-radius: 35px;
-          border: 3px groove rgba(0, 0, 0, 0.335);
+          border: 3px outset rgba(0, 0, 0, 0.5);          
           shape-outside: margin-box;
           position: relative;
+          left: 190px;
         }
         /* Style for main page containers: */
         #Acasa_menu_container {
