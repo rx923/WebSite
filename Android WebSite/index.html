@@ -836,9 +836,9 @@
     /* Style for main page containers: */
     #Menu_Categories {
       border: 1px;
-      left: 135px;
+      left: 149px;
       /* top: 20px; */
-      bottom: 261px;
+      bottom: 792px;
       right: 0px;
       margin: 5px;
       border-color: #ffffff;
@@ -848,12 +848,11 @@
       animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
       border-radius: 30px;
       /* box-sizing: content-box; */
-      width: 140px;
-      height: 48px;
-      /* margin: 50px; */
+      width: 120px;
+      height: 45px;
       list-style-type: none;
       position: relative;
-      display: block;
+      display: inline-block;
     }
 
     #menu_produse_top {
@@ -866,10 +865,14 @@
       border-radius: 20px;
       /* box-sizing:content-box; */
       /* box-shadow: wheat; */
-      width: 130px;
+      width: 129px;
+      height: 50px;
       /* margin: 50px; */
       list-style-type: none;
-      position: sticky;
+      position: relative;
+      top: -774px;
+      bottom: 0px;
+      left: 119px;
       display: inline-block;
       /* margin-top: 200px; */
       /* margin-bottom: 20px; */
@@ -883,7 +886,7 @@
       border-radius: 20px;
       box-sizing: content-box;
       /* box-shadow: wheat; */
-      width: 80px;
+      width: 120px;
       margin: 5px;
       list-style-type: none;
       position: sticky;
@@ -892,17 +895,7 @@
       margin-bottom: 20px;
     }
 
-    .menu-container_acasa .menu-ordered_list_1 {
-      list-style-type: none;
-      margin: 20px;
-      text-align: center;
-      border: 1px solid blue;
-      border-radius: 20px;
-      border-style: solid;
-      box-sizing: border-box;
-      position: sticky;
-      display: block;
-    }
+
 
     #continut_acasa_dropdown {
       border-radius: 15px;
@@ -1257,16 +1250,21 @@
       list-style-type: none;
       text-align: center;
       padding-right: 0px;
-      margin: 4px;
+      margin: 0px;
       right: 0px;
       left: 0px;
-      height: 40px;
+      height: 45px;
       border: 1px solid blue;
       border-radius: 30px;
       border-style: solid;
       /* box-sizing: border-box; */
       position: sticky;
       display: -webkit-inline-box;
+      color: white;
+      border-radius: 30px;
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 2px;
+      padding-left: 20px;
     }
 
     .menu-container_categories .menu-ordered_list_2 .a {
@@ -1346,18 +1344,6 @@
       display: inline-block;
       flex: 1;
       margin-bottom: 20px;
-    }
-
-    /* Style for the main menu item */
-    .menu_container_produse_de_top .menu_container_1_produse_de_top {
-      list-style-type: none;
-      text-align: center;
-      /* border: 1px solid #0011a7; */
-      /* border-style:solid; */
-      /* border-radius: 10px; */
-      box-sizing: border-box;
-      position: sticky;
-      display: block;
     }
 
     /* Style for the dropdown content container */
@@ -1759,8 +1745,7 @@
 
   <style>
     /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
-    @media only screen and ((max-width:412px) and (max-height: 915px)) and (min-width:915px) and (min-height:412px),
-    (orientation: landscape) {
+    @media only screen and ((max-width:412px) and (max-height: 915px)) and (min-width:915px) and (min-height:412px), (orientation: landscape) {
 
       /* Adjusting the html page size for Android type of devices */
       html {
@@ -2672,9 +2657,6 @@
         /* margin-top: 200px; */
         /* margin-bottom: 20px; */
       }
-
-
-
       /* Style for individual links within the dropdown menu */
       .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
         list-style-type: none;
@@ -4390,10 +4372,8 @@
         background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
         animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
         border-radius: 20px;
-        /* box-sizing:content-box; */
         /* box-shadow: wheat; */
-        width: 365px;
-        /* margin: 50px; */
+        width: 110px;
         list-style-type: none;
         position: relative;
         display: inline-block;
@@ -4785,6 +4765,7 @@
         box-sizing: border-box;
         position: sticky;
         display: block;
+        
       }
 
       .ol {
@@ -5963,75 +5944,73 @@
           slide.style.position = "absolute";
         });
 
-      slideIndex++;
-      if (slideIndex > slides.length) {
-        slideIndex = 1;
-      }
-
-      slides[slideIndex - 1].style.position = "relative";
-      fadeIn(slides[slideIndex - 1], 0);
-
-      setTimeout(() => {
-        fadeOut(slides[slideIndex - 1], 0);
-      }, 2000);
-    }
-
-    function fadeIn(element, opacity) {
-      element.style.opacity = opacity;
-      if (opacity < 1) {
-        opacity += 0.1;
-        setTimeout(() => fadeIn(element, opacity), 100);
-      }
-    }
-
-    const placeholder = document.createElement("div");
-    Object.assign(placeholder.style, {
-      width: "320px",
-      height: "50px",
-      padding: "10px",
-      border: "5px solid gray",
-      margin: "0"
-    });
-
-    document.querySelector('.canvas').appendChild(placeholder);
-
-    function fadeOut(element, opacity) {
-      element.style.opacity = opacity;
-      let timer = 0;
-
-      const fadeOutInterval = setInterval(() => {
-        if (timer >= 0.09) {
-          clearInterval(fadeOutInterval);
-          element.style.display = "block";
-          placeholder.style.display = "none";
-          showSlides();
-        } else {
-          opacity -= 0.1;
-          element.style.opacity = opacity;
-          timer += 0.1;
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
         }
-      }, 1000);
-    }
 
-    function adjustSizes() {
-      const slides = document.getElementsByClassName('mySlides');
-      const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
+        slides[slideIndex - 1].style.position = "relative";
+        fadeIn(slides[slideIndex - 1], 0);
 
-      for (let i = 0; i < slides.length; i++) {
-        const slide = slides[i];
-        const img = slide.querySelector('img');
-        const text = slide.querySelector('.text');
-
-        img.style.width = containerWidth + 'px';
-        text.style.fontSize = (containerWidth * 0.03) + 'px';
+        setTimeout(() => {
+          fadeOut(slides[slideIndex - 1], 0);
+        }, 2000);
       }
-    }
 
-    window.addEventListener('resize', adjustSizes);
-    adjustSizes();
+      function fadeIn(element, opacity) {
+        element.style.opacity = opacity;
+        if (opacity < 1) {
+          opacity += 0.1;
+          setTimeout(() => fadeIn(element, opacity), 100);
+        }
+      }
+
+      const placeholder = document.createElement("div");
+      Object.assign(placeholder.style, {
+        width: "320px",
+        height: "50px",
+        padding: "10px",
+        border: "5px solid gray",
+        margin: "0"
+      });
+
+      document.querySelector('.canvas').appendChild(placeholder);
+
+      function fadeOut(element, opacity) {
+        element.style.opacity = opacity;
+        let timer = 0;
+
+        const fadeOutInterval = setInterval(() => {
+          if (timer >= 0.09) {
+            clearInterval(fadeOutInterval);
+            element.style.display = "block";
+            placeholder.style.display = "none";
+            showSlides();
+          } else {
+            opacity -= 0.1;
+            element.style.opacity = opacity;
+            timer += 0.1;
+          }
+        }, 1000);
+      }
+
+      function adjustSizes() {
+        const slides = document.getElementsByClassName('mySlides');
+        const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
+
+        for (let i = 0; i < slides.length; i++) {
+          const slide = slides[i];
+          const img = slide.querySelector('img');
+          const text = slide.querySelector('.text');
+
+          img.style.width = containerWidth + 'px';
+          text.style.fontSize = (containerWidth * 0.03) + 'px';
+        }
+      }
+
+      window.addEventListener('resize', adjustSizes);
+      adjustSizes();
   </script>
-
-  </div>
   <nav>
     <script>
     // Get the dropdown content
@@ -6076,30 +6055,27 @@
             <section id="ComputerLaptop-Link-Acasa" style="color: white; border-radius: 30px; background-color: black; padding: 10px;">Acasa</section>
             <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
               <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
-                <div class="image-container">
-                  <img src="U:\Plan Afacere\Android WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\image1.jpg" alt="Image 1">
+                <div class="image-container" style="width: 150px; height: 150px; border: solid black 1px;">
+                  <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="width:100px; height: 80px; position: sticky;" loading="eager">
                 </div>
                 <div class="description-container">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
-                  <!-- Add more content here to fit 10 lines -->
                 </div>
               </div>
               <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
-                <div class="image-container">
-                  <img src="U:\Plan Afacere\Android WebSite\Continut-dropdown-Acasa\continut-2-tip-lista\image2.jpg" alt="Image 2">
+                <div class="image-container" style="width: 150px; height: 150px; border: solid black 1px;">
+                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="width:100px; height: 80px; position: sticky;" loading="eager">
                 </div>
                 <div class="description-container">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
-                  <!-- Add more content here to fit 10 lines -->
                 </div>
               </div>
               <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
-                <div class="image-container">
-                  <img src="U:\Plan Afacere\Android WebSite\Continut-dropdown-Acasa\continut-3-tip-lista\image3.jpg" alt="Image 3">
+                <div class="image-container" style="width: 150px; height: 150px; border: solid black 1px;">
+                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3 " style="width:100px; height: 80px; position: sticky;" loading="eager">
                 </div>
                 <div class="description-container">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
-                  <!-- Add more content here to fit 10 lines -->
                 </div>
               </div>
             </ol>
@@ -6108,22 +6084,22 @@
       </div>
     </div>
   <script>
-      // Get the dropdown content
-      const dropdownContentCategories = document.getElementById('Categorii_Produse_1_dropdown');
+    // Get the dropdown content
+    const dropdownContentCategories = document.getElementById('Categorii_Produse_1_dropdown');
 
-      // Get the section element
-      const sectionCategoriiProduse = document.getElementById('Categorii_Produse_Section');
+    // Get the section element
+    const sectionCategoriiProduse = document.getElementById('Categorii_Produse_Section');
 
-      // Show dropdown content on hover
-      sectionCategoriiProduse.addEventListener('mouseover', function() {
-        dropdownContentCategories.style.display = 'block';
-      });
+    // Show dropdown content on hover
+    sectionCategoriiProduse.addEventListener('mouseover', function() {
+      dropdownContentCategories.style.display = 'block';
+    });
 
-      // Hide dropdown content on mouseout
-      sectionCategoriiProduse.addEventListener('mouseout', function() {
-        dropdownContentCategories.style.display = 'none';
-      });
-    </script>
+    // Hide dropdown content on mouseout
+    sectionCategoriiProduse.addEventListener('mouseout', function() {
+      dropdownContentCategories.style.display = 'none';
+    });
+  </script>
     <style>
       /* Hide the dropdown content by default */
       #Categorii_Produse_1_dropdown {
@@ -6313,33 +6289,31 @@
         </div>
       </div>
     </div>
-
-
-  <div class="canvas" id="myCanvas"></div>
-  <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
-    <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
-      <h4 style="text-align: center;">Sectiunea Stanga</h4>
-      <div class="slideshow" id="leftSlideshow">
-        <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg"
-          alt="Cafea, Lapte, Boabe De Cafea" style="height: 165px; width: 160px;" loading="lazy">
-        <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg"
-          alt="Cafea, Ceașcă, Cofeină, Espresso" style="height: 165px; width: 160px;" loading="lazy">
-        <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg"
-          alt="Cafea, Ceașcă, Halbă, Mic Dejun" style="height: 165px; width: 160px;" loading="lazy">
+    <div class="canvas" id="myCanvas"></div>
+    <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
+      <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
+        <h4 style="text-align: center;">Sectiunea Stanga</h4>
+        <div class="slideshow" id="leftSlideshow">
+          <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg"
+            alt="Cafea, Lapte, Boabe De Cafea" style="height: 165px; width: 160px;" loading="lazy">
+          <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg"
+            alt="Cafea, Ceașcă, Cofeină, Espresso" style="height: 165px; width: 160px;" loading="lazy">
+          <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg"
+            alt="Cafea, Ceașcă, Halbă, Mic Dejun" style="height: 165px; width: 160px;" loading="lazy">
+        </div>
+      </div>
+      <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
+        <h5 style="text-align: center;">Sectiunea Dreapta</h5>
+        <div class="slideshow" id="rightSlideshow">
+          <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1"
+            style="height: 165px; width: 160px;">
+          <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg"
+            alt="Cafea, Ceașcă, Cappuccino, Latte" style="height: 165px; width: 160px;">
+          <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg"
+            alt="Valentine'S Day, Inima, Ceașcă, Cafea" style="height: 165px; width: 160px;">
+        </div>
       </div>
     </div>
-    <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
-      <h5 style="text-align: center;">Sectiunea Dreapta</h5>
-      <div class="slideshow" id="rightSlideshow">
-        <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1"
-          style="height: 165px; width: 160px;">
-        <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg"
-          alt="Cafea, Ceașcă, Cappuccino, Latte" style="height: 165px; width: 160px;">
-        <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg"
-          alt="Valentine'S Day, Inima, Ceașcă, Cafea" style="height: 165px; width: 160px;">
-      </div>
-    </div>
-  </div>
   <script>
     function adjustCanvasSections() {
       const canvasContainer = document.getElementById('Informatii-Aditionale-Template-Pentru-Linkuri');
