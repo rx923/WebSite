@@ -5627,55 +5627,114 @@
   <style>
     /* Add this CSS for smooth transitions */
     #mySidenav {
-      transition: width 0.3s ease;
+      scroll-padding: 200px;
+      width: 0;
+      max-width: 170px;
+      transition: width 0.5s ease, background-color 0.3s ease; /* Added background-color transition */
       /* Enable vertical scrolling */
+      background-color: white;
+      position: fixed; /* Fixed positioning */
+      top: 0; /* Align to the top */
+      left: -170px; /* Initially hide off-screen */
+      z-index: 999; /* Set a high z-index to ensure visibility */
+      pointer-events: none; /* Disable pointer events to prevent scrolling when closed */
       overflow-y: auto;
       /* Set a maximum height to fit within the viewport */
       max-height: 100vh;
     }
   
     #main {
+      margin-left: 0px;
       transition: margin-left 0.3s ease;
     }
+    .sideNavOpened #mySidenav {
+     width: 170px;
+     left: 0; /* Move into view */
+     background-color: transparent;
+     pointer-events: auto; /* Enable pointer events to allow scrolling within the menu */
+    }
+    .sideNavOpened #main {
+     margin-left: 170px;
+    }
   </style>
-  
+  <div id="mySidenav" class="sidenav" style="width: 170px;">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+    <a href="#" onclick="loadLoginPage()">Logheaza-te</a>
+    <a href="#" onclick="loadPage('U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+    <a href="#link">Clients</a>
+    <a href="#link">Echipa</a>
+  </div>
+
+  <!-- Using any element to open the sidenav -->
+  <span class="openTriangle" onclick="toggleNav()" id="openTriangle">
+    <span class="openText" style="margin-top: 30px;"></span>
+  </span>
+  <!-- Content area to display the page content -->
+  <div id="content">
+    <!-- Adding all page content inside the div if side nav needs to push the page content tot he right -->
+    <div id="main">
+    </div>
+  </div>
   <script>
     let touchStartX = 0;
     let touchEndX = 0;
     const SWIPE_THRESHOLD = 100;
-    let isSideNavOpen = false;
-
-    // JavaScript function to toggle the side navigation menu
+    let isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
+  
     function toggleNav() {
+      const body = document.body;
+      body.classList.toggle('sideNavOpened');
+      isSideNavOpen ? closeNav() : openNav();
+      const openTriangle = document.getElementById('openTriangle');
+      openTriangle.classList.toggle('rotate');
+    }
+  
+    function closeNav() {
+      const body = document.body;
+      body.classList.remove('sideNavOpened');
+      const sidenav = document.getElementById("mySidenav");
+      const main = document.getElementById("main");
+  
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+      body.style.backgroundColor = "steelblue";
+      body.style.overflowY = "auto";
+  
+      isSideNavOpen = false;
+      localStorage.setItem('isSideNavOpen', 'false');
+      toggleBodyScrolling(); // Enable body scrolling when side navigation is closed
+    }
+
+    // Function to enable/disable body scrolling
+    function toggleBodyScrolling() {
+      const body = document.body;
       if (isSideNavOpen) {
-        closeNav();
+        body.style.overflow = 'auto'; // Enable scrolling
       } else {
-        openNav();
+        body.style.overflow = 'hidden'; // Disable scrolling
       }
     }
 
-    function closeNav() {
-      const sidenav = document.getElementById("mySidenav");
-      const main = document.getElementById("main");
-      const body = document.body;
-
-      sidenav.style.width = "0";
-      main.style.marginLeft = "0";
-      body.style.backgroundColor = "transparent";
-      body.style.overflowY = "auto";
-      isSideNavOpen = false;
-    }
-
     function openNav() {
-      const sidenav = document.getElementById("mySidenav");
-      const main = document.getElementById("main");
       const body = document.body;
-
+      body.classList.add('sideNavOpened');
+      isSideNavOpen = true;
+      const main = document.getElementById("main");
+      const sidenav = document.getElementById("mySidenav");
+      sidenav.classList.remove('sideNavOpened');
+      isSideNavOpen = true;
+      // Disable body scrolling when side navigation is open
+      toggleBodyScrolling(); 
       sidenav.style.width = "170px";
       main.style.marginLeft = "170px";
       body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
       body.style.overflowY = "hidden";
-      isSideNavOpen = true;
+
+      
+      localStorage.setItem('isSideNavOpen', 'false');
+      // Enable body scrolling when side navigation is closed
+      toggleBodyScrolling(); 
+
     }
 
     // Event listener for touch move on the side navigation to prevent scrolling on the main page
@@ -5700,6 +5759,8 @@
       // Check if swipe distance is greater than threshold and ensure it's a swipe to the right
       if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance > 0) {
         openNav(); // Open the side navigation on swipe-to-right
+      } else if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance < 0 && isSideNavOpen) {
+        closeNav();
       }
     }
 
@@ -5730,16 +5791,7 @@
       main.style.marginLeft = "0";
     });
   
-    // JavaScript function to close the side nav menu
-    function closeNav() {
-      const sidenav = document.getElementById("mySidenav");
-      const main = document.getElementById("main");
-      const body = document.body;
-      sidenav.style.width = "0";
-      main.style.marginLeft = "0";
-      body.style.backgroundColor = "transparent";
-      isSideNavOpen = false;
-    }
+    // JavaScript function to load the login page content
     function loadLoginPage() {
       // Load and display the login form when "Logheaza-te" is clicked
       var formContainer = document.getElementById("content");
@@ -5774,7 +5826,7 @@
       closeNav(); // Close the side navigation before unloading the page
     });
   
-    // Function to load the content dynamically
+    // Function to load content dynamically
     function loadPage(pageName, formId) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -5797,28 +5849,17 @@
         forms[i].style.display = "none";
       }
     }
+  
+    // Ensure the side nav menu is closed when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidenav = document.getElementById("mySidenav");
+      var main = document.getElementById("main");
+      var body = document.body;
+  
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+    });
   </script>
-  
-  
-  <div id="mySidenav" class="sidenav" style="width: 170px;">
-    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-    <a href="#" onclick="loadLoginPage()">Logheaza-te</a>
-    <a href="#" onclick="loadPage('U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
-    <a href="#link">Clients</a>
-    <a href="#link">Echipa</a>
-  </div>
-
-  <!-- Using any element to open the sidenav -->
-  <span class="openTriangle" onclick="toggleNav()">
-    <span class="openText" style="margin-top: 30px;"></span>
-  </span>
-  <!-- Content area to display the page content -->
-  <div id="content">
-    <!-- Adding all page content inside the div if side nav needs to push the page content tot he right -->
-    <div id="main">
-    </div>
-  </div>
-
   <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container"
     style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;"
     method="post">
