@@ -5386,126 +5386,204 @@
     
   <header class="header">
     <div class="search-bar" id="Bara_de_Cautare" class="fixed-search-bar">
+      <style>
+        #searchDropdown {
+          border-radius: 20px; /* Applying border-radius */
+          /* Add other necessary styles for the dropdown */
+        }
+        .dropdown-hidden-items {
+          max-height: 100px; 
+          overflow-y: auto; 
+          border: 1px solid #ccc; 
+          padding: 5px; 
+        }
+      </style>
       <div id="recommendationDropdown" style="display: none;"></div>
-      <div id="searchDropdown" class="dropdown-content"></div>
+      <div id="searchDropdown" class="dropdown-content">
+        <!-- The following div will contain hidden items -->
+        <div class="dropdown-hidden-items"></div>
+      </div>
       <input type="text" placeholder="Cauta..." id="searchInput">
       <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
     </div>
   <script>
     const searchBar = document.getElementById('searchInput');
-    const sideMenu = document.getElementById('tabel-tip-lista-optiuni');
-    const rightSideContent = document.querySelector('.table-container_lista_optiuni');
     const searchDropdown = document.getElementById('searchDropdown');
     let previousSearches = [];
+    let totalDisplayedItems = 0;
 
-    // Event listener for input in the search bar
-      searchBar.addEventListener('input', function () {
-        const searchTerm = searchBar.value.toLowerCase();
-        previousSearches = []; // Clear previous searches
-        const recommendations = getRecommendations(searchTerm);
-        displayRecommendations(recommendations, searchTerm);
+    searchBar.addEventListener('input', function () {
+      const searchTerm = searchBar.value.trim().toLowerCase();
+      previousSearches = [];
+      const recommendations = getRecommendations(searchTerm);
+      const visibleItems = recommendations.slice(0, 3);
+      const hiddenItems = recommendations.slice(3);
+      totalDisplayedItems = visibleItems.length;
+
+      displayRecommendations(visibleItems, hiddenItems, searchTerm);
+
+      setTimeout(() => {
+        mergeVisibleItems();
+      }, 3000);
+    });
+
+    searchDropdown.addEventListener('wheel', function (event) {
+      event.preventDefault();
+      const direction = event.deltaY > 0 ? 'down' : 'up';
+      const scrollItems = direction === 'down' ? 1 : -1;
+      totalDisplayedItems += scrollItems;
+
+      const allItems = document.querySelectorAll('.dropdown-item');
+
+      allItems.forEach((item, index) => {
+        item.style.display = index < totalDisplayedItems ? 'block' : 'none';
       });
+    });
 
-      // Event listener for showing/hiding dropdown
-      searchBar.addEventListener('focus', function () {
-        displayPreviousSearches();
-        // Close the side menu if it's open
-        sideMenu.classList.remove('visible-side-menu');
-        rightSideContent.style.display = 'none';
-        // Close side navigation when search bar is clicked
-        closeSideNav(); 
+    // Event listener for showing/hiding dropdown
+    searchBar.addEventListener('focus', function () {
+      displayPreviousSearches();
+      // Close the side menu if it's open
+      sideMenu.classList.remove('visible-side-menu');
+      rightSideContent.style.display = 'none';
+      // Close side navigation when search bar is clicked
+      closeSideNav();
+    });
 
+    // Event listener to hide the dropdown when clicking outside the input
+    document.addEventListener('click', function (event) {
+      if (event.target !== searchBar) {
+        searchDropdown.style.display = 'none';
+      }
+    });
+
+    // Event listener for clicking outside the search bar
+    document.addEventListener('click', function (event) {
+      if (event.target !== searchBar) {
+        // Revert the side menu and right side content to their normal state
+        sideMenu.classList.add('visible-side-menu');
+        rightSideContent.style.display = 'block';
+        openSideNav(); // Open side navigation when clicked outside the search bar
+      }
+    });
+
+    // Function to display previous searches in the dropdown
+    function displayPreviousSearches() {
+      searchDropdown.innerHTML = '';
+      previousSearches.forEach((item, index) => {
+        const dropdownItem = createDropdownItem(item, index);
+        searchDropdown.appendChild(dropdownItem);
       });
+      searchDropdown.style.display = 'block';
+    }
 
-      // Event listener to hide the dropdown when clicking outside the input
-      document.addEventListener('click', function (event) {
-        if (event.target !== searchBar) {
-          searchDropdown.style.display = 'none';
+    // Function to display recommendations in the dropdown
+    function displayRecommendations(visibleItems, hiddenItems, searchTerm) {
+      searchDropdown.innerHTML = '';
+      searchDropdown.style.display = visibleItems.length > 0 ? 'block' : 'none';
+      visibleItems.forEach((item) => {
+        const dropdownItem = createDropdownItem(item, null, searchTerm);
+        searchDropdown.appendChild(dropdownItem);
+      });
+      searchDropdown.style.overflowY = hiddenItems.length > 0 ? 'scroll' : 'hidden'; // Add scrolling for hidden items
+      // Create a div for hidden items
+      const hiddenItemsDiv = document.createElement('div');
+      hiddenItemsDiv.classList.add('dropdown-hidden-items');
+      hiddenItems.forEach((item) => {
+        const dropdownItem = createDropdownItem(item, null, searchTerm);
+        hiddenItemsDiv.appendChild(dropdownItem);
+      });
+      searchDropdown.appendChild(hiddenItemsDiv);
+    }
+
+    // Function to create dropdown item with styles and click functionality
+    function createDropdownItem(item, index, searchTerm) {
+      const searchDropdownStyles = getComputedStyle(document.getElementById('recommendationDropdown'));
+      const dropdownItem = document.createElement('div');
+      dropdownItem.classList.add('dropdown-item');
+      dropdownItem.textContent = item;
+      dropdownItem.style.backgroundColor = 'lightblue'; // Light blue background
+      dropdownItem.style.borderRadius = '20px'; // Border radius
+      dropdownItem.style.marginBottom = '5px'; // Spacing between items
+
+      if (index !== null) {
+        dropdownItem.textContent = item;
+        dropdownItem.style.width = `${100 + index * 10}px`;
+        dropdownItem.style.height = `${50 + index * 10}px`;
+        dropdownItem.style.backgroundColor = `rgba(0, 0, 0, 0.${index + 2})`;
+      } else {
+        const lowerCaseItem = item.toLowerCase();
+        const itemIndex = lowerCaseItem.indexOf(searchTerm);
+        if (itemIndex !== -1) {
+          const highlightedText = item.substring(0, itemIndex) +
+            `<u><strong>${item.substring(itemIndex, itemIndex + searchTerm.length)}</strong></u>` +
+            item.substring(itemIndex + searchTerm.length);
+          dropdownItem.innerHTML = highlightedText;
+        } else {
+          dropdownItem.textContent = item;
         }
-      });
-      // Event listener for clicking outside the search bar
-      document.addEventListener('click', function (event) {
-        if (event.target !== searchBar) {
-          // Revert the side menu and right side content to their normal state
-          sideMenu.classList.add('visible-side-menu');
-          rightSideContent.style.display = 'block';
-          openSideNav(); // Open side navigation when clicked outside the search bar
-        }
-      });
-      // Function to close the side navigation menu
-      function closeSideNav() {
-        sideNav.style.display = 'none';
       }
-
-      // Function to open the side navigation menu
-      function openSideNav() {
-        sideNav.style.display = 'block';
-      }
-
-      // Function to display previous searches in the dropdown
-      function displayPreviousSearches() {
-        searchDropdown.innerHTML = '';
-        previousSearches.forEach((item, index) => {
-          const dropdownItem = createDropdownItem(item, index);
-          searchDropdown.appendChild(dropdownItem);
-        });
-        searchDropdown.style.display = 'block';
-      }
-
-      // Function to display recommendations in the dropdown
-      function displayRecommendations(recommendations, searchTerm) {
-        searchDropdown.innerHTML = '';
-        recommendations.forEach((item) => {
-          const dropdownItem = createDropdownItem(item, null, searchTerm);
-          searchDropdown.appendChild(dropdownItem);
-        });
-        searchDropdown.style.display = recommendations.length > 0 ? 'block' : 'none';
-      }
-
-      // Function to create dropdown item with styles and click functionality
-      function createDropdownItem(item, index, searchTerm) {
-        const searchDropdownStyles = getComputedStyle(document.getElementById('recommendationDropdown'));
-        const dropdownItem = document.createElement('div');
-        dropdownItem.classList.add('dropdown-item');
+      dropdownItem.addEventListener('click', function () {
+        searchBar.value = item;
+        searchDropdown.style.display = 'none';
         // Change the background color to transparent
-        searchDropdown.style.backgroundColor = 'steelblue'; 
+        searchDropdown.style.backgroundColor = 'steelblue';
         searchDropdown.style.border = searchDropdownStyles.border;
         searchDropdown.style.borderRadius = searchDropdownStyles.borderRadius;
+      });
+      return dropdownItem;
+    }
 
+    // Function to fetch or generate recommendations based on the search term
+    function getRecommendations(searchTerm) {
+      const products = [
+        'Espresso',
+        'Cappuccino',
+        'Latte',
+        'Mocha',
+        'Irish Coffee',
+        'Black Coffee',
+        'Americano',
+        'Macchiato',
+        'Ristretto',
+        'French Press Coffee',
+        'Cold Brew Coffee',
+        'Single Malt Scotch Whiskey',
+        'Bourbon Whiskey',
+        'Irish Whiskey',
+        'Rye Whiskey',
+        'Japanese Whisky',
+        'Canadian Whisky',
+        'Blended Scotch Whisky',
+        'Ethiopian Yirgacheffe Coffee',
+        'Kenyan AA Coffee',
+        'Guatemalan Antigua Coffee',
+        'Colombian Supremo Coffee',
+        'Jamaican Blue Mountain Coffee',
+        'Vietnamese Egg Coffee',
+        'Bulletproof Coffee',
+        'White Russian Cocktail',
+        'Old Fashioned Cocktail',
+        'Manhattan Cocktail',
+        'Whiskey Sour Cocktail',
+        'Coffee Liqueur',
+        'Irish Cream Liqueur',
+        'Kahlúa',
+        'Baileys Irish Cream',
+        'Jameson Irish Whiskey',
+        'Glenfiddich Single Malt Scotch Whisky',
+      ];
 
-        if (index !== null) {
-          dropdownItem.textContent = item;
-          dropdownItem.style.width = `${100 + index * 10}px`;
-          dropdownItem.style.height = `${50 + index * 10}px`;
-          dropdownItem.style.backgroundColor = `rgba(0, 0, 0, 0.${index + 2})`;
-        } else {
-          const lowerCaseItem = item.toLowerCase();
-          const index = lowerCaseItem.indexOf(searchTerm);
-          if (index !== -1) {
-            const highlightedText = item.substring(0, index) +
-              '<u><strong>' + item.substring(index, index + searchTerm.length) + '</strong></u>' +
-              item.substring(index + searchTerm.length);
-            dropdownItem.innerHTML = highlightedText;
-          } else {
-            dropdownItem.textContent = item;
-          }
-        }
+      const filteredProducts = products.filter((product) =>
+        product.toLowerCase().includes(searchTerm.toLowerCase())
+      );
 
-        dropdownItem.addEventListener('click', function () {
-          searchBar.value = item;
-          searchDropdown.style.display = 'none';
-        });
+      // Sort the filtered products alphabetically
+      const sortedProducts = filteredProducts.sort();
 
-        return dropdownItem;
-      }
+      return sortedProducts;
+    }
 
-      // Function to fetch or generate recommendations based on the search term
-      function getRecommendations(searchTerm) {
-        const products = ['Product 1', 'Product 2', 'Product 3', 'Product 4'];
-        return products.filter((product) =>
-          product.toLowerCase().includes(searchTerm)
-        );
-      }
   </script>
     <div class="wave-container">
       <h1> Big Store Coffee </h1>
@@ -5564,44 +5642,45 @@
   <script>
     let touchStartX = 0;
     let touchEndX = 0;
-    // Adjust this threshold to your preference
     const SWIPE_THRESHOLD = 100;
-    // Define a variable to track the side navigation status
     let isSideNavOpen = false;
-  
+
     // JavaScript function to toggle the side navigation menu
     function toggleNav() {
-      var sidenav = document.getElementById("mySidenav");
-      var main = document.getElementById("main");
-      var body = document.body;
-
       if (isSideNavOpen) {
         closeNav();
       } else {
         openNav();
       }
-
-      function closeNav() {
-        sidenav.style.width = "0";
-        main.style.marginLeft = "0";
-        body.style.backgroundColor = "transparent";
-        body.style.overflowY = "auto";
-        isSideNavOpen = false;
-      }
-
-      function openNav() {
-        sidenav.style.width = "170px";
-        main.style.marginLeft = "170px";
-        body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-        //Disabling scrolling on the main page.
-        body.style.overflowY = "hidden";
-        isSideNavOpen = true;
-      }
     }
+
+    function closeNav() {
+      const sidenav = document.getElementById("mySidenav");
+      const main = document.getElementById("main");
+      const body = document.body;
+
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+      body.style.backgroundColor = "transparent";
+      body.style.overflowY = "auto";
+      isSideNavOpen = false;
+    }
+
+    function openNav() {
+      const sidenav = document.getElementById("mySidenav");
+      const main = document.getElementById("main");
+      const body = document.body;
+
+      sidenav.style.width = "170px";
+      main.style.marginLeft = "170px";
+      body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+      body.style.overflowY = "hidden";
+      isSideNavOpen = true;
+    }
+
     // Event listener for touch move on the side navigation to prevent scrolling on the main page
     document.getElementById("mySidenav").addEventListener('touchmove', function(event) {
-      // Prevent default scrolling behavior on the main page while side navigation is open
-      event.preventDefault(); 
+      event.preventDefault(); // Prevent default scrolling behavior on the main page while side navigation is open
     }, false);
 
     // Function to handle touch start
@@ -5623,9 +5702,11 @@
         openNav(); // Open the side navigation on swipe-to-right
       }
     }
+
     // Attach touch event listeners for swipe detection
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchend', handleTouchEnd, false);
+
   
     // Sidenav Push Content w/ opacity
     /* Set the width of the side navigation to 170px and the left margin of the page content to 170px and add a black background color to body */
