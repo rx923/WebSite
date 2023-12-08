@@ -444,6 +444,7 @@
       position: relative;
       outline-color: #000;
       -webkit-tap-highlight-color: transparent;
+      transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
       display: inline;
       width: 0;
       height: 0;
@@ -454,6 +455,7 @@
       border-bottom: 43.3px groove rgba(0, 0, 0, 0.2);
       cursor: pointer;
     }
+
 
     /* Style for the text "open" */
     .openText {
@@ -5627,7 +5629,7 @@
   <style>
     /* Add this CSS for smooth transitions */
     #mySidenav {
-      scroll-padding: 200px;
+      scroll-padding: 400px;
       width: 0;
       max-width: 170px;
       transition: width 0.5s ease, background-color 0.3s ease; /* Added background-color transition */
@@ -5635,7 +5637,8 @@
       background-color: white;
       position: fixed; /* Fixed positioning */
       top: 0; /* Align to the top */
-      left: -170px; /* Initially hide off-screen */
+      /* Initially hide off-screen */
+      left: 10px; 
       z-index: 999; /* Set a high z-index to ensure visibility */
       pointer-events: none; /* Disable pointer events to prevent scrolling when closed */
       overflow-y: auto;
@@ -5665,6 +5668,32 @@
     <a href="#link">Echipa</a>
   </div>
 
+  <style>
+    .openTriangle.rotate {
+      transform-origin: center;
+      /* Rotate 90 degrees to the right */
+      transform: rotate(90deg);
+      /* Change the color to your preferred color */
+      color: red; 
+    }
+    /* New CSS for drawing a line */
+    .openTriangle::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: white; /* Change the color to match the effect */
+      transition: width 0.5s ease-in-out;
+      transform-origin: left;
+      bottom: 0;
+      left: 0;
+    }
+
+    .openTriangle.rotate::before {
+      width: 100%;
+      transition-delay: 0.3s; /* Adjust the delay as needed */
+    }
+    </style>
   <!-- Using any element to open the sidenav -->
   <span class="openTriangle" onclick="toggleNav()" id="openTriangle">
     <span class="openText" style="margin-top: 30px;"></span>
@@ -5686,7 +5715,7 @@
       body.classList.toggle('sideNavOpened');
       isSideNavOpen ? closeNav() : openNav();
       const openTriangle = document.getElementById('openTriangle');
-      openTriangle.classList.toggle('rotate');
+      openTriangle.classList.toggle('rotate', !isSideNavOpen);
     }
   
     function closeNav() {
@@ -5694,27 +5723,22 @@
       body.classList.remove('sideNavOpened');
       const sidenav = document.getElementById("mySidenav");
       const main = document.getElementById("main");
-  
+
       sidenav.style.width = "0";
       main.style.marginLeft = "0";
       body.style.backgroundColor = "steelblue";
       body.style.overflowY = "auto";
-  
+
       isSideNavOpen = false;
       localStorage.setItem('isSideNavOpen', 'false');
       toggleBodyScrolling(); // Enable body scrolling when side navigation is closed
     }
-
-    // Function to enable/disable body scrolling
+  
     function toggleBodyScrolling() {
       const body = document.body;
-      if (isSideNavOpen) {
-        body.style.overflow = 'auto'; // Enable scrolling
-      } else {
-        body.style.overflow = 'hidden'; // Disable scrolling
-      }
+      body.style.overflow = isSideNavOpen ? 'auto' : 'hidden';
     }
-
+  
     function openNav() {
       const body = document.body;
       body.classList.add('sideNavOpened');
@@ -5722,94 +5746,52 @@
       const main = document.getElementById("main");
       const sidenav = document.getElementById("mySidenav");
       sidenav.classList.remove('sideNavOpened');
-      isSideNavOpen = true;
-      // Disable body scrolling when side navigation is open
-      toggleBodyScrolling(); 
+      
+      toggleBodyScrolling(); // Disable body scrolling when side navigation is open
+  
       sidenav.style.width = "170px";
       main.style.marginLeft = "170px";
       body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
       body.style.overflowY = "hidden";
-
-      
-      localStorage.setItem('isSideNavOpen', 'false');
-      // Enable body scrolling when side navigation is closed
-      toggleBodyScrolling(); 
-
+  
+      localStorage.setItem('isSideNavOpen', 'true');
     }
-
-    // Event listener for touch move on the side navigation to prevent scrolling on the main page
+  
+    // Event listeners for touch events
     document.getElementById("mySidenav").addEventListener('touchmove', function(event) {
       event.preventDefault(); // Prevent default scrolling behavior on the main page while side navigation is open
     }, false);
-
-    // Function to handle touch start
+  
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
+  
     function handleTouchStart(event) {
       touchStartX = event.touches[0].clientX;
     }
-
-    // Function to handle touch end
+  
     function handleTouchEnd(event) {
       touchEndX = event.changedTouches[0].clientX;
       handleSwipe();
     }
-
-    // Function to handle swipe gesture
+  
     function handleSwipe() {
       const swipeDistance = touchEndX - touchStartX;
-      // Check if swipe distance is greater than threshold and ensure it's a swipe to the right
-      if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance > 0) {
+      if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance > 0 && !isSideNavOpen) {
         openNav(); // Open the side navigation on swipe-to-right
       } else if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance < 0 && isSideNavOpen) {
         closeNav();
       }
     }
-
-    // Attach touch event listeners for swipe detection
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchend', handleTouchEnd, false);
-
-  
-    // Sidenav Push Content w/ opacity
-    /* Set the width of the side navigation to 170px and the left margin of the page content to 170px and add a black background color to body */
-    function openNav() {
-      const sidenav = document.getElementById("mySidenav");
-      const main = document.getElementById("main");
-      const body = document.body;
-      sidenav.style.width = "170px";
-      main.style.marginLeft = "170px";
-      body.style.backgroundColor = "rgba(0,0,0,0.4)";
-      isSideNavOpen = true;
-    }
-      console.log('Side nav opened.');
-      // Ensure the side nav menu is closed when the page loads
-      document.addEventListener('DOMContentLoaded', function () {
-      var sidenav = document.getElementById("mySidenav");
-      var main = document.getElementById("main");
-      var body = document.body;
-
-      sidenav.style.width = "170px";
-      main.style.marginLeft = "0";
-    });
   
     // JavaScript function to load the login page content
     function loadLoginPage() {
-      // Load and display the login form when "Logheaza-te" is clicked
       var formContainer = document.getElementById("content");
       formContainer.innerHTML = `
         <!-- Your login form HTML -->
         <!-- Ensure you load Pagina_Logare.php content here -->
       `;
-      // Open the side nav menu when showing the form
-      openNav(); 
+      openNav(); // Open the side nav menu when showing the form
     }
-    // Ensure the side nav menu is closed when the page loads
-    document.addEventListener('DOMContentLoaded', function () {
-      const sidenav = document.getElementById("mySidenav");
-      const main = document.getElementById("main");
-      const body = document.body;
-      sidenav.style.width = "170px";
-      main.style.marginLeft = "0";
-    });
   
     // Function to show/hide forms based on formId
     function showForm(formId) {
