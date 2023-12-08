@@ -230,7 +230,7 @@
         /* text-align: center; */
         margin: 0px;
       }
-    }
+      }
 
     .search-bar input[type="text"] {
       border: 3px outset rgba(0, 0, 0, 0.2);
@@ -1273,6 +1273,7 @@
     #meniu_ordered_2 {
       /* margin-right: 20px; */
       /* display: block; */
+      background: transparent;
     }
 
     h1::after {
@@ -2747,8 +2748,6 @@
         /* transform: translateY(-2%); */
         /* animation: pulse 2s infinite alternate;
         }
-        .table-container_lista_optiuni #tr {
-          /* Margin between elements */
         flex-direction: row;
         flex: 1;
         width: 2px;
@@ -4495,8 +4494,6 @@
         /* transform: translateY(-2%); */
         /* animation: pulse 2s infinite alternate;
         }
-        .table-container_lista_optiuni #tr {
-          /* Margin between elements */
         flex-direction: row;
         flex: 1;
         width: 2px;
@@ -4984,7 +4981,6 @@
 
       /* // container images for the top sold products.  */
       .imgcontainer {
-        width: 250px;
         height: 35px;
         width: 35px;
       }
@@ -5227,9 +5223,7 @@
   </style>
   <title>Good Store Coffee</title>
   <link rel="stylesheet" href="U:\Plan Afacere\Android WebSite\style-main\main.css" type="text/css" media="all">
-  <link rel="login"
-    href="U:\Plan Afacere\WebSite\Android WebSite\Pagina de Login - Avatar login, Avatar Account\Login-Users-Account\action_page.php"
-    media="all">
+  <link rel="login" href="U:\Plan Afacere\WebSite\Android WebSite\Pagina de Login - Avatar login, Avatar Account\Login-Users-Account\action_page.php" media="all">
   <script src="Javascript/main.js"></script>
   <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
 </head>
@@ -5386,6 +5380,10 @@
   
       window.addEventListener('resize', setCanvasSize);
     </script> -->
+
+
+
+    
   <header class="header">
     <div class="search-bar" id="Bara_de_Cautare" class="fixed-search-bar">
       <div id="recommendationDropdown" style="display: none;"></div>
@@ -5393,130 +5391,122 @@
       <input type="text" placeholder="Cauta..." id="searchInput">
       <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
     </div>
-    <script>
+  <script>
+    const searchBar = document.getElementById('searchInput');
+    const sideMenu = document.getElementById('tabel-tip-lista-optiuni');
+    const rightSideContent = document.querySelector('.table-container_lista_optiuni');
+    const searchDropdown = document.getElementById('searchDropdown');
+    let previousSearches = [];
 
-      const searchBar = document.style.getElementById('searchInput');
-      const searchInput = document.style.getElementById('searchInput');
-      const recommedationDropdown = document.style.getElementById('recommendationDropdown');
-      const searchDropdown = document.style.getElementById('searchDropdown');
-      const searchSubmitButton = document.style.getElementById('submit-cauta-bara-de-cautare');
-      let previousSearches = [];
-      // Array to store previous search terms ((or an empty list)(Python))
-      // Get computed styles for #searchBar and apply them to the search input
-      // Function to get computed styles and apply them to an element
-      // Get computed styles for #searchBar and apply them to the search input
-      const searchBarStyles = getComputedStyle(document.getElementById('Bara_de_Cautare'));
-      // searchBar.style.border = searchBarStyles.border;
-      // searchBar.style.backgroundColor = searchBarStyles.backgroundColor;
-      // searchBar.style.borderRadius = searchBarStyles.borderRadius;
-      // searchBar.style.width = searchBarStyles.width;
-      // searchBar.style.paddingBottom = searchBarStyles.paddingBottom;
-
-      // Apply styles to the submit button if needed
-      // const submitButtonStyles = getComputedStyle(document.getElementById('submit-cauta-bara-de-cautare'));
-      // searchSubmitButton.style.color = submitButtonStyles.color;
-      // searchSubmitButton.style.border = submitButtonStyles.border;
-      // searchSubmitButton.style.borderRadius = submitButtonStyles.borderRadius;
-      // searchSubmitButton.style.background = submitButtonStyles.background;
-      // ... (apply other styles to the submit button if necessary)
-
-      // Apply styles to the search dropdown if needed
-      const searchDropdownStyles = getComputedStyle(document.getElementById('recommendationDropdown'));
-      searchDropdown.style.backgroundColor = searchDropdownStyles.backgroundColor;
-      searchDropdown.style.border = searchDropdownStyles.border;
-      searchDropdown.style.borderRadius = searchDropdownStyles.borderRadius;
-      // ... (apply other styles to the search dropdown if necessary)
-      // Event listener for input in the search bar
+    // Event listener for input in the search bar
       searchBar.addEventListener('input', function () {
-        // Get the typed search term
         const searchTerm = searchBar.value.toLowerCase();
-        // Clearing the previous searches
-        previousSearches = [];
-        // Call a function to fetch or generate product recommendations based on the SearchTerm
+        previousSearches = []; // Clear previous searches
         const recommendations = getRecommendations(searchTerm);
-        // Display recommendations in the dropdown
-        displayRecommendations(recommendations);
-      });
-      // Add an event listener for the input field
-      searchInput.addEventListener('input', function () {
-        // Show the dropdown when the user starts typing
-        if (searchInput.value.trim().length > 0) {
-          recommendationDropdown.style.display = 'block';
-          // Call a function to populate recommendation items based on the input
-          // For example: populateRecommendations(searchInput.value);
-        } else {
-          recommendationDropdown.style.display = 'none';
-        }
+        displayRecommendations(recommendations, searchTerm);
       });
 
-      // Add an event listener to hide the dropdown when clicking outside the input
+      // Event listener for showing/hiding dropdown
+      searchBar.addEventListener('focus', function () {
+        displayPreviousSearches();
+        // Close the side menu if it's open
+        sideMenu.classList.remove('visible-side-menu');
+        rightSideContent.style.display = 'none';
+        // Close side navigation when search bar is clicked
+        closeSideNav(); 
+
+      });
+
+      // Event listener to hide the dropdown when clicking outside the input
       document.addEventListener('click', function (event) {
-        if (event.target !== searchInput) {
-          recommendationDropdown.style.display = 'none';
+        if (event.target !== searchBar) {
+          searchDropdown.style.display = 'none';
         }
       });
+      // Event listener for clicking outside the search bar
+      document.addEventListener('click', function (event) {
+        if (event.target !== searchBar) {
+          // Revert the side menu and right side content to their normal state
+          sideMenu.classList.add('visible-side-menu');
+          rightSideContent.style.display = 'block';
+          openSideNav(); // Open side navigation when clicked outside the search bar
+        }
+      });
+      // Function to close the side navigation menu
+      function closeSideNav() {
+        sideNav.style.display = 'none';
+      }
 
-      // Function to dispaly previous searches in the dropdown
+      // Function to open the side navigation menu
+      function openSideNav() {
+        sideNav.style.display = 'block';
+      }
+
+      // Function to display previous searches in the dropdown
       function displayPreviousSearches() {
-        // Replace dropdown content with previous searches
-        searchDropDown.innerHTML = '';
-
+        searchDropdown.innerHTML = '';
         previousSearches.forEach((item, index) => {
-          const dropdownItem = document.createElement('div');
-          dropdownItem.classList.add('dropdown-item');
-          dropdownItem.textContent = item;
-          // Different width for each item
-          dropdownItem.style.width = `${100 + index * 10}px`;
-          // Different height for each item
-          dropdownItem.style.height = `${50 + index * 10}px`;
-          // Different background color for each item 
-          dropdownItem.style.backgroundColor = `rgba(0,0,0,0.${index + 2})`;
-          dropdownItem.addEventListener('click', function () {
-            searchBar.value = item;
-            searchDropDown.style.display = 'none';
-          });
+          const dropdownItem = createDropdownItem(item, index);
+          searchDropdown.appendChild(dropdownItem);
+        });
+        searchDropdown.style.display = 'block';
+      }
 
-          searchDropDown.appendChild(dropdownItem);
+      // Function to display recommendations in the dropdown
+      function displayRecommendations(recommendations, searchTerm) {
+        searchDropdown.innerHTML = '';
+        recommendations.forEach((item) => {
+          const dropdownItem = createDropdownItem(item, null, searchTerm);
+          searchDropdown.appendChild(dropdownItem);
+        });
+        searchDropdown.style.display = recommendations.length > 0 ? 'block' : 'none';
+      }
+
+      // Function to create dropdown item with styles and click functionality
+      function createDropdownItem(item, index, searchTerm) {
+        const searchDropdownStyles = getComputedStyle(document.getElementById('recommendationDropdown'));
+        const dropdownItem = document.createElement('div');
+        dropdownItem.classList.add('dropdown-item');
+        // Change the background color to transparent
+        searchDropdown.style.backgroundColor = 'steelblue'; 
+        searchDropdown.style.border = searchDropdownStyles.border;
+        searchDropdown.style.borderRadius = searchDropdownStyles.borderRadius;
+
+
+        if (index !== null) {
+          dropdownItem.textContent = item;
+          dropdownItem.style.width = `${100 + index * 10}px`;
+          dropdownItem.style.height = `${50 + index * 10}px`;
+          dropdownItem.style.backgroundColor = `rgba(0, 0, 0, 0.${index + 2})`;
+        } else {
+          const lowerCaseItem = item.toLowerCase();
+          const index = lowerCaseItem.indexOf(searchTerm);
+          if (index !== -1) {
+            const highlightedText = item.substring(0, index) +
+              '<u><strong>' + item.substring(index, index + searchTerm.length) + '</strong></u>' +
+              item.substring(index + searchTerm.length);
+            dropdownItem.innerHTML = highlightedText;
+          } else {
+            dropdownItem.textContent = item;
+          }
+        }
+
+        dropdownItem.addEventListener('click', function () {
+          searchBar.value = item;
+          searchDropdown.style.display = 'none';
         });
 
-        searchDropDown.style.display = 'block';
+        return dropdownItem;
       }
-      // Function to display recommendations in the dropdown
-      function displayRecommendations(recommendations) {
-        if (recommendations.length > 0) {
-          // Clear previous recommendations
-          searchDropDown.innerHTML = '';
-          recommendations.forEach((item) => {
-            const dropdownItem = document.createElement('div');
-            dropdownItem.classList.add('dropdown-item');
-            dropdownItem.textContent = item;
 
-            // Event listener for clicking on a recommendation
-            dropdownItem.addEventListener('click', function () {
-              searchBar.value = item;
-              searchDropDown.style.display = 'none';
-            });
-
-            searchDropDown.appendChild(dropdownItem);
-          });
-          searchDropDown.style.display = 'block';
-        } else {
-          searchDropDown.style.display = 'none';
-        }
-      }
       // Function to fetch or generate recommendations based on the search term
       function getRecommendations(searchTerm) {
-        // Perform logic to retrieve or generate recommendations based on the search term 
-        // This might involve querying a database or using predefined data
-        // Return an array of recommended products/items
-        // Example:
         const products = ['Product 1', 'Product 2', 'Product 3', 'Product 4'];
-        const filteredProducts = products.filter((product) =>
+        return products.filter((product) =>
           product.toLowerCase().includes(searchTerm)
         );
-        return filteredProducts;
       }
-    </script>
+  </script>
     <div class="wave-container">
       <h1> Big Store Coffee </h1>
     </div>
@@ -5556,69 +5546,153 @@
     </div>
 
   </header>
+  <style>
+    /* Add this CSS for smooth transitions */
+    #mySidenav {
+      transition: width 0.3s ease;
+      /* Enable vertical scrolling */
+      overflow-y: auto;
+      /* Set a maximum height to fit within the viewport */
+      max-height: 100vh;
+    }
+  
+    #main {
+      transition: margin-left 0.3s ease;
+    }
+  </style>
+  
   <script>
-    // Sidenav Overaly Example
-    /* Set the width of the side navigation to 250px */
+    let touchStartX = 0;
+    let touchEndX = 0;
+    // Adjust this threshold to your preference
+    const SWIPE_THRESHOLD = 100;
+    // Define a variable to track the side navigation status
+    let isSideNavOpen = false;
+  
     // JavaScript function to toggle the side navigation menu
     function toggleNav() {
       var sidenav = document.getElementById("mySidenav");
       var main = document.getElementById("main");
       var body = document.body;
 
-      if (sidenav.style.width === "250px") {
-        // Close the side navigation menu
+      if (isSideNavOpen) {
+        closeNav();
+      } else {
+        openNav();
+      }
+
+      function closeNav() {
         sidenav.style.width = "0";
         main.style.marginLeft = "0";
-        body.style.backgroundColor = "white";
-      } else {
-        // Open the side navigation menu
-        sidenav.style.width = "250px";
-        main.style.marginLeft = "250px";
+        body.style.backgroundColor = "transparent";
+        body.style.overflowY = "auto";
+        isSideNavOpen = false;
+      }
+
+      function openNav() {
+        sidenav.style.width = "170px";
+        main.style.marginLeft = "170px";
         body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-        console.log('Side nav opened.');
+        //Disabling scrolling on the main page.
+        body.style.overflowY = "hidden";
+        isSideNavOpen = true;
       }
     }
-    // Ensure the side nav menu is closed when the page loads
-    document.addEventListener('DOMContentLoaded', function () {
+    // Event listener for touch move on the side navigation to prevent scrolling on the main page
+    document.getElementById("mySidenav").addEventListener('touchmove', function(event) {
+      // Prevent default scrolling behavior on the main page while side navigation is open
+      event.preventDefault(); 
+    }, false);
+
+    // Function to handle touch start
+    function handleTouchStart(event) {
+      touchStartX = event.touches[0].clientX;
+    }
+
+    // Function to handle touch end
+    function handleTouchEnd(event) {
+      touchEndX = event.changedTouches[0].clientX;
+      handleSwipe();
+    }
+
+    // Function to handle swipe gesture
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      // Check if swipe distance is greater than threshold and ensure it's a swipe to the right
+      if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance > 0) {
+        openNav(); // Open the side navigation on swipe-to-right
+      }
+    }
+    // Attach touch event listeners for swipe detection
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
+  
+    // Sidenav Push Content w/ opacity
+    /* Set the width of the side navigation to 170px and the left margin of the page content to 170px and add a black background color to body */
+    function openNav() {
+      const sidenav = document.getElementById("mySidenav");
+      const main = document.getElementById("main");
+      const body = document.body;
+      sidenav.style.width = "170px";
+      main.style.marginLeft = "170px";
+      body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      isSideNavOpen = true;
+    }
+      console.log('Side nav opened.');
+      // Ensure the side nav menu is closed when the page loads
+      document.addEventListener('DOMContentLoaded', function () {
       var sidenav = document.getElementById("mySidenav");
       var main = document.getElementById("main");
       var body = document.body;
 
-      sidenav.style.width = "0";
+      sidenav.style.width = "170px";
       main.style.marginLeft = "0";
-      body.style.backgroundColor = "white";
     });
-    // Sidenav Push Content w/ opacity
-    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-      console.log('Side nav opened.');
-      document.getElementByID("OpenTriangle")
-    }
-
+  
     // JavaScript function to close the side nav menu
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      // Adjust the element ID as needed
-      document.getElementById("main").style.marginLeft = "0";
-      // Change background color if necessary
-      document.body.style.backgroundColor = "white";
+      const sidenav = document.getElementById("mySidenav");
+      const main = document.getElementById("main");
+      const body = document.body;
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+      body.style.backgroundColor = "transparent";
+      isSideNavOpen = false;
     }
+    function loadLoginPage() {
+      // Load and display the login form when "Logheaza-te" is clicked
+      var formContainer = document.getElementById("content");
+      formContainer.innerHTML = `
+        <!-- Your login form HTML -->
+        <!-- Ensure you load Pagina_Logare.php content here -->
+      `;
+      // Open the side nav menu when showing the form
+      openNav(); 
+    }
+    // Ensure the side nav menu is closed when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidenav = document.getElementById("mySidenav");
+      const main = document.getElementById("main");
+      const body = document.body;
+      sidenav.style.width = "170px";
+      main.style.marginLeft = "0";
+    });
+  
     // Function to show/hide forms based on formId
     function showForm(formId) {
-      var forms = document.getElementsByClassName("form-container");
-      for (var i = 0; i < forms.length; i++) {
+      const forms = document.getElementsByClassName("form-container");
+      for (let i = 0; i < forms.length; i++) {
         forms[i].style.display = "none";
       }
       document.getElementById(formId).style.display = "block";
       openNav(); // Open the side nav menu when showing the form
     }
-
-  </script>
-  </style>
-  <script>
+  
+    // Listen for beforeunload event to close the side navigation before refreshing
+    window.addEventListener('beforeunload', function(event) {
+      closeNav(); // Close the side navigation before unloading the page
+    });
+  
     // Function to load the content dynamically
     function loadPage(pageName, formId) {
       var xhttp = new XMLHttpRequest();
@@ -5634,7 +5708,7 @@
       xhttp.open("GET", pageName, true);
       xhttp.send();
     }
-
+  
     // Function to hide all forms
     function hideAllForms() {
       var forms = document.getElementsByClassName("form-container");
@@ -5643,17 +5717,18 @@
       }
     }
   </script>
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="U:\Plan Afacere\WebSite\Android WebSite\Pagina_Logare.php"
-      onclick="loadPage('U:\Plan Afacere\WebSite\Android WebSite\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
-    <a href="U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php"
-      onclick="loadPage('U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+  
+  
+  <div id="mySidenav" class="sidenav" style="width: 170px;">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+    <a href="#" onclick="loadLoginPage()">Logheaza-te</a>
+    <a href="#" onclick="loadPage('U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
     <a href="#link">Clients</a>
     <a href="#link">Echipa</a>
   </div>
+
   <!-- Using any element to open the sidenav -->
-  <span class="openTriangle" onclick="openNav()">
+  <span class="openTriangle" onclick="toggleNav()">
     <span class="openText" style="margin-top: 30px;"></span>
   </span>
   <!-- Content area to display the page content -->
@@ -5748,8 +5823,7 @@
   <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container"
     style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;">
     <div class="imgcontainer">
-      <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all"
-        alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
+      <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" style="height: 31px; width: 31px;" loading="lazy">
     </div>
     <div class="container-pagina-logare" id="form-container-1"
       style="width: auto; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
