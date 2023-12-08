@@ -1644,6 +1644,10 @@
     /* styles for slideshow-container */
     /* * {box-sizing: border-box} */
     .slideshow-container {
+      max-width: 412px;
+      max-height: 915px;
+      overflow: hidden;
+      margin: auto;
       /* max-width: 100%; */
       margin-right: 400px;
       margin-left: 400px;
@@ -5628,19 +5632,25 @@
   <style>
     /* Add this CSS for smooth transitions */
     #mySidenav {
-      scroll-padding: 400px;
+      scroll-padding: 30px;
       width: 0;
       max-width: 170px;
-      max-height: calc(100vh - 100px); /* Set your desired max height */
-      transition: width 0.5s ease, background-color 0.3s ease; /* Added background-color transition */
+      /* Set your desired max height */
+      max-height: calc(100vh - 100px); 
+      /* Added background-color transition */
+      transition: width 0.5s ease, background-color 0.3s ease; 
       /* Enable vertical scrolling */
       background-color: white;
-      position: fixed; /* Fixed positioning */
-      top: 0; /* Align to the top */
+      /* Fixed positioning */
+      position: fixed; 
+      /* Align to the top */
+      top: 0; 
       /* Initially hide off-screen */
       left: 10px; 
-      z-index: 999; /* Set a high z-index to ensure visibility */
-      pointer-events: none; /* Disable pointer events to prevent scrolling when closed */
+      /* Set a high z-index to ensure visibility */
+      z-index: 999; 
+      /* Disable pointer events to prevent scrolling when closed */
+      pointer-events: none; 
       overflow-y: auto;
       /* Set a maximum height to fit within the viewport */
       max-height: 100vh;
@@ -5703,7 +5713,8 @@
       position: relative;
       width: 0;
       height: 2px;
-      background-color: #ffffffde; /* Change the color to match the effect */
+      /* Change the color to match the effect */
+      background-color: #ffffff; 
       transition: width 0.5s ease-in-out;
       transform-origin: left;
       bottom: 10px;
@@ -5728,19 +5739,24 @@
   <script>
     let touchStartX = 0;
     let touchEndX = 0;
-    let touchStartY = 0;
-    let touchEndY = 0;
     const SWIPE_THRESHOLD = 100;
     let isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
+  
+    function toggleNav() {
+      const body = document.body;
+      body.classList.toggle('sideNavOpened');
+      isSideNavOpen ? closeNav() : openNav();
+      const openTriangle = document.getElementById('openTriangle');
+      openTriangle.classList.toggle('rotate', !isSideNavOpen);
+    }
 
     function toggleNav(element) {
       const body = document.body;
       body.classList.toggle('sideNavOpened');
       isSideNavOpen ? closeNav(element) : openNav(element);
-      const openTriangle = document.getElementById('openTriangle');
-      openTriangle.classList.toggle('rotate', !isSideNavOpen);
+      element.classList.toggle('rotate', !isSideNavOpen);
     }
-
+  
     function closeNav() {
       const body = document.body;
       body.classList.remove('sideNavOpened');
@@ -5756,12 +5772,12 @@
       localStorage.setItem('isSideNavOpen', 'false');
       toggleBodyScrolling(); // Enable body scrolling when side navigation is closed
     }
-
+  
     function toggleBodyScrolling() {
       const body = document.body;
       body.style.overflow = isSideNavOpen ? 'auto' : 'hidden';
     }
-
+  
     function openNav() {
       const body = document.body;
       body.classList.add('sideNavOpened');
@@ -5769,63 +5785,81 @@
       const main = document.getElementById("main");
       const sidenav = document.getElementById("mySidenav");
       sidenav.classList.remove('sideNavOpened');
-
+      
       toggleBodyScrolling(); // Disable body scrolling when side navigation is open
-
+  
       sidenav.style.width = "170px";
       main.style.marginLeft = "170px";
       body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
       body.style.overflowY = "hidden";
-
+  
       localStorage.setItem('isSideNavOpen', 'true');
     }
-
+  
     // Event listeners for touch events
     document.getElementById("mySidenav").addEventListener('touchmove', function(event) {
       event.preventDefault(); // Prevent default scrolling behavior on the main page while side navigation is open
     }, false);
-
+  
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchend', handleTouchEnd, false);
-
+  
     function handleTouchStart(event) {
       const touch = event.touches[0];
       touchStartX = touch.clientX;
       touchStartY = touch.clientY;   
-    }
-
-    function handleTouchEnd(event) {
+     }
+  
+     function handleTouchEnd(event) {
       const touch = event.changedTouches[0];
       touchEndX = touch.clientX;
       touchEndY = touch.clientY;
-      handleSwipe(event);
+      handleSwipe();
     }
-
-    function handleSwipe(event) {
+  
+    function handleSwipe() {
+      const SWIPE_THRESHOLD = 50;
       const swipeDistanceX = touchEndX - touchStartX;
       const swipeDistanceY = touchEndY - touchStartY;
       const sidenav = document.getElementById("mySidenav");
       const tableContainer = document.getElementById("tabel-tip-lista-optiuni");
       let isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
 
-      // Function to check if touch event occurred inside a specific element
-      function isTouchInsideElement(event, elementId) {
-        const element = document.getElementById(elementId);
-        const boundingRect = element.getBoundingClientRect();
-        return (
-          event.touches[0].clientX >= boundingRect.left &&
-          event.touches[0].clientX <= boundingRect.right
-        );
+
+      document.getElementById("mySidenav").addEventListener('touchstart', function (event) {
+        touchStartX = event.touches[0].clientX;
+      }, false);
+
+      document.getElementById("mySidenav").addEventListener('touchend', function (event) {
+        touchEndX = event.changedTouches[0].clientX;
+        handleSwipe(event);
+      }, false);
+
+      function handleSwipe(event) {
+        const swipeDistanceX = touchEndX - touchStartX;
+        const sidenav = document.getElementById("mySidenav");
+        const tableContainer = document.getElementById("tabel-tip-lista-optiuni");
+
+        // Determine swipe direction and implement smooth scrolling
+        if (Math.abs(swipeDistanceX) > SWIPE_THRESHOLD) {
+          if (isTouchInsideElement(event, "mySidenav")) {
+            if (swipeDistanceX > 0 && !isSideNavOpen) {
+              openNav(); // Open the side navigation on swipe-to-right
+            } else if (swipeDistanceX < 0 && isSideNavOpen) {
+              closeNav(); // Close the side navigation on swipe-to-left
+            }
+          }
+        }
       }
 
-      // Determine swipe direction and implement smooth scrolling
-      if (Math.abs(swipeDistanceX) > SWIPE_THRESHOLD) {
-        if (isTouchInsideElement(event, "mySidenav")) {
-          if (swipeDistanceX > 0 && !isSideNavOpen) {
-            openNav(); // Open the side navigation on swipe-to-right
-          } else if (swipeDistanceX < 0 && isSideNavOpen) {
-            closeNav(); // Close the side navigation on swipe-to-left
-          }
+        // Function to check if touch event occurred inside a specific element
+        function isTouchInsideElement(event, elementId) {
+          const element = document.getElementById(elementId);
+          const boundingRect = element.getBoundingClientRect();
+          return (
+            event.touches[0].clientX >= boundingRect.left &&
+            event.touches[0].clientX <= boundingRect.right
+          );
         }
       }
 
@@ -5843,22 +5877,113 @@
           });
         }
       }
+
+      if (Math.abs(swipeDistanceX) > SWIPE_THRESHOLD) {
+        if (swipeDistanceX > 0 && !isSideNavOpen) {
+          openNav(); // Open the side navigation on swipe-to-right
+        } else if (swipeDistanceX < 0 && isSideNavOpen) {
+          closeNav(); // Close the side navigation on swipe-to-left
+        }
+      }
+
+      if (
+        (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) ||
+        (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY))
+      ) {
+        event.preventDefault();
+      }
+
+      if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the left when the side navigation is open
+        closeNav();
+      } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the right when the side navigation is closed
+        openNav();
+      }
+
+      if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the left when the side navigation is open
+        sidenav.style.width = "0";
+        tableContainer.style.display = "block";
+      } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the right when the side navigation is closed
+        sidenav.style.width = "170px";
+        tableContainer.style.display = "none";
+      }
+
+      // Function to handle side navigation scrolling
+      function handleSideNavScroll(event) {
+        // Prevent the scroll event from propagating to the main page
+        event.stopPropagation();
+      }
+
+      // Attach the scroll event listener to the side navigation menu
+      document.getElementById("mySidenav").addEventListener('scroll', handleSideNavScroll, false);
+      // Event listener for touch start
+      document.getElementById("mySidenav").addEventListener('touchstart', function(event) {
+        touchStartY = event.touches[0].clientY;
+      }, false);
+      // Event listener for touch end
+      document.getElementById("mySidenav").addEventListener('touchend', function(event) {
+        touchEndY = event.changedTouches[0].clientY;
+        handleSwipe();
+      }, false);
+
+      function preventDefaultTouch(event) {
+       event.preventDefault();
+      }
+      // Add event listeners to prevent the default touch behavior for better touch control
+      document.getElementById("mySidenav").addEventListener('touchmove', preventDefaultTouch, false);
+    
+    
+      // Function to show/hide forms based on formId
+    function showForm(formId) {
+      const forms = document.getElementsByClassName("form-container");
+      for (let i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+      }
+      document.getElementById(formId).style.display = "block";
+      openNav(); // Open the side nav menu when showing the form
     }
-
-    // Function to handle side navigation scrolling
-    function handleSideNavScroll(event) {
-      // Prevent the scroll event from propagating to the main page
-      event.stopPropagation();
+  
+    // Listen for beforeunload event to close the side navigation before refreshing
+    window.addEventListener('beforeunload', function(event) {
+      closeNav(); // Close the side navigation before unloading the page
+    });
+  
+    // Function to load content dynamically
+    function loadPage(pageName, formId) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("content").innerHTML = this.responseText;
+          if (formId) {
+            hideAllForms();
+            document.getElementById(formId).style.display = "block";
+          }
+        }
+      };
+      xhttp.open("GET", pageName, true);
+      xhttp.send();
     }
-
-    // Attach the scroll event listener to the side navigation menu
-    document.getElementById("mySidenav").addEventListener('scroll', handleSideNavScroll, false);
-
-    // Add event listeners to prevent the default touch behavior for better touch control
-    document.getElementById("mySidenav").addEventListener('touchmove', function(event) {
-      event.preventDefault();
-    }, false);
-
+  
+    // Function to hide all forms
+    function hideAllForms() {
+      var forms = document.getElementsByClassName("form-container");
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+      }
+    }
+  
+    // Ensure the side nav menu is closed when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+      var sidenav = document.getElementById("mySidenav");
+      var main = document.getElementById("main");
+      var body = document.body;
+  
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+    });
   </script>
   <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container"
     style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;"
@@ -6001,8 +6126,8 @@
     <style>
       /* Add your CSS styles here */
     .slideshow-container {
-      width: 100%; /* Adjust width for Android devices */
-      height: 60vh; /* Adjust height for Android devices */
+      width: 400px; /* Adjust width for Android devices */
+      height: 400px; /* Adjust height for Android devices */
       position: relative;
       overflow: hidden;
     }
@@ -6012,33 +6137,29 @@
       text-align: center;
       padding: 20px;
       position: absolute;
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
+      width: auto;
+      height: auto;
     }
 
     .mySlides img {
-      width: 100%; /* Resize images to fit the slideshow container */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 10px;
+      /* Resize images to fit the slideshow container */
+      width: 100%; 
+      /* Maintain aspect ratio */
+      height: auto; 
+      border-radius: 2px;
     }
 
     .text {
       color: #fff;
       font-size: 20px;
       position: absolute;
-      bottom: 10px;
+      bottom: 8px;
       left: 50%;
       transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 5px;
-      max-width: 90%;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      padding: 10px 20px;
+      width: 80%;
+      box-sizing: border-box;
     }
 
     .text a {
@@ -6066,7 +6187,7 @@
 
     <div class="mySlides">
       <div class="numbertext">3 / 3</div>
-      <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 3">
+      <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 200px;" alt="Slide 3">
       <div class="text">
         <p>Slide 3 Description. <a href="#">Link</a></p>
       </div>
@@ -6078,42 +6199,50 @@
   </div>
 
   <script>
-    // Add your JavaScript code here
     let slideIndex = 0;
-    showSlides();
-
+    const intervalTime = 3000; // Change slide every 3 seconds
+  
     function showSlides() {
       const slides = document.getElementsByClassName("mySlides");
       const textDescriptions = ["Slide 1 Description. <a href='#'>Link</a>", "Slide 2 Description. <a href='#'>Link</a>", "Slide 3 Description. <a href='#'>Link</a>"];
-
-      Array.from(slides).forEach(slide => {
-        slide.style.opacity = 0;
-      });
-
+  
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
+  
       slideIndex++;
       if (slideIndex > slides.length) {
         slideIndex = 1;
       }
-
+  
       slides[slideIndex - 1].style.opacity = 1;
       slides[slideIndex - 1].querySelector('.text').innerHTML = textDescriptions[slideIndex - 1];
-
-      setTimeout(() => {
-        showSlides();
-      }, 3000); // Change slide every 3 seconds
+  
+      setTimeout(showSlides, intervalTime);
     }
-
+  
     function plusSlides(n) {
       slideIndex += n;
-      if (slideIndex > document.getElementsByClassName("mySlides").length) {
+      const slides = document.getElementsByClassName("mySlides");
+  
+      if (slideIndex > slides.length) {
         slideIndex = 1;
       } else if (slideIndex < 1) {
-        slideIndex = document.getElementsByClassName("mySlides").length;
+        slideIndex = slides.length;
       }
-
-      showSlides();
+  
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
+  
+      slides[slideIndex - 1].style.opacity = 1;
+      slides[slideIndex - 1].querySelector('.text').innerHTML = textDescriptions[slideIndex - 1];
     }
+  
+    // Initiate the slideshow
+    showSlides();
   </script>
+  
     <script>
     // Get the dropdown content
     const dropdownContent = document.getElementById('continut_acasa_dropdown');
