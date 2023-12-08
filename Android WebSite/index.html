@@ -5677,23 +5677,17 @@
       /* Change the color to your preferred color */
       color: red; 
     }
-    @keyframes rotateTriangle {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(90deg);
-      }
-    }
     .rotate {
       transition: rotateTriangle 0.5s ease;
     }
     /* Add vendor prefixes for broader browser support */
-    @-webkit-keyframes rotateTriangle {
+    @keyframes rotateTriangle {
       from {
+        transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
       }
       to {
+        transform: rotate(90deg);
         -webkit-transform: rotate(90deg);
       }
     }
@@ -5721,7 +5715,7 @@
     }
     </style>
   <!-- Using any element to open the sidenav -->
-  <span class="openTriangle" onclick="toggleNav()" id="openTriangle">
+  <span class="openTriangle rotateTriangle" onclick="toggleNav()" id="openTriangle">
     <span class="openText" style="margin-top: 30px;"></span>
   </span>
   <!-- Content area to display the page content -->
