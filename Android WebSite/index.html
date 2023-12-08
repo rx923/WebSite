@@ -5631,6 +5631,7 @@
       scroll-padding: 400px;
       width: 0;
       max-width: 170px;
+      max-height: calc(100vh - 100px); /* Set your desired max height */
       transition: width 0.5s ease, background-color 0.3s ease; /* Added background-color transition */
       /* Enable vertical scrolling */
       background-color: white;
@@ -5641,6 +5642,7 @@
       z-index: 999; /* Set a high z-index to ensure visibility */
       pointer-events: none; /* Disable pointer events to prevent scrolling when closed */
       overflow-y: auto;
+      overflow-x: auto;
       /* Set a maximum height to fit within the viewport */
       max-height: 100vh;
     }
@@ -5806,26 +5808,26 @@
     }
   
     function handleSwipe() {
+      const SWIPE_THRESHOLD = 50;
+      const swipeDistanceX = touchEndX - touchStartX;
       const swipeDistanceY = touchEndY - touchStartY;
       const sidenav = document.getElementById("mySidenav");
-
       const tableContainer = document.getElementById("tabel-tip-lista-optiuni");
-      // Determine swipe direction and implement smooth scrolling
-        if (Math.abs(swipeDistance) > 50) { // Adjust swipe threshold as needed
-          if (swipeDistance < 0) {
-            sidenav.scrollTo({
-              top: sidenav.scrollTop + window.innerHeight, // Scroll up
-              behavior: 'smooth' // Add smooth scrolling effect
-            });
-          } else {
-            sidenav.scrollTo({
-              top: sidenav.scrollTop - window.innerHeight, // Scroll down
-              behavior: 'smooth' // Add smooth scrolling effect
-            });
-          }
+
+      // Smooth scrolling implementation for vertical swipe
+      if (Math.abs(swipeDistanceY) > SWIPE_THRESHOLD) {
+        if (swipeDistanceY < 0) {
+          sidenav.scrollTo({
+            top: sidenav.scrollTop + window.innerHeight,
+            behavior: 'smooth'
+          });
+        } else {
+          sidenav.scrollTo({
+            top: sidenav.scrollTop - window.innerHeight,
+            behavior: 'smooth'
+          });
         }
       }
-
 
       if (Math.abs(swipeDistanceX) > SWIPE_THRESHOLD) {
         if (swipeDistanceX > 0 && !isSideNavOpen) {
@@ -5850,20 +5852,23 @@
         openNav();
       }
 
-        if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
-          // Swipe to the left when the side navigation is open
-          sidenav.style.width = "0";
-          tableContainer.style.display = "block";
-        } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
-          // Swipe to the right when the side navigation is closed
-          sidenav.style.width = "170px";
-          tableContainer.style.display = "none";
-        }
+      if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the left when the side navigation is open
+        sidenav.style.width = "0";
+        tableContainer.style.display = "block";
+      } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the right when the side navigation is closed
+        sidenav.style.width = "170px";
+        tableContainer.style.display = "none";
+      }
+
       // Function to handle side navigation scrolling
       function handleSideNavScroll(event) {
         // Prevent the scroll event from propagating to the main page
         event.stopPropagation();
       }
+    }
+
 
       // Attach the scroll event listener to the side navigation menu
       document.getElementById("mySidenav").addEventListener('scroll', handleSideNavScroll, false);
