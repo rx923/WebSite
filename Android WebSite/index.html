@@ -53,7 +53,7 @@
         border-width: 1px;
         /* padding: 10px; */
         position: relative;
-        text-shadow: 3px 3px 2px rgb(0 85 127), 0px 0px 25px rgb(116, 46, 46), 0px 0px 5px rgb(255, 255, 255);
+        text-shadow: 3px 3px 2px rgb(0 85 127), 0px 0px 25px rgb(118 88 88 / 67%), 0px 0px 5px rgb(255, 255, 255);
       }
 
       @keyframes flowWaves {
@@ -214,7 +214,7 @@
         background-color: rgb(0 23 137 / 35%);
         border: outset;
         border-width: 0.5vw 0.5vw;
-        border-color: rgb(68, 162, 255);
+        border-color: rgb(68 162 255 / 41%);
         border-radius: 30px;
         left: 0%;
         /* transform: translateX(-50%); */
@@ -244,7 +244,7 @@
 
     #searchInput {
       border: 2px outset rgba(0, 0, 0, 0.2);
-      background-color: rgba(0, 23, 137, 0.35);
+      background-color: rgb(0 23 137 / 25%);
       border-radius: 30px;
       width: 144px;
       position: relative;
@@ -260,7 +260,7 @@
       color: #ccc;
       border: 2px groove rgba(0, 0, 0, 0);
       border-radius: 30px;
-      background: repeating-linear-gradient(22deg, rgb(86 86 255 / 50%) 75%, rgb(0 0 0 / 59%) 80%, rgb(255 0 0 / 16%) 50%);
+      background: repeating-linear-gradient(22deg, rgb(86 86 255 / 50%) 75%, rgb(0 0 0 / 38%) 80%, rgb(255 0 0 / 16%) 50%);
       cursor: pointer;
       width: 90px;
       height: 35px;
@@ -311,10 +311,10 @@
       width: 170px;
       bottom: 175px;
       /* scroll-padding-top: 40%; */
-      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: #05334e;
       scroll-behavior: smooth;
       touch-action: manipulation;
-      border: outset 3px rgb(0 0 0 / 50%);
+      border: outset 3px rgb(91 191 221 / 36%);
       border-radius: 30px;
       /* padding-top: 30px; */
       height: 170px;
@@ -325,7 +325,7 @@
       top: 0px;
       left: 10px;
       margin-bottom: 1px;
-      margin-left: 2px;
+      margin-left: 10px;
       margin-top: 211px;
       margin-right: 1px;
       background: linear-gradient(to top right, rgba(0, 0, 0, 0.5) 39%, #05334e 90%);
@@ -426,9 +426,9 @@
 
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
     #main {
-      border: 2px solid;
-      width: 395px;
-      height: 412px;
+      border: groove;
+      width: 410px;
+      height: 500px;
       position: relative;
       animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
       background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(96 199 251) 70%, rgb(145 255 115) 85%);
@@ -443,7 +443,7 @@
     .openTriangle {
       position: relative;
       outline-color: #000;
-      -webkit-tap-highlight-color: transparent;
+      -webkit-tap-highlight-color: #1c5076;
       transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
       display: inline;
       width: 0;
@@ -842,12 +842,12 @@
       /* border: 1px; */
       left: 130px;
       /* top: 20px; */
-      bottom: 954px;
+      bottom: 947px;
       margin: 11px;
       border-color: rgba(0, 0, 0, 0.5);
       /* border-width: 1px; */
       border-style: groove;
-      background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+      background: linear-gradient(35deg, rgb(255, 255, 255) 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, rgb(255, 255, 255) 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%);
       animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
       border-radius: 30px;
       box-sizing: content-box;
@@ -860,7 +860,7 @@
 
     #menu_produse_top {
       border: groove 1px rgba(0, 0, 0, 0.5);
-      background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
+      background: linear-gradient(35deg, rgb(255, 255, 255) 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, rgb(255, 255, 255) 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%);
       animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
       border-radius: 30px;
       /* box-sizing:content-box; */
@@ -881,7 +881,7 @@
     .menu-container_acasa {
       /* border: 1px; */
       animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
-      background: linear-gradient(35deg, #ffffff 27%, rgb(0, 44, 66)66%, rgb(255, 255, 255) 95%), linear-gradient(105deg, #ffffff 27%, rgb(0, 44, 66)66%, rgb(255, 255, 255) 95%);
+      background: linear-gradient(35deg, #ffffff 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%), linear-gradient(105deg, #ffffff 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%);
       border-color: rgba(0, 0, 0, 0.5);
       border-style: groove;
       border-radius: 30px;
@@ -891,7 +891,7 @@
       margin: 1px;
       height: 170px;
       top: 10px;
-      top: 2028px;
+      top: 2132px;
       list-style-type: none;
       position: fixed;
       display: inline-block;
@@ -993,7 +993,7 @@
       display: inline;
       width: 30px;
       height: 30px;
-      border: 15px groove #ff0000;
+      border: 10px groove rgb(91 191 221 / 36%);
       border-radius: 50px;
       float: left;
       bottom: 10px;
@@ -1002,7 +1002,7 @@
       /* top: 59px; */
       top: 10px;
       /* transform: translateY(-2%); */
-      animation: pulse 2s infinite alternate;
+      animation: pulse 3s infinite alternate;
     }
 
     .table-container_lista_optiuni #tr {
@@ -1252,19 +1252,15 @@
       margin: 0px;
       right: 0px;
       left: 0px;
-      border-radius: 30px;
-      border-style: groove;
-      /* box-sizing: border-box; */
+      /* border-style: groove; */
       position: sticky;
       display: -webkit-inline-box;
       border-radius: 30px;
-      background-color: rgba(0, 0, 0, 0.2);
       padding: 0px;
       padding-left: 20px;
     }
 
     .menu-container_categories .menu-ordered_list_2 .a {
-      color: white;
       text-align: center;
       padding: 3px;
       margin-left: -10px;
@@ -1275,7 +1271,10 @@
     #meniu_ordered_2 {
       /* margin-right: 20px; */
       /* display: block; */
-      background: transparent;
+      position: relative;
+      margin: 10px;
+      top: 5px;
+      background: rgba(0, 0, 0, 0);
     }
 
     h1::after {
@@ -1310,20 +1309,20 @@
     @keyframes pulse {
       0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 0 0 rgb(2 88 143 / 70%);
         /* Add webkit prefix for older iOS devices */
         -webkit-transform: scale(0.95);
       }
 
       50% {
         transform: scale(1.5);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 10px rgb(41 59 152 / 23%);
         -webkit-transform: scale(1);
       }
 
       100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgb(78 148 143 / 95%);
         -webkit-transform: scale(0.95);
       }
     }
@@ -3890,7 +3889,7 @@
         height: 20px;
         margin: 0px;
         padding: 12px;
-        background: linear-gradient(45deg, rgb(103 255 252 / 68%) 40%, rgb(0 170 255 / 42%) 95%);
+        background: linear-gradient(35deg, rgb(215, 214, 214) 30%, rgb(39, 54, 83) 70%);
         border-radius: 20px;
         border: 2px rgba(0, 0, 0, 0.2) groove;
         width: 28px;
@@ -3911,8 +3910,8 @@
       /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
       #main {
         border: 2px solid;
-        width: 500px;
-        height: 500px;
+        width: 520px;
+        height: 520px;
         position: relative;
         animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
         background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(96 199 251) 70%, rgb(145 255 115) 85%);
@@ -3920,7 +3919,7 @@
 
       /* Page content */
       .main {
-        margin-left: 200px;
+        margin-left: 10px;
         /* Same as the width of the sidenav */
       }
 
@@ -5648,19 +5647,20 @@
   
     #main {
       margin-left: 0px;
-      transition: margin-left 0.3s ease;
+      transition: margin-left 0.1s ease;
     }
     .sideNavOpened #mySidenav {
      width: 170px;
      left: 0; /* Move into view */
      background-color: transparent;
-     pointer-events: auto; /* Enable pointer events to allow scrolling within the menu */
+     /* Enable pointer events to allow scrolling within the menu */
+     pointer-events: auto; 
     }
     .sideNavOpened #main {
-     margin-left: 170px;
+     margin-left: 20px;
     }
   </style>
-  <div id="mySidenav" class="sidenav" style="width: 170px;">
+  <div id="mySidenav" class="sidenav" style="width: 170px; position: -webkit-sticky;">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
     <a href="#" onclick="loadLoginPage()">Logheaza-te</a>
     <a href="#" onclick="loadPage('U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
@@ -5793,34 +5793,98 @@
     document.addEventListener('touchend', handleTouchEnd, false);
   
     function handleTouchStart(event) {
-      touchStartX = event.touches[0].clientX;
-    }
+      const touch = event.touches[0];
+      touchStartX = touch.clientX;
+      touchStartY = touch.clientY;   
+     }
   
-    function handleTouchEnd(event) {
-      touchEndX = event.changedTouches[0].clientX;
+     function handleTouchEnd(event) {
+      const touch = event.changedTouches[0];
+      touchEndX = touch.clientX;
+      touchEndY = touch.clientY;
       handleSwipe();
     }
   
     function handleSwipe() {
-      const swipeDistance = touchEndX - touchStartX;
-      if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance > 0 && !isSideNavOpen) {
-        openNav(); // Open the side navigation on swipe-to-right
-      } else if (Math.abs(swipeDistance) > SWIPE_THRESHOLD && swipeDistance < 0 && isSideNavOpen) {
-        closeNav();
+      const swipeDistanceY = touchEndY - touchStartY;
+      const sidenav = document.getElementById("mySidenav");
+
+      const tableContainer = document.getElementById("tabel-tip-lista-optiuni");
+      // Determine swipe direction and implement smooth scrolling
+        if (Math.abs(swipeDistance) > 50) { // Adjust swipe threshold as needed
+          if (swipeDistance < 0) {
+            sidenav.scrollTo({
+              top: sidenav.scrollTop + window.innerHeight, // Scroll up
+              behavior: 'smooth' // Add smooth scrolling effect
+            });
+          } else {
+            sidenav.scrollTo({
+              top: sidenav.scrollTop - window.innerHeight, // Scroll down
+              behavior: 'smooth' // Add smooth scrolling effect
+            });
+          }
+        }
       }
-    }
-  
-    // JavaScript function to load the login page content
-    function loadLoginPage() {
-      var formContainer = document.getElementById("content");
-      formContainer.innerHTML = `
-        <!-- Your login form HTML -->
-        <!-- Ensure you load Pagina_Logare.php content here -->
-      `;
-      openNav(); // Open the side nav menu when showing the form
-    }
-  
-    // Function to show/hide forms based on formId
+
+
+      if (Math.abs(swipeDistanceX) > SWIPE_THRESHOLD) {
+        if (swipeDistanceX > 0 && !isSideNavOpen) {
+          openNav(); // Open the side navigation on swipe-to-right
+        } else if (swipeDistanceX < 0 && isSideNavOpen) {
+          closeNav(); // Close the side navigation on swipe-to-left
+        }
+      }
+
+      if (
+        (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) ||
+        (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY))
+      ) {
+        event.preventDefault();
+      }
+
+      if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the left when the side navigation is open
+        closeNav();
+      } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+        // Swipe to the right when the side navigation is closed
+        openNav();
+      }
+
+        if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+          // Swipe to the left when the side navigation is open
+          sidenav.style.width = "0";
+          tableContainer.style.display = "block";
+        } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
+          // Swipe to the right when the side navigation is closed
+          sidenav.style.width = "170px";
+          tableContainer.style.display = "none";
+        }
+      // Function to handle side navigation scrolling
+      function handleSideNavScroll(event) {
+        // Prevent the scroll event from propagating to the main page
+        event.stopPropagation();
+      }
+
+      // Attach the scroll event listener to the side navigation menu
+      document.getElementById("mySidenav").addEventListener('scroll', handleSideNavScroll, false);
+      // Event listener for touch start
+      document.getElementById("mySidenav").addEventListener('touchstart', function(event) {
+        touchStartY = event.touches[0].clientY;
+      }, false);
+      // Event listener for touch end
+      document.getElementById("mySidenav").addEventListener('touchend', function(event) {
+        touchEndY = event.changedTouches[0].clientY;
+        handleSwipe();
+      }, false);
+
+      function preventDefaultTouch(event) {
+       event.preventDefault();
+      }
+      // Add event listeners to prevent the default touch behavior for better touch control
+      document.getElementById("mySidenav").addEventListener('touchmove', preventDefaultTouch, false);
+    
+    
+      // Function to show/hide forms based on formId
     function showForm(formId) {
       const forms = document.getElementsByClassName("form-container");
       for (let i = 0; i < forms.length; i++) {
@@ -6235,6 +6299,7 @@
         display: inline-block;
         width: fit-content;
         right: 10px;
+        top: 9px;
       }
 
       .dropdown-list_items_2:hover #Categorii_Produse_1_dropdown {
@@ -6412,17 +6477,30 @@
       <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
         <h4 style="text-align: center; border: groove 2px black; border-radius: 20px; background-color: #05334e;">Sectiunea Stanga</h4>
         <div class="slideshow" id="leftSlideshow">
-          <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" loading="lazy" style="margin: 1px; height: 120px; width: 90px; width: 159px; border-radius: 20px; border: 1px solid #000;">
-          <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg" alt="Cafea, Ceașcă, Cofeină, Espresso" loading="lazy" style="margin: 1px; height: 120px; width: 90px; width: 159px; border-radius: 20px; border: 1px solid #000;">
-          <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg" alt="Cafea, Ceașcă, Halbă, Mic Dejun" loading="lazy" style="margin: 1px; height: 120px; width: 90px; width: 159px; border-radius: 20px; border: 1px solid #000;">
+          <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" loading="lazy" style="margin: 1px; height: 220px; width: 159px; border-radius: 20px; border: 1px solid #000;">
+          <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg" alt="Cafea, Ceașcă, Cofeină, Espresso" loading="lazy" style="margin: 1px; height: 120px; width: 159px; border-radius: 20px; border: 1px solid #000;">
+          <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg" alt="Cafea, Ceașcă, Halbă, Mic Dejun" loading="lazy" style="margin: 1px; height: 220px; width: 159px; border-radius: 20px; border: 1px solid #000;">
         </div>
       </div>
       <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
         <h5 style="text-align: center; border: groove 2px black; border-radius: 20px; background-color: #05334e;">Sectiunea Dreapta</h5>
         <div class="slideshow" id="rightSlideshow">
-          <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" loading="eager" style="margin: 1px; height: 120px; width: 90px; width: 159px; border-radius: 20px; border: 1px solid #000;">
-          <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Cafea, Ceașcă, Cappuccino, Latte" loading="eager" style="margin: 1px; height: 120px; width: 90px; width: 159px; border-radius: 20px; border: 1px solid #000;">
-          <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" loading="eager" style="margin: 1px; height: 120px; width: 90px; width: 159px; border-radius: 20px; border: 1px solid #000;">
+          <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" loading="eager" style="margin: 1px; 
+          height: 220px; 
+          width: 159px; 
+          border-radius: 20px; 
+          border: 1px solid #000;">
+          <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Cafea, Ceașcă, Cappuccino, Latte" loading="eager" style="margin: 1px; 
+          height: 220px; 
+          width: 159px; 
+          width: 159px; 
+          border-radius: 20px; 
+          border: 1px solid #000;">
+          <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" loading="eager" style="margin: 1px; 
+          height: 220px; 
+          width: 159px; 
+          border-radius: 20px; 
+          border: 1px solid #000;">
         </div>
       </div>
     </div>
