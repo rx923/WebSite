@@ -5669,9 +5669,7 @@
   </div>
 
   <style>
-    .rotate {
-      transition: transform 0.5s ease;
-    }
+    
     .openTriangle.rotate {
       transform-origin: center;
       /* Rotate 90 degrees to the right */
@@ -5679,10 +5677,35 @@
       /* Change the color to your preferred color */
       color: red; 
     }
+    @keyframes rotateTriangle {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(90deg);
+      }
+    }
+    .rotate {
+      transition: rotateTriangle 0.5s ease;
+    }
+    /* Add vendor prefixes for broader browser support */
+    @-webkit-keyframes rotateTriangle {
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(90deg);
+      }
+    }
+    /* Define the rotation transformation */
+    .rotate.openTriangle {
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+    }
     /* New CSS for drawing a line */
     .openTriangle::before {
       content: '';
-      position: absolute;
+      position: relative;
       width: 0;
       height: 2px;
       background-color: white; /* Change the color to match the effect */
@@ -5719,6 +5742,13 @@
       isSideNavOpen ? closeNav() : openNav();
       const openTriangle = document.getElementById('openTriangle');
       openTriangle.classList.toggle('rotate', !isSideNavOpen);
+    }
+
+    function toggleNav(element) {
+      const body = document.body;
+      body.classList.toggle('sideNavOpened');
+      isSideNavOpen ? closeNav(element) : openNav(element);
+      element.classList.toggle('rotate', !isSideNavOpen);
     }
   
     function closeNav() {
