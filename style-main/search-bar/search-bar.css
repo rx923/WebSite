@@ -4,21 +4,21 @@
     color: rgb(0, 0, 0);
     background-color: rgb(0, 23, 137);
     border: outset;
-    border-width: 0.5vw 0.5vw;
-    border-color: rgb(68, 162, 255);
+    border-width: 0.2vw 0.3vw;
+    border-color: rgb(195, 196, 91);
     border-radius: 30px;
     /* Center the search bar horizontally */
-    left: 231px;
+    left: 900px;
     /* Adjust to properly center */
     /* transform: translateX(-50%);  */
-    z-index: 1;
+    z-index: 999;
     cursor: pointer;
     /* display: ruby-base-container; */
     /* Set the width of the search bar */
     /* Set maximum width if needed *
     /* Adjust top position */
     transform: translateY(-300%);
-    top: 270px;
+    top: 240px;
     margin-top: 0px;
     margin-bottom: 20px; 
     /* Use block level element */
@@ -27,7 +27,7 @@
     /* Center align the content */
     /* text-align: center; */
     /* Center the block element */
-    margin:0px;
+    margin:10px;
 
 }
   
@@ -42,7 +42,7 @@
 }
 
 #introducere-text-bara-de-cautare-principala {
-    width: 500px;
+    width: 380px;
     padding-bottom: 2px;
 }
 
@@ -54,7 +54,6 @@
     background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
     cursor: pointer;
     /* Adjust button width */
-    width: 200px; 
-    max-width: 100px; /* Set maximum width if needed */
-    height: 40px;
+    max-width: 110px; /* Set maximum width if needed */
+    height: 20px;
 }

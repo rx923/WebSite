@@ -82,7 +82,7 @@
       <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
   </head>
   
-  <body style="background: linear-gradient(23deg, #847f81  23%, #bfbaa0 70%, #85bccf  85%); scroll-behavior: smooth; scrollbar-shadow-color: #04AA6D;">
+  <body style="background: linear-gradient(23deg, #ffffff  23%, #ff9900 70%, #ffffff  85%); scroll-behavior: smooth; scrollbar-shadow-color: #04AA6D;">
     <div class="container" onclick="toggleMenu()">
       <div class="bar1"></div>
       <div class="bar2"></div>
@@ -117,7 +117,7 @@
       });
     </script>
     <header>
-      <h1 style="text-align: center; 
+      <h1 style="text-align: left;
                   border:1px; 
                   border-style: groove;
                   mask-border-mode: luminance; 
@@ -125,7 +125,8 @@
                   border-width: 1px;
                   border-radius: 30px;
                   margin-right: 250px; 
-                  margin-left: 250px; 
+                  margin-left: 0px;
+                  max-width:max-content; 
                   background: linear-gradient(26deg, #5d4a4a 23%, #f2f2ef 70%, #222232) 85%;
                   margin-bottom: 20px;
                   -webkit-text-size-adjust: auto;
@@ -182,12 +183,12 @@
         <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Nume persoana 3: Asociat 2
           </div>
       </div>
-      <div class = "tr" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px;">
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px;">Centru Comercial Locatie: Bucuresti
+      <div class = "tr" style="background-color: white; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; ">
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Centru Comercial Locatie: Bucuresti
         </div>
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px;">Nume persoana: Centru Comercial - Persoana 1, 2, 3
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Nume persoana: Centru Comercial - Persoana 1, 2, 3
         </div>
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px;">Tara: Romania
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Tara: Romania
         </div>
       </div>
     </div>
@@ -240,7 +241,7 @@
       <footer>
         
         <div class="chat-popup" id="myForm">
-          <form action="/support_page.php" class="form-container" method="get" style="border: 2px solid; border-color: black; background-color: whitesmoke;">
+          <form action="/support_page.php" class="form-container" method="get" style="border: 2px groove; border-color: black; background-color: whitesmoke;">
             <h1>Chat</h1>
         
             <label for="msg"><b>Message</b></label>

@@ -7,13 +7,14 @@
     border-style: groove;
     border-radius: 20px;
     width: 400px;
-    margin-left: 300px;
+    margin-left: 200px;
     margin-right: auto;
     list-style-type: none;
-    position: sticky;
+    position: relative;
     display:inline-block;
     margin-left: 12px;
 }
+
 .menu-container_categories .menu-ordered_list_2 {
     list-style-type: none;
     text-align: center;
