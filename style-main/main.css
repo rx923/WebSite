@@ -821,7 +821,7 @@ header {
 
 
 h1 {
-    background: linear-gradient(55deg, #ffffff 21%,rgb(0, 124, 161)31%, #46a7bf 85%); 
+    background: linear-gradient(55deg, #ffffff 21%, rgb(105, 111, 113)31% rgb(223, 246, 155) 85%); 
     max-width: auto;
     /* max-height: 270px;  */
     margin-left: 40px; 
