@@ -211,7 +211,7 @@
         padding: 1px;
         color: rgb(0, 0, 0);
         -webkit-tap-highlight-color: transparent;
-        background-color: rgb(0 23 137 / 35%);
+        background-color: rgb(0, 62, 138);
         border: outset;
         border-width: 0.5vw 0.5vw;
         border-color: rgb(68 162 255 / 41%);
@@ -328,7 +328,7 @@
       margin-left: 10px;
       margin-top: 211px;
       margin-right: 1px;
-      background: linear-gradient(to top right, rgba(0, 0, 0, 0.5) 39%, #05334e 90%);
+      background: linear-gradient(to top right, rgba(255, 255, 255, 0.65) 39%, rgb(223, 223, 71) 90%);
       overflow-x: scroll;
       padding-top: 10px;
       transition: 0.9s;
@@ -414,7 +414,7 @@
 
     .form-container {
       display: none;
-      width: 40%;
+      
       /* Set the width of the form container */
       margin: 50px auto;
       /* Center the form */
@@ -426,18 +426,11 @@
 
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
     #main {
-      border: groove;
       width: 410px;
       height: 500px;
       position: relative;
       animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
-      background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(96 199 251) 70%, rgb(145 255 115) 85%);
-    }
-
-    /* Page content */
-    .main {
-      /* Same as the width of the sidenav */
-      margin-left: 200px;
+      background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(0, 77, 115) 70%, rgb(255, 255, 255) 85%);
     }
 
     .openTriangle {
@@ -828,7 +821,7 @@
 
     #tabel-tip-lista-optiuni {
       bottom: 500px;
-      background: #1b83d542;
+      background: rgba(0, 0, 0, 0.5);
       max-width: fit-content;
       border-radius: 35px;
       border: 3px outset rgba(0, 0, 0, 0.5);
@@ -840,7 +833,7 @@
     /* Style for main page containers: */
     #Menu_Categories {
       /* border: 1px; */
-      left: 130px;
+      left: 125px;
       /* top: 20px; */
       bottom: 947px;
       margin: 11px;
@@ -859,13 +852,14 @@
     }
 
     #menu_produse_top {
-      border: groove 1px rgba(0, 0, 0, 0.5);
+      border: groove 3px rgba(0, 0, 0, 0.5);
       background: linear-gradient(35deg, rgb(255, 255, 255) 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, rgb(255, 255, 255) 27%, rgb(0, 170, 255)66%, rgb(255, 255, 255) 95%);
       animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
       border-radius: 30px;
       /* box-sizing:content-box; */
       /* box-shadow: wheat; */
       width: 120px;
+      left: 10px;
       height: 170px;
       /* margin: 50px; */
       list-style-type: none;
@@ -887,11 +881,10 @@
       border-radius: 30px;
       box-sizing: content-box;
       /* box-shadow: wheat; */
-      width: 130px;
+      width: 120px;
       margin: 1px;
       height: 170px;
-      top: 10px;
-      top: 2132px;
+      top: 1972px;
       list-style-type: none;
       position: fixed;
       display: inline-block;
@@ -1954,7 +1947,7 @@
         padding: 1px;
         color: rgb(0, 0, 0);
         -webkit-tap-highlight-color: transparent;
-        background-color: rgb(0 23 137 / 35%);
+        background-color: rgb(0, 62, 138);
         border: outset;
         border-width: 0.5vw 0.5vw;
         border-color: rgb(68, 162, 255);
@@ -2101,20 +2094,20 @@
         scroll-behavior: smooth;
         /* padding: 20px; */
         font-size: 10px;
-        color: rgb(0, 170, 255);
+        color: rgb(0, 0, 0);
         border: 3px groove #05334e;
         display: block;
         padding: 5px;
-        transition: 5s;
+        transition: 2s;
         border-radius: 30px;
-        background: linear-gradient(to top right, #0f1515de 39%, #05334e 90%);
-      }
+        background: black; 
+     }
 
       /* The side navigation menu */
       /* The navigation menu links */
       /* When you mouse over the navigation links, change their color */
       .sidenav a:hover {
-        color: #00e1ff;
+        color: #006370;
       }
 
       /* Highlight the current link */
@@ -2178,12 +2171,11 @@
 
       /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
       #main {
-        border: 2px solid;
-        width: 500px;
+        width: 410px;
         height: 500px;
         position: relative;
         animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
-        background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(96 199 251) 70%, rgb(145 255 115) 85%);
+        background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(0, 77, 115) 70%, rgb(255, 255, 255) 85%);
       }
 
       /* Page content */
@@ -2643,9 +2635,8 @@
         border-color: rgb(59, 42, 42);
       }
       #menu_produse_top {
-        border: 1px;
+        border: 3px;
         border-color: #00171f;
-        border-width: 1px;
         border-style: groove;
         background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
         animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
@@ -3689,7 +3680,7 @@
         padding: 1px;
         color: rgb(0, 0, 0);
         -webkit-tap-highlight-color: transparent;
-        background-color: rgb(0 23 137 / 35%);
+        background-color: rgb(0, 62, 138);
         border: outset;
         border-width: 0.5vw 0.5vw;
         border-color: rgb(68, 162, 255);
@@ -3836,13 +3827,13 @@
         scroll-behavior: smooth;
         /* padding: 20px; */
         font-size: 10px;
-        color: rgb(0, 170, 255);
+        color: rgb(0, 0, 0);
         border: 3px groove #05334e;
         display: block;
         padding: 5px;
-        transition: 5s;
+        transition: 2s;
         border-radius: 30px;
-        background: linear-gradient(to top right, #0f1515de 39%, #05334e 90%);
+        background: black; 
       }
 
       /* The side navigation menu */
@@ -3913,9 +3904,8 @@
 
       /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
       #main {
-        border: 2px solid;
-        width: 520px;
-        height: 520px;
+        width: 410px;
+        height: 500px;
         position: relative;
         animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
         background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(96 199 251) 70%, rgb(145 255 115) 85%);
@@ -4326,7 +4316,7 @@
 
       #tabel-tip-lista-optiuni {
         bottom: 500px;
-        background: #1b83d542;
+        background: rgba(0, 0, 0, 0.5);
         max-width: fit-content;
         border-radius: 35px;
         border: 3px outset rgba(0, 0, 0, 0.5);
@@ -4355,9 +4345,8 @@
       }
 
       #menu_produse_top {
-        border: 1px;
+        border: 3px;
         border-color: #ffffff;
-        border-width: 1px;
         border-style: groove;
         background: linear-gradient(35deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%), linear-gradient(145deg, #cecece 27%, rgb(0, 85, 127)66%, rgb(255, 255, 255) 95%);
         animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
@@ -5656,10 +5645,6 @@
       max-height: 100vh;
     }
   
-    #main {
-      margin-left: 0px;
-      transition: margin-left 0.1s ease;
-    }
     .sideNavOpened #mySidenav {
      width: 170px;
      left: 0; /* Move into view */
@@ -5667,9 +5652,7 @@
      /* Enable pointer events to allow scrolling within the menu */
      pointer-events: auto; 
     }
-    .sideNavOpened #main {
-     margin-left: 20px;
-    }
+
   </style>
   <div id="mySidenav" class="sidenav" style="width: 170px; position: -webkit-sticky;">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
@@ -5725,9 +5708,70 @@
       width: 100%;
       transition-delay: 0.3s; /* Adjust the delay as needed */
     }
+
+    .popup {
+      width: 250px;
+      height: 250px;
+      border-radius: 30px;
+      background: linear-gradient(38deg, rgb(255, 255, 255) 35%, rgba(0, 0, 0, 0.5) 70%, #05334e) 80%;
+      top: 50px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      z-index: 9999;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+    .popup .popup-content {
+      /* Added to establish a positioning context for the close button */
+      position: relative; 
+    }
+
+    .popup .form-container {
+      background-color: transparent;
+      /* Existing styles */
+    }
+        /* Adjustments for the form elements */
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      color: white;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+      width: 340px;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .form-container button {
+      width: 340px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: #537d8b;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .form-container button:hover {
+      background-color: #003d51;
+    }
+
+    .container {
+      text-align: center;
+    }
     </style>
   <!-- Using any element to open the sidenav -->
-  <span class="openTriangle rotateTriangle" onclick="toggleNav()" id="openTriangle">
+    <span class="openTriangle rotateTriangle" onclick="toggleNav()" id="openTriangle">
     <span class="openText" style="margin-top: 30px;"></span>
   </span>
   <!-- Content area to display the page content -->
@@ -5736,392 +5780,403 @@
     <div id="main">
     </div>
   </div>
-  <script>
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const SWIPE_THRESHOLD = 100;
-    let isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
-  
-    function toggleNav() {
-      const body = document.body;
-      body.classList.toggle('sideNavOpened');
-      isSideNavOpen ? closeNav() : openNav();
-      const openTriangle = document.getElementById('openTriangle');
-      openTriangle.classList.toggle('rotate', !isSideNavOpen);
+
+  <style>
+  /* Default styles for the form container */
+  /* Default styles for the form container */
+  .form-container {
+      display: none;
+      width: 250px;
+      height: 250px;
+      overflow: auto;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000; /* Ensure forms are on top of other elements */
     }
 
-    function toggleNav(element) {
-      const body = document.body;
-      body.classList.toggle('sideNavOpened');
-      isSideNavOpen ? closeNav(element) : openNav(element);
-      element.classList.toggle('rotate', !isSideNavOpen);
+  /* Media query for smaller screens like Android and iOS devices */
+    @media only screen and (max-device-height: 915px) and (max-device-width: 412px) {
+      .form-container {
+        display: none;
+        width: 250px;
+        height: 250px;
+        overflow: auto;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000; /* Ensure forms are on top of other elements */
+      }
     }
-  
-    function closeNav() {
-      const body = document.body;
-      body.classList.remove('sideNavOpened');
-      const sidenav = document.getElementById("mySidenav");
-      const main = document.getElementById("main");
 
-      sidenav.style.width = "0";
-      main.style.marginLeft = "0";
-      body.style.backgroundColor = "steelblue";
-      body.style.overflowY = "auto";
-
-      isSideNavOpen = false;
-      localStorage.setItem('isSideNavOpen', 'false');
-      toggleBodyScrolling(); // Enable body scrolling when side navigation is closed
+    /* Media query for smaller screens like Android and iOS devices */
+    @media only screen and (max-device-height: 915px) and (max-device-width: 412px) {
+      .form-container {
+        display: none;
+        width: 250px;
+        height: 250px;
+        overflow: auto;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000; /* Ensure forms are on top of other elements */
+      }
     }
-  
-    function toggleBodyScrolling() {
-      const body = document.body;
-      body.style.overflow = isSideNavOpen ? 'auto' : 'hidden';
-    }
-  
-    function openNav() {
-      const body = document.body;
-      body.classList.add('sideNavOpened');
-      isSideNavOpen = true;
-      const main = document.getElementById("main");
-      const sidenav = document.getElementById("mySidenav");
-      sidenav.classList.remove('sideNavOpened');
-      
-      toggleBodyScrolling(); // Disable body scrolling when side navigation is open
-  
-      sidenav.style.width = "170px";
-      main.style.marginLeft = "170px";
-      body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-      body.style.overflowY = "hidden";
-  
-      localStorage.setItem('isSideNavOpen', 'true');
-    }
-  
-    // Event listeners for touch events
-    document.getElementById("mySidenav").addEventListener('touchmove', function(event) {
-      event.preventDefault(); // Prevent default scrolling behavior on the main page while side navigation is open
-    }, false);
-  
-    document.addEventListener('touchstart', handleTouchStart, false);
-    document.addEventListener('touchend', handleTouchEnd, false);
-  
-    function handleTouchStart(event) {
-      const touch = event.touches[0];
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;   
-     }
-  
-     function handleTouchEnd(event) {
-      const touch = event.changedTouches[0];
-      touchEndX = touch.clientX;
-      touchEndY = touch.clientY;
-      handleSwipe();
-    }
-  
-    function handleSwipe() {
-      const SWIPE_THRESHOLD = 50;
-      const swipeDistanceX = touchEndX - touchStartX;
-      const swipeDistanceY = touchEndY - touchStartY;
-      const sidenav = document.getElementById("mySidenav");
-      const tableContainer = document.getElementById("tabel-tip-lista-optiuni");
-      let isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
+  </style>
+  <div class="form-container" id="InregistrareFormContainer" style="display: none;">
+    <span class="closebtn" onclick="closeInregistrareForm()">&times;</span>
+    <form action="U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.html" id="InregistrareForm" method="post">
+      <div style="border: 1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;">
+        <h2>Inregistrare</h2>
+        <audio id="clickSound" src="U:\Plan Afacere\WebSite\Sound files\Sound for Login menu\melancholy-ui-chime-47804.mp3"></audio>
+        <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
+        <label for="email">
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Email</b>
+        </label>
+        <input type="text" placeholder="Introdu adresa de Email" name="email" required>
+        <label for="psw">
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Parola</b>
+        </label>
+        <input type="password" placeholder="Introdu Parola:" name="psw" required>
+        <label for="psw-repeat">
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Repeta Parola</b>
+        </label>
+        <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"
+            style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine minte datele de conectare
+        </label>
+        <p>Creandu-ti un cont, esti de acord cu
+          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%">Termenele & Conditiile</a>.
+        </p>
+        <div class="clearfix">
+          <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza</button>
+          <button type="submit" class="signupbtn" style="background: linear-gradient(35deg, #ffefde 55%,rgb(58, 155, 188)70%, #00171f) 80%;">Inregistreaza-te</button>
+        </div>
+        <!-- Close button -->
+        <span class="close-btn" onclick="closeInregistrarePage()">&times;</span>
+      </div>
+    </form>
+    <div>
+    <script>
+      class SwipeHandler {
+        constructor() {
+          this.touchStartX = 0;
+          this.touchStartY = 0;
+          this.touchEndX = 0;
+          this.touchEndY = 0;
+          this.SWIPE_THRESHOLD = 6500;
+        }
+    
+        handleTouchStart(event) {
+          const touch = event.touches[0];
+          this.touchStartX = touch.clientX;
+          this.touchStartY = touch.clientY;
+        }
+    
+        handleTouchMove(event) {
+          const touch = event.touches[0];
+          this.touchEndX = touch.clientX;
+          this.touchEndY = touch.clientY;
+          this.handleSwipe(event);
+        }
+    
+        handleTouchEnd(event) {
+          const touch = event.changedTouches[0];
+          this.touchEndX = touch.clientX;
+          this.touchEndY = touch.clientY;
+          this.handleSwipe(event);
+        }
+    
+        handleSwipe(event) {
+          const swipeDistanceX = this.touchEndX - this.touchStartX;
+          const swipeDistanceY = this.touchEndY - this.touchStartY;
+          const isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
+    
+          if (Math.abs(swipeDistanceX) > this.SWIPE_THRESHOLD) {
+            sideNavigation.handleHorizontalSwipe(swipeDistanceX, isSideNavOpen);
+          }
+    
+          if (Math.abs(swipeDistanceY) > this.SWIPE_THRESHOLD) {
+            sideNavigation.handleVerticalSwipe(swipeDistanceY);
+          }
+    
+          sideNavigation.handleSwipeDirection(swipeDistanceX, swipeDistanceY, isSideNavOpen);
+        }
+      }
+      class SideNavigation {
+        constructor() {
+          this.isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
+          this.sideNav = document.getElementById("mySidenav");
+          this.sideNavToggleButton = document.getElementById("openTriangle");
+          this.sideNavCloseButton = document.querySelector(".closebtn");
 
+          this.swipeHandler = new SwipeHandler();
 
-      document.getElementById("mySidenav").addEventListener('touchstart', function (event) {
-        touchStartX = event.touches[0].clientX;
-      }, false);
+          this.sideNavToggleButton.addEventListener('click', () => {
+            this.toggleNav();
+          });
 
-      document.getElementById("mySidenav").addEventListener('touchend', function (event) {
-        touchEndX = event.changedTouches[0].clientX;
-        handleSwipe(event);
-      }, false);
+          this.sideNavCloseButton.addEventListener('click', () => {
+            this.closeNav();
+          });
 
-      function handleSwipe(event) {
-        const swipeDistanceX = touchEndX - touchStartX;
-        const sidenav = document.getElementById("mySidenav");
-        const tableContainer = document.getElementById("tabel-tip-lista-optiuni");
+          // Event listeners for touch events
+          document.addEventListener('touchstart', (event) => this.swipeHandler.handleTouchStart(event), false);
+          document.addEventListener('touchmove', (event) => this.swipeHandler.handleTouchMove(event), false);
+          document.addEventListener('touchend', (event) => this.swipeHandler.handleTouchEnd(event), false);
+        }
 
-        // Determine swipe direction and implement smooth scrolling
-        if (Math.abs(swipeDistanceX) > SWIPE_THRESHOLD) {
-          if (isTouchInsideElement(event, "mySidenav")) {
-            if (swipeDistanceX > 0 && !isSideNavOpen) {
-              openNav(); // Open the side navigation on swipe-to-right
-            } else if (swipeDistanceX < 0 && isSideNavOpen) {
-              closeNav(); // Close the side navigation on swipe-to-left
+        toggleNav() {
+          this.isSideNavOpen ? this.closeNav() : this.openNav();
+        }
+
+        closeNav() {
+          document.body.classList.remove('sideNavOpened');
+          this.sideNav.style.width = "0";
+          // Adjust other necessary styles accordingly
+    
+          this.isSideNavOpen = false;
+          localStorage.setItem('isSideNavOpen', 'false');
+          // Enable body scrolling when side navigation is closed
+          toggleBodyScrolling();
+        }
+
+        handleHorizontalSwipe(swipeDistanceX, isSideNavOpen) {
+          if (swipeDistanceX > 0 && !isSideNavOpen) {
+            this.openNav();
+          } else if (swipeDistanceX < 0 && isSideNavOpen) {
+            this.closeNav();
+          }
+        }
+
+        handleVerticalSwipe(swipeDistanceY) {
+          const scrollAmount = swipeDistanceY < 0 ? window.innerHeight : -window.innerHeight;
+          document.documentElement.scrollTo({ top: document.documentElement.scrollTop + scrollAmount, behavior: 'smooth' });
+        }
+
+        handleSwipeDirection(swipeDistanceX, swipeDistanceY, isSideNavOpen) {
+          const swipeThresholdX = Math.abs(swipeDistanceX);
+          const swipeThresholdY = Math.abs(swipeDistanceY);
+    
+          if (isSideNavOpen) {
+            if (swipeDistanceX < 0 && swipeThresholdX > swipeThresholdY) {
+              this.closeNav();
+            } else if (swipeDistanceX > 0 && swipeThresholdX > swipeThresholdY) {
+              event.preventDefault();
+              this.openNav();
+            }
+          } else {
+            if (swipeDistanceX > 0 && swipeThresholdX > swipeThresholdY) {
+              this.openNav();
+            } else if (swipeDistanceX < 0 && swipeThresholdX > swipeThresholdY) {
+              event.preventDefault();
+              this.closeNav();
             }
           }
         }
       }
 
-        // Function to check if touch event occurred inside a specific element
-        function isTouchInsideElement(event, elementId) {
-          const element = document.getElementById(elementId);
-          const boundingRect = element.getBoundingClientRect();
-          return (
-            event.touches[0].clientX >= boundingRect.left &&
-            event.touches[0].clientX <= boundingRect.right
-          );
-        }
-      }
 
-      // Smooth scrolling implementation for vertical swipe
-      if (Math.abs(swipeDistanceY) > SWIPE_THRESHOLD) {
-        if (swipeDistanceY < 0) {
-          sidenav.scrollTo({
-            top: sidenav.scrollTop + window.innerHeight,
-            behavior: 'smooth'
+      class FormHandler {
+        constructor(sideNavigation) {
+          this.sideNavigation = sideNavigation;
+          this.logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
+          this.inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
+
+          this.logheazaTeCloseBtn = document.getElementById('Logheaza-teCloseBtn');
+          this.inregistrareCloseBtn = document.getElementById('InregistrareFormCloseBtn');
+
+          this.addEventListeners();
+        }
+
+        addEventListeners() {
+          this.logheazaTeCloseBtn.addEventListener('click', () => {
+            this.closeForm(this.logheazaTeFormContainer, 'isLogheazaTeFormOpen');
           });
-        } else {
-          sidenav.scrollTo({
-            top: sidenav.scrollTop - window.innerHeight,
-            behavior: 'smooth'
+
+          this.inregistrareCloseBtn.addEventListener('click', () => {
+            this.closeForm(this.inregistrareFormContainer, 'isInregistrareFormOpen');
+          });
+
+          const logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
+          const inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
+
+          logheazaTeFormContainer.addEventListener('click', () => {
+            this.showLogheazaTeForm();
+          });
+
+          inregistrareFormContainer.addEventListener('mouseover', () => {
+            this.showInregistrareForm();
+          });
+
+          logheazaTeFormContainer.addEventListener('touchstart', (event) => {
+            event.preventDefault();
+            this.showLogheazaTeForm();
+          });
+
+          inregistrareFormContainer.addEventListener('touchmove', (event) => {
+            event.preventDefault();
+            this.showInregistrareForm();
+          });
+
+          logheazaTeFormContainer.addEventListener('gesturechange', (event) => {
+            event.preventDefault();
+            this.zoomForm(logheazaTeFormContainer);
+          });
+
+          inregistrareFormContainer.addEventListener('gesturechange', (event) => {
+            event.preventDefault();
+            this.zoomForm(inregistrareFormContainer);
+          });
+
+          this.sideNavigation.sideNavContent.addEventListener('click', (event) => {
+            const targetId = event.target.id;
+
+            if (targetId === 'logheazaTeLink') {
+              this.showForm(this.logheazaTeFormContainer, this.inregistrareFormContainer, 'isLogheazaTeFormOpen');
+            } else if (targetId === 'inregistrareLink') {
+              this.showForm(this.inregistrareFormContainer, this.logheazaTeFormContainer, 'isInregistrareFormOpen');
+            }
           });
         }
-      }
 
-      if (Math.abs(swipeDistanceX) > SWIPE_THRESHOLD) {
-        if (swipeDistanceX > 0 && !isSideNavOpen) {
-          openNav(); // Open the side navigation on swipe-to-right
-        } else if (swipeDistanceX < 0 && isSideNavOpen) {
-          closeNav(); // Close the side navigation on swipe-to-left
+        zoomForm(formContainer) {
+          // Implement zoom functionality here, adjust the form size slightly
+          // Example: Increase or decrease the width and height of the formContainer
+          formContainer.style.width = '260px';
+          formContainer.style.height = '260px';
+          // Add more logic for subtle zooming based on your requirements
         }
-      }
 
-      if (
-        (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) ||
-        (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY))
-      ) {
-        event.preventDefault();
-      }
+        closeForm(formContainer, storageKey) {
+          formContainer.style.display = 'none';
+          localStorage.setItem(storageKey, 'false');
+        }
 
-      if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
-        // Swipe to the left when the side navigation is open
-        closeNav();
-      } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
-        // Swipe to the right when the side navigation is closed
-        openNav();
-      }
-
-      if (isSideNavOpen && swipeDistanceX < 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
-        // Swipe to the left when the side navigation is open
-        sidenav.style.width = "0";
-        tableContainer.style.display = "block";
-      } else if (!isSideNavOpen && swipeDistanceX > 0 && Math.abs(swipeDistanceX) > Math.abs(swipeDistanceY)) {
-        // Swipe to the right when the side navigation is closed
-        sidenav.style.width = "170px";
-        tableContainer.style.display = "none";
-      }
-
-      // Function to handle side navigation scrolling
-      function handleSideNavScroll(event) {
-        // Prevent the scroll event from propagating to the main page
-        event.stopPropagation();
-      }
-
-      // Attach the scroll event listener to the side navigation menu
-      document.getElementById("mySidenav").addEventListener('scroll', handleSideNavScroll, false);
-      // Event listener for touch start
-      document.getElementById("mySidenav").addEventListener('touchstart', function(event) {
-        touchStartY = event.touches[0].clientY;
-      }, false);
-      // Event listener for touch end
-      document.getElementById("mySidenav").addEventListener('touchend', function(event) {
-        touchEndY = event.changedTouches[0].clientY;
-        handleSwipe();
-      }, false);
-
-      function preventDefaultTouch(event) {
-       event.preventDefault();
-      }
-      // Add event listeners to prevent the default touch behavior for better touch control
-      document.getElementById("mySidenav").addEventListener('touchmove', preventDefaultTouch, false);
-    
-    
-      // Function to show/hide forms based on formId
-    function showForm(formId) {
-      const forms = document.getElementsByClassName("form-container");
-      for (let i = 0; i < forms.length; i++) {
-        forms[i].style.display = "none";
-      }
-      document.getElementById(formId).style.display = "block";
-      openNav(); // Open the side nav menu when showing the form
-    }
-  
-    // Listen for beforeunload event to close the side navigation before refreshing
-    window.addEventListener('beforeunload', function(event) {
-      closeNav(); // Close the side navigation before unloading the page
-    });
-  
-    // Function to load content dynamically
-    function loadPage(pageName, formId) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("content").innerHTML = this.responseText;
-          if (formId) {
-            hideAllForms();
-            document.getElementById(formId).style.display = "block";
+        showForm(formToShow, otherFormContainer, storageKey) {
+          if (localStorage.getItem(storageKey) !== 'true') {
+            formToShow.style.display = 'block';
+            otherFormContainer.style.display = 'none';
+            localStorage.setItem(storageKey, 'true');
+          } else {
+            formToShow.style.display = 'none';
+            localStorage.setItem(storageKey, 'false');
           }
         }
-      };
-      xhttp.open("GET", pageName, true);
-      xhttp.send();
-    }
-  
-    // Function to hide all forms
-    function hideAllForms() {
-      var forms = document.getElementsByClassName("form-container");
-      for (var i = 0; i < forms.length; i++) {
-        forms[i].style.display = "none";
+
+        showLogheazaTeForm() {
+          const logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
+          this.closeAllFormsExcept(logheazaTeFormContainer.id);
+          this.showForm(logheazaTeFormContainer, this.sideNavigation);
+          localStorage.setItem('isLogheazaTeFormOpen', 'true');
+        }
+
+        showInregistrareForm() {
+          const inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
+          this.closeAllFormsExcept(inregistrareFormContainer.id);
+          this.showForm(inregistrareFormContainer, this.sideNavigation);
+          localStorage.setItem('isInregistrareFormOpen', 'true');
+        }
+
+        // Rest of the methods remain unchanged...
       }
-    }
-  
-    // Ensure the side nav menu is closed when the page loads
-    document.addEventListener('DOMContentLoaded', function () {
-      var sidenav = document.getElementById("mySidenav");
-      var main = document.getElementById("main");
-      var body = document.body;
-  
-      sidenav.style.width = "0";
-      main.style.marginLeft = "0";
-    });
+
+      const sideNavigation = new SideNavigation();
+      const formHandler = new FormHandler(sideNavigation);
   </script>
-  <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container"
-    style="border:1px solid #000000; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;"
-    method="post">
-    <div class="container_pagina_inregistrare">
-      <a href="U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php" id="my_sound_Link">
-        <h2>Inregistrare</h2>
-      </a>
-      <audio id="clickSound"
-        src="U:\Plan Afacere\WebSite\Sound files\Sound for Login menu\melancholy-ui-chime-47804.mp3"></audio>
-      <script>
-        document.getElementById('my_sound_Link').addEventListener('click', function (event) {
-          event.preventDefault(); // Prevent default anchor behavior (in this case, navigating)
 
-          var audio = document.getElementById('clickSound');
-          audio.currentTime = 0; // Reset audio to start if already playing
-          audio.play();
-
-          setTimeout(function () {
-            audio.pause();
-          }, 6000); // Pause audio after 6 seconds (6000 milliseconds)
-        });
-      </script>
-      <script>
-      </script>
-      <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
-      <label for="email">
-        <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Email
-        </b>
-      </label>
-      <input type="text" placeholder="Introdu adresa de Email" name="email" required>
-      <label for="psw">
-        <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Parola
-        </b>
-      </label>
-      <input type="password" placeholder="Introdu Parola:" name="psw" required>
-      <label for="psw-repeat">
-        <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Repeta
-          Parola
-        </b>
-      </label>
-      <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"
-          style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine
-        minte datele de conectare
-      </label>
-      <p>Creandu-ti un cont, esti de acord cu
-        <a href="#link"
-          style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%">Termenele &
-          Conditiile
-        </a>.
-      </p>
-      <div class="clearfix">
-        <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza
-        </button>
-        <button type="submit" class="signupbtn"
-          style="background: linear-gradient(35deg, #ffefde 55%,rgb(58, 155, 188)70%, #00171f) 80%;">Inregistreaza-te
-        </button>
-      </div>
-    </div>
-  </form>
-  <script>
-      // Function to load the content of Pagina_Inregistrare.php
-      function loadPage(pageName, formId) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("content").innerHTML = this.responseText;
-          }
-          if (formId) {
-            hideAllForms();
-            document.getElementById(formId).style.display = "dropdown";
-            // Add any additional styling manipulations if needed
-            // For example:
-            document.getElementById(formId).classList.add("form-container");
-          }
-        };
-        xhttp.open("GET", pageName, true);
-        xhttp.send();
-      }
-  </script>
-  <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container"
-    style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;">
-    <div class="imgcontainer">
-      <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" style="height: 31px; width: 31px;" loading="lazy">
-    </div>
-    <div class="container-pagina-logare" id="form-container-1"
-      style="width: auto; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
-      <label for="uname">
-        <b
-          style="background:#537d8b; border-style: outset; border-radius: 0px; margin-bottom: 10px; border: 3px; text-align: center; text-wrap: wrap; position: sticky;">Nume
-          Utilizator:</b>
-      </label>
-      <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
-      <label for="password">
-        <b style="background:#537d8b; border-style: outset; border-radius: 20px; border: 2px;">Parola:</b>
-      </label>
-      <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
-      <button type="submit" id="submit-button-form">Logheaza-te</button>
-      <label>
-        <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#444741">
-      <button type="button" class="cancelbtn">Anuleaza</button>
-      <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
-    </div>
-  </form>
-  <script>
-    function validateForm() {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('psw').value;
-      const confirmPassword = document.getElementById('psw-repeat').value;
-
-      // Validate email format
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Introduceti o adresa de email valida');
-        return false;
-      }
-
-      // Validate password length and match
-      if (password.length < 6) {
-        alert('Parola trebuie sa aiba cel putin 6 caractere');
-        return false;
-      }
-
-      if (password !== confirmPassword) {
-        alert('Parolele nu coincid');
-        return false;
-      }
-
-      return true; // Submit the form if validation passes
+  <style>
+    .login-closebtn {
+      position: rela;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
     }
-  </script>
-  
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .popup-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 300px;
+    }
+    </style>
+    <div class="form-container" id="Logheaza-teFormContainer" style="display: none; position: fixed; top: 60px; right: 0; width: 250px; padding: 20px; background-color: #f9f9f9;">
+      <span class="closebtn" onclick="closeForm('Logheaza-teFormContainer')">&times;</span>
+      <!-- Form content -->
+      <form action="U:\Plan Afacere\WebSite\Android WebSite\Pagina_Logare.php" id="Logheaza-teForm" method="post">
+        <!-- Your login form content here -->
+          <div class="imgcontainer">
+              <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" style="height: 31px; width: 31px;" loading="lazy">
+          </div>
+          <div class="container-pagina-logare" id="form-container-1" style="width: auto; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
+              <label for="uname">
+                  <b style="    background: #537d8b;
+                  border-style: outset;
+                  border-radius: 0px;
+                  margin-bottom: 10px;
+                  border: 3px;
+                  text-align: center;
+                  text-wrap: wrap;
+                  position: relative;
+                  left: 110px;">Nume Utilizator:</b>
+              </label>
+              <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
+              <label for="password">
+                  <b style="    background: #537d8b;
+                  border-style: outset;
+                  border-radius: 20px;
+                  border: 2px;
+                  position: relative;
+                  left: 150px;">Parola:</b>
+              </label>
+              <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
+              <button type="submit" id="submit-button-form">Logheaza-te</button>
+              <label>
+                  <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
+              </label>
+          </div>
+          <div class="container" style="width: 200px;background-color: #875050;height: 70px;border-radius: 30px;margin-top: 30px;margin-left: 65px;">
+              <button type="button" class="cancelbtn" style="width: 201px;
+              padding: 5px;
+              border-radius: 10px;
+              border: none;
+              background-color: #537d8b;
+              color: white;
+              cursor: pointer;
+              margin-top: 10px;">Anuleaza</button>
+              <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
+          </div>
+      </form>
+    </div>
+
+
   <nav style="background: #003d51;">
     <style>
       /* Add your CSS styles here */
@@ -6455,8 +6510,8 @@
       .image-container_dropdown_1 img,
       .image-container_dropdown_2 img,
       .image-container_dropdown_3 img {
-        max-width: 180px;
-        height: 120px;
+        max-width: 350px;
+        height: 350px;
       }
 
 
