@@ -11,8 +11,8 @@
     list-style-type: none;
     position: relative;
     display:inline-block;
-    background:linear-gradient(35deg, #ffffff 27%, rgb(1, 112, 168)66%, rgb(255, 255, 255) 75%);
-    animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+    background:linear-gradient(35deg, #ffffff 27%, rgb(245, 255, 63)66%, rgb(255, 255, 255) 75%);
+    animation: flowWaves 1s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
     flex: 1;
     margin-bottom: 0px;
 }

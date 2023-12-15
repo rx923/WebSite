@@ -253,8 +253,6 @@
           
       }
     </style>
-
-
     <style>
       /* Styles for the search bar */
       .search-bar {
@@ -312,7 +310,58 @@
         padding: 5px;
         margin-bottom: 10px;
       }
-      </style>
+    </style>
+    <style>
+      /* CSS for the side navigation menu */
+      .sidenav {
+        height: 100%; /* Set full height */
+        width: 0; /* Initially closed */
+        position: fixed; /* Fixed position */
+        z-index: 1; /* Make sure it appears above everything */
+        top: 0;
+        left: 0;
+        background-color: #111; /* Background color */
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        padding-top: 60px; /* Space for the triangle icon */
+        transition: 0.5s; /* 0.5 second transition */
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      /* Styling for the triangle icon */
+      .openTriangle {
+        cursor: pointer;
+        font-size: 50px;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        color: #875151;
+        transition: 0.7s;
+      }
+
+      .openTriangle:hover::shadow {
+        color: #e85757;
+      }
+    </style>
     <title>Good Store Coffee</title>
 
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all"> -->
@@ -731,121 +780,96 @@
     </script>
     <div id="container_scrolling_for_the_side_nav" class="container">
       <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
-        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php">Logheaza-te</a>
+        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php">Inregistrare</a>
         <a href="#link">Clients</a>
         <a href="#link">Echipa</a>
       </div>
     </div>
-    <script>
-      // Sidenav Overaly Example
-      /* Set the width of the side navigation to 250px */
-      // JavaScript function to toggle the side navigation menu
-      function toggleNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementByID("openText");
-        var openTriangle = document.getElementById(".openTriangle");
-        var body = document.body;
-        var main = document.getElementById("openText");
+    
+    <div class="openTriangle" onclick="openNav()">&#9658;</div>
+  <script>
+    function toggleNav() {
+      var sidenav = document.getElementById("mySidenav");
+      var openText = document.getElementById("openText");
+      var openTriangle = document.querySelector(".openTriangle");
+      var main = document.getElementById("main");
 
-
-        if (sidenav.style.width === "250px") {
-          // Close the side navigation menu
-          sidenav.style.width = "0";
-          setTimeout(function() {
-            openText.innerText="open";
-            openTriangle.classList.remove("closeArrow");
-          }, 500);
-          main.style.marginLeft = "0";
-          console.log('Side nav closed.');
-          // body.style.backgroundColor = "white";
-          // openText.innerText="open";
-        } else {
-          // Open the side navigation menu
-          sidenav.style.width = "250px";
-          setTimeout(function() {
-            openText.innerText = "close";
-            openTriangle.classList.add("closeArrow");
-            // Changing the appearance after 0.5s animation duration
-          }, 500);
-          console.log('Side nav opened.');
-          main.style.marginLeft = "250px";
-          body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-          openText.innerText = "close side navigation menu";
-        }
-      }
-      // Ensure the side nav menu is closed when the page loads
-      document.addEventListener('DOMContentLoaded', function() {
-        var sidenav = document.getElementById("mySidenav");
-        var main = document.getElementById("main");
-        var body = document.body;
-
-        sidenav.style.width = "0";
+      if (sidenav.classList.contains("sideNavOpen")) {
+        sidenav.classList.remove("sideNavOpen");
+        setTimeout(function() {
+          openText.innerText = "";
+          openTriangle.classList.remove("closeArrow");
+        }, 500);
         main.style.marginLeft = "0";
-        body.style.backgroundColor = "white";
-      });
-      // Sidenav Push Content w/ opacity
-      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-      // Function to open the side nav menu when showing the form
-      function openNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementById("openText");
-        var openTriangle = document.querySelector(".openTriangle");
-        var closeArrow = document.querySelector("closeArrow");
-        sidenav.style.width = "250px";
+      } else {
+        sidenav.classList.add("sideNavOpen");
         setTimeout(function() {
           openText.innerText = "close";
           openTriangle.classList.add("closeArrow");
         }, 500);
-        console.log('Side nav opened.');
-
-        openText.innerText = "close side navigation menu";
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        console.log('Side nav opened.');
-        document.getElementByID("OpenTriangle")
+        main.style.marginLeft = "250px"; // Change this value if necessary
+        openText.innerText = "";
       }
-      
-      // JavaScript function to close the side nav menu
-      function closeNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementById("openText");
+    }
 
-        sidenav.style.width = "0";
-        openText.innerText = "open";
-        console.log('Side nav closed.');
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidenav = document.getElementById("mySidenav");
+      var main = document.getElementById("main");
+      var body = document.body;
 
+      sidenav.classList.remove("sideNavOpen");
+      main.style.marginLeft = "0";
+      body.style.backgroundColor = "white";
 
-        document.getElementById("mySidenav").style.width = "0";
-        // Adjust the element ID as needed
-        document.getElementById("main").style.marginLeft = "0"; 
-        // Change background color if necessary
-        document.body.style.backgroundColor = "white"; 
-      }
-        // Function to show/hide forms based on formId
-      function showForm(formId) {
-        var forms = document.getElementsByClassName("form-container");
-        for (var i = 0; i < forms.length; i++) {
-          forms[i].style.display = "none";
+      // Add a click event listener to the document body to close the side nav when clicking outside the menu
+      body.addEventListener('click', function(event) {
+        if (event.target !== sidenav && !sidenav.contains(event.target)) {
+          closeNav();
         }
-        document.getElementById(formId).style.display = "block";
-        // Open the side nav menu when showing the form
-        openNav(); 
+      });
+    });
+
+    function openNav() {
+      var sidenav = document.getElementById("mySidenav");
+      var openText = document.getElementById("openText");
+      var openTriangle = document.querySelector(".openTriangle");
+
+      sidenav.style.width = "400px"; // Update width to 400px
+      setTimeout(function() {
+        openText.innerText = "close";
+        openTriangle.classList.add("closeArrow");
+      }, 500);
+
+      openText.innerText = "";
+      sidenav.classList.add("sideNavOpen");
+      document.getElementById("main").style.marginLeft = "250px"; // Adjust margin if needed
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      var sidenav = document.getElementById("mySidenav");
+
+      if (sidenav.classList.contains("sideNavOpen")) {
+        sidenav.classList.remove("sideNavOpen");
+        sidenav.style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
       }
-    </script>
-    <!-- Using any element to open the sidenav -->
-    <span class="openTriangle" onclick="openNav()">
-      <span class="openText" id="openText">open
-      </span>
-    </span>
-    <!-- Content area to display the page content -->
-    <div id="content">
-      <!-- Adding all page content inside the div if side nav needs to push the page content tot he right -->
-      <div id="main">
-      </div>
-    </div>
+    }
+
+    function showForm(formId) {
+      var forms = document.getElementsByClassName("form-container");
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+      }
+      document.getElementById(formId).style.display = "block";
+      openNav(); 
+    }
+  </script>
+    
+    
 
 
     <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container" method="post">
