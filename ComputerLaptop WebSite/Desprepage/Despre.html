@@ -13,15 +13,15 @@
       <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Desprepage\Despre-Chat-Suport.js" type="text/javascript/js/JavaScript/javascript" media="screen">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
-      <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
-  </head>
-  
-  <body style="background: linear-gradient(23deg, #847f81  23%, #bfbaa0 70%, #85bccf  85%); scroll-behavior: smooth; scrollbar-shadow-color: #04AA6D;">
-    <style>
-    /* Media queries for Android devices */
-      @media only screen and (max-width: 1440px) and (min-height: 2560px),
-        only screen and (max-width: 1080px) and (min-height: 1920px),
-        only screen and (max-width: 1440px) and (min-height: 2960px) {
+
+      <style>
+        /* Your existing default styles outside the media query */
+    
+        @media only screen and (max-width: 1440px) and (min-height: 2560px),
+          only screen and (max-width: 1080px) and (min-height: 1920px),
+          only screen and (max-width: 1440px) and (min-height: 2960px) {
+
+          /* Your adjusted styles within the media query */
           .container {
             display: inline-block;
             cursor: pointer;
@@ -41,88 +41,92 @@
           }
 
           /* Fade out the second bar */
-          .change .bar2 {opacity: 0;}
+          .change .bar2 {
+            opacity: 0;
+          }
+
           /* Rotate last bar */
           .change .bar3 {
             transform: translate(0, -11px) rotate(45deg);
           }
 
-        }
+          /* Dropdown menu styles */
+          .icon-bar {
+            display: none;
+            position: absolute;
+            background-color: #555;
+            width: auto;
+            padding: 10px;
+            border-radius: 5px;
+          }
 
-    /* Media queries for iOS devices */
-      @media only screen and (max-width: 1284px) and (min-height: 2778px),
-        only screen and (max-width: 2532px) and (min-height: 1170px),
-        only screen and (max-width: 1792px) and (min-height: 828px),
-        only screen and (max-width: 1125px) and (min-height: 2436px) 
-        {
-          /* Styles specific to iOS devices */
-          .container {
-            display: inline-block;
-            cursor: pointer;
+          .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 8px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 24px;
+            margin: 5px;
           }
-          .bar1, .bar2, .bar3 {
-            width: 15px;
-            height: 3px;
-            background-color: #333;
-            margin: 6px 0;
-            transition: 0.4s;
+
+          .icon-bar a:hover {
+            background-color: #000;
           }
-          /* Rotate first bar */
-          .change .bar1 {
-            transform: translate(0, 11px) rotate(-45deg);
-          }
-          /* Fade out the second bar */
-          .change .bar2 {opacity: 0;}
-          /* Rotate last bar */
-          .change .bar3 {
-            transform: translate(0, -11px) rotate(45deg);
+
+          .active {
+            background-color: #04AA6D;
           }
         }
-    /* Common styles for small screens (phones, etc.) */
-      @media only screen and (max-width: 767px) {
-        /* Styles for smaller screens */
-        .container {
-            display: inline-block;
-            cursor: pointer;
-          }
-          .bar1, .bar2, .bar3 {
-            width: 12px;
-            height: 2px;
-            background-color: #333;
-            margin: 6px 0;
-            transition: 0.4s;
-          }
-          /* Rotate first bar */
-          .change .bar1 {
-            transform: translate(0, 11px) rotate(-45deg);
-          }
-          /* Fade out the second bar */
-          .change .bar2 {opacity: 0;}
-          /* Rotate last bar */
-          .change .bar3 {
-            transform: translate(0, -11px) rotate(45deg);
-          }
-        }
-    </style>
-    <div class="container" onclick="myFunction(this)">
+      </style>
+      <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
+  </head>
+  
+  <body style="background: linear-gradient(23deg, #ffffff  23%, #ff9900 70%, #ffffff  85%); scroll-behavior: smooth; scrollbar-shadow-color: #04AA6D;">
+    <div class="container" onclick="toggleMenu()">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>
+    <div class="icon-bar" id="iconBar">
+      <a class="active" href="#Link"><i class="fa fa-home"></i></a>
+      <a href="#Link"><i class="fa fa-search"></i></a>
+      <a href="#Link"><i class="fa fa-envelope"></i></a>
+      <a href="#Link"><i class="fa fa-globe"></i></a>
+      <a href="#Link"><i class="fa fa-trash"></i></a>
+    </div>
     <script>
-      function myFunction(x) {
-        x.classList.toggle("change");
+      function toggleMenu() {
+        var iconBar = document.getElementById("iconBar");
+        iconBar.style.display = (iconBar.style.display === "block") ? "none" : "block";
+    
+        // Change the shape of the bars to cross when the menu is open
+        var container = document.querySelector('.container');
+        container.classList.toggle('change');
       }
+    
+      // Event listener for checking if the menu is open
+      document.addEventListener('click', function(event) {
+        var iconBar = document.getElementById("iconBar");
+        var container = document.querySelector('.container');
+    
+        if (!iconBar.contains(event.target) && event.target !== container) {
+          iconBar.style.display = 'none';
+          container.classList.remove('change');
+        }
+      });
     </script>
     <header>
-      <h1 style="text-align: center; 
+      <h1 style="text-align: left;
                   border:1px; 
                   border-style: groove;
                   mask-border-mode: luminance; 
                   border-color: black; 
                   border-width: 1px;
+                  border-radius: 30px;
                   margin-right: 250px; 
-                  margin-left: 250px; 
+                  margin-left: 0px;
+                  max-width:max-content; 
                   background: linear-gradient(26deg, #5d4a4a 23%, #f2f2ef 70%, #222232) 85%;
                   margin-bottom: 20px;
                   -webkit-text-size-adjust: auto;
@@ -146,44 +150,15 @@
           </p>
         </div>
     </header>
+  
 
-    <style>
-      .icon-bar {
-        width: 90px; /* Set a specific width */
-        background-color: #555; /* Dark-grey background */
-      }
-      .icon-bar a {
-        display: block; /* Make the links appear below each other instead of side-by-side */
-        text-align: center; /* Center-align text */
-        padding: 16px; /* Add some padding */
-        transition: all 0.3s ease; /* Add transition for hover effects */
-        color: white; /* White text color */
-        font-size: 36px; /* Increased font-size */
-      }
-
-      .icon-bar a:hover {
-        background-color: #000; /* Add a hover color */
-      }
-
-      .active {
-        background-color: #04AA6D; /* Add an active/current color */
-      }
-      </style>
-    <div class="icon-bar">
-      <a class="active" href="#Link"><i class="fa fa-home"></i></a>
-      <a href="#Link"><i class="fa fa-search"></i></a>
-      <a href="#Link"><i class="fa fa-envelope"></i></a>
-      <a href="#Link"><i class="fa fa-globe"></i></a>
-      <a href="#Link"><i class="fa fa-trash"></i></a>
-    </div>
-
-    <div class="table" style="float:none; border: 1px; border-style: solid; border-color: blue; border-width: 1px; padding: 18px; margin-bottom: 10px; margin-top: 10px;">
-      <div class = "tr" style="border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">
-        <div class = "th" style="border: 1px; border-style: solid; border-color: blue;  padding: 18px; margin-bottom: 10px; margin-top: 10px;">Companie: Nume Companie
+    <div class="table" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; border-width: 1px; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: fit-content">
+      <div class = "tr" style="background-color: white; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px;">
+        <div class = "th" style="background-color: #04AA6D; border: 3px; border-style: groove; border-color: blue;  padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Companie: Nume Companie
           <a href="#Link pentru locatia companiei" style="margin-bottom: 10px; margin-top: 10px; text-align: center;" link="noopener/ noreferrer">Accesseaza Link-ul pentru info.
           </a>
         </div>
-        <div class = "th" style="border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">Contact: Numar de telefon
+        <div class = "th" style="background-color: #04AA6D; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Contact: Numar de telefon
           <title>Suna-ma!</title>
           <style>
             .th {
@@ -196,24 +171,24 @@
           <p>Apasa butonul pentru a suna</p>
             <a href="tel:+0741546550"><button>Suna Acum!</button></a>
           </div>
-        <div class = "th" style="float:none; border: 1px; border-style: solid; border-color: blue;  padding: 18px; margin-bottom: 10px; margin-top: 10px;">Tara: Romania
+        <div class = "th" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue;  padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Tara: Romania
           </div>
       </div>
-      <div class ="tr" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">Nume persoana 1: Owner
+      <div class ="tr" style="background-color: white; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; ">
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Nume persoana 1: Owner
           <a href="#Linkuri Social Media"></a>
           </div>
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">Nume persoana 2: Asociat 1
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Nume persoana 2: Asociat 1
           </div>
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">Nume persoana 3: Asociat 2
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Nume persoana 3: Asociat 2
           </div>
       </div>
-      <div class = "tr" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">Centru Comercial Locatie: Bucuresti
+      <div class = "tr" style="background-color: white; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; ">
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Centru Comercial Locatie: Bucuresti
         </div>
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">Nume persoana: Centru Comercial - Persoana 1, 2, 3
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Nume persoana: Centru Comercial - Persoana 1, 2, 3
         </div>
-        <div class = "td" style="float:none; border: 1px; border-style: solid; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px;">Tara: Romania
+        <div class = "td" style="background-color: #04AA6D; float:none; border: 3px; border-style: groove; border-color: blue; padding: 18px; margin-bottom: 10px; margin-top: 10px; border-radius: 30px; width: 250px">Tara: Romania
         </div>
       </div>
     </div>
@@ -266,7 +241,7 @@
       <footer>
         
         <div class="chat-popup" id="myForm">
-          <form action="/support_page.php" class="form-container" method="get" style="border: 2px solid; border-color: black; background-color: whitesmoke;">
+          <form action="/support_page.php" class="form-container" method="get" style="border: 2px groove; border-color: black; background-color: whitesmoke;">
             <h1>Chat</h1>
         
             <label for="msg"><b>Message</b></label>

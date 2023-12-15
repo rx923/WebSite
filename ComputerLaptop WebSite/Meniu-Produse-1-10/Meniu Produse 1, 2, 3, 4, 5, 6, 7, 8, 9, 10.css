@@ -102,16 +102,16 @@
 }
 .glowing-background {
     border-radius: 20px;
-    background: linear-gradient(20deg, #ffffff 32%, rgb(0, 53, 122)70%, rgb(255, 255, 255) 85%);
+    background: linear-gradient(20deg, #ffffff 32%, rgb(192, 99, 0)70%, rgb(143, 0, 0) 85%);
     background-size: 300% 350%;
-    animation: glowing 3s ease-in-out infinite;
+    animation: glowing 10s ease-in-out infinite;
 }
 .glowing-background {
     transition: box-shadow 1s ease-in-out;
 }
 
 .glowing-background:hover {
-    box-shadow: 10px 0px 10px 0px #0097fb
+    box-shadow: 10px 0px 10px 0px #f6ff00
 }
 
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */

@@ -136,7 +136,33 @@
           color: #f2f2f2;
           font-size: 12px;
           padding: 8px 12px;
-          position: absolute;
+          position: sticky;
+          top: 0;
+        }
+        .numbertext-1 {
+          color: #f2f2f2;
+          padding-top: 10px;
+          max-width: max-content;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: sticky;
+          top: 0;
+        }
+        .numbertext-2 {
+          color: #f2f2f2;
+          max-width: max-content;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: sticky;
+          top: 0;
+        }
+        .numbertext-3 {
+          color: #f2f2f2;
+          max-width: max-content;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: sticky;
+          max-width: fit-content;
           top: 0;
         }
         /* The dots/bullets/indicators */
@@ -227,6 +253,66 @@
           
       }
     </style>
+
+
+    <style>
+      /* Styles for the search bar */
+      .search-bar {
+        border: 3px outset rgb(0, 123, 255);
+        background-color: whitesmoke;
+        border-radius: 25px;
+        width: 500px;
+        padding: 10px;
+        outline: none;
+      }
+  
+      .search-container {
+        padding: 1px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(0, 23, 137);
+        border: outset;
+        border-width: 0.5vw 0.5vw;
+        border-color: rgb(68, 162, 255);
+        border-radius: 30px;
+        left: 231px;
+        transform: translateY(-300%);
+        top: 270px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        display: inline-block;
+        position: absolute;
+        margin: 0px;
+      }
+  
+      .search-button {
+        padding: 2px 4px;
+        color: rgb(255, 255, 255);
+        border: 2px outset;
+        border-radius: 30px;
+        background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
+        cursor: pointer;
+        width: 200px;
+        max-width: 100px;
+        height: 40px;
+      }
+  
+      /* Styles for the dropdown items */
+      .dropdown-container {
+        position: absolute;
+        display: none;
+        background-color: #f5f5dc; /* BlanchedAlmond */
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        padding: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+  
+      .dropdown-item {
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      </style>
     <title>Good Store Coffee</title>
 
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all"> -->
@@ -267,7 +353,7 @@
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Javascript\style.js" type="js/text" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\Javascript\bordered-rectangle.js" type="js/text" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\footer-style\footer.css" type="css/text" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\bordered-rectangle\MAIN-bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css" type="css/text" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\bordered-rectangle\.bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css" type="css/text" media="all">
 
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\container-produse_vandute_de_top_1.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\container-styles\dropdown-container_produse_vandute_de_top_1.css" type="text/css" media="all">
@@ -443,13 +529,149 @@
       window.addEventListener('resize', setCanvasSize);
     </script> -->
     <header>
-
       <h1> Big Store Coffee </h1>
-      <div class="search-bar" id="bara-de-cautare-principala" class="fixed-search-bar">
+      <div class="pulse search-bar" id="bara-de-cautare-principala" class="fixed-search-bar">
         <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala">
-          <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
-        </input>
+        <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
       </div>
+      <script>
+        const searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
+        const searchDropdown = document.createElement('');
+        searchDropdown.id = 'searchDropdown';
+        searchBar.parentElement.appendChild(searchDropdown);
+        let previousSearches = [];
+        let totalDisplayedItems = 0;
+        let visibleItems = [];
+        let hiddenItems = [];
+        let searchTerm = '';
+
+        applyStyles();
+    
+        searchBar.addEventListener('input', handleSearchInput);
+        document.getElementById('submit-cauta-bara-de-cautare').addEventListener('click', handleCautaButtonClick);
+
+        searchDropdown.addEventListener('wheel', handleWheelEvent);
+
+        searchBar.addEventListener('focus', handleFocusEvent);
+
+        document.addEventListener('click', handleDocumentClick);
+    
+        function applyStyles() {
+          // Your existing applyStyles function remains unchanged
+        }
+    
+        function handleSearchInput() {
+          searchTerm = searchBar.value.trim().toLowerCase();
+          const searchDropdown = document.getElementById('searchDropdown'); // Get the existing search dropdown element
+
+          if (searchTerm === '') {
+            displayPreviousSearches();
+            searchDropdown.style.display = 'none';
+          } else {
+            previousSearches = [];
+            const recommendations = getRecommendations(searchTerm);
+            visibleItems = recommendations.slice(0, 5); // Maximum 5 items initially displayed
+            hiddenItems = recommendations.slice(5);
+
+            displayRecommendations(visibleItems, hiddenItems, searchTerm);
+            searchDropdown.style.display = 'block';
+          }
+        }
+
+        // Function to display recommendations
+        function displayRecommendations(visible, hidden, searchTerm) {
+          const searchDropdown = document.getElementById('searchDropdown');
+          searchDropdown.innerHTML = '';
+
+          visible.forEach((item) => {
+            const dropdownItem = createDropdownItem(item, searchTerm);
+            searchDropdown.appendChild(dropdownItem);
+          });
+
+          searchDropdown.style.overflowY = hidden.length > 0 ? 'scroll' : 'hidden';
+          searchDropdown.style.borderRadius = '30px';
+          searchDropdown.style.padding = '5px';
+
+          const hiddenItemsDiv = document.createElement('div');
+          hiddenItemsDiv.classList.add('dropdown-hidden-items');
+          hiddenItemsDiv.style.paddingTop = '5px'; // Spacing between items
+
+          hidden.forEach((item) => {
+            const dropdownItem = createDropdownItem(item, searchTerm);
+            hiddenItemsDiv.appendChild(dropdownItem);
+          });
+          searchDropdown.appendChild(hiddenItemsDiv);
+        }
+
+        // Function to create dropdown items
+        function createDropdownItem(item, searchTerm) {
+          const dropdownItem = document.createElement('div');
+          dropdownItem.classList.add('dropdown-item');
+          dropdownItem.textContent = item;
+          dropdownItem.style.cursor = 'pointer'; // Cursor style
+
+          dropdownItem.addEventListener('click', function () {
+            searchBar.value = item;
+            redirectToProduct(item, searchTerm);
+          });
+
+          return dropdownItem;
+        }
+
+        function redirectToProduct(item, searchTerm) {
+          const productLink = getRecommendations(searchTerm).find((product) => product.name === item)?.link;
+          if (productLink) {
+            window.location.href = productLink;
+          }
+        }
+
+        // Replace getRecommendations with your own logic to fetch recommendations
+        function getRecommendations(searchTerm) {
+          // Sample list of recommendations - Replace this with your own logic to fetch recommendations
+          let products = [
+            'Espresso',
+            'Cappuccino',
+            'Latte',
+            'Mocha',
+            'Irish Coffee',
+            'Black Coffee',
+            'Americano',
+            'Macchiato',
+            'Ristretto',
+            'French Press Coffee',
+            // Additional whiskey-related products
+            'Scotch Whiskey',
+            'Bourbon Whiskey',
+            'Irish Whiskey',
+            'Rye Whiskey',
+            'Japanese Whiskey',
+            // Additional products...
+          ];
+
+          // Map each product to its respective HTML page link
+          const productLinks = {
+            'Espresso': 'espresso.html',
+            'Cappuccino': 'cappuccino.html',
+            'Latte': 'latte.html',
+            // ... Add other product links as needed
+            'Scotch Whiskey': 'scotch-whiskey.html',
+            'Bourbon Whiskey': 'bourbon-whiskey.html',
+            'Irish Whiskey': 'irish-whiskey.html',
+            'Rye Whiskey': 'rye-whiskey.html',
+            'Japanese Whiskey': 'japanese-whiskey.html',
+            // Additional product links...
+          };
+
+          const recommendations = products.filter((product) => product.toLowerCase().includes(searchTerm)).map((product) => {
+            return {
+              name: product,
+              link: productLinks[product] || '#', // If link not found, use '#' as default
+            };
+          });
+
+          return recommendations;
+        }
+      </script>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
@@ -631,17 +853,17 @@
       <h2>Inregistrare</h2>
         <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
         <label for="email">
-          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Email
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(100, 115, 122)61%, #ffffff 55%);">Email
           </b>
         </label>
         <input type="text" placeholder="Introdu adresa de Email" name="email" required>
         <label for="psw">
-          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Parola
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(100, 115, 122)61%, #ffffff 55%);">Parola
           </b>
         </label>
         <input type="password" placeholder="Introdu Parola:" name="psw" required>
         <label for="psw-repeat">
-          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(0, 121, 173)61%, #ffffff 55%);">Repeta Parola
+          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(100, 115, 122)61%, #ffffff 55%);">Repeta Parola
           </b>
         </label>
         <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
@@ -649,7 +871,7 @@
         <input type="checkbox" checked="checked" name="remember" style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine minte datele de conectare
         </label>
         <p>Creandu-ti un cont, esti de acord cu 
-          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(0, 61, 81)70%, #000000) 80%; text-decoration: wavy;">Termenele & Conditiile
+          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(77, 94, 100)70%, #563939) 80%; text-decoration: wavy;">Termenele & Conditiile
           </a>.</p>
         <div class="clearfix">
           <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza
@@ -685,8 +907,8 @@
       <div class="imgcontainer">
         <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
       </div>
-      <div class="container-pagina-logare" id="form-container-1" style="width: auto; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
-        <label for="uname">
+      <div class="container-pagina-logare" id="form-container-1" style="width: 200px; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
+        <label for="uname" style="max-width: 140px;">
           <b style="background:#537d8b; border-style: outset; border-radius: 0px; margin-bottom: 10px; border: 3px; text-align: center; text-wrap: wrap; position: sticky;">Nume Utilizator:</b>
         </label>
         <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
@@ -891,102 +1113,251 @@
     }
     </script>
     <!-- Slideshow container -->
-    <div class="slideshow-container" style="margin-left: 400px; margin-right: 400px;">
-      <div class="mySlides fade" style="display: none; margin-bottom: 0px; ">
-        <div class="numbertext" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); text-align: center; border-width: 2px; border-inline-end-style: groove; border-top-left-radius: 10px; border-bottom-right-radius: 10px; padding-bottom: 10px; padding-top: 10px; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:medium; background: linear-gradient(20deg, #CE503C 23%, #DAD99A 70%, #CCCCE4 85%);">Produs_slide_1</div>
-        <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="max-width: 200px; max-height: 200px; position: relative; border: solid #ffffff 2px; border-radius:10px; padding-left: auto; padding-right: auto;" loading="lazy">
-        <div class="text" style="text-align: center; font-size: medium; font-weight: lighter; border: solid; border-style: 2px; border-color: #ffffff; border-spacing: 2px; border-collapse: collapse; border-top-width: 1px; margin-bottom: 10px; border-bottom-width: 1px; background-color: #d4a539; position: relative; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159)">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister. Lichidul negru și bogat curge din filtru, dezvăluind o bogăție de arome care promite să trezească simțurile. Privind cum picurii căzând în ritm regulat, ochii devin hipnotizați de spectacolul simplu, dar fermecător al cafelei care prinde viață. În cele din urmă, ceașca este pregătită, oferind o promisiune călduroasă de energie și confort într-o lume care se trezește treptat. Este momentul perfect pentru a te bucura de magia cafelei tale preferate.
+    <div class="slideshow-container" style="margin-left: 100px; margin-right: 100px; border: 1px solid black; width: auto; height: 480px; top: 50px; border-radius: 30px; border-width: 10px;">
+      <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto; ">
+        <div class="numbertext-1" style="margin: bottom 10px; 
+                                        margin-bottom: 10px; 
+                                        border: solid 1px rgb(0, 0, 0); 
+                                        text-align: center; 
+                                        position: sticky;
+                                        border-width: 2px; 
+                                        border-inline-end-style: groove; 
+                                        border-top-left-radius: 10px; 
+                                        border-bottom-right-radius: 10px; 
+                                        padding-bottom: 10px; 
+                                        padding-top: 10px;
+                                        border-radius: 30px; 
+                                        background-color: rgb(211, 208, 144); 
+                                        text-decoration-line: underline wavy; text-decoration-color: #d4a539; 
+                                        font-style: oblique; 
+                                        font-size:small; 
+                                        background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%);">Produs_slide_1</div>
+        <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="max-width: 280px; max-height: 280px; position: relative; border: solid #ffffff 2px; border-radius:30px; padding-left: auto; padding-right: auto; margin-top: 10px; margin-left: 10px;" loading="lazy">
+        <div class="text" style="text-align: center; 
+                                  font-size: small; 
+                                  font-weight: lighter; 
+                                  border: solid; 
+                                  border-style: 2px; 
+                                  border-color: #000000; 
+                                  border-spacing: 2px; 
+                                  border-collapse: collapse; 
+                                  border-top-width: 1px; 
+                                  border-radius: 30px;
+                                  margin-bottom: 10px; 
+                                  border-bottom-width: 1px; 
+                                  background-color: #d4a539; 
+                                  position: relative; 
+                                  width: auto;
+                                  height: auto;
+                                  text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159)">
+                                  În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. 
+                                  Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister. 
+                                  Lichidul negru și bogat curge din filtru, dezvăluind o bogăție de arome care promite să trezească simțurile. 
+                                  Privind cum picurii căzând în ritm regulat, ochii devin hipnotizați de spectacolul simplu, dar fermecător al cafelei care prinde viață. 
+                                  În cele din urmă, ceașca este pregătită, oferind o promisiune călduroasă de energie și confort într-o lume care se trezește treptat. 
+                                  Este momentul perfect pentru a te bucura de magia cafelei tale preferate.
         </div>
       </div>
-      <div class="mySlides fade" style="display: none; margin-bottom: 0px">
-    <div class="numbertext" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); border-top-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; border-inline-end-style: groove; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:small; background: linear-gradient(50deg, #A27986  23%, #D8CD8C 70%, #6C919D  85%);">Produs_slide_2</div><img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" style="max-width: 200px; max-height: 200px; position: relative; border: solid #ffffff 2px; border-radius:10px; padding-left: auto; padding-right: auto;" loading="lazy"><div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #ffffff; border-spacing: 2px; border-top-width: 1px; border-bottom-width: 1px; background-color: #d4a539; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25 rgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter. Pe suprafața cafelei, o ușoară spumă moale se desfășoară, promițând o experiență de degustare delicioasă. Cu fiecare înghițitură, simți căldura și vitalitatea acestei băuturi revigorante. Gustul profund și aromele subtile dansează pe papilele tale gustative, oferindu-ți o pauză perfectă în ziua ta agitată. O ceașcă de cafea gata preparată este o plăcere simplă, dar inegalabilă, ce aduce confort și energie în fiecare moment.</div></div><div class="mySlides fade" style="display: none; margin-bottom: auto"><div class="numbertext" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); border-top-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; border-inline-end-style: groove; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:medium; background: linear-gradient(23deg, #A27986  23%, #D8CD8C 70%, #6C919D  85%); position: -webkit-sticky;">Produs_slide_3</div><img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style=" position: relative; max-height: 200px; max-width: 200px; border: solid #ffffff 2px; border-radius: 10px; padding-left: auto; padding-right: auto;" loading="lazy"><div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #ffffff; border-spacing: 2px; border-bottom-width: 1px; border-top-width: 1px; background-color: #d4a539; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate. Căldura ce se răspândește de sub ceașcă oferă o senzație de confort. Pe marginea ceștii, o mică picătură de rouă de cafea strălucește sub razele soarelui matinal. Cu fiecare înghițitură, gustul bogat și revigorant îți învăluie simțurile, aducându-ți o bucurie simplă, dar adâncă. Ceașca de cafea gata pregătită este o mică comoară într-un moment de relaxare și răsfăț personal.</div></div><a class="prev" onclick="plusSlides(-1)">&#10094;</a><a class="next" onclick="plusSlides(1)">&#10095;</a>
-      The dots/circles
+      <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto;">
+    <div class="numbertext-2" style="margin: bottom 10px; 
+                margin-bottom: 10px; 
+                border: solid 1px rgb(0, 0, 0); 
+                text-align: center; 
+                border-width: 2px;
+                padding-bottom: 10px; 
+                padding-top: 10px; 
+                position: relative;
+                border-radius: 30px;
+                background-color: rgb(211, 208, 144); 
+                text-decoration-line: underline wavy; 
+                text-decoration-color: #d4a539; 
+                font-style: oblique; 
+                font-size:small; 
+                background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%);">Produs_slide_2</div>
+                <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" 
+                    style="max-width: 280px; 
+                            max-height: 280px; 
+                            position: sticky; 
+                            border: solid #ffffff 2px; 
+                            border-radius:10px; 
+                            padding-left: 10px;
+                            margin-top: 10px;
+                            border-radius: 30px;
+                            padding-bottom: 10px; 
+                            padding-right: auto;" loading="lazy">
+                          <div class="text" style="text-align: center; 
+                                                    font-size: small; 
+                                                    font-weight: lighter; 
+                                                    border: solid; 
+                                                    border-style: 2px; 
+                                                    border-color: #000000; 
+                                                    border-spacing: 2px; 
+                                                    border-top-width: 1px;
+                                                    border-radius: 30px; 
+                                                    border-bottom-width: 1px; 
+                                                    width: auto;
+                                                    height: auto;
+                                                    background-color: #d4a539; 
+                                                    text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25 rgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
+                                                    Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. 
+                                                    Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter. 
+                                                    Pe suprafața cafelei, o ușoară spumă moale se desfășoară, promițând o experiență de degustare delicioasă. 
+                                                    Cu fiecare înghițitură, simți căldura și vitalitatea acestei băuturi revigorante. 
+                                                    Gustul profund și aromele subtile dansează pe papilele tale gustative, oferindu-ți o pauză perfectă în ziua ta agitată. 
+                                                    O ceașcă de cafea gata preparată este o plăcere simplă, dar inegalabilă, ce aduce confort și energie în fiecare moment.
+                        </div>
+                      </div>
+                    <div class="mySlides fade" style="display: none; margin-bottom: auto; max-width: auto;">
+                  <div class="numbertext-3" style="margin: bottom 10px; 
+                                          margin-bottom: 10px;
+                                          border: solid 1px rgb(0, 0, 0); 
+                                          border-radius: 30px;
+                                          text-align: center; 
+                                          border-width: 2px; 
+                                          padding-bottom: 10px; 
+                                          padding-top: 10px;
+                                          position: sticky;
+                                          background-color: rgb(211, 208, 144); 
+                                          text-decoration-line: underline wavy; 
+                                          text-decoration-color: #d4a539; 
+                                          font-style: oblique; 
+                                          font-size:small;
+                                          background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%); 
+                                          ">Produs_slide_3</div>
+      <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style=" position: sticky; max-height: 280px; max-width: 280px; border: solid #000000 2px; border-radius: 10px; padding-left: auto; padding-right: auto; margin-top: 10px; margin-left: 10px; border-radius: 30px; margin-bottom: 10px;" loading="lazy">
+    <div class="text" style="text-align: center; 
+                font-size: small; 
+                font-weight: lighter; 
+                border: solid; 
+                border-style: 2px; 
+                border-color: #000000; 
+                border-spacing: 2px; 
+                border-top-width: 1px; 
+                border-radius: 30px;
+                background-color: #d4a539; 
+                width: auto;
+                height: auto;
+                text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
+                Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. 
+                Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate. 
+                Căldura ce se răspândește de sub ceașcă oferă o senzație de confort. 
+                Pe marginea ceștii, o mică picătură de rouă de cafea strălucește sub razele soarelui matinal. 
+                Cu fiecare înghițitură, gustul bogat și revigorant îți învăluie simțurile, aducându-ți o bucurie simplă, dar adâncă. 
+                Ceașca de cafea gata pregătită este o mică comoară într-un moment de relaxare și răsfăț personal.
+    </div>
+      </div>
+        <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; left: 1170px; bottom: 250px;" onclick="plusSlides(-1)" >&#10094;</a><a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 1220px;bottom: 250px;">&#10095;</a>
       <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)">@</span>
-        <span class="dot" onclick="currentSlide(2)">@</span>
-        <span class="dot" onclick="currentSlide(3)">@</span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
       </div>
       <script>
-      //  Automatically changing the slides: 
-        let slideIndex = 0;
-        showSlides();
-        function showSlides() {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.opacity = 0;
-            slides[i].style.position = "absolute";
+        let slideIndex = 1;
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
           }
 
-          slideIndex++;
-          if (slideIndex > slides.length) {
-            slideIndex = 1;
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
           }
 
-          slides[slideIndex - 1].style.position = "relative";
-          fadeIn(slides[slideIndex - 1], 0);
+          function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
 
-        // Set a timer to start fading out after 2 seconds
-          setTimeout(() => {
-            fadeOut(slides[slideIndex - 1], 0);
-          }, 2000);
-        }
-        function fadeIn(element, opacity) {
-          element.style.opacity = opacity;
-          if (opacity < 1) {
-            opacity += 0.1;
-            setTimeout(() => fadeIn(element, opacity), 100);
-          }
-        }
-          let placeholder = document.createElement("div");
-            placeholder.style.width = "320px";
-            placeholder.style.height = "50px";
-            placeholder.style.padding = "10px";
-            placeholder.style.border = "5px solid gray";
-            placeholder.style.margin = "0";
-            document.querySelector('.canvas').appendChild(placeholder);
-
-        function fadeOut(element, opacity) {
-          element.style.opacity = opacity;
-          let timer = 0;
-
-          let fadeOutInterval = setInterval(() => {
-            if (timer >= 0.09) {
-              clearInterval(fadeOutInterval);
-              element.style.display = "block";
-              placeholder.style.display = "none"; // Hide the placeholder
-              // Move to the next slide
-              showSlides();
-            } else {
-              opacity -= 0.1;
-              element.style.opacity = opacity;
-              // Adjust the increment to control the timer speed
-              timer += 0.1;
+            if (n > slides.length) {
+              slideIndex = 1;
             }
-          }, 1000);
-        }
-        // Function to handle resizing
-        function adjustSizes() {
-          const slides = document.getElementsByClassName('mySlides');
-          const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
-          for (let i = 0; i < slides.length; i++) {
-            const slide = slides[i];
-            const img = slide.querySelector('img');
-            const text = slide.querySelector('.text');
-            //  Adjust image width based on the container width or parent element
-            img.style.width = containerWidth + 'px';
-            //  Adjust text or other elements' sizes based on the container width
-            //  Example: You can adjust font sizes, padding, or margins dynamically
-            text.style.fontSize = (containerWidth * 0.03) + 'px'; // Adjust font size as needed
-            //  Adjust other properties as necessary
+
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
           }
-        }
-      //  Call the adjustSizes function when the window is resized
-      window.addEventListener('resize', adjustSizes);
-      //  Call adjustSizes initially to set sizes based on the initial window size
-      adjustSizes();
-      </script>
+
+          // Initial display of slides
+          showSlides(slideIndex);
+      //  Automatically changing the slides: 
+      // let slideIndex = 0;
+      //   showSlides();
+
+      //   function showSlides() {
+      //     let slides = document.getElementsByClassName("mySlides");
+
+      //     for (let i = 0; i < slides.length; i++) {
+      //       slides[i].style.display = "none";
+      //     }
+
+      //     slideIndex++;
+      //     if (slideIndex > slides.length) {
+      //       slideIndex = 1;
+      //     }
+
+      //     slides[slideIndex - 1].style.display = "block";
+      //     fadeIn(slides[slideIndex - 1].querySelector(".text"), 0);
+      //     fadeIn(slides[slideIndex - 1].querySelector("img"), 0);
+
+      //     setTimeout(() => {
+      //       fadeOut(slides[slideIndex - 1].querySelector(".text"), 0);
+      //       fadeOut(slides[slideIndex - 1].querySelector("img"), 0);
+      //     }, 2000);
+
+      //     setTimeout(() => {
+      //       showSlides();
+      //     }, 4000); // Change slides every 4 seconds (including fade in/out times)
+      //   }
+
+      //   function fadeIn(element, opacity) {
+      //     element.style.opacity = opacity;
+      //     if (opacity < 1) {
+      //       opacity += 0.1;
+      //       setTimeout(() => fadeIn(element, opacity), 100);
+      //     }
+      //   }
+
+      //   function fadeOut(element, opacity) {
+      //     element.style.opacity = opacity;
+      //     let timer = 0;
+
+      //     let fadeOutInterval = setInterval(() => {
+      //       if (timer >= 0.09) {
+      //         clearInterval(fadeOutInterval);
+      //       } else {
+      //         opacity -= 0.1;
+      //         element.style.opacity = opacity;
+      //         timer += 0.1;
+      //       }
+      //     }, 100);
+      //   }
+
+      //   function adjustSizes() {
+      //     const slides = document.getElementsByClassName('mySlides');
+      //     const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
+          
+      //     for (let i = 0; i < slides.length; i++) {
+      //       const slide = slides[i];
+      //       const img = slide.querySelector('img');
+      //       const text = slide.querySelector('.text');
+
+      //       img.style.width = containerWidth + 'px';
+      //       text.style.fontSize = (containerWidth * 0.03) + 'px';
+      //     }
+      //   }
+
+      //   window.addEventListener('resize', adjustSizes);
+      //   adjustSizes();
+      // </script>
     </div>
     <nav>
       <div class="is-mobile-preview"></div>

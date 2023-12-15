@@ -6,10 +6,10 @@
     border-radius: 20px;
     box-sizing:content-box;
     width: 400px;
-    margin-left: auto;
+    margin-left: 355px;
     margin-right: auto;
     list-style-type: none;
-    position: sticky;
+    position: relative;
     display:inline-block;
     background:linear-gradient(35deg, #ffffff 27%, rgb(1, 112, 168)66%, rgb(255, 255, 255) 75%);
     animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;

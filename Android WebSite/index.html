@@ -20,7 +20,7 @@
 
       /* Main header positioning background color and length and width */
       header {
-        background: linear-gradient(30deg, #1b83d5de 35%, #05334e 65%, rgb(0, 85, 127) 70%);
+        background: linear-gradient(30deg, #ffffffde 35%, #fef99f 65%, rgb(255, 255, 137) 70%);
         border-top: 5px rgb(237, 239, 240) groove;
         border-left: 5px rgb(255, 255, 255) groove;
         border-right: 5px rgb(255, 255, 255) groove;
@@ -359,7 +359,7 @@
       /* padding: 20px; */
       font-size: 10px;
       color: rgb(0, 170, 255);
-      border: 3px groove #05334e;
+      border: 1px groove #0236551c;
       display: block;
       padding: 5px;
       transition: 5s;
@@ -413,15 +413,62 @@
     }
 
     .form-container {
+      .form-container {
       display: none;
-      
-      /* Set the width of the form container */
-      margin: 50px auto;
-      /* Center the form */
-      margin-right: 10px;
-      /* Margin to the right side */
-      float: right;
-      /* Align forms to the right */
+      width: 250px;
+      height: 250px;
+      overflow: auto;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000; /* Ensure forms are on top of other elements */
+    }
+    }
+
+    /* Default styles for the form container */
+    .form-container {
+      display: none;
+      width: 250px;
+      height: 250px;
+      overflow: auto;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000; /* Ensure forms are on top of other elements */
+    }
+
+    /* Media query for smaller screens like Android and iOS devices */
+    @media only screen and (max-device-height: 915px) and (max-device-width: 412px) {
+      .form-container {
+        display: none;
+        width: 250px;
+        height: 250px;
+        overflow: auto;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000; /* Ensure forms are on top of other elements */
+      }
+    }
+
+    /* Style for the close button in the form */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
     }
 
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -1618,8 +1665,12 @@
 
     /* Adjust the image size */
     .imgcontainer img {
-      width: 45%;
-      height: 50%;
+      height: 57px;
+      position: relative;
+      width: 57px;
+      text-align: center;
+      padding: 10px;
+      background: #05334e;
     }
 
     /* Remove unnecessary styles */
@@ -2095,7 +2146,7 @@
         /* padding: 20px; */
         font-size: 10px;
         color: rgb(0, 0, 0);
-        border: 3px groove #05334e;
+        border: 1px groove #0236551c;
         display: block;
         padding: 5px;
         transition: 2s;
@@ -2159,15 +2210,18 @@
 
       .form-container {
         display: none;
-        width: 40%;
-        /* Set the width of the form container */
-        margin: 50px auto;
-        /* Center the form */
-        margin-right: 10px;
-        /* Margin to the right side */
-        float: right;
-        /* Align forms to the right */
-      }
+        width: 250px;
+        height: 250px;
+        overflow: auto;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #ccc;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000; /* Ensure forms are on top of other elements */
+    }
 
       /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
       #main {
@@ -3357,8 +3411,12 @@
 
       /* Adjust the image size */
       .imgcontainer img {
-        width: 45%;
-        height: 50%;
+        height: 57px;
+        position: relative;
+        width: 57px;
+        text-align: center;
+        padding: 10px;
+        background: #05334e;
       }
 
       /* Remove unnecessary styles */
@@ -3828,12 +3886,11 @@
         /* padding: 20px; */
         font-size: 10px;
         color: rgb(0, 0, 0);
-        border: 3px groove #05334e;
+        border: 1px groove #0236551c;
         display: block;
         padding: 5px;
         transition: 2s;
         border-radius: 30px;
-        background: black; 
       }
 
       /* The side navigation menu */
@@ -3891,15 +3948,18 @@
       }
 
       .form-container {
-        display: none;
-        width: 40%;
-        /* Set the width of the form container */
+        display: block;
+        position: relative;
+        top: -902px;
+        bottom: 122px;
+        width: 250px;
+        width: 353px;
+        left: 210px;
+        padding: 20px;
+        background-color: rgb(249, 249, 249);
         margin: 50px auto;
-        /* Center the form */
         margin-right: 10px;
-        /* Margin to the right side */
         float: right;
-        /* Align forms to the right */
       }
 
       /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -5097,8 +5157,12 @@
 
       /* Adjust the image size */
       .imgcontainer img {
-        width: 45%;
-        height: 50%;
+        height: 57px;
+        position: relative;
+        width: 57px;
+        text-align: center;
+        padding: 10px;
+        background: #05334e;
       }
 
       /* Remove unnecessary styles */
@@ -5654,14 +5718,13 @@
     }
 
   </style>
-  <div id="mySidenav" class="sidenav" style="width: 170px; position: -webkit-sticky;">
+  <div id="mySidenav" class="sidenav" style="position: fixed; top: 0; left: 0; overflow-x: hidden;">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-    <a href="#" onclick="loadLoginPage()">Logheaza-te</a>
-    <a href="#" onclick="loadPage('U:\Plan Afacere\WebSite\Android WebSite\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+    <a href="javascript:void(0)" onclick="toggleForm('Logheaza-teFormContainer')">Logheaza-te</a>
+    <a href="javascript:void(0)" onclick="toggleForm('InregistrareFormContainer')">Inregistrare</a>
     <a href="#link">Clients</a>
     <a href="#link">Echipa</a>
   </div>
-
   <style>
     
     .openTriangle.rotate {
@@ -5739,6 +5802,18 @@
       align-items: center;
       justify-content: flex-start;
       color: white;
+      display: none;
+      width: 250px;
+      height: 250px;
+      overflow: auto;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10000; /* Ensure forms are on top of other elements */
     }
 
     .form-container input[type="text"],
@@ -5877,51 +5952,54 @@
           this.touchStartY = 0;
           this.touchEndX = 0;
           this.touchEndY = 0;
-          this.SWIPE_THRESHOLD = 6500;
+          this.SWIPE_THRESHOLD = 50;
         }
-    
+
         handleTouchStart(event) {
           const touch = event.touches[0];
           this.touchStartX = touch.clientX;
           this.touchStartY = touch.clientY;
         }
-    
+
         handleTouchMove(event) {
           const touch = event.touches[0];
           this.touchEndX = touch.clientX;
           this.touchEndY = touch.clientY;
           this.handleSwipe(event);
         }
-    
+
         handleTouchEnd(event) {
           const touch = event.changedTouches[0];
           this.touchEndX = touch.clientX;
           this.touchEndY = touch.clientY;
           this.handleSwipe(event);
         }
-    
+
         handleSwipe(event) {
           const swipeDistanceX = this.touchEndX - this.touchStartX;
           const swipeDistanceY = this.touchEndY - this.touchStartY;
           const isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
-    
+
           if (Math.abs(swipeDistanceX) > this.SWIPE_THRESHOLD) {
             sideNavigation.handleHorizontalSwipe(swipeDistanceX, isSideNavOpen);
           }
-    
+
           if (Math.abs(swipeDistanceY) > this.SWIPE_THRESHOLD) {
             sideNavigation.handleVerticalSwipe(swipeDistanceY);
           }
-    
+
           sideNavigation.handleSwipeDirection(swipeDistanceX, swipeDistanceY, isSideNavOpen);
         }
       }
+
+
       class SideNavigation {
         constructor() {
           this.isSideNavOpen = localStorage.getItem('isSideNavOpen') === 'true';
           this.sideNav = document.getElementById("mySidenav");
           this.sideNavToggleButton = document.getElementById("openTriangle");
           this.sideNavCloseButton = document.querySelector(".closebtn");
+          this.sideNavContent = document.querySelector(".sidenav-content");
 
           this.swipeHandler = new SwipeHandler();
 
@@ -5933,21 +6011,36 @@
             this.closeNav();
           });
 
-          // Event listeners for touch events
-          document.addEventListener('touchstart', (event) => this.swipeHandler.handleTouchStart(event), false);
-          document.addEventListener('touchmove', (event) => this.swipeHandler.handleTouchMove(event), false);
-          document.addEventListener('touchend', (event) => this.swipeHandler.handleTouchEnd(event), false);
+          this.sideNavContent.addEventListener('touchstart', (event) => this.swipeHandler.handleTouchStart(event), false);
+          this.sideNavContent.addEventListener('touchmove', (event) => this.swipeHandler.handleTouchMove(event), false);
+          this.sideNavContent.addEventListener('touchend', (event) => this.swipeHandler.handleTouchEnd(event), false);
         }
+
+        handleSideNavScroll(event) {
+          event.preventDefault();
+          const touch = event.touches[0];
+          this.sideNav.scrollTop -= touch.clientY - this.swipeHandler.touchEndY;
+        }
+
 
         toggleNav() {
           this.isSideNavOpen ? this.closeNav() : this.openNav();
+        }
+
+        openNav() {
+          document.body.classList.add('sideNavOpened');
+          this.sideNav.style.width = "170px";
+          // Adjust other necessary styles accordingly
+
+          this.isSideNavOpen = true;
+          localStorage.setItem('isSideNavOpen', 'true');
         }
 
         closeNav() {
           document.body.classList.remove('sideNavOpened');
           this.sideNav.style.width = "0";
           // Adjust other necessary styles accordingly
-    
+
           this.isSideNavOpen = false;
           localStorage.setItem('isSideNavOpen', 'false');
           // Enable body scrolling when side navigation is closed
@@ -5970,7 +6063,7 @@
         handleSwipeDirection(swipeDistanceX, swipeDistanceY, isSideNavOpen) {
           const swipeThresholdX = Math.abs(swipeDistanceX);
           const swipeThresholdY = Math.abs(swipeDistanceY);
-    
+
           if (isSideNavOpen) {
             if (swipeDistanceX < 0 && swipeThresholdX > swipeThresholdY) {
               this.closeNav();
@@ -5989,7 +6082,6 @@
         }
       }
 
-
       class FormHandler {
         constructor(sideNavigation) {
           this.sideNavigation = sideNavigation;
@@ -6000,6 +6092,7 @@
           this.inregistrareCloseBtn = document.getElementById('InregistrareFormCloseBtn');
 
           this.addEventListeners();
+          this.setupSwipeActions();
         }
 
         addEventListeners() {
@@ -6011,35 +6104,32 @@
             this.closeForm(this.inregistrareFormContainer, 'isInregistrareFormOpen');
           });
 
-          const logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
-          const inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
-
-          logheazaTeFormContainer.addEventListener('click', () => {
+          this.logheazaTeFormContainer.addEventListener('click', () => {
             this.showLogheazaTeForm();
           });
 
-          inregistrareFormContainer.addEventListener('mouseover', () => {
+          this.inregistrareFormContainer.addEventListener('mouseover', () => {
             this.showInregistrareForm();
           });
 
-          logheazaTeFormContainer.addEventListener('touchstart', (event) => {
+          this.logheazaTeFormContainer.addEventListener('touchstart', (event) => {
             event.preventDefault();
             this.showLogheazaTeForm();
           });
 
-          inregistrareFormContainer.addEventListener('touchmove', (event) => {
+          this.inregistrareFormContainer.addEventListener('touchmove', (event) => {
             event.preventDefault();
             this.showInregistrareForm();
           });
 
-          logheazaTeFormContainer.addEventListener('gesturechange', (event) => {
+          this.logheazaTeFormContainer.addEventListener('gesturechange', (event) => {
             event.preventDefault();
-            this.zoomForm(logheazaTeFormContainer);
+            this.zoomForm(this.logheazaTeFormContainer);
           });
 
-          inregistrareFormContainer.addEventListener('gesturechange', (event) => {
+          this.inregistrareFormContainer.addEventListener('gesturechange', (event) => {
             event.preventDefault();
-            this.zoomForm(inregistrareFormContainer);
+            this.zoomForm(this.inregistrareFormContainer);
           });
 
           this.sideNavigation.sideNavContent.addEventListener('click', (event) => {
@@ -6049,6 +6139,78 @@
               this.showForm(this.logheazaTeFormContainer, this.inregistrareFormContainer, 'isLogheazaTeFormOpen');
             } else if (targetId === 'inregistrareLink') {
               this.showForm(this.inregistrareFormContainer, this.logheazaTeFormContainer, 'isInregistrareFormOpen');
+            }
+          });
+        }
+
+        zoomForm(formContainer) {
+          formContainer.style.width = '260px';
+          formContainer.style.height = '260px';
+          // Add more logic for zooming if required
+        }
+
+        closeForm(formContainer, storageKey) {
+          formContainer.style.display = 'none';
+          localStorage.setItem(storageKey, 'false');
+        }
+
+        showForm(formToShow, otherFormContainer, storageKey) {
+          if (localStorage.getItem(storageKey) !== 'true') {
+            formToShow.style.display = 'block';
+            otherFormContainer.style.display = 'none';
+            localStorage.setItem(storageKey, 'true');
+          } else {
+            formToShow.style.display = 'none';
+            localStorage.setItem(storageKey, 'false');
+          }
+        }
+
+        showLogheazaTeForm() {
+          const logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
+          this.closeAllFormsExcept(logheazaTeFormContainer.id);
+          this.showForm(logheazaTeFormContainer, this.sideNavigation);
+          localStorage.setItem('isLogheazaTeFormOpen', 'true');
+        }
+
+        showInregistrareForm() {
+          const inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
+          this.closeAllFormsExcept(inregistrareFormContainer.id);
+          this.showForm(inregistrareFormContainer, this.sideNavigation);
+          localStorage.setItem('isInregistrareFormOpen', 'true');
+        }
+
+        // Function to close all forms except the one specified by 'exceptId'
+        closeAllFormsExcept(exceptId) {
+          const formContainers = document.querySelectorAll('.form-container');
+          formContainers.forEach((container) => {
+            if (container.id !== exceptId) {
+              container.style.display = 'none';
+            }
+          });
+        }
+
+        // Swipe action setup
+        setupSwipeActions() {
+          let startX = 0;
+          let startY = 0;
+
+          document.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+          });
+
+          document.addEventListener('touchend', (event) => {
+            const endX = event.changedTouches[0].clientX;
+            const endY = event.changedTouches[0].clientY;
+            const diffX = endX - startX;
+            const diffY = endY - startY;
+
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+              if (diffX > 0) {
+                this.openNav();
+              } else {
+                this.closeNav();
+              }
             }
           });
         }
@@ -6126,11 +6288,11 @@
       width: 80%;
       max-width: 300px;
     }
-    </style>
-    <div class="form-container" id="Logheaza-teFormContainer" style="display: none; position: fixed; top: 60px; right: 0; width: 250px; padding: 20px; background-color: #f9f9f9;">
-      <span class="closebtn" onclick="closeForm('Logheaza-teFormContainer')">&times;</span>
+  </style>
+    <div class="form-container" id="Logheaza-teFormContainer" style="display: none;">
+      <span class="closebtn" onclick="closeLogheazaTeForm()">&times;</span>
       <!-- Form content -->
-      <form action="U:\Plan Afacere\WebSite\Android WebSite\Pagina_Logare.php" id="Logheaza-teForm" method="post">
+      <form action="U:\Plan Afacere\WebSite\Android WebSite\Pagina_logare.html" id="Logheaza-teForm" method="post">
         <!-- Your login form content here -->
           <div class="imgcontainer">
               <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" style="height: 31px; width: 31px;" loading="lazy">
