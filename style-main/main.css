@@ -225,7 +225,7 @@ header {
     display:inline-block;
     /* justify-content: right; */
     list-style: none;
-    background: linear-gradient(30deg, #8b9d00 35%, #ff9500 55%, #ffffff 80%);
+    background: linear-gradient(to top right, #e9bfbf 35%, #fbbd66 55%, #543333 80%);
 }
 /* Style for containers */
 .container-content-Menu-produse-1 {

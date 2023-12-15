@@ -789,98 +789,87 @@
     </div>
     
     <div class="openTriangle" onclick="openNav()">&#9658;</div>
-    <script>
-      function toggleNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementById("openText");
-        var openTriangle = document.querySelector(".openTriangle");
-        var main = document.getElementById("main");
-    
-        if (sidenav.style.width === "250px") {
-          // Close the side navigation menu
-          sidenav.style.width = "0";
-          setTimeout(function() {
-            openText.innerText = "";
-            openTriangle.classList.remove("closeArrow");
-          }, 500);
-          main.style.marginLeft = "0";
-          console.log('Side nav closed.');
-          // body.style.backgroundColor = "white";
-          // openText.innerText="open";
-        } else {
-          // Open the side navigation menu
-          sidenav.style.width = "250px";
-          setTimeout(function() {
-            openText.innerText = "close";
-            openTriangle.classList.add("closeArrow");
-            // Changing the appearance after 0.5s animation duration
-          }, 500);
-          console.log('Side nav opened.');
-          main.style.marginLeft = "250px";
-          body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-          openText.innerText = "close side navigation menu";
-        }
-      }
-      // Ensure the side nav menu is closed when the page loads
-      document.addEventListener('DOMContentLoaded', function() {
-        var sidenav = document.getElementById("mySidenav");
-        var main = document.getElementById("main");
-        var body = document.body;
+  <script>
+    function toggleNav() {
+      var sidenav = document.getElementById("mySidenav");
+      var openText = document.getElementById("openText");
+      var openTriangle = document.querySelector(".openTriangle");
+      var main = document.getElementById("main");
 
-        sidenav.style.width = "0";
+      if (sidenav.classList.contains("sideNavOpen")) {
+        sidenav.classList.remove("sideNavOpen");
+        setTimeout(function() {
+          openText.innerText = "";
+          openTriangle.classList.remove("closeArrow");
+        }, 500);
         main.style.marginLeft = "0";
-        body.style.backgroundColor = "white";
-      });
-      // Sidenav Push Content w/ opacity
-      /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-      // Function to open the side nav menu when showing the form
-      function openNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementById("openText");
-        var openTriangle = document.querySelector(".openTriangle");
-        var closeArrow = document.querySelector("closeArrow");
-        sidenav.style.width = "250px";
+      } else {
+        sidenav.classList.add("sideNavOpen");
         setTimeout(function() {
           openText.innerText = "close";
           openTriangle.classList.add("closeArrow");
         }, 500);
-        console.log('Side nav opened.');
-
-        openText.innerText = "close side navigation menu";
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        console.log('Side nav opened.');
-        document.getElementByID("OpenTriangle")
+        main.style.marginLeft = "250px"; // Change this value if necessary
+        openText.innerText = "";
       }
-      
-      // JavaScript function to close the side nav menu
-      function closeNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementById("openText");
+    }
 
-        sidenav.style.width = "0";
-        openText.innerText = "open";
-        console.log('Side nav closed.');
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidenav = document.getElementById("mySidenav");
+      var main = document.getElementById("main");
+      var body = document.body;
 
+      sidenav.classList.remove("sideNavOpen");
+      main.style.marginLeft = "0";
+      body.style.backgroundColor = "white";
 
-        document.getElementById("mySidenav").style.width = "0";
-        // Adjust the element ID as needed
-        document.getElementById("main").style.marginLeft = "0"; 
-        // Change background color if necessary
-        document.body.style.backgroundColor = "white"; 
-      }
-        // Function to show/hide forms based on formId
-      function showForm(formId) {
-        var forms = document.getElementsByClassName("form-container");
-        for (var i = 0; i < forms.length; i++) {
-          forms[i].style.display = "none";
+      // Add a click event listener to the document body to close the side nav when clicking outside the menu
+      body.addEventListener('click', function(event) {
+        if (event.target !== sidenav && !sidenav.contains(event.target)) {
+          closeNav();
         }
-        document.getElementById(formId).style.display = "block";
-        // Open the side nav menu when showing the form
-        openNav(); 
+      });
+    });
+
+    function openNav() {
+      var sidenav = document.getElementById("mySidenav");
+      var openText = document.getElementById("openText");
+      var openTriangle = document.querySelector(".openTriangle");
+
+      sidenav.style.width = "400px"; // Update width to 400px
+      setTimeout(function() {
+        openText.innerText = "close";
+        openTriangle.classList.add("closeArrow");
+      }, 500);
+
+      openText.innerText = "";
+      sidenav.classList.add("sideNavOpen");
+      document.getElementById("main").style.marginLeft = "250px"; // Adjust margin if needed
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      var sidenav = document.getElementById("mySidenav");
+
+      if (sidenav.classList.contains("sideNavOpen")) {
+        sidenav.classList.remove("sideNavOpen");
+        sidenav.style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
       }
-    </script>
+    }
+
+    function showForm(formId) {
+      var forms = document.getElementsByClassName("form-container");
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+      }
+      document.getElementById(formId).style.display = "block";
+      openNav(); 
+    }
+  </script>
+    
+    
 
 
     <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container" method="post">
