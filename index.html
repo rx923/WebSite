@@ -253,8 +253,6 @@
           
       }
     </style>
-
-
     <style>
       /* Styles for the search bar */
       .search-bar {
@@ -312,7 +310,58 @@
         padding: 5px;
         margin-bottom: 10px;
       }
-      </style>
+    </style>
+    <style>
+      /* CSS for the side navigation menu */
+      .sidenav {
+        height: 100%; /* Set full height */
+        width: 0; /* Initially closed */
+        position: fixed; /* Fixed position */
+        z-index: 1; /* Make sure it appears above everything */
+        top: 0;
+        left: 0;
+        background-color: #111; /* Background color */
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        padding-top: 60px; /* Space for the triangle icon */
+        transition: 0.5s; /* 0.5 second transition */
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      /* Styling for the triangle icon */
+      .openTriangle {
+        cursor: pointer;
+        font-size: 50px;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        color: #875151;
+        transition: 0.7s;
+      }
+
+      .openTriangle:hover::shadow {
+        color: #e85757;
+      }
+    </style>
     <title>Good Store Coffee</title>
 
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all"> -->
@@ -731,30 +780,27 @@
     </script>
     <div id="container_scrolling_for_the_side_nav" class="container">
       <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
-        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php" onclick="loadPage('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php">Logheaza-te</a>
+        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php">Inregistrare</a>
         <a href="#link">Clients</a>
         <a href="#link">Echipa</a>
       </div>
     </div>
+    
+    <div class="openTriangle" onclick="openNav()">&#9658;</div>
     <script>
-      // Sidenav Overaly Example
-      /* Set the width of the side navigation to 250px */
-      // JavaScript function to toggle the side navigation menu
       function toggleNav() {
         var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementByID("openText");
-        var openTriangle = document.getElementById(".openTriangle");
-        var body = document.body;
-        var main = document.getElementById("openText");
-
-
+        var openText = document.getElementById("openText");
+        var openTriangle = document.querySelector(".openTriangle");
+        var main = document.getElementById("main");
+    
         if (sidenav.style.width === "250px") {
           // Close the side navigation menu
           sidenav.style.width = "0";
           setTimeout(function() {
-            openText.innerText="open";
+            openText.innerText = "";
             openTriangle.classList.remove("closeArrow");
           }, 500);
           main.style.marginLeft = "0";
@@ -835,17 +881,6 @@
         openNav(); 
       }
     </script>
-    <!-- Using any element to open the sidenav -->
-    <span class="openTriangle" onclick="openNav()">
-      <span class="openText" id="openText">open
-      </span>
-    </span>
-    <!-- Content area to display the page content -->
-    <div id="content">
-      <!-- Adding all page content inside the div if side nav needs to push the page content tot he right -->
-      <div id="main">
-      </div>
-    </div>
 
 
     <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container" method="post">
