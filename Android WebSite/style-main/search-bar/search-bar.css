@@ -8,7 +8,7 @@
     border-color: rgb(68, 162, 255);
     border-radius: 30px;
     /* Center the search bar horizontally */
-    left: 231px;
+    left: 515px;
     /* Adjust to properly center */
     /* transform: translateX(-50%);  */
     z-index: 1;
@@ -18,12 +18,12 @@
     /* Set maximum width if needed *
     /* Adjust top position */
     transform: translateY(-300%);
-    top: 270px;
+    top: 210px;
     margin-top: 0px;
     margin-bottom: 20px; 
     /* Use block level element */
     display: inline-block; 
-    position: absolute;
+    position: sticky;
     /* Center align the content */
     /* text-align: center; */
     /* Center the block element */

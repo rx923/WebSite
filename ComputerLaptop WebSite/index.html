@@ -780,94 +780,122 @@
     </script>
     <div id="container_scrolling_for_the_side_nav" class="container">
       <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Logare.php">Logheaza-te</a>
-        <a href="U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Pagina_Inregistrare.php">Inregistrare</a>
-        <a href="#link">Clients</a>
-        <a href="#link">Echipa</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="loadForm('Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
+        <a href="javascript:void(0)" onclick="loadForm('Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+        <a href="#" onclick="closeNav()">Clients</a>
+        <a href="#" onclick="closeNav()">Echipa</a>
       </div>
     </div>
-    
     <div class="openTriangle" onclick="openNav()">&#9658;</div>
-  <script>
-    function toggleNav() {
-      var sidenav = document.getElementById("mySidenav");
-      var openText = document.getElementById("openText");
-      var openTriangle = document.querySelector(".openTriangle");
-      var main = document.getElementById("main");
+    <div id="openText"></div>
 
-      if (sidenav.classList.contains("sideNavOpen")) {
-        sidenav.classList.remove("sideNavOpen");
-        setTimeout(function() {
+    <script>
+      function toggleNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openText = document.getElementById("openText");
+        var openTriangle = document.querySelector(".openTriangle");
+        var main = document.getElementById("main");
+    
+        if (sidenav.classList.contains("sideNavOpen")) {
+          sidenav.classList.remove("sideNavOpen");
+          setTimeout(function() {
+            openText.innerText = "";
+            openTriangle.classList.remove("closeArrow");
+          }, 500);
+          main.style.marginLeft = "0";
+        } else {
+          sidenav.classList.add("sideNavOpen");
+          setTimeout(function() {
+            openText.innerText = "close";
+            openTriangle.classList.add("closeArrow");
+          }, 500);
+          main.style.marginLeft = "250px"; // Change this value if necessary
           openText.innerText = "";
-          openTriangle.classList.remove("closeArrow");
-        }, 500);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var sidenav = document.getElementById("mySidenav");
+        var main = document.getElementById("main");
+        var body = document.body;
+        var closeButton = document.querySelector('.closebtn');
+
+        sidenav.classList.remove("sideNavOpen");
         main.style.marginLeft = "0";
-      } else {
-        sidenav.classList.add("sideNavOpen");
+        body.style.backgroundColor = "white";
+
+        closeButton.addEventListener('click', function() {
+          closeNav();
+        });
+
+        body.addEventListener('click', function(event) {
+          if (event.target !== sidenav && !sidenav.contains(event.target)) {
+            closeNav();
+          }
+        });
+      });
+
+    
+      function openNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openText = document.getElementById("openText");
+        var openTriangle = document.querySelector(".openTriangle");
+
+        sidenav.style.width = "400px"; // Update width to 400px
         setTimeout(function() {
           openText.innerText = "close";
           openTriangle.classList.add("closeArrow");
         }, 500);
-        main.style.marginLeft = "250px"; // Change this value if necessary
+
         openText.innerText = "";
+        sidenav.classList.add("sideNavOpen");
+        document.getElementById("main").style.marginLeft = "250px"; // Adjust margin if needed
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       }
-    }
+    
+      function closeNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var main = document.getElementById("main");
+        var body = document.body;
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var sidenav = document.getElementById("mySidenav");
-      var main = document.getElementById("main");
-      var body = document.body;
-
-      sidenav.classList.remove("sideNavOpen");
-      main.style.marginLeft = "0";
-      body.style.backgroundColor = "white";
-
-      // Add a click event listener to the document body to close the side nav when clicking outside the menu
-      body.addEventListener('click', function(event) {
-        if (event.target !== sidenav && !sidenav.contains(event.target)) {
-          closeNav();
+        if (sidenav.classList.contains("sideNavOpen")) {
+          sidenav.style.width = "0";
+          main.style.marginLeft = "0";
+          body.style.backgroundColor = "white";
+          sidenav.classList.remove("sideNavOpen");
         }
-      });
-    });
-
-    function openNav() {
-      var sidenav = document.getElementById("mySidenav");
-      var openText = document.getElementById("openText");
-      var openTriangle = document.querySelector(".openTriangle");
-
-      sidenav.style.width = "400px"; // Update width to 400px
-      setTimeout(function() {
-        openText.innerText = "close";
-        openTriangle.classList.add("closeArrow");
-      }, 500);
-
-      openText.innerText = "";
-      sidenav.classList.add("sideNavOpen");
-      document.getElementById("main").style.marginLeft = "250px"; // Adjust margin if needed
-      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-
-    function closeNav() {
-      var sidenav = document.getElementById("mySidenav");
-
-      if (sidenav.classList.contains("sideNavOpen")) {
-        sidenav.classList.remove("sideNavOpen");
-        sidenav.style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.body.style.backgroundColor = "white";
       }
-    }
 
-    function showForm(formId) {
-      var forms = document.getElementsByClassName("form-container");
-      for (var i = 0; i < forms.length; i++) {
-        forms[i].style.display = "none";
+
+      function loadForm(formURL, formId) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("content").innerHTML = this.responseText;
+            if (formId) {
+              var form = document.getElementById(formId);
+              form.style.display = "block";
+              form.style.width = "300px"; // Adjust width if needed
+              form.style.height = "auto"; // Adjust height if needed
+              form.style.position = "absolute";
+              form.style.top = "50px"; // Adjust top position as required
+              form.style.right = "50px"; // Adjust right position as required
+            }
+          }
+        };
+        xhttp.open("GET", formURL, true);
+        xhttp.send();
       }
-      document.getElementById(formId).style.display = "block";
-      openNav(); 
-    }
-  </script>
+    
+      function showForm(formId) {
+        var forms = document.getElementsByClassName("form-container");
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].style.display = "none";
+        }
+        document.getElementById(formId).style.display = "block";
+        openNav(); 
+      }
+    </script>
     
     
 
@@ -912,20 +940,21 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("content").innerHTML = this.responseText;
-          }
-          if (formId) {
-            hideAllForms();
-            document.getElementById(formId).style.display = "dropdown";
-            // Add any additional styling manipulations if needed
-            // For example:
-            document.getElementById(formId).classList.add("form-container");
+            if (formId) {
+              var form = document.getElementById(formId);
+              form.style.display = "block";
+              form.style.width = "300px"; // Adjust width if needed
+              form.style.height = "auto"; // Adjust height if needed
+              form.style.position = "absolute";
+              form.style.top = "50px"; // Adjust top position as required
+              form.style.right = "50px"; // Adjust right position as required
+            }
           }
         };
-      xhttp.open("GET", pageName, true);
-      xhttp.send();
-      console.log("Loading page:", url);
-
-    }
+        xhttp.open("GET", pageName, true);
+        xhttp.send();
+        console.log("Loading page:", url);
+      }
     </script>
     <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto;" >
       <div class="imgcontainer">
