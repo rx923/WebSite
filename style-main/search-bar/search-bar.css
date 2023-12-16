@@ -18,12 +18,12 @@
     /* Set maximum width if needed *
     /* Adjust top position */
     transform: translateY(-300%);
-    top: 240px;
+    top: 220px;
     margin-top: 0px;
     margin-bottom: 20px; 
     /* Use block level element */
     display: inline-block; 
-    position: absolute;
+    position: sticky;
     /* Center align the content */
     /* text-align: center; */
     /* Center the block element */

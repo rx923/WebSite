@@ -840,13 +840,13 @@
         var sidenav = document.getElementById("mySidenav");
         var openText = document.getElementById("openText");
         var openTriangle = document.querySelector(".openTriangle");
-    
+
         sidenav.style.width = "400px"; // Update width to 400px
         setTimeout(function() {
           openText.innerText = "close";
           openTriangle.classList.add("closeArrow");
         }, 500);
-    
+
         openText.innerText = "";
         sidenav.classList.add("sideNavOpen");
         document.getElementById("main").style.marginLeft = "250px"; // Adjust margin if needed
@@ -855,14 +855,36 @@
     
       function closeNav() {
         var sidenav = document.getElementById("mySidenav");
-    
+        var main = document.getElementById("main");
+        var body = document.body;
+
         if (sidenav.classList.contains("sideNavOpen")) {
-        sidenav.classList.remove("sideNavOpen");
-        sidenav.style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.body.style.backgroundColor = "white";
-          sidenav.classList.remove("sideNavOpen"); // Remove the class after closing
+          sidenav.style.width = "0";
+          main.style.marginLeft = "0";
+          body.style.backgroundColor = "white";
+          sidenav.classList.remove("sideNavOpen");
         }
+      }
+
+
+      function loadForm(formURL, formId) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("content").innerHTML = this.responseText;
+            if (formId) {
+              var form = document.getElementById(formId);
+              form.style.display = "block";
+              form.style.width = "300px"; // Adjust width if needed
+              form.style.height = "auto"; // Adjust height if needed
+              form.style.position = "absolute";
+              form.style.top = "50px"; // Adjust top position as required
+              form.style.right = "50px"; // Adjust right position as required
+            }
+          }
+        };
+        xhttp.open("GET", formURL, true);
+        xhttp.send();
       }
     
       function showForm(formId) {
@@ -918,20 +940,21 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("content").innerHTML = this.responseText;
-          }
-          if (formId) {
-            hideAllForms();
-            document.getElementById(formId).style.display = "dropdown";
-            // Add any additional styling manipulations if needed
-            // For example:
-            document.getElementById(formId).classList.add("form-container");
+            if (formId) {
+              var form = document.getElementById(formId);
+              form.style.display = "block";
+              form.style.width = "300px"; // Adjust width if needed
+              form.style.height = "auto"; // Adjust height if needed
+              form.style.position = "absolute";
+              form.style.top = "50px"; // Adjust top position as required
+              form.style.right = "50px"; // Adjust right position as required
+            }
           }
         };
-      xhttp.open("GET", pageName, true);
-      xhttp.send();
-      console.log("Loading page:", url);
-
-    }
+        xhttp.open("GET", pageName, true);
+        xhttp.send();
+        console.log("Loading page:", url);
+      }
     </script>
     <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto;" >
       <div class="imgcontainer">
