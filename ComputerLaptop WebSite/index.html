@@ -257,11 +257,13 @@
       /* Styles for the search bar */
       .search-bar {
         border: 3px outset rgb(0, 123, 255);
-        background-color: whitesmoke;
+        background-color: rgb(34, 34, 34);
         border-radius: 25px;
         width: 500px;
         padding: 10px;
+        left: 1100px;
         outline: none;
+        position: sticky;
       }
   
       .search-container {
@@ -310,6 +312,9 @@
         padding: 5px;
         margin-bottom: 10px;
       }
+      .dropdown-item .a{
+        border: 1px solid black;
+      }
     </style>
     <style>
       /* CSS for the side navigation menu */
@@ -320,7 +325,7 @@
         z-index: 1; /* Make sure it appears above everything */
         top: 0;
         left: 0;
-        background-color: #111; /* Background color */
+        background-color: #9e6d50; /* Background color */
         overflow-x: hidden; /* Hide horizontal scrollbar */
         padding-top: 60px; /* Space for the triangle icon */
         transition: 0.5s; /* 0.5 second transition */
@@ -330,19 +335,28 @@
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 25px;
-        color: #818181;
+        background-color: #c7c400;
+        color: #fffdfd;
+        border-radius: 30px;
         display: block;
+        width: 220px;
         transition: 0.3s;
       }
 
       .sidenav a:hover {
-        color: #f1f1f1;
+        border: 1px groove white;
+        border-radius: 30px;
+        color: #ff0000;
+        border-inline: 3px 2px 2px 2px;
+        animation: pulse 4s, infinite linear;
       }
 
       .sidenav .closebtn {
         position: absolute;
-        top: 0;
-        right: 25px;
+        background: rgb(66, 76, 104);
+        top: 10px;
+        right: 10px;
+        width: 40px;
         font-size: 36px;
         margin-left: 50px;
       }
@@ -579,148 +593,138 @@
     </script> -->
     <header>
       <h1> Big Store Coffee </h1>
-      <div class="pulse search-bar" id="bara-de-cautare-principala" class="fixed-search-bar">
+      <div class="search-bar">
         <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala">
-        <button type="submit" id="submit-cauta-bara-de-cautare">Cauta:</button>
+        <div id="searchDropdown" class="dropdown-content"></div>
       </div>
       <script>
-        const searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
-        const searchDropdown = document.createElement('');
-        searchDropdown.id = 'searchDropdown';
-        searchBar.parentElement.appendChild(searchDropdown);
-        let previousSearches = [];
-        let totalDisplayedItems = 0;
-        let visibleItems = [];
-        let hiddenItems = [];
-        let searchTerm = '';
-
-        applyStyles();
-    
-        searchBar.addEventListener('input', handleSearchInput);
-        document.getElementById('submit-cauta-bara-de-cautare').addEventListener('click', handleCautaButtonClick);
-
-        searchDropdown.addEventListener('wheel', handleWheelEvent);
-
-        searchBar.addEventListener('focus', handleFocusEvent);
-
-        document.addEventListener('click', handleDocumentClick);
-    
-        function applyStyles() {
-          // Your existing applyStyles function remains unchanged
-        }
-    
-        function handleSearchInput() {
-          searchTerm = searchBar.value.trim().toLowerCase();
-          const searchDropdown = document.getElementById('searchDropdown'); // Get the existing search dropdown element
-
-          if (searchTerm === '') {
-            displayPreviousSearches();
-            searchDropdown.style.display = 'none';
-          } else {
-            previousSearches = [];
-            const recommendations = getRecommendations(searchTerm);
-            visibleItems = recommendations.slice(0, 5); // Maximum 5 items initially displayed
-            hiddenItems = recommendations.slice(5);
-
-            displayRecommendations(visibleItems, hiddenItems, searchTerm);
-            searchDropdown.style.display = 'block';
-          }
-        }
-
-        // Function to display recommendations
-        function displayRecommendations(visible, hidden, searchTerm) {
-          const searchDropdown = document.getElementById('searchDropdown');
-          searchDropdown.innerHTML = '';
-
-          visible.forEach((item) => {
-            const dropdownItem = createDropdownItem(item, searchTerm);
-            searchDropdown.appendChild(dropdownItem);
-          });
-
-          searchDropdown.style.overflowY = hidden.length > 0 ? 'scroll' : 'hidden';
-          searchDropdown.style.borderRadius = '30px';
-          searchDropdown.style.padding = '5px';
-
-          const hiddenItemsDiv = document.createElement('div');
-          hiddenItemsDiv.classList.add('dropdown-hidden-items');
-          hiddenItemsDiv.style.paddingTop = '5px'; // Spacing between items
-
-          hidden.forEach((item) => {
-            const dropdownItem = createDropdownItem(item, searchTerm);
-            hiddenItemsDiv.appendChild(dropdownItem);
-          });
-          searchDropdown.appendChild(hiddenItemsDiv);
-        }
-
-        // Function to create dropdown items
-        function createDropdownItem(item, searchTerm) {
-          const dropdownItem = document.createElement('div');
-          dropdownItem.classList.add('dropdown-item');
-          dropdownItem.textContent = item;
-          dropdownItem.style.cursor = 'pointer'; // Cursor style
-
-          dropdownItem.addEventListener('click', function () {
-            searchBar.value = item;
-            redirectToProduct(item, searchTerm);
-          });
-
-          return dropdownItem;
-        }
-
-        function redirectToProduct(item, searchTerm) {
-          const productLink = getRecommendations(searchTerm).find((product) => product.name === item)?.link;
-          if (productLink) {
-            window.location.href = productLink;
-          }
-        }
-
-        // Replace getRecommendations with your own logic to fetch recommendations
-        function getRecommendations(searchTerm) {
-          // Sample list of recommendations - Replace this with your own logic to fetch recommendations
-          let products = [
-            'Espresso',
-            'Cappuccino',
-            'Latte',
-            'Mocha',
-            'Irish Coffee',
-            'Black Coffee',
-            'Americano',
-            'Macchiato',
-            'Ristretto',
-            'French Press Coffee',
-            // Additional whiskey-related products
-            'Scotch Whiskey',
-            'Bourbon Whiskey',
-            'Irish Whiskey',
-            'Rye Whiskey',
-            'Japanese Whiskey',
-            // Additional products...
-          ];
-
-          // Map each product to its respective HTML page link
-          const productLinks = {
-            'Espresso': 'espresso.html',
-            'Cappuccino': 'cappuccino.html',
-            'Latte': 'latte.html',
-            // ... Add other product links as needed
-            'Scotch Whiskey': 'scotch-whiskey.html',
-            'Bourbon Whiskey': 'bourbon-whiskey.html',
-            'Irish Whiskey': 'irish-whiskey.html',
-            'Rye Whiskey': 'rye-whiskey.html',
-            'Japanese Whiskey': 'japanese-whiskey.html',
-            // Additional product links...
-          };
-
-          const recommendations = products.filter((product) => product.toLowerCase().includes(searchTerm)).map((product) => {
-            return {
-              name: product,
-              link: productLinks[product] || '#', // If link not found, use '#' as default
+        class ProductRecommendation {
+          constructor() {
+            this.searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
+            this.searchDropdown = document.getElementById('searchDropdown');
+            this.searchTerm = '';
+            this.productLinks = {
+              'Espresso': this.sanitizeURL('espresso.html'),
+              'Cappuccino': this.sanitizeURL('cappuccino.html'),
+              'Latte': this.sanitizeURL('latte.html'),
+              // ... Add other product links as needed
+              'Scotch Whiskey': this.sanitizeURL('scotch-whiskey.html'),
+              'Bourbon Whiskey': this.sanitizeURL('bourbon-whiskey.html'),
+              'Irish Whiskey': this.sanitizeURL('irish-whiskey.html'),
+              'Rye Whiskey': this.sanitizeURL('rye-whiskey.html'),
+              'Japanese Whiskey': this.sanitizeURL('japanese-whiskey.html'),
+              // Additional product links...
             };
-          });
 
-          return recommendations;
+            this.initialize();
+          }
+
+          initialize() {
+            this.searchBar.addEventListener('input', this.handleSearchInput.bind(this));
+          }
+
+          handleSearchInput() {
+            this.searchTerm = this.searchBar.value.trim().toLowerCase();
+
+            if (!this.searchDropdown) {
+              console.error('Search dropdown element not found');
+              return;
+            }
+
+            const searchBarRect = this.searchBar.getBoundingClientRect();
+
+            if (this.searchTerm === '') {
+              this.searchDropdown.style.display = 'none';
+            } else {
+              const matchingProducts = this.getRecommendations(this.searchTerm);
+
+              this.searchDropdown.innerHTML = '';
+
+              matchingProducts.slice(0, 5).forEach((product) => {
+                const dropdownItem = this.createDropdownItem({ name: product });
+                this.searchDropdown.appendChild(dropdownItem);
+              });
+
+              this.searchDropdown.style.overflowY = matchingProducts.length > 5 ? 'scroll' : 'hidden';
+              this.searchDropdown.style.borderRadius = '30px';
+              this.searchDropdown.style.padding = '5px';
+              this.searchDropdown.style.maxWidth = '550px';
+              this.searchDropdown.style.position = 'sticky';
+              this.searchDropdown.style.backgroundColor = 'rgb(248, 251, 91)';
+
+              // Calculate the position to place the dropdown below the search bar
+              this.searchDropdown.style.top = `${searchBarRect.bottom}px`;
+              this.searchDropdown.style.left = `${searchBarRect.left}px`;
+              this.searchDropdown.style.width = `${searchBarRect.width}px`;
+              this.searchDropdown.style.display = 'block';
+            }
+          }
+            
+          createDropdownItem(product) {
+            const dropdownItem = document.createElement('div');
+            dropdownItem.classList.add('dropdown-item');
+            dropdownItem.style.border = '2px groove black';
+            dropdownItem.style.borderRadius = '30px';
+            dropdownItem.style.margin = '5px 0';
+            dropdownItem.style.padding = '5px';
+
+            const productLink = document.createElement('a');
+            productLink.textContent = product.name;
+            productLink.href = this.productLinks[product.name];
+            productLink.style.textDecoration = 'none';
+
+            productLink.addEventListener('click', (event) => {
+              event.preventDefault();
+              this.searchBar.value = product.name;
+              this.redirectToProduct(product.name, this.searchBar.value);
+            });
+
+            dropdownItem.appendChild(productLink);
+
+            return dropdownItem;
+          }
+
+          redirectToProduct(productName, searchTerm) {
+            const productLink = this.productLinks[productName];
+            if (productLink) {
+              window.location.href = this.sanitizeURL(productLink);
+            }
+          }
+
+          getRecommendations(searchTerm) {
+            const products = [
+              'Espresso',
+              'Cappuccino',
+              'Latte',
+              'Mocha',
+              'Irish Coffee',
+              'Black Coffee',
+              'Americano',
+              'Macchiato',
+              'Ristretto',
+              'French Press Coffee',
+              'Scotch Whiskey',
+              'Bourbon Whiskey',
+              'Irish Whiskey',
+              'Rye Whiskey',
+              'Japanese Whiskey',
+              // Additional products...
+            ];
+
+            return products.filter((product) => product.toLowerCase().includes(searchTerm));
+          }
+
+          sanitizeURL(url) {
+            const validProtocols = ['http://', 'https://', 'ftp://', 'mailto:'];
+            const isValidProtocol = validProtocols.some(protocol => url.startsWith(protocol));
+            return isValidProtocol ? url : '#';
+          }
         }
-      </script>
+
+
+      const productRecommendation = new ProductRecommendation();
+        
+    </script>      
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
@@ -752,7 +756,6 @@
       </div>
       
     </header>
-
     <script>
       // Function to load the content dynamically
       function loadPage(pageName, formId) {
@@ -783,8 +786,8 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="javascript:void(0)" onclick="loadForm('Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
         <a href="javascript:void(0)" onclick="loadForm('Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
-        <a href="#" onclick="closeNav()">Clients</a>
-        <a href="#" onclick="closeNav()">Echipa</a>
+        <a href="#" onclick="loadPage()">Clients</a>
+        <a href="#" onclick="loadPage()">Echipa</a>
       </div>
     </div>
     <div class="openTriangle" onclick="openNav()">&#9658;</div>
@@ -807,7 +810,7 @@
         } else {
           sidenav.classList.add("sideNavOpen");
           setTimeout(function() {
-            openText.innerText = "close";
+            openText.innerText = "";
             openTriangle.classList.add("closeArrow");
           }, 500);
           main.style.marginLeft = "250px"; // Change this value if necessary

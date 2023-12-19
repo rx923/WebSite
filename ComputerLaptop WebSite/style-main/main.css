@@ -495,16 +495,16 @@ header {
 }
 
 .table-container_lista_optiuni {
-    width: 200px;
+    width: auto;
     height: 320px;
-    position: relative;
-    border: 1px groove whitesmoke;
+    position: sticky;
+    border: 3px outset rgba(0, 0, 0, 0.35);
     border-radius: 30px;
     box-sizing: border-box;
     flex-direction: none;
     grid-auto-flow: dense;
     background: 
-        linear-gradient(35deg, #cacaca 27%, rgb(139, 110, 110)66%, rgb(94, 45, 0) 95%);
+        linear-gradient(to right bottom, #ffffff7b 27%rgba(255, 238, 0, 0.564)0)66%, rgba(255, 150, 52, 0.827) 95%;
     position:sticky;
     background-color:unset;
     align-content: left;
