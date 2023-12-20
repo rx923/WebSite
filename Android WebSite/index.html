@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico"
-    style="width: auto; height: auto;">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico">
+    <!-- Style for the Phone devices with media queries-->
   <style>
     /* Apple iOS 14 Pro Max style */
     @media only screen and ((max-width:430px) and (max-height: 932px)),
@@ -5547,7 +5547,6 @@
       </script> -->
     <header class="header">
       <div class="search-bar" id="Bara_de_Cautare" class="fixed-search-bar"></div>
-      <button type="submit" class="onclick" >
         <div id="recommendationDropdown" style="display: none;"></div>
         <div id="searchDropdown" class="dropdown-content">
           <!-- The following div will contain hidden items -->
@@ -5769,42 +5768,7 @@
       </div>
 
     </header>
-    <style>
-      /* Add this CSS for smooth transitions */
-      #mySidenav {
-        scroll-padding: 30px;
-        width: 0;
-        max-width: 170px;
-        /* Set your desired max height */
-        max-height: calc(100vh - 100px); 
-        /* Added background-color transition */
-        transition: width 0.5s ease, background-color 0.3s ease; 
-        /* Enable vertical scrolling */
-        background-color: white;
-        /* Fixed positioning */
-        position: fixed; 
-        /* Align to the top */
-        top: 0; 
-        /* Initially hide off-screen */
-        left: 10px; 
-        /* Set a high z-index to ensure visibility */
-        z-index: 999; 
-        /* Disable pointer events to prevent scrolling when closed */
-        pointer-events: none; 
-        overflow-y: auto;
-        /* Set a maximum height to fit within the viewport */
-        max-height: 100vh;
-      }
     
-      .sideNavOpened #mySidenav {
-      width: 170px;
-      left: 0; /* Move into view */
-      background-color: transparent;
-      /* Enable pointer events to allow scrolling within the menu */
-      pointer-events: auto; 
-      }
-
-    </style>
     <div id="mySidenav" class="sidenav" style="position: fixed; top: 0; left: 0; overflow-x: hidden;">
       <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
       <a href="javascript:void(0)" onclick="toggleForm('Logheaza-teFormContainer')">Logheaza-te</a>
