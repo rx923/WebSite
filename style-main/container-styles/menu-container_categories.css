@@ -85,7 +85,7 @@
     font:menu;
 }
 .li_categoria_3_lista{
-    background-color: linear-gradient(20deg, rgb(255, 0, 0) 21%, #d08132 61%, #ffffff 95%);
+    background-color: linear-gradient(20deg, rgb(255, 0, 0) 21%, #d08132 61%, #ff0000 95%);
     border: 3px black outset;
     border-radius: 30px;
     padding: 1px;

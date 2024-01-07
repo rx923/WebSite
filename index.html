@@ -24,7 +24,7 @@
         .sidenav a {
           padding: 16px;
           text-decoration: double;
-          font-size: 20px;
+          font-size: 12px;
           color: #818181;
           display: block;
           transition: 0.3s;
@@ -260,13 +260,15 @@
         background-color: rgb(235, 216, 168);
         border-radius: 25px;
         width: 500px;
+        padding: 10px;
         margin-bottom: 10px;
         padding: 10px;
-        left: 30px;
+        left: 1230px;
         outline: none;
-        position: relative;
+        position: sticky;
         display: flex;
         align-items: center;
+        resize: none;
       }
   
       .search-container {
@@ -318,8 +320,6 @@
       .dropdown-item .a{
         border: 1px solid black;
       }
-    </style>
-    <style>
       /* CSS for the side navigation menu */
       .sidenav {
         height: 100%; /* Set full height */
@@ -328,29 +328,40 @@
         z-index: 1; /* Make sure it appears above everything */
         top: 0;
         left: 0;
-        background-color: #111; /* Background color */
+        background-color: #9e6d50; /* Background color */
         overflow-x: hidden; /* Hide horizontal scrollbar */
         padding-top: 60px; /* Space for the triangle icon */
         transition: 0.5s; /* 0.5 second transition */
       }
 
       .sidenav a {
+        margin-top: 10px;
         padding: 8px 8px 8px 32px;
         text-decoration: none;
-        font-size: 25px;
-        color: #818181;
+        font-size: 12px;
+        background-color: #c7c400;
+        color: #fffdfd;
+        border-radius: 30px;
         display: block;
+        width: 220px;
         transition: 0.3s;
       }
 
       .sidenav a:hover {
-        color: #f1f1f1;
+        border: 1px groove white;
+        border-radius: 30px;
+        color: #ff0000;
+        border-inline: 3px 2px 2px 2px;
+        animation: pulse 4s, infinite alternate-reverse;
       }
 
       .sidenav .closebtn {
         position: absolute;
-        top: 0;
-        right: 25px;
+        background: rgb(66, 76, 104);
+        top: 1px;
+        margin-bottom: 4px;
+        right: 20px;
+        width: 50px;
         font-size: 36px;
         margin-left: 50px;
       }
@@ -369,6 +380,8 @@
       .openTriangle:hover::shadow {
         color: #e85757;
       }
+
+      
     </style>
     <title>Good Store Coffee</title>
 
@@ -589,7 +602,7 @@
       <h1> Big Store Coffee </h1>
       <div class="search-bar">
         <!-- Search input -->
-        <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala">
+        <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala" style="resize: none;">
         <!-- Rest of your search bar content -->
         <button type="submit" id="submit-cauta-bara-de-cautare" onclick="submitSearch()">Cauta</button>
         <div id="searchDropdown" class="dropdown-content"></div>
@@ -604,12 +617,23 @@
               'Espresso': this.sanitizeURL('espresso.html'),
               'Cappuccino': this.sanitizeURL('cappuccino.html'),
               'Latte': this.sanitizeURL('latte.html'),
+              'French Press Coffee': this.sanitizeURL('French Press Coffee.html'),
+              'Ristretto': this.sanitizeURL('Ristretto.html'),
+              'Macchiato': this.sanitizeURL('Macchiato.html'),
+              'Americano': this.sanitizeURL('Americano.html'),
+              'Irish Coffee': this.sanitizeURL('Irish Coffee.html'),
+              'Black Coffee': this.sanitizeURL('Black Coffee.html'),
+              'Mocha': this.sanitizeURL('Mocha.html'),
               // ... Add other product links as needed
               'Scotch Whiskey': this.sanitizeURL('scotch-whiskey.html'),
               'Bourbon Whiskey': this.sanitizeURL('bourbon-whiskey.html'),
               'Irish Whiskey': this.sanitizeURL('irish-whiskey.html'),
               'Rye Whiskey': this.sanitizeURL('rye-whiskey.html'),
               'Japanese Whiskey': this.sanitizeURL('japanese-whiskey.html'),
+              'Whiskey Smash': this.sanitizeURL('japanese-whiskey.html'),
+              'Rusty Nail Whiskey': this.sanitizeURL('japanese-whiskey.html'),
+              'Sazerac Whiskey': this.sanitizeURL('japanese-whiskey.html'),
+              'Highball Whiskey': this.sanitizeURL('japanese-whiskey.html'),
               // Additional product links...
             };
 
@@ -618,48 +642,56 @@
 
           initialize() {
             this.searchBar.addEventListener('input', this.handleSearchInput.bind(this));
+            this.searchBar.style.backgroundColor = 'lightblue';
+            this.searchBar.style.width = '250px'; // Change width as needed
+
+            // Initialize the dropdown styles
+            this.searchDropdown.style.display = 'none';
+            this.searchDropdown.style.position = 'absolute';
+            this.searchDropdown.style.zIndex = '9999';
+            this.searchDropdown.style.backgroundColor = '#E2E281';
+            this.searchDropdown.style.maxWidth = '250px';
+            this.searchDropdown.style.borderRadius = '30px';
+            this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
+            this.searchDropdown.style.padding = '10px';
+            this.searchDropdown.style.margin = '10px';
           }
 
           handleSearchInput() {
             this.searchTerm = this.searchBar.value.trim().toLowerCase();
 
-            if (!this.searchDropdown) {
-              console.error('Search dropdown element not found');
+            if (this.searchTerm === '') {
+              this.searchDropdown.style.display = 'none';
               return;
             }
 
+            const matchingProducts = this.getRecommendations(this.searchTerm);
+
+            this.searchDropdown.innerHTML = '';
+
+            matchingProducts.slice(0, 5).forEach((product) => {
+              const dropdownItem = this.createDropdownItem({ name: product });
+              this.searchDropdown.appendChild(dropdownItem);
+            });
+
             const searchBarRect = this.searchBar.getBoundingClientRect();
+            this.searchDropdown.style.top = `${searchBarRect.bottom + window.scrollY}px`;
+            this.searchDropdown.style.left = `${searchBarRect.left}px`;
+            this.searchDropdown.style.width = `${searchBarRect.width}px`;
+            this.searchDropdown.style.display = 'block';
 
-            if (this.searchTerm === '') {
-              this.searchDropdown.style.display = 'none';
-            } else {
-              const matchingProducts = this.getRecommendations(this.searchTerm);
+            this.searchDropdown.style.overflowY = matchingProducts.length > 3 ? 'scroll' : '';
 
-              this.searchDropdown.innerHTML = '';
-
-              matchingProducts.slice(0, 5).forEach((product) => {
-                const dropdownItem = this.createDropdownItem({ name: product });
-                this.searchDropdown.appendChild(dropdownItem);
-              });
-
-              this.searchDropdown.style.overflowY = matchingProducts.length > 5 ? 'scroll' : 'none';
-              this.searchDropdown.style.borderRadius = '20px';
-              this.searchDropdown.style.margin = '10px';
-              this.searchDropdown.style.padding = '10px';
-              this.searchDropdown.style.maxWidth = '250px';
-              // Change to 'absolute' for scrolling
-              this.searchDropdown.style.position = 'relative'; 
-              this.searchDropdown.style.display = 'block';
-              this.searchDropdown.style.backgroundColor = '#E2E281';
-              this.searchDropdown.style.zIndex = '9999';
-
-              this.searchDropdown.style.top = `${searchBarRect.bottom + window.scrollY}px`;
-              this.searchDropdown.style.left = `${searchBarRect.left}px`;
-              this.searchDropdown.style.width = `${searchBarRect.width}px`;
-              this.searchDropdown.style.display = 'block';
-            }
+            // Enable scrolling within the menu and search results
+            this.searchDropdown.addEventListener('wheel', (event) => {
+              if (event.deltaY > 0) {
+                this.searchDropdown.scrollTop += 30; // Scroll down
+              } else {
+                this.searchDropdown.scrollTop -= 30; // Scroll up
+              }
+              event.preventDefault();
+            });
           }
-            
           createDropdownItem(product) {
             const dropdownItem = document.createElement('div');
             dropdownItem.classList.add('dropdown-item');
@@ -758,7 +790,6 @@
       </div>
       
     </header>
-
     <script>
       // Function to load the content dynamically
       function loadPage(pageName, formId) {
@@ -849,11 +880,16 @@
         var sidenav = document.getElementById("mySidenav");
         var openText = document.getElementById("openText");
         var openTriangle = document.querySelector(".openTriangle");
-
-        sidenav.style.width = "400px"; // Update width to 400px
+        sidenav.style.top = "30px";
+        sidenav.style.borderRadius = "30px";
+        sidenav.style.marginLeft = "30px";
+        sidenav.style.bottom = "20vw";
+        sidenav.style.height = "auto";
+        sidenav.style.width = "350px"; 
         setTimeout(function() {
           openText.innerText = "close";
-          openTriangle.classList.add("closeArrow");
+          // left-pointing arrow
+          openTriangle.innerHTML = "&larr;"; 
         }, 500);
 
         openText.innerText = "";
@@ -1481,14 +1517,14 @@
                 <a style="text-decoration: wavy blue;">Produse de top</a>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images3">
                     <div class="dropdown-container" id="container_imagine-dropdown-1">
-                      <img src="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\bady-abbas-qJlGIllS0Zg-unsplash.jpg" style="width: 200px; height: 200px;" alt="Coffee1" loading="lazy">
+                      <img src="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\bady-abbas-qJlGIllS0Zg-unsplash.jpg" style="width: 200px; height: 200px; border-radius: 30px;" alt="Coffee1" loading="lazy">
                       <em>
                         <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary">Produsul de top 1</a>
                           <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament. Fiecare înghițitură este o călătorie senzorială ce încântă simțurile, ducându-te prin teritorii gustative variate și pline de profunzime. Experimentează o experiență deosebită, savurând fiecare pahar din universul bogat al cafelei premium.</p>
                       </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-2">
-                      <img src="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\nick-harsell-J6MtKLtX5HM-unsplash.jpg" style="width: 200px; height: 200px;" alt="Coffee2" loading="lazy">
+                      <img src="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\nick-harsell-J6MtKLtX5HM-unsplash.jpg" style="width: 200px; height: 200px; border-radius: 30px;" alt="Coffee2" loading="lazy">
                       <em><a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM " id="Produsul-de-top-2-primary">Produsul de top 2</a>
                         <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">
                           Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie. Cu o combinație perfectă între cafea aromată și gheață proaspătă, această băutură revigorantă te răsfață cu fiecare înghițitură. Experimentează o simfonie de arome intense și o senzație revigorantă de prospețime, transformând fiecare moment într-o plăcere dulce și răcoritoare.
@@ -1496,7 +1532,7 @@
                       </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-3">
-                      <img src="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\tai-s-captures--DRC1OsqoiU-unsplash.jpg" style="width: 200px; height: 200px;" alt="Coffee3" loading="lazy">
+                      <img src="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\cele mai vandute produse\tai-s-captures--DRC1OsqoiU-unsplash.jpg" style="width: 200px; height: 200px; border-radius: 30px;" alt="Coffee3" loading="lazy">
                       <em><a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" rel="noopener noreferrer">Produsul de top 3</a>
                       <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66;">
                         Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase. Gustul echilibrat al cafelei se îmbină perfect cu notele subtile de scorțișoară, oferind o experiență reconfortantă și revigorantă. Bucură-te de o explozie răcoritoare de savoare și prospețime, savurând fiecare înghițitură ca pe o plimbare prin aroma dulce și condimentată a unei băuturi deosebite.
