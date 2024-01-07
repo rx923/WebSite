@@ -47,11 +47,13 @@
 }
 
 #submit-cauta-bara-de-cautare {
-    padding: 2px 4px;
+    padding: 20px 20px;
     color: rgb(255, 255, 255);
     border: 2px outset;
     border-radius: 30px;
-    background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
+    text-align: unset;
+    justify-content: center;
+    background:rgba(0, 0, 0, 0.19);
     cursor: pointer;
     /* Adjust button width */
     max-width: 110px; /* Set maximum width if needed */

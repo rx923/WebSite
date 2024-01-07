@@ -4,32 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico">
-    <!-- Style for the Phone devices with media queries-->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico"
+    style="width: auto; height: auto;">
   <style>
     /* Apple iOS 14 Pro Max style */
-    @media only screen and ((max-width:430px) and (max-height: 932px)),
-    (orientation: landscape) and (min-width:932px) and (min-height:430px) {
+    @media only screen and ((max-width: 430px) and (max-height: 932px)), (orientation: landscape) and (min-width: 932px) and (min-height: 430px) {
 
       /* Adjusting the html page size for Android type of devices */
       html {
-        max-width: fit-content;
-        max-height: fit-content;
+        max-width: auto;
+        max-height: auto;
         background: linear-gradient(45deg, #05334e, rgb(255, 255, 255));
       }
 
       /* Main header positioning background color and length and width */
       header {
+        display: flow;
         background: linear-gradient(30deg, #ffffffde 35%, #fef99f 65%, rgb(255, 255, 137) 70%);
-        border-top: 5px rgb(237, 239, 240) groove;
-        border-left: 5px rgb(255, 255, 255) groove;
-        border-right: 5px rgb(255, 255, 255) groove;
-        border-bottom: 5px rgb(255, 255, 255) groove;
+        border-top: 1px #000 groove;
+        border-left: 1px #000 groove;
+        border-right: 1px #000 groove;
+        border-bottom: 1px #000 groove;
         margin-bottom: 10px;
         margin-bottom: 1px;
         position: relative;
-        /* margin-top: 50px; */
-        padding-top: 350px;
+        margin-top: 50px;
+        padding-top: 340px;
       }
 
       /* Style for heading 1 which includes the title and a pulsing kind of animation to the right side and left side of the h1 heading*/
@@ -313,7 +313,7 @@
       /* scroll-padding-top: 40%; */
       -webkit-tap-highlight-color: #05334e;
       scroll-behavior: smooth;
-      touch-action: manipulation;
+      /* touch-action: manipulation; */
       border: outset 3px rgb(91 191 221 / 36%);
       border-radius: 30px;
       /* padding-top: 30px; */
@@ -473,8 +473,9 @@
 
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
     #main {
+      margin-top: 100px;
       width: 410px;
-      height: 500px;
+      height: 210px;
       position: relative;
       animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
       background: linear-gradient(20deg, rgb(255, 255, 255) 23%, rgb(0, 77, 115) 70%, rgb(255, 255, 255) 85%);
@@ -931,7 +932,7 @@
       width: 120px;
       margin: 1px;
       height: 170px;
-      top: 1972px;
+      top: 1200px;
       list-style-type: none;
       position: fixed;
       display: inline-block;
@@ -1688,15 +1689,12 @@
     /* styles for slideshow-container */
     /* * {box-sizing: border-box} */
     .slideshow-container {
-      max-width: 412px;
-      max-height: 915px;
-      overflow: hidden;
+      width: 410px;
+      height: 10px;
       margin: auto;
-      /* max-width: 100%; */
-      margin-right: 400px;
-      margin-left: 400px;
-      position: relative;
-      /* margin: auto; */
+      margin-right: 110px;
+      margin-left: 110px;
+      position: sticky;
       overflow: hidden;
       display: block;
     }
@@ -1790,7 +1788,7 @@
       }
     }
   </style>
-  <!-- Style for the Phone devices with media queries-->
+
   <style>
     /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
     @media only screen and ((max-width:412px) and (max-height: 915px)) and (min-width:915px) and (min-height:412px), (orientation: landscape) {
@@ -2221,7 +2219,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10000; /* Ensure forms are on top of other elements */
-      }
+    }
 
       /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
       #main {
@@ -3533,7 +3531,6 @@
       }
     }
   </style>
-  <!-- Style for the Phone devices with media queries-->
   <style>
     @media only screen and ((max-width:1440px) and (max-height: 3200px)) and (min-width:3200px) and (min-height:1440px),
     (orientation: landscape) {
@@ -5553,6 +5550,42 @@
       /* Enable pointer events to allow scrolling within the menu */
       pointer-events: auto; 
       }
+      #searchDropdown {
+        border-radius: 20px; /* Applying border-radius */
+        /* Add other necessary styles for the dropdown */
+      }
+      .dropdown-hidden-items {
+        max-height: 100px; 
+        overflow-y: auto; 
+        border: 1px solid #ccc; 
+        padding: 5px; 
+      }
+
+      #continut_acasa_dropdown {
+        display: none;
+        position: relative;
+        top: 100px;
+        right: 20px;
+        background-color: white; /* Set the background color of dropdown */
+        padding: 0px;
+        width: 300px;
+        border-radius: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+      }
+      /* Position the dropdown */
+      .dropdown-list_items_1 {
+        /* position: fixed; */
+        display: block;
+      }
+      .dropdown-list_items_1:hover #continut_acasa_dropdown {
+        display: block;
+        border-radius: 30px;
+        margin-right: 0px;
+        left: -35px;
+        background: #0000ff0a;
+        top: 125px;
+      }
     }
   </style>
   <title>Good Store Coffee</title>
@@ -5853,55 +5886,55 @@
         return dropdownItem;
       }
 
-    // Function to fetch or generate recommendations based on the search term
-    function getRecommendations(searchTerm) {
-      const products = [
-        'Espresso',
-        'Cappuccino',
-        'Latte',
-        'Mocha',
-        'Irish Coffee',
-        'Black Coffee',
-        'Americano',
-        'Macchiato',
-        'Ristretto',
-        'French Press Coffee',
-        'Cold Brew Coffee',
-        'Single Malt Scotch Whiskey',
-        'Bourbon Whiskey',
-        'Irish Whiskey',
-        'Rye Whiskey',
-        'Japanese Whisky',
-        'Canadian Whisky',
-        'Blended Scotch Whisky',
-        'Ethiopian Yirgacheffe Coffee',
-        'Kenyan AA Coffee',
-        'Guatemalan Antigua Coffee',
-        'Colombian Supremo Coffee',
-        'Jamaican Blue Mountain Coffee',
-        'Vietnamese Egg Coffee',
-        'Bulletproof Coffee',
-        'White Russian Cocktail',
-        'Old Fashioned Cocktail',
-        'Manhattan Cocktail',
-        'Whiskey Sour Cocktail',
-        'Coffee Liqueur',
-        'Irish Cream Liqueur',
-        'Kahlúa',
-        'Baileys Irish Cream',
-        'Jameson Irish Whiskey',
-        'Glenfiddich Single Malt Scotch Whisky',
-      ];
+      // Function to fetch or generate recommendations based on the search term
+      function getRecommendations(searchTerm) {
+        const products = [
+          'Espresso',
+          'Cappuccino',
+          'Latte',
+          'Mocha',
+          'Irish Coffee',
+          'Black Coffee',
+          'Americano',
+          'Macchiato',
+          'Ristretto',
+          'French Press Coffee',
+          'Cold Brew Coffee',
+          'Single Malt Scotch Whiskey',
+          'Bourbon Whiskey',
+          'Irish Whiskey',
+          'Rye Whiskey',
+          'Japanese Whisky',
+          'Canadian Whisky',
+          'Blended Scotch Whisky',
+          'Ethiopian Yirgacheffe Coffee',
+          'Kenyan AA Coffee',
+          'Guatemalan Antigua Coffee',
+          'Colombian Supremo Coffee',
+          'Jamaican Blue Mountain Coffee',
+          'Vietnamese Egg Coffee',
+          'Bulletproof Coffee',
+          'White Russian Cocktail',
+          'Old Fashioned Cocktail',
+          'Manhattan Cocktail',
+          'Whiskey Sour Cocktail',
+          'Coffee Liqueur',
+          'Irish Cream Liqueur',
+          'Kahlúa',
+          'Baileys Irish Cream',
+          'Jameson Irish Whiskey',
+          'Glenfiddich Single Malt Scotch Whisky',
+        ];
 
-      const filteredProducts = products.filter((product) =>
-        product.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+        const filteredProducts = products.filter((product) =>
+          product.toLowerCase().includes(searchTerm.toLowerCase())
+        );
 
-      // Sort the filtered products alphabetically
-      const sortedProducts = filteredProducts.sort();
+        // Sort the filtered products alphabetically
+        const sortedProducts = filteredProducts.sort();
 
-      return sortedProducts;
-    }
+        return sortedProducts;
+      }
 
     </script>
     <div class="wave-container">
@@ -6114,150 +6147,150 @@
           document.documentElement.scrollTo({ top: document.documentElement.scrollTop + scrollAmount, behavior: 'smooth' });
         }
 
-          handleSwipeDirection(swipeDistanceX, swipeDistanceY, isSideNavOpen) {
-            const swipeThresholdX = Math.abs(swipeDistanceX);
-            const swipeThresholdY = Math.abs(swipeDistanceY);
+        handleSwipeDirection(swipeDistanceX, swipeDistanceY, isSideNavOpen) {
+          const swipeThresholdX = Math.abs(swipeDistanceX);
+          const swipeThresholdY = Math.abs(swipeDistanceY);
 
-            if (isSideNavOpen) {
-              if (swipeDistanceX < 0 && swipeThresholdX > swipeThresholdY) {
-                this.closeNav();
-              } else if (swipeDistanceX > 0 && swipeThresholdX > swipeThresholdY) {
-                event.preventDefault();
-                this.openNav();
-              }
-            } else {
-              if (swipeDistanceX > 0 && swipeThresholdX > swipeThresholdY) {
-                this.openNav();
-              } else if (swipeDistanceX < 0 && swipeThresholdX > swipeThresholdY) {
-                event.preventDefault();
-                this.closeNav();
-              }
+          if (isSideNavOpen) {
+            if (swipeDistanceX < 0 && swipeThresholdX > swipeThresholdY) {
+              this.closeNav();
+            } else if (swipeDistanceX > 0 && swipeThresholdX > swipeThresholdY) {
+              event.preventDefault();
+              this.openNav();
+            }
+          } else {
+            if (swipeDistanceX > 0 && swipeThresholdX > swipeThresholdY) {
+              this.openNav();
+            } else if (swipeDistanceX < 0 && swipeThresholdX > swipeThresholdY) {
+              event.preventDefault();
+              this.closeNav();
             }
           }
         }
+      }
 
-        class FormHandler {
-          constructor(sideNavigation) {
-            this.sideNavigation = sideNavigation;
-            this.logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
-            this.inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
+      class FormHandler {
+        constructor(sideNavigation) {
+          this.sideNavigation = sideNavigation;
+          this.logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
+          this.inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
 
-            this.logheazaTeCloseBtn = document.getElementById('Logheaza-teCloseBtn');
-            this.inregistrareCloseBtn = document.getElementById('InregistrareFormCloseBtn');
+          this.logheazaTeCloseBtn = document.getElementById('Logheaza-teCloseBtn');
+          this.inregistrareCloseBtn = document.getElementById('InregistrareFormCloseBtn');
 
-            this.addEventListeners();
-            this.setupSwipeActions();
-          }
+          this.addEventListeners();
+          this.setupSwipeActions();
+        }
 
-          addEventListeners() {
-            this.logheazaTeCloseBtn.addEventListener('click', () => {
-              this.closeForm(this.logheazaTeFormContainer, 'isLogheazaTeFormOpen');
-            });
+        addEventListeners() {
+          this.logheazaTeCloseBtn.addEventListener('click', () => {
+            this.closeForm(this.logheazaTeFormContainer, 'isLogheazaTeFormOpen');
+          });
 
-            this.inregistrareCloseBtn.addEventListener('click', () => {
-              this.closeForm(this.inregistrareFormContainer, 'isInregistrareFormOpen');
-            });
+          this.inregistrareCloseBtn.addEventListener('click', () => {
+            this.closeForm(this.inregistrareFormContainer, 'isInregistrareFormOpen');
+          });
 
-            this.logheazaTeFormContainer.addEventListener('click', () => {
-              this.showLogheazaTeForm();
-            });
+          this.logheazaTeFormContainer.addEventListener('click', () => {
+            this.showLogheazaTeForm();
+          });
 
-            this.inregistrareFormContainer.addEventListener('mouseover', () => {
-              this.showInregistrareForm();
-            });
+          this.inregistrareFormContainer.addEventListener('mouseover', () => {
+            this.showInregistrareForm();
+          });
 
-            this.logheazaTeFormContainer.addEventListener('touchstart', (event) => {
-              event.preventDefault();
-              this.showLogheazaTeForm();
-            });
+          this.logheazaTeFormContainer.addEventListener('touchstart', (event) => {
+            event.preventDefault();
+            this.showLogheazaTeForm();
+          });
 
-            this.inregistrareFormContainer.addEventListener('touchmove', (event) => {
-              event.preventDefault();
-              this.showInregistrareForm();
-            });
+          this.inregistrareFormContainer.addEventListener('touchmove', (event) => {
+            event.preventDefault();
+            this.showInregistrareForm();
+          });
 
-            this.logheazaTeFormContainer.addEventListener('gesturechange', (event) => {
-              event.preventDefault();
-              this.zoomForm(this.logheazaTeFormContainer);
-            });
+          this.logheazaTeFormContainer.addEventListener('gesturechange', (event) => {
+            event.preventDefault();
+            this.zoomForm(this.logheazaTeFormContainer);
+          });
 
-            this.inregistrareFormContainer.addEventListener('gesturechange', (event) => {
-              event.preventDefault();
-              this.zoomForm(this.inregistrareFormContainer);
-            });
+          this.inregistrareFormContainer.addEventListener('gesturechange', (event) => {
+            event.preventDefault();
+            this.zoomForm(this.inregistrareFormContainer);
+          });
 
-            this.sideNavigation.sideNavContent.addEventListener('click', (event) => {
-              const targetId = event.target.id;
+          this.sideNavigation.sideNavContent.addEventListener('click', (event) => {
+            const targetId = event.target.id;
 
-              if (targetId === 'logheazaTeLink') {
-                this.showForm(this.logheazaTeFormContainer, this.inregistrareFormContainer, 'isLogheazaTeFormOpen');
-              } else if (targetId === 'inregistrareLink') {
-                this.showForm(this.inregistrareFormContainer, this.logheazaTeFormContainer, 'isInregistrareFormOpen');
-              }
-            });
-          }
+            if (targetId === 'logheazaTeLink') {
+              this.showForm(this.logheazaTeFormContainer, this.inregistrareFormContainer, 'isLogheazaTeFormOpen');
+            } else if (targetId === 'inregistrareLink') {
+              this.showForm(this.inregistrareFormContainer, this.logheazaTeFormContainer, 'isInregistrareFormOpen');
+            }
+          });
+        }
 
-          zoomForm(formContainer) {
-            formContainer.style.width = '260px';
-            formContainer.style.height = '260px';
-            // Add more logic for zooming if required
-          }
+        zoomForm(formContainer) {
+          formContainer.style.width = '260px';
+          formContainer.style.height = '260px';
+          // Add more logic for zooming if required
+        }
 
-          closeForm(formContainer, storageKey) {
-            formContainer.style.display = 'none';
+        closeForm(formContainer, storageKey) {
+          formContainer.style.display = 'none';
+          localStorage.setItem(storageKey, 'false');
+        }
+
+        showForm(formToShow, otherFormContainer, storageKey) {
+          if (localStorage.getItem(storageKey) !== 'true') {
+            formToShow.style.display = 'block';
+            otherFormContainer.style.display = 'none';
+            localStorage.setItem(storageKey, 'true');
+          } else {
+            formToShow.style.display = 'none';
             localStorage.setItem(storageKey, 'false');
           }
+        }
 
-          showForm(formToShow, otherFormContainer, storageKey) {
-            if (localStorage.getItem(storageKey) !== 'true') {
-              formToShow.style.display = 'block';
-              otherFormContainer.style.display = 'none';
-              localStorage.setItem(storageKey, 'true');
-            } else {
-              formToShow.style.display = 'none';
-              localStorage.setItem(storageKey, 'false');
+        showLogheazaTeForm() {
+          const logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
+          this.closeAllFormsExcept(logheazaTeFormContainer.id);
+          this.showForm(logheazaTeFormContainer, this.sideNavigation);
+          localStorage.setItem('isLogheazaTeFormOpen', 'true');
+        }
+
+        showInregistrareForm() {
+          const inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
+          this.closeAllFormsExcept(inregistrareFormContainer.id);
+          this.showForm(inregistrareFormContainer, this.sideNavigation);
+          localStorage.setItem('isInregistrareFormOpen', 'true');
+        }
+
+        // Function to close all forms except the one specified by 'exceptId'
+        closeAllFormsExcept(exceptId) {
+          const formContainers = document.querySelectorAll('.form-container');
+          formContainers.forEach((container) => {
+            if (container.id !== exceptId) {
+              container.style.display = 'none';
             }
-          }
+          });
+        }
 
-          showLogheazaTeForm() {
-            const logheazaTeFormContainer = document.getElementById('Logheaza-teFormContainer');
-            this.closeAllFormsExcept(logheazaTeFormContainer.id);
-            this.showForm(logheazaTeFormContainer, this.sideNavigation);
-            localStorage.setItem('isLogheazaTeFormOpen', 'true');
-          }
+        // Swipe action setup
+        setupSwipeActions() {
+          let startX = 0;
+          let startY = 0;
 
-          showInregistrareForm() {
-            const inregistrareFormContainer = document.getElementById('InregistrareFormContainer');
-            this.closeAllFormsExcept(inregistrareFormContainer.id);
-            this.showForm(inregistrareFormContainer, this.sideNavigation);
-            localStorage.setItem('isInregistrareFormOpen', 'true');
-          }
+          document.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+          });
 
-          // Function to close all forms except the one specified by 'exceptId'
-          closeAllFormsExcept(exceptId) {
-            const formContainers = document.querySelectorAll('.form-container');
-            formContainers.forEach((container) => {
-              if (container.id !== exceptId) {
-                container.style.display = 'none';
-              }
-            });
-          }
-
-          // Swipe action setup
-          setupSwipeActions() {
-            let startX = 0;
-            let startY = 0;
-
-            document.addEventListener('touchstart', (event) => {
-              startX = event.touches[0].clientX;
-              startY = event.touches[0].clientY;
-            });
-
-            document.addEventListener('touchend', (event) => {
-              const endX = event.changedTouches[0].clientX;
-              const endY = event.changedTouches[0].clientY;
-              const diffX = endX - startX;
-              const diffY = endY - startY;
+          document.addEventListener('touchend', (event) => {
+            const endX = event.changedTouches[0].clientX;
+            const endY = event.changedTouches[0].clientY;
+            const diffX = endX - startX;
+            const diffY = endY - startY;
 
             if (Math.abs(diffX) > Math.abs(diffY)) {
               if (diffX > 0) {
@@ -6363,15 +6396,7 @@
         </div>
     </form>
   </div>
-
-
   <nav>
-    
-      .text a {
-        color: white;
-        text-decoration: underline;
-      }
-    </style>
     <!-- Slideshow container -->
     <div class="slideshow-container">
       <div class="mySlides">
@@ -6381,7 +6406,7 @@
           <p>Slide 1 Description. <a href="#">Link</a></p>
         </div>
       </div>
-
+  
       <div class="mySlides">
         <div class="numbertext">2 / 3</div>
         <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 200px;" alt="Slide 2">
@@ -6389,7 +6414,7 @@
           <p>Slide 2 Description. <a href="#">Link</a></p>
         </div>
       </div>
-
+  
       <div class="mySlides">
         <div class="numbertext">3 / 3</div>
         <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 200px; height: 200px;" alt="Slide 3">
@@ -6397,155 +6422,128 @@
           <p>Slide 3 Description. <a href="#">Link</a></p>
         </div>
       </div>
-
+  
       <!-- Navigation arrows -->
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-  </nav>
+    </nav>
 
-    <script>
-      let slideIndex = 0;
-      const intervalTime = 3000; // Change slide every 3 seconds
-    
-      function showSlides() {
-        const slides = document.getElementsByClassName("mySlides");
-        const textDescriptions = ["Slide 1 Description. <a href='#'>Link</a>", "Slide 2 Description. <a href='#'>Link</a>", "Slide 3 Description. <a href='#'>Link</a>"];
-    
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.opacity = 0;
-        }
-    
-        slideIndex++;
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        }
-    
-        slides[slideIndex - 1].style.opacity = 1;
-        slides[slideIndex - 1].querySelector('.text').innerHTML = textDescriptions[slideIndex - 1];
-    
-        setTimeout(showSlides, intervalTime);
+  <script>
+    let slideIndex = 0;
+    const intervalTime = 3000; // Change slide every 3 seconds
+  
+    function showSlides() {
+      const slides = document.getElementsByClassName("mySlides");
+      const textDescriptions = ["Slide 1 Description. <a href='#'>Link</a>", "Slide 2 Description. <a href='#'>Link</a>", "Slide 3 Description. <a href='#'>Link</a>"];
+  
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
       }
-    
-      function plusSlides(n) {
-        slideIndex += n;
-        const slides = document.getElementsByClassName("mySlides");
-    
-        if (slideIndex > slides.length) {
-          slideIndex = 1;
-        } else if (slideIndex < 1) {
-          slideIndex = slides.length;
-        }
-    
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.opacity = 0;
-        }
-    
-        slides[slideIndex - 1].style.opacity = 1;
-        slides[slideIndex - 1].querySelector('.text').innerHTML = textDescriptions[slideIndex - 1];
+  
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
       }
-    
-      // Initiate the slideshow
-      showSlides();
-    </script>
-    
-    <script>
+  
+      slides[slideIndex - 1].style.opacity = 1;
+      slides[slideIndex - 1].querySelector('.text').innerHTML = textDescriptions[slideIndex - 1];
+  
+      setTimeout(showSlides, intervalTime);
+    }
+  
+    function plusSlides(n) {
+      slideIndex += n;
+      const slides = document.getElementsByClassName("mySlides");
+  
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      } else if (slideIndex < 1) {
+        slideIndex = slides.length;
+      }
+  
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
+  
+      slides[slideIndex - 1].style.opacity = 1;
+      slides[slideIndex - 1].querySelector('.text').innerHTML = textDescriptions[slideIndex - 1];
+    }
+  
+    // Initiate the slideshow
+    showSlides();
+  </script>
+  
+  <script>
+  // Get the dropdown content
+  const dropdownContent = document.getElementById('continut_acasa_dropdown');
+
+  // Get the section element
+  const sectionElement = document.getElementById('ComputerLaptop-Link-Acasa');
+
+  // Show dropdown content on hover
+  sectionElement.addEventListener('mouseover', function() {
+    dropdownContent.style.display = 'block';
+  });
+
+  // Hide dropdown content on mouseout
+  sectionElement.addEventListener('mouseout', function() {
+    dropdownContent.style.display = 'none';
+  });
+  </script>
+    <div class="is-mobile-preview"></div>
+    <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="background: linear-gradient(30deg, #1b83d5de 35%, #05334e 65%, rgb(0, 85, 127) 70%)">
+    <div class="menu-container_acasa" id="Acasa_menu_container">
+    <ol class="menu-ordered_list_1" id="meniu_ordered_1">
+    <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
+    <section id="ComputerLaptop-Link-Acasa" style="color: white; border-radius: 30px; background-color: rgba(0, 0, 0, 0.5); padding: 10px;">Acasa</section>
+    <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
+    <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
+    <div class="image-container" style="width: 290px;border-radius: 30px;height: 200px;border: groove black 1px;background: steelblue;">
+    <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="width:100px; height: 80px; position: sticky;" loading="eager">
+    </div>
+    <div class="description-container" style="width: 295px;height: 110px;border-radius: 30px; background: linear-gradient(45deg, #05334e, rgb(255, 255, 255)); border: 1px solid black;">
+    <p style="border: 1px solid black; border-radius: 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
+    </div>
+    </div>
+    <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
+    <div class="image-container" style="width: 290px;border-radius: 30px;height: 200px;border: groove black 1px;background: steelblue;">
+    <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="width:100px; height: 80px; position: sticky;" loading="eager">
+    </div>
+    <div class="description-container" style="width: 295px;height: 110px;border-radius: 30px; background: linear-gradient(45deg, #05334e, rgb(255, 255, 255)); border: 1px solid black;">
+    <p style="border: 1px solid black; border-radius: 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
+    </div>
+    </div>
+    <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
+    <div class="image-container" style="width: 290px;border-radius: 30px;height: 200px;border: groove black 1px;background: steelblue;">
+    <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3 " style="width:100px; height: 80px; position: sticky;" loading="eager">
+    </div>
+    <div class="description-container" style="width: 295px;height: 110px;border-radius: 30px; background: linear-gradient(45deg, #05334e, rgb(255, 255, 255)); border: 1px solid black;">
+    <p style="border: 1px solid black; border-radius: 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
+    </div>
+    </div>
+    </ol>
+    </li>
+    </ol>
+    </div>
+    </div>
+  <script>
     // Get the dropdown content
-    const dropdownContent = document.getElementById('continut_acasa_dropdown');
+    const dropdownContentCategories = document.getElementById('Categorii_Produse_1_dropdown');
 
     // Get the section element
-    const sectionElement = document.getElementById('ComputerLaptop-Link-Acasa');
+    const sectionCategoriiProduse = document.getElementById('Categorii_Produse_Section');
 
     // Show dropdown content on hover
-    sectionElement.addEventListener('mouseover', function() {
-      dropdownContent.style.display = 'block';
+    sectionCategoriiProduse.addEventListener('mouseover', function() {
+      dropdownContentCategories.style.display = 'block';
     });
 
     // Hide dropdown content on mouseout
-    sectionElement.addEventListener('mouseout', function() {
-      dropdownContent.style.display = 'none';
+    sectionCategoriiProduse.addEventListener('mouseout', function() {
+      dropdownContentCategories.style.display = 'none';
     });
-    </script>
-    <style>
-      #continut_acasa_dropdown {
-        display: none;
-        position: relative;
-        top: 100px;
-        right: 20px;
-        background-color: white; /* Set the background color of dropdown */
-        padding: 0px;
-        width: 300px;
-        border-radius: 30px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
-      }
-      /* Position the dropdown */
-      .dropdown-list_items_1 {
-        /* position: fixed; */
-        display: block;
-      }
-      .dropdown-list_items_1:hover #continut_acasa_dropdown {
-        display: block;
-        border-radius: 30px;
-        margin-right: 0px;
-        left: -35px;
-        background: #0000ff0a;
-        top: 125px;
-      }
-    </style>
-    <div class="is-mobile-preview"></div>
-    <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="background: linear-gradient(30deg, #1b83d5de 35%, #05334e 65%, rgb(0, 85, 127) 70%)">
-      <div class="menu-container_acasa" id="Acasa_menu_container">
-        <ol class="menu-ordered_list_1" id="meniu_ordered_1">
-          <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
-            <section id="ComputerLaptop-Link-Acasa" style="color: white; border-radius: 30px; background-color: rgba(0, 0, 0, 0.5); padding: 10px;">Acasa</section>
-            <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
-              <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
-                <div class="image-container" style="width: 290px;border-radius: 30px;height: 200px;border: groove black 1px;background: steelblue;">
-                  <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="width:100px; height: 80px; position: sticky;" loading="eager">
-                </div>
-                <div class="description-container" style="width: 295px;height: 110px;border-radius: 30px; background: linear-gradient(45deg, #05334e, rgb(255, 255, 255)); border: 1px solid black;">
-                  <p style="border: 1px solid black; border-radius: 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
-                </div>
-              </div>
-              <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
-                <div class="image-container" style="width: 290px;border-radius: 30px;height: 200px;border: groove black 1px;background: steelblue;">
-                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="width:100px; height: 80px; position: sticky;" loading="eager">
-                </div>
-                <div class="description-container" style="width: 295px;height: 110px;border-radius: 30px; background: linear-gradient(45deg, #05334e, rgb(255, 255, 255)); border: 1px solid black;">
-                  <p style="border: 1px solid black; border-radius: 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
-                </div>
-              </div>
-              <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
-                <div class="image-container" style="width: 290px;border-radius: 30px;height: 200px;border: groove black 1px;background: steelblue;">
-                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3 " style="width:100px; height: 80px; position: sticky;" loading="eager">
-                </div>
-                <div class="description-container" style="width: 295px;height: 110px;border-radius: 30px; background: linear-gradient(45deg, #05334e, rgb(255, 255, 255)); border: 1px solid black;">
-                  <p style="border: 1px solid black; border-radius: 30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut condimentum ante eget lorem tincidunt.</p>
-                </div>
-              </div>
-            </ol>
-          </li>
-        </ol>
-      </div>
-    </div>
-    <script>
-      // Get the dropdown content
-      const dropdownContentCategories = document.getElementById('Categorii_Produse_1_dropdown');
-
-      // Get the section element
-      const sectionCategoriiProduse = document.getElementById('Categorii_Produse_Section');
-
-      // Show dropdown content on hover
-      sectionCategoriiProduse.addEventListener('mouseover', function() {
-        dropdownContentCategories.style.display = 'block';
-      });
-
-      // Hide dropdown content on mouseout
-      sectionCategoriiProduse.addEventListener('mouseout', function() {
-        dropdownContentCategories.style.display = 'none';
-      });
-    </script>
+  </script>
     <style>
       /* Hide the dropdown content by default */
       #Categorii_Produse_1_dropdown {
@@ -6570,25 +6568,26 @@
         display: block;
       }
       </style>
-  <div class="menu-container_categories" id="Menu_Categories">
-    <ol class="menu-ordered_list_2" id="meniu_ordered_2">
-      <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
-        <section id="Categorii_Produse_Section" style="color: white; border-radius: 30px; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">Categorii Produse</section>
-        <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown">
-          <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
-            <a href="U:\Plan Afacere\Android WebSite\ProduseCategorii\Produse-Categoria-Cafea-1\Categoria-1-tip-lista.html" rel="noopener noreferrer">Category 1</a>
-          </div>
-          <div class="li_categoria_2_lista" id="Categoria_2_tip_lista">
-            <a href="U:\Plan Afacere\Android WebSite\ProduseCategorii\Produse-Categoria-IceCoffe-2\Categoria-2-tip-lista.html" rel="noopener noreferrer">Category 2</a>
-          </div>
-          <div class="li_categoria_3_lista" id="Categoria_3_tip_lista">
-            <a href="U:\Plan Afacere\Android WebSite\ProduseCategorii\Produse-Categoria-Espresso-3\Categoria-3-tip-lista.html" rel="noopener noreferrer">Category 3</a>
-          </div>
-        </ol>
-      </li>
-    </ol>
-  </div>
-    <script>
+    <div class="menu-container_categories" id="Menu_Categories">
+      <ol class="menu-ordered_list_2" id="meniu_ordered_2">
+        <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
+          <section id="Categorii_Produse_Section" style="color: white; border-radius: 30px; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">Categorii Produse</section>
+          <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown">
+            <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
+              <a href="U:\Plan Afacere\Android WebSite\ProduseCategorii\Produse-Categoria-Cafea-1\Categoria-1-tip-lista.html" rel="noopener noreferrer">Category 1</a>
+            </div>
+            <div class="li_categoria_2_lista" id="Categoria_2_tip_lista">
+              <a href="U:\Plan Afacere\Android WebSite\ProduseCategorii\Produse-Categoria-IceCoffe-2\Categoria-2-tip-lista.html" rel="noopener noreferrer">Category 2</a>
+            </div>
+            <div class="li_categoria_3_lista" id="Categoria_3_tip_lista">
+              <a href="U:\Plan Afacere\Android WebSite\ProduseCategorii\Produse-Categoria-Espresso-3\Categoria-3-tip-lista.html" rel="noopener noreferrer">Category 3</a>
+            </div>
+          </ol>
+        </li>
+      </ol>
+    </div>
+
+  <script>
     // Get the dropdown content
     const dropdownContentProduseDeTop = document.getElementById('dropdown-content-images3');
 
@@ -6624,276 +6623,279 @@
         display: block;
       }
     </style>
-    <style>
-        .dropdown-section {
-          cursor: pointer;
-        }
-
-        .dropdown-content_imagini {
-          display: none;
-          position: absolute;
-        }
-
-        .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini {
-          display: none;
-          position: absolute;
-          margin-top: 10px;
-        }
-
-        .image-container_dropdown_1,
-        .image-container_dropdown_2,
-        .image-container_dropdown_3 {
-          display: none;
-          flex-direction: column;
-          align-items: center;
-          max-width: 180px;
-          text-align: center;
-          border: 1px solid #000;
-        }
-
-        .dropdown-section.active + .menu-container_2_ordered_list .dropdown-content_imagini,
-        .dropdown-section:hover + .menu-container_2_ordered_list .dropdown-content_imagini {
-          display: block;
-        }
-
-        .image-container_dropdown_1 img,
-        .image-container_dropdown_2 img,
-        .image-container_dropdown_3 img {
-          max-width: 350px;
-          height: 350px;
-        }
-
-
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const dropdownSection = document.querySelector(".dropdown-section");
-
-        dropdownSection.addEventListener("click", function() {
-          dropdownSection.classList.toggle("active");
-        });
-      });
-      </script>
-    <div class="menu_container_produse_de_top" id="menu_produse_top">
-      <div class="menu_container_1_produse_de_top" id="Produsetop1" style="margin-top: 20px;">
-        <section id="Produse_De_Top_Section" class="dropdown-section" style="color: white; border-radius: 30px; background-color: rgba(0, 0, 0, 0.5); padding: 2px; cursor: pointer;">Produse de top</section>
-        <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
-          <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
-            <div class="container">
-              <div class="dropdown-content_imagini" id="dropdown-content-images3" style="display: none;">
-                <div class="image-container_dropdown_1">
-                  <img src="https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg" alt="Coffee1" style="max-width: 180px; height: 120px;" loading="lazy">
-                  <em><a href="#Link" id="Produsul-de-top-1-primary">Produsul de top 1</a></em>
-                </div>
-                <div class="image-container_dropdown_2">
-                  <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Coffee2" style="max-width: 180px; height: 120px;" loading="lazy">
-                  <em><a href="#Link" id="Produsul-de-top-2-primary">Produsul de top 2</a></em>
-                </div>
-                <div class="image-container_dropdown_3">
-                  <img src="https://cdn.pixabay.com/photo/2019/07/13/11/44/coffee-4334647_1280.jpg" alt="Coffee3" style="max-width: 180px; height: 120px;" loading="lazy">
-                  <em><a href="#Link" id="Produsul-de-top-3-primary">Produsul de top 3</a></em>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-    <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
-      <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse-vandute-top">
-        <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
-          <h3>Cele mai vandute produse</h3>
-          <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
-            <div class="image-container_produse_vandute_de_top_1" id="container-imagine-stanga">
-              <a href="#">
-                <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 100px; width:100px; position: sticky;" loading="eager">
-              </a>
-              <p> <!-- Add description text here, limited to 10 lines -->
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus sed libero id sodales. Morbi ut facilisis odio. Sed ultricies velit eget odio vulputate, vitae aliquet massa ullamcorper.
-              </p>
-            </div>
-            <!-- Add similar sections for other images and descriptions -->
-            <div class="image-container_produse_vandute_de_top_2" id="container-imagine-dreapta">
-              <a href="#">
-                <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 100px; width:100px; position: sticky;" loading="eager">
-              </a>
-              <p> <!-- Add description text here, limited to 10 lines -->
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus sed libero id sodales. Morbi ut facilisis odio. Sed ultricies velit eget odio vulputate, vitae aliquet massa ullamcorper.
-              </p>
-            </div>
-            <div class="image-container_produse_vandute_de_top_3" id="container-imagine-centru">
-              <a href="#">
-                <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3" style="height: 100px; width:100px; position: sticky;" loading="eager">
-              </a>
-              <p> <!-- Add description text here, limited to 10 lines -->
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus sed libero id sodales. Morbi ut facilisis odio. Sed ultricies velit eget odio vulputate, vitae aliquet massa ullamcorper.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      <!-- <div class="canvas" id="myCanvas"></div>
-      <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
-        <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
-          <h4 style="text-align: center; border: groove 2px black; border-radius: 20px; background-color: #05334e;">Sectiunea Stanga</h4>
-          <div class="slideshow" id="leftSlideshow">
-            <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" loading="lazy" style="margin: 1px; height: 220px; width: 159px; border-radius: 20px; border: 1px solid #000;">
-            <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg" alt="Cafea, Ceașcă, Cofeină, Espresso" loading="lazy" style="margin: 1px; height: 120px; width: 159px; border-radius: 20px; border: 1px solid #000;">
-            <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg" alt="Cafea, Ceașcă, Halbă, Mic Dejun" loading="lazy" style="margin: 1px; height: 220px; width: 159px; border-radius: 20px; border: 1px solid #000;">
-          </div>
-        </div>
-        <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
-          <h5 style="text-align: center; border: groove 2px black; border-radius: 20px; background-color: #05334e;">Sectiunea Dreapta</h5>
-          <div class="slideshow" id="rightSlideshow">
-            <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" loading="eager" style="margin: 1px; 
-            height: 220px; 
-            width: 159px; 
-            border-radius: 20px; 
-            border: 1px solid #000;">
-            <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Cafea, Ceașcă, Cappuccino, Latte" loading="eager" style="margin: 1px; 
-            height: 220px; 
-            width: 159px; 
-            width: 159px; 
-            border-radius: 20px; 
-            border: 1px solid #000;">
-            <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" loading="eager" style="margin: 1px; 
-            height: 220px; 
-            width: 159px; 
-            border-radius: 20px; 
-            border: 1px solid #000;">
-          </div>
-        </div>
-      </div>
-    <script>
-      function adjustCanvasSections() {
-        const canvasContainer = document.getElementById('Informatii-Aditionale-Template-Pentru-Linkuri');
-        const leftCanvas = document.getElementById('leftCanvas');
-        const rightCanvas = document.getElementById('rightCanvas');
-        const containerWidth = canvasContainer.offsetWidth;
-
-        leftCanvas.style.width = containerWidth / 2 + 'px';
-        rightCanvas.style.width = containerWidth / 2 + 'px';
-      }
-      window.addEventListener('resize', adjustCanvasSections);
-      adjustCanvasSections();
-    </script>
-    <script type="text/javascript" src="style.js"></script>
-    <footer>
-      <div id="bordered-box">
-        <section
-          style="border: #684b08 solid 3px; max-width: 500px; height: auto; margin-bottom: 20px; margin-top: 600px; ">
-          <button
-            style="width: 100px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button>
-          <button
-            style="width: 100px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button>
-        </section>
-      </div>
-    </footer>
 
     <style>
-      .dropbtn {
-        background-color: #3498db;
-        color: white;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
+      .dropdown-section {
         cursor: pointer;
       }
 
-      /* Style the dropdown content (hidden by default) */
-      .dropdown-content {
+      .dropdown-content_imagini {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
       }
 
-      /* Show the dropdown content when the dropdown button is clicked */
-      .show {
+      .menu-container_2_ordered_list .dropdown-continut_lista_1 .dropdown-content_imagini {
+        display: none;
+        position: absolute;
+        margin-top: 10px;
+      }
+
+      .image-container_dropdown_1,
+      .image-container_dropdown_2,
+      .image-container_dropdown_3 {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        max-width: 180px;
+        text-align: center;
+        border: 1px solid #000;
+      }
+
+      .dropdown-section.active + .menu-container_2_ordered_list .dropdown-content_imagini,
+      .dropdown-section:hover + .menu-container_2_ordered_list .dropdown-content_imagini {
         display: block;
       }
 
-      /* Style the categories */
-      a {
-        color: black;
-        padding: 10px 16px;
-        text-decoration: none;
-        display: block;
+      .image-container_dropdown_1 img,
+      .image-container_dropdown_2 img,
+      .image-container_dropdown_3 img {
+        max-width: 350px;
+        height: 350px;
       }
 
-      a:hover {
-        background-color: #f1f1f1;
-      }
 
-      #bordered-box {
-        position: -webkit-sticky;
-        background: lightsteelblue;
-        bottom: 20px;
-        padding: 20px;
-        margin: 20px;
-        border: solid 2px #333;
-        border-radius: 30px;
-        width: auto;
-        height: auto;
-      }
-    </style>
-    <div class="dropdown">
-      <button onclick="toggleDropdown()" class="dropbtn">Categories</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#Link" class="category1" id="category-1-dropdown">Category 1</a>
-        <a href="#Link" class="category2" id="category-2-dropdown">Category 2</a>
-        <a href="#Link" class="category3" id="category-3-dropdown">Category 3</a>
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const dropdownSection = document.querySelector(".dropdown-section");
+
+      dropdownSection.addEventListener("click", function() {
+        dropdownSection.classList.toggle("active");
+      });
+    });
+  </script>
+  <div class="menu_container_produse_de_top" id="menu_produse_top">
+    <div class="menu_container_1_produse_de_top" id="Produsetop1" style="margin-top: 20px;">
+      <section id="Produse_De_Top_Section" class="dropdown-section" style="color: white; border-radius: 30px; background-color: rgba(0, 0, 0, 0.5); padding: 2px; cursor: pointer;">Produse de top</section>
+      <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
+        <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
+          <div class="container">
+            <div class="dropdown-content_imagini" id="dropdown-content-images3" style="display: none;">
+              <div class="image-container_dropdown_1">
+                <img src="https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg" alt="Coffee1" style="max-width: 180px; height: 120px;" loading="lazy">
+                <em><a href="#Link" id="Produsul-de-top-1-primary">Produsul de top 1</a></em>
+              </div>
+              <div class="image-container_dropdown_2">
+                <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Coffee2" style="max-width: 180px; height: 120px;" loading="lazy">
+                <em><a href="#Link" id="Produsul-de-top-2-primary">Produsul de top 2</a></em>
+              </div>
+              <div class="image-container_dropdown_3">
+                <img src="https://cdn.pixabay.com/photo/2019/07/13/11/44/coffee-4334647_1280.jpg" alt="Coffee3" style="max-width: 180px; height: 120px;" loading="lazy">
+                <em><a href="#Link" id="Produsul-de-top-3-primary">Produsul de top 3</a></em>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
+    <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse-vandute-top">
+      <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
+        <h3>Cele mai vandute produse</h3>
+        <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
+          <div class="image-container_produse_vandute_de_top_1" id="container-imagine-stanga">
+            <a href="#">
+              <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 100px; width:100px; position: sticky;" loading="eager">
+            </a>
+            <p> <!-- Add description text here, limited to 10 lines -->
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus sed libero id sodales. Morbi ut facilisis odio. Sed ultricies velit eget odio vulputate, vitae aliquet massa ullamcorper.
+            </p>
+          </div>
+          <!-- Add similar sections for other images and descriptions -->
+          <div class="image-container_produse_vandute_de_top_2" id="container-imagine-dreapta">
+            <a href="#">
+              <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 100px; width:100px; position: sticky;" loading="eager">
+            </a>
+            <p> <!-- Add description text here, limited to 10 lines -->
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus sed libero id sodales. Morbi ut facilisis odio. Sed ultricies velit eget odio vulputate, vitae aliquet massa ullamcorper.
+            </p>
+          </div>
+          <div class="image-container_produse_vandute_de_top_3" id="container-imagine-centru">
+            <a href="#">
+              <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3" style="height: 100px; width:100px; position: sticky;" loading="eager">
+            </a>
+            <p> <!-- Add description text here, limited to 10 lines -->
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus sed libero id sodales. Morbi ut facilisis odio. Sed ultricies velit eget odio vulputate, vitae aliquet massa ullamcorper.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <script>
-      function toggleDropdown() {
-        var category1 = document.getElementById('category-1-dropdown');
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-      // Close the dropdown menu if the user clicks outside of it
-      window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
+  </div>
+  <div class="canvas" id="myCanvas"></div>
+  <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
+    <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
+      <h4 style="text-align: center; border: groove 2px black; border-radius: 20px; background-color: #05334e;">Sectiunea Stanga</h4>
+      <div class="slideshow" id="leftSlideshow">
+        <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" loading="lazy" style="margin: 1px; height: 220px; width: 159px; border-radius: 20px; border: 1px solid #000;">
+        <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg" alt="Cafea, Ceașcă, Cofeină, Espresso" loading="lazy" style="margin: 1px; height: 120px; width: 159px; border-radius: 20px; border: 1px solid #000;">
+        <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg" alt="Cafea, Ceașcă, Halbă, Mic Dejun" loading="lazy" style="margin: 1px; height: 220px; width: 159px; border-radius: 20px; border: 1px solid #000;">
+      </div>
+    </div>
+    <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
+      <h5 style="text-align: center; border: groove 2px black; border-radius: 20px; background-color: #05334e;">Sectiunea Dreapta</h5>
+      <div class="slideshow" id="rightSlideshow">
+        <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" loading="eager" style="margin: 1px; 
+        height: 220px; 
+        width: 159px; 
+        border-radius: 20px; 
+        border: 1px solid #000;">
+        <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Cafea, Ceașcă, Cappuccino, Latte" loading="eager" style="margin: 1px; 
+        height: 220px; 
+        width: 159px; 
+        width: 159px; 
+        border-radius: 20px; 
+        border: 1px solid #000;">
+        <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" loading="eager" style="margin: 1px; 
+        height: 220px; 
+        width: 159px; 
+        border-radius: 20px; 
+        border: 1px solid #000;">
+      </div>
+    </div>
+  </div>
+  <script>
+    function adjustCanvasSections() {
+      const canvasContainer = document.getElementById('Informatii-Aditionale-Template-Pentru-Linkuri');
+      const leftCanvas = document.getElementById('leftCanvas');
+      const rightCanvas = document.getElementById('rightCanvas');
+      const containerWidth = canvasContainer.offsetWidth;
+
+      leftCanvas.style.width = containerWidth / 2 + 'px';
+      rightCanvas.style.width = containerWidth / 2 + 'px';
+    }
+    window.addEventListener('resize', adjustCanvasSections);
+    adjustCanvasSections();
+  </script>
+  <script type="text/javascript" src="style.js"></script>
+  <footer>
+    <div id="bordered-box">
+      <section
+        style="border: #684b08 solid 3px; max-width: 500px; height: auto; margin-bottom: 20px; margin-top: 600px; ">
+        <button
+          style="width: 100px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button>
+        <button
+          style="width: 100px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button>
+      </section>
+    </div>
+  </footer>
+
+  <style>
+    .dropbtn {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Style the dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Show the dropdown content when the dropdown button is clicked */
+    .show {
+      display: block;
+    }
+
+    /* Style the categories */
+    a {
+      color: black;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    a:hover {
+      background-color: #f1f1f1;
+    }
+
+    #bordered-box {
+      position: -webkit-sticky;
+      background: lightsteelblue;
+      bottom: 20px;
+      padding: 20px;
+      margin: 20px;
+      border: solid 2px #333;
+      border-radius: 30px;
+      width: auto;
+      height: auto;
+    }
+  </style>
+  <div class="dropdown">
+    <button onclick="toggleDropdown()" class="dropbtn">Categories</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#Link" class="category1" id="category-1-dropdown">Category 1</a>
+      <a href="#Link" class="category2" id="category-2-dropdown">Category 2</a>
+      <a href="#Link" class="category3" id="category-3-dropdown">Category 3</a>
+    </div>
+  </div>
+  <script>
+    function toggleDropdown() {
+      var category1 = document.getElementById('category-1-dropdown');
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
           }
         }
       }
-    </script>
-  </body>
+    }
+  </script>
   <script>
     function applyUpDownEffect(startY, currentY) {
       const diffY = currentY - startY;
-
+  
       if (diffY > 0) {
         document.body.style.transform = `translateY(${diffY}px)`;
       } else {
         document.body.style.transform = `translateY(${diffY}px)`;
       }
     }
-
+  
     function resetTransform() {
       document.body.style.transform = 'translateY(0)';
     }
-
+  
     document.addEventListener('touchstart', (e) => {
       startY = e.touches[0].clientY;
     });
-
+  
     document.addEventListener('touchmove', (e) => {
       const currentY = e.touches[0].clientY;
       applyUpDownEffect(startY, currentY);
     });
-
+  
     document.addEventListener('touchend', () => {
       resetTransform();
     });
   </script>
+</body>
+
 
 </html>
