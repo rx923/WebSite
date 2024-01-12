@@ -169,27 +169,48 @@ $css_styles = "
     }
 ?>
 
-<form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto; background: linear-gradient(65deg, #e0c8ae 35%,rgb(155, 202, 218)70%, #003d51) 80%;" >
-      <div class="imgcontainer">
-        <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
-      </div>
-      <div class="container-pagina-logare" id="form-container-1" style="width: auto; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
-        <label for="uname">
-          <b style="background:#537d8b; border-style: outset; border-radius: 0px; margin-bottom: 10px; border: 3px; text-align: center; text-wrap: wrap; position: sticky;">Nume Utilizator:</b>
+<form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container" method="post">
+      <div class="container_pagina_inregistrare">
+      <h2>Inregistrare</h2>
+        <p style="border: 1px solid; background-color: whitesmoke; border-radius: 20px;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
+        <label for="email">
+          <b style="position: relative;
+                    background: linear-gradient(20deg, rgb(130 90 36) 51%, rgb(204 184 142)33%, #9b6930 66%);
+                    border-radius: 15px;
+                    padding: 5px;
+                    border: 1px solid;">Email
+          </b>
         </label>
-        <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
-          <label for="password">
-            <b style="background:#537d8b; border-style: outset; border-radius: 20px; border: 2px;">Parola:</b>
-          </label>
-        <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
-          <button type="submit" id="submit-button-form">Logheaza-te</button>
-          <label>
-            <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
+        <input type="text" placeholder="Introdu adresa de Email" name="email" required>
+        <label for="psw">
+          <b style="position: relative;
+          background: linear-gradient(20deg, rgb(130 90 36) 51%, rgb(204 184 142)33%, #9b6930 66%);
+          border-radius: 15px;
+          padding: 5px;
+          border: 1px solid;">Parola
+          </b>
         </label>
+        <input type="password" placeholder="Introdu Parola:" name="psw" required>
+        <label for="psw-repeat">
+          <b style="position: relative;
+          background: linear-gradient(20deg, rgb(130 90 36) 51%, rgb(204 184 142)33%, #9b6930 66%);
+          border-radius: 15px;
+          padding: 5px;
+          border: 1px solid;">Repeta Parola
+          </b>
+        </label>
+        <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
+        <label>
+        <input type="checkbox" checked="checked" name="remember" style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine minte datele de conectare
+        </label>
+        <p>Creandu-ti un cont, esti de acord cu 
+          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(77, 94, 100)70%, #563939) 80%; text-decoration: wavy;">Termenele & Conditiile
+          </a>.</p>
+        <div class="clearfix">
+          <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza
+          </button>
+          <button type="submit" class="signupbtn" style="background: linear-gradient(35deg, #ffefde 55%,rgb(58, 155, 188)70%, #00171f) 80%;">Inregistreaza-te
+          </button>
       </div>
-
-      <div class="container" style="background-color:#444741">
-        <button type="button" class="cancelbtn">Anuleaza</button>
-          <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
       </div>
     </form>

@@ -819,15 +819,18 @@
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="javascript:void(0)" onclick="loadForm('Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
-        <a href="javascript:void(0)" onclick="loadForm('Pagina_Inregistrare.php', 'InregistrareForm')">Inregistrare</a>
+        <a href="javascript:void(0)" onclick="loadForm('ComputerLaptop WebSite\Inregistrare&amp;Logare_user\Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="#" onclick="loadPage()">Clients</a>
         <a href="#" onclick="loadPage()">Echipa</a>
       </div>
     </div>
+    <div id="content"></div>
     <div class="openTriangle" onclick="toggleNav()">
       <span id="triangle">&#9658;</span>
     </div>
     <div id="openText"></div>
+    <script src="your-scripts.js"></script>
+
 
     <script>
       function toggleNav() {
@@ -874,8 +877,6 @@
           }
         });
       });
-
-    
       function openNav() {
         var sidenav = document.getElementById("mySidenav");
         var openText = document.getElementById("openText");
@@ -897,7 +898,6 @@
         document.getElementById("main").style.marginLeft = "250px"; // Adjust margin if needed
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       }
-    
       function closeNav() {
         var sidenav = document.getElementById("mySidenav");
         var main = document.getElementById("main");
@@ -952,39 +952,7 @@
     
 
 
-    <form action="Pagina_Inregistrare.php" id="InregistrareForm" class="form-container" method="post">
-      <div class="container_pagina_inregistrare">
-      <h2>Inregistrare</h2>
-        <p>Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
-        <label for="email">
-          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(100, 115, 122)61%, #ffffff 55%);">Email
-          </b>
-        </label>
-        <input type="text" placeholder="Introdu adresa de Email" name="email" required>
-        <label for="psw">
-          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(100, 115, 122)61%, #ffffff 55%);">Parola
-          </b>
-        </label>
-        <input type="password" placeholder="Introdu Parola:" name="psw" required>
-        <label for="psw-repeat">
-          <b style="background: linear-gradient(25deg, rgb(255, 255, 255) 51%, rgb(100, 115, 122)61%, #ffffff 55%);">Repeta Parola
-          </b>
-        </label>
-        <input type="password" placeholder="Repeta Parola:" name="psw-repeat" required>
-        <label>
-        <input type="checkbox" checked="checked" name="remember" style="background: linear-gradient(20deg, rgb(255, 255, 255) 21% rgba(113, 113, 113)61%, #b60000 95%);"> Tine minte datele de conectare
-        </label>
-        <p>Creandu-ti un cont, esti de acord cu 
-          <a href="#link" style="background: linear-gradient(65deg, #e0c8ae 35%,rgb(77, 94, 100)70%, #563939) 80%; text-decoration: wavy;">Termenele & Conditiile
-          </a>.</p>
-        <div class="clearfix">
-          <button type="button" class="cancelbtn" style="background-color: #8c4141;">Anuleaza
-          </button>
-          <button type="submit" class="signupbtn" style="background: linear-gradient(35deg, #ffefde 55%,rgb(58, 155, 188)70%, #00171f) 80%;">Inregistreaza-te
-          </button>
-        </div>
-      </div>
-    </form>
+
     <script>
       // Function to load the content of Pagina_Inregistrare.php
       function loadPage(url, pageName, formId) {
@@ -1027,11 +995,6 @@
         </label>
       </div>
 
-      <div class="container" id ="container_for_Cancel&Forgotten_Password" style="background-color:#005f6a; border-radius: 20px;">
-        <button type="button" class="cancelbtn">Anuleaza</button>
-          <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
-      </div>
-    </form>
     <script>
       function validateForm() {
         const email = document.getElementById('email').value;

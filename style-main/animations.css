@@ -175,3 +175,22 @@ h1::after::before {
         filter: hue-rotate(360deg);
     }
 }
+
+
+@keyframes glowing  {
+    0% { background-position: 0% 30%; }
+    50% { background-position: 65% 25%; }
+    100% { background-position: 3% 50%; }
+}
+.glowing-background {
+    border-radius: 20px;
+    background: linear-gradient(20deg, #ffffff 32%, #3a2c00 70%, #ffffff 85%);
+    background-size: 300% 350%;
+    transition: box-shadow 1s ease-in-out;
+    animation: glowing 10s ease-in-out infinite;
+}
+.glowing-background:hover {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+}
+
+

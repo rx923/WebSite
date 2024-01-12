@@ -343,9 +343,10 @@ header {
 .th a {
     color:rgb(0, 0, 0);
     text-decoration:wavy;
-    margin-top: 100px;
-    border-radius: 15px;
-    background-blend-mode:hard-light;
+    border-radius: 30px;
+    background: fixed;
+    text-align: center;
+    /* background-blend-mode:hard-light; */
 }
 
 #continut_acasa_dropdown {
@@ -486,21 +487,23 @@ header {
     padding: 21px;
     text-align: center;
 }
-.th a {
+.th .a {
     color:rgb(0, 0, 0);
     text-decoration:wavy;
+    text-align:justify;
     margin-top: 100px;
     border-radius: 15px;
+    display: inline-block;
     background-blend-mode:hard-light;
 }
 
 .table-container_lista_optiuni {
     bottom: 70px;
-    width: 750px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     position: relative;
     border: 3px outset #ddd;
-    display: grid;
+    display: inline-flex;
     border-radius: 30px;
     box-sizing: border-box;
     grid-auto-flow: dense;
@@ -510,7 +513,7 @@ header {
     animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
     background-size: 200% 200%;
     align-items: baseline;
-    background-color: antiquewhite;
+    background-color: rgb(54, 32, 8);
 }
 
 .tabel-1-lista-optiuni {
@@ -528,6 +531,7 @@ header {
     flex-direction: row;
     }
     .tr {
+    width: 100px;
     display: table-row;
     margin: 10px;
 }
