@@ -95,24 +95,7 @@
     display: table;
     clear: both;
 }
-@keyframes glowing  {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-.glowing-background {
-    border-radius: 20px;
-    background: linear-gradient(20deg, #ffffff 32%, #ff0000 70%, #7dadce 85%);
-    background-size: 300% 350%;
-    animation: glowing 10s ease-in-out infinite;
-}
-.glowing-background {
-    transition: box-shadow 1s ease-in-out;
-}
 
-.glowing-background:hover {
-    box-shadow: 10px 0px 10px 0px #f6ff00
-}
 
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 /* @media screen and (max-width: 600px) {

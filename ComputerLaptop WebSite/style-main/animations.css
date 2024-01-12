@@ -62,20 +62,20 @@ h1::after::before {
 @keyframes pulse {
 	0% {
 		transform: scale(0.85);
-		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
         /* Add webkit prefix for older iOS devices */
         -webkit-transform: scale(0.85); 
 	}
 
 	70% {
 		transform: scale(0.9);
-		/* box-shadow: 10 10 10 10px rgba(255, 255, 255, 0); */
+		box-shadow: 10 10 10 10px rgba(255, 255, 255, 0);
         -webkit-transform: scale(0.9);
     }
 
 	100% {
 		transform: scale(1.5);
-		/* box-shadow: 0 0 0 0 rgb(235, 0, 0); */
+		box-shadow: 0 0 0 0 rgb(235, 0, 0);
         -webkit-transform: scale(1);
 	}
 }
@@ -175,3 +175,22 @@ h1::after::before {
         filter: hue-rotate(360deg);
     }
 }
+
+
+@keyframes glowing  {
+    0% { background-position: 0% 30%; }
+    50% { background-position: 65% 25%; }
+    100% { background-position: 3% 50%; }
+}
+.glowing-background {
+    border-radius: 20px;
+    background: linear-gradient(20deg, #ffffff 32%, #3a2c00 70%, #ffffff 85%);
+    background-size: 300% 350%;
+    transition: box-shadow 1s ease-in-out;
+    animation: glowing 10s ease-in-out infinite;
+}
+.glowing-background:hover {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+}
+
+
