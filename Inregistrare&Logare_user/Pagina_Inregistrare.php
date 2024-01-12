@@ -1,49 +1,4 @@
 <?php
-$css_styles = "
-<style>
-    form {
-        border: 1px solid #c58e8e;
-        border-radius: 20px;
-        background-color: rgba(252, 252, 252, 0.8);
-        box-sizing: border-box;
-        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4);
-        display: inline-block;
-        width: auto;
-        padding-bottom: 0px;
-        margin-top: 18px;
-        text-align: center;
-    }
-    .container {
-        padding: 10px;
-    }
-    input[type='text'],
-    input[type='password'] {
-        width: 160px;
-        padding: 2px;
-        margin: 0px 0px;
-        border: 1px solid #772727;
-        border-radius: 20px;
-    }
-    #submit-button-form {
-        background-color: #875050;
-        border-radius: 20px;
-        padding: 10px 20px;
-        margin: 10px 0;
-        border: none;
-        cursor: pointer;
-        width: auto;
-    }
-    .imgcontainer img {
-        width: 45%;
-        height: 50%;
-    }
-    label {
-        display: block;
-        text-align: left;
-        margin-top: 10px;
-    }
-</style>
-";
 // Output the CSS styles before the HTML form
     echo $css_styles;
 
@@ -211,6 +166,6 @@ $css_styles = "
           </button>
           <button type="submit" class="signupbtn" style="background: linear-gradient(35deg, #ffefde 55%,rgb(58, 155, 188)70%, #00171f) 80%;">Inregistreaza-te
           </button>
-      </div>
+        </div>
       </div>
     </form>

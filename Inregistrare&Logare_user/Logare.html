@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\form.css" type="text/css" media="screen">
+  </head>
+<body>
+    <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto;" >
+        <div class="imgcontainer">
+        <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
+        </div>
+        <div class="container-pagina-logare" id="form-container-1" style="width: 200px; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
+        <label for="uname" style="max-width: 140px;">
+            <b style="position: relative;
+            background: linear-gradient(20deg, rgb(130 90 36) 51%, rgb(204 184 142)33%, #9b6930 66%);
+            border-radius: 15px;
+            padding: 5px;
+            border: 1px solid;">Nume Utilizator:</b>
+        </label>
+        <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
+            <label for="password">
+            <b style="position: relative;
+            background: linear-gradient(20deg, rgb(130 90 36) 51%, rgb(204 184 142)33%, #9b6930 66%);
+            border-radius: 15px;
+            padding: 5px;
+            border: 1px solid;">Parola:</b>
+            </label>
+        <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
+            <button type="submit" id="submit-button-form">Logheaza-te</button>
+            <label>
+            <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
+        </label>
+        </div>
+
+        <div class="container" id ="container_for_Cancel&Forgotten_Password" style="background-color:#005f6a; border-radius: 20px;">
+        <button type="button" class="cancelbtn">Anuleaza</button>
+            <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
+        </div>
+    </form>
+</body>

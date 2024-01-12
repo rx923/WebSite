@@ -917,8 +917,6 @@
           }, 500);
         }
       }
-
-
       function loadForm(formURL, formId) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
@@ -926,6 +924,7 @@
             document.getElementById("content").innerHTML = this.responseText;
             if (formId) {
               var form = document.getElementById(formId);
+              form.classList.add("form-container-popup"); // Add the popup class
               form.style.display = "block";
               form.style.width = "300px"; // Adjust width if needed
               form.style.height = "auto"; // Adjust height if needed
@@ -938,7 +937,6 @@
         xhttp.open("GET", formURL, true);
         xhttp.send();
       }
-    
       function showForm(formId) {
         var forms = document.getElementsByClassName("form-container");
         for (var i = 0; i < forms.length; i++) {
@@ -948,11 +946,6 @@
         openNav();
       }
     </script>
-    
-    
-
-
-
     <script>
       // Function to load the content of Pagina_Inregistrare.php
       function loadPage(url, pageName, formId) {
@@ -963,11 +956,15 @@
             if (formId) {
               var form = document.getElementById(formId);
               form.style.display = "block";
-              form.style.width = "300px"; // Adjust width if needed
-              form.style.height = "auto"; // Adjust height if needed
+              // Adjust width if needed
+              form.style.width = "300px"; 
+              // Adjust height if needed
+              form.style.height = "auto"; 
               form.style.position = "absolute";
-              form.style.top = "50px"; // Adjust top position as required
-              form.style.right = "50px"; // Adjust right position as required
+              // Adjust top position as required
+              form.style.top = "50px"; 
+              // Adjust right position as required
+              form.style.right = "50px"; 
             }
           }
         };
@@ -976,25 +973,6 @@
         console.log("Loading page:", url);
       }
     </script>
-    <form action="Pagina_Logare.php" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto;" >
-      <div class="imgcontainer">
-        <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
-      </div>
-      <div class="container-pagina-logare" id="form-container-1" style="width: 200px; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
-        <label for="uname" style="max-width: 140px;">
-          <b style="background:#537d8b; border-style: outset; border-radius: 0px; margin-bottom: 10px; border: 3px; text-align: center; text-wrap: wrap; position: sticky;">Nume Utilizator:</b>
-        </label>
-        <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
-          <label for="password">
-            <b style="background:#537d8b; border-style: outset; border-radius: 20px; border: 2px;">Parola:</b>
-          </label>
-        <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
-          <button type="submit" id="submit-button-form">Logheaza-te</button>
-          <label>
-            <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
-        </label>
-      </div>
-
     <script>
       function validateForm() {
         const email = document.getElementById('email').value;

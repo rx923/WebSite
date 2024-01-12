@@ -20,12 +20,14 @@ form {
 }
 /* Adjust the input fields and button styles */
 input[type="text"], input[type="password"] {
-    /* Make input fields full width */
-    width: 144px; 
+    width: 144px;
     padding: 2px;
-    margin: 0px 0px;
+    margin: 3px 2px;
     border: 1px solid #772727;
-    border-radius: 20px;        
+    border-radius: 20px;
+    margin-right: 50px;    
+    margin: 5px;
+   
 }
 #submit-button-form {
     background-color: #875050;
@@ -54,4 +56,13 @@ label {
     display: block;
     text-align: left;
     margin-top: 10px;
+}
+
+.form-container-popup {
+    /* Add styles for the popup form */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
