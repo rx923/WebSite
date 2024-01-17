@@ -10,7 +10,17 @@
 }
  /* Define CSS styles for slideshow images */
  .slideshow-container img {
-    width: 100%;
+    max-width: 280px;
+    max-height: 280px;
+    position: relative;
+    border: solid #ffffff 2px;
+    border-radius: 30px;
+    padding-left: auto;
+    padding-right: auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    margin-left: 14px;
     height: auto;
     display: block;
   }
