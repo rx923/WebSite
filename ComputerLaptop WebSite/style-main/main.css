@@ -16,7 +16,7 @@ html {
     /* background-color: #7dadce; */
 }
 body {
-    background: #ecff74;
+    background: #ffffff;
     /* box-shadow:steelblue */
     /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
     /* Cover the entire background */
@@ -198,7 +198,7 @@ h2 {
 
 
 header {
-    background: linear-gradient(to top left, #008fef 30%, #ffffff 50%, rgb(255, 85, 0) 60%);
+    background: linear-gradient(to top left, #ffffff 20%, #003d57 60%, rgb(255, 255, 255) 60%);
     border-top: 5px rgb(237, 239, 240) groove;
     border-left: 5px rgb(255, 255, 255) groove;
     border-right: 5px rgb(255, 255, 255) groove;
@@ -906,14 +906,18 @@ h1 {
     color: white;
 }
 h3 {
-    border: 2px #000000 solid; 
-    border-width: 3px; 
-    margin-left: 320px; 
-    margin-right: 320px; 
-    background: linear-gradient(15deg, rgb(255, 255, 255) 35%, rgb(4, 46, 63)45%, rgb(255, 255, 255) 65%);
+    border: 1px #000000 groove; 
+    position: sticky;
+    margin-left: 450px; 
+    background: linear-gradient(to bottom left, rgb(255, 255, 255) 25%, rgb(0, 43, 143)55%, rgb(255, 255, 255) 65%);
     border-top-right-radius: 10px; 
     border-top-left-radius: 10px; 
     border-bottom-left-radius: 10px; 
     border-bottom-right-radius: 10px; 
     text-align: center;
+    width: 500px;
+    height: 100px;
+    text-wrap:wrap;
+    text-decoration-style: wavy;
+    justify-content: center;
 }
