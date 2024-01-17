@@ -647,14 +647,19 @@
 
             // Initialize the dropdown styles
             this.searchDropdown.style.display = 'none';
-            this.searchDropdown.style.position = 'absolute';
+            this.searchDropdown.style.position = 'static';
             this.searchDropdown.style.zIndex = '9999';
             this.searchDropdown.style.backgroundColor = '#E2E281';
             this.searchDropdown.style.maxWidth = '250px';
-            this.searchDropdown.style.borderRadius = '30px';
+            this.searchDropdown.style.borderRadius = '20px';
             this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
             this.searchDropdown.style.padding = '10px';
             this.searchDropdown.style.margin = '10px';
+            this.searchBarRect.style.backgroundColor = '#FF0000';
+            this.searchBarRect.style.width = '3px';
+            this.searchBarRect.style.height = 'auto';
+            this.searchBarRect.style.scrollY = 'auto';
+            this.searchBarRect.style.scrollTop= 'auto';
           }
 
           handleSearchInput() {
