@@ -848,18 +848,22 @@
           sidenav.classList.remove("sideNavOpen");
           setTimeout(function() {
             openText.innerText = "";
-            openTriangle.innerHTML = "&#9658;"; // right-pointing arrow
+            // right-pointing arrow
+            openTriangle.innerHTML = "&#9658;"; 
           }, 500);
           main.style.marginLeft = "0";
         } else {
           sidenav.classList.add("sideNavOpen");
           setTimeout(function() {
             openText.innerText = "";
-            openTriangle.innerHTML = "&larr;"; // left-pointing arrow
+            // left-pointing arrow
+            openTriangle.innerHTML = "&larr;"; 
           }, 500);
-          sidenav.style.width = "350px"; // Adjust width if needed
+          // Adjust width if needed
+          sidenav.style.width = "350px"; 
           openText.innerText = "";
-          main.style.marginLeft = "250px"; // Change this value if necessary
+          // Change this value if necessary
+          main.style.marginLeft = "250px"; 
         }
       }
       document.addEventListener('DOMContentLoaded', function() {
@@ -900,7 +904,8 @@
 
         openText.innerText = "";
         sidenav.classList.add("sideNavOpen");
-        document.getElementById("main").style.marginLeft = "250px"; // Adjust margin if needed
+        // Adjust margin if needed
+        document.getElementById("main").style.marginLeft = "250px"; 
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       }
       function closeNav() {
@@ -913,7 +918,8 @@
           main.style.marginLeft = "0";
           document.body.style.backgroundColor = "white";
           sidenav.classList.remove("sideNavOpen");
-          openTriangle.innerHTML = "&#9658;"; // right-pointing arrow
+          // right-pointing arrow
+          openTriangle.innerHTML = "&#9658;"; 
         
           // Reset to main triangle form after a delay
           setTimeout(function() {
@@ -929,13 +935,18 @@
             document.getElementById("content").innerHTML = this.responseText;
             if (formId) {
               var form = document.getElementById(formId);
-              form.classList.add("form-container-popup"); // Add the popup class
+              // Add the popup class
+              form.classList.add("form-container-popup"); 
               form.style.display = "block";
-              form.style.width = "300px"; // Adjust width if needed
-              form.style.height = "auto"; // Adjust height if needed
+              // Adjust width if needed
+              form.style.width = "300px"; 
+              // Adjust height if needed
+              form.style.height = "auto"; 
               form.style.position = "absolute";
-              form.style.top = "50px"; // Adjust top position as required
-              form.style.right = "50px"; // Adjust right position as required
+              // Adjust top position as required
+              form.style.top = "50px"; 
+              // Adjust right position as required
+              form.style.right = "50px"; 
             }
           }
         };
@@ -1297,7 +1308,8 @@
                 Ceașca de cafea gata pregătită este o mică comoară într-un moment de relaxare și răsfăț personal.
     </div>
       </div>
-        <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; left: 1170px; bottom: 250px;" onclick="plusSlides(-1)" >&#10094;</a><a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 1220px;bottom: 250px;">&#10095;</a>
+        <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; bottom: 0px; left: 10px;" onclick="plusSlides(-1)" >&#10094;</a>
+        <a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 60px; bottom: 0px;">&#10095;</a>
       <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
