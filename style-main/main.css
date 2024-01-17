@@ -16,7 +16,7 @@ html {
     /* background-color: #7dadce; */
 }
 body {
-    background: #ecff74;
+    background: #ffffff;
     /* box-shadow:steelblue */
     /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
     /* Cover the entire background */
@@ -198,7 +198,7 @@ h2 {
 
 
 header {
-    background: linear-gradient(to top left, #008fef 30%, #ffffff 50%, rgb(255, 85, 0) 60%);
+    background: linear-gradient(to top left, #ffffff 20%, #003d57 60%, rgb(255, 255, 255) 60%);
     border-top: 5px rgb(237, 239, 240) groove;
     border-left: 5px rgb(255, 255, 255) groove;
     border-right: 5px rgb(255, 255, 255) groove;

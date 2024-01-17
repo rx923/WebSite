@@ -77,7 +77,7 @@
     /* align-items: center; */
 }
 #container-imagine-stanga {
-    background-color: rgb(59, 122, 238);
+    background-color: rgb(65, 65, 67);
     border-left: 1px;
     border-bottom: 2px;
     border-top: 1px;
@@ -95,6 +95,7 @@
     padding: 20px;
     margin-right: 100px;
     margin-left: 100px;
+    text-wrap:stable;
     /* height: max-content; */
     /* align-items: center; */
 }
