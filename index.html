@@ -75,17 +75,52 @@
         .main {
           margin-left: 200px; /* Same as the width of the sidenav */
         }
+        @media only screen and (max-width:412px) and (max-height: 915px) {
+          .openTriangle {
+            position: relative;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            /* Left side of the triangle */
+            border-left: 25px solid transparent;
+            /* Right side of the triangle */
+            border-right: 25px solid transparent;
+            /* Bottom side of the triangle */
+            border-bottom: 43.3px groove rgb(196, 57, 57);
+            /* Change cursor on hover */
+            cursor: pointer;
+          }
+          .table-container_lista_optiuni{
+            bottom: 70px;
+            width: 290px;
+            height: 300px;
+            position: relative;
+            border: 3px outset #ddd;
+            display: inline-flex;
+            border-radius: 30px;
+            box-sizing: border-box;
+            grid-auto-flow: dense;
+            margin-bottom: 10px;
+            margin-top: 100px;
+            margin-left: 20px;
+            margin-right: 20px;
+            animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+            background-size: 200% 200%;
+            align-items: baseline;
+            background-color: rgb(54, 32, 8);
+          } 
+        }
         .openTriangle {
-          position: relative;
+          position: static;
           display: inline-block;
           width: 0;
           height: 0;
           /* Left side of the triangle */
-          border-left: 25px solid transparent;
+          border-left: 0px solid transparent;
           /* Right side of the triangle */
           border-right: 25px solid transparent;
           /* Bottom side of the triangle */
-          border-bottom: 43.3px groove rgb(196, 57, 57);
+          border-bottom: 0px groove rgb(196, 57, 57);
           /* Change cursor on hover */
           cursor: pointer;
         }
@@ -254,6 +289,129 @@
       }
     </style>
     <style>
+      @media only screen and (max-width:412px) and (max-height: 915px) {
+        .search-bar {
+          border: 3px outset rgb(0, 0, 0);
+          background-color: rgb(235, 216, 168);
+          border-radius: 25px;
+          width: 300px;
+          padding: 10px;
+          margin-bottom: 10px;
+          padding: 5px;
+          left: 1230px;
+          outline: none;
+          position: sticky;
+          display: flex;
+          align-items: center;
+          resize: none;
+        }
+  
+        .search-container {
+          padding: 1px;
+          color: rgb(0, 0, 0);
+          background-color: rgb(0, 23, 137);
+          border: outset;
+          border-width: 0.5vw 0.5vw;
+          border-color: rgb(68, 162, 255);
+          border-radius: 30px;
+          left: 231px;
+          transform: translateY(-300%);
+          top: 270px;
+          margin-top: 0px;
+          margin-bottom: 20px;
+          display: inline-block;
+          position: absolute;
+          margin: 0px;
+        }
+  
+        .search-button {
+          padding: 2px 4px;
+          color: rgb(255, 255, 255);
+          border: 2px outset;
+          border-radius: 30px;
+          background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
+          cursor: pointer;
+          width: 200px;
+          max-width: 100px;
+          height: 40px;
+        }
+        #submit-cauta-bara-de-cautare{
+          padding: 20px 20px;
+          color: rgb(255, 255, 255);
+          border: 2px outset;
+          border-radius: 30px;
+          text-align: unset;
+          justify-content: center;
+          background: rgba(0, 0, 0, 0.19);
+          cursor: pointer;
+          max-width: 110px;
+          height: 20px;
+        }
+      }
+      /* Style of the slideshow container with the top products. */
+      @media only screen and (max-width:412px) and (max-height: 915px) {
+        .slideshow-container{
+          margin-left: 20px;
+          margin-right: 20px;
+          border: 1px solid black;
+          width: 350px;
+          height: 480px;
+          position: relative;
+          top: 50px;
+          overflow: hidden;
+          display: block;
+          border-radius: 30px;
+          border-width: 10px;
+        }
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: sticky;
+          top: 0;
+        }
+        .numbertext-1 {
+          color: #f2f2f2;
+          padding-top: 10px;
+          max-width: max-content;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: sticky;
+          top: 0;
+        }
+        .numbertext-2 {
+          color: #f2f2f2;
+          max-width: max-content;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: sticky;
+          top: 0;
+        }
+        .numbertext-3 {
+          color: #f2f2f2;
+          max-width: max-content;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: sticky;
+          max-width: fit-content;
+          top: 0;
+        }
+        .slideshow-container img{
+          max-width: 200px;
+          max-height: 200px;
+          position: relative;
+          border: solid #ffffff 2px;
+          border-radius: 30px;
+          padding-left: auto;
+          padding-right: auto;
+          margin-top: 10px;
+          margin-bottom: 50px;
+          margin-left: 10px;
+          margin-left: 14px;
+          height: auto;
+          display: block;
+        }
+      }
       /* Styles for the search bar */
       .search-bar {
         border: 3px outset rgb(0, 123, 255);
@@ -322,16 +480,28 @@
       }
       /* CSS for the side navigation menu */
       .sidenav {
-        height: 100%; /* Set full height */
-        width: 0; /* Initially closed */
-        position: fixed; /* Fixed position */
-        z-index: 1; /* Make sure it appears above everything */
-        top: 0;
-        left: 0;
-        background-color: #9e6d50; /* Background color */
-        overflow-x: hidden; /* Hide horizontal scrollbar */
-        padding-top: 60px; /* Space for the triangle icon */
-        transition: 0.5s; /* 0.5 second transition */
+        /* Set full height */
+        height: 100%; 
+        /* Initially closed */
+        width: 0; 
+        /* Fixed position */
+        position: fixed; 
+        /* Make sure it appears above everything */
+        z-index: 1; 
+        top: 75px;
+        padding-block: 100px;
+        left: 0;/* Background color */
+        background-color: #333333ea; 
+        /* Hide horizontal scrollbar */
+        overflow-x: hidden;
+        /* Space for the triangle icon */ 
+        padding-top: 60px;
+        /* 0.5 second transition */ 
+        transition: 0.5s;
+        max-width: 300px;
+        max-height: 400px;
+        border-radius: 30px;
+        border: 2px white solid;
       }
 
       .sidenav a {
@@ -625,15 +795,13 @@
               'Black Coffee': this.sanitizeURL('Black Coffee.html'),
               'Mocha': this.sanitizeURL('Mocha.html'),
               // ... Add other product links as needed
-              'Scotch Whiskey': this.sanitizeURL('scotch-whiskey.html'),
-              'Bourbon Whiskey': this.sanitizeURL('bourbon-whiskey.html'),
-              'Irish Whiskey': this.sanitizeURL('irish-whiskey.html'),
-              'Rye Whiskey': this.sanitizeURL('rye-whiskey.html'),
-              'Japanese Whiskey': this.sanitizeURL('japanese-whiskey.html'),
-              'Whiskey Smash': this.sanitizeURL('japanese-whiskey.html'),
-              'Rusty Nail Whiskey': this.sanitizeURL('japanese-whiskey.html'),
-              'Sazerac Whiskey': this.sanitizeURL('japanese-whiskey.html'),
-              'Highball Whiskey': this.sanitizeURL('japanese-whiskey.html'),
+              'Scotch Whiskey': this.sanitizeURL('https://www.finebar.ro/aberfeldy-21yo-0-7l'),
+              'Bourbon Whiskey': this.sanitizeURL('https://www.finebar.ro/jack-daniels-legacy-edition-whisky-1l'),
+              'Irish Whiskey': this.sanitizeURL('https://www.finebar.ro/bushmills-malt-21yo-0-7l'),
+              'Rye Whiskey': this.sanitizeURL('https://www.finebar.ro/johnnie-walker-xr-21yo-1l'),
+              'Japanese Whiskey': this.sanitizeURL('https://www.finebar.ro/kavalan-solist-sherry-cask-strength-whisky-0-7l'),
+              'Kurayoshi Whiskey': this.sanitizeURL('https://www.finebar.ro/yamazakura'),
+              'Togouchi Whiskey': this.sanitizeURL('https://www.finebar.ro/togouchi-15yo'),
               // Additional product links...
             };
 

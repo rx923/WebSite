@@ -209,6 +209,7 @@ header {
     /* margin-top: 50px; */
     /* border-style: ; */
     padding-top: 10px;
+    width: 350px;
 }
 #bordered_rectangle-for-design {
     border: 2px solid #000000;
