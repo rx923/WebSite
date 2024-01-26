@@ -209,6 +209,23 @@ header {
     /* margin-top: 50px; */
     /* border-style: ; */
     padding-top: 10px;
+    width: auto;
+}
+@media only screen and (max-width: 412px) and (max-height: 912px) {
+    .header {
+        background: linear-gradient(to top left, #ffffff 20%, #003d57 60%, rgb(255, 255, 255) 60%);
+        border-top: 5px rgb(237, 239, 240) groove;
+        border-left: 5px rgb(255, 255, 255) groove;
+        border-right: 5px rgb(255, 255, 255) groove;
+        border-bottom: 5px rgb(255, 255, 255) groove;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        margin-bottom: 1px;
+        /* margin-top: 50px; */
+        /* border-style: ; */
+        padding-top: 10px;
+        width: 320px;
+    }   
 }
 #bordered_rectangle-for-design {
     border: 2px solid #000000;
