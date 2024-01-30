@@ -180,8 +180,10 @@
           max-width: max-content;
           font-size: 12px;
           padding: 8px 12px;
+          left: 20px;
           position: sticky;
-          top: 0;
+          top: 0px;
+          width: 100px;
         }
         .numbertext-2 {
           color: #f2f2f2;
@@ -234,7 +236,6 @@
         .glowing-background:hover {
           box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
         }
-
         /* TableHeader colors for #Despre #Comenzi #Livrare #Suport #Informatii Aditionale Pages */
 
         /* Remove unnecessary styles for th elements in tbody */
@@ -262,7 +263,6 @@
         .glowing-background:hover {
           box-shadow: 0 0 20px 10px rgba(145, 68, 68, 0.8);
         }
-
         @keyframes pulse {
           0% {
             transform: scale(0.95);
@@ -283,7 +283,73 @@
             -webkit-transform: scale(0.95);
           }
         }
-          
+        .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
+          border: 2px solid #000000;
+          border-style: solid;
+          border-radius: 20px;
+          margin: 20px;
+          padding-top: 0px;
+          height: 240px;
+          width: 260px;
+          box-sizing: border-box;
+          position:sticky; 
+          display:inline-block;
+          justify-content: right;
+          list-style: none;
+          background-color: rgb(0, 0, 0);
+        }
+        #Acasa_menu_container {
+          border: 1px; 
+          border-color:#ffffff;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          /* box-sizing:content-box; */
+          /* box-shadow: wheat; */
+          width: 240px;
+          /* margin: 50px; */
+          list-style-type: none;
+          position: relative;
+          display:inline-block;
+          margin-left: auto;
+          margin-right: 300px;
+          background:linear-gradient(35deg, #ffffff 27%, rgb(255, 229, 59)66%, rgb(255, 255, 255) 75%);
+          animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+          /* background-size: 200% 200%; */
+        }
+        #Menu_Categories {
+          border: 1px; 
+          border-color:#ffffff;
+          background:linear-gradient(35deg, #ffffff 27%, rgb(255, 222, 33)66%, rgb(255, 255, 255) 75%);
+          animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          width: 240px;
+          margin-left: 200px;
+          margin-right: auto;
+          list-style-type: none;
+          position: relative;
+          display:inline-block;
+          margin-left: 12px;
+        }
+        #menu_produse_top {
+          border: 1px #ffffff;
+          border-width: 1px;
+          border-style: groove;
+          border-radius: 20px;
+          box-sizing:content-box;
+          width: 240px;
+          margin-left: 0px;
+          margin-right: auto;
+          list-style-type: none;
+          position: relative;
+          display:inline-block;
+          background:linear-gradient(35deg, #ffffff 27%, rgb(245, 255, 63)66%, rgb(255, 255, 255) 75%);
+          animation: flowWaves 1s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+          flex: 1;
+          margin-bottom: 0px;
+        }
       }
     </style>
     <style>
@@ -354,7 +420,7 @@
           border: 1px solid black;
           width: 380px;
           height: 630px;
-          position: relative;
+          position: -webkit-sticky;
           top: 50px;
           right: 400px;
           overflow: hidden;
@@ -544,10 +610,10 @@
         border: 2px solid #000000;
         border-style: transparent;
         border-radius: 20px;
-        margin-top: 100px;
+        margin-top: 20px;
         padding: 0px;
-        height: 500px;
-        width: 400px;
+        height: 300px;
+        width: 350px;
         /* margin-right: 200px; */
         /* margin-left: 200px; */
         box-sizing: border-box;
