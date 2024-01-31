@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-
+    <base href="https://qkv3z3j6-8080.euw.devtunnels.ms/">
     <style>
       /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
       @media only screen and (max-width:412px) and (max-height: 915px) {
@@ -627,11 +627,12 @@
     <title>Good Store Coffee</title>
 
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all"> -->
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all">
     <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all"> -->
+
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\slideshow-container-buttons\slideshow-container-style.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\InformatiiAditionalepage\InformatiiAditionalepage.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Inregistrare&Logare_user\Inregistrare-forma-design.css" type="text/css" media="all">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Inregistrare&Logare_user\Logare-forma-design.css" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Inregistrare&Logare_user\Logare.html" type="text/css" media="all">
+    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Inregistrare&Logare_user\Inregistrare.html" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\type-device-style.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Continut-dropdown-Acasa\continut-1-tip-lista\Continut1tiplista.css" type="text/css" media="all">
     <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Comenzipage\Comenzi.css" type="text/css" media="all">
@@ -1030,21 +1031,6 @@
       
     </header>
     <script>
-      // Function to load the content dynamically
-      function loadPage(pageName, formId) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("content").innerHTML = this.responseText;
-            if (formId) {
-              hideAllForms();
-              document.getElementById(formId).style.display = "block";
-            }
-          }
-        };
-        xhttp.open("GET", pageName, true);
-        xhttp.send();
-      }
   
       // Function to hide all forms
       function hideAllForms() {
@@ -1057,8 +1043,8 @@
     <div id="container_scrolling_for_the_side_nav" class="container">
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="javascript:void(0)" onclick="loadPage('http://localhost:8080/ComputerLaptop%20WebSite/Inregistrare&Logare_user/Logare.html', 'Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
-        <a href="javascript:void(0)" onclick="loadForm('ComputerLaptop WebSite\Inregistrare&amp;Logare_user\Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
+        <a href="javascript:void(0)" onclick="loadForm('Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
+        <a href="javascript:void(0)" onclick="loadForm('ComputerLaptop WebSite\\Inregistrare&amp;Logare_user\\Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="#" onclick="loadPage()">Clients</a>
         <a href="#" onclick="loadPage()">Echipa</a>
       </div>
@@ -1198,24 +1184,128 @@
     </script>
     <script>
       // Function to load the content of Pagina_Inregistrare.php
-      function loadPage(url, pageName, formId) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("content").innerHTML = this.responseText;
-            if (formId) {
-              var formContainer = document.createElement("div");
-              formContainer.classList.add("form-container-popup");
-              formContainer.innerHTML = this.responseText;
-              document.body.appendChild(formContainer);
-              showForm(formContainer.id);
+      var urls = [
+        'https://qkv3z3j6-8080.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8081.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8082.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8083.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8084.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8085.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8086.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8087.euw.devtunnels.ms/' + encodedPath,
+        'https://qkv3z3j6-8088.euw.devtunnels.ms/' + encodedPath
+      ];
+
+      function fetchContent(urlIndex) {
+        fetch(urls[urlIndex])
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
             }
-          }
-        };
-        xhttp.open("GET", pageName, true);
-        xhttp.send();
-        console.log("Loading page:", url);
+            return response.text();
+          })
+          .then(data => {
+            document.getElementById("content").innerHTML = data;
+
+            // Load additional resources (CSS and JS) if needed
+            loadResourcesForPage(cssLinks);
+
+            if (formId) {
+              var form = document.getElementById(formId);
+              if (form) {
+                form.style.display = "block";
+                form.style.width = "300px";
+                form.style.height = "auto";
+                form.style.position = "absolute";
+                form.style.top = "50px";
+                form.style.right = "50px";
+              }
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+
+            // If fetching from the current URL fails, try the next one
+            if (urlIndex < urls.length - 1) {
+              fetchContent(urlIndex + 1);
+            }
+          });
       }
+
+      // Start fetching content from the first URL
+      fetchContent(0);
+
+      // Start fetching content from the first URL
+
+      function loadResourcesForPage(links) {
+        // Function to load CSS dynamically
+        function loadCSS(cssPath) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          link.href = cssPath;
+          document.head.appendChild(link);
+        }
+
+        // Iterate through the provided links and load CSS dynamically
+        links.forEach(cssPath => {
+          loadCSS(cssPath);
+        });
+      }
+      // CSS Styles of each of the elements in the index page. 
+        var cssLinks = [
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\slideshow-container-buttons\\slideshow-container-style.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\InformatiiAditionalepage\\InformatiiAditionalepage.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Inregistrare&Logare_user\\Logare.html',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Inregistrare&Logare_user\\Inregistrare.html',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\type-device-style.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Continut-dropdown-Acasa\\continut-1-tip-lista\\Continut1tiplista.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Comenzipage\\Comenzi.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Suportpage\\support.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\main.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\form.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\canvas.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Creare-cont\\Account-creation.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\navigation.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\bordered-box.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\box-model-styles\\box-model_produse_vandute_de_top_1.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\animations.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\Contact.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\Echipa.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\images-animations.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\images-containers\\imgcontainer.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\menu_containers\\menu-image.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\nav-menu-ul.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\ol li a.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\ul.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Meniu-Produse-1-10\\Meniu Produse 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\search-bar\\search-bar.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\selectors.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\tables.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\transitions.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Desprepage\\Despre.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Javascript\\style.js',
+          'U:\\Plan Afacere\\WebSite\\Javascript\\bordered-rectangle.js',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\footer-style\\footer.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\bordered-rectangle\\.bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\container-styles\\container-produse_vandute_de_top_1.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\container-styles\\dropdown-container_produse_vandute_de_top_1.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\container-styles\\menu_container_produse_de_top.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\container-styles\\dropdown-content_meniu_1&2.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\container-styles\\menu-container_acasa.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\container-styles\\menu-container_categories.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\container-styles\\menu-container-modified-content.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\table-container_styles\\tabel-1-lista-optiuni.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\image-containers-styles\\image-container_produse_vandute_de_top_1.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\images-containers\\images-animations.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\menu_containers\\#menu-container3 .modified-dropdown .dropdown-image.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\menu_containers\\#menu-container3 .modified-dropdown.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\menu_containers\\menu.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\cele mai vandute produse\\style paragraph.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\bordered-box-styles\\bordered-box_produse_vandute_de_top_1.css',
+          'U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\style-main\\content-styles\\content.css'
+        ];
+        loadResourcesForPage(cssLinks);
     </script>
     <script>
       function validateForm() {
