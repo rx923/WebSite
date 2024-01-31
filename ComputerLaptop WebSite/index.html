@@ -1057,7 +1057,7 @@
     <div id="container_scrolling_for_the_side_nav" class="container">
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="javascript:void(0)" onclick="loadForm('Pagina_Logare.php', 'Logheaza-teForm')">Logheaza-te</a>
+        <a href="javascript:void(0)" onclick="loadPage('http://localhost:8080/ComputerLaptop%20WebSite/Inregistrare&Logare_user/Logare.html', 'Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
         <a href="javascript:void(0)" onclick="loadForm('ComputerLaptop WebSite\Inregistrare&amp;Logare_user\Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="#" onclick="loadPage()">Clients</a>
         <a href="#" onclick="loadPage()">Echipa</a>
@@ -1200,21 +1200,15 @@
       // Function to load the content of Pagina_Inregistrare.php
       function loadPage(url, pageName, formId) {
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("content").innerHTML = this.responseText;
             if (formId) {
-              var form = document.getElementById(formId);
-              form.style.display = "block";
-              // Adjust width if needed
-              form.style.width = "300px"; 
-              // Adjust height if needed
-              form.style.height = "auto"; 
-              form.style.position = "absolute";
-              // Adjust top position as required
-              form.style.top = "50px"; 
-              // Adjust right position as required
-              form.style.right = "50px"; 
+              var formContainer = document.createElement("div");
+              formContainer.classList.add("form-container-popup");
+              formContainer.innerHTML = this.responseText;
+              document.body.appendChild(formContainer);
+              showForm(formContainer.id);
             }
           }
         };
