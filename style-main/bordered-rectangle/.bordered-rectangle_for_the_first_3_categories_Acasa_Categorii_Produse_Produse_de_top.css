@@ -3,9 +3,9 @@
     border-style: solid;
     border-radius: 20px;
     margin: 20px;
-    padding-top: 0px;
+    padding-top: 70px;
     height: 240px;
-    width: 260px;
+    width: auto;
     box-sizing: border-box;
     position:sticky; 
     display:inline-block;
