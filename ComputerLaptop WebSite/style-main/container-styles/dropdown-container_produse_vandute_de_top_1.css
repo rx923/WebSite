@@ -23,6 +23,7 @@
     list-style-type: none;
 }
 
+
 /* Show dropdown content when hovering over the main menu item */
 .dropdown-continut_lista_1:hover #dropdown-content-images3 {
     display: block;
