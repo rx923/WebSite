@@ -6,6 +6,8 @@
     border-radius: 25px;
     position: sticky;
     padding: 20px;
+    width: auto;
+	height: 200px;
     flex-direction: row; 
     display: block;
     background: linear-gradient(to top left, rgb(206, 155, 155) 30%, rgb(248, 251, 91) 100%);
