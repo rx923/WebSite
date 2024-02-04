@@ -1,10 +1,9 @@
 {
     "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.autoImportCompletions": true
-}
-
-
-{
+    "python.analysis.autoImportCompletions": true,
     "liveServer.settings.port": 8080,
     "liveServer.settings.host": "192.168.100.53"
+
 }
+
+//Making available the project on ip 192.168.100.53 on port 8080
