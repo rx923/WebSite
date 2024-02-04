@@ -3,9 +3,11 @@
     border: 2px;
     border-style: solid;
     display: inline-block;
-    width: auto;
+    width: 378px;
+    margin-left: -230px;
     height: auto;
     margin: 10px;
+    margin-left: -218px;
     border-radius: 30px;
     background: linear-gradient(to top left, rgb(250, 250, 250) 25%, rgb(0, 0, 0) 50%, rgb(255, 255, 255) 30%);
 }
