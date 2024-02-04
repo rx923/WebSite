@@ -660,7 +660,7 @@
         flex-direction: row;
         display: block;
         background: linear-gradient(to top left, rgb(206, 155, 155) 30%, rgb(248, 251, 91) 100%);
-        }
+      }
         #dropdown-content-Meniu-produse-1-10 {
           border: 2px solid blue;
           border-radius: 20px;
@@ -669,7 +669,93 @@
           height: 600px;
           margin-bottom: 100px;
           background: linear-gradient(50deg, #fff2b2 23%, #4d4201 70%, #fffd8c 85%);
+      }
+    </style>
+    <style>
+      @media screen and (max-width:412px) and (max-height:912px) {
+        #dropdown-content-images3 {
+            position: absolute;
+            /* Using flexbox */
+            flex-wrap: nowrap;
+            display: none;
+            /* Consider reducing this value */
+            /* padding-block: 100px;  */
+            /* padding-right: 687px;     */
+            /* Adjust this value to reduce the top padding */
+            padding: 39px;
+            left: -720px;
+            right: -382px;
+            background-blend-mode: color-dodge;
+            background: transparent;
+            border-radius: 30px;
+            /* box-shadow: 20px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+            z-index: 1;
+            list-style-type: none;
         }
+        #dropdown-content-images3 a {
+            display:block;
+            /* position: relative; */
+            padding: 10px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+            border-top: 1px solid #000;
+            border-right: 1px solid #000;
+            border-left: 1px solid #000;
+            border-bottom: 1px solid #000;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #000;
+            list-style-type: none;
+            transition:inherit;   
+        }
+        #dropdown-content-images3 a:hover {
+            /* background-color: #c51414; */
+            padding-bottom: 30px;
+            margin: 120px;
+            list-style-type: none;
+            transition:ease-in-out 2s;
+            position: sticky;
+        }
+        #dropdown-content-images3 .image-container_dropdown_1 {
+            height: auto;
+            position: relative;
+            list-style-type: none;
+            border: 2px;
+            text-align: center;
+            text-rendering:optimizeSpeed;
+            text-shadow: bisque;
+            transition:ease-in-out 2s;
+        }
+        .dropdown-content_imagini {
+            display: none;
+            position: absolute;
+            background-color: #970000;
+            border: 1px solid black;
+            border-radius: 30px;
+        }
+        /* Show dropdown content when hovering over the main menu item */
+        .a:hover .dropdown-content_imagini {
+            display: inline-block;
+        }
+        /* Style for the dropdown links */
+        .dropdown-content_imagini .dropdown-container {
+            display: inline-block;
+            padding: 10px;
+        }
+        /* Style for the images inside the dropdown content */
+        .dropdown-content_imagini img {
+            width: 200px;
+            height: 200px;
+        }
+        .dropdown-container {
+            margin-right: 20px;
+        }
+        .dropdown-container img {
+            width: 200px;
+            height: 200px;
+        }
+      }
     </style>
     <title>Good Store Coffee</title>
 
