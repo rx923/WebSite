@@ -1,10 +1,17 @@
-CREATE DATABASE MAINDATABASE;
-
-CREATE TABLE(USER_CREDENTIALS);
-
-INSERT INTO USER_CREDENTIALS(
-    name(varchar(50));
-    age(INT(10));
-    email(VARCHAR(255) PRIMARY KEY);
-    created_at TIMESTAMP DEFAULT NOW();
-);
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    middle_name VARCHAR(50),
+    age INT,
+    sex ENUM('Male', 'Female'),
+    education VARCHAR(100),
+    nationality VARCHAR (100),
+    languages_spoken VARCHAR(255),
+    secondary_email VARCHAR(255),
+    eye_color VARCHAR(255),
+    height DECIMAL(255),
+    dick_size DECIMAL(255),
+)
