@@ -930,11 +930,11 @@ h3 {
     border: 1px #000000 groove;
     position: sticky;
     margin-left: -180px;
-    background: linear-gradient(to bottom left, rgb(255, 255, 255) 25%, rgb(0, 43, 143)55%, rgb(255, 255, 255) 65%);
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background: linear-gradient(to bottom left, rgb(255, 255, 255) 25%, rgb(75 119 223 / 74%)55%, rgb(255, 255, 255) 65%);
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
     text-align: center;
     width: 300px;
     height: 100px;
