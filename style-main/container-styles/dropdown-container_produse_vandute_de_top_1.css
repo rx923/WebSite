@@ -9,16 +9,16 @@
     flex-wrap: nowrap;
     display: none;
     /* Consider reducing this value */
-    /* padding-block: 100px;  */
-    /* padding-right: 687px;     */
+    padding-block: 100px;
+    padding-right: 687px;
     /* Adjust this value to reduce the top padding */
-    padding: 39px;
-    left: -720px;
+    padding: 32px;
+    left: -714px;
     right: -382px;
     background-blend-mode: color-dodge;
     background: transparent;
     border-radius: 30px;
-    /* box-shadow: 20px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    box-shadow: 20px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     list-style-type: none;
 }
