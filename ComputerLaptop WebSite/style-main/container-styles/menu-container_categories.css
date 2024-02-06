@@ -1,5 +1,5 @@
 #Menu_Categories {
-    border: 1px; 
+    border: 1px;
     border-color:#ffffff;
     background:linear-gradient(35deg, #ffffff 27%, rgb(255, 222, 33)66%, rgb(255, 255, 255) 75%);
     animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
