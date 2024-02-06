@@ -7,7 +7,7 @@
     border-radius: 20px;
     /* box-sizing:content-box; */
     /* box-shadow: wheat; */
-    width: 400px;
+    width: 100px;
     /* margin: 50px; */
     list-style-type: none;
     position: relative;
@@ -28,7 +28,7 @@
         border-radius: 20px;
         /* box-sizing:content-box; */
         /* box-shadow: wheat; */
-        width: 300px;
+        width: auto;
         /* margin: 50px; */
         list-style-type: none;
         position: relative;
@@ -107,6 +107,15 @@
         z-index: 1;
         display: none;
     }
+    .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
+        display:block;
+        text-align: center;
+        /* inline-size: 2px; */
+        border: 1px #000000 solid;
+        background-color: none;
+        list-style-type: none;
+        margin-top: 80px;
+    }
 }
 
 
@@ -118,7 +127,7 @@
     border: 1px #000000 solid;
     background-color: none;
     list-style-type: none;
-    margin-top: 0px;
+    margin-top: auto;
 }
 
 .li_continut_1_tip_lista{
