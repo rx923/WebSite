@@ -1349,11 +1349,10 @@
       }
     </script>
     <script>
-      // Function to load the content of Pagina_Inregistrare.php
       var urls = [
         'https://qkv3z3j6-8080.euw.devtunnels.ms/' + encodedPath,
       ];
-
+    
       function fetchContent(urlIndex) {
         fetch(urls[urlIndex])
           .then(response => {
@@ -1364,10 +1363,10 @@
           })
           .then(data => {
             document.getElementById("content").innerHTML = data;
-
+    
             // Load additional resources (CSS and JS) if needed
             loadResourcesForPage(cssLinks);
-
+    
             if (formId) {
               var form = document.getElementById(formId);
               if (form) {
@@ -1379,19 +1378,44 @@
                 form.style.right = "50px";
               }
             }
+    
+            // Fetch CSS styles
+            fetchCSS(cssLinks);
           })
           .catch(error => {
             console.error('Error:', error);
-
+    
             // If fetching from the current URL fails, try the next one
             if (urlIndex < urls.length - 1) {
               fetchContent(urlIndex + 1);
             }
           });
       }
-
+    
+      // Function to fetch CSS styles
+      function fetchCSS(cssLinks) {
+        cssLinks.forEach(link => {
+          fetch(link)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.text();
+            })
+            .then(css => {
+              var style = document.createElement('style');
+              style.innerHTML = css;
+              document.head.appendChild(style);
+            })
+            .catch(error => {
+              console.error('Error fetching CSS:', error);
+            });
+        });
+      }
+    
       // Start fetching content from the first URL
       fetchContent(0);
+    </script>
 
       // Start fetching content from the first URL
 
