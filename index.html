@@ -1040,7 +1040,7 @@
 
             // Initialize the dropdown styles
             this.searchDropdown.style.display = 'none';
-            this.searchDropdown.style.position = 'static';
+            this.searchDropdown.style.position = 'absolute'; // Adjust positioning
             this.searchDropdown.style.zIndex = '9999';
             this.searchDropdown.style.backgroundColor = '#E2E281';
             this.searchDropdown.style.maxWidth = '250px';
@@ -1048,13 +1048,7 @@
             this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
             this.searchDropdown.style.padding = '10px';
             this.searchDropdown.style.margin = '10px';
-            this.searchBarRect.style.backgroundColor = '#FF0000';
-            this.searchBarRect.style.width = '3px';
-            this.searchBarRect.style.height = 'auto';
-            this.searchBarRect.style.scrollY = 'auto';
-            this.searchBarRect.style.scrollTop= 'auto';
           }
-
           handleSearchInput() {
             this.searchTerm = this.searchBar.value.trim().toLowerCase();
 
@@ -1066,20 +1060,20 @@
             const matchingProducts = this.getRecommendations(this.searchTerm);
 
             this.searchDropdown.innerHTML = '';
-
+      
             matchingProducts.slice(0, 5).forEach((product) => {
               const dropdownItem = this.createDropdownItem({ name: product });
               this.searchDropdown.appendChild(dropdownItem);
             });
-
+      
             const searchBarRect = this.searchBar.getBoundingClientRect();
             this.searchDropdown.style.top = `${searchBarRect.bottom + window.scrollY}px`;
             this.searchDropdown.style.left = `${searchBarRect.left}px`;
             this.searchDropdown.style.width = `${searchBarRect.width}px`;
             this.searchDropdown.style.display = 'block';
-
+      
             this.searchDropdown.style.overflowY = matchingProducts.length > 3 ? 'scroll' : '';
-
+      
             // Enable scrolling within the menu and search results
             this.searchDropdown.addEventListener('wheel', (event) => {
               if (event.deltaY > 0) {
@@ -1090,6 +1084,7 @@
               event.preventDefault();
             });
           }
+      
           createDropdownItem(product) {
             const dropdownItem = document.createElement('div');
             dropdownItem.classList.add('dropdown-item');
@@ -1098,30 +1093,30 @@
             dropdownItem.style.margin = '5px 0';
             dropdownItem.style.padding = '5px';
             dropdownItem.style.backgroundColor = 'coral';
-
+      
             const productLink = document.createElement('a');
             productLink.textContent = product.name;
             productLink.href = this.productLinks[product.name];
             productLink.style.textDecoration = 'none';
-
+      
             productLink.addEventListener('click', (event) => {
               event.preventDefault();
               this.searchBar.value = product.name;
               this.redirectToProduct(product.name, this.searchBar.value);
             });
-
+      
             dropdownItem.appendChild(productLink);
-
+      
             return dropdownItem;
           }
-
+      
           redirectToProduct(productName, searchTerm) {
             const productLink = this.productLinks[productName];
             if (productLink) {
               window.location.href = this.sanitizeURL(productLink);
             }
           }
-
+      
           getRecommendations(searchTerm) {
             const products = [
               'Espresso',
@@ -1145,18 +1140,148 @@
               'Togouchi Whiskey',
               // Additional products...
             ];
-
+      
             return products.filter((product) => product.toLowerCase().includes(searchTerm));
           }
-
+      
           sanitizeURL(url) {
             const validProtocols = ['http://', 'https://', 'ftp://', 'mailto:'];
             const isValidProtocol = validProtocols.some(protocol => url.startsWith(protocol));
             return isValidProtocol ? url : '#';
           }
         }
-      const productRecommendation = new ProductRecommendation();
-    </script>      
+      
+        const productRecommendation = new ProductRecommendation();
+        function submitSearch() {
+          const searchButton = document.getElementById('submit-cauta-bara-de-cautare');
+          const searchDropdown = document.getElementById('searchDropdown');
+          const searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
+
+          // List of products imported from the productLinks object
+          const products = Object.keys(productRecommendation.productLinks);
+
+          // Check if the search button and dropdown exist
+          if (searchButton && searchDropdown) {
+            // Adding the styles of the search button
+            searchButton.style.backgroundColor = 'green';
+            searchButton.style.color = 'white';
+            searchButton.style.border = 'none';
+            searchButton.style.padding = '8px 16px';
+            searchButton.style.cursor = 'pointer';
+
+            // Display the list of products in the dropdown
+            searchDropdown.innerHTML = '';
+
+            // Filter products based on the search term
+            const searchTerm = searchBar.value.trim().toLowerCase();
+            const matchingProducts = products.filter(product => product.toLowerCase().includes(searchTerm));
+
+            // Populate the dropdown with matching products if search term is not empty
+            if (searchTerm !== '') {
+              matchingProducts.forEach((product) => {
+                const dropdownItem = document.createElement('div');
+                dropdownItem.textContent = product;
+                dropdownItem.classList.add('dropdown-item');
+                // Add pointer cursor
+                dropdownItem.style.cursor = 'pointer'; 
+                dropdownItem.addEventListener('click', () => {
+                  productRecommendation.searchBar.value = product;
+                  productRecommendation.redirectToProduct(product, productRecommendation.searchBar.value);
+                });
+                searchDropdown.appendChild(dropdownItem);
+              });
+
+              // Calculate the position of the dropdown below the search bar
+              const searchBarRect = searchBar.getBoundingClientRect();
+              const dropdownHeight = searchDropdown.offsetHeight;
+              searchDropdown.style.top = `${searchBarRect.bottom}px`;
+              searchDropdown.style.left = `${searchBarRect.left}px`;
+              searchDropdown.style.width = `${searchBarRect.width}px`;
+
+              // Show the dropdown
+              searchDropdown.style.display = 'block';
+            } else {
+              // Hide the dropdown if no search term entered
+              searchDropdown.style.display = 'none';
+            }
+
+            // Reset button state and search input after 0.5 seconds
+            setTimeout(() => {
+              // Reset button background color
+              searchButton.style.backgroundColor = ''; 
+              // Reset button text color
+              searchButton.style.color = ''; 
+              // Clear search input
+              searchBar.value = ''; 
+              // Clear dropdown content
+              searchDropdown.innerHTML = ''; 
+              // Hide dropdown
+              searchDropdown.style.display = 'none'; 
+            }, 500);
+          }
+        }
+      </script>
+      <style>
+        .menu-container {
+          position: fixed;
+          top: 0;
+          left: -250px; /* initially hide the menu */
+          width: 250px; /* adjust as needed */
+          height: 100%;
+          background-color: #fff; /* adjust background color as needed */
+          transition: left 0.3s ease; /* smooth transition when showing/hiding */
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
+        }
+
+        .arrow-icon {
+          position: fixed;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          cursor: pointer;
+          font-size: 24px;
+          background-color: #fff; /* adjust background color as needed */
+          padding: 10px;
+          border-radius: 5px 0 0 5px; /* adjust border radius as needed */
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
+        }
+
+        .arrow-icon:hover {
+          background-color: #f0f0f0; /* adjust hover background color as needed */
+        }
+
+        .close-btn {
+          position: static;
+          top: 10px;
+          left: 10px;
+          cursor: pointer;
+          font-size: 18px;
+          color: #333; /* adjust text color as needed */
+        }
+        </style>
+      <div class="arrow-icon" onclick="toggleMenu()">→</div>
+      <div class="menu-container">
+        <div class="close-btn" onclick="closeMenu()">X</div> <!-- Close button -->
+        <script>
+          function toggleMenu() {
+            var menu = document.querySelector('.menu-container');
+            if (menu.style.left === '0px') { 
+              // if menu is hidden
+              // show menu
+              menu.style.left = '0px';
+              this.style.marginLeft = '10px' 
+            } else {
+              // hide menu
+              menu.style.left = '0px'; 
+            }
+          }
+
+          function closeMenu() {
+            var menu = document.querySelector('.menu-container');
+            // hide menu
+            menu.style.left = '0px'; 
+          }
+        </script>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
@@ -1201,7 +1326,7 @@
     <div id="container_scrolling_for_the_side_nav" class="container">
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="javascript:void(0)" onclick="loadForm('U:/Plan Afacere/WebSite/ComputerLaptop WebSite/Inregistrare&Logare_user/Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
+        <a href="javascript:void(0)" onclick="loadForm('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Inregistrare&Logare_user\\Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
         <a href="javascript:void(0)" onclick="loadForm('U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Inregistrare&Logare_user\\Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="#" onclick="loadPage()">Clients</a>
         <a href="#" onclick="loadPage('ComputerLaptop WebSite\\Echipapage\\Echipa.html')">Echipa</a>
