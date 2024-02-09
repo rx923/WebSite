@@ -20,7 +20,7 @@
     margin-top: 10px;
     width: 400px;
     margin-left: -7px;
-    margin-right: 3px;
+    margin-right: 0px;
     right: 0px;
     /* margin-top: 285px; */
     margin-bottom: 30px;
@@ -49,9 +49,9 @@
     position:sticky;
     /* display:flex; */
     box-sizing:border-box;
-    width: 386px;
-    margin-left: -219px;
-    margin-right: 16px;
+    width: 375px;
+    margin-left: 10px;
+    margin-right: 0px;
     /* height: max-content; */
     /* align-items: center; */
 }
@@ -70,8 +70,8 @@
     position: sticky;
     /* display: flex; */
     box-sizing: border-box;
-    width: 387px;
-    margin-left: -215px;
+    width: 375px;
+    margin-left: 8px;
     margin-right: 5px;
     /* height: max-content; */
 }
@@ -94,8 +94,8 @@
     box-sizing: border-box;
     width: 375px;
     padding: 20px;
-    margin-right: 1px;
-    margin-left: -195px;
+    margin-right: 0px;
+    margin-left: 1px;
     text-wrap: stable;
     /* height: max-content; */
     /* align-items: center; */
