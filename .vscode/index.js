@@ -5,9 +5,10 @@ const app = express();
 
 // Middleware
 // Applying CORS middleware
-app.use(cors()); 
+app.use(cors());
+app.use(express.static('public')); 
 app.use(express.json());
 
-app.listen(5432, () => {
-    console.log("Server started on port 5432");
+app.listen(8080, () => {
+    console.log("Server started on port 8080");
 });
