@@ -1226,61 +1226,78 @@
         .menu-container {
           position: absolute;
           top: 0;
-          left: 0px; /* initially hide the menu */
-          width: 250px; /* adjust as needed */
-          height: 100%;
-          background-color: #fff; /* adjust background color as needed */
-          transition: left 0.3s ease; /* smooth transition when showing/hiding */
-          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
+          /* initially hide the menu */
+          left: -400px; 
+          /* adjusted width */
+          width: 400px; 
+          /* adjusted height */
+          height: 450px; 
+          /* adjust background color as needed */
+          background-color: #fff; 
+          /* smooth transition when showing/hiding */
+          transition: left 0.3s ease; 
+          /* optional: add shadow for depth */
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
+          /* ensure menu appears above other elements */
+          z-index: 9999; 
         }
 
         .arrow-icon {
-          position: absolute;
+          width: 40px;
+          position: relative;
           top: 50%;
           left: 0;
           transform: translateY(-50%);
           cursor: pointer;
+          border-radius: 30px;
           font-size: 24px;
-          background-color: #fff; /* adjust background color as needed */
+          /* adjust background color as needed */
+          background-color: #598e9d; 
           padding: 10px;
-          border-radius: 5px 0 0 5px; /* adjust border radius as needed */
-          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
+          /* adjust border radius as needed */
+          border-radius: 5px 0 0 5px; 
+          /* optional: add shadow for depth */
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
+          /* ensure arrow appears above other elements */
+          z-index: 9999; 
         }
 
         .arrow-icon:hover {
-          background-color: #f0f0f0; /* adjust hover background color as needed */
+          /* adjust hover background color as needed */
+          background-color: #f0f0f0; 
         }
 
         .close-btn {
-          position: static;
+          position: absolute;
           top: 10px;
           left: 10px;
           cursor: pointer;
           font-size: 18px;
-          color: #333; /* adjust text color as needed */
+          /* adjust text color as needed */
+          color: #333; 
         }
-        </style>
+      </style>
       <div class="arrow-icon" onclick="toggleMenu()">→</div>
       <div class="menu-container">
-        <div class="close-btn" onclick="closeMenu()">X</div> <!-- Close button -->
+        <!-- Close button -->
+        <div class="close-btn" onclick="closeMenu()">X</div> 
         <script>
           function toggleMenu() {
             var menu = document.querySelector('.menu-container');
-            if (menu.style.left === '0px') { 
+            if (menu.style.left === '-400px') { 
               // if menu is hidden
               // show menu
               menu.style.left = '0px';
-              this.style.marginLeft = '10px' 
             } else {
               // hide menu
-              menu.style.left = '0px'; 
+              menu.style.left = '-400px'; 
             }
           }
-
+        
           function closeMenu() {
             var menu = document.querySelector('.menu-container');
             // hide menu
-            menu.style.left = '0px'; 
+            menu.style.left = '-400px'; 
           }
         </script>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
