@@ -365,8 +365,8 @@ header {
     top: 10px;
     position: relative;
     padding-top: 4px;
-    border: 3px groove #89c2ff;
-    background: rgb(137 132 60 / 45%);
+    border: 1px groove #0900fa;
+    background: rgb(255 255 255 / 79%);
     padding: 5px;
     width: 80px;
     text-align: center;
@@ -522,8 +522,8 @@ header {
 }
 
 .table-container_lista_optiuni {
-    bottom: 70px;
-    width: 300px;
+    bottom: 69px;
+    width: 312px;
     height: 300px;
     position: relative;
     border: 3px outset #ddd;
@@ -533,13 +533,13 @@ header {
     grid-auto-flow: dense;
     margin-bottom: 10px;
     margin-top: 100px;
-    width: 300px;
+    width: 320px;
     margin-left: 11px;
     margin-right: 0px;
     animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
     background-size: 200% 200%;
     align-items: baseline;
-    background-color: rgb(54, 32, 8);
+    background-color: rgba(123, 95, 65, 0.56);
 }
 
 .tabel-1-lista-optiuni {

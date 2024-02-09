@@ -1036,18 +1036,20 @@
           initialize() {
             this.searchBar.addEventListener('input', this.handleSearchInput.bind(this));
             this.searchBar.style.backgroundColor = 'lightblue';
-            this.searchBar.style.width = '250px'; // Change width as needed
+            // Change width as needed
+            this.searchBar.style.width = '150px'; 
       
             // Initialize the dropdown styles
             this.searchDropdown.style.display = 'none';
-            this.searchDropdown.style.position = 'absolute'; // Adjust positioning
+            // Adjust positioning
+            this.searchDropdown.style.position = 'absolute'; 
             this.searchDropdown.style.zIndex = '9999';
-            this.searchDropdown.style.backgroundColor = '#E2E281';
+            this.searchDropdown.style.backgroundColor = '#008080';
             this.searchDropdown.style.maxWidth = '250px';
             this.searchDropdown.style.borderRadius = '20px';
             this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
-            this.searchDropdown.style.padding = '10px';
-            this.searchDropdown.style.margin = '10px';
+            this.searchDropdown.style.padding = '2px';
+            this.searchDropdown.style.margin = '2px';
           }
       
           handleSearchInput() {
@@ -1225,56 +1227,51 @@
       <style>
         .menu-container {
           position: absolute;
+          background: #598e9de6;
+          border-radius: 30px;
           top: 0;
-          /* initially hide the menu */
-          left: -400px; 
-          /* adjusted width */
-          width: 400px; 
-          /* adjusted height */
-          height: 450px; 
-          /* adjust background color as needed */
-          background-color: #fff; 
-          /* smooth transition when showing/hiding */
-          transition: left 0.3s ease; 
-          /* optional: add shadow for depth */
-          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
-          /* ensure menu appears above other elements */
-          z-index: 9999; 
+          left: -400px; /* initially hide the menu */
+          width: 390px; /* adjusted width */
+          height: 450px; /* adjusted height */
+          transition: left 0.3s ease; /* smooth transition when showing/hiding */
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
+          z-index: 9999; /* ensure menu appears above other elements */
         }
 
         .arrow-icon {
           width: 40px;
           position: relative;
-          top: 50%;
+          top: 100px;
+          padding-bottom: 100px;
           left: 0;
           transform: translateY(-50%);
           cursor: pointer;
           border-radius: 30px;
           font-size: 24px;
-          /* adjust background color as needed */
-          background-color: #598e9d; 
+          background-color: #598e9d; /* adjust background color as needed */
           padding: 10px;
-          /* adjust border radius as needed */
-          border-radius: 5px 0 0 5px; 
-          /* optional: add shadow for depth */
-          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
-          /* ensure arrow appears above other elements */
-          z-index: 9999; 
+          border-radius: 5px 0 0 5px; /* adjust border radius as needed */
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
+          z-index: 9999; /* ensure arrow appears above other elements */
         }
 
         .arrow-icon:hover {
-          /* adjust hover background color as needed */
-          background-color: #f0f0f0; 
+          background-color: #f0f0f0; /* adjust hover background color as needed */
         }
 
         .close-btn {
           position: absolute;
-          top: 10px;
-          left: 10px;
+          top: -45px;
+          left: 330px;
+          padding: 10px;
+          transform: translateY(50px);
+          border: 1px solid black;
+          width: 30px;
+          height: 50px;
+          border-radius: 30px;
           cursor: pointer;
           font-size: 18px;
-          /* adjust text color as needed */
-          color: #333; 
+          background-color: #6a67ff6b; /* adjust background color as needed */
         }
       </style>
       <div class="arrow-icon" onclick="toggleMenu()">→</div>
@@ -1284,10 +1281,14 @@
         <script>
           function toggleMenu() {
             var menu = document.querySelector('.menu-container');
+            var arrowIcon = document.querySelector('.arrow-icon');
+
             if (menu.style.left === '-400px') { 
               // if menu is hidden
               // show menu
               menu.style.left = '0px';
+              // Hiding the arrow icon
+              arrowIcon.style.display = 'none';
             } else {
               // hide menu
               menu.style.left = '-400px'; 
@@ -1296,8 +1297,11 @@
         
           function closeMenu() {
             var menu = document.querySelector('.menu-container');
-            // hide menu
             menu.style.left = '-400px'; 
+            // hide menu
+            var arrowIcon = document.querySelector('.arrow-icon');
+            // Showing the arrow icon
+            arrowIcon.style.display = 'block';
           }
         </script>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
