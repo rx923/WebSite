@@ -1,4 +1,5 @@
 .dropdown-content_meniu_1si2 {
+    margin-top: 69px;
     border: 2px;
     align-content: center;
     border-style: solid;
@@ -7,8 +8,8 @@
     position: sticky;
     padding: 20px;
     width: 310px;
-	height: 700px;
-    flex-direction: row; 
+    height: 700px;
+    flex-direction: row;
     display: block;
     background: linear-gradient(to top left, rgb(206, 155, 155) 30%, rgb(248, 251, 91) 100%);
 }
