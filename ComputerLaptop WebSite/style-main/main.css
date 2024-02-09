@@ -534,7 +534,7 @@ header {
     margin-bottom: 10px;
     margin-top: 100px;
     width: 300px;
-    margin-left: 10px;
+    margin-left: 11px;
     margin-right: 0px;
     animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
     background-size: 200% 200%;
