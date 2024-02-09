@@ -35,7 +35,6 @@
     background-color: rgb(65, 65, 67);
     border-left: 1px;
     padding: 20px;
-    margin-left: 20px;
     border-bottom: 2px;
     border-top: 1px;
     border-style: outset;
@@ -50,7 +49,7 @@
     /* display:flex; */
     box-sizing:border-box;
     width: 375px;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 0px;
     /* height: max-content; */
     /* align-items: center; */
@@ -71,8 +70,8 @@
     /* display: flex; */
     box-sizing: border-box;
     width: 375px;
-    margin-left: 8px;
-    margin-right: 5px;
+    margin-left: 0px;
+    margin-right: 1px;
     /* height: max-content; */
 }
 #container-imagine-stanga {
@@ -95,7 +94,7 @@
     width: 375px;
     padding: 20px;
     margin-right: 0px;
-    margin-left: 1px;
+    margin-left: 0px;
     text-wrap: stable;
     /* height: max-content; */
     /* align-items: center; */
