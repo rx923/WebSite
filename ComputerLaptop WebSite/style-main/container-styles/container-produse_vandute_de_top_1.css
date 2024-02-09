@@ -70,7 +70,7 @@
     position: sticky;
     /* display: flex; */
     box-sizing: border-box;
-    width: 386px;
+    width: 387px;
     margin-left: -215px;
     margin-right: 5px;
     /* height: max-content; */
@@ -95,7 +95,7 @@
     width: 375px;
     padding: 20px;
     margin-right: 1px;
-    margin-left: -219px;
+    margin-left: -195px;
     text-wrap: stable;
     /* height: max-content; */
     /* align-items: center; */
