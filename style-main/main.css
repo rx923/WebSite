@@ -524,7 +524,7 @@ header {
 .table-container_lista_optiuni {
     bottom: 69px;
     width: 312px;
-    height: 300px;
+    height: 340px;
     position: relative;
     border: 3px outset #ddd;
     display: inline-flex;
@@ -585,7 +585,6 @@ header {
     margin: 1px;
     position: sticky;
     margin: 10px;
-
 }
 
 
