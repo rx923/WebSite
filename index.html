@@ -1029,15 +1029,15 @@
               'Togouchi Whiskey': this.sanitizeURL('https://www.finebar.ro/togouchi-15yo'),
               // Additional product links...
             };
-
+      
             this.initialize();
           }
-
+      
           initialize() {
             this.searchBar.addEventListener('input', this.handleSearchInput.bind(this));
             this.searchBar.style.backgroundColor = 'lightblue';
             this.searchBar.style.width = '250px'; // Change width as needed
-
+      
             // Initialize the dropdown styles
             this.searchDropdown.style.display = 'none';
             this.searchDropdown.style.position = 'absolute'; // Adjust positioning
@@ -1049,16 +1049,17 @@
             this.searchDropdown.style.padding = '10px';
             this.searchDropdown.style.margin = '10px';
           }
+      
           handleSearchInput() {
             this.searchTerm = this.searchBar.value.trim().toLowerCase();
-
+      
             if (this.searchTerm === '') {
               this.searchDropdown.style.display = 'none';
               return;
             }
-
+      
             const matchingProducts = this.getRecommendations(this.searchTerm);
-
+      
             this.searchDropdown.innerHTML = '';
       
             matchingProducts.slice(0, 5).forEach((product) => {
@@ -1223,9 +1224,9 @@
       </script>
       <style>
         .menu-container {
-          position: fixed;
+          position: absolute;
           top: 0;
-          left: -250px; /* initially hide the menu */
+          left: 0px; /* initially hide the menu */
           width: 250px; /* adjust as needed */
           height: 100%;
           background-color: #fff; /* adjust background color as needed */
@@ -1234,7 +1235,7 @@
         }
 
         .arrow-icon {
-          position: fixed;
+          position: absolute;
           top: 50%;
           left: 0;
           transform: translateY(-50%);
