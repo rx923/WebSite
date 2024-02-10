@@ -1,8 +1,9 @@
 @media screen and (max-width: 415px) and (max-height: 912px) {
     #container_imagine-dropdown-1 {
         display: table;
+        top: 30px;
         margin-right: 0px;
-        width: 300px;
+        width: 100px;
         border-radius: 30px;
         background: linear-gradient(20deg, rgb(255, 255, 255) 21%, #d08132)61%, #ffffff 95%;
         padding: 0px;
@@ -16,11 +17,12 @@
 #container_imagine-dropdown-1 {
     display: table;
     margin-right: 0px;
-    width: 263px;
+    top: 30px;
+    width: 100px;
     border-radius: 30px;
     background: linear-gradient(20deg, rgb(255, 255, 255) 21%, #d08132)61%, #ffffff 95%;
     padding: 0px;
-    right: 20px;
+    right: 55px;
     position: relative;
     border: 2px solid black;
     border-radius: 30px;
@@ -29,10 +31,10 @@
     #container_imagine-dropdown-2 {
         display: table;
         margin-right: 0px;
-        width: 300px;
+        width: 100px;
         position: relative;
-        left: 350px;
-        bottom: 448px;
+        left: 65px;
+        bottom: 680px;
         border-radius: 30px;
         background: linear-gradient(20deg, rgb(255, 255, 255) 21%, #d08132)61%, #ffffff 95%;
         padding: 0px;
@@ -43,10 +45,10 @@
 #container_imagine-dropdown-2 {
     display: table;
     margin-right: 0px;
-    width: 161px;
+    width: 100px;
     position: relative;
-    left: 500px;
-    bottom: 420px;
+    left: 65px;
+    bottom: 680px;
     border-radius: 30px;
     background: linear-gradient(20deg, rgb(255, 255, 255) 21%, #d08132)61%, #ffffff 95%;
     padding: 0px;
@@ -60,10 +62,10 @@
         border-radius: 30px;
         background: linear-gradient(20deg, rgb(255, 255, 255) 21%, #d08132)61%, #ffffff 95%;
         position: relative;
-        left: 679px;
-        bottom: 896px;
+        left: 200px;
+        bottom: 1355px;
         padding: 0px;
-        width: 300px;
+        width: 100px;
         border: 2px solid black;
         border-radius: 30px;
     }
@@ -74,10 +76,10 @@
     border-radius: 30px;
     background: linear-gradient(20deg, rgb(255, 255, 255) 21%, #d08132)61%, #ffffff 95%;
     position: relative;
-    left: 671px;
-    bottom: 949px;
+    left: 200px;
+    bottom: 1355px;
     padding: 0px;
-    width: 161px;
+    width: 100px;
     border: 2px solid black;
     border-radius: 30px;
 }
