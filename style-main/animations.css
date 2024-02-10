@@ -184,7 +184,7 @@ h1::after::before {
 }
 .glowing-background {
     border-radius: 20px;
-    background: linear-gradient(20deg, #ffffff 32%, #3a2c00b070%, #ffffff 85%);
+    background: linear-gradient(20deg, #ffffff 32%, #3a2c00b0 70%, #ffffff 85%);
     background-size: 300% 350%;
     transition: box-shadow 1s ease-in-out;
     animation: glowing 10s ease-in-out infinite;
