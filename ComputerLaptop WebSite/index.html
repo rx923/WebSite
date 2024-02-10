@@ -1246,19 +1246,39 @@
           left: 0;
           transform: translateY(-50%);
           cursor: pointer;
-          border-radius: 30px;
-          font-size: 24px;
-          background-color: #598e9d; /* adjust background color as needed */
+          font-size: 20px;
+          /* adjust background color as needed */
+          background-color: #598e9d; 
           padding: 10px;
-          border-radius: 5px 0 0 5px; /* adjust border radius as needed */
-          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
-          z-index: 9999; /* ensure arrow appears above other elements */
+          /* adjust border radius as needed */
+          border-radius: 25px 25px 25px 25px; 
+          /* optional: add shadow for depth */
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
+          /* ensure arrow appears above other elements */
+          z-index: 9999; 
         }
 
         .arrow-icon:hover {
-          background-color: #f0f0f0; /* adjust hover background color as needed */
+          /* adjust hover background color as needed */
+          background-color: #d86d6d;
+          border-radius: 20px; 
         }
+        @keyframes flowWaves {
+            0% {
+              background-position: 0% 50%;
+              background-size: 200% 200%;
+            }
+            50% {
+              background-position: 100% 50%;
+              background-size: 150% 150%;
 
+            }
+            100% {
+              background-position: 0% 50%;
+              background-size: 200% 200%;
+
+            }
+          }
         .close-btn {
           position: absolute;
           top: -45px;
@@ -1763,7 +1783,7 @@
     }
     </script>
     <!-- Slideshow container -->
-    <div class="slideshow-container" style="margin-left: 100px; margin-right: 100px; border: 1px solid black; width: auto; height: 480px; top: 50px; border-radius: 30px; border-width: 10px;">
+    <div class="slideshow-container" style="margin-left: 100px; margin-right: 100px; border: 1px solid black; width: auto; height: 590px; top: 50px; border-radius: 30px; border-width: 10px;">
       <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto; ">
         <div class="numbertext-1" style="margin: bottom 10px; 
                                         margin-bottom: 10px; 
