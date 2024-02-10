@@ -1,0 +1,27 @@
+{
+  "name": "application",
+  "version": "1.0.0",
+  "description": "Server for Account Creation and Storage",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rx923/Back-end-File-configuration.git"
+  },
+  "author": "Me",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3"
+  },
+  "bugs": {
+    "url": "https://github.com/rx923/Back-end-File-configuration/issues"
+  },
+  "homepage": "https://github.com/rx923/Back-end-File-configuration#readme"
+}
