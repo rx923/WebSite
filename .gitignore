@@ -2,3 +2,54 @@
 .vscode
 # Ignoring the entire file configuration settings of package.json
 package.json
+
+# Ignoring all the filepaths:
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/slideshow-container-buttons/slideshow-container-style.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/InformatiiAditionalepage/InformatiiAditionalepage.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Inregistrare&Logare_user/Logare.html
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Inregistrare&Logare_user/Inregistrare.html
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/type-device-style.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Comenzipage/Comenzi.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Suportpage/support.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/main.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/form.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/canvas.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Creare-cont/Account-creation.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/navigation.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/bordered-box-styles/bordered-box_produse_vandute_de_top_1.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/animations.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/Contact.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/Echipa.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/images-animations.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/images-containers/imgcontainer.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/menu_containers/menu-image.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/nav-menu-ul.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/ol li a.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/ul.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/search-bar/search-bar.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/selectors.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/tables.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/transitions.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Desprepage/Despre.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/Javascript/style.js
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/footer-style/footer.css" type="text/css" media="all">
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/bordered-rectangle/ComputerLaptop_WebSite\style-main\bordered-rectangle\.bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/container-styles/container-produse_vandute_de_top_1.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/container-styles/dropdown-container_produse_vandute_de_top_1.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/container-styles/menu_container_produse_de_top.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/container-styles/dropdown-content_meniu_1&2.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/container-styles/menu-container_acasa.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/container-styles/menu-container_categories.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/container-styles/menu-container-modified-content.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/table-container_styles/tabel-1-lista-optiuni.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/image-containers-styles/image-container_produse_vandute_de_top_1.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/images-containers/images-animations.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/menu_containers/#menu-container3 .modified-dropdown .dropdown-image.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/menu_containers/#menu-container3 .modified-dropdown.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/menu_containers/menu.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/cele mai vandute produse/style paragraph.css
+http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/bordered-box-styles/bordered-box_produse_vandute_de_top_1.css
+http://192.168.100.53:8080/WebSite\ComputerLaptop_WebSite\style_main\content-styles\content.css
+Javascript/Login-Users-Account/action_page.php
