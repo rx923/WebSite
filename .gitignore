@@ -1,0 +1,4 @@
+# Ignoring the entire directory of .vscode information
+.vscode
+# Ignoring the entire file configuration settings of package.json
+package.json
