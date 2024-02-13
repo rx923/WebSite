@@ -3,6 +3,6 @@
     "python.analysis.autoImportCompletions": true,
     "liveServer.settings.port": 8080,
     "liveServer.settings.host": "192.168.100.53",
-    "liveServer.settings.root":"U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite",
-    
+    "liveServer.settings.root": "U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe --disable-web-security"
 }
