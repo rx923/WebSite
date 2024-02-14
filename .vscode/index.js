@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const { Sequelize, DataTypes } = require('sequelize');
+const liveServer = require("live-server");
+const path = require("path");
 
 const app = express();
 
@@ -34,7 +36,7 @@ const User = sequelize.define('User', {
 
 // Route to serve the Logare.html file
 app.get('/Logare', (req, res) => {
-  res.sendFile('U:/Plan Afacere/WebSite/ComputerLaptop WebSite/Inregistrare&Logare_user/Inregistrare.html');
+  res.sendFile(path.join(__dirname, 'public', 'Inregistrare&Logare_user', 'Inregistrare.html'));
 });
 
 // Route to handle user registration
@@ -59,7 +61,7 @@ app.listen(PORT, () => {
 const params = {
   port: "8080", 
   host: "192.168.100.53", 
-  root: path.join(__dirname, 'public'), // Set root directory to 'public'
+  root: path.join(__dirname, 'public'), 
   open: false, 
   logLevel: 2,
   middleware: [function(req, res, next) {
