@@ -61,7 +61,7 @@ app.listen(PORT, () => {
 const params = {
   port: "8080", 
   host: "192.168.100.53", 
-  root: path.join(__dirname, 'public'), 
+  root: "U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite", 
   open: false, 
   logLevel: 2,
   middleware: [function(req, res, next) {
