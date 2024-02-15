@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <base href="https://qkv3z3j6-8080.euw.devtunnels.ms/">
+    <base href="http:192.168.100.53:8080">
     <style>
       /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
       @media only screen and (max-width:412px) and (max-height: 915px) and (orientation: landscape) {
@@ -474,141 +475,140 @@
           height: auto;
           display: block;
         }
-      }
-      /* Styles for the search bar */
-      .search-bar {
-        border: 3px outset rgb(0, 123, 255);
-        background-color: rgb(235, 216, 168);
-        border-radius: 25px;
-        width: 300px;
-        padding: 10px;
-        margin-bottom: 10px;
-        padding: 10px;
-        left: 1230px;
-        outline: none;
-        position: sticky;
-        display: flex;
-        align-items: center;
-        resize: none;
-      }
-  
-      .search-container {
-        padding: 1px;
-        color: rgb(0, 0, 0);
-        background-color: rgb(0, 23, 137);
-        border: outset;
-        border-width: 0.5vw 0.5vw;
-        border-color: rgb(68, 162, 255);
-        border-radius: 30px;
-        left: 231px;
-        transform: translateY(-300%);
-        top: 270px;
-        margin-top: 0px;
-        margin-bottom: 20px;
-        display: inline-block;
-        position: absolute;
-        margin: 0px;
-      }
-  
-      .search-button {
-        padding: 2px 4px;
-        color: rgb(255, 255, 255);
-        border: 2px outset;
-        border-radius: 30px;
-        background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
-        cursor: pointer;
-        width: 200px;
-        max-width: 100px;
-        height: 40px;
-      }
-  
-      /* Styles for the dropdown items */
-      .dropdown-container {
-        position: absolute;
-        display: none;
-        background-color: #f5f5dc; /* BlanchedAlmond */
-        border: 1px solid #ccc;
-        border-radius: 30px;
-        padding: 10px;
-        max-height: 200px;
-        overflow-y: auto;
-      }
-  
-      .dropdown-item {
-        padding: 5px;
-        margin-bottom: 10px;
-      }
-      .dropdown-item .a{
-        border: 1px solid black;
-      }
-      /* CSS for the side navigation menu */
-      .sidenav {
-        /* Set full height */
-        height: 100%; 
-        /* Initially closed */
-        width: 0; 
-        /* Fixed position */
-        position: fixed; 
-        /* Make sure it appears above everything */
-        z-index: 1; 
-        top: 75px;
-        padding-block: 100px;
-        left: 0;/* Background color */
-        background-color: #333333ea; 
-        /* Hide horizontal scrollbar */
-        overflow-x: hidden;
-        /* Space for the triangle icon */ 
-        padding-top: 60px;
-        /* 0.5 second transition */ 
-        transition: 0.5s;
-        max-width: 300px;
-        max-height: 400px;
-        border-radius: 30px;
-        border: 2px white solid;
-      }
+        /* Styles for the search bar */
+        .search-bar {
+          border: 3px outset rgb(0, 123, 255);
+          background-color: rgb(235, 216, 168);
+          border-radius: 25px;
+          width: 300px;
+          padding: 10px;
+          margin-bottom: 10px;
+          padding: 10px;
+          left: 1230px;
+          outline: none;
+          position: sticky;
+          display: flex;
+          align-items: center;
+          resize: none;
+        }
+    
+        .search-container {
+          padding: 1px;
+          color: rgb(0, 0, 0);
+          background-color: rgb(0, 23, 137);
+          border: outset;
+          border-width: 0.5vw 0.5vw;
+          border-color: rgb(68, 162, 255);
+          border-radius: 30px;
+          left: 231px;
+          transform: translateY(-300%);
+          top: 270px;
+          margin-top: 0px;
+          margin-bottom: 20px;
+          display: inline-block;
+          position: absolute;
+          margin: 0px;
+        }
+    
+        .search-button {
+          padding: 2px 4px;
+          color: rgb(255, 255, 255);
+          border: 2px outset;
+          border-radius: 30px;
+          background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
+          cursor: pointer;
+          width: 200px;
+          max-width: 100px;
+          height: 40px;
+        }
+    
+        /* Styles for the dropdown items */
+        .dropdown-container {
+          position: absolute;
+          display: none;
+          background-color: #f5f5dc; /* BlanchedAlmond */
+          border: 1px solid #ccc;
+          border-radius: 30px;
+          padding: 10px;
+          max-height: 200px;
+          overflow-y: auto;
+        }
+    
+        .dropdown-item {
+          padding: 5px;
+          margin-bottom: 10px;
+        }
+        .dropdown-item .a{
+          border: 1px solid black;
+        }
+        /* CSS for the side navigation menu */
+        .sidenav {
+          /* Set full height */
+          height: 100%; 
+          /* Initially closed */
+          width: 0; 
+          /* Fixed position */
+          position: fixed; 
+          /* Make sure it appears above everything */
+          z-index: 1; 
+          top: 75px;
+          padding-block: 100px;
+          left: 0;/* Background color */
+          background-color: #333333ea; 
+          /* Hide horizontal scrollbar */
+          overflow-x: hidden;
+          /* Space for the triangle icon */ 
+          padding-top: 60px;
+          /* 0.5 second transition */ 
+          transition: 0.5s;
+          max-width: 300px;
+          max-height: 400px;
+          border-radius: 30px;
+          border: 2px white solid;
+        }
 
-      .sidenav a {
-        margin-top: 10px;
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 12px;
-        background-color: #c7c400;
-        color: #fffdfd;
-        border-radius: 30px;
-        display: block;
-        width: 220px;
-        transition: 0.3s;
-      }
+        .sidenav a {
+          margin-top: 10px;
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 12px;
+          background-color: #c7c400;
+          color: #fffdfd;
+          border-radius: 30px;
+          display: block;
+          width: 220px;
+          transition: 0.3s;
+        }
 
-      .sidenav a:hover {
-        border: 1px groove white;
-        border-radius: 30px;
-        color: #ff0000;
-        border-inline: 3px 2px 2px 2px;
-        animation: pulse 4s, infinite alternate-reverse;
-      }
+        .sidenav a:hover {
+          border: 1px groove white;
+          border-radius: 30px;
+          color: #ff0000;
+          border-inline: 3px 2px 2px 2px;
+          animation: pulse 4s, infinite alternate-reverse;
+        }
 
-      .sidenav .closebtn {
-        position: absolute;
-        background: rgb(66, 76, 104);
-        top: 1px;
-        margin-bottom: 4px;
-        right: 20px;
-        width: 50px;
-        font-size: 36px;
-        margin-left: 50px;
-      }
+        .sidenav .closebtn {
+          position: absolute;
+          background: rgb(66, 76, 104);
+          top: 1px;
+          margin-bottom: 4px;
+          right: 20px;
+          width: 50px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
 
-      /* Styling for the triangle icon */
-      .openTriangle {
-        cursor: pointer;
-        font-size: 50px;
-        position: absolute;
-        top: 20px;
-        left: 10px;
-        color: #875151;
-        transition: 0.7s;
-      }
+        /* Styling for the triangle icon */
+        .openTriangle {
+          cursor: pointer;
+          font-size: 50px;
+          position: absolute;
+          top: 20px;
+          left: 10px;
+          color: #875151;
+          transition: 0.7s;
+        }
 
         .openTriangle:hover::shadow {
           color: #e85757;
@@ -758,63 +758,63 @@
 
     <link rel="stylesheet" href="\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all">
     <link rel="stylesheet" href="\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\acasa.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\WebSite\public\Account-creation.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\afiliati.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\animations.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\bordered_box_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\bordered_rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\bordered-box.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\box_model_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\canvas.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Categori-1-tip-lista.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Comenzi.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Contact.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\container_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\content.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Continut1tiplista.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\continut2tiplista.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\continut3tiplista.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Despre.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\dropdown_container_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\dropdown_content_meniu_1&2.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\dropdown_content_ordered_list_2.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Echipa.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\footer.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\form.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\image-container_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\images-animations.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\InformatiiAditionalepage.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Inregistrare-forma-design.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\lists_styles.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Livrare.css" type="text/javascript" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Logare-forma-design.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\main.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\Meniu Produse_1_2_3_4_5_6_7_8_9_10.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu_container_produse_de_top.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/ComputerLaptop_WebSite\style-main\container-styles\menu_container_produse_de_top.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu-container_acasa.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu-container_categories.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu-container-modified-content.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu-container3 .modified-dropdown .dropdown-image.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu-container3 .modified-dropdown.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu-image.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\menu.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\nav-menu-ul.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\navigation.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\ol_li_a.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\persoane_contact.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\responsive-iframe.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\search-bar.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\selectors.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\side-navigation.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\slideshow-container-style.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\style_canvas.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\support.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\tables.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite\public\type-device-style.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="http://192.168.100.53:8080/WebSite/public/ul.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="login" href="Javascript/Login-Users-Account\action_page.php" media="all" method="GET" encoding="%20"> -->
+    <link rel="stylesheet" href="\WebSite\public\acasa.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\WebSite\public\Account-creation.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\afiliati.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\animations.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\bordered_box_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\bordered_rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\bordered-box.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\box_model_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\canvas.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Categori-1-tip-lista.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Comenzi.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Contact.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\container_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\content.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Continut1tiplista.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\continut2tiplista.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\continut3tiplista.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Despre.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\dropdown_container_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\dropdown_content_meniu_1&2.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\dropdown_content_ordered_list_2.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Echipa.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\footer.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\form.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\image-container_produse_vandute_de_top_1.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\images-animations.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\InformatiiAditionalepage.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Inregistrare-forma-design.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\lists_styles.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Livrare.css" type="text/javascript" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Logare-forma-design.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\main.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\Meniu Produse_1_2_3_4_5_6_7_8_9_10.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu_container_produse_de_top.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\ComputerLaptop_WebSite\style-main\container-styles\menu_container_produse_de_top.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu-container_acasa.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu-container_categories.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu-container-modified-content.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu-container3 .modified-dropdown .dropdown-image.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu-container3 .modified-dropdown.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu-image.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\menu.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\nav-menu-ul.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\navigation.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\ol_li_a.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\persoane_contact.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\responsive-iframe.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\search-bar.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\selectors.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\side-navigation.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\slideshow-container-style.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\style_canvas.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\support.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\tables.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\type-device-style.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\ul.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="login" href="Javascript/Login-Users-Account\action_page.php" media="all" method="GET" encoding="%20">
 
     
     <!-- <script src="Javascript/main.js"></script> -->
@@ -1332,27 +1332,27 @@
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
             <div class="th glowing-background" id="tableheader-Despre">
-              <a href="http://192.168.100.53:8080/U:/Plan_Afacere/WebSite/ComputerLaptop_WebSite/Desprepage/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky;">Despre</a>
+              <a href="\U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite\\Desprepage\\Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky;">Despre</a>
             </div>
           </div>
           <div class="tr">
             <div class="th glowing-background" id="tableheader-Comenzi" style="position: sticky;">
-              <a href="http://192.168.100.53:8080/U:/Plan_Afacere/WebSite/ComputerLaptop_WebSite/Comenzipage/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky;">Comenzi</a>
+              <a href="\U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite\\Comenzipage\\Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky;">Comenzi</a>
             </div>
           </div>
           <div class="tr">
             <div class="th glowing-background" id="tableheader-Livrare">
-              <a href="http://192.168.100.53:8080/U:/Plan_Afacere/WebSite/ComputerLaptop_WebSite/Livrarepage/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky;">Livrare</a>
+              <a href="\U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite\\Livrarepage\\Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky;">Livrare</a>
             </div>
           </div>
           <div class="tr">
             <div class="th glowing-background" id="tableheader-Suport">
-              <a href="http://192.168.100.53:8080/U:/Plan_Afacere/WebSite/ComputerLaptop_WebSite/Suportpage/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky;">Suport</a>
+              <a href="\U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite\\Suportpage\\Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky;">Suport</a>
             </div>
           </div>
           <div class="tr">
             <div class="th glowing-background" id="tableheader-Informatii-Aditionale">
-              <a href="http://192.168.100.53:8080/U:/Plan_Afacere/WebSite/ComputerLaptop_WebSite/InformatiiAditionalepage/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative;">Informatii Aditionale</a>
+              <a href="\U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite\\InformatiiAditionalepage\\Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative;">Informatii Aditionale</a>
             </div>
           </div>
         </div>
@@ -1702,53 +1702,53 @@
           <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
             <div class="container-content-Menu-produse-1" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element" >
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" style="text-decoration:wavy; border: 2px solid black;" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" style="text-decoration:wavy; border: 2px solid black;" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
               </div>
             </div>
             <div class="container-content-Menu-produse-2" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
               </div>
             </div>
             <div class="container-content-Menu-produse-3" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
               </div>
             </div>
             <div class="container-content-Menu-produse-4" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
             <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
             </div>
             </div>
-            <div class = "container-content-Menu-produse-5" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-5" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
               </div>
             </div>
-            <div class = "container-content-Menu-produse-6" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-6" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
               </div>
             </div>
-            <div class = "container-content-Menu-produse-7" style="width: 120px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-7" style="width: 120px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element" 
                     style="border: 1px solid transparent;">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
               </div>
             </div>
-            <div class = "container-content-Menu-produse-8" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-8" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 8)" onmouseout="removeTrail(this)">Meniu Produse 8</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 8)" onmouseout="removeTrail(this)">Meniu Produse 8</a>
               </div>
             </div>
-            <div class = "container-content-Menu-produse-9" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-9" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
               </div>
             </div>
-            <div class = "container-content-Menu-produse-10" style="width: 123px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979;">
+            <div class="container-content-Menu-produse-10" style="width: 123px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979;">
               <div class="trail-element">
-                <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
+                <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
               </div>
             </div>
           </div>
@@ -2051,18 +2051,18 @@
         <div class="menu-container_acasa" id="Acasa_menu_container">
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
-              <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Acasapage/Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
+              <a href="\WebSite/ComputerLaptop_WebSite/Acasapage/Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
                 <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
                   <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
-                    <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse1
+                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse1
                     </a>
                   </div>
                   <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
-                    <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse2
+                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse2
                     </a>
                   </div>
                   <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
-                    <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse3
+                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse3
                     </a>
                   </div>
                 </ol>
@@ -2072,18 +2072,18 @@
         <div class="menu-container_categories" id="Menu_Categories">
           <ol class="menu-ordered_list_2" id="meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
-              <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/ProduseCategorii" style="text-decoration: wavy blue;">Categorii Produse
+              <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii" style="text-decoration: wavy blue;">Categorii Produse
                 <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown"> 
                   <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
-                    <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-Cafea-1/Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
+                    <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-Cafea-1/Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
                     </a>
                   </div>
                   <div class="li_categoria_2_lista" id="Categoria_2_tip_lista">
-                    <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-IceCoffe-2/Categoria-2-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 2
+                    <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-IceCoffe-2/Categoria-2-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 2
                     </a>
                   </div>
                   <div class="li_categoria_3_lista" id="Categoria_3_tip_lista">
-                    <a href="http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-Espresso-3/Categoria-3-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 3
+                    <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-Espresso-3/Categoria-3-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 3
                     </a>
                   </div>
                 </ol>
@@ -2098,14 +2098,14 @@
                 <a style="text-decoration: wavy blue;">Produse de top</a>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images3">
                     <div class="dropdown-container" id="container_imagine-dropdown-1">
-                      <img src="http://192.168.100.53:8080/WebSite\ComputerLaptop_WebSite\cele_mai_vandute_produse\bady-abbas-qJlGIllS0Zg-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="lazy">
+                      <img src="\WebSite\ComputerLaptop_WebSite\cele_mai_vandute_produse\bady-abbas-qJlGIllS0Zg-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="lazy">
                       <em>
                         <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background-color: #63c6ea;">Produsul de top 1</a>
                           <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament. Fiecare înghițitură este o călătorie senzorială ce încântă simțurile, ducându-te prin teritorii gustative variate și pline de profunzime. Experimentează o experiență deosebită, savurând fiecare pahar din universul bogat al cafelei premium.</p>
                       </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-2">
-                      <img src="http://192.168.100.53:8080/WebSite\ComputerLaptop_WebSite\cele_mai_vandute_produse\nick-harsell-J6MtKLtX5HM-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="lazy">
+                      <img src="\WebSite\ComputerLaptop_WebSite\cele_mai_vandute_produse\nick-harsell-J6MtKLtX5HM-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="lazy">
                       <em>
                         <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM " id="Produsul-de-top-2-primary" style="background-color: #63c6ea;">Produsul de top 2</a>
                           <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">
@@ -2114,7 +2114,7 @@
                       </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-3">
-                      <img src="http://192.168.100.53:8080/WebSite\ComputerLaptop_WebSite\cele_mai_vandute_produse\tai-s-captures--DRC1OsqoiU-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="lazy">
+                      <img src="\WebSite\ComputerLaptop_WebSite\cele_mai_vandute_produse\tai-s-captures--DRC1OsqoiU-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="lazy">
                       <em>
                         <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" rel="noopener noreferrer" style="background-color: #63c6ea;">Produsul de top 3</a>
                           <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66;">
