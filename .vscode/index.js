@@ -61,13 +61,23 @@ app.listen(PORT, () => {
 const params = {
   port: "8080", 
   host: "192.168.100.53", 
-  root: "U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite", 
+  root: 
+  [
+    "U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite",
+    "U:\\Plan_Afacere\\WebSite\\public",
+  ], 
   open: false, 
   logLevel: 2,
   middleware: [function(req, res, next) {
     const url = req.url;
+    let cssPath;
     if (url.endsWith('.css')) {
-      const cssPath = path.join(__dirname, 'public', url);
+      // Check if the CSS file exists in the root directory
+      cssPath = path.join(__dirname, url);
+      if (!fs.existsSync(cssPath)) {
+        // If not found in the root directory, try the public directory
+        cssPath = path.join(__dirname, 'public', url);
+      }
       res.setHeader('Content-Type', 'text/css');
       res.sendFile(cssPath);
     } else {
@@ -75,5 +85,6 @@ const params = {
     }
   }]
 }; 
+
 
 liveServer.start(params);
