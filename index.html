@@ -484,7 +484,7 @@
     </style>
     <title>Good Store Coffee</title>
 
-    <link rel="stylesheet" href="\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="\style-main\side-navigation-style\side-navigation.css" type="text/css" media="all">
     <link rel="stylesheet" href="\style-main\table-container_styles\dropdown-content_meniu_1and2.css" type="text/css" media="all">
     <link rel="stylesheet" href="\WebSite\public\acasa.css" type="text/css" media="all" method="GET" encoding="%20">
     <link rel="stylesheet" href="\WebSite\WebSite\public\Account-creation.css" type="text/css" media="all" method="GET" encoding="%20">
@@ -541,7 +541,7 @@
     <link rel="stylesheet" href="\WebSite\public\support.css" type="text/css" media="all" method="GET" encoding="%20">
     <link rel="stylesheet" href="\WebSite\public\tables.css" type="text/css" media="all" method="GET" encoding="%20">
     <link rel="stylesheet" href="\WebSite\public\type-device-style.css" type="text/css" media="all" method="GET" encoding="%20">
-    <link rel="stylesheet" href="\WebSite\public\ul.css" type="text/css" media="all" method="GET" encoding="%20">
+    <link rel="stylesheet" href="\WebSite\public\ul.css" type="text/css" media="all" method="GET" encoding="%20"> -->
     <link rel="login" href="Javascript/Login-Users-Account\action_page.php" media="all" method="GET" encoding="%20">
 
     
@@ -1719,7 +1719,6 @@
         '/WebSite/public/main.css',
         '/WebSite/public/Meniu Produse_1_2_3_4_5_6_7_8_9_10.css',
         '/WebSite/public/menu_container_produse_de_top.css',
-        '/ComputerLaptop_WebSite/style-main/container-styles/menu_container_produse_de_top.css',
         '/WebSite/public/menu-container_acasa.css',
         '/WebSite/public/menu-container_categories.css',
         '/WebSite/public/menu-container-modified-content.css',
@@ -2140,7 +2139,7 @@
       </script>
     </div>
     <style>
-      @media only screen and (max-height: 412px) and (max-width: 912px) and (orientation:landscape) {
+      @media only screen and (min-height: 412px) and (min-width: 912px) and (orientation:landscape) {
         .navbar {
           overflow: hidden;
           background-color: #333;
@@ -2159,9 +2158,29 @@
     </style>
     <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: #048dbf95; padding-top: 100px; padding-bottom: 100px; top: 20px;">
       <div class="is-mobile-preview"></div>
+      <style>
+        @media only screen and(min-width:412px) and (min-height:915px) and (orientation:landscape) {
+          #bordered_rectangle-for-design {
+            border: 2px solid #000000;
+            border-style: solid;
+            border-radius: 20px;
+            margin: 0px;
+            left: 36px;
+            padding-top: 70px;
+            height: 550px;
+            width: 340px;
+            box-sizing: border-box;
+            position: sticky;
+            display: inline-block;
+            justify-content: right;
+            list-style: none;
+            background: linear-gradient(to top right, #fefefe 35%, #fbbd66 55%, #54333354 80%);
+          }
+        }
+        </style>
       <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design">
         <style>
-          @media only screen and (max-height: 412px) and (max-width: 912px) and (orientation:landscape) {
+          @media only screen and (min-height: 412px) and (min-width: 912px) and (orientation:landscape) {
             #Acasa_menu_container {
               border: 1px; 
               border-color:#ffffff;
