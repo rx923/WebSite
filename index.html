@@ -284,21 +284,6 @@
             -webkit-transform: scale(0.95);
           }
         }
-        .bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top {
-          border: 2px solid #000000;
-          border-style: solid;
-          border-radius: 20px;
-          margin: 10px;
-          padding-top: 0px;
-          height: 378px;
-          width: 400px;
-          box-sizing: border-box;
-          position: sticky;
-          display: inline-block;
-          justify-content: right;
-          list-style: none;
-          background: linear-gradient(25deg, #ffffff 27%, rgba(9, 9, 8, 0.192)66%, rgb(255, 255, 255) 75%);
-        }
         #Acasa_menu_container {
           border: 1px;
           border-color: #ffffff;
@@ -1389,30 +1374,29 @@
         var openText = document.getElementById("openText");
         var openTriangle = document.querySelector(".openTriangle");
         var main = document.getElementById("main");
-
+        }
         if (sidenav.classList.contains("sideNavOpen")) {
           sidenav.classList.remove("sideNavOpen");
-          setTimeout(function() {
+          setTimeout(function () {
             openText.innerText = "";
             // right-pointing arrow
-            openTriangle.innerHTML = "&#9658;"; 
+            openTriangle.innerHTML = "&#9658;";
           }, 500);
           main.style.marginLeft = "0";
         } else {
           sidenav.classList.add("sideNavOpen");
-          setTimeout(function() {
+          setTimeout(function () {
             openText.innerText = "";
             // left-pointing arrow
-            openTriangle.innerHTML = "&larr;"; 
+            openTriangle.innerHTML = "&larr;";
           }, 500);
           // Adjust width if needed
-          sidenav.style.width = "350px"; 
+          sidenav.style.width = "350px";
           openText.innerText = "";
           // Change this value if necessary
-          main.style.marginLeft = "250px"; 
+          main.style.marginLeft = "250px";
         }
-      }
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         var sidenav = document.getElementById("mySidenav");
         var main = document.getElementById("main");
         var body = document.body;
@@ -1422,11 +1406,11 @@
         main.style.marginLeft = "0";
         body.style.backgroundColor = "white";
 
-        closeButton.addEventListener('click', function() {
+        closeButton.addEventListener('click', function () {
           closeNav();
         });
 
-        body.addEventListener('click', function(event) {
+        body.addEventListener('click', function (event) {
           if (event.target !== sidenav && !sidenav.contains(event.target)) {
             closeNav();
           }
@@ -1441,17 +1425,17 @@
         sidenav.style.marginLeft = "30px";
         sidenav.style.bottom = "20vw";
         sidenav.style.height = "auto";
-        sidenav.style.width = "350px"; 
-        setTimeout(function() {
+        sidenav.style.width = "350px";
+        setTimeout(function () {
           openText.innerText = "close";
           // left-pointing arrow
-          openTriangle.innerHTML = "&larr;"; 
+          openTriangle.innerHTML = "&larr;";
         }, 500);
 
         openText.innerText = "";
         sidenav.classList.add("sideNavOpen");
         // Adjust margin if needed
-        document.getElementById("main").style.marginLeft = "250px"; 
+        document.getElementById("main").style.marginLeft = "250px";
         document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
       }
       function closeNav() {
@@ -1465,44 +1449,44 @@
           document.body.style.backgroundColor = "white";
           sidenav.classList.remove("sideNavOpen");
           // right-pointing arrow
-          openTriangle.innerHTML = "&#9658;"; 
-        
+          openTriangle.innerHTML = "&#9658;";
+
           // Reset to main triangle form after a delay
-          setTimeout(function() {
+          setTimeout(function () {
             // main triangle form
-            openTriangle.innerHTML = "&#9658;"; 
+            openTriangle.innerHTML = "&#9658;";
           }, 500);
         }
       }
       function loadForm(formURL, formId) {
         var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4) {
-                if (this.status == 200) {
-                    document.getElementById("content").innerHTML = this.responseText;
-                    if (formId) {
-                        var form = document.getElementById(formId);
-                        if (form) {
-                            // Add the popup class
-                            form.classList.add("form-container-popup"); 
-                            form.style.display = "block";
-                            // Adjust width if needed
-                            form.style.width = "300px"; 
-                            // Adjust height if needed
-                            form.style.height = "auto"; 
-                            form.style.position = "absolute";
-                            // Adjust top position as required
-                            form.style.top = "50px"; 
-                            // Adjust right position as required
-                            form.style.right = "50px"; 
-                        } else {
-                            console.error("Form element with id " + formId + " not found.");
-                        }
-                    }
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            if (this.status == 200) {
+              document.getElementById("content").innerHTML = this.responseText;
+              if (formId) {
+                var form = document.getElementById(formId);
+                if (form) {
+                  // Add the popup class
+                  form.classList.add("form-container-popup");
+                  form.style.display = "block";
+                  // Adjust width if needed
+                  form.style.width = "300px";
+                  // Adjust height if needed
+                  form.style.height = "auto";
+                  form.style.position = "absolute";
+                  // Adjust top position as required
+                  form.style.top = "50px";
+                  // Adjust right position as required
+                  form.style.right = "50px";
                 } else {
-                    console.error("Failed to load form. Status code: " + this.status);
+                  console.error("Form element with id " + formId + " not found.");
                 }
+              }
+            } else {
+              console.error("Failed to load form. Status code: " + this.status);
             }
+          }
         };
         xhttp.open("GET", formURL, true);
         xhttp.send();
@@ -1519,47 +1503,47 @@
     <script>
       var urls = [
         'https://qkv3z3j6-8080.euw.devtunnels.ms/' + encodedPath,
-        ];
-    
-        function fetchContent(urlIndex) {
-          fetch(urls[urlIndex])
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
+      ];
+
+      function fetchContent(urlIndex) {
+        fetch(urls[urlIndex])
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text();
+          })
+          .then(data => {
+            document.getElementById("content").innerHTML = data;
+
+            // Load additional resources (CSS and JS) if needed
+            loadResourcesForPage(cssLinks);
+
+            if (formId) {
+              var form = document.getElementById(formId);
+              if (form) {
+                form.style.display = "block";
+                form.style.width = "300px";
+                form.style.height = "auto";
+                form.style.position = "absolute";
+                form.style.top = "50px";
+                form.style.right = "50px";
               }
-              return response.text();
-            })
-            .then(data => {
-              document.getElementById("content").innerHTML = data;
-      
-              // Load additional resources (CSS and JS) if needed
-              loadResourcesForPage(cssLinks);
-      
-              if (formId) {
-                var form = document.getElementById(formId);
-                if (form) {
-                  form.style.display = "block";
-                  form.style.width = "300px";
-                  form.style.height = "auto";
-                  form.style.position = "absolute";
-                  form.style.top = "50px";
-                  form.style.right = "50px";
-                }
-              }
-      
-              // Fetch CSS styles
-              fetchCSS(cssLinks);
-            })
+            }
+
+            // Fetch CSS styles
+            fetchCSS(cssLinks);
+          })
           .catch(error => {
             console.error('Error:', error);
-    
+
             // If fetching from the current URL fails, try the next one
             if (urlIndex < urls.length - 1) {
               fetchContent(urlIndex + 1);
             }
           });
       }
-    
+
       // Function to fetch CSS styles
       function fetchCSS(cssLinks) {
         cssLinks.forEach(link => {
@@ -1580,7 +1564,6 @@
             });
         });
       }
-    
       // Start fetching content from the first URL
       fetchContent(0);
     </script>
@@ -1752,47 +1735,47 @@
       </div>
     </div>
     <script>
-    function createTrail(event, number) {
-      const cursor = document.querySelector(".cursor");
-      const trail = document.createElement('div');
-      trail.classList.add('trail');
-      // Find the respective anchor element based on the number parameter
-      const link = event.target;
-      link.appendChild(trail);
-      // Add a class to apply animation
-      link.classList.add('animated-link')
-      trail.style.left = event.offsetX + 'px';
-      let opacity = 1;
-      const fadeTrail = setInterval(() => {
-        opacity -= -2; // Adjust the decrement value for speed of fade
-        trail.style.opacity = opacity;
-        trail.style.length = length;
-        if (opacity <= 0) {
-          clearInterval(fadeTrail);
+      function createTrail(event, number) {
+        const cursor = document.querySelector(".cursor");
+        const trail = document.createElement('div');
+        trail.classList.add('trail');
+        // Find the respective anchor element based on the number parameter
+        const link = event.target;
+        link.appendChild(trail);
+        // Add a class to apply animation
+        link.classList.add('animated-link')
+        trail.style.left = event.offsetX + 'px';
+        let opacity = 1;
+        const fadeTrail = setInterval(() => {
+          opacity -= -2; // Adjust the decrement value for speed of fade
+          trail.style.opacity = opacity;
+          trail.style.length = length;
+          if (opacity <= 0) {
+            clearInterval(fadeTrail);
+            trail.remove();
+          }
+        }, 10); // Adjust the interval for smoother or faster fading
+        // Follow cursor on mousemove within the link
+        link.addEventListener("mousemove", (e) => {
+          let x = e.pageX;
+          let y = e.pageY;
+          cursor.style.top = y + "px";
+          cursor.style.left = x + "px";
+          // Update trail position based on cursor movement
+          trail.style.left = e.pageX - link.offsetLeft + 'px';
+          trail.style.top = e.pageY - link.offsetTop + 'px';
+        });
+      }
+      
+      function removeTrail(link) {
+        // Remove trail element on mouseout
+        const trail = link.querySelector('.trail');
+        if (trail) {
           trail.remove();
         }
-      }, 10); // Adjust the interval for smoother or faster fading
-      // Follow cursor on mousemove within the link
-      link.addEventListener("mousemove", (e) => {
-        let x = e.pageX;
-        let y = e.pageY;
-        cursor.style.top = y + "px";
-        cursor.style.left = x + "px";
-        // Update trail position based on cursor movement
-        trail.style.left = e.pageX - link.offsetLeft + 'px';
-        trail.style.top = e.pageY - link.offsetTop + 'px';
-      });
-    }
-    
-    function removeTrail(link) {
-      // Remove trail element on mouseout
-      const trail = link.querySelector('.trail');
-      if (trail) {
-        trail.remove();
+        // Remove animation class on mouseout
+        link.classList.remove('animated-link');
       }
-      // Remove animation class on mouseout
-      link.classList.remove('animated-link');
-    }
     </script>
     <!-- Slideshow container -->
     <div class="slideshow-container" style="margin-left: 0px; margin-top: 600px; border: 1px solid black; width: 345px; height: 750px; top: 50px; border-radius: 30px; border-width: 10px;">
@@ -2039,7 +2022,7 @@
 
       //   window.addEventListener('resize', adjustSizes);
       //   adjustSizes();
-      // </script>
+      </script>
     </div>
     <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: #048dbf95; padding-top: 100px; padding-bottom: 100px; top: 20px;">
       <div class="is-mobile-preview"></div>
@@ -2125,7 +2108,6 @@
         </div>
       </div>
     </nav>
-
     <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
       <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse vandute top">
         <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
