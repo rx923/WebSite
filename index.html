@@ -460,52 +460,6 @@
           display: block;
         }
         /* Styles for the search bar */
-        .search-bar {
-          border: 3px outset rgb(0, 123, 255);
-          background-color: rgb(235, 216, 168);
-          border-radius: 25px;
-          width: 300px;
-          padding: 10px;
-          margin-bottom: 10px;
-          padding: 10px;
-          left: 1230px;
-          outline: none;
-          position: sticky;
-          display: flex;
-          align-items: center;
-          resize: none;
-        }
-    
-        .search-container {
-          padding: 1px;
-          color: rgb(0, 0, 0);
-          background-color: rgb(0, 23, 137);
-          border: outset;
-          border-width: 0.5vw 0.5vw;
-          border-color: rgb(68, 162, 255);
-          border-radius: 30px;
-          left: 231px;
-          transform: translateY(-300%);
-          top: 270px;
-          margin-top: 0px;
-          margin-bottom: 20px;
-          display: inline-block;
-          position: absolute;
-          margin: 0px;
-        }
-    
-        .search-button {
-          padding: 2px 4px;
-          color: rgb(255, 255, 255);
-          border: 2px outset;
-          border-radius: 30px;
-          background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
-          cursor: pointer;
-          width: 200px;
-          max-width: 100px;
-          height: 40px;
-        }
-    
         /* Styles for the dropdown items */
         .dropdown-container {
           position: absolute;
@@ -956,9 +910,9 @@
   
       window.addEventListener('resize', setCanvasSize);
     </script> -->
-    <header>
+    <header style="background: linear-gradient(to top left, #ffffff 20%, #003d57 60%, rgb(255, 255, 255) 60%); border-top: 5px rgb(237, 239, 240) groove; border-left: 5px rgb(255, 255, 255) groove; border-right: 5px rgb(255, 255, 255) groove; border-bottom: 5px rgb(255, 255, 255) groove; border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ /* border-style: ; */ padding-top: 10px; width: auto;">
       <style>
-        @media screen and (max-height: 412px) and (max-width: 915px) and (max-width: 412px) and (max-height: 915px) and (orientation:landscape) {
+        @media screen and (max-height: 412px) and (max-width: 915px) and (orientation:landscape) {
           h1 {
             background: linear-gradient(20deg, #d08132 32%, rgb(255, 255, 255)70%, rgb(216, 104, 76) 85%);
             max-width: auto;
@@ -970,20 +924,89 @@
             width: 300px;
             text-decoration:overline;
             text-size-adjust:inherit; 
-            border: 1px darkgreen; 
-            border-top-style: groove; 
-            border-right-style: groove; 
-            border-left-style: groove; 
-            border-bottom-style: groove; 
+            border-top-style: 1px darkgreen groove; 
+            border-right-style: 1px darkgreen groove; 
+            border-left-style: 1px darkgreen groove; 
+            border-bottom-style: 1px darkgreen groove; 
             border-radius: 25px; 
-            border-width:1px; /* padding: 10px; */ /* Ensure the parent is a positioned element for absolute positioning */ 
-            position: static; 
+            border-width:1px; 
+            /* padding: 10px; */ 
+            position: absolute; 
             text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(231, 231, 231), 0 0 5px rgb(0, 21, 115);
+          }
+          .dropdown-content .header {
+            background: red;
+            padding: 2px;
+            color: white;
+            width: auto;
+            float: none;
           }  
         }
       </style>
       <h1> Big Store Coffee </h1>
-      <div class="search-bar">
+      <style>
+        @media only screen and (max-width: 412px) and (max-height:912px) {
+          .search-bar input[type="text"] {
+              border: 3px outset rgb(0, 0, 0);
+              background-color: whitesmoke;
+              border-radius: 25px;
+              /* Adjust input field width */
+              width: 300px;
+              padding: 10px;
+              outline: none;
+          }
+          .search-bar{
+            left: 900px;
+            top: 220px;
+          }    
+          #introducere-text-bara-de-cautare-principala {
+              width: 380px;
+              padding-bottom: 2px;
+          }
+          #submit-cauta-bara-de-cautare {
+              padding: 20px 20px;
+              color: rgb(255, 255, 255);
+              border: 2px outset;
+              border-radius: 30px;
+              text-align: unset;
+              justify-content: center;
+              background:rgba(0, 0, 0, 0.19);
+              cursor: pointer;
+              /* Adjust button width */
+              max-width: 110px; /* Set maximum width if needed */
+              height: 20px;
+          }
+          .search-container {
+          padding: 1px;
+          color: rgb(0, 0, 0);
+          background-color: rgb(0, 23, 137);
+          border: outset;
+          border-width: 0.5vw 0.5vw;
+          border-color: rgb(68, 162, 255);
+          border-radius: 30px;
+          left: 135px;
+          transform: translateY(-300%);
+          top: 190px;
+          margin-top: 0px;
+          margin-bottom: 20px;
+          display: inline-block;
+          position: absolute;
+          margin: 0px;
+          }
+          .search-button {
+          padding: 2px 4px;
+          color: rgb(255, 255, 255);
+          border: 2px outset;
+          border-radius: 30px;
+          background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
+          cursor: pointer;
+          width: 200px;
+          max-width: 100px;
+          height: 40px;
+          }
+        }
+      </style>
+      <div class="search-bar" style="padding: 1px; color: rgb(0, 0, 0); background-color: rgb(0, 23, 137); border: outset; border-width: 0.2vw 0.3vw; border-color: rgb(195, 196, 91); border-radius: 30px; /* Center the search bar horizontally */ left: 900px; /* Adjust to properly center */ /* transform: translateX(-50%);  */ z-index: 999; cursor: pointer; /* display: ruby-base-container; */ /* Set the width of the search bar */ /* Set maximum width if needed * /* Adjust top position */ transform: translateY(-300%); top: 220px; margin-top: 0px; margin-bottom: 20px; /* Use block level element */ display: inline-block; position: sticky; /* Center align the content */ /* text-align: center; */ /* Center the block element */ margin:10px;">
         <!-- Search input -->
         <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala" style="resize: none;">
         <!-- Rest of your search bar content -->
