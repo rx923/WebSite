@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <!-- <base href="https://qkv3z3j6-8080.euw.devtunnels.ms/"> -->
-    <base href="http://192.168.100.53:8080">
+    <base href="http://192.168.100.53:8080/">
     <style>
       /* Styles for Android Samsung Galaxy S20 Ultra 5G Style */
       @media only screen and (max-width:412px) and (max-height:915px) and (orientation:landscape) {
@@ -31,13 +31,6 @@
           margin-left: 50px;
           cursor: pointer;
           color: white;
-        }
-        .form-container {
-          display: none;
-          width: 40%; /* Set the width of the form container */
-          margin: 50px auto; /* Center the form */
-          margin-right: 10px; /* Margin to the right side */
-          float: right; /* Align forms to the right */
         }
         /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
         #main {
@@ -370,23 +363,7 @@
         }
         /* CSS for the side navigation menu */
         /* Styling for the triangle icon */
-        #bordered_rectangle-for-design {
-          border: 2px solid #000000;
-          border-style: transparent;
-          border-radius: 20px;
-          margin-top: 20px;
-          padding: 0px;
-          height: 500px;
-          width: 370px;
-          /* margin-right: 200px; */
-          /* margin-left: 200px; */
-          box-sizing: border-box;
-          position:sticky; 
-          display:inline-block;
-          /* justify-content: right; */
-          list-style: none;
-          background: linear-gradient(to top right, #e9bfbf 35%, #fbbd66 55%, #543333 80%);
-        }
+
         #dropdown-content-Meniu-produse-1-10 {
             border: 2px solid blue;
             border-radius: 20px;
@@ -702,7 +679,7 @@
     </script> -->
     <header style="background: linear-gradient(to top left, #ffffff 20%, #003d57 60%, rgb(255, 255, 255) 60%); border-top: 5px rgb(237, 239, 240) groove; border-left: 5px rgb(255, 255, 255) groove; border-right: 5px rgb(255, 255, 255) groove; border-bottom: 5px rgb(255, 255, 255) groove; border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ /* border-style: ; */ padding-top: 10px; width: auto;">
       <style>
-        @media screen and (max-height: 412px) and (max-width: 915px) and (orientation:landscape) {
+        @media screen and (min-height: 412px) and (min-width: 915px) and (orientation:landscape) {
           h1 {
             background: linear-gradient(20deg, #d08132 32%, rgb(255, 255, 255)70%, rgb(216, 104, 76) 85%);
             max-width: auto;
@@ -919,37 +896,37 @@
       <style>
         @media only screen and (min-width: 412px) and (min-height:912px) and(orientation: landscape) {
           .search-bar input[type="text"] {
-              border: 3px outset rgb(0, 0, 0);
-              background-color: whitesmoke;
-              border-radius: 25px;
-              /* Adjust input field width */
-              width: 300px;
-              padding: 10px;
-              outline: none;
-          }
+            border: 3px outset rgb(0, 0, 0);
+            background-color: whitesmoke;
+            border-radius: 25px;
+            /* Adjust input field width */
+            width: 300px;
+            padding: 10px;
+            outline: none;
+            }
           .search-bar {
             left: 80px;
             top: 145px;
             width: 300px;
             position: relative;
-          }    
+            }    
           #introducere-text-bara-de-cautare-principala {
-              width: 380px;
-              padding-bottom: 2px;
-          }
+            width: 380px;
+            padding-bottom: 2px;
+            }
           #submit-cauta-bara-de-cautare {
-              padding: 20px 20px;
-              color: rgb(255, 255, 255);
-              border: 2px outset;
-              border-radius: 30px;
-              text-align: unset;
-              justify-content: center;
-              background:rgba(0, 0, 0, 0.19);
-              cursor: pointer;
-              /* Adjust button width */
-              max-width: 110px; /* Set maximum width if needed */
-              height: 20px;
-          }
+            padding: 20px 20px;
+            color: rgb(255, 255, 255);
+            border: 2px outset;
+            border-radius: 30px;
+            text-align: unset;
+            justify-content: center;
+            background:rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+            /* Adjust button width */
+            max-width: 110px; /* Set maximum width if needed */
+            height: 20px;
+            }
           .search-container {
             padding: 1px;
             color: rgb(0, 0, 0);
@@ -966,7 +943,7 @@
             display: inline-block;
             position: absolute;
             margin: 0px;
-          }
+            }
           .search-button {
             padding: 2px 4px;
             color: rgb(255, 255, 255);
@@ -977,7 +954,7 @@
             width: 200px;
             max-width: 100px;
             height: 40px;
-          }
+            }
         }
       </style>
       <div class="search-bar" style="padding: 1px; color: rgb(0, 0, 0); background-color: rgb(0, 23, 137); border: outset; border-width: 0.2vw 0.3vw; border-color: rgb(195, 196, 91); border-radius: 30px; /* Center the search bar horizontally */ left: 900px; /* Adjust to properly center */ /* transform: translateX(-50%);  */ z-index: 999; cursor: pointer; /* display: ruby-base-container; */ /* Set the width of the search bar */ /* Set maximum width if needed * /* Adjust top position */ transform: translateY(-300%); top: 220px; margin-top: 0px; margin-bottom: 20px; /* Use block level element */ display: inline-block; position: sticky; /* Center align the content */ /* text-align: center; */ /* Center the block element */ margin:10px;">
@@ -1027,10 +1004,13 @@
             // Initialize the dropdown styles
             this.searchDropdown.style.display = 'none';
             // Adjust positioning
-            this.searchDropdown.style.position = 'absolute'; 
+            this.searchDropdown.style.position = 'fixed'; 
             this.searchDropdown.style.zIndex = '9997';
             this.searchDropdown.style.backgroundColor = '#008080';
-            this.searchDropdown.style.maxWidth = '250px';
+            this.searchDropdown.style.maxWidth = '140px';
+            this.searchDropdown.style.top = '50px';
+            // this.searchDropdown.style.left = '80px';
+            this.searchDropdown.style.right = '60px';
             this.searchDropdown.style.borderRadius = '20px';
             this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
             this.searchDropdown.style.padding = '2px';
@@ -1055,8 +1035,8 @@
             });
       
             const searchBarRect = this.searchBar.getBoundingClientRect();
-            this.searchDropdown.style.top = `${searchBarRect.bottom + window.scrollY}px`;
-            this.searchDropdown.style.left = `${searchBarRect.left}px`;
+            // this.searchDropdown.style.top = `${searchBarRect.bottom + window.scrollY}px`;
+            // this.searchDropdown.style.left = `${searchBarRect.left}px`;
             this.searchDropdown.style.width = `${searchBarRect.width}px`;
             this.searchDropdown.style.display = 'block';
       
@@ -1182,8 +1162,8 @@
               // Calculate the position of the dropdown below the search bar
               const searchBarRect = searchBar.getBoundingClientRect();
               const dropdownHeight = searchDropdown.offsetHeight;
-              searchDropdown.style.top = `${searchBarRect.bottom}px`;
-              searchDropdown.style.left = `${searchBarRect.left}px`;
+              // searchDropdown.style.top = `${searchBarRect.bottom}px`;
+              // searchDropdown.style.left = `${searchBarRect.left}px`;
               searchDropdown.style.width = `${searchBarRect.width}px`;
 
               // Show the dropdown
@@ -1210,7 +1190,7 @@
         }
       </script>
       <style>
-        @media only screen and (max-width: 412px) and (max-height:912px) and(orientation: landscape){
+        @media only screen and (min-width: 412px) and (min-height:912px) and(orientation: landscape){
           .menu-container {
             position: absolute;
             background: #598e9de6;
@@ -1224,7 +1204,7 @@
             z-index: 9999; /* ensure menu appears above other elements */
           }
           .arrow-icon {
-            width: 40px;
+            width: 100px;
             position: relative;
             top: 100px;
             padding-bottom: 100px;
@@ -1269,19 +1249,21 @@
       <div class="menu-container">
         <!-- Close button -->
         <style>
-          .close-btn {
-            position: relative;
-            top: -45px;
-            left: 330px;
-            padding: 10px;
-            transform: translateY(50px);
-            border: 1px solid black;
-            width: 30px;
-            height: 50px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 18px;
-            background-color: #6a67ff6b; /* adjust background color as needed */
+          @media only screen and (min-width:412px) and (min-height:915px) and (orientation:landscape) {
+            .close-btn {
+              position: relative;
+              top: -45px;
+              left: 330px;
+              padding: 10px;
+              transform: translateY(50px);
+              border: 1px solid black;
+              width: 30px;
+              height: 50px;
+              border-radius: 30px;
+              cursor: pointer;
+              font-size: 18px;
+              background-color: #6a67ff6b; /* adjust background color as needed */
+           }
           }
           </style>
         <div class="close-btn" onclick="closeMenu()">X</div> 
@@ -1367,7 +1349,7 @@
           top: 140px;
           padding-block: 100px;
           left: 0;
-          background: linear-gradient(to top left, rgb(128, 24, 24) 0%, rgba(207, 117, 117, 0) 100%);
+          background: linear-gradient(to top left, #42a5e9 0%, rgb(239 84 84 / 63%) 100%);
           overflow-x: hidden;
           padding-top: 60px;
           transition: 0.5s;
@@ -1431,13 +1413,6 @@
           cursor: pointer;
           color: white;
         }
-        .form-container {
-          display: none;
-          width: 40%; /* Set the width of the form container */
-          margin: 50px auto; /* Center the form */
-          margin-right: 10px; /* Margin to the right side */
-          float: right; /* Align forms to the right */
-        }
         /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
         #main {
           transition: margin-left .5s;
@@ -1450,10 +1425,10 @@
         }
         .openTriangle {
           position: relative;
-          bottom: 600px;
+          bottom: 575px;
           display: inline-block;
-          width: 10px;
-          height: 0;
+          width: 0px;
+          height: 0px;
           /* Left side of the triangle */
           border-left: 25px solid transparent;
           /* Right side of the triangle */
@@ -1475,8 +1450,8 @@
       </style>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="javascript:void(0)" onclick="loadForm('U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite\\Inregistrare&Logare_user\\Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
-        <a href="javascript:void(0)" onclick="loadForm('U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite\\Inregistrare&Logare_user\\Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
+        <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Inregistrare&Logare_user/Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
+        <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8080/WebSite/ComputerLaptop_WebSite/Inregistrare&Logare_user/Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="Javascript:void(0)" onclick="loadPage()">Clients</a>
         <a href="Javascript:void(0)" onclick="loadPage('ComputerLaptop_WebSite\\Echipapage\\Echipa.html')">Echipa</a>
       </div>
@@ -1516,7 +1491,7 @@
       }
     </style> -->
     <div class="openTriangle" onclick="toggleNav()">
-      <span id="triangle">&#9658;</span>
+      <!-- <span id="triangle">&#9658;</span> -->
     </div>
     <div id="openText"></div>
     <script src="your-scripts.js"></script>
@@ -1526,7 +1501,6 @@
         var openText = document.getElementById("openText");
         var openTriangle = document.querySelector(".openTriangle");
         var main = document.getElementById("main");
-        }
         if (sidenav.classList.contains("sideNavOpen")) {
           sidenav.classList.remove("sideNavOpen");
           setTimeout(function () {
@@ -1548,13 +1522,15 @@
           // Change this value if necessary
           main.style.marginLeft = "250px";
         }
+      }
       document.addEventListener('DOMContentLoaded', function () {
         var sidenav = document.getElementById("mySidenav");
         var main = document.getElementById("main");
         var body = document.body;
-        var closeButton = document.querySelector('closebtn');
+        var closeButton = document.querySelector('.closebtn');
 
         sidenav.classList.remove("sideNavOpen");
+        sidenav.style.width = "0";
         main.style.marginLeft = "0";
         body.style.backgroundColor = "white";
 
