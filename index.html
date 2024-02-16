@@ -50,7 +50,6 @@
         }
       }
       @media only screen and (max-width:412px) and (max-height:915px) and (orientation:landscape) and (max-width:915px) and (max-height:412px) {
-        
         .table-container_lista_optiuni {
           bottom: 70px;
           width: 290px;
@@ -388,36 +387,7 @@
           list-style: none;
           background: linear-gradient(to top right, #e9bfbf 35%, #fbbd66 55%, #543333 80%);
         }
-        .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
-          display: block;
-          text-align: center;
-          /* inline-size: 2px; */
-          border: 1px #000000 solid;
-          background-color: white;
-          list-style-type: none;
-          margin-top: 10px;
-          display: block;
-          text-align: center;
-          inline-size: 2px;
-          border: 1px #000000 solid;
-          list-style-type: none;
-          margin-top: 0px;
-        }
-        .dropdown-content_meniu_1si2 {
-          border: 2px;
-          align-content: center;
-          border-style: solid;
-          border-color: rgb(126, 126, 126);
-          border-radius: 25px;
-          position: sticky;
-          padding: 20px;
-          width: auto;
-          height: 600px;
-          flex-direction: row;
-          display: block;
-          background: linear-gradient(to top left, rgb(206, 155, 155) 30%, rgb(248, 251, 91) 100%);
-        }
-          #dropdown-content-Meniu-produse-1-10 {
+        #dropdown-content-Meniu-produse-1-10 {
             border: 2px solid blue;
             border-radius: 20px;
             width: 220px;
@@ -426,6 +396,7 @@
             margin-bottom: 100px;
             background: linear-gradient(50deg, #fff2b2 23%, #4d4201 70%, #fffd8c 85%);
         }
+      }
       @media only screen and (max-width:412px) and (max-height:915px) and (orientation:landscape) and (max-width:915px) and (max-height:412px) {
         #dropdown-content-images3 {
             position: absolute;
@@ -510,7 +481,6 @@
             height: 200px;
         }
       }
-    }
     </style>
     <title>Good Store Coffee</title>
 
@@ -760,7 +730,189 @@
             color: white;
             width: auto;
             float: none;
+          }
+          /* Top left animation a simple circle  */
+          h1::before {
+              /* display: flow-root; */
+              /* width: 25px;
+              height: 25px; */
+              /* Color of the circle */
+              /* border: 15px solid #c45858;  */
+              /* Make it a circle */
+              /* border-radius: 40px;  */
+              /* float:left; */
+              position: -webkit-sticky;
+              /* position: -webkit-sticky; */
+              /* position: -webkit-sticky; */
+              /* Adjust this value to position the circle inside the border */
+              /* right: 10px;  */
+              /* Center vertically */
+              /* top: 25px; */
+              /* bottom: 10px; */
+              /* Adjust to vertically center the circle */
+              /* transform: translateY(-2%); */
+              /* animation: pulse  4s infinite alternate; */
+          }
+          h1::after {
+              /* Make it rounded */
+              border-radius: 12px; 
+              /* Empty content */
+              content: ""; 
+              position: sticky;
+              display: flow-root;
+              width: 40px;
+              height: 40px;
+              float: right;
+              margin-top: 0px;
+              /* position: sticky; */
+              /* Adjust this value to position the box inside the border */
+              /* right: 410px;  */
+              /* Distance from the top */
+              top: 70px; 
+              /* overflow: auto; */
+              background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); /* Replace with your coffee image path */
+              /* Adjust background size as needed */
+              background-size:cover; 
+              /* Apply animation */
+              animation: pulse 4s linear infinite;
+          }
+          h1::after::before {
+          /* Empty content */
+              content: ""; 
+              display:inline;
+              width: 20px;
+              height: 20px;
+              position: sticky;
+              /* Replace with your coffee image path */
+              background: url("https://resources.finalsite.net/images/v1675459750/princetonk12mnus/sxsuzkesdsaseo5us4qq/coffee.png"); 
+              /* Adjust background size as needed */
+              background-size: contain; 
+              /* Apply animation */
+              animation: pulse 2s infinite alternate;
+          }
+          /* Animation for pulsating */
+          @keyframes pulse {
+            0% {
+              transform: scale(0.85);
+              box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                  /* Add webkit prefix for older iOS devices */
+                  -webkit-transform: scale(0.85); 
+            }
+
+            70% {
+              transform: scale(0.9);
+              box-shadow: 10 10 10 10px rgba(255, 255, 255, 0);
+                  -webkit-transform: scale(0.9);
+              }
+
+            100% {
+              transform: scale(1.5);
+              box-shadow: 0 0 0 0 rgb(235, 0, 0);
+                  -webkit-transform: scale(1);
+            }
+          }
+          /* Animation for wave kind like flow wave without depth */
+          @keyframes flowWaves {
+              0% {
+                background-position: 0% 50%;
+                background-size: 200% 200%;
+              }
+              50% {
+                background-position: 100% 50%;
+                background-size: 150% 150%;
+
+              }
+              100% {
+                background-position: 0% 50%;
+                background-size: 200% 200%;
+
+              }
+          }
+          /* Animation for wave kind like flow wave with depth   */
+          @keyframes flowWavesDepth {
+              0% {
+                background-position: 0% 50%;
+                background-size: 200% 200%;
+
+              }
+              50% {
+                background-position: 100% 50%;
+                background-size: 180% 180%;
+
+              }
+              100% {
+                background-position: 0% 50%;
+                background-size: 200% 200%;
+              }
           }  
+          /* Animation for glowing bordered color */
+          @keyframes glowBorder {
+              0% {
+                  border-color: rgb(135, 0, 0);
+                  box-shadow: 0 0 0 0 rgb(0, 0, 0);
+              }
+              100% {
+                  border-color: rgb(156, 67, 67);
+                  box-shadow: 0 0 0 10px rgb(190, 73, 73);
+              }
+          }
+          /* Animation for glowing color */
+          @keyframes glowing {
+              0% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+              100% {background-position: 0% 50%; }
+          }
+          /* Animation for pulsating colored border box or for image or shapes */
+          @keyframes pulse {
+              0% {
+                  transform: scale(0.95);
+                  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                  /* Add webkit prefix for older iOS devices */
+                  -webkit-transform: scale(0.95); 
+              }
+
+              50% {
+                  transform: scale(1.5);
+                  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+                  -webkit-transform: scale(1);
+              }
+
+              100% {
+                  transform: scale(0.95);
+                  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                  -webkit-transform: scale(0.95);
+              }
+          }
+          /* Animation for changing colors */
+          @keyframes colors{
+              0% {
+                  filter: hue-rotate(0deg);
+
+              }
+              75% {
+                  filter: hue-rotate(180deg);
+
+              }
+
+              100% {
+                  filter: hue-rotate(360deg);
+              }
+          }
+          @keyframes glowing  {
+              0% { background-position: 0% 30%; }
+              50% { background-position: 65% 25%; }
+              100% { background-position: 3% 50%; }
+          }
+          .glowing-background {
+              border-radius: 20px;
+              background: linear-gradient(20deg, #ffffff 32%, #3a2c00b0 70%, #ffffff 85%);
+              background-size: 300% 350%;
+              transition: box-shadow 1s ease-in-out;
+              animation: glowing 10s ease-in-out infinite;
+          }
+          .glowing-background:hover {
+            box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+          }
         }
       </style>
       <h1> Big Store Coffee </h1>
@@ -1276,7 +1428,7 @@
       </div>
     </div>
     <div id="content"></div>
-    <style>
+    <!-- <style>
       .openTriangle {
         font-size: 50px;
         top: 20px;
@@ -1621,6 +1773,24 @@
         return true; 
       }
     </script>
+    <style>
+      @media only screen and (max-height: 412px) and (max-width: 912px) and (orientation:landscape){
+        .dropdown-content_meniu_1si2 {
+          border: 2px;
+          align-content: center;
+          border-style: solid;
+          border-color: rgb(126, 126, 126);
+          border-radius: 25px;
+          position: sticky;
+          padding: 20px;
+          width: auto;
+          height: 600px;
+          flex-direction: row;
+          display: block;
+          background: linear-gradient(to top left, rgb(206, 155, 155) 30%, rgb(248, 251, 91) 100%);
+        }
+      }
+    </style>
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <div class="dropdown" style="border: 1px groove black; width: auto; height: 100px; border-radius: 20px; bottom: 20px;">
         <button class="dropbtn" id="DROPBTN_Select a Menu">Select a Menu</button>
@@ -1656,8 +1826,7 @@
               </div>
             </div>
             <div class="container-content-Menu-produse-7" style="width: 120px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
-              <div class="trail-element" 
-                    style="border: 1px solid transparent;">
+              <div class="trail-element" style="border: 1px solid transparent;">
                 <a href="\WebSite/ComputerLaptop_WebSite/Meniu-Produse-1-10/Meniu Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
               </div>
             </div>
