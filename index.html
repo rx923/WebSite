@@ -1263,6 +1263,12 @@
 
               }
             }
+        }
+      </style>
+      <div class="arrow-icon" onclick="toggleMenu()">→</div>
+      <div class="menu-container">
+        <!-- Close button -->
+        <style>
           .close-btn {
             position: relative;
             top: -45px;
@@ -1277,13 +1283,14 @@
             font-size: 18px;
             background-color: #6a67ff6b; /* adjust background color as needed */
           }
-        }
-      </style>
-      <div class="arrow-icon" onclick="toggleMenu()">→</div>
-      <div class="menu-container">
-        <!-- Close button -->
+          </style>
         <div class="close-btn" onclick="closeMenu()">X</div> 
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              // Set initial position of the menu to -400px
+              var menu = document.querySelector('.menu-container');
+              menu.style.left = '-400px';
+            });
           function toggleMenu() {
             var menu = document.querySelector('.menu-container');
             var arrowIcon = document.querySelector('.arrow-icon');
@@ -1353,28 +1360,22 @@
     <div id="container_scrolling_for_the_side_nav" class="container">
       <style>
         .sidenav {
-          /* Set full height */
-          height: 100%; 
-          /* Initially closed */
-          width: 0; 
-          /* Fixed position */
-          position: fixed; 
-          /* Make sure it appears above everything */
-          z-index: 1; 
-          top: 75px;
+          height: 180px;
+          width: 220px;
+          position: fixed;
+          z-index: 1;
+          top: 140px;
           padding-block: 100px;
-          left: 0;/* Background color */
-          background-color: #333333ea; 
-          /* Hide horizontal scrollbar */
+          left: 0;
+          background: linear-gradient(to top left, rgb(128, 24, 24) 0%, rgba(207, 117, 117, 0) 100%);
           overflow-x: hidden;
-          /* Space for the triangle icon */ 
           padding-top: 60px;
-          /* 0.5 second transition */ 
           transition: 0.5s;
           max-width: 300px;
           max-height: 400px;
           border-radius: 30px;
           border: 2px white solid;
+          transition: 0.5s;
         }
         .sidenav a {
           padding: 8px 8px 8px 32px;
@@ -1397,7 +1398,6 @@
           color: #f1f1f1;
           border: 1px groove white;
           border-radius: 30px;
-          color: #ff0000;
           border-inline: 3px 2px 2px 2px;
           animation: pulse 4s, infinite alternate-reverse;
         }
@@ -1417,6 +1417,60 @@
           background: rgb(66, 76, 104);
           margin-bottom: 4px;
           width: 50px;
+        }
+        /* When you mouse over the navigation links, change their color */
+        /* Highlight the current link */
+        /* Position and style the close button (top right corner) */
+        /* Close button style */
+        .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+          cursor: pointer;
+          color: white;
+        }
+        .form-container {
+          display: none;
+          width: 40%; /* Set the width of the form container */
+          margin: 50px auto; /* Center the form */
+          margin-right: 10px; /* Margin to the right side */
+          float: right; /* Align forms to the right */
+        }
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+          transition: margin-left .5s;
+          padding: 20px;
+        }
+        /* The sidenav */
+        /* Page content */
+        .main {
+          margin-left: 200px; /* Same as the width of the sidenav */
+        }
+        .openTriangle {
+          position: relative;
+          bottom: 600px;
+          display: inline-block;
+          width: 10px;
+          height: 0;
+          /* Left side of the triangle */
+          border-left: 25px solid transparent;
+          /* Right side of the triangle */
+          border-right: 25px solid transparent;
+          /* Bottom side of the triangle */
+          border-bottom: 43.3px groove rgb(255, 255, 255);
+          /* Change cursor on hover */
+          cursor: pointer;
+        }
+        /* Style for the text "open" */
+        .openText {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          color: black;
         }
       </style>
       <div id="mySidenav" class="sidenav">
@@ -1498,7 +1552,7 @@
         var sidenav = document.getElementById("mySidenav");
         var main = document.getElementById("main");
         var body = document.body;
-        var closeButton = document.querySelector('.closebtn');
+        var closeButton = document.querySelector('closebtn');
 
         sidenav.classList.remove("sideNavOpen");
         main.style.marginLeft = "0";

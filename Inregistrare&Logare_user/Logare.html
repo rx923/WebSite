@@ -4,19 +4,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\style_main\form.css" type="text/css" media="screen">
+    <style>
+        @media only screen and (min-width:412px) and (min-height:915px) {
+            .close-btn {
+                position: absolute;
+                width: 51px;
+                top: 10px;
+                right: 10px;
+                height: 25px;
+                border: 1px groove #00000042;
+                border-radius: 30px;
+                background-color: #4682b445;
+                cursor: pointer;
+                display: block;
+            }    
+            .form-container {
+                position: absolute;
+                background-color: #ffffff;
+                border: 1px solid #ccc;
+                border-radius: 30px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                display: inline-block;                
+                position: absolute;
+                top: 270px;
+                right: 0px;
+                left: 10px;
+                margin-right: 0px
+            }
+            .form-container .img {
+                height: 25px;
+                width: 25px;
+                margin-left: 20px;
+                border: groove 1px steelblue;
+                border-radius: 20px;
+                margin-bottom: 13px;
+            }
+            #Logheaza-teForm {
+                position: absolute;
+                top: 200px;
+                right: 0px;
+                margin-right: 10px;
+                max-width: 230px;
+                max-height: 330px;
+                border-radius: 30px;
+                left: 40px;
+                /* background-color: #3995d3cc; */
+                display: inline-block;
+                background: linear-gradient(35deg, #7dadce 35%,rgb(255 255 255)70%, #4cb6ff) 80%;
+            }
+            #form-container-1{
+                width: 200px;
+                margin-left: 15px;
+                padding-top: 10px;
+                padding-bottom: 20px;
+                padding-left: 10px;
+                border: 1px groove lightskyblue;
+                border-radius: 20px;
+                background: linear-gradient(to top left, rgb(206 155 155 / 14%) 30%, rgb(248 251 91 / 73%) 100%);
+            }
+        }
+    </style>
   </head>
+
+
+
 <body>
-    <form action="U:\Plan_Afacere\WebSite\.vscode\index.js" id="Logheaza-teForm" method="post" class="form-container" style=" width:auto;" >
+    <form action="U:\Plan_Afacere\WebSite\.vscode\index.js" id="Logheaza-teForm" method="post" class="form-container">
+        <!-- Close button -->
+        <div class="close-btn" onclick="closeForm()">&times;</div> 
         <div class="imgcontainer">
         <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
         </div>
         <div class="container-pagina-logare" id="form-container-1" style="width: 200px; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
-        <label for="uname" style="max-width: 140px;">
-            <b style="position: relative;
-            background: linear-gradient(20deg, rgb(130 90 36) 51%, rgb(204 184 142)33%, #9b6930 66%);
-            border-radius: 15px;
-            padding: 5px;
-            border: 1px solid;">Nume Utilizator:</b>
+        <label for="uname" style="margin-top: 10px; margin-bottom: 10px; margin-left: 10px; width: 140px; height: 20px; border: 1px groove cadetblue; border-radius: 30px; font-family: system-ui;">
+            <b style="position: static; margin-bottom: 0px; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; padding: 2px; font: -webkit-control; border: 1px solid; text-align: -webkit-center;">Nume Utilizator:</b>
         </label>
         <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
             <label for="password">
@@ -26,16 +87,22 @@
             padding: 5px;
             border: 1px solid;">Parola:</b>
             </label>
-        <input type="password" id="password" accept="file" placeholder="Scrie Parola" name="password" required>
-            <button type="submit" id="submit-button-form">Logheaza-te</button>
-            <label>
-            <input type="checkbox" accept="file" checked="checked" name="remember"> Memoreaza informatiile de conectare.
+        <input type="password" id="password_creare_cont" accept="file" placeholder="Scrie Parola" name="password-user" required="true" style="max-width: 30px; margin-bottom: 0px; position: relative; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; font: -webkit-control; padding: 5px; border: 1px solid;">
+            <button type="submit" id="submit-button-form" style="border-radius: 30px; background-color: bisque;">Logheaza-te</button>
+            <label style="position: sticky; margin-left: 10px; margin-top: 30px; display: ruby; border: 1px solid black; border-radius: 20px; background-color: antiquewhite; font-size: x-small; padding-top: 5px;">
+            <input type="checkbox" accept="file" checked="checked" name="remember" style="margin-top: 10px; margin-bottom: 10px; margin-left: 10px; width: 140px; height: 20px; border: 1px groove cadetblue; border-radius: 30px; font-family: system-ui;"> Memoreaza informatiile de conectare.
         </label>
         </div>
 
-        <div class="container" id ="container_for_Cancel&Forgotten_Password" style="background-color:#005f6a; border-radius: 20px;">
-        <button type="button" class="cancelbtn">Anuleaza</button>
-            <span class="psw">Ai uitat <a href="#Link">parola?</a></span>
+        <div class="container" id ="container_for_Cancel&Forgotten_Password" style="background-color: #a4dde3; border-radius: 9px; margin-bottom: 10px; width: 220px; margin-left: 5px;">
+        <button type="button" class="cancelbtn" style="border-radius: 30px; margin-bottom: 2px; margin-left: 30px;">Anuleaza</button>
+            <span class="psw" style="font-size: x-small;">Ai uitat <a href="#Link">parola?</a></span>
         </div>
     </form>
+    <script>
+        function closeForm() {
+            var form = document.getElementById("Logheaza-teForm");
+            form.style.display = "none";
+            }
+    </script>
 </body>
