@@ -1,37 +1,4 @@
-
-#bara-de-cautare-principala {
-    padding: 1px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(0, 23, 137);
-    border: outset;
-    border-width: 0.2vw 0.3vw;
-    border-color: rgb(195, 196, 91);
-    border-radius: 30px;
-    /* Center the search bar horizontally */
-    left: 900px;
-    /* Adjust to properly center */
-    /* transform: translateX(-50%);  */
-    z-index: 999;
-    cursor: pointer;
-    /* display: ruby-base-container; */
-    /* Set the width of the search bar */
-    /* Set maximum width if needed *
-    /* Adjust top position */
-    transform: translateY(-300%);
-    top: 220px;
-    margin-top: 0px;
-    margin-bottom: 20px; 
-    /* Use block level element */
-    display: inline-block; 
-    position: sticky;
-    /* Center align the content */
-    /* text-align: center; */
-    /* Center the block element */
-    margin:10px;
-
-}
-
-@media only screen and (max-width: 412px) and (max-height:912px) {
+@media only screen and (min-width: 412px) and (min-height:912px) and(orientation: landscape) {
     .search-bar input[type="text"] {
         border: 3px outset rgb(0, 0, 0);
         background-color: whitesmoke;
@@ -40,33 +7,56 @@
         width: 300px;
         padding: 10px;
         outline: none;
+    }
+    .search-bar {
+        left: 80px;
+        top: 145px;
+        width: 300px;
+        position: relative;
     }    
-}
-.search-bar input[type="text"] {
-    border: 3px outset rgb(0, 0, 0);
-    background-color: whitesmoke;
-    border-radius: 25px;
-    /* Adjust input field width */
-    width: 500px;
-    padding: 10px;
-    outline: none;
-}
-
-#introducere-text-bara-de-cautare-principala {
-    width: 380px;
-    padding-bottom: 2px;
-}
-
-#submit-cauta-bara-de-cautare {
-    padding: 20px 20px;
-    color: rgb(255, 255, 255);
-    border: 2px outset;
-    border-radius: 30px;
-    text-align: unset;
-    justify-content: center;
-    background:rgba(0, 0, 0, 0.19);
-    cursor: pointer;
-    /* Adjust button width */
-    max-width: 110px; /* Set maximum width if needed */
-    height: 20px;
+    #introducere-text-bara-de-cautare-principala {
+        width: 380px;
+        padding-bottom: 2px;
+    }
+    #submit-cauta-bara-de-cautare {
+        padding: 20px 20px;
+        color: rgb(255, 255, 255);
+        border: 2px outset;
+        border-radius: 30px;
+        text-align: unset;
+        justify-content: center;
+        background:rgba(0, 0, 0, 0.19);
+        cursor: pointer;
+        /* Adjust button width */
+        max-width: 110px; /* Set maximum width if needed */
+        height: 20px;
+    }
+    .search-container {
+        padding: 1px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(0, 23, 137);
+        border: outset;
+        border-width: 0.5vw 0.5vw;
+        border-color: rgb(68, 162, 255);
+        border-radius: 30px;
+        left: 135px;
+        transform: translateY(-300%);
+        top: 190px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        display: inline-block;
+        position: absolute;
+        margin: 0px;
+    }
+    .search-button {
+        padding: 2px 4px;
+        color: rgb(255, 255, 255);
+        border: 2px outset;
+        border-radius: 30px;
+        background: repeating-linear-gradient(21deg, rgb(0, 0, 255) 75%, rgb(0, 0, 0) 80%, rgb(163, 0, 0) 50%);
+        cursor: pointer;
+        width: 200px;
+        max-width: 100px;
+        height: 40px;
+    }
 }
