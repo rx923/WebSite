@@ -4,6 +4,8 @@ const cors = require("cors");
 const {Sequelize, DataTypes } = require('sequelize');
 const path = require('path')
 const HOST = '192.168.100.53';
+const PORT = process.env.PORT || 8081;
+
 
 const app = express();
 
@@ -11,8 +13,9 @@ const app = express();
 
 // app.use(cors());
 // The below code serves the static files.
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public', 'U:\\Plan_Afacere\\WebSite')));
 app.use(express.json());
+app.use(express.static('files'))
 
 
 //Creating a database connection
@@ -42,13 +45,13 @@ const User = sequelize.define('User', {
 })();
 
 //Route to serve the Logare.html file
-app.get('/WebSite/ComputerLaptop_WebSite/Inregistrare&Logare_user/Logare.html', (req, res) => {
+app.get('/InregistrareForm', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'Inregistrare&Logare_user', 'Inregistrare.html'));
 });
 
 
 //Route to handle the user registration
-app.post('/WebSite/ComputerLaptop_WebSite/Inregistrare&Logare_user/Inregistrare.html', async (req, res) => {
+app.post('/InregistrareForm', async (req, res) => {
     const { username, email, password } = req.body;
     try {
       const newUser = await User.create({ username, email, password });
@@ -65,7 +68,7 @@ app.post('/WebSite/ComputerLaptop_WebSite/Inregistrare&Logare_user/Inregistrare.
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'GoodStoreCoffee.html'));
 });
 
 
