@@ -1,0 +1,25 @@
+@media only screen and (min-width:412px) and (min-height:912px) and (orientation:landscape) {
+    body{
+        background-color:wheat;
+    }
+    h1 {
+        text-align: center;
+        font-size: medium;
+        /* margin-left: 800px; */
+        /* margin-right: 600px; */
+        box-shadow: 1px 1px 20px rgb(255, 255, 255);
+        border-radius: 20px; 
+        position: sticky;
+        max-width: fit-content;
+        max-height: fit-content;
+
+    }
+    #navigation-bar-categoria-1-produse{
+        border: 2px solid;
+        padding: 100px;
+        /* border-color: black; */
+        border-radius: 10px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}

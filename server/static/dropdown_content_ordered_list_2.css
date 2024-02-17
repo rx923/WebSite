@@ -1,0 +1,10 @@
+@media only screen and (min-width:412px) and (min-height:912px) and (orientation:landscape) {
+    .dropdown_content_ordered_list_2{
+        margin-top: 10px;
+    }
+    #Categorii_Produse_1_dropdown{
+        border-radius: 15px;
+        border-width: 10px;
+        border-color: aquamarine;
+    }
+}
