@@ -1,7 +1,10 @@
 //This is the express server for serving the files.
-
 const express = require('express');
+const cors = require("cors");
+const {Sequelize, DataTypes } = require('sequelize');
 const path = require('path')
+const HOST = '192.168.100.53';
+
 const app = express();
 
 //Middleware
@@ -70,4 +73,5 @@ const PORT = process.env.PORT || 8081;
 app.listen(PORT, HOST, () =>{
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
 
