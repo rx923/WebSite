@@ -30,17 +30,12 @@ const User = sequelize.define('User', {
 
 // Sync the model with the database (create the table if it doesn't exist)
 (async () => {
-  await sequelize.sync({ alter: true });
+  await sequelize.sync(); // Consider using migrations instead
   console.log('Database synchronized');
 })();
 
-// Route to serve the Logare.html file
-app.get('/Logare', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'Inregistrare&Logare_user', 'Inregistrare.html'));
-});
-
 // Route to handle user registration
-app.post('/register', async (req, res) => {
+app.post('WebSite\\ComputerLaptop_WebSite\\Inregistrare&Logare_user\\Inregistrare.html', async (req, res) => {
   const { username, email, password } = req.body;
   try {
     const newUser = await User.create({ username, email, password });
