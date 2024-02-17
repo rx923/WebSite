@@ -1,14 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const { Sequelize, DataTypes } = require('sequelize');
-const liveServer = require("live-server");
 const path = require("path");
 
 const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 // Database configuration
@@ -51,35 +50,3 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Express server started on port ${PORT}`);
 });
-
-// Start the live-http server
-const params = {
-  port: "8080", 
-  host: "192.168.100.53", 
-  root: 
-  [
-    "U:\\Plan_Afacere\\WebSite\\ComputerLaptop_WebSite",
-    "U:\\Plan_Afacere\\WebSite\\public",
-  ], 
-  open: false, 
-  logLevel: 2,
-  middleware: [function(req, res, next) {
-    const url = req.url;
-    let cssPath;
-    if (url.endsWith('.css')) {
-      // Check if the CSS file exists in the root directory
-      cssPath = path.join(__dirname, url);
-      if (!fs.existsSync(cssPath)) {
-        // If not found in the root directory, try the public directory
-        cssPath = path.join(__dirname, 'public', url);
-      }
-      res.setHeader('Content-Type', 'text/css');
-      res.sendFile(cssPath);
-    } else {
-      next();
-    }
-  }]
-}; 
-
-
-liveServer.start(params);
