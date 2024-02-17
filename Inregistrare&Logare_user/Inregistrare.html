@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registration</title>
+  <base href="http://192.168.100.53:8081/">
   <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\style_main\form.css" type="text/css" media="screen">
 </head>
 <body>
-  <form action="\WebSite\server\public\Inregistrare&Logare_user\Database_connection_credentials_sent.js" id="InregistrareForm" class="form-container" method="post" formtarget="_blank">
+  <form action="http://192.168.100.53:8081/WebSite\server\server.js" id="InregistrareForm" class="form-container" method="post" formtarget="_blank" encoding="%5">
     <div class="container_pagina_inregistrare">
       <h2>Inregistrare</h2>
       <p style="border: 1px solid; background-color: whitesmoke; border-radius: 20px;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
@@ -43,7 +44,7 @@
         formObject[key] = value;
       });
 
-      const response = await fetch('http://192.168.100.53:8081/WebSite\server\public\Inregistrare&Logare_user\Database_connection_credentials_sent.js', {
+      const response = await fetch('http://192.168.100.53:8081/WebSite\\server\\public\\Inregistrare&Logare_user\\Database_connection_credentials_sent.js', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

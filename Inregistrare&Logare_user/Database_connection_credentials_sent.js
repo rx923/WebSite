@@ -18,7 +18,7 @@ const client = new Client({
 app.use(express.urlencoded({ extended: true }));
 
 // Route to handle form submission
-app.post('/register', async (req, res) => {
+app.post('/InregistrareForm', async (req, res) => {
     const { email, password, password_repeat } = req.body;
 
     // Check if passwords match
@@ -47,6 +47,6 @@ app.post('/register', async (req, res) => {
 });
 
 // Start server
-app.listen(port, () => {
+app.listen(port, HOST, () => {
     console.log(`Server is running at http://localhost:${port}`);
 });
