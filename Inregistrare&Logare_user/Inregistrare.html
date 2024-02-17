@@ -28,5 +28,40 @@
     </div>
 </form>
 
+  <script>
+    // Retry mechanism
+    const retryLimit = 3;
+    let retries = 0;
+
+    document.getElementById('registrationForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      const response = await fetch('/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formObject)
+      });
+
+      if (!response.ok && retries < retryLimit) {
+        retries++;
+        console.error(`Failed to register user. Retrying attempt ${retries}...`);
+        event.target.submit();
+      } else if (!response.ok && retries >= retryLimit) {
+        console.error('Maximum retry limit reached. Could not register user.');
+      } else {
+        retries = 0;
+        const data = await response.json();
+        console.log('User registered successfully:', data);
+      }
+    });
+  </script>
 </body>
 
