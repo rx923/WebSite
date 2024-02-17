@@ -16,6 +16,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public', 'U:\\Plan_Afacere\\WebSite')));
 app.use(express.json());
 app.use(express.static('files'))
+app.use(express.static('public'));
 
 
 //Creating a database connection
