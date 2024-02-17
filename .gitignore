@@ -2,7 +2,11 @@
 .vscode
 # Ignoring the entire file configuration settings of package.json
 package.json
-
+U:\Plan_Afacere\WebSite\server\.env
+U:\Plan_Afacere\WebSite\server\.env
+U:\Plan_Afacere\WebSite\server\db.js
+U:\Plan_Afacere\WebSite\server\package.json
+U:\Plan_Afacere\WebSite\server\server.js
 # Ignoring all the filepaths:
 http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/slideshow-container-buttons/slideshow-container-style.css
 http://192.168.100.53:8080/ComputerLaptop_WebSite/InformatiiAditionalepage/InformatiiAditionalepage.css
