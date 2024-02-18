@@ -1,0 +1,116 @@
+
+@media only screen and (max-width: 415px) and (max-height: 912px) and (orientation:landscape) {
+/* The side navigation menu */
+  .sidenav {
+    /* 100% Full-height */
+    height: 50px; 
+    /* 0 width - change this with JavaScript */
+    width: 50px; 
+    /* Stay in place */
+    position: fixed; 
+    /* Stay on top */
+    z-index: 1; 
+    /* Stay at the top */
+    top: 0; 
+    margin-left: 10px;
+    margin-top: 10px;
+    /* Black*/
+    color: rgb(123, 30, 30); 
+    /* Disable horizontal scroll */
+    overflow-x: hidden; 
+    /* Place content 60px from the top */
+    padding-top: 60px; 
+    /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.5s; 
+  }
+
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+    /* Highlight the current link */
+  .sidenav a.active {
+    background-color: #04aa6d;
+    color: white;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+      /* Close button style */
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+    color: white;
+  }
+  .form-container {
+    display: none;
+    width: 40%; /* Set the width of the form container */
+    margin: 50px auto; /* Center the form */
+    margin-right: 10px; /* Margin to the right side */
+    float: right; /* Align forms to the right */
+  }
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  /* The sidenav */
+  .sidenav {
+    height: 40%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top left, rgb(128, 24, 24) 0%, rgba(207, 117, 117, 0) 100%);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  /* Page content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+  }
+  .openTriangle {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    /* Left side of the triangle */
+    border-left: 25px solid transparent;
+    /* Right side of the triangle */
+    border-right: 25px solid transparent;
+    /* Bottom side of the triangle */
+    border-bottom: 43.3px groove rgb(255, 255, 255);
+    /* Change cursor on hover */
+    cursor: pointer;
+  }
+  /* Style for the text "open" */
+  .openText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: black;
+  }
+}

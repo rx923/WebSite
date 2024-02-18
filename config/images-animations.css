@@ -1,0 +1,23 @@
+@media only screen and (min-width:412px) and (min-height:912px) and (orientation:landscape) {
+    #image-top-produse-1 {
+        display: inline-block;
+        max-width: 40px;
+        max-height: 40px;
+        border-left: 10px;
+        display: block;
+        margin: auto;
+        offset: 10px;
+    }
+    #image-top-produse-2 {
+        display: inline-block;
+        text-align: center;
+        max-width: 40px;
+        max-height: 40px;
+    }
+    #image-top-produse-3 {
+        display: inline-block;
+        text-align: center;
+        max-width: 40px;
+        max-height: 40px;
+    }
+}

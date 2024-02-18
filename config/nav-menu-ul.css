@@ -1,0 +1,8 @@
+
+@media only screen and (max-width: 415px) and (max-height: 912px) and (orientation:landscape) {
+    nav.menu.ul {
+        border: #a9bbab;
+        border-radius: 10px;
+        width: 100px;
+    }
+}
