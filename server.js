@@ -13,7 +13,7 @@ const app = express();
 
 // app.use(cors());
 // The below code serves the static files.
-app.use(express.static(path.join(__dirname, 'public', 'U:\\Plan_Afacere\\WebSite')));
+app.use(express.static(path.join(__dirname, 'public', 'index.html')));
 app.use(express.json());
 app.use(express.static('files'))
 app.use(express.static('public'));
@@ -65,11 +65,8 @@ app.post('/InregistrareForm', async (req, res) => {
   
 // Defining the routes
 
-
-
-
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'GoodStoreCoffee.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
