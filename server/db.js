@@ -4,11 +4,11 @@ require('dotenv').config();
 
 
 const client = new Client({
-    user: process.env.DB_USER,
-    host:process.env.DB_HOST,
-    database:process.env.DB_NAME,
-    password:process.env.DB_PASSWORD,
-    port:process.env.DB_PORT,
+    user: process.env.DB_USER || 'postgres',
+    host:process.env.DB_HOST || '192.168.100.53',
+    database:process.env.DB_NAME || 'AccountCreation',
+    password:process.env.DB_PASSWORD || 'MainAdministrator',
+    port:process.env.DB_PORT || '5432',
 });
 
 module.exports = client;
