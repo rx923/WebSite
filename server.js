@@ -2,7 +2,8 @@
 const express = require('express');
 const cors = require("cors");
 const { Sequelize, DataTypes } = require('sequelize');
-const path = require('path')
+const path = require('path');
+const { METHODS } = require('http');
 const HOST = '192.168.100.53';
 const PORT = process.env.PORT || 8081;
 
@@ -18,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
 }));
 app.use(express.json());
 app.use(express.static('files'))
-app.use(express.static('\\U:\\Plan_Afacere\\'));
+app.use(express.static('http://192.168.100.53:8081/Plan_Afacere/'));
 
 
 //Creating a database connection
