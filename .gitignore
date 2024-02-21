@@ -1,12 +1,7 @@
 # Ignoring the entire directory of .vscode information
-.vscode
 # Ignoring the entire file configuration settings of package.json
-package.json
-U:\Plan_Afacere\WebSite\server\.env
 U:\Plan_Afacere\WebSite\server\.env
 U:\Plan_Afacere\WebSite\server\db.js
-U:\Plan_Afacere\WebSite\server\package.json
-U:\Plan_Afacere\WebSite\server\server.js
 # Ignoring all the filepaths:
 http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/slideshow-container-buttons/slideshow-container-style.css
 http://192.168.100.53:8080/ComputerLaptop_WebSite/InformatiiAditionalepage/InformatiiAditionalepage.css
@@ -57,5 +52,3 @@ http://192.168.100.53:8080/ComputerLaptop_WebSite/cele mai vandute produse/style
 http://192.168.100.53:8080/ComputerLaptop_WebSite/style-main/bordered-box-styles/bordered-box_produse_vandute_de_top_1.css
 http://192.168.100.53:8080/WebSite\ComputerLaptop_WebSite\style_main\content-styles\content.css
 Javascript/Login-Users-Account/action_page.php
-U:\Plan_Afacere\WebSite\server\node_modules
-U:\Plan_Afacere\WebSite\node_modules

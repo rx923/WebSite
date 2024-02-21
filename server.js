@@ -4,26 +4,24 @@ const cors = require("cors");
 const { Sequelize, DataTypes } = require('sequelize');
 const path = require('path');
 const { METHODS } = require('http');
-const routes = require('./public/routes');
+// const routes = require('./public/routes');
 const HOST = '192.168.100.53';
 const PORT = process.env.PORT || 8081;
 
 
 
 //Importing some routes
-const server_authentication_routes = require('./public/routes/server_authentication_routes');
-const user_authentication_routes = require('./public/routes/user_authentication_routes');
-const establishing_connection_routes = require('./public/routes/establishing_connection_routes');
+// const server_authentication_routes = require('./public/routes/server_authentication_routes');
+// const user_authentication_routes = require('./public/routes/user_authentication_routes');
+// const establishing_connection_routes = require('./public/routes/establishing_connection_routes');
 
 const app = express();
 
 
 //Using the routes:
-app.use('/auth', serverAuthenticationRoutes);
-app.use('/users', user_authentication_routes);
-app.use('/', establishing_connection_routes);
-app.use('/', server_authentication_routes);
-app.use('/', user_authentication_routes);
+// app.use('/', establishing_connection_routes);
+// app.use('/auth/server', server_authentication_routes);
+// app.use('/auth/user', user_authentication_routes);
 
 
 //Middleware
@@ -36,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
 //Parsing JSON bodies
 app.use(express.json());
 app.use(express.static('files'))
-app.use(express.static('/Plan_Afacere/WebSite/', (req, res, next) => {
+app.use(express.static('/Plan_Afacere/', (req, res, next) => {
     res.setHeader('Contet-Type', 'text/css');
     next();
 }));
