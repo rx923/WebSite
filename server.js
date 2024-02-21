@@ -1,13 +1,25 @@
+startTime = time.now
+
 //This is the express server for serving the files.
+const HOST = '192.168.100.53';
+const PORT = process.env.PORT || 8081;
+const User = require('/users.js')
+
+startTime = time.now
+
+
+
 const express = require('express');
 const cors = require("cors");
 const { Sequelize, DataTypes } = require('sequelize');
 const path = require('path');
 const { METHODS } = require('http');
+const { time } = require('console');
 // const routes = require('./public/routes');
 const HOST = '192.168.100.53';
 const PORT = process.env.PORT || 8081;
-
+const User = require('\\WebSite\\public\\models\\users.js')
+startTime = time.now
 
 
 //Importing some routes
@@ -27,6 +39,17 @@ const app = express();
 //Middleware
 
 app.use(cors());
+app.use((req, res, next) => {
+    const startTime = Date.now();
+    // Recording the current timestamp fo the request in UTC format:
+    console.log('Request type:', req.method);
+    res.on('finish', () => {
+        const duration = Date.now() - startTime;
+        console.log('Request completed in :', duration, 'ms', '---Request type:', req.method);
+    });
+    next();
+});
+
 // The below code serves the static files.
 app.use(express.static(path.join(__dirname, 'public'), {
     extensions: ['css'] 
@@ -34,54 +57,25 @@ app.use(express.static(path.join(__dirname, 'public'), {
 //Parsing JSON bodies
 app.use(express.json());
 app.use(express.static('files'))
-app.use(express.static('/Plan_Afacere/', (req, res, next) => {
+app.use(express.static('/Plan_Afacere/WebSite/public/css', (req, res, next) => {
     res.setHeader('Contet-Type', 'text/css');
     next();
 }));
 // Serve static files from the 'Plan_Afacere' directory
-app.use('/Plan_Afacere/', express.static(path.join(__dirname, '/Plan_Afacere/')));
+app.use('/css', express.static(path.join(__dirname, 'Plan_Afacere', 'WebSite', 'public', 'css')));
 
 //Creating a database connection
 const sequelize = new Sequelize({
     dialect: 'postgres',
     host: process.env.DB_HOST || '192.168.100.53',
-    prot: process.env.DB_PORT || '5432',
+    protocol: process.env.DB_PORT || '5432',
     username: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASSWORD || 'MainAdministrator',
     database: process.env.DB_NAME || 'AccountCreation',
 });
 
-// Defining the User model
-const User = sequelize.define('User', {
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-});
-
-//Checking if the User table exists in the database
-(async () => {
-    try {
-        await sequelize.authenticate();
-        const tableExists = await sequelize.getQueryInterface().showAllTables();
-        if (!tableExists.includes('User')) {
-            await User.sync({ force: true });
-            console.log('User table created successfully');
-        } else {
-            console.log('User table already exists');
-        }
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
-})();
-
-//Route to serve the Logare.html file
-app.get('/InregistrareForm', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'Inregistrare&Logare_user', 'Inregistrare.html'));
-});
-
-
 //Route to handle the user registration
-app.post('/InregistrareForm', async (req, res) => {
+app.post('/InregistrareForm/', async (req, res) => {
     const { username, email, password } = req.body;
     try {
         const newUser = await User.create({ username, email, password });
@@ -90,6 +84,10 @@ app.post('/InregistrareForm', async (req, res) => {
         console.error(error);
         res.status(500).json({ error: 'Server error' });
     }
+});
+
+app.listen(PORT, HOST, () => {
+    console.log(`Server is listening on ${HOST}:${PORT}`);
 });
 
 // app.use('/', routes);
