@@ -1,10 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const express = require('express');
 const User = require('./models/users.js');
-
-
-
 
 const User = sequelize.define('User', {
     username: DataTypes.STRING,
@@ -26,6 +22,7 @@ const User = sequelize.define('User', {
         console.error('Unable to connect to the database:', error);
     }
 })();
+
 const createUser = async () => {
     try {
         const newUser = await User.create({
