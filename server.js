@@ -4,23 +4,44 @@ const cors = require("cors");
 const { Sequelize, DataTypes } = require('sequelize');
 const path = require('path');
 const { METHODS } = require('http');
+const routes = require('./public/routes');
 const HOST = '192.168.100.53';
 const PORT = process.env.PORT || 8081;
 
 
+
+//Importing some routes
+const server_authentication_routes = require('./public/routes/server_authentication_routes');
+const user_authentication_routes = require('./public/routes/user_authentication_routes');
+const establishing_connection_routes = require('./public/routes/establishing_connection_routes');
+
 const app = express();
+
+
+//Using the routes:
+app.use('/auth', serverAuthenticationRoutes);
+app.use('/users', user_authentication_routes);
+app.use('/', establishing_connection_routes);
+app.use('/', server_authentication_routes);
+app.use('/', user_authentication_routes);
+
 
 //Middleware
 
 app.use(cors());
 // The below code serves the static files.
-app.use(express.static(path.join(__dirname, '/public'), {
+app.use(express.static(path.join(__dirname, 'public'), {
     extensions: ['css'] 
 }));
+//Parsing JSON bodies
 app.use(express.json());
 app.use(express.static('files'))
-app.use(express.static('http://192.168.100.53:8081/Plan_Afacere/'));
-
+app.use(express.static('/Plan_Afacere/WebSite/', (req, res, next) => {
+    res.setHeader('Contet-Type', 'text/css');
+    next();
+}));
+// Serve static files from the 'Plan_Afacere' directory
+app.use('/Plan_Afacere/', express.static(path.join(__dirname, '/Plan_Afacere/')));
 
 //Creating a database connection
 const sequelize = new Sequelize({
@@ -73,13 +94,4 @@ app.post('/InregistrareForm', async (req, res) => {
     }
 });
 
-// Defining the routes
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-
-app.listen(PORT, HOST, () =>{
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+// app.use('/', routes);
