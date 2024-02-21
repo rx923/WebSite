@@ -26,5 +26,17 @@ const User = sequelize.define('User', {
         console.error('Unable to connect to the database:', error);
     }
 })();
+const createUser = async () => {
+    try {
+        const newUser = await User.create({
+            username: 'example',
+            email: 'example@example.com',
+            password: 'examplepassword'
+        });
+        console.log('New user created:', newUser);
+    } catch (error) {
+        console.error('Error creating user:', error);
+    }
+};
 
-module.exports = User;
+module.exports = { User, createUser };
