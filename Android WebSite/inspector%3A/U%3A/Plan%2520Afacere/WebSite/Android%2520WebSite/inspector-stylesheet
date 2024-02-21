@@ -1,6 +1,0 @@
-.li:hover .ol:hover {}
-
-.li:hover #Categorii_Porudse_1_dropdown:hover {
-    list-style: none;
-    display: inline-block;
-}
