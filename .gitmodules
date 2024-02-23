@@ -1,3 +1,7 @@
 [submodule "ComputerLaptop_WebSite"]
 	path = ComputerLaptop_WebSite
 	url = https://github.com/rx923/ComputerLaptop-WebSite
+
+[remote "origin"]
+	url = https://github.com/rx923/WebSite.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
