@@ -1542,12 +1542,54 @@
             </li>
           </ol>
         </div>
+        <style>
+          #menu_produse_top {
+            border: 1px #ffffff;
+            border-width: 1px;
+            border-style: groove;
+            border-radius: 20px;
+            box-sizing: content-box;
+            width: 100px;
+            height: 100px;
+            left: 130px;
+            bottom: 100px;
+            margin-left: 0px;
+            margin-right: auto;
+            list-style-type: none;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(35deg, #ffffff 27%, rgb(245, 255, 63)66%, rgb(255, 255, 255) 75%);
+            animation: flowWaves 1s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+            margin-bottom: 0px;
+          }
+          </style>
         <div class="menu_container_produse_de_top" id="menu_produse_top">
           <div class="menu_container_1_produse_de_top" id="Produsetop1">
             <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
                 <a style="text-decoration: wavy blue;">Produse de top</a>
-                  <div class="dropdown-content_imagini_1" id="dropdown-content-images3">
+                <style>
+                  #dropdown-content-images1 {
+                    position: absolute;
+                    /* Using flexbox */
+                    flex-wrap: nowrap;
+                    display: none;
+                    /* Consider reducing this value */
+                    /* padding-block: 100px;  */
+                    /* padding-right: 687px;     */
+                    /* Adjust this value to reduce the top padding */
+                    padding: 39px;
+                    left: -720px;
+                    right: -382px;
+                    background-blend-mode: color-dodge;
+                    background: transparent;
+                    border-radius: 30px;
+                    /* box-shadow: 20px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+                    z-index: 1;
+                    list-style-type: none;
+                  }
+                </style>
+                  <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
                     <div class="dropdown-container" id="container_imagine-dropdown-1">
                       <img src="http://192.168.100.53:8081/WebSite/public/css/cele_mai_vandute_produse/bady-abbas-qJlGIllS0Zg-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="lazy">
                       <em>
