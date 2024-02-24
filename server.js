@@ -22,7 +22,8 @@ app.get('/', function(req, res){
 app.post('/Inregistrare.html', async (req, res) => {
     const { username, email, password } = req.body;
     try {
-        const newUser = await User.create({ username, email, password }); // Use the User model to create a new user
+        // Use the User model to create a new user
+        const newUser = await User.create({ username, email, password }); 
         res.status(201).json(newUser);
     } catch (error) {
         console.error(error);
