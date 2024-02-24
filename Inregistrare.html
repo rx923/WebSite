@@ -8,16 +8,18 @@
   <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\style_main\form.css" type="text/css" media="screen">
 </head>
 <body>
-  <form action="http://192.168.100.53:8081/WebSite\server\server.js" id="InregistrareForm" class="form-container" method="post" formtarget="_blank" encoding="%5">
+  <form action="/Inregistrare.html" id="InregistrareForm" class="form-container" method="post" formtarget="_self">
     <div class="container_pagina_inregistrare">
       <h2>Inregistrare</h2>
       <p style="border: 1px solid; background-color: whitesmoke; border-radius: 20px;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Introdu adresa de Email" name="email" required>
+      <input type="text" placeholder="Introdu adresa de Email" name="email" id="email" required>
       <label for="password"><b>Parola</b></label>
-      <input type="password" placeholder="Introdu Parola:" name="password" required>
+      <input type="password" placeholder="Introdu Parola:" name="password" id="password" required>
       <label for="password_repeat"><b>Repeta Parola</b></label>
-      <input type="password" placeholder="Repeta Parola:" name="password_repeat" required>
+      <input type="password" placeholder="Repeta Parola:" name="password_repeat" id="password_repeat" required>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Introdu Username:" name="username" id="username" required>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Tine minte datele de conectare
       </label>
@@ -30,7 +32,6 @@
     </div>
   </form>
   <script>
-    // Retry mechanism
     const retryLimit = 3;
     let retries = 0;
 
@@ -38,17 +39,10 @@
       event.preventDefault();
 
       const formData = new FormData(event.target);
-      const formObject = {};
-      formData.forEach((value, key) => {
-        formObject[key] = value;
-      });
 
-      const response = await fetch('http://192.168.100.53:8081/WebSite\\server\\public\\Inregistrare&Logare_user\\Database_connection_credentials_sent.js', {
+      const response = await fetch('/Inregistrare.html', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formObject)
+        body: formData,
       });
 
       if (!response.ok && retries < retryLimit) {
