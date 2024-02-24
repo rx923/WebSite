@@ -707,7 +707,7 @@
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* optional: add shadow for depth */
         z-index: 9999; /* ensure menu appears above other elements */
         }
-        .arrow-icon {
+    .arrow-icon {
         width: 100px;
         position: relative;
         top: 100px;
