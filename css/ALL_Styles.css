@@ -909,25 +909,6 @@
         list-style: none;
         background: linear-gradient(to top right, #fefefe 35%, #fbbd66 55%, #54333354 80%);
     }
-    #Acasa_menu_container {
-        border: 1px; 
-        border-color:#ffffff;
-        border-width: 1px;
-        border-style: groove;
-        border-radius: 20px;
-        /* box-sizing:content-box; */
-        /* box-shadow: wheat; */
-        width: auto;
-        /* margin: 50px; */
-        list-style-type: none;
-        position: relative;
-        display:inline-block;
-        margin-left: auto;
-        margin-right: 300px;
-        background:linear-gradient(35deg, #ffffff 27%, rgb(255, 229, 59)66%, rgb(255, 255, 255) 75%);
-        animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
-        /* background-size: 200% 200%; */
-    }
     #meniu_ordered_1 {
         list-style-type: none;
         text-align: center;
