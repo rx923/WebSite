@@ -10,7 +10,7 @@
     <!-- <script src="Javascript/main.js"></script> -->
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
   </head>
-  <button onclick="history.back()" style="bottom: 300px; position: relative;">Go Back</button>
+  <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
   <!-- <canvas id="canvas" width="320px" height="320px" style="background-color:#333; position: -webkit-sticky;"></canvas> -->
   <!-- <script>
     const canvas = document.getElementById("canvas");
@@ -399,9 +399,9 @@
       </script>
       <style>
         .arrow-icon {
-          width: 40px;
+          width: 60px;
           position: relative;
-          bottom: 230px;
+          top: 15px;
           padding-bottom: 100px;
           right: 98px;
           transform: translateY(-50%);
@@ -417,13 +417,13 @@
           /* ensure arrow appears above other elements */
           z-index: 9999; 
         }
-      .arrow-icon:hover {
+        .arrow-icon:hover {
         /* adjust hover background color as needed */
         background-color: #d86d6d;
         border-radius: 20px; 
-      }
+        }
         </style>
-      <div class="arrow-icon" onclick="toggleMenu()">→</div>
+      <div class="arrow-icon" onclick="toggleMenu()">&#8596;</div>
       <style>
         .menu-container {
           position: absolute;
@@ -449,17 +449,18 @@
         <style>
           .close-btn {
             position: relative;
-            top: -45px;
-            left: 330px;
+            top: -189px;
+            left: 324px;
             padding: 10px;
-            transform: translateY(50px);
+            transform: translateY(47vw);
             border: 1px solid black;
-            width: 30px;
-            height: 50px;
+            width: 40px;
+            height: 20px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 18px;
-            background-color: #6a67ff6b; /* adjust background color as needed */
+            font-size: 20px;
+            /* adjust background color as needed */
+            background-color: #6a67ff6b; 
           }
           </style>
         <div class="close-btn" onclick="closeMenu()">X</div> 
@@ -496,57 +497,68 @@
         </script>
         <style>
           .table-container_lista_optiuni {
-            bottom: 70px;
-            width: 290px;
+            bottom: 170px;
+            width: 380px;
             height: 300px;
             position: relative;
-            border: 3px outset #ddd;
+            border: 3px outset #1a7eec70;
             display: inline-block;
             border-radius: 30px;
             box-sizing: border-box;
             grid-auto-flow: dense;
             margin-bottom: 10px;
             margin-top: 200px;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 5px;
+            margin-right: 0px;
             animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
             background-size: 200% 200%;
             align-items: baseline;
-            background-color: rgb(54, 32, 8);
+            background-color: rgba(168, 125, 79, 0.764);;
           }
           .glowing-background {
-            background: linear-gradient(20deg, #ffffff 32%, rgb(0, 35, 81)70%, rgb(207, 64, 28)85%);
+            background: linear-gradient(20deg, #d8c59b 32%, rgb(112, 162, 228)70%, rgb(187, 143, 132)85%);
             background-size: 300% 350%;
-            animation: glowing 10s ease-in-out infinite;
+            animation: glowing 20s ease-in-out infinite;
           }
           .glowing-background:hover {
             box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
-          } 
+          }
+          .tabel-1-lista-optiuni{
+            margin-left: 10px;
+            margin-top: 10px;
+            padding: 20px;
+            align-items: center;
+            border: 2px solid white;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+          }
         </style>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Despre">
+            <div class="th glowing-background" id="tableheader-Despre" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
               <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky;">Despre</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Comenzi" style="position: sticky;">
+            <div class="th glowing-background" id="tableheader-Comenzi" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
               <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky;">Comenzi</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Livrare">
+            <div class="th glowing-background" id="tableheader-Livrare" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
               <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky;">Livrare</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Suport">
+            <div class="th glowing-background" id="tableheader-Suport" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
               <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky;">Suport</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Informatii-Aditionale">
+            <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
               <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative;">Informatii Aditionale</a>
             </div>
           </div>
@@ -655,7 +667,6 @@
     </div>
     <div id="content"></div>
     <style>
-      @media only screen and (min-width: 412px) and (min-height: 915px) {
         .openTriangle {
           position: relative;
           bottom: 110px;
@@ -671,7 +682,7 @@
           /* Change cursor on hover */
           cursor: pointer;
           z-index: 8000;
-      }
+        }
        .openText {
           position: absolute;
           top: 50%;
@@ -680,7 +691,6 @@
           font-size: 14px;
           color: black;
         }
-      }
       </style>
     <div class="openTriangle" onclick="toggleNav()">
       <!-- <span id="triangle">&#9658;</span> -->
