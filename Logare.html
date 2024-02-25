@@ -5,92 +5,74 @@
     <base href="http://192.168.100.53:8081">
 
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-    <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\style_main\form.css" type="text/css" media="screen">
+    <!-- <link rel="stylesheet" href="http://192.168.100.53:8081/css/form.css" type="text/css" media="screen"> -->
     <style>
         @media only screen and (min-width:412px) and (min-height:915px) {
-            .close-btn {
-                position: absolute;
-                width: 51px;
-                top: 10px;
-                right: 10px;
-                height: 51px;
-                border: 1px groove #00000042;
-                border-radius: 30px;
-                background-color: #4682b445;
-                cursor: pointer;
-                display: inline-block;
-            }    
-
-            .form-container {
-                position: absolute;
-                background-color: #ffffff;
-                border: 1px solid #ccc;
-                border-radius: 30px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                display: inline-block;                
-                position: absolute;
-                top: 260px;
-                right: 0px;
-                margin-right: 0px
-            }
-            .form-container .img {
-                height: 25px;
-                width: 25px;
-                margin-left: 20px;
-                border: groove 1px #00a6ff78;
-                border-radius: 20px;
-                margin-bottom: 13px;
-            }
-            .imagcontainer .img {
-                right:80px;
-                position: relative;
-                border-spacing: 20px;
-                background-color: rgb(0, 81, 255);
-            }
-            #Logheaza-teForm {
-                position: absolute;
-                top: 260px;
-                right: -35px;
-                margin-right: 10px;
-                max-width: 230px;
-                max-height: 330px;
-                border-radius: 30px;
-                left: 40px;
-                /* background-color: #3995d3cc; */
-                display: inline-block;
-                background: linear-gradient(35deg, #7dadce 35%,rgb(255 255 255)70%, #4cb6ff) 80%;
-            }
-            #form-container-1{
-                width: 200px;
-                margin-left: 15px;
-                padding-top: 10px;
-                padding-bottom: 20px;
-                padding-left: 10px;
-                border: 1px groove lightskyblue;
-                border-radius: 20px;
-                background: linear-gradient(to top left, rgb(206 155 155 / 14%) 30%, rgb(248 251 91 / 73%) 100%);
-            }
-            input[type="text"], input[type="password"]{
-                width: 120px;
-                padding: 2px;
-                /* margin: 3px 2px; */
-                border: 1px solid #772727;
-                border-radius: 20px;
-                margin-right: 50px;
-                margin: 10px;
-                background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%);
-            }
-            input[type="text"], input[type="password"]{
-                width: 120px;
-                padding: 2px;
-                /* margin: 3px 2px; */
-                border: 1px solid #772727;
-                border-radius: 20px;
-                margin-right: 50px;
-                margin: 10px;
-                background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%);
-            }
+        /* Close button style */
+        .close-btn {
+            position: absolute;
+            width: 51px;
+            /* Adjusted position to the top */
+            top: 189px; 
+            /* Adjusted position to the right */
+            left: calc(100% - 80px); 
+            /* Adjusted height */
+            height: 31px; 
+            border: 1px groove #00000042;
+            border-radius: 30px;
+            background-color: #4682b445;
+            cursor: pointer;
+            /* Ensure it appears above other elements */
+            z-index: 9999; 
+        }      
+        /* Form container style */
+        #Logheaza-teForm {
+            position: absolute;
+            top: 290px;
+            right: 0px;
+            width: 300px;
+            height: auto;
+            /* Adjusted maximum width */
+            max-width: 300px; 
+            /* Adjusted maximum height */
+            max-height: 360px; 
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(112, 128, 144, 1), rgba(0, 0, 139, 1), rgba(255, 105, 180, 1));
+            border-radius: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            padding: 20px;
+            z-index: 9999;
         }
+        /* Input box style */
+        #Logheaza-teForm input[type="text"],
+        #Logheaza-teForm input[type="password"] {
+            width: 180px; /* Adjusted maximum width */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 20px;
+            background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359);
+            box-shadow: 2px 2px 5px red, 4px 4px 5px blue, 6px 6px 5px white; /* Added box shadow with multiple colors */
+        }
+
+        /* Additional styling for labels and buttons */
+        #Logheaza-teForm label {
+            border-radius: 30px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #3995d3cc; /* Adjusted background color */
+        }
+
+        #Logheaza-teForm button[type="submit"] {
+            background-color: #875050;
+            border-radius: 20px;
+            padding: 15px 10px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+    }
     </style>
   </head>
 

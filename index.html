@@ -96,7 +96,7 @@
       ctx.rotate(-pos);
     }
   </script> -->
-  <body style="background: darkslategray; transform: translateY(0px);">
+  <body style="background: radial-gradient(rgb(203, 203, 253), rgb(0, 0, 0));">
     <!-- <canvas id="myCanvas"></canvas>
     <script>
       const canvas = document.getElementById('myCanvas');
@@ -165,7 +165,49 @@
     <header style="background: linear-gradient(to top left, #ffffff 20%, #003d57 60%, rgb(255, 255, 255) 60%); border-top: 5px rgb(237, 239, 240) groove; border-left: 5px rgb(255, 255, 255) groove; border-right: 5px rgb(255, 255, 255) groove; border-bottom: 5px rgb(255, 255, 255) groove; border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ margin-left: 90px; /* border-style: ; */ padding-top: 10px; width: 300px;">
 
       <h1 style="background: linear-gradient(20deg, #d08132 32%, rgb(255, 255, 255)70%, rgb(216, 104, 76) 85%); /* max-height: 270px;  */ margin-left: 40px; margin-right: 40px; text-align: center; font-weight:200; width: 240px; text-decoration:overline; text-size-adjust:inherit; border-top-style: 1px darkgreen groove; border-right-style: 1px darkgreen groove; border-left-style: 1px darkgreen groove; border-bottom-style: 1px darkgreen groove; border-radius: 25px; border-width:1px; /* padding: 10px; */ position: absolute; text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(231, 231, 231), 0 0 5px rgb(0, 21, 115);"> Big Store Coffee </h1>
-      <div class="search-bar" style="padding: 1px; color: rgb(0, 0, 0); background-color: rgb(0, 23, 137); border: outset; border-width: 0.2vw 0.3vw; border-color: rgb(195, 196, 91); border-radius: 30px; /* Center the search bar horizontally */ left: 900px; /* Adjust to properly center */ /* transform: translateX(-50%);  */ z-index: 999; cursor: pointer; /* display: ruby-base-container; */ /* Set the width of the search bar */ /* Set maximum width if needed * /* Adjust top position */ transform: translateY(-300%); top: 220px; margin-top: 0px; margin-bottom: 20px; /* Use block level element */ display: inline-block; position: sticky; /* Center align the content */ /* text-align: center; */ /* Center the block element */ margin:10px;">
+      <style>
+        .search-bar {
+          left: 90px;
+          width: 270px;
+          position: static;
+          padding: 1px; 
+          color: rgb(0, 0, 0); 
+          background-color: rgb(0, 23, 137); 
+          border: outset;
+          border-width: 0.2vw 0.3vw; 
+          border-color: rgb(195, 196, 91); 
+          /* Center the search bar horizontally */
+          border-radius: 30px;  left: 900px; 
+          /* Adjust to properly center */
+          /* transform: translateX(-50%);  */ 
+          z-index: 999; 
+          cursor: pointer; 
+          /* display: ruby-base-container; */ 
+          /* Set the width of the search bar */ 
+          /* Set maximum width if needed * /* 
+          Adjust top position */ 
+          transform: translateY(100%); 
+          transform: translateX(10%); 
+          margin-top: 0px; 
+          margin-bottom: 20px; 
+          /* Use block level element */ 
+          display: inline-block; 
+          /* Center align the content */ 
+          /* text-align: center; */ 
+          /* Center the block element */
+          margin:10px;
+        }
+        .search-bar input[type="text"] {
+          border: 3px outset rgb(0, 0, 0);
+          background-color: whitesmoke;
+          border-radius: 25px;
+          /* Adjust input field width */
+          width: 300px;
+          padding: 10px;
+          outline: none;
+        }
+      </style>
+      <div class="search-bar">
         <!-- Search input -->
         <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala" style="resize: none;">
         <!-- Rest of your search bar content -->
@@ -576,6 +618,14 @@
         }
       }
     </script>
+    <style>
+      #container_scrolling_for_the_side_nav {
+        position: fixed; /* Adjust position to fixed */
+        top: 140px; /* Adjust based on the header's height */
+        left: 0; /* Position at the left */
+        z-index: 9998; /* Ensure it appears below the header */
+      }
+    </style>
     <div id="container_scrolling_for_the_side_nav" class="container">
       <style>
         .sidenav {
@@ -690,6 +740,24 @@
           transform: translate(-50%, -50%);
           font-size: 14px;
           color: black;
+        }
+        .trail {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: white;
+          border-radius: 30px;
+          width: auto;
+          height: auto;
+          opacity: 1;
+          transition: opacity 3s;
+          z-index: 9999; /* Ensure it appears above other elements */
+        }
+        @keyframes fadeOut {
+          from { opacity: 0.8; }
+          to { opacity: 0; }
         }
       </style>
     <div class="openTriangle" onclick="toggleNav()">
@@ -822,13 +890,19 @@
         xhttp.send();
       }
       function showForm(formId) {
-        var forms = document.getElementsByClassName("form-container");
-        for (var i = 0; i < forms.length; i++) {
-          forms[i].style.display = "none";
-        }
-        document.getElementById(formId).style.display = "block";
-        openNav();
+      var forms = document.getElementsByClassName("form-container");
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
       }
+      document.getElementById(formId).style.display = "block";
+      openNav();
+      }
+      function closeForm() {
+      var form = document.getElementById("InregistrareForm");
+      if (form) {
+        form.style.display = "none";
+      }
+    }
     </script>
     <script>
       var urls = [
@@ -1005,53 +1079,53 @@
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <div class="dropdown" style="border: 1px groove black; width: auto; height: 100px; border-radius: 20px; bottom: 20px;">
         <button class="dropbtn" id="DROPBTN_Select a Menu">Select a Menu</button>
-          <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
-            <div class="container-content-Menu-produse-1" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+          <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="display:inline-block; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
+            <div class="container-content-Menu-produse-1" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element" >
-                <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" style="text-decoration:wavy; border: 2px solid black;" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
+                <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" style="text-decoration:wavy; border: 2px solid black; width: auto;" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-2" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-2" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-3" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-3" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-4" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-4" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
             <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
             </div>
             </div>
-            <div class="container-content-Menu-produse-5" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-5" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-6" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-6" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-7" style="width: 120px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-7" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-8" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-8" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 8)" onmouseout="removeTrail(this)">Meniu Produse 8</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-9" style="width: 115px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+            <div class="container-content-Menu-produse-9" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
               </div>
             </div>
-            <div class="container-content-Menu-produse-10" style="width: 123px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979;">
+            <div class="container-content-Menu-produse-10" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979;">
               <div class="trail-element">
                 <a href="http://192.168.100.53:8081/Meniu_Produse_10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" style="text-decoration:wavy; border: 2px solid black" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
               </div>
@@ -1301,7 +1375,7 @@
             </style>
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
-              <a href="\WebSite/ComputerLaptop_WebSite/Acasapage/Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
+              <a href="http://192.168.100.53:8081/Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
               <style>
                 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
                   list-style-type: none;
@@ -1437,18 +1511,18 @@
         <div class="menu-container_categories" id="Menu_Categories">
           <ol class="menu-ordered_list_2" id="meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
-              <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii" style="text-decoration: wavy blue;">Categorii Produse
+              <a href="http://192.168.100.53:8081/WebSite/ComputerLaptop_WebSite/ProduseCategorii" style="text-decoration: wavy blue;">Categorii Produse
                 <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown"> 
                   <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
-                    <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-Cafea-1/Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
+                    <a href="http://192.168.100.53:8081/Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
                     </a>
                   </div>
                   <div class="li_categoria_2_lista" id="Categoria_2_tip_lista">
-                    <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-IceCoffe-2/Categoria-2-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 2
+                    <a href="http://192.168.100.53:8081/Categoria-2-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 2
                     </a>
                   </div>
                   <div class="li_categoria_3_lista" id="Categoria_3_tip_lista">
-                    <a href="\WebSite/ComputerLaptop_WebSite/ProduseCategorii/Produse-Categoria-Espresso-3/Categoria-3-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 3
+                    <a href="http://192.168.100.53:8081/Categoria-3-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 3
                     </a>
                   </div>
                 </ol>
@@ -1456,53 +1530,84 @@
             </li>
           </ol>
         </div>
-        <style>
-          #menu_produse_top {
-            border: 1px #ffffff;
-            border-width: 1px;
-            border-style: groove;
-            border-radius: 20px;
-            box-sizing: content-box;
-            width: 100px;
-            height: 100px;
-            left: 130px;
-            bottom: 100px;
-            margin-left: 0px;
-            margin-right: auto;
-            list-style-type: none;
-            position: relative;
-            display: inline-block;
-            background: linear-gradient(35deg, #ffffff 27%, rgb(245, 255, 63)66%, rgb(255, 255, 255) 75%);
-            animation: flowWaves 1s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
-            margin-bottom: 0px;
-          }
-          </style>
+          <style>
+            #menu_produse_top {
+              border: 1px groove #ffffff; /* Changed border shorthand for consistency */
+              border-radius: 20px;
+              width: 100px;
+              height: 100px;
+              position: relative;
+              display: inline-block;
+              background: linear-gradient(35deg, #ffffff 27%, rgb(255, 229, 59) 66%, rgb(255, 255, 255) 75%);
+              animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+              margin-left: auto;
+              margin-right: 300px;
+            }
+            .menu_container_1_produse_de_top .menu-container_2_ordered_list {
+              list-style-type: none;
+            }
+            .dropdown-continut_lista_1 {
+              position: relative;
+            }
+            .dropdown-content_imagini_1 {
+              display: none;
+              position: absolute;
+              /* Adjusted left position */
+              left: 100px;
+              /* Center the dropdown horizontally */
+              transform: translateX(-50%); 
+              top: calc(100% + 10px);
+              padding: 39px;
+              background-blend-mode: color-dodge;
+              background: transparent;
+              border-radius: 30px;
+              z-index: 1;
+            }
+          
+            .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+              /* Show on hover */
+              display: block; 
+            }
+          
+            /* Consistent styling for list items and links */
+            .dropdown-content_imagini_1 .dropdown-container {
+              margin-bottom: 20px;
+              width: 230px;
+              height: 200px;
+              background-color: lightsteelblue;
+              text-align: center;
+              padding: 10px;
+              border-radius: 30px;
+
+            }
+          
+            .dropdown-content_imagini_1 img {
+              width: 100%;
+              height: auto;
+              border-radius: 30px;
+              margin-bottom: 10px;
+            }
+            .dropdown-content_imagini_1 a {
+              text-decoration: wavy blue;
+              background-color: #63c6ea;
+              border-radius: 20px;
+              padding: 2px 10px;
+              color: #fff;
+            }
+            .dropdown-content_imagini_1 p {
+              color: rgb(255, 255, 255);
+              border: 2px solid rgb(255, 255, 255);
+              border-radius: 20px;
+              padding: 2px;
+              background: #084f66;
+              margin: 0;
+            }
+        </style>
         <div class="menu_container_produse_de_top" id="menu_produse_top">
           <div class="menu_container_1_produse_de_top" id="Produsetop1">
             <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
                 <a style="text-decoration: wavy blue;">Produse de top</a>
-                <style>
-                  #dropdown-content-images1 {
-                    position: absolute;
-                    /* Using flexbox */
-                    flex-wrap: nowrap;
-                    display: none;
-                    /* Consider reducing this value */
-                    /* padding-block: 100px;  */
-                    /* padding-right: 687px;     */
-                    /* Adjust this value to reduce the top padding */
-                    padding: 39px;
-                    left: -720px;
-                    right: -382px;
-                    background-blend-mode: color-dodge;
-                    background: transparent;
-                    border-radius: 30px;
-                    /* box-shadow: 20px 8px 16px 0px rgba(0, 0, 0, 0.2); */
-                    z-index: 1;
-                    list-style-type: none;
-                  }
-                </style>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
                     <div class="dropdown-container" id="container_imagine-dropdown-1">
                       <img src="http://192.168.100.53:8081/WebSite/public/css/cele_mai_vandute_produse/bady-abbas-qJlGIllS0Zg-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="lazy">
