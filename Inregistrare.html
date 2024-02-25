@@ -14,11 +14,13 @@
       max-width: 280px;
       max-height: 700px; /* Adjusted maximum height */
       padding: 20px;
-      background: linear-gradient(135deg, #00008b, #90a9b2, #d2ae38); /* Adjusted linear gradient background */
+      /* Updated linear gradient background */
+      background: linear-gradient(135deg, #333333, #ffffff, #000000); 
       border-radius: 20px;
       margin: 0 auto;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       overflow: auto; /* Added overflow to handle content exceeding the height */
+      z-index: 1000;
     }
   
     /* Styles for the form header */
@@ -70,9 +72,12 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      pointer-events: none; /* Prevents hover effect from triggering on pseudo-element */
+      background-color: red;
+      /* Prevents hover effect from triggering on pseudo-element */
+      pointer-events: none; 
       box-shadow: 0 0 0 0px red, 0 0 0 0px blue, 0 0 0 0px white;
-      transition: box-shadow 0.5s ease; /* Added transition for smooth effect */
+      /* Added transition for smooth effect */
+      transition: box-width 0.5s ease; 
     }
     /* Hide line when leaving the input field */
     .form-container input[type="text"]:not(:hover)::after,
@@ -91,12 +96,8 @@
     /* Draw red-blue-white line when hovering over the input field */
     .form-container input[type="text"]:hover::after,
     .form-container input[type="password"]:hover::after {
-      /* Red-blue-white linear gradient */
-      border-image: linear-gradient(to right, red, blue, white); 
-      /* Border image slice */
-      border-image-slice: 1; 
-      /* Animation to draw line */
-      animation: drawLine 0.5s ease forwards; 
+      animation: drawLine 0.5s ease forwards; /* Added animation on hover */
+
     }
   
     /* Styles for the remember me checkbox */
@@ -207,6 +208,7 @@
       </div>
     </div>
   </form>
+  
   <script>
     document.getElementById('InregistrareForm').addEventListener('submit', async (event) => {
       event.preventDefault();

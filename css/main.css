@@ -213,13 +213,13 @@
         border-right: 5px rgb(255, 255, 255) groove;
         border-bottom: 5px rgb(255, 255, 255) groove;
         border-radius: 25px;
-        margin-bottom: 10px;
-        margin-bottom: 1px;
-        /* margin-top: 50px; */
-        /* border-style: ; */
         padding-top: 10px;
         width: 320px;
-    }   
+        position: fixed; /* Adjust position to fixed */
+        top: 0; /* Position at the top */
+        left: 0; /* Position at the left */
+        z-index: 9999; /* Ensure it appears above other elements */
+      }   
     #bordered_rectangle-for-design {
         border: 2px solid #000000;
         border-style: transparent;
@@ -656,12 +656,22 @@
     }
     /* Mega Menu header, if needed */
     .dropdown-content .header {
-        background: red;
+        background: red; /* Adjust background color as needed */
         padding: 2px;
         color: white;
         width: auto;
         float: none;
+        position: fixed; /* Adjust position to fixed */
+        top: 50px; /* Adjust based on the header's height */
+        left: 0; /* Position at the left */
+        z-index: 9999; /* Ensure it appears above other elements */
     }
+    #container_scrolling_for_the_side_nav {
+        position: fixed; /* Adjust position to fixed */
+        top: 140px; /* Adjust based on the header's height */
+        left: 0; /* Position at the left */
+        z-index: 9998; /* Ensure it appears below the header */
+      }
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {
         display: block;

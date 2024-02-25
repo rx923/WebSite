@@ -169,7 +169,7 @@
         .search-bar {
           left: 90px;
           width: 270px;
-          position: static;
+          position: sticky;
           padding: 1px; 
           color: rgb(0, 0, 0); 
           background-color: rgb(0, 23, 137); 
@@ -187,7 +187,7 @@
           /* Set maximum width if needed * /* 
           Adjust top position */ 
           transform: translateY(100%); 
-          transform: translateX(10%); 
+          margin-right: 40vw; 
           margin-top: 0px; 
           margin-bottom: 20px; 
           /* Use block level element */ 
@@ -468,24 +468,18 @@
       <div class="arrow-icon" onclick="toggleMenu()">&#8596;</div>
       <style>
         .menu-container {
-          position: absolute;
+          position: fixed; /* Use fixed positioning */
           background: #598e9de6;
           border-radius: 30px;
           top: 50px;
-          /* initially hide the menu */
           left: -400px; 
-          /* adjusted width */
           width: 390px; 
-          /* adjusted height */
           height: 450px; 
-          /* smooth transition when showing/hiding */
           transition: left 0.3s ease; 
-          /* optional: add shadow for depth */
           box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
-          /* ensure menu appears above other elements */
           z-index: 9990; 
         }
-        </style>
+      </style>
       <div class="menu-container">
         <!-- Close button -->
         <style>
@@ -628,36 +622,37 @@
     </style>
     <div id="container_scrolling_for_the_side_nav" class="container">
       <style>
-        .sidenav {
-          height: 180px;
-          width: 220px;
-          position: fixed;
-          z-index: 1;
-          top: 140px;
-          padding-block: 100px;
-          left: 0;
-          background: linear-gradient(to top left, #42a5e9 0%, rgb(239 84 84 / 63%) 100%);
-          overflow-x: hidden;
-          padding-top: 60px;
-          transition: 0.5s;
-          max-width: 300px;
-          max-height: 400px;
-          border-radius: 30px;
-          border: 1px darkslategray solid;
-          transition: 0.5s;
-        }
+      .sidenav {
+        height: 180px;
+        width: 220px;
+        position: fixed;
+        z-index: 1;
+        top: 140px;
+        padding-block: 100px;
+        left: 0;
+        background: linear-gradient(135deg, #333333, #cccccc, #330455); /* Linear gradient background */
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+        max-width: 300px;
+        max-height: 400px;
+        border-radius: 30px;
+        border: 1px darkslategray solid;
+        transition: 0.5s;
+      }
         .sidenav a {
           padding: 8px 8px 8px 32px;
           text-decoration: double;
           border-radius: 30px;
           font-size: 12px;
-          color: #818181;
-          background-color: #c7c400;
+          color: white;
+          background-color: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 224, 1) 50%, rgba(0, 0, 0, 1) 100%);
           display: block;
           transition: 0.3s;
           width: 220px;
           margin-top: 10px;
-       }
+          border: 1px solid #333333; /* Light black border */
+        }
         /* The side navigation menu */
         /* The navigation menu links */
         /* When you mouse over the navigation links, change their color */
@@ -747,7 +742,7 @@
           right: 0;
           bottom: 0;
           left: 0;
-          background-color: white;
+          background-color: rgba(255, 255, 255, 0.368);
           border-radius: 30px;
           width: auto;
           height: auto;
@@ -838,53 +833,72 @@
       }
       function closeNav() {
         var sidenav = document.getElementById("mySidenav");
-        var main = document.getElementById("main");
         var openTriangle = document.querySelector(".openTriangle");
+        var main = document.getElementById("main");
 
         if (sidenav.classList.contains("sideNavOpen")) {
-          sidenav.style.width = "0";
-          main.style.marginLeft = "0";
-          document.body.style.backgroundColor = "white";
-          sidenav.classList.remove("sideNavOpen");
-          // right-pointing arrow
-          openTriangle.innerHTML = "&#9658;";
+            // Create a white trail effect
+            var trail = document.createElement("div");
+            trail.classList.add("trail");
+            document.body.appendChild(trail);
 
-          // Reset to main triangle form after a delay
-          setTimeout(function () {
-            // main triangle form
+            setTimeout(function () {
+                trail.style.opacity = "0";
+                setTimeout(function () {
+                    trail.remove();
+                }, 3000); // Fade out time
+            }, 100); // Delay before starting to fade out
+
+            // Play guitar sound
+            var audio = new Audio('light_guitar_sound.mp3');
+            audio.play();
+
+            // Close the navigation menu
+            sidenav.style.width = "0";
+            main.style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+            sidenav.classList.remove("sideNavOpen");
+            // Right-pointing arrow
             openTriangle.innerHTML = "&#9658;";
-          }, 500);
+
+            // Reset to main triangle form after a delay
+            setTimeout(function () {
+                // Main triangle form
+                openTriangle.innerHTML = "&#9658;";
+            }, 500);
         }
       }
       function loadForm(formURL, formId) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
-          if (this.readyState == 4) {
-            if (this.status == 200) {
-              document.getElementById("content").innerHTML = this.responseText;
-              if (formId) {
-                var form = document.getElementById(formId);
-                if (form) {
-                  // Add the popup class
-                  form.classList.add("form-container-popup");
-                  form.style.display = "block";
-                  // Adjust width if needed
-                  form.style.width = "300px";
-                  // Adjust height if needed
-                  form.style.height = "auto";
-                  form.style.position = "absolute";
-                  // Adjust top position as required
-                  form.style.top = "50px";
-                  // Adjust right position as required
-                  form.style.right = "50px";
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    document.getElementById("content").innerHTML = this.responseText;
+                    if (formId) {
+                        var form = document.getElementById(formId);
+                        if (form) {
+                            // Add the popup class
+                            form.classList.add("form-container-popup");
+                            form.style.display = "block";
+                            // Adjust width if needed
+                            form.style.width = "300px";
+                            // Adjust height if needed
+                            form.style.height = "auto";
+                            form.style.position = "absolute";
+                            // Adjust top position as required
+                            form.style.top = "50px";
+                            // Adjust right position as required
+                            form.style.right = "50px";
+                            // Close the side navigation menu
+                            closeNav();
+                        } else {
+                            console.error("Form element with id " + formId + " not found.");
+                        }
+                    }
                 } else {
-                  console.error("Form element with id " + formId + " not found.");
+                    console.error("Failed to load form. Status code: " + this.status);
                 }
-              }
-            } else {
-              console.error("Failed to load form. Status code: " + this.status);
             }
-          }
         };
         xhttp.open("GET", formURL, true);
         xhttp.send();
@@ -898,11 +912,12 @@
       openNav();
       }
       function closeForm() {
-      var form = document.getElementById("InregistrareForm");
-      if (form) {
-        form.style.display = "none";
+        var forms = document.getElementsByClassName("form-container");
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].style.display = "none";
+        }
+      
       }
-    }
     </script>
     <script>
       var urls = [
@@ -1328,9 +1343,9 @@
       //   adjustSizes();
       </script>
     </div>
-    <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: #048dbf95; padding-top: 100px; padding-bottom: 100px; top: 20px;">
+    <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: #048dbf95; padding-top: 0px; padding-bottom: 100px; top: 20px;">
       <div class="is-mobile-preview"></div>
-      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design">
+      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="width: fit-content;">
         <style>
           #Acasa_menu_container {
             border: 1px;
@@ -1339,15 +1354,14 @@
             border-style: groove;
             border-radius: 20px;
             /* box-sizing: content-box; */
-            width: 100px;
-            left: 10px;
+            width: 392px;
+            left: 0px;
             height: 100px;
             /* margin: 50px; */
             list-style-type: none;
             position: relative;
             display: inline-block;
-            margin-left: auto;
-            margin-right: 300px;
+            margin-bottom: 200px;
             background: linear-gradient(35deg, #ffffff 27%, rgb(255, 229, 59)66%, rgb(255, 255, 255) 75%);
             animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
             /* background-size: 200% 200%; */
@@ -1375,7 +1389,7 @@
             </style>
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
-              <a href="http://192.168.100.53:8081/Acasa.html" rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
+              <a rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
               <style>
                 .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
                   list-style-type: none;
@@ -1489,29 +1503,64 @@
         </div>
         <style>
           #Menu_Categories {
-            border: 1px #ffffff;
-            border-width: 1px;
-            border-style: groove;
+            border: 1px solid #ffffff; /* Changed border shorthand for consistency */
             border-radius: 20px;
-            box-sizing: content-box;
-            width: 100px;
+            width: 392px;
             height: 100px;
-            bottom: 102px;
-            left: 125px;
-            margin-left: 0px;
-            margin-right: auto;
-            list-style-type: none;
             position: relative;
             display: inline-block;
-            background: linear-gradient(35deg, #ffffff 27%, rgb(245, 255, 63)66%, rgb(255, 255, 255) 75%);
-            animation: flowWaves 1s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
-            margin-bottom: 0px;
+            background: linear-gradient(35deg, #ffffff 27%, rgb(255, 229, 59) 66%, rgb(255, 255, 255) 75%);
+            animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+            margin-left: auto;
+            margin-bottom: 200px;
+          }
+        
+          .menu-container_categories .menu-ordered_list_2 {
+            list-style-type: none;
+          }
+        
+          .dropdown-list_items_2 {
+            position: relative;
+          }
+        
+          .dropdown_content_ordered_list_2 {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%; /* Position it below the parent item */
+            border: 1px solid #000000;
+            border-radius: 30px;
+            min-width: 265px;
+            box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
+            background-color: white;
+            z-index: 1;
+          }
+        
+          .dropdown-list_items_2:hover .dropdown_content_ordered_list_2 {
+            display: block; /* Show on hover */
+          }
+        
+          /* Consistent styling for list items and links */
+          .dropdown_content_ordered_list_2 > div {
+            padding: 1px;
+            margin: 10px 40px;
+            height: 40px;
+            font: menu;
+          }
+        
+          .dropdown_content_ordered_list_2 a {
+            text-decoration: wavy blue;
+            text-align: center;
+            background-color: #ffed88;
+            border-radius: 20px;
+            display: block; /* Ensure links fill their container */
+            line-height: 40px; /* Center the text vertically */
           }
         </style>
         <div class="menu-container_categories" id="Menu_Categories">
           <ol class="menu-ordered_list_2" id="meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
-              <a href="http://192.168.100.53:8081/WebSite/ComputerLaptop_WebSite/ProduseCategorii" style="text-decoration: wavy blue;">Categorii Produse
+              <a style="text-decoration: wavy blue;">Categorii Produse
                 <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown"> 
                   <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
                     <a href="http://192.168.100.53:8081/Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
@@ -1610,27 +1659,27 @@
                 <a style="text-decoration: wavy blue;">Produse de top</a>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
                     <div class="dropdown-container" id="container_imagine-dropdown-1">
-                      <img src="http://192.168.100.53:8081/WebSite/public/css/cele_mai_vandute_produse/bady-abbas-qJlGIllS0Zg-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="lazy">
+                      <img src="https://images.unsplash.com/photo-1566656117208-c23e67f4ce8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="eager">
                       <em>
                         <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background-color: #63c6ea;">Produsul de top 1</a>
-                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament. Fiecare înghițitură este o călătorie senzorială ce încântă simțurile, ducându-te prin teritorii gustative variate și pline de profunzime. Experimentează o experiență deosebită, savurând fiecare pahar din universul bogat al cafelei premium.</p>
+                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
                       </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-2">
-                      <img src="\WebSite\public\css\cele_mai_vandute_produse\nick-harsell-J6MtKLtX5HM-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="lazy">
+                      <img src="https://images.unsplash.com/photo-1630248904474-a7927610a5db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="eager">
                       <em>
                         <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM " id="Produsul-de-top-2-primary" style="background-color: #63c6ea;">Produsul de top 2</a>
                           <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">
-                            Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie. Cu o combinație perfectă între cafea aromată și gheață proaspătă, această băutură revigorantă te răsfață cu fiecare înghițitură. Experimentează o simfonie de arome intense și o senzație revigorantă de prospețime, transformând fiecare moment într-o plăcere dulce și răcoritoare.
+                            Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie. 
                         </p>
                       </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-3">
-                      <img src="http://192.168.100.53:8081/WebSite/public/css/cele_mai_vandute_produse/tai-s-captures--DRC1OsqoiU-unsplash.jpg" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="lazy">
+                      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="eager">
                       <em>
                         <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" rel="noopener noreferrer" style="background-color: #63c6ea;">Produsul de top 3</a>
                           <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66;">
-                            Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase. Gustul echilibrat al cafelei se îmbină perfect cu notele subtile de scorțișoară, oferind o experiență reconfortantă și revigorantă. Bucură-te de o explozie răcoritoare de savoare și prospețime, savurând fiecare înghițitură ca pe o plimbare prin aroma dulce și condimentată a unei băuturi deosebite.
+                            Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase. 
                         </p>
                       </em>
                     </div>
@@ -1644,7 +1693,7 @@
     <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
       <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse vandute top">
         <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
-          <h3>Cele mai vandute produse</h3>
+          <h3 style="margin-top: 600px;">Cele mai vandute produse</h3>
           <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
             <div class="image-container_produse_vandute_de_top_1 glowing-background" id="container-imagine-stanga">
               <a>
@@ -1721,8 +1770,8 @@
     <!-- <script type="text/javascript" src="style.js"></script> -->
     <footer>
       <section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 600px; ">
-        <button style="width: 115px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button>
-        <button style="width: 115px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button>
+        <button style="width: 80px; margin-top: 0px; margin-left: 0px; margin-right: auto; margin-bottom: auto;">Selecteaza</button>
+        <button style="width: 80px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px;">Selecteaza</button>
       </section>
     </footer>
   </body>
