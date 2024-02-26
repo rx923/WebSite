@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require("cors");
 const path = require('path');
-const { User } = require('./public/models/users'); // Import the User model
+const { createUser } = require('./public/routes/creation_of_user_accounts');
+
 
 const HOST = '192.168.100.53';
 const PORT = process.env.PORT || 8081;
@@ -14,7 +15,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/css', express.static(path.join(__dirname, 'Plan_Afacere', 'WebSite', 'public', 'css')));
 app.use(express.static(path.join(__dirname, 'Plan_Afacere', 'WebSite', 'public')));
 
-
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, './index.html'));
 });
@@ -22,8 +22,8 @@ app.get('/', function(req, res){
 app.post('/Inregistrare.html', async (req, res) => {
     const { username, email, password } = req.body;
     try {
-        // Use the User model to create a new user
-        const newUser = await User.create({ username, email, password }); 
+        // Use the createUser function to create a new user
+        const newUser = await createUser(username, email, password); 
         res.status(201).json(newUser);
     } catch (error) {
         console.error(error);
