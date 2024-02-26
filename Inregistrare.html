@@ -184,7 +184,7 @@
   
 </head>
 <body>
-  <form action="/Inregistrare.html" id="InregistrareForm" class="form-container" method="post" formtarget="_self">
+  <form action="/" id="InregistrareForm" class="form-container" method="post" formtarget="_self">
     <div class="container_pagina_inregistrare">
       <span class="close" onclick="closeForm()">&times;</span> <!-- Close button -->
       <h2>Inregistrare</h2>
@@ -212,19 +212,19 @@
   <script>
     document.getElementById('InregistrareForm').addEventListener('submit', async (event) => {
       event.preventDefault();
-
+  
       const formData = new FormData(event.target);
-
+  
       try {
-        const response = await fetch('/Inregistrare.html', {
+        const response = await fetch('/auth/user/register', {
           method: 'POST',
           body: formData,
         });
-
+  
         if (!response.ok) {
           throw new Error('Failed to register user.');
         }
-
+  
         const data = await response.json();
         console.log('User registered successfully:', data);
       } catch (error) {

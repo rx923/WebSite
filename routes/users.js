@@ -1,5 +1,3 @@
-// ./public/models/users.js
-
 const { Sequelize, DataTypes } = require('sequelize');
 
 // Database connection configuration
@@ -18,31 +16,4 @@ const sequelize = new Sequelize({
   dialect: 'postgres' 
 });
 
-// Define the User model
-const User = sequelize.define('User', {
-  // Define the properties of the User model
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      isAlphanumeric: true,
-    }
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      isEmail: true,
-    }
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      isAlphanumeric: true,
-    }
-  }
-});
-
-// Export the User model
-module.exports = User;
+module.exports = sequelize;

@@ -7,11 +7,11 @@ const router = express.Router();
 
 
 //Defining routes for user-related functionality
-router.post('/register', async(req, res) =>{
+router.post('/r', async(req, res) =>{
     // To be written;
 });
 
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
     // To be written;
 });
 
