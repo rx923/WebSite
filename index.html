@@ -549,10 +549,10 @@
             animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
             background-size: 200% 200%;
             align-items: baseline;
-            background-color: rgba(168, 125, 79, 0.764);;
+            background-color:  white;
           }
           .glowing-background {
-            background: linear-gradient(20deg, #d8c59b 32%, rgb(112, 162, 228)70%, rgb(187, 143, 132)85%);
+            background: linear-gradient(24deg, #857147 32%, rgb(0, 65, 151)70%, rgb(143, 40, 14)85%);
             background-size: 300% 350%;
             animation: glowing 20s ease-in-out infinite;
           }
@@ -1091,13 +1091,149 @@
         return true; 
       }
     </script>
+    <style>
+      .swipe-bar {
+        position: fixed;
+        bottom: 4770px;
+        left: 0;
+        /* transform: translateY(-50%); */
+        width: 30px;
+        height: 100px;
+        background-color: #d18c8c;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+      }
+      .arrow {
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-right: 9px solid #000;
+        transition: border-right-color 0.3s ease-in-out;
+      }
+      .arrow:hover {
+        border-right-color: red;
+      }
+      /* Arrow style */
+      .swipe-bar:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 15px;
+        height: 15px;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        transition: transform 0.3s ease-in-out;
+      }
+        /* Arrow animation on hover */
+      .swipe-bar:hover:after {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+      @keyframes fadeAway {
+        0% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(2) rotate(360deg); }
+      }
+
+      .dropdown-content.fade-out {
+        animation: fadeAway 3s ease;
+      }
+
+      .dropdown-content.fade-in {
+        display: inline-block;
+        animation: none;
+      }
+      .dropdown-content {
+        display: none;
+      }
+      .dropdown-content_meniu_1si2 {
+        overflow-y: auto;
+        display: none;
+        position: fixed;
+        top: 384px;
+        left: 169px;
+        width: 230px;
+        height: 244px;
+        background: linear-gradient(60deg, rgb(176, 196, 222), rgb(128, 128, 128), rgb(255, 255, 255));
+        border-radius: 30px;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+      }
+
+      .dropdown-content_meniu_1si2 a {
+        padding: 10px 8px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #000;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .dropdown-content_meniu_1si2 a:hover {
+        background-color: #ffffff52;
+      }
+
+      .open {
+        left: 0;
+      }
+    </style>
+    <div class="swipe-bar" id="swipeBar">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+    <div id="swipeArea" style="height: 10vh; background-color: #003d57; width: 20px; height: 100px; border-radius: 30px;"></div>
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
-      <div class="dropdown" style="border: 1px groove black; width: auto; height: 100px; border-radius: 20px; bottom: 20px;">
-        <button class="dropbtn" id="DROPBTN_Select a Menu">Select a Menu</button>
-          <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="display:inline-block; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
-            <div class="container-content-Menu-produse-1" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
+      <div class="dropdown">
+        <button class="dropbtn" id="DROPBTN_Select a Menu" style="margin-bottom: 20px; position: relative; border-radius: 20px; bottom: 50px;">Select a Menu</button>
+          <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
+            <style>
+              .container-content-Menu-produse-1,
+              .container-content-Menu-produse-2,
+              .container-content-Menu-produse-3,
+              .container-content-Menu-produse-4,
+              .container-content-Menu-produse-5,
+              .container-content-Menu-produse-6,
+              .container-content-Menu-produse-7,
+              .container-content-Menu-produse-8,
+              .container-content-Menu-produse-9,
+              .container-content-Menu-produse-10{
+                background: linear-gradient(to bottom, #ffffff95, #05337085, #00000070);
+                margin-bottom: 10px;
+                width: 190px; 
+                height: 20px; 
+                padding: 20px; 
+                border: 1px groovrgb(0, 0, 0)en; 
+                border-radius: 30px;
+              }
+              .container-content-Menu-produse-1 a,
+              .container-content-Menu-produse-2 a,
+              .container-content-Menu-produse-3 a,
+              .container-content-Menu-produse-4 a,
+              .container-content-Menu-produse-5 a,
+              .container-content-Menu-produse-6 a,
+              .container-content-Menu-produse-7 a,
+              .container-content-Menu-produse-8 a,
+              .container-content-Menu-produse-9 a,
+              .container-content-Menu-produse-10 a {
+                border-radius: 30px;
+                bottom: 12px;
+                position: relative;
+                
+              }
+
+              </style>
+            <div class="container-content-Menu-produse-1">
               <div class="trail-element" >
-                <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" style="text-decoration:wavy; border: 2px solid black; width: auto;" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
+                <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
               </div>
             </div>
             <div class="container-content-Menu-produse-2" style="width: 300px; height: 20px; padding: 20px; border: 1px solid green; border-radius: 30px; background-color: #005979">
@@ -1150,48 +1286,109 @@
       </div>
     </div>
     <script>
-      function createTrail(event, number) {
-        const cursor = document.querySelector(".cursor");
-        const trail = document.createElement('div');
-        trail.classList.add('trail');
-        // Find the respective anchor element based on the number parameter
-        const link = event.target;
-        link.appendChild(trail);
-        // Add a class to apply animation
-        link.classList.add('animated-link')
-        trail.style.left = event.offsetX + 'px';
-        let opacity = 1;
-        const fadeTrail = setInterval(() => {
-          opacity -= -2; // Adjust the decrement value for speed of fade
-          trail.style.opacity = opacity;
-          trail.style.length = length;
-          if (opacity <= 0) {
-            clearInterval(fadeTrail);
+      document.addEventListener("DOMContentLoaded", function() {
+        var swipeBar = document.getElementById("swipeBar");
+        var swipeArea = document.getElementById("swipeArea");
+        var dropdownMenu = document.querySelector(".dropdown-content_meniu_1si2");
+        var dropbtn = document.getElementById("DROPBTN_Select_a_Menu");
+        var dropdownContent = document.getElementById("dropdown-content-Meniu-produse-1-10");
+        var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2, .container-content-Menu-produse-3, .container-content-Menu-produse-4, .container-content-Menu-produse-5, .container-content-Menu-produse-6, .container-content-Menu-produse-7, .container-content-Menu-produse-8, .container-content-Menu-produse-9, .container-content-Menu-produse-10");
+        var xStart = null;
+        var xEnd = null;
+    
+        swipeBar.addEventListener("click", toggleNav);
+        swipeArea.addEventListener("touchstart", handleTouchStart, false);
+        swipeArea.addEventListener("touchmove", handleTouchMove, false);
+        dropbtn.addEventListener("click", function() {
+          dropdownContent.style.display = "block";
+        });
+    
+        function handleTouchStart(event) {
+          xStart = event.touches[0].clientX;
+        }
+    
+        function handleTouchMove(event) {
+          if (!xStart) {
+            return;
+          }
+    
+          xEnd = event.touches[0].clientX;
+          var xDiff = xStart - xEnd;
+          if (xDiff > 0) { // Swiped to right
+            toggleNav();
+          }
+        }
+        function toggleNav() {
+          if (dropdownMenu.classList.contains("open")) {
+            dropdownMenu.classList.remove("open");
+          } else {
+            dropdownMenu.classList.add("open");
+          }
+        }
+    
+        // Close the side navigation when clicking outside the menu
+        window.addEventListener("click", function(event) {
+          if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
+            dropdownMenu.classList.remove("open");
+          }
+        });
+    
+        // Hide all containers by default and toggle their display on click
+        containers.forEach(function(container) {
+          container.style.display = "none";
+          container.addEventListener("click", function() {
+            if (container.style.display === "none" || container.style.display === "") {
+              container.style.display = "block";
+            } else {
+              container.style.display = "none";
+            }
+          });
+        });
+    
+        function createTrail(event, number) {
+          const cursor = document.querySelector(".cursor");
+          const trail = document.createElement('div');
+          trail.classList.add('trail');
+          // Find the respective anchor element based on the number parameter
+          const link = event.target;
+          link.appendChild(trail);
+          // Add a class to apply animation
+          link.classList.add('animated-link')
+          trail.style.left = event.offsetX + 'px';
+          let opacity = 1;
+          const fadeTrail = setInterval(() => {
+            opacity -= -2; // Adjust the decrement value for speed of fade
+            trail.style.opacity = opacity;
+            if (opacity <= 0) {
+              clearInterval(fadeTrail);
+              trail.remove();
+            }
+          }, 10); // Adjust the interval for smoother or faster fading
+          // Follow cursor on mousemove within the link
+          link.addEventListener("mousemove", (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            // Update trail position based on cursor movement
+            trail.style.left = e.pageX - link.offsetLeft + 'px';
+            trail.style.top = e.pageY - link.offsetTop + 'px';
+          });
+        }
+    
+        function removeTrail(link) {
+          // Remove trail element on mouseout
+          const trail = link.querySelector('.trail');
+          if (trail) {
             trail.remove();
           }
-        }, 10); // Adjust the interval for smoother or faster fading
-        // Follow cursor on mousemove within the link
-        link.addEventListener("mousemove", (e) => {
-          let x = e.pageX;
-          let y = e.pageY;
-          cursor.style.top = y + "px";
-          cursor.style.left = x + "px";
-          // Update trail position based on cursor movement
-          trail.style.left = e.pageX - link.offsetLeft + 'px';
-          trail.style.top = e.pageY - link.offsetTop + 'px';
-        });
-      }
-      
-      function removeTrail(link) {
-        // Remove trail element on mouseout
-        const trail = link.querySelector('.trail');
-        if (trail) {
-          trail.remove();
+          // Remove animation class on mouseout
+          link.classList.remove('animated-link');
         }
-        // Remove animation class on mouseout
-        link.classList.remove('animated-link');
-      }
+      });
     </script>
+    
+    
     <!-- Slideshow container -->
     <div class="slideshow-container" style="margin-left: 0px; margin-top: 600px; border: 1px solid rgb(255, 255, 255); width: 345px; height: 750px; top: 50px; border-radius: 30px; border-width: 10px;">
       <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto; ">
