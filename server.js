@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require("cors");
+const router = require('./views/index.js'); 
 const path = require('path');
 const { Pool } = require('pg');
-const { router } = require('./routes/index');
 const app = express();
 const PORT = process.env.PORT || 8081;
 const HOST = '192.168.100.53';
@@ -17,11 +17,14 @@ const pool = new Pool({
 });
 
 // Middleware
+app.use("/", require("./routes/pages"));
 app.use(cors());
 app.use(express.json());
 // Mount the router here
 // Assuming 'router' is correctly exported from './routes/index'
-// app.use('/', router);  
+// app.use('/', router);
+// Mount the router at '/api' base path
+app.use('/api', router); 
 app.use('/css', express.static(path.join(__dirname, 'Plan_Afacere', 'WebSite', 'public', 'css')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'routes')));
@@ -83,7 +86,7 @@ pool.connect((err, client, release) => {
 
 // Homepage route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 // Retrieve user information from the database
@@ -105,48 +108,29 @@ app.post('/reset-password', (req, res) => {
 });
 
 // Create user endpoint
-app.post('/register', async (req, res) => {
+app.post('/register', (req, res) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, password_repeat } = req.body;
 
-        // Check if email and username are provided
-        if (!email || !username) {
-            return res.status(400).json({ error: 'Email and username are required.' });
+        // Check if email, username, and password are provided
+        if (!email || !username || !password || !password_repeat) {
+            return res.status(400).json({ error: 'Email, username, and password are required.' });
         }
 
-        // Check if the email or username already exists
-        const existingUser = await pool.query(`
-            SELECT * FROM users 
-            WHERE email = $1 OR username = $2
-        `, [email, username]);
-        
-        if (existingUser.rows.length > 0) {
-            if (existingUser.rows[0].email === email) {
-                return res.status(400).json({ error: 'An account with this email already exists.' });
-            } else {
-                return res.status(400).json({ error: 'This username is already taken.' });
-            }
+        // Check if passwords match
+        if (password !== password_repeat) {
+            return res.status(400).json({ error: 'Passwords do not match.' });
         }
 
-        // Create user in the database using createUser function
-        // Note: You may need to modify this part based on your actual implementation
-        // const newUser = await createUser(username, email, password);
-        const newUser = {}; // Placeholder for creating new user
-
-        console.log('User Created successfully:', newUser);
-
-        // Render a success page with the newly created user
-        // Note: You need to have a rendering engine set up for res.render to work
-        res.render('registration_success', { user: newUser });
+        // Send a JSON response indicating success
+        res.status(201).json({ message: 'User registration request received.', username, email });
     } catch (error) {
-        console.error('Error creating user:', error.message);
+        console.error('Error processing registration request:', error.message);
 
-        // Render an error page with the error message
-        // Note: You need to have a rendering engine set up for res.render to work
-        res.render('registration_error', { error: error.message });
+        // Send a JSON response indicating error
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-  
 
 app.listen(PORT, HOST, () => {
   console.log(`Server is listening on http://${HOST}:${PORT}`);

@@ -1,18 +1,23 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const { createUser, User } = require('./creation_of_user_accounts');
-
-
-
-const app = express();
 const router = express.Router();
+const bodyParser = require('body-parser');
+const cookie = require('cookie-parser');
+const path = require('path');
+const cors = require('cors'); // Import cors module
+const { createUser, User } = require('../routes/creation_of_user_accounts');
 
+app.set("views", "./views");
+app.use(cookie());
+app.use(express.json());
+app.use("/api", require("./controllers/auth"));
 
-app.use(bodyParser.json());
+// Middleware
+// Use cors middleware to handle CORS
+router.use(cors()); 
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+router.use(bodyParser.json());
+router.use(express.json());
+router.use(express.static(path.join(__dirname, 'public')));
 
 // Route to handle user registration
 router.post('/register', async (req, res) => {
@@ -41,16 +46,12 @@ router.post('/register', async (req, res) => {
     }
 });
 
-
 // Define other routes
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
+router.get('/routes', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'WebSite', 'routes', 'index.js'))
+})
 
-// Use the router middleware
-app.use('/', router);
-
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
-module.exports = { app, router };
+module.exports = router;

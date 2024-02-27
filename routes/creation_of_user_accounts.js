@@ -1,6 +1,4 @@
 const { Sequelize, DataTypes, ValidationError } = require('sequelize');
-// Import the Sequelize instance
-const { sequelize } = require('./users');
 
 // Initialize Sequelize with PostgreSQL credentials
 const sequelize = new Sequelize(
@@ -36,7 +34,8 @@ const User = sequelize.define('user', {
       allowNull: false,
       validate: {
           isAlphanumeric: true,
-          len: [6, 20] // Password must be between 6 and 20 characters
+          // Password must be between 6 and 20 characters
+          len: [6, 20] 
       }
   },
   created_at: { 
