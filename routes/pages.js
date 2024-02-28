@@ -1,9 +1,10 @@
 const express = require("express");
-const authController = require("../controllers/auth.js");
+const authController = require("../controllers/auth");
+const authController = require("../controllers/authController");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { promisify } = require("util");
-const pool = require("../db_config");
+const pool = require("./db_config");
 const path = require("path"); // Added path module for file operations
 
 // Define the register function
@@ -59,8 +60,7 @@ exports.logout = (req, res) => {
 const router = express.Router();
 
 router.post('/Inregistrare', authController.register);
-router.post('/Logare', authController.login);
-router.post('/login', authController.login);
-router.get('/logout', authController.logout);
+router.post('/Logare.html', authController.login);
+router.get('/Logout', authController.logout);
 
 module.exports = router;

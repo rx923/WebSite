@@ -100,8 +100,7 @@ exports.logout = (req, res) => {
 const router = express.Router();
 
 router.post('/Inregistrare.html', authController.register);
-router.post('/Logare.html', authController.register);
-router.post('/login', authController.login);
+router.post('/Logare.html', authController.login);
 router.get('/logout', authController.logout);
 
 module.exports = router;

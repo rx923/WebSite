@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const { pool, dotenv } = require('./views/index'); 
 const pg = require('pg')
 
+
 const app = express();
 const PORT = process.env.PORT || 8081;
 const HOST = '192.168.100.53';
@@ -68,4 +69,4 @@ app.listen(PORT, HOST, () => {
     console.log(`Server is listening on http://${HOST}:${PORT}`);
 });
 
-app.listen(8081)
+app.listen(8081);
