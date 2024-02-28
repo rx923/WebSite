@@ -4,11 +4,10 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const cookie = require('cookie-parser');
 const path = require('path');
-const cors = require('cors'); // Import cors module
+const cors = require('cors');
 const { createUser, User } = require('../routes/creation_of_user_accounts');
 const { pool, dotenv } = require('../routes/db_config');
-// const dotenv = require('dotenv');
-// dotenv.config();
+// const dotenv = require('dotenv').config();
 
 
 
@@ -38,9 +37,7 @@ app.listen(PORT, () => {
 });
 
 // Middleware
-// Use cors middleware to handle CORS
-router.use(cors()); 
-
+router.use(cors());
 router.use(bodyParser.json());
 router.use(express.json());
 router.use(express.static(path.join(__dirname, 'public')));
