@@ -1,34 +1,44 @@
 const express = require('express');
-const cors = require("cors");
-const router = require('./views/index.js'); 
+const cors = require('cors');
 const path = require('path');
-const { Pool } = require('pg');
-const app = express();
-const PORT = process.env.PORT || 8081;
-const HOST = '192.168.100.53';
+const dotenv = require("dotenv").config();
+const cookieParser = require("cookie-parser");
+const { pool, dotenv } = require('./views/index'); // Import pool and dotenv from index.js
 
-// Database connection configuration
-const pool = new Pool({
-  user: process.env.DB_USER || 'postgres',
-  host: process.env.DB_HOST || '192.168.100.53',
-  database: process.env.DB_NAME || 'AccountCreation',
-  password: process.env.DB_PASSWORD || 'MainAdministrator',
-  port: process.env.DB_PORT || '5432'
+const app = express();
+// const PORT = process.env.PORT || 8081;
+// const HOST = '192.168.100.53';
+
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+app.use(cookieParser());
+app.set('view engine', 'html');
+
+const db = psql.createConnection({
+    host: process.env.HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 });
 
-// Middleware
-app.use("/", require("./routes/pages"));
+db.connect((err)=>{
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('PSQL Connected')
+    }
+})
+
+
+
 app.use(cors());
 app.use(express.json());
-// Mount the router here
-// Assuming 'router' is correctly exported from './routes/index'
-// app.use('/', router);
-// Mount the router at '/api' base path
-app.use('/api', router); 
 app.use('/css', express.static(path.join(__dirname, 'Plan_Afacere', 'WebSite', 'public', 'css')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'routes')));
-
+app.use('/', require('./routes/pages'));
+app.use('/auth', require('./routes/auth'));
 
 // Test database connection
 pool.connect((err, client, release) => {
@@ -36,57 +46,14 @@ pool.connect((err, client, release) => {
         console.error('Error connecting to the database:', err);
     } else {
         console.log('Database connected successfully');
-
-        // Check if users table exists
-        client.query(`SELECT to_regclass('public.users')`, (err, result) => {
-            release(); // Release the client back to the pool
-            if (err) {
-                console.error('Error checking for users table:', err);
-            } else {
-                if (result.rows[0].to_regclass) {
-                    console.log('Table users already exists. Did not create another table.');
-                } else {
-                    // Create users table if it doesn't exist
-                    const createTableQuery = `
-                        CREATE TABLE users (
-                            id SERIAL PRIMARY KEY,
-                            username VARCHAR(200) NOT NULL,
-                            password VARCHAR(200) NOT NULL,
-                            email VARCHAR(200) NOT NULL,
-                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                        );
-                        
-                        CREATE OR REPLACE FUNCTION update_timestamp()
-                        RETURNS TRIGGER AS $$
-                        BEGIN
-                            NEW.updated_at = CURRENT_TIMESTAMP;
-                            RETURN NEW;
-                        END;
-                        $$ LANGUAGE plpgsql;
-                        
-                        CREATE TRIGGER users_update_trigger
-                        BEFORE UPDATE ON users
-                        FOR EACH ROW
-                        EXECUTE FUNCTION update_timestamp();
-                    `;
-
-                    client.query(createTableQuery, (err, result) => {
-                        if (err) {
-                            console.error('Error creating users table:', err);
-                        } else {
-                            console.log('Users table created successfully', result);
-                        }
-                    });
-                }
-            }
-        });
+        // Release the client back to the pool
+        release();
     }
 });
 
 // Homepage route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/index.html'));
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 // Retrieve user information from the database
@@ -103,8 +70,8 @@ app.get('/users', (req, res) => {
 
 // Password reset endpoint (example)
 app.post('/reset-password', (req, res) => {
-  // Handle password reset logic here
-  res.send('Password reset functionality will be implemented here');
+    // Handle password reset logic here
+    res.send('Password reset functionality will be implemented here');
 });
 
 // Create user endpoint
@@ -135,3 +102,5 @@ app.post('/register', (req, res) => {
 app.listen(PORT, HOST, () => {
   console.log(`Server is listening on http://${HOST}:${PORT}`);
 });
+
+app.listen(8081)
