@@ -1,9 +1,7 @@
+const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
-
 const router = express.Router();
 const authController = require("../controllers/auth");
-
-
 
 // Initialize Sequelize instance
 const sequelize = new Sequelize({
@@ -70,9 +68,8 @@ sequelize.sync()
         console.error('Unable to synchronize User table:', err);
     });
 
-
+// Routes
 router.post('/Inregistrare.html', authController.register);
-
 router.post('/Logare.html', authController.login);
 router.post('/Logout.html', authController.logout);
 
