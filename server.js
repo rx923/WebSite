@@ -10,13 +10,28 @@ const pg = require('pg')
 
 const app = express();
 const PORT = process.env.PORT || 8081;
+// const dotenv = require("dotenv").config();
+// Import pool and dotenv from index.js
+
+
 const HOST = '192.168.100.53';
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'routes')));
+app.use('/', require('./routes/pages'));
+app.use('/auth', require('./routes/auth'));
+app.use('/css', express.static(path.join(__dirname, 'Plan_Afacere', 'WebSite', 'public', 'css')));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(cookieParser());
 app.set('view engine', 'html');
+
+
+const pagesRouter = require('./routes/pages');
+const authRouter = require('./routes/auth');
+
+app.use('/', pagesRouter);
+app.use('auth', authRouter);
 
 const db = new pg.Pool({
     host: process.env.HOST,
@@ -29,22 +44,11 @@ db.connect((err)=>{
     if (err) {
         console.log(err);
     } else {
-        console.log('PG Connected')
+        console.log('PG Connected');
     }
 })
-
-
-
-app.use(cors());
-app.use(express.json());
-app.use('/css', express.static(path.join(__dirname, 'Plan_Afacere', 'WebSite', 'public', 'css')));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'routes')));
-app.use('/', require('./routes/pages'));
-app.use('/auth', require('./routes/auth'));
-
 // Test database connection
-pool.connect((err, client, release) => {
+pool.connect((err, _, release) => {
     if (err) {
         console.error('Error connecting to the database:', err);
     } else {

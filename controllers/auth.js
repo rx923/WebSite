@@ -1,49 +1,46 @@
 const express = require("express");
-const authController = require("../controllers/auth.js");
+const app = express();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+// Correct path to userControllers file
+const usersController = require("../controllers/userController.js"); 
+// Adjust the path as needed
+const authController = require("./route/authController"); 
+
 const { promisify } = require("util");
 
 
+app.use(express.json());
+
+// Define the register function
 // Define the register function
 exports.register = async (req, res) => {
-    console.log(req.body);
-    const { name, email, password, passwordConfirm } = req.body;
+    // Extract data from the request body
+    const { name, email, password } = req.body;
 
     try {
-        // Check if email already exists in the database
-        const emailCheck = await db.query('SELECT email FROM users WHERE email = $1', [email]);
-        
-        // If email already exists, return an error message
-        if (emailCheck.rows.length > 0) {
-            return res.sendFile(__dirname + "/request.html", {
-                message: 'The email is already in use'
-            });
-        } 
-        
-        // Check if password and passwordConfirm match
-        if (password !== passwordConfirm) {
-            return res.sendFile(__dirname + "/request.html", {
-                message: 'Passwords do not match'
-            });
+        // Check if the email already exists in the database
+        const existingUser = await User.findOne({ where: { email } });
+        if (existingUser) {
+            // If the email already exists, return an error response
+            return res.status(400).json({ message: 'Email already exists' });
         }
 
         // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 8);
-        console.log(hashedPassword);
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Insert user into the database
-        await db.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, hashedPassword]);
+        // Create a new user in the database
+        const newUser = await User.create({ name, email, password: hashedPassword });
 
-        // Redirect to a success page
-        return res.sendFile(__dirname + "/request.html", {
-            message: 'User registered'
-        });
+        // Return a success response
+        return res.status(201).json({ message: 'User registered successfully', user: newUser });
     } catch (error) {
-        console.error(error);
-        return res.status(500).send('Internal Server Error');
+        // If an error occurs, log the error and return an error response
+        console.error('Error registering user:', error);
+        return res.status(500).json({ message: 'Internal server error' });
     }
 };
+
 
 // Define the login function
 exports.login = async (req, res) => {
@@ -99,8 +96,8 @@ exports.logout = (req, res) => {
 
 const router = express.Router();
 
-router.post('/Inregistrare.html', authController.register);
-router.post('/Logare.html', authController.login);
+router.post('./public/Inregistrare.html', usersController.register);
+router.post('/public/Logare.html', authController.login);
 router.get('/logout', authController.logout);
 
 module.exports = router;

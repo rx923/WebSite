@@ -57,9 +57,8 @@ exports.logout = (req, res) => {
     // Your logout function implementation
 };
 
-const router = express.Router();
 
-router.post('/Inregistrare', authController.register);
+router.post('../WebSite/public/Inregistrare.html', authController.register);
 router.post('/Logare.html', authController.login);
 router.get('/Logout', authController.logout);
 
