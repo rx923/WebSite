@@ -43,3 +43,5 @@ pool.connect((err, client, release) => {
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
+// Exporting app
+module.exports = app; 

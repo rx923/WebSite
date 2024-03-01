@@ -1,14 +1,13 @@
 const express = require("express");
-const app = express();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 const usersController = require("../controllers/userController.js");
-// Adjust the path as needed
-const router = express.Router();
+const app = require('../server');
+
 
 const { promisify } = require("util");
-app.use(express.json());
+// app.use(express.json());
 
 // Define a function that takes app as a parameter
 module.exports = function(app) {
