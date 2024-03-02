@@ -1,5 +1,8 @@
+// users.js
+
 const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
+const { User: UserModel } = require("../models/users.js");
 const router = express.Router();
 const authController = require("../controllers/auth");
 
@@ -40,7 +43,7 @@ sequelize.authenticate()
 // Function to create a new user
 const createUser = async (userData) => {
     try {
-        const newUser = await User.create(userData);
+        const newUser = await UserModel.create(userData);
         console.log('New user created:', newUser.username);
         return newUser;
     } catch (error) {
@@ -51,7 +54,7 @@ const createUser = async (userData) => {
 
 // Function to check if username or email already exist in the database
 const checkExistingUser = async (username, email) => {
-    const existingUser = await User.findOne({
+    const existingUser = await UserModel.findOne({
         where: {
             [Sequelize.Op.or]: [{ username }, { email }]
         }
@@ -76,13 +79,13 @@ const logout = (req, res) => {
     });
 
     res.status(200).redirect('/');
-}
+};
 
-// Routes
-router.post('/Inregistrare.html', authController.register);
-router.post('/Logare.html', authController.login);
+// Routes with callback functions
+// router.post('/Inregistrare.html', authController.register);
+// router.post('/Logare.html', authController.login);
 // Assign the logout function to the route
-router.post('/Logout.html', logout); 
+// router.post('/Logout.html', logout); 
 
 // Export the User model and functions
 // Corrected the export name
