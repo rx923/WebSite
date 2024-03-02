@@ -8,6 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 8081;
 const authRoutes = require('./controllers/auth');
 const { createUser } = require('./routes/creation_of_user_accounts')
+const { login } = require('./controllers/auth');
+
 
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));
@@ -18,7 +20,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 // Use authRoutes as middleware
-app.use('/', authRoutes); 
+// app.use('/', authRoutes); 
 
 // Routes
 // const pagesRouter = require('./routes/pages');
@@ -47,18 +49,18 @@ app.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
     try { 
         const newUser = await createUser(username, email, password);
-
         console.log("Account successfully created: ", newUser);
         res.send("Account successfully created.");
-
     } catch(error) {
         console.error("Error creating user:", error.message);
         res.status(500).send("Error creating user.");
     }
 });
-    
+
+// Route handler for user login
 app.post('/login', async (req, res) => {
-    try{
+    try {
+        // Call the login function passing the request and response objects
         await login(req, res);
     } catch (error) {
         console.error('Error handling login: ', error);
@@ -69,7 +71,8 @@ app.post('/login', async (req, res) => {
 app.post('/login', async (req, res) => {
     try {
         // Call the login function passing the request and response objects
-        await login(req, res); // Assuming login function is available here
+        // Assuming login function is available here
+        await login(req, res); 
     } catch (error) {
         console.error('Error handling login: ', error);
         res.status(500).json({ message: 'Internal server error'});
