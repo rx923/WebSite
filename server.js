@@ -17,7 +17,8 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
-app.use('/', authRoutes);
+// Use authRoutes as middleware
+app.use('/', authRoutes); 
 
 // Routes
 // const pagesRouter = require('./routes/pages');
@@ -41,9 +42,10 @@ pool.connect((err, client, release) => {
     }
 });
 
+// Route handler for user registration
 app.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
-    try{ 
+    try { 
         const newUser = await createUser(username, email, password);
 
         console.log("Account successfully created: ", newUser);
@@ -64,15 +66,21 @@ app.post('/login', async (req, res) => {
     }
 });
 
-
-
-
-// app.post('/register', require('./routes/user_authentication_routes').register);
+app.post('/login', async (req, res) => {
+    try {
+        // Call the login function passing the request and response objects
+        await login(req, res); // Assuming login function is available here
+    } catch (error) {
+        console.error('Error handling login: ', error);
+        res.status(500).json({ message: 'Internal server error'});
+    }
+});
 
 
 // Server start
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
+
 // Exporting app
 module.exports = app;
