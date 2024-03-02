@@ -3,13 +3,18 @@ const cors = require('cors');
 const path = require('path');
 const cookieParser = require("cookie-parser");
 const pool = require('./routes/db_config').pool;
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 8081;
-const authRoutes = require('./controllers/auth')(app);
+const authRoutes = require('./controllers/auth');
+const { createUser } = require('./routes/creation_of_user_accounts')
+
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 app.use('/', authRoutes);
@@ -36,6 +41,32 @@ pool.connect((err, client, release) => {
     }
 });
 
+app.post('/register', async (req, res) => {
+    const { username, email, password } = req.body;
+    try{ 
+        const newUser = await createUser(username, email, password);
+
+        console.log("Account successfully created: ", newUser);
+        res.send("Account successfully created.");
+
+    } catch(error) {
+        console.error("Error creating user:", error.message);
+        res.status(500).send("Error creating user.");
+    }
+});
+    
+app.post('/login', async (req, res) => {
+    try{
+        await login(req, res);
+    } catch (error) {
+        console.error('Error handling login: ', error);
+        res.status(500).json({ message: 'Internal server error'});
+    }
+});
+
+
+
+
 // app.post('/register', require('./routes/user_authentication_routes').register);
 
 
@@ -44,4 +75,4 @@ app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
 // Exporting app
-module.exports = app; 
+module.exports = app;

@@ -68,10 +68,22 @@ sequelize.sync()
         console.error('Unable to synchronize User table:', err);
     });
 
+// Define the logout function
+const logout = (req, res) => {
+    res.cookie('userSave', 'logout', {
+        httpOnly: true,
+        expires: new Date(0)
+    });
+
+    res.status(200).redirect('/');
+}
+
 // Routes
 router.post('/Inregistrare.html', authController.register);
 router.post('/Logare.html', authController.login);
-router.post('/Logout.html', authController.logout);
+// Assign the logout function to the route
+router.post('/Logout.html', logout); 
 
 // Export the User model and functions
-module.exports = { User, createUser, checkExistingUser };
+// Corrected the export name
+module.exports = { User, createUser, checkExistingUser, router };
