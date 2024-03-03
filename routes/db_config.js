@@ -12,3 +12,19 @@ const pool = new Pool({
 });
 
 module.exports = { pool };
+
+const synchronizeUserTable = () => {
+
+const synchronizeUserTable = async () => {
+  try {
+      // Synchronize the User table
+      await User.sync();
+      console.log('User table synchronized successfully.');
+  } catch (error) {
+      console.error('Unable to synchronize User table:', error);
+  }
+};
+
+cron.schedule('*/10 * * * * ', synchronizeUserTable);
+
+module.exports = {pool};
