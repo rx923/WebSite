@@ -8,8 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 8081;
 const authRoutes = require('./controllers/auth');
 const { createUser } = require('./routes/creation_of_user_accounts')
-const { login } = require('./controllers/auth');
-
+const login = require('./controllers/login');
+const loggedIn = require('./controllers/loggedin.js')
 
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));
@@ -19,6 +19,12 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
+app.use(loggedIn);
+
+app.get('/protected-route', (req, res) => {
+    res.send('You are logged in!');
+});
+
 // Use authRoutes as middleware
 // app.use('/', authRoutes); 
 
@@ -41,6 +47,34 @@ pool.connect((err, client, release) => {
         console.log('Database connected successfully');
         // Release the client back to the pool
         release();
+    }
+});
+
+// Route handler for user login
+app.post('/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+
+        // Perform additional validation here, such as checking the username and password against the database
+        const user = await User.findOne({ where: { username: username } });
+        if (!user || !bcrypt.compareSync(password, user.password)) {
+            // If username or password is incorrect, return 401 Unauthorized
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+
+        // Assuming login function returns true if login is successful
+        const loggedIn = await login(req, res);
+
+        if (loggedIn) {
+            // Redirect the user to the logged_in.html page upon successful login
+            res.redirect('./public/logged_in.html');
+        } else {
+            // Handle unsuccessful login (e.g., incorrect credentials)
+            res.status(401).json({ message: 'Unauthorized' });
+        }
+    } catch (error) {
+        console.error('Error handling login: ', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
 });
 
