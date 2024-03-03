@@ -1,7 +1,8 @@
 const { Pool } = require('pg');
 const dotenv = require('dotenv');
-
+const cron = require('cron');
 dotenv.config();
+
 
 const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
@@ -11,9 +12,7 @@ const pool = new Pool({
   port: process.env.DB_PORT || '5432'
 });
 
-module.exports = { pool };
 
-const synchronizeUserTable = () => {
 
 const synchronizeUserTable = async () => {
   try {
@@ -25,6 +24,6 @@ const synchronizeUserTable = async () => {
   }
 };
 
-cron.schedule('*/10 * * * * ', synchronizeUserTable);
+cron.schedule('*/1 * * * * ', synchronizeUserTable);
 
-module.exports = {pool};
+module.exports = { pool, synchronizeUserTable };
