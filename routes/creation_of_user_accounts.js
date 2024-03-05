@@ -48,7 +48,8 @@ const User = sequelize.define('user', {
       allowNull: false,
       defaultValue: DataTypes.NOW
   }
-}, {
+}, 
+{
   tableName: 'users', 
   // Disable Sequelize's automatic timestamp fields
   timestamps: false 

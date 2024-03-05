@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const session = require('express-session');
+const pgSession = require('connect-pg-simple')(session);
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const User = require('../models/userModel');
 const path = require('path');
-
+const { pool } = require('../routes/db_config');
 const app = express();
 
 // Generate a random secret for session
@@ -15,12 +16,16 @@ const generateRandomSecret = () => {
 
 // Configure session
 app.use(session({
+    store: new pgSession ({
+        pool:pool,
+        tablename: 'sessions'
+    }),
     // Use randomly generated secret
     secret: generateRandomSecret(), 
     resave: false,
     saveUninitialized: true,
     // Session duration: 10 minutes (in milliseconds)
-    cookie: { maxAge: 60000 } 
+    cookie: { secure: false } 
 }));
 
 // Middleware to check if user is authenticated
@@ -39,7 +44,11 @@ router.get('/protected', isAuthenticated, async (req, res) => {
 
 // Route handler for user login
 router.get('/logged_in', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/logged_in.html'));
+    // Example: Get the username from the request
+    const username = req.session.user.username;
+
+    // Example: Send the logged_in.html file along with the username as a query parameter
+    res.sendFile(path.join(__dirname, './public/logged_in.html') + `?username=${username}`);
 });
 
 // Route handler for user logout
