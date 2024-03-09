@@ -1,32 +1,58 @@
 const bcrypt = require('bcryptjs');
+const { generateRandomSecret } = require('./loggedin');
 const User = require('../models/userModel.js');
+const session = require('express-session');
+const pgSession = require('connect-pg-simple')(session);
+const { pool } = require('../routes/db_config');
+const express = require('express');
+const { response } = require('../server.js');
+const crypto = require('crypto');
+const router = express.Router();
 
-//Defining the login function
+// Configure session
+const sessionMiddleware = session({
+    store: new pgSession({
+        pool: pool,
+        tablename: 'sessions'
+    }),
+    // Use randomly generated secret
+    secret: generateRandomSecret(),
+    resave: false,
+    saveUninitialized: true,
+    // Session duration: 10 minutes (in milliseconds)
+    cookie: { secure: false }
+});
 
-// login function
-const login = async (req) => {
+// Add session middleware to router
+router.use(sessionMiddleware);
+
+// Login function
+const login = async (username, password) => {
     try {
-        const { uname, password } = req.body;
-        if (!uname || !password) {
-            return false;
+        // Ensure both username and password are provided
+        if (!username || !password) {
+            return { success: false, message: "Username and password are required." };
         }
-        // Find the user in the database by username
-        const user = await User.findOne({ where: { username: uname } });
+
+        // Find the user by username
+        const user = await User.findOne({ where: { username } });
+
         if (!user) {
-            return false; // User not found
+            return { success: false, message: "User not found." };
         }
-        // Check if the password matches
+
+        // Validate the password
         const isPasswordValid = await bcrypt.compare(password, user.password);
+
         if (!isPasswordValid) {
-            return false; // Password incorrect
+            return { success: false, message: "Incorrect password." };
         }
-        // If username and password match, return true for successful login
-        return true;
+
+        // If both username and password are provided and validated, return success
+        return { success: true, user };
     } catch (err) {
         console.error('Error during login:', err);
-        return false;
+        return { success: false, message: "Internal server error." };
     }
 };
-
-
-module.exports = login;
+module.exports = { sessionMiddleware, login };

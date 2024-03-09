@@ -33,12 +33,37 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: false
     }
+}, 
+{
+    // Disable Sequelize's automatic timestamp fields
+    timestamps: false 
 });
 
+// Method to retrieve the user's ID by username:
+User.findByUsername = async(username) => {
+    try{
+        const user = await User.findOne({ where: { username }});
+        console.log(user);
+        if (user) {
+            return user.id;
+        } else {
+            return null;
+
+        }
+    } catch (error){
+        console.error('Error retrieving user ID by username: ', error);
+        throw error;
+    }
+}
+
+
+
 // Sync the model with the database
-sequelize.sync()
-    .then(() => {
+sequelize.sync({ logging: console.log })
+    .then(async () => {
         console.log('User model synchronized successfully.');
+        const users = await User.findAll();
+        console.log('Users stored in the database: ', users);
     })
     .catch((error) => {
         console.error('Unable to synchronize User model:', error);

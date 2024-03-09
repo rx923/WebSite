@@ -1,168 +1,177 @@
 const express = require('express');
-const cors = require('cors');
 const path = require('path');
+const cors = require('cors');
 const http = require('http');
 const session = require('express-session');
-const { spawn } = require('child_process');
-const WebSocket = require('ws');
-const { User, sequelize } = require('./models/userModel');
-const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
-const bcrypt = require('bcryptjs');
-const { pool } = require('./routes/db_config');
-const authRoutes = require('./controllers/auth');
-// Removed the import of User here
-const { createUser } = require('./routes/creation_of_user_accounts'); 
-const login = require('./controllers/login');
-const loggedIn = require('./controllers/loggedin.js');
-// const { isAuthenticated } = require('./controllers/auth.js');
-const userModels = require('./models/userModel.js');
-const crypto = require('crypto');
-const app = express();
+const cookieParser = require('cookie-parser');
+const WebSocket = require('ws');
+const { pool, configureSession, initializeDatabase } = require('./routes/db_config'); // Import configureSession and initializeDatabase
+const pagesRouter = require('./routes/pages');
+const { User } = require('./models/userModel.js');
+const isLoggedIn = require('./controllers/loggedin');
+const handleLogin = require('./handleLogin');
+const isAuthenticated = require('./controllers/isAuthenticated');
+const loginController = require('./controllers/login')
 const PORT = process.env.PORT || 8081;
-const { initializeDatabase } = require('./routes/db_config');
+const { generateRandomSecret } = require('./sessionConfig'); 
+const app = express();
+const secretKey = generateRandomSecret();
 
-// Middleware
+
+app.use(session({
+    secret: secretKey,
+    resave: false,
+    saveUninitialized: true
+}));
+
+// Initialize session middleware
+configureSession(app);
+
+// Initialize database
+initializeDatabase();
+
+// Use routers
+app.use(pagesRouter);
+app.use(bodyParser.json());
+// Serve static files
 app.use(express.static(path.join(__dirname, "public")));
+
+// Parse request bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
-app.use(loggedIn);
 
-// Configuring body-parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-initializeDatabase(app);
-
-// Route to handle incoming POST requests containing user data from the Python Script
-app.post('/user-data', (req, res) => {
-    // Assuming req.body contains the user data sent from the Python script
-    const userData = req.body;
-    console.log('Received user data:', userData);
-    res.status(200).send('User data received successfully.');
-});
-
-// Define a route that triggers the execution of the Python script
-app.post('/execute-python-script', (req, res) => {
-    const requestBody = req.body;
-
-    //Logging the request body
-    console.log('Request Body', requestBody);
-    const pythonProcess = spawn('python', ['./retrieving_database_user_information/db_connecting_retrieval_credentials.py']);
-
-    pythonProcess.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
-    });
-
-    pythonProcess.stderr.on('data', (data) => {
-        console.error(`stderr: ${data}`);
-    });
-
-    pythonProcess.on('close', (code) => {
-        console.log(`Python script process exited with code ${code}`);
-    });
-
-    res.send('Python script execution triggered.');
-});
-
-//Generate a random secret for session
-const generateRandomSecret = () => {
-    return crypto.randomBytes(32).toString('hex');
-};
-
-// Session configuration for the user login:
-// Configure session middleware
-app.use(session({
-    secret: generateRandomSecret(),
-    resave: false,
-    saveUninitialized: true,
-    // Session duration: 1 minute (in milliseconds)
-    cookie: { maxAge: 60000 }
-}));
-
-const router = express.Router();
-
-const isAuthenticated = (req, res, next) => {
-    if (req.session && req.session.user) {
-        return next();
-    } else {
-        return res.status(401).json({ message: 'Unauthorized' });
-    }
-};
-
-// Route handler for the logged_in page
-app.get('/logged_in', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, './public/logged_in.html'));
-});
-
-// Database connection check
-pool.connect((err, client, release) => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-    } else {
-        console.log('Database connected successfully');
-        // Release the client back to the pool
-        release();
-    }
-});
-
-// Route handler for user login
-router.post('/login', async (req, res) => {
-    try {
-        const loggedIn = await login(req);
-        if (loggedIn) {
-            // Redirect to the logged-in page upon successful login
-            res.redirect('/logged_in');
-        } else {
-            res.status(401).json({ message: "Unauthorized" });
-        }
-    } catch (error) {
-        console.error('Error handling login: ', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
-
-app.use(router);
-
-// Route handler for user registration
+// Route for user registration
 app.post('/register', async (req, res) => {
-    const { username, email, password } = req.body;
     try {
-        const newUser = await createUser(username, email, password);
-        console.log("Account successfully created: ", newUser);
-        res.send("Account successfully created.");
+        // Check if req.body exists
+        if (!req.body) {
+            return res.status(400).json({ error: 'Request body is missing.' });
+        }
+
+        // Check if username, email, and password are provided
+        if (!req.body || !req.body.username || !req.body.email || !req.body.password) {
+            return res.status(400).json({ error: 'Username, email, and password are required.' });
+        }
+
+        const username = req.body.username;
+        const email = req.body.email;
+        const password = req.body.password;
+
+        // Check if the email already exists
+        const existingEmailUser = await User.findOne({ where: { email } });
+        if (existingEmailUser) {
+            return res.status(400).json({ error: 'An account with this email already exists.' });
+        }
+        if (password.length < 6) {
+            return res.status(400).json("Password must be longer than 6 character");
+        };
+        
+        // Check if the username is already taken
+        const existingUsernameUser = await User.findOne({ where: { username } });
+        if (existingUsernameUser) {
+            return res.status(400).json({ error: 'This username is already taken.' });
+        }
+
+        // Create user in the database
+        const newUser = await User.create({
+            username,
+            email,
+            password
+        });
+        console.log('User created:', newUser);
+
+        res.status(201).json(newUser);
     } catch (error) {
-        console.error("Error creating user:", error.message);
-        res.status(500).send("Error creating user.");
+        console.error('Error registering user:', error.message);
+        res.status(500).json({ error: 'Internal server error' });
     }
 });
 
-// Route handler for user logout
-app.post('/logout', (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            console.error('Error logging out:', err);
-            res.status(500).json({ message: 'Internal server error' });
-        } else {
-            res.redirect('/login');
+const requireAuth = (req, res, next) => {
+    if (req.session.userId) {
+        next();
+    } else {
+        res.redirect('/logged_in.html');
+    }
+}
+
+const validCredentials = async (username, password) => {
+    try {
+        const user = await User.findOne({ where: { username }});
+
+        if (!user) {
+            return false;
         }
-    });
+        console.log('Password:', password);
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        return isPasswordValid;
+    } catch (error) {
+        console.error('Error validating credentials: ', error);
+        return false;
+    }
+    
+}
+
+app.post('/login', async (req, res) => {
+    const { username, password} = req.body;
+    //Validating the user credentials
+    if (validCredentials(username, password)) {
+    try {
+        const isValid = await validCredentials(username, password);
+        if (isValid) {
+            const userId = await User.findByUsername(username);
+            console.log(userId);
+            if (userId) {
+                // Set the user ID in the session
+                req.session.userId = userId;
+                res.redirect('/dashboard');
+            } else {
+                res.render('login', {error: "User not found" });
+            }
+        } catch(error){
+            console.error('Error handling login: ', error);
+        // Set error message in session
+        req.session.error = "Internal server error";
+        // Send 500 Internal Server Error response
+        return res.status(500).send("Internal server error");
+    }
 });
 
-// Creating the HTTP server
+app.get('/dashboard', requireAuth, (req, res) => {
+    res.sendFile('/dashboard');
+})
+        
+        
+const requireAuth = (req, res, next) => {
+    if (req.session.userId) {
+        next();
+    } else {
+            // If login unsuccessful, return error message
+            return res.status(401).json({ message: result.message });
+        }
+    } catch (error) {
+        console.error('Error handling login:', error);
+        res.status(500).json({ message: 'Internal server error' });
+        } else {
+            res.redirect('/index.html');
+    }
+});
+app.use(express.static('public'));
+
+
+// Create HTTP server
 const server = http.createServer(app);
 
-// Initializing WebSocket server
+// Initialize WebSocket server
 const wss = new WebSocket.Server({ server });
 
-//WebSocket connection event handler
 wss.on('connection', (ws) => {
-    //Fetching user data from the database
     User.findAll()
         .then((users) => {
-            //Sending user data to the client
             ws.send(JSON.stringify(users));
         })
         .catch((error) => {
@@ -170,10 +179,8 @@ wss.on('connection', (ws) => {
         });
 });
 
-// Server start
+// Start server
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
-
-// Exporting app
 module.exports = app;
