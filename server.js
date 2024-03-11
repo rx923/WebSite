@@ -91,6 +91,10 @@ app.post('/register', async (req, res) => {
     }
 });
 
+
+
+
+
 const requireAuth = (req, res, next) => {
     if (req.session.userId) {
         next();
@@ -98,8 +102,12 @@ const requireAuth = (req, res, next) => {
         res.redirect('/logged_in.html');
     }
 }
+app.get('/logged_in.html', requireAuth, (req, res) => {
+    res.sendFile('/logged_in.html');
+});
 
 const validCredentials = async (username, password) => {
+    console.log(validCredentials);
     try {
         const user = await User.findOne({ where: { username }});
 
@@ -108,7 +116,9 @@ const validCredentials = async (username, password) => {
         }
         console.log('Password:', password);
         const isPasswordValid = await bcrypt.compare(password, user.password);
+        if(isPasswordValid){
         return isPasswordValid;
+        }
     } catch (error) {
         console.error('Error validating credentials: ', error);
         return false;
@@ -116,6 +126,27 @@ const validCredentials = async (username, password) => {
     
 }
 
+
+const saltRounds = 10; // Adjust the number of salt rounds as needed
+// Inside your login route handler
+app.post('/login', async (req, res) => {
+    const { username, 'password-user': password } = req.body;
+
+    try {
+        // Retrieve user from the database based on the username
+        const user = await User.findByUsername(username);
+
+        if (!user) {
+            // User not found
+            return res.status(404).send("User not found");
+        }
+
+        // Compare the provided password with the hashed password from the database
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        console.log("Password from request body: ", password);
+        console.log("Hashed password from database: ", user.password);
+
+// Inside your login route handler
 app.post('/login', async (req, res) => {
     const { username, password} = req.body;
     //Validating the user credentials
@@ -145,6 +176,7 @@ app.get('/dashboard', requireAuth, (req, res) => {
     res.sendFile('/dashboard');
 })
         
+        console.log(`Found ${usersWithPlainTextPasswords.length} users with plain text passwords.`);
         
 const requireAuth = (req, res, next) => {
     if (req.session.userId) {
@@ -153,6 +185,18 @@ const requireAuth = (req, res, next) => {
             // If login unsuccessful, return error message
             return res.status(401).json({ message: result.message });
         }
+
+        console.log('Passwords hashed successfully for existing users.');
+
+        // Write updated users to a text file
+        const updatedUsersFilePath = path.join('U:', 'WebSite', 'updated_users.txt');
+        fs.writeFileSync(updatedUsersFilePath, updatedUsers.map(user => `${user.id}, ${user.username}`).join('\n'));
+        console.log(`Updated users written to file: ${updatedUsersFilePath}`);
+
+        // Write original users to a text file
+        const originalUsersFilePath = path.join('U:', 'WebSite', 'original_users.txt');
+        fs.writeFileSync(originalUsersFilePath, usersWithPlainTextPasswords.map(user => JSON.stringify(user, null, 2)).join('\n'));
+        console.log(`Original users written to file: ${originalUsersFilePath}`);
     } catch (error) {
         console.error('Error handling login:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -163,10 +207,8 @@ const requireAuth = (req, res, next) => {
 app.use(express.static('public'));
 
 
-// Create HTTP server
 const server = http.createServer(app);
 
-// Initialize WebSocket server
 const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws) => {
@@ -183,4 +225,5 @@ wss.on('connection', (ws) => {
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
+
 module.exports = app;
