@@ -2,31 +2,33 @@ const express = require('express');
 const router = express.Router();
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
-const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const User = require('../models/userModel');
 const path = require('path');
 const { pool } = require('../routes/db_config');
-const app = express();
 
 // Generate a random secret for session
 const generateRandomSecret = () => {
     return crypto.randomBytes(32).toString('hex');
 };
+secretKey = generateRandomSecret;
 
 // Configure session
-app.use(session({
-    store: new pgSession ({
-        pool:pool,
+const sessionMiddleware = session({
+    store: new pgSession({
+        pool: pool,
         tablename: 'sessions'
     }),
     // Use randomly generated secret
-    secret: generateRandomSecret(), 
+    secret: secretKey,
     resave: false,
     saveUninitialized: true,
     // Session duration: 10 minutes (in milliseconds)
-    cookie: { secure: false } 
-}));
+    cookie: { secure: false }
+});
+
+// Add session middleware to router
+router.use(sessionMiddleware);
 
 // Middleware to check if user is authenticated
 const isAuthenticated = (req, res, next) => {
@@ -63,5 +65,23 @@ router.get('/logout', (req, res) => {
     });
 });
 
-// Export the router
-module.exports = router;
+// Function to print logged-in sessions
+const printLoggedInSessions = async (pool) => {
+    try {
+        // Query the database for active sessions
+        const activeSessions = await pool.query('SELECT * FROM sessions WHERE /* Add condition to filter active sessions */');
+
+        // Process the active sessions
+        if (activeSessions && activeSessions.rows) {
+            console.log('Active Sessions:');
+            activeSessions.rows.forEach(session => {
+                console.log(`Session ID: ${session.id}, User: ${session.user}`);
+            });
+        }
+    } catch (error) {
+        console.error('Error retrieving active sessions:', error);
+    }
+};
+
+// Export the router and session middleware along with the function to print logged-in sessions
+module.exports = { router, sessionMiddleware, printLoggedInSessions, generateRandomSecret };

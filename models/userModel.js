@@ -1,73 +1,85 @@
-const session = require('express-session');
-const http = require('http');
-const WebSocket = require('ws');
-const path = require('path');
-const bcrypt = require('bcryptjs');
-const crypto = require('crypto');
+const express = require('express');
+const router = express.Router();
 const { Sequelize, DataTypes } = require('sequelize');
+const bcrypt = require('bcryptjs');
 
-// Generate a random secret for session
-const generateRandomSecret = () => {
-    return crypto.randomBytes(32).toString('hex');
+const saltRounds = 10; // Adjust the number of salt rounds as needed
+
+const sequelize = new Sequelize({
+  dialect: 'postgres',
+  host: process.env.DB_HOST || '192.168.100.53',
+  port: process.env.DB_PORT || '5432',
+  username: process.env.DB_USER || 'postgres',
+  password: process.env.DB_PASSWORD || 'MainAdministrator',
+  database: process.env.DB_NAME || 'AccountCreation',
+});
+
+const User = sequelize.define('users', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
+  },
+  username: {
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    unique: true,
+  },
+  email: {
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: DataTypes.STRING(100),
+    allowNull: false,
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW,
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW,
+  },
+}, { tableName: 'users' });
+
+(async () => {
+  try {
+    await User.sync();
+    console.log('User table synchronized successfully.');
+  } catch (error) {
+    console.error('Error synchronizing User table:', error);
+  }
+})();
+
+const registerUser = async (username, email, password) => {
+  try {
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const newUser = await User.create({
+      username,
+      email,
+      password: hashedPassword
+    });
+    console.log('User created:', newUser);
+    return newUser;
+  } catch (error) {
+    console.error('Error registering user:', error.message);
+    throw error;
+  }
 };
 
-const sequelize = new Sequelize('AccountCreation', 'postgres', 'MainAdministrator', {
-    dialect: 'postgres',
-    host: '192.168.100.53',
-    port: 5432
-});
-
-// Define the User model
-const User = sequelize.define('User', {
-    // Define the model attributes
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
-    },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
-}, 
-{
-    // Disable Sequelize's automatic timestamp fields
-    timestamps: false 
-});
-
-// Method to retrieve the user's ID by username:
 User.findByUsername = async(username) => {
-    try{
-        const user = await User.findOne({ where: { username }});
-        console.log(user);
-        if (user) {
-            return user.id;
-        } else {
-            return null;
+  try {
+    const user = await User.findOne({ where: { username }, attributes: ['id', 'username', 'password'] });
+    return user;
+  } catch (error) {
+    console.error('Error retrieving user by username: ', error);
+    throw error;
+  }
+};
 
-        }
-    } catch (error){
-        console.error('Error retrieving user ID by username: ', error);
-        throw error;
-    }
-}
-
-
-
-// Sync the model with the database
-sequelize.sync({ logging: console.log })
-    .then(async () => {
-        console.log('User model synchronized successfully.');
-        const users = await User.findAll();
-        console.log('Users stored in the database: ', users);
-    })
-    .catch((error) => {
-        console.error('Unable to synchronize User model:', error);
-    });
-
-// Export the User model and sequelize instance
-module.exports = { User, sequelize };
+module.exports = { User, registerUser };

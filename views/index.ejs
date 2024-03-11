@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="#http:s://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+    <base href="http://192.168.100.53:8081/">
+    <link rel="stylesheet" href="http://192.168.100.53:8081/css/ALL_Styles.css" type="text/css" media="all">
+    <title>Good Store Coffee</title>
+    <!-- <script src="Javascript/main.js"></script> -->
+    <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
+  </head>
+  <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
+  <!-- <canvas id="canvas" width="320px" height="320px" style="background-color:#333; position: -webkit-sticky;"></canvas> -->
+  <!-- <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    let radius = canvas.height / 2;
+    ctx.translate(radius, radius);
+    radius = radius * 0.91   
+    drawClock();
+    setInterval(drawClock, 1000);
+    function drawClock() {
+    drawFace(ctx, radius);
+    }
+
+    function drawFace(ctx, radius) {
+      const grad = ctx.createRadialGradient(0, 0 ,radius * 0.95, 0, 0, radius * 1.05);
+      grad.addColorStop(0, '#333');
+      grad.addColorStop(0.5, 'white');
+      grad.addColorStop(1, '#333');
+
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+      ctx.fillStyle = 'white';
+      ctx.fill();
+
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = radius*0.1;
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+      ctx.fillStyle = '#333';
+      ctx.fill();
+  }
+
+    function drawClock(){
+      drawFace(ctx, radius);
+      drawNumbers(ctx, radius);
+      drawTime(ctx, radius);
+    }
+
+    function drawNumbers(ctx, radius) {
+      ctx.font = radius * 0.15 + "px arial";
+      ctx.textBaseline = "middle";
+      ctx.textAlign = "center";
+  
+      for(let num = 1; num < 13; num++){
+      let ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius * 0.85);
+        ctx.rotate(-ang);
+        ctx.fillText(num.toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius * 0.85);
+        ctx.rotate(-ang);
+      }
+    }
+
+    function drawTime(ctx, radius) {
+      const now = new Date();
+      let hour = now.getHours();
+      let minute = now.getMinutes();
+      let second = now.getSeconds();
+      //hour
+      hour = hour%12;
+      hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
+      drawHand(ctx, hour, radius*0.5, radius*0.07);
+      //minute
+      minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
+      drawHand(ctx, minute, radius*0.8, radius*0.07);
+      // second
+      second = (second*Math.PI/30);
+      drawHand(ctx, second, radius*0.9, radius*0.02);
+    }
+
+    function drawHand(ctx, pos, length, width) {
+      ctx.beginPath();
+      ctx.lineWidth = width;
+      ctx.lineCap = "round";
+      ctx.moveTo(0,0);
+      ctx.rotate(pos);
+      ctx.lineTo(0, -length);
+      ctx.stroke();
+      ctx.rotate(-pos);
+    }
+  </script> -->
+  <body style="background: radial-gradient(rgb(203, 203, 253), rgb(0, 0, 0)); overflow:visible">
+    <!-- <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById('myCanvas');
+      const ctx = canvas.getContext('2d');
+      let size = window.innerWidth > 768 ? 60 : 30; // Adjust the size based on screen width
+      const pulseAmount = 10; // How much the heart will pulse (in pixels)
+      const pulseSpeed = 0.005; // Pulse speed factor
+      const frameRate = 1000 / 30; // Frame rate for 30 fps (in milliseconds)
+  
+      function setCanvasSize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+  
+      function drawHeart() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'darkblue'; // Change color to dark blue
+  
+        const x = canvas.width / 2;
+        const y = canvas.height / 2 - 20;
+  
+        ctx.beginPath();
+        ctx.moveTo(x, y + size / 4);
+        ctx.quadraticCurveTo(x, y, x + size / 4, y);
+        ctx.quadraticCurveTo(x + size / 2, y, x + size / 2, y + size / 4);
+        ctx.quadraticCurveTo(x + size / 2, y, x + size * 3 / 4, y);
+        ctx.quadraticCurveTo(x + size, y, x + size, y + size / 4);
+        ctx.quadraticCurveTo(x + size, y + size / 2, x + size * 3 / 4, y + size * 3 / 4);
+        ctx.lineTo(x + size / 2, y + size);
+        ctx.lineTo(x + size / 4, y + size * 3 / 4);
+        ctx.quadraticCurveTo(x, y + size / 2, x, y + size / 4);
+        ctx.closePath();
+  
+        ctx.fill();
+  
+        // Draw the glowing curved line with a slight 3D effect
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = 'lightgreen';
+        ctx.lineCap = 'round';
+        const gradient = ctx.createLinearGradient(x, y + size / 4, x, y - size / 2);
+        gradient.addColorStop(0, 'rgba(0,255,0,0)');
+        gradient.addColorStop(0.5, 'rgba(0,255,0,0.8)');
+        gradient.addColorStop(1, 'rgba(0,255,0,0)');
+        ctx.strokeStyle = gradient;
+  
+        ctx.beginPath();
+        ctx.moveTo(x, y + size / 4);
+        ctx.bezierCurveTo(x - size / 2, y + size / 3, x + size / 2, y - size / 2, x, y - size / 2);
+        ctx.stroke();
+      }
+  
+      function animateHeart() {
+        size = window.innerWidth > 768 ? 60 + pulseAmount * Math.sin(performance.now() * pulseSpeed) : 30 + pulseAmount * Math.sin(performance.now() * pulseSpeed);
+  
+        setCanvasSize();
+        drawHeart();
+  
+        requestAnimationFrame(animateHeart);
+      }
+  
+      setCanvasSize();
+      animateHeart();
+  
+      window.addEventListener('resize', setCanvasSize);
+    </script> -->
+    <header style="background: linear-gradient(to top left, #ffffff78 20%, #77b9d65b 60%, rgba(87, 87, 87, 0.42) 60%);border-top: 2px rgb(237, 239, 240) groove;border-left: 2px rgb(255, 255, 255) groove;border-right: 2px rgb(255, 255, 255) groove;border-bottom: 2px rgb(255, 255, 255) groove;border-radius: 25px;margin-bottom: 10px;margin-bottom: 1px;/* margin-top: 50px; */margin-left: 90px;/* border-style: ; */padding-top: 10px;width: 300px;">
+
+      <h1 style="background: linear-gradient(20deg, #d08132 32%, rgb(255, 255, 255)70%, rgb(216, 104, 76) 85%); /* max-height: 270px;  */ margin-left: 40px; margin-right: 40px; text-align: center; font-weight:200; width: 240px; text-decoration:overline; text-size-adjust:inherit; border-top-style: 1px darkgreen groove; border-right-style: 1px darkgreen groove; border-left-style: 1px darkgreen groove; border-bottom-style: 1px darkgreen groove; border-radius: 25px; border-width:1px; /* padding: 10px; */ position: absolute; text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(231, 231, 231), 0 0 5px rgb(0, 21, 115);"> Big Store Coffee </h1>
+      <style>
+        .search-bar {
+          left: 90px;
+          width: 270px;
+          position: sticky;
+          padding: 1px; 
+          color: rgb(0, 0, 0); 
+          background-color: rgb(0, 23, 137); 
+          border: outset;
+          border-width: 0.2vw 0.3vw; 
+          border-color: rgb(195, 196, 91); 
+          /* Center the search bar horizontally */
+          border-radius: 30px;  left: 900px; 
+          /* Adjust to properly center */
+          /* transform: translateX(-50%);  */ 
+          z-index: 999; 
+          cursor: pointer; 
+          /* display: ruby-base-container; */ 
+          /* Set the width of the search bar */ 
+          /* Set maximum width if needed * /* 
+          Adjust top position */ 
+          transform: translateY(100%); 
+          margin-right: 40vw; 
+          margin-top: 0px; 
+          margin-bottom: 20px; 
+          /* Use block level element */ 
+          display: inline-block; 
+          /* Center align the content */ 
+          /* text-align: center; */ 
+          /* Center the block element */
+          margin:10px;
+        }
+        .search-bar input[type="text"] {
+          border: 3px outset rgb(0, 0, 0);
+          background-color: whitesmoke;
+          border-radius: 25px;
+          /* Adjust input field width */
+          width: 300px;
+          padding: 10px;
+          outline: none;
+        }
+      </style>
+      <div class="search-bar">
+        <!-- Search input -->
+        <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala" style="resize: none;">
+        <!-- Rest of your search bar content -->
+        <button type="submit" id="submit-cauta-bara-de-cautare" onclick="submitSearch()">Cauta</button>
+        <div id="searchDropdown" class="dropdown-content"></div>
+      </div>
+      <script>
+        class ProductRecommendation {
+          constructor() {
+            this.searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
+            this.searchDropdown = document.getElementById('searchDropdown');
+            this.searchTerm = '';
+            this.productLinks = {
+              'Espresso': this.sanitizeURL('espresso.html'),
+              'Cappuccino': this.sanitizeURL('cappuccino.html'),
+              'Latte': this.sanitizeURL('latte.html'),
+              'French Press Coffee': this.sanitizeURL('French Press Coffee.html'),
+              'Ristretto': this.sanitizeURL('Ristretto.html'),
+              'Macchiato': this.sanitizeURL('Macchiato.html'),
+              'Americano': this.sanitizeURL('Americano.html'),
+              'Irish Coffee': this.sanitizeURL('Irish Coffee.html'),
+              'Black Coffee': this.sanitizeURL('Black Coffee.html'),
+              'Mocha': this.sanitizeURL('Mocha.html'),
+              // ... Add other product links as needed
+              'Scotch Whiskey': this.sanitizeURL('https://www.finebar.ro/aberfeldy-21yo-0-7l'),
+              'Bourbon Whiskey': this.sanitizeURL('https://www.finebar.ro/jack-daniels-legacy-edition-whisky-1l'),
+              'Irish Whiskey': this.sanitizeURL('https://www.finebar.ro/bushmills-malt-21yo-0-7l'),
+              'Rye Whiskey': this.sanitizeURL('https://www.finebar.ro/johnnie-walker-xr-21yo-1l'),
+              'Japanese Whiskey': this.sanitizeURL('https://www.finebar.ro/kavalan-solist-sherry-cask-strength-whisky-0-7l'),
+              'Kurayoshi Whiskey': this.sanitizeURL('https://www.finebar.ro/yamazakura'),
+              'Togouchi Whiskey': this.sanitizeURL('https://www.finebar.ro/togouchi-15yo'),
+              // Additional product links...
+            };
+      
+            this.initialize();
+          }
+      
+          initialize() {
+            this.searchBar.addEventListener('input', this.handleSearchInput.bind(this));
+            this.searchBar.style.backgroundColor = 'lightblue';
+            // Change width as needed
+            this.searchBar.style.width = '150px'; 
+      
+            // Initialize the dropdown styles
+            this.searchDropdown.style.display = 'none';
+            // Adjust positioning
+            this.searchDropdown.style.position = 'fixed'; 
+            this.searchDropdown.style.zIndex = '9997';
+            this.searchDropdown.style.backgroundColor = '#008080';
+            this.searchDropdown.style.maxWidth = '140px';
+            this.searchDropdown.style.top = '50px';
+            // this.searchDropdown.style.left = '80px';
+            this.searchDropdown.style.right = '60px';
+            this.searchDropdown.style.borderRadius = '20px';
+            this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
+            this.searchDropdown.style.padding = '2px';
+            this.searchDropdown.style.margin = '2px';
+          }
+      
+          handleSearchInput() {
+            this.searchTerm = this.searchBar.value.trim().toLowerCase();
+      
+            if (this.searchTerm === '') {
+              this.searchDropdown.style.display = 'none';
+              return;
+            }
+      
+            const matchingProducts = this.getRecommendations(this.searchTerm);
+      
+            this.searchDropdown.innerHTML = '';
+      
+            matchingProducts.slice(0, 5).forEach((product) => {
+              const dropdownItem = this.createDropdownItem({ name: product });
+              this.searchDropdown.appendChild(dropdownItem);
+            });
+      
+            const searchBarRect = this.searchBar.getBoundingClientRect();
+            // this.searchDropdown.style.top = `${searchBarRect.bottom + window.scrollY}px`;
+            // this.searchDropdown.style.left = `${searchBarRect.left}px`;
+            this.searchDropdown.style.width = `${searchBarRect.width}px`;
+            this.searchDropdown.style.display = 'block';
+      
+            this.searchDropdown.style.overflowY = matchingProducts.length > 3 ? 'scroll' : '';
+      
+            // Enable scrolling within the menu and search results
+            this.searchDropdown.addEventListener('wheel', (event) => {
+              if (event.deltaY > 0) {
+                this.searchDropdown.scrollTop += 30; // Scroll down
+              } else {
+                this.searchDropdown.scrollTop -= 30; // Scroll up
+              }
+              event.preventDefault();
+            });
+          }
+      
+          createDropdownItem(product) {
+            const dropdownItem = document.createElement('div');
+            dropdownItem.classList.add('dropdown-item');
+            dropdownItem.style.border = '2px groove black';
+            dropdownItem.style.borderRadius = '30px';
+            dropdownItem.style.margin = '5px 0';
+            dropdownItem.style.padding = '5px';
+            dropdownItem.style.backgroundColor = 'coral';
+      
+            const productLink = document.createElement('a');
+            productLink.textContent = product.name;
+            productLink.href = this.productLinks[product.name];
+            productLink.style.textDecoration = 'none';
+      
+            productLink.addEventListener('click', (event) => {
+              event.preventDefault();
+              this.searchBar.value = product.name;
+              this.redirectToProduct(product.name, this.searchBar.value);
+            });
+      
+            dropdownItem.appendChild(productLink);
+      
+            return dropdownItem;
+          }
+      
+          redirectToProduct(productName, searchTerm) {
+            const productLink = this.productLinks[productName];
+            if (productLink) {
+              window.location.href = this.sanitizeURL(productLink);
+            }
+          }
+      
+          getRecommendations(searchTerm) {
+            const products = [
+              'Espresso',
+              'Cappuccino',
+              'Latte',
+              'Mocha',
+              'Irish Coffee',
+              'Black Coffee',
+              'Americano',
+              'Macchiato',
+              'Ristretto',
+              'French Press Coffee',
+              'Scotch Whiskey',
+              'Bourbon Whiskey',
+              'Irish Whiskey',
+              'Rye Whiskey',
+              'Japanese Whiskey',
+              'Whiskey Smash',
+              'Rusty Nail Whiskey',
+              'Kurayoshi Whiskey',
+              'Togouchi Whiskey',
+              // Additional products...
+            ];
+      
+            return products.filter((product) => product.toLowerCase().includes(searchTerm));
+          }
+      
+          sanitizeURL(url) {
+            const validProtocols = ['http://', 'https://', 'ftp://', 'mailto:'];
+            const isValidProtocol = validProtocols.some(protocol => url.startsWith(protocol));
+            return isValidProtocol ? url : '#';
+          }
+        }
+      
+        const productRecommendation = new ProductRecommendation();
+        function submitSearch() {
+          const searchButton = document.getElementById('submit-cauta-bara-de-cautare');
+          const searchDropdown = document.getElementById('searchDropdown');
+          const searchBar = document.getElementById('introducere-text-bara-de-cautare-principala');
+
+          // List of products imported from the productLinks object
+          const products = Object.keys(productRecommendation.productLinks);
+
+          // Check if the search button and dropdown exist
+          if (searchButton && searchDropdown) {
+            // Adding the styles of the search button
+            searchButton.style.backgroundColor = 'green';
+            searchButton.style.color = 'white';
+            searchButton.style.border = 'none';
+            searchButton.style.padding = '8px 16px';
+            searchButton.style.cursor = 'pointer';
+
+            // Display the list of products in the dropdown
+            searchDropdown.innerHTML = '';
+
+            // Filter products based on the search term
+            const searchTerm = searchBar.value.trim().toLowerCase();
+            const matchingProducts = products.filter(product => product.toLowerCase().includes(searchTerm));
+
+            // Populate the dropdown with matching products if search term is not empty
+            if (searchTerm !== '') {
+              matchingProducts.forEach((product) => {
+                const dropdownItem = document.createElement('div');
+                dropdownItem.textContent = product;
+                dropdownItem.classList.add('dropdown-item');
+                // Add pointer cursor
+                dropdownItem.style.cursor = 'pointer'; 
+                dropdownItem.addEventListener('click', () => {
+                  productRecommendation.searchBar.value = product;
+                  productRecommendation.redirectToProduct(product, productRecommendation.searchBar.value);
+                });
+                searchDropdown.appendChild(dropdownItem);
+              });
+
+              // Calculate the position of the dropdown below the search bar
+              const searchBarRect = searchBar.getBoundingClientRect();
+              const dropdownHeight = searchDropdown.offsetHeight;
+              // searchDropdown.style.top = `${searchBarRect.bottom}px`;
+              // searchDropdown.style.left = `${searchBarRect.left}px`;
+              searchDropdown.style.width = `${searchBarRect.width}px`;
+
+              // Show the dropdown
+              searchDropdown.style.display = 'block';
+            } else {
+              // Hide the dropdown if no search term entered
+              searchDropdown.style.display = 'none';
+            }
+
+            // Reset button state and search input after 0.5 seconds
+            setTimeout(() => {
+              // Reset button background color
+              searchButton.style.backgroundColor = ''; 
+              // Reset button text color
+              searchButton.style.color = ''; 
+              // Clear search input
+              searchBar.value = ''; 
+              // Clear dropdown content
+              searchDropdown.innerHTML = ''; 
+              // Hide dropdown
+              searchDropdown.style.display = 'none'; 
+            }, 500);
+          }
+        }
+      </script>
+      <style>
+        .arrow-icon {
+          width: 60px;
+          position: relative;
+          top: 15px;
+          padding-bottom: 100px;
+          right: 98px;
+          transform: translateY(-50%);
+          cursor: pointer;
+          font-size: 20px;
+          background-color: #598e9d; 
+          padding: 10px;
+          border-radius: 25px 25px 25px 25px; 
+          box-shadow: 2px 2px 20px 2px rgb(255, 255, 255); 
+          z-index: 9999; 
+        }
+        .arrow-icon:hover {
+          background-color: #d86d6d;
+          border-radius: 20px; 
+        }
+        .menu-container {
+          position: absolute;
+          border-radius: 30px;
+          top: 145px;
+          left: -420px;
+          width: 313px;
+          height: 400px;
+          background-color: rgba(255, 255, 255, 0.397);
+          transition: left 1s ease;
+          z-index: 9999;
+          overflow-x: hidden;
+        }
+      
+        .close-btn {
+          text-align: center;
+          position: relative;
+          padding: 10px;
+          border: 1px solid black;
+          width: 40px;
+          left: 245px;
+          top: 5px;
+          height: 10px;
+          border-radius: 30px;
+          cursor: pointer;
+          font-size: 20px;
+          background-color: #6a67ff6b;
+        }
+      </style>
+      <div class="arrow-icon" onclick="toggleMenu()">&#8596;</div>
+      <div class="menu-container" id="menu">
+        <div class="close-btn" onclick="toggleMenu()">X</div> 
+        <!-- Close button -->
+        <script defer>
+          function toggleMenu() {
+            var menu = document.getElementById('menu');
+        
+            if (menu.classList.contains('open')) {
+              // if menu is open, close it
+              menu.classList.remove('open');
+            } else {
+              // if menu is closed, open it
+              menu.classList.add('open');
+            }
+          }
+        
+          function openMenu() {
+            var menu = document.getElementById('menu');
+        
+            if (menu) {
+              menu.classList.add('open');
+            } else {
+              console.error("Menu element not found.");
+            }
+          }
+        
+          function closeMenu() {
+            var menu = document.getElementById('menu');
+        
+            if (menu) {
+              menu.classList.remove('open');
+            } else {
+              console.error("Menu element not found.");
+            }
+          }
+        </script>
+        <style>
+          .table-container_lista_optiuni {
+            bottom: 125px;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border: 3px outset #1a7eec70;
+            display: inline-block;
+            border-radius: 30px;
+            box-sizing: border-box;
+            grid-auto-flow: dense;
+            margin-bottom: 10px;
+            margin-top: 200px;
+            margin-left: 5px;
+            margin-right: 0px;
+            animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+            background-size: 200% 200%;
+            align-items: baseline;
+            background: linear-gradient(130deg, #ffffff, #5c3a3a, #000000);
+          }
+          .glowing-background {
+            background: linear-gradient(24deg, #f1d9a690 32%rgba(72, 138, 223, 0.524))70%, rgb(143, 40, 14)85%;
+            background-size: 300% 350%;
+            animation: glowing 20s ease-in-out infinite;
+          }
+          .glowing-background:hover {
+            box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+          }
+          .tabel-1-lista-optiuni{
+            margin-left: 1px;
+            background-color: linear-gradient(24deg, #c9c9c9 32%, rgb(44, 91, 154)70%,rgb(186, 93, 69)85%);
+            margin-top: 100px;
+            width: 260px;
+            padding: 5px;
+            align-items: center;
+            border: 1px inset white;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+          }
+        </style>
+      <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
+        <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Despre" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
+              <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky;">Despre</a>
+            </div>
+          </div>
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Comenzi" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
+              <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky;">Comenzi</a>
+            </div>
+          </div>
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Livrare" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
+              <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky;">Livrare</a>
+            </div>
+          </div>
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Suport" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
+              <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky;">Suport</a>
+            </div>
+          </div>
+          <div class="tr">
+            <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="width: 250px; position: -webkit-sticky; padding: 5px; border-radius: 30px;">
+              <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative;">Informatii Aditionale</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+    <script>
+  
+      // Function to hide all forms
+      function hideAllForms() {
+        var forms = document.getElementsByClassName("form-container");
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].style.display = "none";
+        }
+      }
+    </script>
+    <style>
+      #container_scrolling_for_the_side_nav {
+        position: fixed; /* Adjust position to fixed */
+        top: 140px; /* Adjust based on the header's height */
+        left: 0; /* Position at the left */
+        z-index: 9998; /* Ensure it appears below the header */
+      }
+    </style>
+    <div id="container_scrolling_for_the_side_nav" class="container">
+      <style>
+      .sidenav {
+        height: 270px;
+        width: 220px;
+        position: fixed;
+        z-index: 1;
+        top: 140px;
+        padding-block: 100px;
+        left: 0;
+        background: linear-gradient(135deg, #333333, #cccccc, #330455); /* Linear gradient background */
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+        max-width: 300px;
+        max-height: 400px;
+        border-radius: 30px;
+        border: 1px #ffffff00 solid;
+        transition: 0.5s;
+      }
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: double;
+          border-radius: 30px;
+          font-size: 12px;
+          color: white;
+          background-color: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 224, 1) 50%, rgba(0, 0, 0, 1) 100%);
+          display: block;
+          transition: 0.3s;
+          width: 220px;
+          height: 3vh; 
+          background-color: #003d57; 
+          border-radius: 30px;
+          margin-top: 10px;
+          border: 1px solid #333333; /* Light black border */
+        }
+        /* The side navigation menu */
+        /* The navigation menu links */
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+          color: #f1f1f1;
+          border: 1px groove white;
+          border-radius: 30px;
+          border-inline: 3px 2px 2px 2px;
+          animation: pulse 4s, infinite alternate-reverse;
+        }
+          /* Highlight the current link */
+        .sidenav a.active {
+          background-color: #04aa6d;
+          color: white;
+        }
+          /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+          position: absolute;
+          background: rgb(66, 76, 104);
+          margin-bottom: 4px;
+          width: 50px;
+        }
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+          transition: margin-left .5s;
+          padding: 20px;
+        }
+          /* The sidenav */
+          /* Page content */
+        .main {
+          margin-left: 200px; /* Same as the width of the sidenav */
+        }
+        </style>
+      <div id="mySidenav" class="sidenav">
+        <style>
+          .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            cursor: pointer;
+            color: white;
+          }
+        </style>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
+        <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
+        <a href="http://192.168.100.53:8081/Clients.html" onclick="loadPage()">Clients</a>
+        <a href="Javascript:void(0)" onclick="loadPage('http://192.168.100.53:8081/Echipa.html')">Echipa</a>
+      </div>
+    </div>
+    <div id="content"></div>
+    <style>
+        .openTriangle {
+          position: relative;
+          bottom: 110px;
+          display: inline-block;
+          width: 0px;
+          height: 0px;
+          /* Left side of the triangle */
+          border-left: 25px solid transparent;
+          /* Right side of the triangle */
+          border-right: 25px solid transparent;
+          /* Bottom side of the triangle */
+          border-bottom: 43.3px groove rgb(255, 255, 255);
+          /* Change cursor on hover */
+          cursor: pointer;
+          z-index: 8000;
+        }
+       .openText {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 14px;
+          color: black;
+        }
+        .trail {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(255, 255, 255, 0.368);
+          border-radius: 30px;
+          width: auto;
+          height: auto;
+          opacity: 1;
+          transition: opacity 3s;
+          z-index: 9999; /* Ensure it appears above other elements */
+        }
+        @keyframes fadeOut {
+          from { opacity: 0.8; }
+          to { opacity: 0; }
+        }
+      </style>
+    <div class="openTriangle" onclick="toggleNav()">
+      <!-- <span id="triangle">&#9658;</span> -->
+    </div>
+    <div id="openText"></div>
+    <script src="your-scripts.js"></script>
+    <script>
+      function toggleNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openText = document.getElementById("openText");
+        var openTriangle = document.querySelector(".openTriangle");
+        var main = document.getElementById("main");
+        if (sidenav.classList.contains("sideNavOpen")) {
+          sidenav.classList.remove("sideNavOpen");
+          setTimeout(function () {
+            openText.innerText = "";
+            // right-pointing arrow
+            openTriangle.innerHTML = "&#9658;";
+          }, 500);
+          main.style.marginLeft = "0px";
+        } else {
+          sidenav.classList.add("sideNavOpen");
+          setTimeout(function () {
+            openText.innerText = "";
+            // left-pointing arrow
+            openTriangle.innerHTML = "&larr;";
+          }, 500);
+          // Adjust width if needed
+          sidenav.style.width = "350px";
+          openText.innerText = "";
+          // Change this value if necessary
+          main.style.marginLeft = "250px";
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        var sidenav = document.getElementById("mySidenav");
+        var main = document.getElementById("main");
+        var body = document.body;
+        var closeButton = document.querySelector('.closebtn');
+
+        sidenav.classList.remove("sideNavOpen");
+        sidenav.style.width = "0";
+        main.style.marginLeft = "0";
+        body.style.backgroundColor = "white";
+
+        closeButton.addEventListener('click', function () {
+          closeNav();
+        });
+
+        body.addEventListener('click', function (event) {
+          if (event.target !== sidenav && !sidenav.contains(event.target)) {
+            closeNav();
+          }
+        });
+      });
+      function openNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openText = document.getElementById("openText");
+        var openTriangle = document.querySelector(".openTriangle");
+        sidenav.style.top = "30px";
+        sidenav.style.borderRadius = "30px";
+        sidenav.style.marginLeft = "30px";
+        sidenav.style.bottom = "20vw";
+        sidenav.style.height = "auto";
+        sidenav.style.width = "350px";
+        setTimeout(function () {
+          openText.innerText = "close";
+          // left-pointing arrow
+          openTriangle.innerHTML = "&larr;";
+        }, 500);
+
+        openText.innerText = "";
+        sidenav.classList.add("sideNavOpen");
+        // Adjust margin if needed
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
+      function closeNav() {
+        var sidenav = document.getElementById("mySidenav");
+        var openTriangle = document.querySelector(".openTriangle");
+        var main = document.getElementById("main");
+
+        if (sidenav.classList.contains("sideNavOpen")) {
+            // Create a white trail effect
+            var trail = document.createElement("div");
+            trail.classList.add("trail");
+            document.body.appendChild(trail);
+
+            setTimeout(function () {
+                trail.style.opacity = "0";
+                setTimeout(function () {
+                    trail.remove();
+                }, 3000); // Fade out time
+            }, 100); // Delay before starting to fade out
+
+            // Play guitar sound
+            var audio = new Audio('light_guitar_sound.mp3');
+            audio.play();
+
+            // Close the navigation menu
+            sidenav.style.width = "0";
+            main.style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+            sidenav.classList.remove("sideNavOpen");
+            // Right-pointing arrow
+            openTriangle.innerHTML = "&#9658;";
+
+            // Reset to main triangle form after a delay
+            setTimeout(function () {
+                // Main triangle form
+                openTriangle.innerHTML = "&#9658;";
+            }, 500);
+        }
+      }
+      function loadForm(formURL, formId) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    document.getElementById("content").innerHTML = this.responseText;
+                    if (formId) {
+                        var form = document.getElementById(formId);
+                        if (form) {
+                            // Add the popup class
+                            form.classList.add("form-container-popup");
+                            form.style.display = "block";
+                            // Adjust width if needed
+                            form.style.width = "300px";
+                            // Adjust height if needed
+                            form.style.height = "auto";
+                            form.style.position = "absolute";
+                            // Adjust top position as required
+                            form.style.top = "50px";
+                            // Adjust right position as required
+                            form.style.right = "50px";
+                            // Close the side navigation menu
+                            closeNav();
+                        } else {
+                            console.error("Form element with id " + formId + " not found.");
+                        }
+                    }
+                } else {
+                    console.error("Failed to load form. Status code: " + this.status);
+                }
+            }
+        };
+        xhttp.open("GET", formURL, true);
+        xhttp.send();
+      }
+      function showForm(formId) {
+      var forms = document.getElementsByClassName("form-container");
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].style.display = "none";
+      }
+      document.getElementById(formId).style.display = "block";
+      openNav();
+      }
+      function closeForm() {
+        var forms = document.getElementsByClassName("form-container");
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].style.display = "none";
+        }
+      
+      }
+    </script>
+    <script>
+      var urls = [
+        'http://192.168.100.53:8081/WebSite/server/' + encodedPath,
+      ];
+    
+      function fetchContent(urlIndex) {
+        fetch(urls[urlIndex])
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.text();
+          })
+          .then(data => {
+            document.getElementById("content").innerHTML = data;
+    
+            // Load additional resources (CSS and JS) if needed
+            loadResourcesForPage(cssLinks);
+    
+            if (formId) {
+              var form = document.getElementById(formId);
+              if (form) {
+                form.style.display = "block";
+                form.style.width = "300px";
+                form.style.height = "auto";
+                form.style.position = "absolute";
+                form.style.top = "50px";
+                form.style.right = "50px";
+              }
+            }
+    
+            // Fetch CSS styles
+            fetchCSS(cssLinks);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+    
+            // If fetching from the current URL fails, try the next one
+            if (urlIndex < urls.length - 1) {
+              fetchContent(urlIndex + 1);
+            }
+          });
+      }
+    
+      // Function to fetch CSS styles
+      function fetchCSS(cssLinks) {
+        cssLinks.forEach(link => {
+          fetch(link)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.text();
+            })
+            .then(css => {
+              var style = document.createElement('style');
+              style.innerHTML = css;
+              document.head.appendChild(style);
+            })
+            .catch(error => {
+              console.error('Error fetching CSS:', error);
+            });
+        });
+      }
+      // Start fetching content from the first URL
+      fetchContent(0);
+    </script>
+    <!-- It is not necessary to load the styles dynamically. Commented out the script below -->
+    <!-- <script>
+      function loadResourcesForPage(links) {
+        // Function to load CSS dynamically
+        function loadCSS(cssPath) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          link.href = cssPath;
+          document.head.appendChild(link);
+        }
+    
+        // Iterate through the provided links and load CSS dynamically
+        links.forEach(cssPath => {
+          loadCSS(cssPath);
+        });
+      }
+    
+      var cssLinks = [
+      'http://192.168.100.53:8081/WebSite/public/css/acasa.css',
+      'http://192.168.100.53:8081/public/css/Account-creation.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/afiliati.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/animations.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/bordered_box_produse_vandute_de_top_1.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/bordered_rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/bordered-box.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/box_model_produse_vandute_de_top_1.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/canvas.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Categori-1-tip-lista.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Comenzi.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Contact.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/container_produse_vandute_de_top_1.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/content.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Continut1tiplista.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/continut2tiplista.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/continut3tiplista.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Despre.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/dropdown_container_produse_vandute_de_top_1.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/dropdown_content_meniu_1&2.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/dropdown_content_ordered_list_2.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Echipa.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/footer.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/form.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/image-container_produse_vandute_de_top_1.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/images-animations.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/InformatiiAditionalepage.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Inregistrare-forma-design.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/lists_styles.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Livrare.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Logare-forma-design.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/main.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Meniu Produse_1_2_3_4_5_6_7_8_9_10.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu_container_produse_de_top.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container_acasa.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container_categories.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container-modified-content.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container3 .modified-dropdown .dropdown-image.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container3 .modified-dropdown.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-image.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/nav-menu-ul.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/navigation.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/ol_li_a.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/persoane_contact.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/responsive-iframe.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/search-bar.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/selectors.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/side-navigation.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/slideshow-container-style.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/style_canvas.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/support.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/tables.css',
+      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/type-device-style.css',
+      'http://192.168.100.53:8081/public/css/css/ul.css'
+      ];
+    loadResourcesForPage(cssLinks);
+    </script> -->
+    <script>
+      function validateForm() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('psw').value;
+        const confirmPassword = document.getElementById('psw-repeat').value;
+    
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert('Introduceti o adresa de email valida');
+          return false;
+        }
+    
+        // Validate password length and match
+        if (password.length < 6) {
+          alert('Parola trebuie sa aiba cel putin 6 caractere');
+          return false;
+        }
+      
+        if (password !== confirmPassword) {
+          alert('Parolele nu coincid');
+          return false;
+        }
+      
+        // Submit the form if validation passes
+        return true; 
+      }
+    </script>
+    <style>
+      .swipe-bar {
+        position: fixed;
+        bottom: 5225px;
+        left: 0;
+        /* transform: translateY(-50%); */
+        width: 20px;
+        height: 100px;
+        background-color: #d18c8c;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+      }
+      /* .arrow {
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-right: 9px solid #000;
+        transition: border-right-color 0.3s ease-in-out;
+      } */
+      .arrow:hover {
+        border-right-color: red;
+      }
+      /* Arrow style */
+      .swipe-bar:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 15px;
+        height: 15px;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+        transition: transform 0.3s ease-in-out;
+      }
+        /* Arrow animation on hover */
+      .swipe-bar:hover:after {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+      @keyframes fadeAway {
+        0% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(2) rotate(360deg); }
+      }
+
+      .dropdown-content.fade-out {
+        animation: fadeAway 3s ease;
+      }
+
+      .dropdown-content.fade-in {
+        display: inline-block;
+        animation: none;
+      }
+      .dropdown-content {
+        display: none;
+      }
+      .dropdown-content_meniu_1si2 {
+        overflow-y: auto;
+        display: none;
+        position: fixed;
+        top: 254px;
+        left: 40px;
+        width: 230px;
+        height: 250px;
+        background: linear-gradient(60deg, rgb(176, 196, 222), rgb(128, 128, 128), rgb(255, 255, 255));
+        border-radius: 30px;
+        overflow-x: hidden;
+        transition: 1s;
+        padding-top: 60px;
+      }
+
+      .dropdown-content_meniu_1si2 a {
+        padding: 10px 8px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #000;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .dropdown-content_meniu_1si2 a:hover {
+        background-color: #ffffff52;
+      }
+
+      .open {
+        left: 0;
+      }
+    </style>
+    <div class="swipe-bar" id="swipeBar">
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+      <div class="arrow"></div>
+    </div>
+    <!-- <div id="swipeArea" style="height: 10vh; background-color: #003d57; width: 20px; height: 100px; border-radius: 30px;"></div> -->
+    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
+      <div class="dropdown" style="overflow-anchor: auto;">
+        <button class="dropbtn" id="DROPBTN_Select a Menu" style="margin-bottom: 20px; position: relative; border-radius: 20px; bottom: 50px;">Select a Menu</button>
+          <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
+            <style>
+              .container-content-Menu-produse-1,
+              .container-content-Menu-produse-2,
+              .container-content-Menu-produse-3,
+              .container-content-Menu-produse-4,
+              .container-content-Menu-produse-5,
+              .container-content-Menu-produse-6,
+              .container-content-Menu-produse-7,
+              .container-content-Menu-produse-8,
+              .container-content-Menu-produse-9,
+              .container-content-Menu-produse-10{
+                background: linear-gradient(to bottom, #ffffff, #05337085, #8e6fff);
+                margin-bottom: 10px;
+                width: 190px; 
+                height: 20px; 
+                padding: 20px; 
+                border: 1px groovrgb(0, 0, 0)en; 
+                border-radius: 30px;
+              }
+              .container-content-Menu-produse-1 a,
+              .container-content-Menu-produse-2 a,
+              .container-content-Menu-produse-3 a,
+              .container-content-Menu-produse-4 a,
+              .container-content-Menu-produse-5 a,
+              .container-content-Menu-produse-6 a,
+              .container-content-Menu-produse-7 a,
+              .container-content-Menu-produse-8 a,
+              .container-content-Menu-produse-9 a,
+              .container-content-Menu-produse-10 a {
+                border-radius: 30px;
+                bottom: 12px;
+                position: relative;
+                
+              }
+
+              </style>
+            <div class="container-content-Menu-produse-1">
+              <div class="trail-element" >
+                <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-2">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2"  onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-3">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-4">
+            <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4"  onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
+            </div>
+            </div>
+            <div class="container-content-Menu-produse-5">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-6">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-7">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-8">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" onmouseover="createTrail(event, 8)" onmouseout="removeTrail(this)">Meniu Produse 8</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-9">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
+              </div>
+            </div>
+            <div class="container-content-Menu-produse-10">
+              <div class="trail-element">
+                <a href="http://192.168.100.53:8081/Meniu_Produse_10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var swipeBar = document.getElementById("swipeBar");
+        var swipeArea = document.getElementById("swipeArea");
+        var dropdownMenu = document.querySelector(".dropdown-content_meniu_1si2");
+        var dropbtn = document.getElementById("DROPBTN_Select_a_Menu");
+        var dropdownContent = document.getElementById("dropdown-content-Meniu-produse-1-10");
+        var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2, .container-content-Menu-produse-3, .container-content-Menu-produse-4, .container-content-Menu-produse-5, .container-content-Menu-produse-6, .container-content-Menu-produse-7, .container-content-Menu-produse-8, .container-content-Menu-produse-9, .container-content-Menu-produse-10");
+        var xStart = null;
+        var xEnd = null;
+    
+        swipeBar.addEventListener("click", toggleNav);
+        swipeArea.addEventListener("touchstart", handleTouchStart, false);
+        swipeArea.addEventListener("touchmove", handleTouchMove, false);
+        dropbtn.addEventListener("click", function() {
+          dropdownContent.style.display = "block";
+        });
+    
+        function handleTouchStart(event) {
+          xStart = event.touches[0].clientX;
+        }
+    
+        function handleTouchMove(event) {
+          if (!xStart) {
+            return;
+          }
+    
+          xEnd = event.touches[0].clientX;
+          var xDiff = xStart - xEnd;
+          if (xDiff > 0) { // Swiped to right
+            toggleNav();
+          }
+        }
+        function toggleNav() {
+          if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+          } else {
+            dropdownMenu.style.display = "block";
+          }
+        }
+    
+        // Close the side navigation when clicking outside the menu
+        window.addEventListener("click", function(event) {
+          if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
+            dropdownMenu.classList.remove("open");
+          }
+        });
+    
+        // Hide all containers by default and toggle their display on click
+        containers.forEach(function(container) {
+          container.style.display = "none";
+          container.addEventListener("click", function() {
+            if (container.style.display === "none" || container.style.display === "") {
+              container.style.display = "block";
+            } else {
+              container.style.display = "none";
+            }
+          });
+        });
+    
+        function createTrail(event, number) {
+          const cursor = document.querySelector(".cursor");
+          const trail = document.createElement('div');
+          trail.classList.add('trail');
+          // Find the respective anchor element based on the number parameter
+          const link = event.target;
+          link.appendChild(trail);
+          // Add a class to apply animation
+          link.classList.add('animated-link')
+          trail.style.left = event.offsetX + 'px';
+          let opacity = 1;
+          const fadeTrail = setInterval(() => {
+            opacity -= -2; // Adjust the decrement value for speed of fade
+            trail.style.opacity = opacity;
+            if (opacity <= 0) {
+              clearInterval(fadeTrail);
+              trail.remove();
+            }
+          }, 10); // Adjust the interval for smoother or faster fading
+          // Follow cursor on mousemove within the link
+          link.addEventListener("mousemove", (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            // Update trail position based on cursor movement
+            trail.style.left = e.pageX - link.offsetLeft + 'px';
+            trail.style.top = e.pageY - link.offsetTop + 'px';
+          });
+        }
+    
+        function removeTrail(link) {
+          // Remove trail element on mouseout
+          const trail = link.querySelector('.trail');
+          if (trail) {
+            trail.remove();
+          }
+          // Remove animation class on mouseout
+          link.classList.remove('animated-link');
+        }
+      });
+    </script>
+    
+    
+    <!-- Slideshow container -->
+    <div class="slideshow-container" style="margin-left: 0px; margin-top: 600px; border: 1px solid rgb(255, 255, 255); width: 345px; height: 750px; top: 50px; border-radius: 30px; border-width: 10px;">
+      <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto; ">
+        <div class="numbertext-1" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); text-align: center; position: sticky; border-width: 2px; border-inline-end-style: groove; border-top-left-radius: 10px; border-bottom-right-radius: 10px; padding-bottom: 10px; padding-top: 10px; border-radius: 30px; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:small; background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%);">Produs_slide_1</div>
+        <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="max-width: 280px; max-height: 280px; position: relative; border: solid #ffffff 2px; border-radius:30px; padding-left: auto; padding-right: auto; margin-top: 10px; margin-left: 10px;" loading="lazy">
+        <div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #000000; border-spacing: 2px; border-collapse: collapse; border-top-width: 1px; border-radius: 30px; margin-bottom: 10px; border-bottom-width: 1px; background-color: #d4a539; position: relative; width: auto; height: auto; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159)">
+                                  În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. 
+                                  Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister. 
+                                  Lichidul negru și bogat curge din filtru, dezvăluind o bogăție de arome care promite să trezească simțurile. 
+                                  Privind cum picurii căzând în ritm regulat, ochii devin hipnotizați de spectacolul simplu, dar fermecător al cafelei care prinde viață. 
+                                  În cele din urmă, ceașca este pregătită, oferind o promisiune călduroasă de energie și confort într-o lume care se trezește treptat. 
+                                  Este momentul perfect pentru a te bucura de magia cafelei tale preferate.
+        </div>
+      </div>
+      <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto;">
+    <div class="numbertext-2" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; position: relative; border-radius: 30px; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:small; background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%);">Produs_slide_2</div>
+      <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" style="max-width: 280px; max-height: 280px; position: sticky; border: solid #ffffff 2px; border-radius:10px; padding-left: 10px; margin-top: 10px; border-radius: 30px; padding-bottom: 10px; padding-right: auto;" loading="lazy">
+        <div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #000000; border-spacing: 2px; border-top-width: 1px; border-radius: 30px; border-bottom-width: 1px; width: auto; height: auto; background-color: #d4a539; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25 rgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
+                                                    Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. 
+                                                    Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter. 
+                                                    Pe suprafața cafelei, o ușoară spumă moale se desfășoară, promițând o experiență de degustare delicioasă. 
+                                                    Cu fiecare înghițitură, simți căldura și vitalitatea acestei băuturi revigorante. 
+                                                    Gustul profund și aromele subtile dansează pe papilele tale gustative, oferindu-ți o pauză perfectă în ziua ta agitată. 
+                                                    O ceașcă de cafea gata preparată este o plăcere simplă, dar inegalabilă, ce aduce confort și energie în fiecare moment.
+                        </div>
+                      </div>
+                    <div class="mySlides fade" style="display: none; margin-bottom: auto; max-width: auto;">
+                  <div class="numbertext-3" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); border-radius: 30px; text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; position: sticky; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:small; background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%); ">Produs_slide_3</div>
+      <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style=" position: sticky; max-height: 280px; max-width: 280px; border: solid #000000 2px; border-radius: 10px; padding-left: auto; padding-right: auto; margin-top: 10px; margin-left: 10px; border-radius: 30px; margin-bottom: 10px;" loading="lazy">
+    <div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #000000; border-spacing: 2px; border-top-width: 1px; border-radius: 30px; background-color: #d4a539; width: auto; height: auto; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
+                Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. 
+                Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate. 
+                Căldura ce se răspândește de sub ceașcă oferă o senzație de confort. 
+                Pe marginea ceștii, o mică picătură de rouă de cafea strălucește sub razele soarelui matinal. 
+                Cu fiecare înghițitură, gustul bogat și revigorant îți învăluie simțurile, aducându-ți o bucurie simplă, dar adâncă. 
+                Ceașca de cafea gata pregătită este o mică comoară într-un moment de relaxare și răsfăț personal.
+    </div>
+      </div>
+        <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; bottom: 0px; left: 10px;" onclick="plusSlides(-1)" >&#10094;</a>
+        <a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 60px; bottom: 0px;">&#10095;</a>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <script>
+        let slideIndex = 1;
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+              slideIndex = 1;
+            }
+
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+          }
+
+          // Initial display of slides
+          showSlides(slideIndex);
+      //  Automatically changing the slides: 
+      // let slideIndex = 0;
+      //   showSlides();
+
+      //   function showSlides() {
+      //     let slides = document.getElementsByClassName("mySlides");
+
+      //     for (let i = 0; i < slides.length; i++) {
+      //       slides[i].style.display = "none";
+      //     }
+
+      //     slideIndex++;
+      //     if (slideIndex > slides.length) {
+      //       slideIndex = 1;
+      //     }
+
+      //     slides[slideIndex - 1].style.display = "block";
+      //     fadeIn(slides[slideIndex - 1].querySelector(".text"), 0);
+      //     fadeIn(slides[slideIndex - 1].querySelector("img"), 0);
+
+      //     setTimeout(() => {
+      //       fadeOut(slides[slideIndex - 1].querySelector(".text"), 0);
+      //       fadeOut(slides[slideIndex - 1].querySelector("img"), 0);
+      //     }, 2000);
+
+      //     setTimeout(() => {
+      //       showSlides();
+      //     }, 4000); // Change slides every 4 seconds (including fade in/out times)
+      //   }
+
+      //   function fadeIn(element, opacity) {
+      //     element.style.opacity = opacity;
+      //     if (opacity < 1) {
+      //       opacity += 0.1;
+      //       setTimeout(() => fadeIn(element, opacity), 100);
+      //     }
+      //   }
+
+      //   function fadeOut(element, opacity) {
+      //     element.style.opacity = opacity;
+      //     let timer = 0;
+
+      //     let fadeOutInterval = setInterval(() => {
+      //       if (timer >= 0.09) {
+      //         clearInterval(fadeOutInterval);
+      //       } else {
+      //         opacity -= 0.1;
+      //         element.style.opacity = opacity;
+      //         timer += 0.1;
+      //       }
+      //     }, 100);
+      //   }
+
+      //   function adjustSizes() {
+      //     const slides = document.getElementsByClassName('mySlides');
+      //     const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
+          
+      //     for (let i = 0; i < slides.length; i++) {
+      //       const slide = slides[i];
+      //       const img = slide.querySelector('img');
+      //       const text = slide.querySelector('.text');
+
+      //       img.style.width = containerWidth + 'px';
+      //       text.style.fontSize = (containerWidth * 0.03) + 'px';
+      //     }
+      //   }
+
+      //   window.addEventListener('resize', adjustSizes);
+      //   adjustSizes();
+      </script>
+    </div>
+    <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: #048dbf95; padding-top: 0px; padding-bottom: 100px; top: 20px;">
+      <div class="is-mobile-preview"></div>
+      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="width: 390px;">
+        <style>
+          #Acasa_menu_container {
+            border: 1px;
+            border-color: #ffffff;
+            border-width: 1px;
+            border-style: groove;
+            border-radius: 20px;
+            /* box-sizing: content-box; */
+            width: 392px;
+            left: 0px;
+            height: 100px;
+            /* margin: 50px; */
+            list-style-type: none;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 200px;
+            background: linear-gradient(135deg, #ffffff 27%, rgb(235, 157, 157)66%, rgb(11, 103, 208) 75%);
+            animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+            /* background-size: 200% 200%; */
+          }
+          </style>
+        <div class="menu-container_acasa" id="Acasa_menu_container">
+          <style>
+            #meniu_ordered_1 {
+              list-style-type: none;
+              text-align: center;
+              border: 1px solid rgb(255 255 255);
+              border-radius: 20px;
+              border-style:solid;
+              box-sizing:border-box;
+              position: sticky;
+              display: block;
+            }
+            .menu-container_acasa .menu-ordered_list_1 {
+              list-style-type: none;
+              text-align: center;
+              border-style:solid;
+              position: sticky;
+              box-sizing:border-box;
+            }
+            </style>
+          <ol class="menu-ordered_list_1" id="meniu_ordered_1">
+            <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
+              <a rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
+              <style>
+                .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
+                  list-style-type: none;
+                  text-align: center;
+                  /* margin-right: 10px; */
+                  padding-top: 0px;
+                  margin-left: 0px;
+                  margin-right: 0px;
+                  border: 1px #000000;
+                  border-style: solid;
+                  border-radius: 30px;
+                  /* display: flexbox; */
+                  position: absolute;
+                  /* margin-top: 20px; */
+                  min-width: 265px;
+                  box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
+                  z-index: 1;
+                  display: none;
+                }
+                .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
+                  display: block;
+                  text-align: center;
+                  /* inline-size: 2px; */
+                  border: 1px #000000 solid;
+                  background-color: white;
+                  list-style-type: none;
+                  margin-top: 80px;
+                  display: block;
+                  text-align: center;
+                  inline-size: 2px;
+                  border: 1px #000000 solid;
+                  list-style-type: none;
+                  margin-top: auto;
+                }   
+              </style>  
+              <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
+                <style>
+                  .li_continut_1_tip_lista {
+                    border-top-width: 1px;
+                    padding: 1px;
+                    background-color: rgb(213 163 143);
+                    border: 1px rgb(0, 0, 0);
+                    border-radius: 30px;
+                    border-top: rgb(0, 0, 0) outset;
+                    border-bottom: rgb(0, 0, 0) outset;
+                    border-right: rgb(0, 0, 0) outset;
+                    border-left: rgb(0, 0, 0) outset;
+                    /* margin-bottom: 10px; */
+                    align-content: center;
+                    margin-left: 10px;
+                    margin-right: 40px;
+                    margin-top: 0px;
+                    margin-bottom: 10px;
+                    height: 40px;
+                    font:menu;
+                  }
+                </style>
+                  <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
+                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse1
+                    </a>
+                  </div>
+                  <style>
+                    .li_continut_2_tip_lista {
+                      background-color: rgb(202 136 136);
+                      padding: 1px;
+                      border: 1px black;
+                      border-radius: 30px;
+                      border-top: rgb(0, 0, 0), outset;
+                      border-bottom: rgb(0, 0, 0) outset;
+                      border-right: rgb(255, 255, 255) outset;
+                      border-left: rgb(255, 255, 255) outset;
+                      margin-left: 10px;
+                      margin-right: 40px;
+                      margin-top: 10px;
+                      margin-bottom: 10px;
+                      align-content: center;
+                      height: 40px;
+                      font:menu;
+                  }
+                  </style>
+                  <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
+                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse2
+                    </a>
+                  </div>
+                  <style>
+                    .li_continut_3_tip_lista {
+                      background-color: rgb(213, 143, 143);
+                      padding: 1px;
+                      border: 1px black;
+                      border-radius: 30px;
+                      border-top: rgb(0, 0, 0) outset;
+                      border-bottom: rgb(0, 0, 0) outset;
+                      border-right: rgb(0, 0, 0) outset;
+                      border-left: rgb(0, 0, 0) outset;
+                      margin-left: 10px;
+                      margin-right: 40px;
+                      margin-top: 10px;
+                      margin-bottom: 10px;
+                      align-content: center;
+                      height: 40px;
+                      font:menu;
+                  }
+                  </style>
+                  <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
+                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse3
+                    </a>
+                  </div>
+                </ol>
+            </li>  
+          </ol>
+        </div>
+        <style>
+          #Menu_Categories {
+            border: 1px solid #ffffff; /* Changed border shorthand for consistency */
+            border-radius: 20px;
+            width: 392px;
+            height: 100px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, #ffffff 27%, rgb(235, 157, 157)66%, rgb(11, 103, 208) 75%);
+            animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 3s infinite alternate-reverse;
+            margin-left: auto;
+            margin-bottom: 200px;
+          }
+        
+          .menu-container_categories .menu-ordered_list_2 {
+            list-style-type: none;
+          }
+        
+          .dropdown-list_items_2 {
+            position: relative;
+          }
+        
+          .dropdown_content_ordered_list_2 {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%; /* Position it below the parent item */
+            border: 1px solid #000000;
+            border-radius: 30px;
+            min-width: 265px;
+            box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
+            background-color: white;
+            z-index: 1;
+          }
+        
+          .dropdown-list_items_2:hover .dropdown_content_ordered_list_2 {
+            display: block; /* Show on hover */
+          }
+        
+          /* Consistent styling for list items and links */
+          .dropdown_content_ordered_list_2 > div {
+            padding: 1px;
+            margin: 10px 40px;
+            height: 40px;
+            font: menu;
+          }
+        
+          .dropdown_content_ordered_list_2 a {
+            text-decoration: wavy blue;
+            text-align: center;
+            background-color: #ffed88;
+            border-radius: 20px;
+            display: block; /* Ensure links fill their container */
+            line-height: 40px; /* Center the text vertically */
+          }
+        </style>
+        <div class="menu-container_categories" id="Menu_Categories">
+          <ol class="menu-ordered_list_2" id="meniu_ordered_2">
+            <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
+              <a style="text-decoration: wavy blue;">Categorii Produse
+                <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown"> 
+                  <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
+                    <a href="http://192.168.100.53:8081/Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
+                    </a>
+                  </div>
+                  <div class="li_categoria_2_lista" id="Categoria_2_tip_lista">
+                    <a href="http://192.168.100.53:8081/Categoria-2-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 2
+                    </a>
+                  </div>
+                  <div class="li_categoria_3_lista" id="Categoria_3_tip_lista">
+                    <a href="http://192.168.100.53:8081/Categoria-3-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 3
+                    </a>
+                  </div>
+                </ol>
+              </a>
+            </li>
+          </ol>
+        </div>
+          <style>
+            #menu_produse_top {
+              border: 1px groove #ffffff; /* Changed border shorthand for consistency */
+              border-radius: 20px;
+              width: 392px;
+              height: 100px;
+              position: relative;
+              display: inline-block;
+              background: linear-gradient(135deg, #ffffff 27%, rgb(235, 157, 157)66%, rgb(11, 103, 208) 75%);
+              animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+              margin-left: auto;
+              margin-right: 0px;
+            }
+            .menu_container_1_produse_de_top .menu-container_2_ordered_list {
+              list-style-type: none;
+            }
+            .dropdown-continut_lista_1 {
+              position: relative;
+            }
+            .dropdown-content_imagini_1 {
+              display: none;
+              position: absolute;
+              /* Adjusted left position */
+              left: 100px;
+              /* Center the dropdown horizontally */
+              transform: translateX(-50%); 
+              top: calc(100% + 10px);
+              padding: 39px;
+              background-blend-mode: color-dodge;
+              background: transparent;
+              border-radius: 30px;
+              z-index: 1;
+            }
+          
+            .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
+              /* Show on hover */
+              display: block; 
+            }
+          
+            /* Consistent styling for list items and links */
+            .dropdown-content_imagini_1 .dropdown-container {
+              margin-bottom: 20px;
+              width: 230px;
+              height: 200px;
+              background-color: lightsteelblue;
+              text-align: center;
+              padding: 10px;
+              border-radius: 30px;
+
+            }
+          
+            .dropdown-content_imagini_1 img {
+              width: 100%;
+              height: auto;
+              border-radius: 30px;
+              margin-bottom: 10px;
+            }
+            .dropdown-content_imagini_1 a {
+              text-decoration: wavy blue;
+              background-color: #63c6ea;
+              border-radius: 20px;
+              padding: 2px 10px;
+              color: #fff;
+            }
+            .dropdown-content_imagini_1 p {
+              color: rgb(255, 255, 255);
+              border: 2px solid rgb(255, 255, 255);
+              border-radius: 20px;
+              padding: 2px;
+              background: #084f66;
+              margin: 0;
+            }
+        </style>
+        <div class="menu_container_produse_de_top" id="menu_produse_top">
+          <div class="menu_container_1_produse_de_top" id="Produsetop1">
+            <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
+              <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
+                <a style="text-decoration: wavy blue;">Produse de top</a>
+                  <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
+                    <div class="dropdown-container" id="container_imagine-dropdown-1">
+                      <img src="https://images.unsplash.com/photo-1566656117208-c23e67f4ce8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="eager">
+                      <em>
+                        <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background-color: #63c6ea;">Produsul de top 1</a>
+                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
+                      </em>
+                    </div>
+                    <div class="dropdown-container" id="container_imagine-dropdown-2">
+                      <img src="https://images.unsplash.com/photo-1630248904474-a7927610a5db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="eager">
+                      <em>
+                        <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM " id="Produsul-de-top-2-primary" style="background-color: #63c6ea;">Produsul de top 2</a>
+                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">
+                            Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie. 
+                        </p>
+                      </em>
+                    </div>
+                    <div class="dropdown-container" id="container_imagine-dropdown-3">
+                      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="eager">
+                      <em>
+                        <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" rel="noopener noreferrer" style="background-color: #63c6ea;">Produsul de top 3</a>
+                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66;">
+                            Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase. 
+                        </p>
+                      </em>
+                    </div>
+                  </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
+      <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse vandute top">
+        <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
+          <h3 style="margin-top: 600px; border: 1px solid whitesmoke; border-radius: 30px; background-color: lightgray; width: 250px;">Cele mai vandute produse</h3>
+          <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
+            <div class="image-container_produse_vandute_de_top_1 glowing-background" id="container-imagine-stanga" style="border-radius: 30px;">
+              <a>
+                <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
+              </a>
+              <p style="text-align: center; text-rendering: optimizeSpeed; background-color: rgb(255, 255, 255); border: #005979 2px inset; border-radius: 10px; position: sticky;"> Experimentează rafinamentul și energia pură a unei cafele premium, în capsulele noastre de cafea cu valoare energetică mare și aromă intensă! Fiecare înghițitură este o călătorie către savoarea autentică a boabelor de cafea proaspăt prăjite, oferindu-ți o explozie de gusturi și arome unice.
+                Acest produs este soluția perfectă pentru cei ce caută o doză rapidă de energie în fiecare dimineață sau în timpul unei zile agitate. Cu o combinație perfect echilibrată între forța cafelei și aroma sa inconfundabilă, aceste capsule sunt partenerul tău ideal pentru a începe ziua în forță sau pentru a-ți recăpăta energia în orice moment al zilei.
+                Fă pași în fața oboselii și trăiește intensitatea fiecărei zile cu gustul irezistibil al cafelei din aceste capsule. Profită de aroma bogată și caracterul energizant al acestei cafele premium pentru a te bucura de o experiență de degustare excepțională.
+                Nu rata șansa de a transforma fiecare dimineață într-o experiență plină de gust și energie! Alege capsulele noastre de cafea cu valoare energetică mare și descoperă savoarea autentică a cafelei care te revitalizează într-un mod unic și plăcut.
+                </p>
+            </div>
+            <div class="image-container_produse_vandute_de_top_2 glowing-background" id="container-imagine-dreapta" style="border-radius: 30px;">
+              <a>
+                <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 80px; width:80px; position: relative; border-radius: 50px" loading="eager">
+              </a>
+              <p style="text-align: center; text-rendering: optimizeSpeed; background-color: rgb(255, 255, 255);; border: #005979 2px inset; border-radius: 10px; position: sticky;"> Bucură-te de o călătorie senzorială prin universul cafelei cu boabele noastre de cafea de tip Excelsa - un veritabil deliciu pentru pasionații de cafea! Cultivate în cele mai prielnice zone, aceste boabe sunt o combinație perfectă între aromă exotică și gust rafinat.
+                Excelsa, o varietate rară și prețioasă, te îmbie cu o paletă amplă de arome și un profil gustativ remarcabil. Cu nuanțe distincte de fructe și flori exotice, această cafea oferă o experiență unică, captivantă și plină de profunzime.
+                Aceste boabe de cafea reprezintă o alegere inspirată pentru cei ce apreciază cafeaua de cea mai înaltă calitate. Cu fiecare înghițitură, vei fi transportat într-o călătorie a simțurilor, descoperind straturi bogate de gust și arome complexe, ce redefinesc plăcerea unei cafele autentice.
+                Experimentează aroma distinctivă și calitatea excepțională a boabelor noastre de cafea de tip Excelsa, o alegere premium pentru cei ce caută o cafea cu caracter unic și o savoare deosebită. Delectează-ți simțurile și descoperă o cafea de excepție ce îți va răsfăța gusturile și te va fascina la fiecare ceașcă.
+                </p>
+              </div>
+              <div class="image-container_produse_vandute_de_top_3 glowing-background" id="container-imagine-centru" style="border-radius: 30px;">
+                <a>
+                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 80px; width:80px; position: relative; border-radius: 50px" loading="eager">
+                </a>
+                <p style="text-align: center; text-rendering: optimizeSpeed; background-color: rgb(255, 255, 255);; border: #005979 2px inset; border-radius: 10px; position: sticky;"> Bucură-te de perfecțiunea gustului cu macinarea extra fină dedicată cafelei Arabica! Această măcinătură de excepție este special creată pentru a evidenția toate subtilitățile și aromele rafinate ale boabelor de cafea Arabica, oferindu-ți o experiență senzorială de neegalat.
+                  Cu o granulație extrem de fină, această macinătură este perfectă pentru a extrage în mod optim aromele distincte ale cafelei Arabica. Fiecare ceașcă preparată devine o călătorie gustativă, plină de bogăția notelor florale, fructate și dulci, ce definește caracterul acestei cafele de excepție.
+                  Experimentează ritualul preparării cafelei la cel mai înalt nivel cu macinarea extra fină pentru cafea Arabica. Fiecare cafea preparată devine o operă de artă a gustului, ce te va încânta cu profunzimea și complexitatea sa.
+                  Descoperă lumea bogată și captivantă a cafelei Arabica prin intermediul acestei macinături extra fine, ce te va învălui într-o experiență aromatică inegalabilă. Savurează fiecare înghițitură și lasă-te purtat de notele subtile și elegante ce definesc cafeaua Arabica într-o manieră autentică și sofisticată.
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="canvas" id="myCanvas"></div>
+    <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
+      <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
+        <h4 style="text-align: center; border: 2px solid black; border-radius: 30px;">Sectiunea Stanga</h4>
+        <div class="slideshow" id="leftSlideshow">
+          <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" style="height: 165px; width: 160px; border-radius: 25px;" loading="lazy">
+          <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg" alt="Cafea, Ceașcă, Cofeină, Espresso" style="height: 165px; width: 160px; border-radius: 25px;" loading="lazy">
+          <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg" alt="Cafea, Ceașcă, Halbă, Mic Dejun" style="height: 165px; width: 160px; border-radius: 25px;" loading="lazy">
+        </div>
+      </div>
+      <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
+        <h5 style="text-align: center; border: 2px solid black; border-radius: 30px;">Sectiunea Dreapta</h5>
+        <div class="slideshow" id="rightSlideshow">
+          <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" style="height: 165px; width: 160px; border-radius: 25px;">
+          <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Cafea, Ceașcă, Cappuccino, Latte" style="height: 165px; width: 160px; border-radius: 25px;">
+          <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" style="height: 165px; width: 160px; border-radius: 25px;">
+        </div>
+      </div>
+    </div>
+    <script>
+      // Function to adjust the size of canvas sections based on screen size
+      function adjustCanvasSections() {
+        const canvasContainer = document.getElementById('Informatii-Aditionale-Template-Pentru-Linkuri');
+        const leftCanvas = document.getElementById('leftCanvas');
+        const rightCanvas = document.getElementById('rightCanvas');
+    
+        const containerWidth = canvasContainer.offsetWidth;
+    
+        leftCanvas.style.width = containerWidth / 2 + 'px';
+        rightCanvas.style.width = containerWidth / 2 + 'px';
+      }
+    
+      // Call the adjustCanvasSections function when the window is resized
+      window.addEventListener('resize', adjustCanvasSections);
+    
+      // Call adjustCanvasSections initially to set sizes based on the initial window size
+      adjustCanvasSections();
+    </script>
+    <!-- <script type="text/javascript" src="style.js"></script> -->
+    <footer>
+      
+      <section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 700px; border-radius: 10px; background: lightsteelblue; ">
+        <button style="width: 80px; margin-top: 0px; margin-left: 10px; margin-right: auto; margin-bottom: auto; border-radius: 20px;">Selecteaza</button>
+        <button style="width: 80px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px; border-radius: 20px;">Selecteaza</button>
+      </section>
+    </footer>
+    <canvas style="width: 200px; height: 200px; background: white; border-radius: 30px;">
+    </canvas>
+  </body>
+  <script>
+    function applyUpDownEffect(startY, currentY) {
+      const diffY = currentY - startY;
+    
+      if (diffY > 0) {
+        document.body.style.transform = `translateY(${diffY}px)`;
+      } else {
+        document.body.style.transform = `translateY(${diffY}px)`;
+      }
+    }
+    
+    function resetTransform() {
+      document.body.style.transform = 'translateY(0)';
+    }
+    
+    document.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+      const currentY = e.touches[0].clientY;
+      applyUpDownEffect(startY, currentY);
+    });
+    
+    document.addEventListener('touchend', () => {
+      resetTransform();
+    });
+  </script>
+  
+</html>

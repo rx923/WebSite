@@ -1,33 +1,15 @@
-const express = require("express");
-const authController = require("../controllers/auth");
+// pages.js
+const express = require('express');
 const router = express.Router();
-const login = require('./login');
-const { isAuthenticated } = require('./auth');
+// Define routes using the router
+const { authController, isAuthenticated } = require('../controllers/auth');
+// router.post('/register', authController.register);
 
-// Define the register route
-router.post('/register', authController.register);
-
-// Define the login route
-router.post('/login', async (req, res) => {
-    try {
-        const loggedIn = await login(req);
-        if (loggedIn) {
-            res.sendFile(path.join(__dirname, './public/Logare.html'));
-        }else{
-            res.status(401).json({ message: "Unauthorized" });
-        }
-    }catch(error) {
-        console.error('Error handling login: ', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
+// router.post('/login', authController.login); 
+router.get('/', (req, res) => {
+    // Update file path
+    res.sendFile(path.join(__dirname, '../public/logged_in.html')); 
 });
-
-//Defining the login route:
-router.get('/logged_in', isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, './public/logged_in.html'));
-});
-
-// Define the logout route
-router.get('/logout', authController.logout);
+// router.get('/logout', authController.logout);
 
 module.exports = router;
