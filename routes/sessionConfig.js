@@ -29,4 +29,4 @@ const configureSession = (app) => {
 
 
 
-module.exports = { configureSession };
+module.exports = { configureSession, sessionStore };

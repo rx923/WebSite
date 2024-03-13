@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const http = require('http');
 const session = require('express-session');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const WebSocket = require('ws');
@@ -15,15 +16,17 @@ const loginController = require('./controllers/login');
 const printLoggedInSessions = require('./controllers/loggedin');
 const { login } = require('./controllers/login');
 const bcrypt = require ('bcryptjs');
-const PORT = process.env.PORT || 8081;
 const router = express.Router();
 const { Op, DataTypes, Sequelize } = require('sequelize');
 const { configureSession } = require('./routes/db_config');
 const { registerUser } = require('./models/userModel.js'); 
 const { User } = require('./models/userModel.js');
-const {authController} = require('./controllers/auth');
+const { authController } = require('./controllers/auth');
 
 const app = express();
+const PORT = process.env.PORT || 8081;
+
+app.use(morgan('dev'));
 
 configureSession(app);
 
@@ -54,14 +57,15 @@ configureSession(app);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
 
-app.get('/', (req, res) => {
-    res.render('index');
+// app.get('/login', (req, res) => {
+//     // req.url=('index.html')
+//     res.render('./public/index.html');
     
-})
+// });
 
-const createSession = (req, userId) => {
-    req.session.userId = userId;
-}
+// const createSession = (req, userId) => {
+//     req.session.userId = userId;
+// };
 
 app.use(session({
     secret: "secretKey",
@@ -83,7 +87,8 @@ app.use(cookieParser());
 app.use(cors());
 
 app.post('/register', authController.register);
-
+app.post('/login', authController.login);
+app.post('/logout', authController.logout);
 
 const requireAuth = (req, res, next) => {
     if (req.session.userId) {
@@ -92,14 +97,14 @@ const requireAuth = (req, res, next) => {
         res.redirect('/logged_in.html');
     }
 }
-app.get('/logged_in.html', requireAuth, (req, res) => {
-    res.sendFile('/logged_in.html');
-});
+// app.get('/logged_in.html', requireAuth, (req, res) => {
+//     res.sendFile('/logged_in.html');
+// });
 
-const saltRounds = 10; // Adjust the number of salt rounds as needed
-// Inside your login route handler
-
-app.post('/login', authController.login);
+// app.post('/login', async(req, res) => {
+//     console.log('Request Body: ', req.body);
+//     res.status(200);
+// });
 
 
 

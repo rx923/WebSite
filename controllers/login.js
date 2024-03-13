@@ -4,11 +4,12 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const { pool } = require('../routes/db_config');
 const express = require('express');
-const { response } = require('../server.js');
+// const { response } = require('../server.js');
 const crypto = require('crypto');
 const router = express.Router();
 const { User } = require('../models/userModel.js');
 // Configure session
+
 const sessionMiddleware = session({
     store: new pgSession({
         pool: pool,
@@ -25,35 +26,4 @@ const sessionMiddleware = session({
 // Add session middleware to router
 router.use(sessionMiddleware);
 
-// Login function
-const login = async (username, password) => {
-    try {
-        console.log('Login function called with username:', username);
-        // Ensure both username and password are provided
-        if (!username || !password) {
-            return { success: false, message: "Username and password are required." };
-        }
-
-        // Find the user by username
-        const user = await User.findOne({ where: { username } });
-
-        if (!user) {
-            return { success: false, message: "User not found." };
-        }
-
-        // Validate the password
-        const isPasswordValid = await bcrypt.compare(password, user.password);
-
-        if (!isPasswordValid) {
-            return { success: false, message: "Incorrect password." };
-        }
-
-        // If both username and password are provided and validated, return success
-        console.log('Login successful for username:', username);
-        return { success: true, user };
-    } catch (err) {
-        console.error('Error during login:', err);
-        return { success: false, message: "Internal server error." };
-    }
-};
-module.exports = { sessionMiddleware, login };
+module.exports = { sessionMiddleware };
