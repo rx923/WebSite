@@ -1,117 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <base href="http://192.168.100.53:8081/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Support</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
 
-      <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-      <title>Good Store Coffee</title>
-      <link rel="icon" href="U:\Plan Afacere\WebSite\Icon\imagine-categorii.ico" type="icon/ico">
-      <link rel="stylesheet" href="http://192.168.100.53:8081/ComputerLaptop%20WebSite/Suportpage/support.css" type="text/css" media="screen">
-      <link rel="stylesheet" href="support.css" type="text/css" media="screen"> 
-      <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
-      <style>
-        /* Styles for Android Devices */
-        @media screen and (max-width:412px) and (max-height:915px) and (orientation:landscape) {
+        .chat-bubble {
+            position: relative;
+            display: inline-block;
+            background-color: #fff;
+            border-radius: 20px;
+            border:2px solid black;
+            padding: 8px 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-      </style>
-      <style>
-        /* Styles for iOS Devices */
-        @media screen and (max-width:430px) and (max-height:932px) and (orientation:landscape) {
+
+        .chat-bubble .arrow-down {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 10px solid #000000;
         }
-      </style>
-      <style>
-        /* Styles for Tablets iPad Mini*/
-        @media screen and (max-width:768px) and (max-height:1024px) and (orientation:landscape) {
-          
+
+        .chat-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            top: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-      </style>
-  </head>
-  <body style="background-color: lightslategray;">
-    <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
-    <header>
-      <form action="Team_Support_group.php">
-        <label for="username">ID:</label>
-        <input type="text" id="fname" name="fname">
-        <label for="password">Password:</label>
-        <input type="text" id="lname" name="lname">
-        <input type="submit" value="Submit">
-      </form>
-    </header>
-  
-    <nav>
-      <form action="/support_page.php" class="form-container" method="get" style="border: 2px groove; border-color: black; background-color: whitesmoke;">
-        <h1>Chat</h1>
-        <label for="msg"><b>Message</b></label>
-        <textarea placeholder="Type message.." name="msg" required=""></textarea>
-        <button type="submit" class="btn send">Send</button>
-        <button type="button" class="btn minimize">Minimize</button>
-        <button type="button" class="btn cancel">Close</button>
-        <div class="chat-minimize">
-          <div class="arrow"></div>
+        .chat-content .p {
+          border-radius: 30px;
+          border: 1px, solid black;
+        }
+
+        .chat-bubble:hover .chat-content {
+          display: block;
+          border-radius: 20px;
+          border: solid 2px black;
+        }
+
+        .chat-input {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+            resize: none;
+        }
+
+        .send-button {
+            margin-top: 10px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 10vh;
+            background-color: #37474f;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .inline-container {
+            display: none;
+            margin-bottom: 10px;
+        }
+
+        .inline-container .dropdown {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .inline-container .dropdown:last-child {
+            margin-bottom: 0;
+        }
+
+        .inline-container.show {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sidebar-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        .p {
+          border: 2px solid;
+          border-radius: 10px;
+          background-color: lemonchiffon;
+          margin-bottom: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <button class="btn btn-primary sidebar-toggle" id="sidebar-toggle">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="inline-container">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="resolved-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Resolved Support Issues
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="resolved-dropdown" style="top: 5px;">
+                <li><a class="dropdown-item" href="#">Current Status</a></li>
+                <li><a class="dropdown-item" href="#">Search by ID</a></li>
+                <li><a class="dropdown-item" href="#">Other Options</a></li>
+            </ul>
         </div>
-      </form>
-    </nav>
-  
-    <button class="close-chat">X</button>
-  
-    <!-- Side menu popup for storing chat messages -->
-    <div class="side-menu">
-      <ul class="chat-messages"></ul>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="unresolved-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Unresolved Support Issues
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="unresolved-dropdown">
+                <li><a class="dropdown-item" href="#">Option 1</a></li>
+                <li><a class="dropdown-item" href="#">Option 2</a></li>
+                <li><a class="dropdown-item" href="#">Option 3</a></li>
+            </ul>
+        </div>
     </div>
-  </body>
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          var chatContainer = document.querySelector('.form-container');
-          var chatMessages = document.querySelector('.chat-messages');
-      
-          // Function to open the chat
-          function openChat() {
-            chatContainer.style.display = 'block';
-            chatContainer.style.height = '200px';
-            chatContainer.style.width = '350px';
-            chatContainer.style.top = '20px';
-            chatContainer.style.left = '20px';
-          }
-      
-          // Function to minimize the chat
-          function minimizeChat() {
-            chatContainer.style.height = 'auto';
-            chatContainer.style.width = 'auto';
-            // Store current chat messages in the side menu popup
-            var messages = document.querySelectorAll('.form-container textarea')[0].value;
-            var listItem = document.createElement('li');
-            listItem.textContent = messages;
-            chatMessages.appendChild(listItem);
-          }
-      
-          // Function to close the chat
-          function closeChat() {
-            chatContainer.style.display = 'none';
-          }
-      
-          // Event listener to open the chat when clicking on the circle
-          document.querySelector('.chat-minimize').addEventListener('click', function() {
-            openChat();
-          });
-      
-          // Event listener to minimize the chat when clicking on the minimize button
-          document.querySelector('.btn.minimize').addEventListener('click', function() {
-            minimizeChat();
-          });
-      
-          // Event listener to close the chat when clicking on the close button
-          document.querySelector('.btn.cancel').addEventListener('click', function() {
-            closeChat();
-          });
-      
-          // Event listener to close the chat when clicking on the X button
-          document.querySelector('.close-chat').addEventListener('click', function() {
-            closeChat();
-          });
-        });
-      </script>
-  </html>
+</div>
 
-  
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3" style="position: relative; margin-top: 390px;">
+            <div class="chat-bubble" style="margin-bottom: 100px;">
+                <span>Hi there! How can we help you?</span>
+                <div class="arrow-down"></div>
+                <div class="chat-content">
+                    <p><strong>Support:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p><strong>Support:</strong> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="dropdown mt-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Related Topics
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Topic 1</a></li>
+                            <li><a class="dropdown-item" href="#">Topic 2</a></li>
+                            <li><a class="dropdown-item" href="#">Topic 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-bubble" style="margin-bottom: 100px;">
+                <span>Can I know more about your products?</span>
+                <div class="arrow-down"></div>
+                <div class="chat-content">
+                    <p><strong>Support:</strong> Sure! Our products are...</p>
+                    <p><strong>Support:</strong> You can find more information on our website.</p>
+                    <div class="dropdown mt-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Related Topics
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Topic 1</a></li>
+                            <li><a class="dropdown-item" href="#">Topic 2</a></li>
+                            <li><a class="dropdown-item" href="#">Topic 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-bubble" style="margin-bottom: 100px;">
+                <span>I'm having trouble with my account.</span>
+                <div class="arrow-down"></div>
+                <div class="chat-content">
+                    <p><strong>Support:</strong> Please provide us with your account details...</p>
+                    <p><strong>Support:</strong> We will assist you shortly.</p>
+                    <div class="dropdown mt-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Related Topics
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Topic 1</a></li>
+                            <li><a class="dropdown-item" href="#">Topic 2</a></li>
+                            <li><a class="dropdown-item" href="#">Topic 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support chat input -->
+            <form action="/send-message" method="post">
+                <textarea name="message" id="message" class="chat-input" placeholder="Type your message here..." required></textarea>
+                <button type="submit" class="btn btn-primary send-button">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("sidebar-toggle").addEventListener("click", function() {
+        document.querySelector(".inline-container").classList.toggle("show");
+    });
+</script>
+</body>
+</html>

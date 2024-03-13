@@ -87,11 +87,10 @@
         <label for="uname" style="margin-top: 10px; margin-bottom: 10px; margin-left: 9px; width: 140px; height: 10px; border: 1px groove cadetblue; border-radius: 30px; font-family: system-ui; display: inline-block; text-align: left; box-sizing: border-box; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4); width: auto; margin-top: 18px;">
             <b style="position: relative; bottom: 12px; margin-bottom: 3px; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; padding: 2px; font: -webkit-control; border: 1px solid; text-align: -webkit-center;">Nume Utilizator:</b>
         </label>
-        <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
-            <label for="password">
+        <input type="text" placeholder="Username/ User" id="username" name="username" required>
             <b style="position: relative; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; padding: 5px; border: 1px solid;">Parola:</b>
             </label>
-        <input type="password" id="password_Log_On_cont" accept="file" placeholder="Scrie Parola" name="password-user" required="true" style="max-width: 135px;margin-top: 20px;margin-bottom: 20px;position: relative;background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%);border-radius: 15px;font: -webkit-control;padding: 5px;">
+        <input type="password" id="password" name="password" accept="file" placeholder="Scrie Parola" required="true" style="max-width: 135px;margin-top: 20px;margin-bottom: 20px;position: relative;background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%);border-radius: 15px;font: -webkit-control;padding: 5px;">
             <button type="submit" id="submit-button-form" style="background-color: #875050; border-radius: 20px; padding: 15px 10px; margin: 0px 0; border: none; cursor: pointer; width: auto;">Logheaza-te</button>
             <label for="password" style="position: sticky; margin-left: -6px; margin-top: 28px; display: ruby; border: 1px solid black; border-radius: 20px; background-color: antiquewhite; font-size: x-small; padding-top: 5px; text-align: left; margin-top: 10px;">
             <input type="checkbox" accept="file" checked="checked" name="remember" style="margin-top: 10px; margin-bottom: 10px; margin-left: 3p; width: 15px; height: 10px; border: 1px groove cadetblue; border-radius: 20px; font-family: system-ui;"> Memoreaza informatiile de conectare.
@@ -104,44 +103,35 @@
         </div>
     </form>
     <script>
-    document.getElementById('Logheaza-teForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const uname = document.getElementById('uname').value;
-        // Corrected id
-        const password = document.getElementById('password_Log_On_cont').value; 
-        const formData = new FormData();
-        formData.append('uname', uname);
-        formData.append('password-user', password);
-        formData.append('remember', 'on');
+        document.getElementById('Logheaza-teForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
     
-        // Log the FormData entries
-        console.log([...formData.entries()]);
+                if (!response.ok) {
+                    throw new Error('Failed to log in.');
+                }
     
-        try {
-            const response = await fetch('/login', {
-                method: 'POST',
-                body: formData,
-            });
+                const data = await response.json();
+                if (!data.token) {
+                    throw new Error('Token not received.');
+                }
     
-            if (!response.ok) {
-                throw new Error('Failed to log in.');
+                // Redirect to logged_in.html upon successful login
+                window.location.href = '/logged_in.html';
+            } catch (error) {
+                console.error(error.message);
+                // Handle login error, e.g., display error message to user
             }
+        });
+    </script>
     
-            const redirectURL = response.headers.get('./public/logged_in.html');
-            if (redirectURL) {
-                window.location.href = redirectURL;
-            } else {
-                window.location.href = "./public/logged_in.html";
-            }
-        } catch (error) {
-            console.error(error.message);
-        }
-    });
-    
-    // Function to close the login form
-    function closeForm() {
-        var form = document.getElementById("Logheaza-teForm");
-        form.style.display = "none";
-    }
-    </script>    
 </body>

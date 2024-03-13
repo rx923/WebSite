@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="en/ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+    <style>
+        #navigation-bar{
+            width: 350px;
+            height: 350px;
+            border: 1px solid black;
+            border-radius: 20px;
+            background-color: black;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+            background-color: #696b54;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #c4cca6;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            height: 100px;
+            position: sticky;
+            text-align: center;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            box-shadow: 2px 2px 2px #555; /* Adjusted box shadow */
+        }
+
+        h1:hover {
+            background-color: #ddd;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .profile-picture {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 75px;
+            height: 75px;
+            border-radius: 10px;
+            background-color: #555;
+            z-index: 1; /* Ensure it's above other content */
+        }
+
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ddd;
+        }
+
+        .profile-details {
+            flex-grow: 1;
+        }
+
+        .profile-details p {
+            margin: 10px 0;
+        }
+
+        .profile-details strong {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .profile-details {
+            background-color: #f9f9f9; /* Add background color */
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #ccc; /* Add border */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .menu {
+            display: none;
+            position: absolute;
+            top: 40px; /* Adjust as needed */
+            right: 0;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .menu-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .menu-items {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            margin-bottom: 10px;
+        }
+
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .menu-items li {
+            margin-bottom: 10px;
+        }
+
+        .menu-items li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .menu-button:hover {
+            background-color: #555;
+        }
+
+        .content {
+            height: 200px;
+            width: 300px;
+            flex-grow: 1;
+            padding: 20px;
+            border-radius: 30px;
+            background-color: #6f5454;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Account Profile</h1>
+        <nav class="collapse navbar-collapse" id="navigation-bar">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </nav>
+        <div class="container">
+            <button id="menuButton" class="menu-button">Menu</button>
+            <div id="menu" class="menu">
+                <div class="menu-content">
+                    <ul class="menu-items">
+                        <li>
+                            <a href="#">Option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Option 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Option 3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+            </div>
+        <script src="script.js">
+            const menuButton = document.getElementById('menuButton');
+            const menuContent = document.querySelector('.menu-content');
+
+            menuButton.addEventListener('click', toggleMenu);
+
+            function toggleMenu() {
+                menuContent.classList.toggle('show');
+            }
+            const menu = document.getElementById('menu');
+            const content = document.querySelector('.content');
+
+            let isMenuOpen = false;
+
+            content.addEventListener('touchstart', handleTouchStart, false);
+            content.addEventListener('touchmove', handleTouchMove, false);
+
+            let xDown = null;
+            let yDown = null;
+
+            function handleTouchStart(event) {
+                xDown = event.touches[0].clientX;
+                yDown = event.touches[0].clientY;
+            }
+
+            function handleTouchMove(event) {
+                if (!xDown || !yDown) {
+                    return;
+                }
+
+                let xUp = event.touches[0].clientX;
+                let yUp = event.touches[0].clientY;
+
+                let xDiff = xDown - xUp;
+                let yDiff = yDown - yUp;
+
+                if (Math.abs(xDiff) > Math.abs(yDiff)) { /* Most significant */
+                    if (xDiff > 0) {
+                        /* left swipe */
+                        closeMenu();
+                    } else {
+                        /* right swipe */
+                        openMenu();
+                    }
+                }
+
+                /* reset values */
+                xDown = null;
+                yDown = null;
+            }
+
+            function openMenu() {
+                menu.style.right = '0';
+                isMenuOpen = true;
+            }
+
+            function closeMenu() {
+                menu.style.right = '-200px';
+                isMenuOpen = false;
+            }
+        </script>
+        </div>
+    </main>
+        <header>
+            <div class="container">
+                <h1>User Profile</h1>
+                <div class="profile-info">
+                    <div class="profile-picture">
+                        <img src="profile-picture.jpg" alt="Profile Picture">
+                    </div>
+                    <div class="profile-details">
+                        <p><strong>Username:</strong> JohnDoe</p>
+                        <p><strong>Email:</strong> johndoe@example.com</p>
+                        <p><strong>Location:</strong> New York City</p>
+                        <p><strong>Joined:</strong> January 1, 2022</p>
+                    </div>
+                </div>
+        </header>
+        <footer>
+        </footer>
+    <nav class="window" style="width: 200px; height: 200px; border: 1px, solid, black">
+
+</body>
+</html>
