@@ -190,7 +190,7 @@
       <h2>Inregistrare</h2>
       <p style="border: 1px solid; background-color: whitesmoke; border-radius: 20px;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Introdu adresa de Email" name="email" id="email" required>
+      <input type="email" placeholder="Introdu adresa de Email" name="email" id="email" required>
       <label for="password"><b>Parola</b></label>
       <input type="password" placeholder="Introdu Parola:" name="password" id="password" required>
       <label for="password_repeat"><b>Repeta Parola</b></label>
@@ -208,29 +208,31 @@
       </div>
     </div>
   </form>
-  
   <script>
     document.getElementById('InregistrareForm').addEventListener('submit', async (event) => {
       event.preventDefault();
-  
+
       const formData = new FormData(event.target);
-  
+
       try {
-        const response = await fetch('/auth/user/register', {
+        const response = await fetch('/register', {
           method: 'POST',
           body: formData,
         });
-  
+
         if (!response.ok) {
           throw new Error('Failed to register user.');
         }
-  
+
         const data = await response.json();
         console.log('User registered successfully:', data);
       } catch (error) {
         console.error(error.message);
       }
     });
-  </script>
+    </script>
+
+    
+    
 </body>
 </html>

@@ -449,86 +449,79 @@
           transform: translateY(-50%);
           cursor: pointer;
           font-size: 20px;
-          /* adjust background color as needed */
           background-color: #598e9d; 
           padding: 10px;
-          /* adjust border radius as needed */
           border-radius: 25px 25px 25px 25px; 
-          /* optional: add shadow for depth */
-          box-shadow: 2px 2px 2px 2px rgb(255, 255, 255); 
-          /* ensure arrow appears above other elements */
+          box-shadow: 2px 2px 20px 2px rgb(255, 255, 255); 
           z-index: 9999; 
         }
         .arrow-icon:hover {
-        /* adjust hover background color as needed */
-        background-color: #d86d6d;
-        border-radius: 20px; 
+          background-color: #d86d6d;
+          border-radius: 20px; 
         }
-        </style>
-      <div class="arrow-icon" onclick="toggleMenu()">&#8596;</div>
-      <style>
         .menu-container {
-          position: fixed; /* Use fixed positioning */
-          background: #598e9de6;
+          position: absolute;
           border-radius: 30px;
-          top: 50px;
-          left: -400px; 
-          width: 390px; 
-          height: 450px; 
-          transition: left 0.3s ease; 
-          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); 
-          z-index: 9990; 
+          top: 145px;
+          left: -420px;
+          width: 313px;
+          height: 400px;
+          background-color: rgba(255, 255, 255, 0.397);
+          transition: left 1s ease;
+          z-index: 9999;
+          overflow-x: hidden;
+        }
+      
+        .close-btn {
+          text-align: center;
+          position: relative;
+          padding: 10px;
+          border: 1px solid black;
+          width: 40px;
+          left: 245px;
+          top: 5px;
+          height: 10px;
+          border-radius: 30px;
+          cursor: pointer;
+          font-size: 20px;
+          background-color: #6a67ff6b;
         }
       </style>
-      <div class="menu-container">
+      <div class="arrow-icon" onclick="toggleMenu()">&#8596;</div>
+      <div class="menu-container" id="menu">
+        <div class="close-btn" onclick="toggleMenu()">X</div> 
         <!-- Close button -->
-        <style>
-          .close-btn {
-            position: relative;
-            top: -189px;
-            left: 324px;
-            padding: 10px;
-            transform: translateY(47vw);
-            border: 1px solid black;
-            width: 40px;
-            height: 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 20px;
-            /* adjust background color as needed */
-            background-color: #6a67ff6b; 
-          }
-          </style>
-        <div class="close-btn" onclick="closeMenu()">X</div> 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              // Set initial position of the menu to -400px
-              var menu = document.querySelector('.menu-container');
-              menu.style.left = '-400px';
-            });
+        <script defer>
           function toggleMenu() {
-            var menu = document.querySelector('.menu-container');
-            var arrowIcon = document.querySelector('.arrow-icon');
-
-            if (menu.style.left === '-400px') { 
-              // if menu is hidden
-              // show menu
-              menu.style.left = '0px';
-              // Hiding the arrow icon
-              arrowIcon.style.display = 'none';
+            var menu = document.getElementById('menu');
+        
+            if (menu.classList.contains('open')) {
+              // if menu is open, close it
+              menu.classList.remove('open');
             } else {
-              // hide menu
-              menu.style.left = '-400px'; 
+              // if menu is closed, open it
+              menu.classList.add('open');
+            }
+          }
+        
+          function openMenu() {
+            var menu = document.getElementById('menu');
+        
+            if (menu) {
+              menu.classList.add('open');
+            } else {
+              console.error("Menu element not found.");
             }
           }
         
           function closeMenu() {
-            var menu = document.querySelector('.menu-container');
-            menu.style.left = '-400px'; 
-            // hide menu
-            var arrowIcon = document.querySelector('.arrow-icon');
-            // Showing the arrow icon
-            arrowIcon.style.display = 'block';
+            var menu = document.getElementById('menu');
+        
+            if (menu) {
+              menu.classList.remove('open');
+            } else {
+              console.error("Menu element not found.");
+            }
           }
         </script>
         <style>
@@ -549,7 +542,7 @@
             animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
             background-size: 200% 200%;
             align-items: baseline;
-            background-color:  white;
+            background: linear-gradient(130deg, #ffffff, #5c3a3a, #000000);
           }
           .glowing-background {
             background: linear-gradient(24deg, #857147 32%, rgb(0, 65, 151)70%, rgb(143, 40, 14)85%);
@@ -560,13 +553,15 @@
             box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
           }
           .tabel-1-lista-optiuni{
-            margin-left: 10px;
-            margin-top: 10px;
-            padding: 20px;
+            margin-left: 1px;
+            background-color: linear-gradient(24deg, #c9c9c9 32%, rgb(44, 91, 154)70%,rgb(186, 93, 69)85%);
+            margin-top: 100px;
+            width: 260px;
+            padding: 5px;
             align-items: center;
-            border: 2px solid white;
-            border-top-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+            border: 1px inset white;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 30px;
             border-top-right-radius: 30px;
             border-bottom-left-radius: 30px;
           }

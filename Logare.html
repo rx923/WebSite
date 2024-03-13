@@ -13,7 +13,6 @@
             position: absolute;
             width: 51px;
             /* Adjusted position to the top */
-            top: -186px; 
             /* Adjusted position to the right */
             left: calc(100% - 80px); 
             /* Adjusted height */
@@ -27,16 +26,15 @@
         }      
         /* Form container style */
         #Logheaza-teForm {
-            position: absolute;
-            top: 290px;
+            position: relative;
+            top: 250px;
             right: 0px;
-            width: 300px;
+            width: 180px;
             height: auto;
             /* Adjusted maximum width */
-            max-width: 300px; 
             /* Adjusted maximum height */
-            max-height: 360px; 
-            background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(112, 128, 144, 1), rgba(0, 0, 139, 1), rgba(255, 105, 180, 1));
+            max-height: 350px; 
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(112, 128, 144, 1), rgba(0, 0, 139, 1), rgb(151 255 105));
             border-radius: 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: inline-block;
@@ -79,7 +77,7 @@
 
 
 <body>
-    <form action="http://192.168.100.53:8081/index.js" id="Logheaza-teForm" method="post" class="form-container" style="display: block; width: 300px; height: auto; position: absolute; top: 290px; right: 0px;">
+    <form action="/login" id="Logheaza-teForm" method="post" class="form-container" style="display: block; width: 180px; height: auto; position: absolute;">
         <!-- Close button -->
         <div class="close-btn" onclick="closeForm()">&times;</div>
         <div class="imgcontainer">
@@ -87,13 +85,13 @@
         </div>
         <div class="container-pagina-logare" id="form-container-1" style="width: 190px; background-color: (55deg, #c4833e 35%,rgb(89, 161, 184)20%, #084f66) 80%;">
         <label for="uname" style="margin-top: 10px; margin-bottom: 10px; margin-left: 9px; width: 140px; height: 10px; border: 1px groove cadetblue; border-radius: 30px; font-family: system-ui; display: inline-block; text-align: left; box-sizing: border-box; box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.4); width: auto; margin-top: 18px;">
-            <b style="position: static; margin-bottom: 0px; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; padding: 2px; font: -webkit-control; border: 1px solid; text-align: -webkit-center;">Nume Utilizator:</b>
+            <b style="position: relative; bottom: 12px; margin-bottom: 3px; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; padding: 2px; font: -webkit-control; border: 1px solid; text-align: -webkit-center;">Nume Utilizator:</b>
         </label>
         <input type="text" placeholder="Username/ User" id="uname" name="uname" required>
             <label for="password">
-            <b style="position: relative; background: linear-gradient(20deg, rgb(130 90 36) 51%, rgb(204 184 142)33%, #9b6930 66%); border-radius: 15px; padding: 5px; border: 1px solid;">Parola:</b>
+            <b style="position: relative; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; padding: 5px; border: 1px solid;">Parola:</b>
             </label>
-        <input type="password" id="password_Log_On_cont" accept="file" placeholder="Scrie Parola" name="password-user" required="true" style="max-width: 135px; margin-bottom: 5px; position: relative; background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%); border-radius: 15px; font: -webkit-control; padding: 5px;">
+        <input type="password" id="password_Log_On_cont" accept="file" placeholder="Scrie Parola" name="password-user" required="true" style="max-width: 135px;margin-top: 20px;margin-bottom: 20px;position: relative;background: linear-gradient(20deg, #7dadce94 51%, #4cb6ffa8 33%, #3995d359 66%);border-radius: 15px;font: -webkit-control;padding: 5px;">
             <button type="submit" id="submit-button-form" style="background-color: #875050; border-radius: 20px; padding: 15px 10px; margin: 0px 0; border: none; cursor: pointer; width: auto;">Logheaza-te</button>
             <label for="password" style="position: sticky; margin-left: -6px; margin-top: 28px; display: ruby; border: 1px solid black; border-radius: 20px; background-color: antiquewhite; font-size: x-small; padding-top: 5px; text-align: left; margin-top: 10px;">
             <input type="checkbox" accept="file" checked="checked" name="remember" style="margin-top: 10px; margin-bottom: 10px; margin-left: 3p; width: 15px; height: 10px; border: 1px groove cadetblue; border-radius: 20px; font-family: system-ui;"> Memoreaza informatiile de conectare.
@@ -106,9 +104,44 @@
         </div>
     </form>
     <script>
-        function closeForm() {
-            var form = document.getElementById("Logheaza-teForm");
-            form.style.display = "none";
+    document.getElementById('Logheaza-teForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const uname = document.getElementById('uname').value;
+        // Corrected id
+        const password = document.getElementById('password_Log_On_cont').value; 
+        const formData = new FormData();
+        formData.append('uname', uname);
+        formData.append('password-user', password);
+        formData.append('remember', 'on');
+    
+        // Log the FormData entries
+        console.log([...formData.entries()]);
+    
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                body: formData,
+            });
+    
+            if (!response.ok) {
+                throw new Error('Failed to log in.');
             }
-    </script>
+    
+            const redirectURL = response.headers.get('./public/logged_in.html');
+            if (redirectURL) {
+                window.location.href = redirectURL;
+            } else {
+                window.location.href = "./public/logged_in.html";
+            }
+        } catch (error) {
+            console.error(error.message);
+        }
+    });
+    
+    // Function to close the login form
+    function closeForm() {
+        var form = document.getElementById("Logheaza-teForm");
+        form.style.display = "none";
+    }
+    </script>    
 </body>
