@@ -125,7 +125,7 @@ const authController = {
           const { token, user } = authResult;
           console.log('Token:', token);
           console.log('User:', user);
-          req.session.user = { id: user.id, username: user.username };
+          req.session.username = { id: user.id, username: user.username };
         //   res.status(200).json({ message: 'Login successful', token, user: req.session.user });
           res.redirect('/logged_in.html');
           

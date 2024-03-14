@@ -22,6 +22,7 @@ const { configureSession } = require('./routes/db_config');
 const { registerUser } = require('./models/userModel.js'); 
 const { User } = require('./models/userModel.js');
 const { authController } = require('./controllers/auth');
+const { hostname } = require('os');
 
 const app = express();
 const PORT = process.env.PORT || 8081;
@@ -55,7 +56,7 @@ configureSession(app);
 
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, './views'));
+app.set('views', path.join(__dirname, 'views'));
 
 // app.get('/login', (req, res) => {
 //     // req.url=('index.html')
@@ -97,14 +98,13 @@ const requireAuth = (req, res, next) => {
         res.redirect('/logged_in.html');
     }
 }
-// app.get('/logged_in.html', requireAuth, (req, res) => {
-//     res.sendFile('/logged_in.html');
-// });
+app.get('/logged_in', (req, res) => {
+    const username = req.session.username;
 
-// app.post('/login', async(req, res) => {
-//     console.log('Request Body: ', req.body);
-//     res.status(200);
-// });
+    res.render('logged_in', { username: username});
+});
+
+
 
 
 
@@ -123,7 +123,7 @@ wss.on('connection', (ws) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+    console.log(`Server is listening on port ${PORT} ${hostname}`);
 });
 
 module.exports = app;
