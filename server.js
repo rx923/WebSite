@@ -77,6 +77,7 @@ app.use(session({
 
 
 initializeDatabase();
+app.use('/auth', authController);
 
 app.use(pagesRouter);
 app.use(bodyParser.json());
@@ -87,9 +88,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-app.post('/register', authController.register);
+//Mounting register routes
+// Use the register router here
+app.use('/register', authController.register); 
+//Mounting login routes
 app.post('/login', authController.login);
+//Mounting logout routes
 app.post('/logout', authController.logout);
+//Mounting profile routes
+// app.use('/profiles', authController.submitProfile);
+
+// app.use('/profile', submitProfile);
 
 const requireAuth = (req, res, next) => {
     if (req.session.userId) {
@@ -103,9 +112,6 @@ app.get('/logged_in', (req, res) => {
 
     res.render('logged_in', { username: username});
 });
-
-
-
 
 
 const server = http.createServer(app);

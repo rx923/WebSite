@@ -35,6 +35,33 @@ const User = sequelize.define('users', {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
+  fullName: {
+    // Adjust data type and length as needed
+      type: DataTypes.STRING(255), 
+      // Adjust allowNull based on your requirements
+      allowNull: true, 
+  },
+  location: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+  },
+  phoneNumber: {
+    // Assuming phone numbers can include special characters like '+'
+      type: DataTypes.STRING(20), 
+      allowNull: true,
+  },
+  contactDetails: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+  },
+  address: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+  },
+  countryOfResidence: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+  },
   createdAt: {
     type: DataTypes.DATE,
     allowNull: false,

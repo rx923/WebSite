@@ -171,6 +171,23 @@ const authController = {
             console.error('Error registering user:', error.message);
             res.status(500).json({ error: 'Internal server error' });
         }
+    },
+    submitProfile: async (req, res) => {
+        try {
+            // Extract additional user information from request body
+            const { fullName, location, phoneNumber, contactDetails, address } = req.body;
+    
+            // Validate request body
+    
+            // Update user's record in the database with additional information
+            await updateUserProfile(req.user.id, { fullName, location, phoneNumber, contactDetails, address });
+    
+            // Redirect user to a success page or any other appropriate action
+            res.redirect('/profile-updated.html');
+        } catch (error) {
+            console.error('Error updating user profile:', error.message);
+            res.status(500).json({ error: 'Internal server error' });
+        }
     }
 };
 
