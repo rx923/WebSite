@@ -5,8 +5,10 @@ const bcrypt = require('bcryptjs');
 const { User } = require('../models/userModel.js');
 const { use } = require('../server.js');
 const session = require('express-session');
+const validator = require('validator');
 
-
+// hashing the passwords while creating an account for storing inside the database.
+// no visibility of the password when the user creates the account.
 const hashPassword = async (plaintextPassword) => {
     try {
         // Generate a salt to use for hashing
@@ -98,16 +100,32 @@ const authenticateAndCompare = async (providedUsername, providedPassword) => {
     }
 };
 
+const updateUserProfile = async(userId, profileData) => {
+    try{
+
+        const user = await User.findOne(userId);
+        if(!user) {
+            throw new Error('User not found');
+        }
+        await user.update(profileData);
+        console.log('User profile updated successfully');
+    }catch(error) {
+        throw new Error(`Error updating user profile: ${error,message}`);
+    }
+};
+
 
 
 const authController = {
     login: async (req, res) => {
+        req.session.userId = User.id;
+        // Check if username and password are provided
         const { username, password } = req.body;
         console.log('Username:', username);
         console.log('Password:', password);
         console.log('Session ID:', req.session.id);
         console.log('User ID:', req.session.userId);
-        console.log('Session Cookie:', req.session.cookie);        // Check if username and password are provided
+        console.log('Session Cookie:', req.session.cookie);        
         if (!username || !password) {
           return res.status(400).json({ error: 'Username and password are required.' });
         }
@@ -150,6 +168,7 @@ const authController = {
     },
     register: async (req, res) => {
         try {
+            req.session.userId = User.id;
             if (!req.body) {
                 return res.status(400).json({ error: 'Request body is missing.' });
             }
@@ -164,31 +183,87 @@ const authController = {
             }
 
             // Register the new user
-            await registerUser(username, email, password);
-            res.redirect('/index.html?registered=true');
+
+
+            req.session.registrationData = { username, email, password };
+
+            res.redirect('/Inregistrare_User_Completare_Profil.html');
+
 
         } catch (error) {
             console.error('Error registering user:', error.message);
             res.status(500).json({ error: 'Internal server error' });
         }
     },
-    submitProfile: async (req, res) => {
+    profileCompletion: async (req, res) => {
         try {
-            // Extract additional user information from request body
-            const { fullName, location, phoneNumber, contactDetails, address } = req.body;
+            req.session.userId = User.id;
+            const { first_name, last_name, full_name, location, phone_number, contact_details, address } = req.body;
     
-            // Validate request body
+            // Sanitize and escape input
+            const sanitizedFirstName = validator.escape(first_name);
+            const sanitizedLastName = validator.escape(last_name);
+            const sanitizedFullName = validator.escape(full_name);
+            const sanitizedLocation = validator.escape(location);
+            const sanitizedPhoneNumber = validator.escape(phone_number);
+            const sanitizedContactDetails = validator.escape(contact_details);
+            const sanitizedAddress = validator.escape(address);
     
-            // Update user's record in the database with additional information
-            await updateUserProfile(req.user.id, { fullName, location, phoneNumber, contactDetails, address });
+            // Check if any of the sanitized values are empty strings
+            if (
+                sanitizedFirstName.trim() === '' ||
+                sanitizedLastName.trim() === '' ||
+                sanitizedFullName.trim() === '' ||
+                sanitizedLocation.trim() === '' ||
+                sanitizedPhoneNumber.trim() === '' ||
+                sanitizedContactDetails.trim() === '' ||
+                sanitizedAddress.trim() === ''
+            ) {
+                return res.status(400).json({ error: 'One or more required fields are empty' });
+            }
     
-            // Redirect user to a success page or any other appropriate action
-            res.redirect('/profile-updated.html');
+            // Find the user in the database based on their username or email
+            const user = await User.findOne({ $or: [{ username: req.session.registrationData.username }, { email: req.session.registrationData.email }] });
+    
+            // Split the contactDetails string into individual details
+            if (!user) {
+                return res.status(404).json({ error: 'User not found' });
+            }
+    
+            // Update the user's profile with the sanitized and escaped data
+            user.full_name = sanitizedFullName;
+            user.first_name = sanitizedFirstName;
+            user.last_name = sanitizedLastName;
+            user.location = sanitizedLocation;
+            user.phone_number = sanitizedPhoneNumber;
+            user.contact_details = sanitizedContactDetails;
+            user.address = sanitizedAddress;
+    
+            // Save the updated user profile without Sequelize validation
+            await user.save({ validate: false });
+    
+            // Register the user
+            await registerUser(req.session.registrationData.username, req.session.registrationData.email, req.session.registrationData.password);
+    
+            // Save user profile completion data
+            await registerUserProfile(req.session.registrationData, {
+                full_name: sanitizedFullName,
+                location: sanitizedLocation,
+                phone_number: sanitizedPhoneNumber,
+                contact_details: sanitizedContactDetails,
+                address: sanitizedAddress
+            });
+    
+            // Clear registration data from session
+            delete req.session.registrationData;
+    
+            // Redirect user to success page or any other appropriate action
+            res.redirect('/Profile.html');
         } catch (error) {
-            console.error('Error updating user profile:', error.message);
-            res.status(500).json({ error: 'Internal server error' });
+            console.error('Error submitting profile:', error);
+            res.status(500).json({ message: 'Error submitting profile' });
         }
     }
 };
 
-module.exports = { authController, registerUser, hashPassword };
+module.exports = { authController, registerUser, hashPassword, updateUserProfile };

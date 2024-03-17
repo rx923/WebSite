@@ -14,65 +14,71 @@ const sequelize = new Sequelize({
   database: process.env.DB_NAME || 'AccountCreation',
 });
 
-const User = sequelize.define('users', {
+const User = sequelize.define('User', {
   id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-    allowNull: false,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
   },
   username: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
-    unique: true,
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: true,
   },
   email: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
-    unique: true,
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: true,
   },
   password: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
+      type: DataTypes.STRING(100),
+      allowNull: false,
   },
-  fullName: {
-    // Adjust data type and length as needed
+  full_name: {
       type: DataTypes.STRING(255), 
-      // Adjust allowNull based on your requirements
-      allowNull: true, 
+      allowNull: false, 
   },
   location: {
       type: DataTypes.STRING(255),
-      allowNull: true,
+      allowNull: false,
   },
-  phoneNumber: {
-    // Assuming phone numbers can include special characters like '+'
+  phone_number: {
       type: DataTypes.STRING(20), 
-      allowNull: true,
+      allowNull: false,
   },
-  contactDetails: {
-      type: DataTypes.TEXT,
-      allowNull: true,
+  contact_details: {
+      type: DataTypes.TEXT(200),
+      allowNull: false,
   },
   address: {
-      type: DataTypes.TEXT,
-      allowNull: true,
+      type: DataTypes.TEXT(100),
+      allowNull: false,
   },
-  countryOfResidence: {
+  country_of_residence: {
       type: DataTypes.STRING(100),
-      allowNull: true,
+      allowNull: false,
   },
   createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW,
   },
   updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW,
+  },
+  first_name: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+  },
+  last_name: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
   },
 }, { tableName: 'users' });
+
 
 (async () => {
   try {
@@ -109,4 +115,20 @@ User.findByUsername = async(username) => {
   }
 };
 
-module.exports = { User, registerUser };
+const updateUserProfile = async (userId, profileData) => {
+  try {
+      // Find the user by ID
+      const user = await User.findByPk(userId);
+      if (!user) {
+          throw new Error('User not found');
+      }
+      
+      // Update user's profile data
+      await user.update(profileData);
+      console.log('User profile updated successfully');
+  } catch (error) {
+      console.error('Error updating user profile:', error);
+      throw error;
+  }
+};
+module.exports = { User, registerUser, updateUserProfile };
