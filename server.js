@@ -56,6 +56,11 @@ app.get('/logged_in', (req, res) => {
     res.render('logged_in', { username: username });
 });
 
+app.get('/Profile.html', (req, res) => {
+     // Assuming you have a view engine set up
+    res.render('profile', { user: userDetails });
+});
+
 // Create the server
 const server = http.createServer(app);
 

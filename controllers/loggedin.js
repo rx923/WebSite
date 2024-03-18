@@ -6,6 +6,8 @@ const crypto = require('crypto');
 const User = require('../models/userModel');
 const path = require('path');
 const { pool } = require('../routes/db_config');
+const { mapSessionToUser } = require('../path/to/mapSessionToUser');
+const { registerUser } = require('./auth.js');
 
 // Generate a random secret for session
 const generateRandomSecret = () => {
@@ -75,12 +77,15 @@ router.get('/protected', isAuthenticated, async (req, res) => {
 router.post('/login', async (req, res) => {
     // Check if username and password are provided
     const { username, password } = req.body;
+    // Extract user registration data from request body
+    const userData = req.body;
 
     if (!username || !password) {
         return res.status(400).json({ error: 'Username and password are required.' });
     }
 
     try {
+        const newUser = await registerUser(userData, req);
         // Authenticate the user and compare the password
         const authResult = await authenticateAndCompare(username, password);
         if (authResult.error) {
@@ -93,11 +98,23 @@ router.post('/login', async (req, res) => {
         // Set user ID in the session
         req.session.userId = user.id;
 
+        // Map the session to the user's ID
+        await mapSessionToUser(req.session.id, user.id);
+
         // Redirect to the appropriate page after successful login
         res.redirect('/logged_in.html');
     } catch (error) {
-        console.error('Error logging in:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        if (error.message.includes('An account with this email already exists.')) {
+            // Handle the case where the email is already in use
+            res.status(400).json({ error: 'An account with this email already exists.' });
+        } else if (error.message.includes('An account with this username already exists.')) {
+            // Handle the case where the username is already in use
+            res.status(400).json({ error: 'An account with this username already exists.' });
+        } else {
+            // Handle other unexpected errors
+            console.error('Error registering user:', error.message);
+            res.status(500).json({ error: 'Internal server error' });
+        }
     }
 });
 
@@ -133,7 +150,7 @@ router.get('/logout', (req, res) => {
 const printLoggedInSessions = async (pool) => {
     try {
         // Query the database for active sessions
-        const activeSessions = await pool.query('SELECT * FROM sessions WHERE /* Add condition to filter active sessions */');
+        const activeSessions = await pool.query('SELECT * FROM sessions JOIN users_table ON sessions.user_id = users_table.id WHERE');
 
         // Process the active sessions
         if (activeSessions && activeSessions.rows) {
