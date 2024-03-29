@@ -4,6 +4,7 @@ const { User } = require('../models/userModel.js');
 const bcrypt = require('bcryptjs');
 const { v4: uuidv4 } = require('uuid');
 const jwt = require('jsonwebtoken');
+const { Session } = require('../models/sessionModel.js');
 
 
 // importing the necessary modules/models
@@ -142,7 +143,7 @@ async function storeTokenInDatabase(sid, userId, token, expire) {
         return session;
     } catch (error) {
         console.error('Error storing token in database:', error);
-        return null;
+        throw error;
     }
 };
 
@@ -199,4 +200,4 @@ async function comparePasswords(plaintextPassword, hashedPassword) {
 };
 
 // Other authentication routes:
-module.exports = {router, updateUserProfile, mapSessionToUser, authenticateAndGenerateToken, updateSessionuser_id, generateSessionId };
+module.exports = { User, Session, router, updateUserProfile, mapSessionToUser, authenticateAndGenerateToken, updateSessionuser_id, generateSessionId };

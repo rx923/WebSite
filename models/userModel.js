@@ -81,6 +81,39 @@ const User = sequelize.define('User', {
 
 addPasswordHashHook(User);
 
+
+const Session = sequelize.define('Session', {
+  sid: {
+    type: DataTypes.STRING(100),
+    primaryKey: true,
+    allowNull: false,
+  },
+  user_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  token: {
+    type: DataTypes.STRING(255),
+    allowNull: false,
+  },
+  expire: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
+  },
+}, { tableName: 'sessions' });
+
+
+
 (async () => {
   try {
     await sequelize.sync();

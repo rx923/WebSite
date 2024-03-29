@@ -133,13 +133,14 @@ const authController = {
     
             // Authenticate user and generate token
             const authResult = await authenticateAndGenerateToken(req, username, password);
-    
+
             if (authResult.error) {
                 return res.status(401).json({ error: authResult.error });
             }
     
             const { token, user } = authResult;
-    
+            req.session.loginTime = new Date();
+
             // Set user_id in the session after successful login
             req.session.user_id = user.id;
             // Associate the user ID with the session ID in the session table
@@ -171,12 +172,25 @@ const authController = {
             const sessionDuration = sessionUtils.getSessionDuration(loginTime, logoutTime);
     
             // Log session end and duration along with user identifier
-            console.log(`Session ended for user ${req.session.user.username}`);
+            console.log(`Session ended for user ${req.session.user_id}`);
+    
+            // Ensure user object is retrieved before accessing its properties
+            const user = await User.findByPk(req.session.user_id);
+    
+            if (!user) {
+                console.error('User not found.');
+                return res.status(400).json({ error: 'User not found.' });
+            }
+    
             console.log('Session duration:', sessionUtils.formatSessionDuration(sessionDuration));
             console.log('Session ended');
+    
+            // Delete user_id from session
             delete req.session.user_id;
+    
             // Destroy the session to log the user out
             req.session.destroy();
+    
             console.log('User logged out successfully.');
             // Redirect to the appropriate page after logout
             res.redirect('/index.html');
