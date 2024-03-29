@@ -61,6 +61,30 @@ app.get('/Profile.html', (req, res) => {
     res.render('profile', { user: userDetails });
 });
 
+// app.use(upload.single('profilePicture'));
+app.use('/profile', profileRoutes);
+
+
+app.post('/profile-photo', async(req, res) => {
+    try {
+    //Forwarding the request to profileRoutes.js
+    //Passing the req body to profileRoutes.js if necessary
+
+    const result = await fetch('http://192.168.100.53:8081/profile-photo', {
+        method: 'POST',
+        body: req.body,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const data = await result.json();
+    res.status(result.status).json(data);
+    } catch (error) {
+        console.error('Error uploading profile photo:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 // Create the server
 const server = http.createServer(app);
 
