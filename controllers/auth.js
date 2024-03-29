@@ -1,24 +1,19 @@
-// authController.js
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-// Adjust the path accordingly
 const { User } = require('../models/userModel.js');
-const { use } = require('../server.js');
-const session = require('express-session');
-const validator = require('validator');
-const { Op } = require('sequelize');
-const path = require('path');
 const sessionUtils = require('./sessionUtils');
+const { Op } = require('sequelize');
+const validator = require('validator');
+const { sequelize, Session } = require('../models/sessionModel');
+const { mapSessionToUser } = require('./sessionUtils');
+// Adjusted import
 
-// hashing the passwords while creating an account for storing inside the database.
-// no visibility of the password when the user creates the account.
-const hashPassword = async (plaintextPassword) => {
+
+async function hashPassword(plaintextPassword) {
     try {
-        // Generate a salt to use for hashing
         const salt = await bcrypt.genSalt(10);
-        // Hash the plaintext password with the generated salt
         const hashedPassword = await bcrypt.hash(plaintextPassword, salt);
-        console.log(hashedPassword);
+        console.log('Password hashed successfully');
         return hashedPassword;
     } catch (error) {
         console.error('Error hashing password:', error);
@@ -26,11 +21,10 @@ const hashPassword = async (plaintextPassword) => {
     }
 };
 
-const comparePasswords = async (plaintextPassword, hashedPassword) => {
+async function comparePasswords(plaintextPassword, hashedPassword) {
     try {
-        // Compare the plaintext password with the hashed password
         const isMatch = await bcrypt.compare(plaintextPassword, hashedPassword);
-        console.log(isMatch);
+        console.log('Password comparison result:', isMatch);
         return isMatch;
     } catch (error) {
         console.error('Error comparing passwords:', error);
@@ -38,51 +32,142 @@ const comparePasswords = async (plaintextPassword, hashedPassword) => {
     }
 };
 
-const generateAuthToken = (user) => {
-    const payload = {
-        id: user.id,
-        username: user.username,
-    };
-    const token = jwt.sign(payload, 'secret_key', {expiresIn: '1h'});
-    console.log(token);
-    return token;
-}
+function generateSessionId() {
+    const sessionId = Math.random().toString(36).substr(2, 10);
+    console.log('Session ID generated:', sessionId);
+    return sessionId;
+};
 
-const updateSessionUserId = async (req, userId) => {
-    const userData = req.body;
+// Ensure userId is a valid integer before storing it
+async function storeTokenInDatabase(sid, userId, token, expire) {
     try {
-        // Update the user_id field in the sessions table based on session ID
-        // Assuming you have a function or query to update the session user ID
-        // For example, using Sequelize ORM:
-        await session.update({ user_id: userId }, { where: { sid: req.session.id } });
+        // Ensure userId is a valid integer
+        userId = parseInt(userId);
+        if (isNaN(userId)) {
+            throw new Error('Invalid user ID');
+        }
+
+        // Create a new session record in the database
+        const session = await Session.create({
+            sid: sid,
+            user_id: userId,
+            sess: sid,
+            // Store the token in the database
+            token: token,
+            // 1 hour expiration
+            expire: expire, 
+            createdAt: new Date(),
+            updatedAt: new Date()
+        });
+        console.log('Token stored in the database:', session);
+        return session;
     } catch (error) {
-        console.error('Error updating session user ID:', error.message);
+        console.error('Error storing token in database:', error);
+        return null;
+    }
+};
+
+
+async function authenticateAndGenerateToken(req, providedUsername, providedPassword) {
+    try {
+        // Authenticate user
+        const user = await User.findOne({ where: { username: providedUsername } });
+        console.log('User found:', user);
+        if (!user) {
+            return { error: 'Invalid username or password.' };
+        }
+
+        // Check password validity
+        const isPasswordValid = await comparePasswords(providedPassword, user.password);
+        console.log('Password validity:', isPasswordValid);
+        if (!isPasswordValid) {
+            return { error: 'Invalid username or password.' };
+        }
+
+        // Ensure req.session and req.session.id are defined
+        if (!req.session || !req.session.id) {
+            throw new Error('Session ID is missing.');
+        }
+
+        // Generate auth token
+        const token = await generateAuthToken(req, user.id, Date.now());
+
+        // Set expiration time
+        const expire = new Date(Date.now() + 3600000); // 1 hour expiration
+
+        // Store token in database with expiration time
+        await storeTokenInDatabase(req.session.id, user.id, token, expire);
+
+        return { token, user };
+    } catch (error) {
+        console.error('Error authenticating user and generating token:', error);
         throw error;
     }
 };
 
 
-const registerUser = async (username, email, password, userDetails, req) => {
+async function generateAuthToken(req, userOrUserId, loginTimestamp) {
     try {
-        // Check if the email already exists
+        let userId;
+        if (typeof userOrUserId === 'object') {
+            userId = userOrUserId.id;
+        } else {
+            userId = userOrUserId;
+        }
+
+        // Ensure userId is a valid integer
+        userId = parseInt(userId);
+        if (isNaN(userId)) {
+            throw new Error('Invalid user ID');
+        }
+
+        // Generate the JWT token
+        const payload = {
+            id: userId,
+            loginTimestamp: loginTimestamp
+        };
+        const token = jwt.sign(payload, 'secret_key', { expiresIn: '1h' });
+        console.log(token);
+
+        return token;
+    } catch (error) {
+        console.error('Error generating auth token:', error);
+        throw error;
+    }
+};
+
+
+async function updateSessionuser_id(sessionId, user_id, expire) {
+    try {
+        const foundSession = await Session.findOne({ where: { sid: sessionId } });
+
+        if (!foundSession) {
+            throw new Error('Session not found.');
+        }
+
+        await foundSession.update({ user_id, expire });
+
+        console.log('Session user ID updated successfully');
+    } catch (error) {
+        console.error('Error updating session user ID:', error.message);
+        return null;
+    }
+};
+
+async function registerUser(req, username, email, password, userDetails) {
+    try {
         const existingEmailUser = await User.findOne({ where: { email } });
-        if (existingEmailUser) {
-            throw new Error('An account with this email already exists.');
-        }
-
-        // Check if the username already exists
         const existingUsernameUser = await User.findOne({ where: { username } });
-        if (existingUsernameUser) {
-            throw new Error('An account with this username already exists.');
+
+        if (existingEmailUser || existingUsernameUser) {
+            throw new Error('An account with this email or username already exists.');
         }
 
-        // Hash the plaintext password before storing it in the database
         const hashedPassword = await hashPassword(password);
 
-        // Register the new user with all the required details
-        const newUser = await User.create({ 
-            username: username, 
-            email: email, 
+        const newUser = await User.create({
+            username: username,
+            email: email,
             password: hashedPassword,
             first_name: userDetails.first_name || null,
             last_name: userDetails.last_name || null,
@@ -94,11 +179,7 @@ const registerUser = async (username, email, password, userDetails, req) => {
             contact_details: userDetails.contact_details
         });
 
-        // After successfully creating the user, retrieve the ID of the newly created user
-        const userId = newUser.id;
-
-        // Update the user_id field in the sessions table for the current session
-        await updateSessionUserId(req.session.id, userId);
+        await updateSessionuser_id(req.session.id, newUser.id);
 
         console.log('User created:', newUser);
 
@@ -109,31 +190,23 @@ const registerUser = async (username, email, password, userDetails, req) => {
     }
 };
 
-
-
-const authenticateAndCompare = async (providedUsername, providedPassword, sessionId) => {
+async function authenticateAndCompare(req, providedUsername, providedPassword) {
     try {
-        // Retrieve the user from the database
         const user = await User.findByUsername(providedUsername);
         console.log(providedUsername);
         if (!user) {
             return { error: 'Invalid username or password.' };
         }
 
-        // Compare the provided password with the password stored in the database
         const isPasswordValid = await comparePasswords(providedPassword, user.password);
         console.log(isPasswordValid);
         if (!isPasswordValid) {
             return { error: 'Invalid username or password.' };
         }
 
-        // If the credentials are valid, generate a JWT token
-        const token = generateAuthToken(user);
-
-        // Associate the user ID with the session ID in the session table
-        await mapSessionToUser(sessionId, user.id);
-
-        // Return the user object along with the token
+        const token = await generateAuthToken(req, user.id, Date.now());
+        req.session.user_id = user.id;
+        await mapSessionToUser(req, req.session.id, user.id);
         return { token, user };
     } catch (error) {
         console.error('Error authenticating user:', error);
@@ -141,85 +214,68 @@ const authenticateAndCompare = async (providedUsername, providedPassword, sessio
     }
 };
 
-const mapSessionToUser = async(sessionId, userId) => {
-    try{
-        const Session = require('../models/sessionModel');
 
-        const session = await Session.findByPk(sessionId);
-
-        if (session) {
-            await session.update({ userId: userId });
-        } else {
-            console.error('Session not found.');
-            throw new Error('Session not found.');
+async function updateUserProfile(userId, userDetails) {
+    try {
+        const user = await User.findByPk(userId);
+        if (!user) {
+            throw new Error('User not found.');
         }
-    } catch(error) {
-        console.error('Error mapping session to user: ', error);
+
+        await user.update({
+            first_name: userDetails.first_name,
+            last_name: userDetails.last_name,
+            phone_number: userDetails.phone_number,
+            address: userDetails.address,
+            country_of_residence: userDetails.country_of_residence,
+            full_name: userDetails.full_name,
+            location: userDetails.location,
+            contact_details: userDetails.contact_details,
+        });
+
+        console.log('User profile updated:', user);
+        return user;
+    } catch (error) {
+        console.error('Error updating user profile:', error.message);
         throw error;
     }
-};
-
-const updateUserProfile = async(userId, profileData) => {
-    try{
-
-        const user = await User.findOne(userId);
-        if(!user) {
-            throw new Error('User not found');
-        }
-        await user.update(profileData);
-        console.log('User profile updated successfully');
-    }catch(error) {
-        throw new Error(`Error updating user profile: ${error,message}`);
-    }
-};
-
+}
 
 
 const authController = {
     login: async (req, res) => {
-        // Check if username and password are provided
-        const { username, password } = req.body;
-        console.log(`User ${username} logged in`);
-        console.log('Password:', password);
-        console.log('Session ID:', req.session.id);
-        console.log('User ID:', req.session.userId);
-        console.log('Session Cookie:', req.session.cookie);        
-        if (!username || !password) {
-            return res.status(400).json({ error: 'Username and password are required.' });
-        }
-      
         try {
-            req.session.loginTime = new Date();
-            console.log(`User ${username} logged in`);
-            // Authenticate the user and compare the password
-            const authResult = await authenticateAndCompare(username, password);
+            const { username, password } = req.body;
+    
+            if (!username || !password) {
+                return res.status(400).json({ error: 'Username and password are required.' });
+            }
+    
+            // Authenticate user and generate token
+            const authResult = await authenticateAndGenerateToken(req, username, password);
+    
             if (authResult.error) {
-                console.log('Authentication result:', authResult);
-                // If user is not found or password is invalid, return 401
                 return res.status(401).json({ error: authResult.error });
             }
-      
-            // If the credentials are valid, proceed with successful login logic
+    
             const { token, user } = authResult;
-            console.log('Token:', token);
-            console.log('User:', user);
-            // Set user object in the session
-            req.session.user = user;
-            // Set userId in the session
-            req.session.userId = user.id; 
-
-            // Redirect to the appropriate page after successful login
-            res.redirect('/logged_in.html');
-          
+    
+            // Set user_id in the session after successful login
+            req.session.user_id = user.id;
+            // Associate the user ID with the session ID in the session table
+            await mapSessionToUser(req.session.id, user.id);
+    
+            // Redirect to logged_in.html upon successful login
+            return res.redirect('/logged_in.html');
         } catch (error) {
             console.error('Error logging in:', error);
-            res.status(500).json({ error: 'Internal server error' });
+            return res.status(500).json({ error: 'Internal server error' });
         }
     },
     logout: async (req, res) => {
         try {
             // Check if user session and user object exist
-            if (!req.session || !req.session.user) {
+            if (!req.session || !req.session.user_id) {
                 console.error('User session not found.');
                 // Redirect to the appropriate page or send an error response
                 return res.status(400).json({ error: 'User session not found.' });
@@ -238,10 +294,10 @@ const authController = {
             console.log(`Session ended for user ${req.session.user.username}`);
             console.log('Session duration:', sessionUtils.formatSessionDuration(sessionDuration));
             console.log('Session ended');
-            delete req.session.userId;
+            delete req.session.user_id;
             // Destroy the session to log the user out
             req.session.destroy();
-    
+            console.log('User logged out successfully.');
             // Redirect to the appropriate page after logout
             res.redirect('/index.html');
         } catch (error) {
@@ -254,10 +310,8 @@ const authController = {
             if (!req.body) {
                 return res.status(400).json({ error: 'Request body is missing.' });
             }
-            // console.log(req.status);
 
             const { username, email, password } = req.body;
-            console.log({"username:": username}, {"email:" : email}, {"password:": password});
 
             if (!username || !email || !password) {
                 return res.status(400).json({ error: 'Username, email, and password are required.' });
@@ -277,7 +331,7 @@ const authController = {
             res.status(500).json({ error: 'Internal server error' });
         }
     },
-    profileCompletion: async (req, res, error) => {
+    profileCompletion: async (req, res) => {
         try {
             // Request body
             const { first_name, last_name, full_name, location, phone_number, contact_details, address } = req.body;
@@ -330,11 +384,11 @@ const authController = {
             // If user doesn't exist, create a new user
             if (!user) {
                 console.log('User not found, creating new user...');
-                user = await registerUser(req.session.registrationData.username, req.session.registrationData.email, req.session.registrationData.password, userDetails);
-                // Redirect user to success page or any other appropriate action
-                // res.redirect('./Profile.html');
+                // Pass req object as the first argument to registerUser
+                user = await registerUser(req, req.session.registrationData.username, req.session.registrationData.email, req.session.registrationData.password, userDetails);
                 
-                return res.status(200).json({message: 'Profile completed successfully'}); // Send success response here
+                // Redirect user to success page
+                return res.status(200).json({ message: 'Profile completed successfully' });
             } else {
                 // User already exists
                 console.log('User already exists');
@@ -349,4 +403,4 @@ const authController = {
 };
 
 
-module.exports = { authController, registerUser, hashPassword, updateUserProfile, mapSessionToUser };
+module.exports = { authController, registerUser, hashPassword, updateUserProfile, mapSessionToUser, authenticateAndGenerateToken };

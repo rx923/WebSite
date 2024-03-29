@@ -1,27 +1,28 @@
+// profileRoutes.js
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
-const { authController } = require('../controllers/auth');
-
 const router = express.Router();
 
-
-//Multer configuration for handling file uploads
-
+// Multer configuration for handling file uploads
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, 'uploads/')
+        // Specify the destination directory for uploads
+        cb(null, path.join(__dirname, '..', 'uploads'));
     },
     filename: function(req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname));
+        // Generate a unique filename using the original filename and a timestamp
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        // Use the original filename and add a unique suffix
+        cb(null, uniqueSuffix + path.extname(file.originalname));
     }
 });
 
-const upload = multer({storage: storage});
+const upload = multer({ storage: storage });
 
-//POST route for uplpoading profile picture
 
-router.post('/upload-profile-picture', upload.single('profilePicture'), (req, res) => {
+// POST route for uploading profile picture
+router.post('/profile-photo', upload.single('profilePicture'), async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ message: 'No file uploaded' });
@@ -30,13 +31,16 @@ router.post('/upload-profile-picture', upload.single('profilePicture'), (req, re
         const fileName = req.file.filename;
         const fileSize = req.file.size;
         const mimeType = req.file.mimetype;
-        const userId = req.user.id;
+        // Assuming you have user authentication middleware
+        const user_id = req.user.id; 
 
-        const insertQuery = ` INSERT INTO user_photos (user_id, file_name, file_path, file_size, mime_type)
-                            VALUES ($1, $2, $3, $4, $5)
-                            RETURNING id`;
-        const insertValues = [userId, fileName, filePath, fileSize, mimeType];
-        const result = await decodeBase64.query(insertQuery, insertValues);
+        console.log('filePath: ', filePath);
+        console.log('fileName: ', fileName);
+        console.log('fileSize: ', fileSize);
+        console.log('mimeType: ', mimeType);
+        console.log('userId: ', user_id);
+
+        // Here you can insert the file details into your database or perform other operations
 
         res.status(200).json({ message: 'Profile picture uploaded successfully', filePath: filePath });
     } catch(error) {

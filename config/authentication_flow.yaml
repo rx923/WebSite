@@ -1,0 +1,33 @@
+# This file is only representing the actual user login and authentication flow from the front end side to the back end side file configuration.
+# The entire login flow of the user request should be added with some other functionalities.
+# Unique Token generation for each of the user/s should be stored inside the database.
+# Session Duration and TTL cookies must also be inserted and logged inside the database.
+
+
+
+
+authentication_flow:
+  -step: receive login request
+  action: Check if the username and password are provided
+  error_handling: Return 400 status code with error message if not provided
+
+- step: Authenticate user
+  action: Verify username and password
+  error_handling: Return 401 status code with error message if authentication fails
+
+- step: Generate authentication token
+  action: Create JWT token for authenticated user
+  error_handling: Return 500 status code with error message if token generation fails
+
+
+- step: Store token in database
+  action: Insert token into the sessions table
+  error_handling: Return 500 status code with error message if token insertion fails
+
+- step: Map session to user
+  action: Associate the session ID with the user ID in the session table
+  error_hadling: Return 500 status code with error message if mapping fails
+
+- step: Redirect to logged_in.html
+  action: Redirect the user to the logged_in.html page
+  error_handling: Retunr 500 status code with error message if redirection fails.

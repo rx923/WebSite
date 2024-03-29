@@ -1,0 +1,243 @@
+authController:
+  login:
+    description: "Endpoint for user login"
+    method: "POST"
+    path: "/login"
+    requestBody:
+      description: "User credentials"
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              username:
+                type: "string"
+                description: "User's username"
+              password:
+                type: "string"
+                description: "User's password"
+              # Add any other required properties here
+            required:
+              - username
+              - password
+    responses:
+      '200':
+        description: "Successful login"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                message:
+                  type: "string"
+                  description: "Login successful message"
+                # Add any other response properties here
+      '400':
+        description: "Bad request"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+      '401':
+        description: "Unauthorized"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+      '500':
+        description: "Internal server error"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+
+  logout:
+    description: "Endpoint for user logout"
+    method: "POST"
+    path: "/logout"
+    responses:
+      '200':
+        description: "Successful logout"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                message:
+                  type: "string"
+                  description: "Logout successful message"
+                # Add any other response properties here
+      '400':
+        description: "Bad request"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+      '500':
+        description: "Internal server error"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+
+  register:
+    description: "Endpoint for user registration"
+    method: "POST"
+    path: "/register"
+    requestBody:
+      description: "User registration data"
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              username:
+                type: "string"
+                description: "User's desired username"
+              email:
+                type: "string"
+                format: "email"
+                description: "User's email address"
+              password:
+                type: "string"
+                description: "User's password"
+              # Add any other required properties here
+            required:
+              - username
+              - email
+              - password
+    responses:
+      '200':
+        description: "Successful registration"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                message:
+                  type: "string"
+                  description: "Registration successful message"
+                # Add any other response properties here
+      '400':
+        description: "Bad request"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+      '500':
+        description: "Internal server error"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+
+  profileCompletion:
+    description: "Endpoint for completing user profile"
+    method: "POST"
+    path: "/profile/completion"
+    requestBody:
+      description: "User profile completion data"
+      content:
+        application/json:
+          schema:
+            type: "object"
+            properties:
+              first_name:
+                type: "string"
+                description: "User's first name"
+              last_name:
+                type: "string"
+                description: "User's last name"
+              full_name:
+                type: "string"
+                description: "User's full name"
+              location:
+                type: "string"
+                description: "User's location"
+              phone_number:
+                type: "string"
+                description: "User's phone number"
+              contact_details:
+                type: "string"
+                description: "User's contact details"
+              address:
+                type: "string"
+                description: "User's address"
+              # Add any other required properties here
+            required:
+              - first_name
+              - last_name
+              - full_name
+              - location
+              - phone_number
+              - contact_details
+              - address
+    responses:
+      '200':
+        description: "Profile completion successful"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                message:
+                  type: "string"
+                  description: "Profile completion successful message"
+                # Add any other response properties here
+      '400':
+        description: "Bad request"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here
+      '500':
+        description: "Internal server error"
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                error:
+                  type: "string"
+                  description: "Error message"
+                # Add any other response properties here

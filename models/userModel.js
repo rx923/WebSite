@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { Sequelize, DataTypes } = require('sequelize');
 const bcrypt = require('bcryptjs');
-
-const saltRounds = 10; // Adjust the number of salt rounds as needed
+const { addPasswordHashHook, saltRounds } = require('./userHooks.js');
+const { sequelize: dbInstance } = require('../routes/db_config.js'); 
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
@@ -79,11 +79,20 @@ const User = sequelize.define('User', {
   },
 }, { tableName: 'users' });
 
+addPasswordHashHook(User);
 
 (async () => {
   try {
-    await User.sync();
+    await sequelize.sync();
     console.log('User table synchronized successfully.');
+    
+    const users = await User.findAll({
+      where: {
+        username: Sequelize.literal('"User"."username" = \'3\'')
+      }
+    });
+    
+    console.log('Users:', users);
   } catch (error) {
     console.error('Error synchronizing User table:', error);
   }
@@ -105,9 +114,14 @@ const registerUser = async (username, email, password) => {
   }
 };
 
-User.findByUsername = async(username) => {
+User.findByUsername = async (username) => {
   try {
-    const user = await User.findOne({ where: { username }, attributes: ['id', 'username', 'password'] });
+    const user = await User.findOne({ 
+      where: { 
+        username: username // Comparing directly with the provided username
+      }, 
+      attributes: ['id', 'username', 'password'] 
+    });
     return user;
   } catch (error) {
     console.error('Error retrieving user by username: ', error);
@@ -115,15 +129,14 @@ User.findByUsername = async(username) => {
   }
 };
 
+
 const updateUserProfile = async (userId, profileData) => {
   try {
-      // Find the user by ID
       const user = await User.findByPk(userId);
       if (!user) {
           throw new Error('User not found');
       }
       
-      // Update user's profile data
       await user.update(profileData);
       console.log('User profile updated successfully');
   } catch (error) {
@@ -131,4 +144,5 @@ const updateUserProfile = async (userId, profileData) => {
       throw error;
   }
 };
-module.exports = { User, registerUser, updateUserProfile };
+
+module.exports = { User, registerUser, updateUserProfile, sequelize };

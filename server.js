@@ -10,7 +10,7 @@ const { hostname } = require('os');
 const { authController } = require('./controllers/auth');
 // const profileRouter = require('./controllers/profileRoutes');
 const profileCompletionRouter = require('./controllers/auth.js');
-
+const profileRoutes = require('./controllers/profileRoutes.js');
 
 
 const app = express();
@@ -36,11 +36,10 @@ app.post('/login', authController.login);
 app.post('/logout', authController.logout);
 app.use('/register', authController.register);
 app.use('/submit-profile-completion', authController.profileCompletion);
-
-
-
+app.post('/profile-photo', profileRoutes);
 // Mount the profile completion router
 // app.use('/submit-profile', profileCompletionRouter);
+// const upload = require('./multerConfig');
 
 // Your authentication middleware
 const requireAuth = (req, res, next) => {

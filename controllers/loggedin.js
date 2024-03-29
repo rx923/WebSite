@@ -8,6 +8,9 @@ const path = require('path');
 const { pool } = require('../routes/db_config');
 const { mapSessionToUser } = require('../path/to/mapSessionToUser');
 const { registerUser } = require('./auth.js');
+const { authenticateAndGenerateToken } = require('./controllers/auth.js');
+
+
 
 // Generate a random secret for session
 const generateRandomSecret = () => {
@@ -77,26 +80,17 @@ router.get('/protected', isAuthenticated, async (req, res) => {
 router.post('/login', async (req, res) => {
     // Check if username and password are provided
     const { username, password } = req.body;
-    // Extract user registration data from request body
-    const userData = req.body;
 
     if (!username || !password) {
         return res.status(400).json({ error: 'Username and password are required.' });
     }
 
     try {
-        const newUser = await registerUser(userData, req);
-        // Authenticate the user and compare the password
-        const authResult = await authenticateAndCompare(username, password);
-        if (authResult.error) {
-            return res.status(401).json({ error: authResult.error });
-        }
+        // Authenticate the user and generate token
+        const { token, user } = await authenticateAndGenerateToken(username, password);
 
-        // If the credentials are valid, proceed with successful login logic
-        const { token, user } = authResult;
-
-        // Set user ID in the session
-        req.session.userId = user.id;
+        // Set user ID in the session using the correct column name 'user_id'
+        req.session.user_id = user.id;
 
         // Map the session to the user's ID
         await mapSessionToUser(req.session.id, user.id);
@@ -112,11 +106,13 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ error: 'An account with this username already exists.' });
         } else {
             // Handle other unexpected errors
-            console.error('Error registering user:', error.message);
-            res.status(500).json({ error: 'Internal server error' });
+            console.error('Error logging in user:', error);
+            res.status(401).json({ error: 'Invalid username or password.' });
         }
     }
 });
+
+
 
 
 
