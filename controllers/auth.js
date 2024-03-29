@@ -84,6 +84,9 @@ async function authenticateAndGenerateToken(req, providedUsername, providedPassw
             return { error: 'Invalid username or password.' };
         }
 
+        // Generating session ID
+        const sessionId = generateSessionId(username);
+
         // Ensure req.session and req.session.id are defined
         if (!req.session || !req.session.id) {
             throw new Error('Session ID is missing.');
