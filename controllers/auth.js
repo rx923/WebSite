@@ -122,6 +122,7 @@ async function authenticateAndCompare(req, providedUsername, providedPassword) {
     }
 };
 
+
 const authController = {
     login: async (req, res) => {
         try {
@@ -204,22 +205,31 @@ const authController = {
             if (!req.body) {
                 return res.status(400).json({ error: 'Request body is missing.' });
             }
-
+    
             const { username, email, password } = req.body;
-
+    
             if (!username || !email || !password) {
                 return res.status(400).json({ error: 'Username, email, and password are required.' });
             }
-
+    
             if (password.length < 6 || password.length > 20) {
                 return res.status(400).json({ error: 'Password must be between 6 and 20 characters.' });
             }
-
+    
+            // Hash the password
+            const hashedPassword = await hashPassword(password);
+    
             // Save registration data to session
-            req.session.registrationData = { username, email, password };
-
-            res.redirect('/Inregistrare_User_Completare_Profil.html');
-
+            req.session.registrationData = { username, email, password: hashedPassword };
+    
+            // Create the user in the database
+            const newUser = await registerUser(req, username, email, hashedPassword);
+    
+            console.log('User registered successfully:', newUser);
+    
+            // Redirect the user to the login page
+            res.redirect('/login.html');
+    
         } catch (error) {
             console.error('Error registering user:', error.message);
             res.status(500).json({ error: 'Internal server error' });
