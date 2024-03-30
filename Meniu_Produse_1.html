@@ -1,73 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="http://192.168.100.53:8081/Plan_Afacere/WebSite/public/Meniu_Produse_1.html">
-
-    <link rel="image" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico">
-    <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\Meniu-Produse-1-10\Meniu Produse 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.css" type="text/css" media="all">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
     <title>Meniu Produse 1</title>
     <style>
-      /* Styles for Android Devices */
-      @media screen and (max-width:412px) and (max-height:915px) and (orientation:landscape) {
-        
+      /* Styles for the whole page */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #4a2e0f6c; /* Coffee-themed color */
+        border: solid 1px yellow;
+        border-radius: 30px;
+        border-style: ridge;
       }
-    </style>
-    <style>
-      /* Styles for iOS Devices */
-      @media screen and (max-width:430px) and (max-height:932px) and (orientation:landscape) {
-        
+
+      /* Styles for the header */
+      .page-header {
+        background: radial-gradient(ellipse at center, #ff9999 0%, #ff6666 50%, #ff3333 100%);
+        text-align: center;
+        padding: 20px;
+        color: #fff;
+        font-size: 24px;
       }
-    </style>
-    <style>
-      /* Styles for Tablets iPad Mini*/
-      @media screen and (max-width:768px) and (max-height:1024px) and (orientation:landscape) {
-        
+
+      header {
+        background: #3d2518;
+        padding: 20px;
+        text-align: center; /* Aligning the text to the right */
+        color: #fff;
+        margin: 0;
       }
+
+      header h1 {
+        margin: 0; /* Removing default margin */
+        font-size: 20px; /* Adjusting font size */
+      }
+
+      /* Styles for the main content */
+      main {
+        padding: 20px;
+      }
+
+      /* Styles for the product containers */
+      .product-container {
+        display: flex;
+        position: relative;
+        margin-top: 40px;
+        width: 300px;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px groove;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+        /* Linear gradient background */
+        background: linear-gradient(45deg, #ebb56b, #ff6666); 
+        border: 2px solid #ff6666; 
+        border-radius: 10px; 
+        padding: 20px; 
+        margin-bottom: 20px;
+      }
+      .product-details {
+        display: flex;
+        align-items: center;
+      }
+      .product-details img {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 10px;
+        margin-right: 20px; /* Adjust margin as needed */
+      }
+      .description {
+        max-width: calc(100% - 120px); /* Adjust according to image width and margin */
+      }
+      .description h3 {
+        margin-top: 0;
+      }
+      .description p {
+        border: 1px groove #000000;
+        border-radius: 5px;
+        background-color: chocolate;
+        margin-top: 55px;
+        margin-left: 2px;
+        padding: 10px;
+      }
+      .description button {
+        margin-top: 10px; /* Add some space between paragraph and button */
+      }
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        text-align: center; /* Aligning dropdown to the right */
+        margin-top: 20px; /* Adding some top margin */
+      }
+
+      .dropdown-content {
+        display: none;
+        z-index: 9999;
+        position: absolute;
+        border-radius: 30px;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        height: 200px;
+        z-index: 1;
+         /* Centering the dropdown horizontally */
+        left: 50%;
+        /* Positioning the dropdown below the dropdown toggle */
+        top: 35%; 
+        /* Centering the dropdown horizontally */
+        transform: translateX(-50%);
+
+      }
+      .dropdown-content .row {
+        display: flex;
+      }
+
+      .dropdown-content .column {
+        flex: 1;
+        padding: 10px;
+      }
+
+      /* Styles for the navigation circle */
+      .nav-circle {
+        position: sticky;
+        bottom: 620px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ff6666;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        /* z-index: 1000; */
+      }
+
+      /* Styles for the down arrow icon */
+      .nav-circle i {
+        color: #fff;
+        font-size: 24px;
+      }
+      .product-container img {
+        border: 1px solid rgba(0, 0, 0, 0.296);
+        border-radius: 30px;
+        width: 120px;
+        height: 145px;
+        border-radius: 10px;
+        margin-bottom: 47px;
+      }
+
+      .product-container h3 {
+        margin-top: 20px;
+        position: relative;
+        top: 17px;
+        margin-left: 2px;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: bisque;
+        color: #333;
+      }
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #b46000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .close-button:hover {
+        background-color: #ff3333;
+      }
+       /* Styles for the quantity selector */
+       .quantity-selector {
+        display: flex;
+        align-items: center;
+      }
+
+      .quantity-btn {
+        background-color: #ff6666;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .quantity-input {
+        width: 50px;
+        text-align: center;
+        margin: 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      /* Styles for the cart icon */
+      .cart-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+      }
+      .clear-cart-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor:pointer;
+      }
+
+      /* Styles for the cart badge */
+      .cart-badge {
+        position: absolute;
+        top: 0px;
+        right: 1px;
+        background-color: #54232300;
+        color: white;
+        border-radius: 50%;
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+       /* Styles for the cart dropdown */
+       .cart-dropdown {
+          position: absolute;
+          top: 70px;
+          right: 20px;
+          z-index: 1000;
+          display: none;
+          max-height: 300px;
+          overflow-y: auto;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+          height: 0; /* Initial height is 0 */
+          transition: height 0.3s ease; /* Smooth transition for height change */
+        }
+        .cart-dropdown.active {
+          display: block;
+          margin-left: 10px;
+          /* Adjust the width as needed */
+          /* Adjust the height as needed */
+          height: 210px;
+          left: 290px; 
+          width: 200px; 
+          border: 2px solid #ff6666;
+        }
+        .cart-dropdown-item {
+          padding: 10px;
+          border-bottom: 1px solid #ccc;
+          font-size: 14px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+        .product-count {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: #007bff;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .btn.btn-primary, .btn.btn-secondary {
+          /* Additional styles for primary and secondary buttons */
+          color: #497e52;
+          width: 140px;
+          border-radius: 30px; /* Text color for both buttons */
+        }
     </style>
-  </head>
-    
-  <body style="background: linear-gradient(26deg, rgb(116, 115, 113)23%, rgb(74, 90, 77)30%, rgb(130, 149, 114) 50%); border: solid 1px yellow; border-style: ridge;">
-    <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
-    <main>
-        <div class="navbar glowing-background" style="width: 800px; height: auto; position: -webkit-sticky;">
-          <a href="http://192.168.100.53:8081/WebSite/public/index.html">Acasa</a>
-          <a href="#news">Noutati</a>
-            <div class="dropdown">
-              <button class="dropbtn">Dropdown
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content flowWaves flowWavesDepth" style="width: 600px;">
-                <div class="header">
-                  <h2 style="font-size: medium; text-align: center;">Mega Menu</h2>
-                </div>
-                <div class="row" id="row-1">
-                  <div class="column" style="background-color: rgb(212, 137, 84); border: 1px groove; border-radius: 20px;">
-                    <h3>Produse din boabe de cafea Arabica</h3>
-                    <a href="#link" style="border: 1px solid black; border-radius: 30px; background: linear-gradient(40deg, rgb(chocolate) 30%, rgb(1, 57, 1) 50%, rgb(chocolate) 86%);">Link 1</a>
-                    <a href="#link" style="border-right: 1px solid black; border-left: 1px solid; border-radius: 30px; background: linear-gradient(40deg, rgb(chocolate) 30%, rgb(1, 57, 1)  50rgb(chocolate) 86%);" rel="noopener noreferrer">Link 2</a>
-                    <a href="#link" style="border: 1px solid black; border-radius: 30px; background: linear-gradient(40deg, rgb(chocolate) 30%, rgb(1, 57, 1) 50rgb(chocolate)58) 86%;">Link 3</a>
+</head>
+<body>
+    <!-- Top header -->
+    <div class="page-header">
+        <div>Meniu Produse 1</div>
+    </div>
+
+    <!-- Navigation circle -->
+    <div class="nav-circle" id="dropdownToggle">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <div class="cart-dropdown" id="cartDropdown"></div>
+    <!-- Container for cart items -->
+    <div id="cartItemsContainer"></div> 
+    <button class="'clear-cart-btn" onclick="clearCart()">Clear Cart </button>
+    <!-- Cart icon -->
+    <div class="cart-icon" onclick="toggleCart()">
+      <i class="fas fa-shopping-cart fa-2x" style="position: -webkit-sticky;"></i>
+        <span class="cart-badge" id="cartCounter">0</span>
+    </div>
+
+    <!-- Dropdown content -->
+    <div class="dropdown-content" id="dropdownContent">
+      <button class="close-button" onclick="closeDropdown()"><i class="fas fa-times"></i></button>
+      <div class="row" id="cartItems"></div>
+        <!-- Product containers -->
+        <div class="product-container">
+            <img src="https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+            <div class="description">
+              <h3>Product 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div class="quantity-selector">
+                <button class="quantity-btn" onclick="decrementQuantity(this)">-</button>
+                <input type="number" class="quantity-input" value="1">
+                <button class="quantity-btn" onclick="incrementQuantity(this)">+</button>
+              </div>
+              <button class="btn btn-primary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+              <button class="btn btn-secondary" onclick="removeFromCart(this)" ><i class="fas fa-cart-plus"></i> Remove from Cart</button>
+            </div>
+        </div>
+        <div class="product-container">
+          <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 2">
+              <div class="description">
+                  <h3>Product 2</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="decrementQuantity(this)">-</button>
+                    <input type="number" class="quantity-input" value="1">
+                    <button class="quantity-btn" onclick="incrementQuantity(this)">+</button>
                   </div>
-                  <div class="column" style="background-color: rgb(212, 137, 84); border: 1px groove; border-radius: 20px">
-                    <h3>Produse cafea capsule de cafea</h3>
-                    <a href="#link" style="border: 1px solid black; border-radius: 30px; background: linear-gradient(40deg, rgb(chocolate) 30%, rgb(1, 57, 1) 50%, rgb(chocolate) 86%);">Link 1</a>
-                    <a href="#link" style="border-right: 1px solid black; border-left: 1px solid; border-radius: 30px; background: linear-gradient(40deg, rgb(chocolate) 30%, rgb(1, 57, 1)50%, rgb(chocolate) 86%);" rel="noopener noreferrer">Link 2</a>
-                    <a href="#link" style="border: 1px solid black; border-radius: 30px; background: linear-gradient(40deg, rgb(92, 35, 35) 30%, rgb(1, 57, 1) 50%, rgb(131, 58, 58) 86%);">Link 3</a>
-                  </div>
-                  <div class="column" id="row-3" style="background-color: rgb(212, 137, 84); border: 1px groove; border-radius: 20px">
-                    <h3>Cafea boabe</h3>
-                    <a href="#link" style="border: 1px solid black; border-radius: 30px; background: linear-gradient(40deg, rgb(chocolate) 30%, rgb(1, 57, 1) 50rgb(chocolate)58) 86%;">Link 1</a>
-                    <a href="#link" style="border-right: 1px solid black; border-left: 1px solid; border-radius: 30px; background: linear-gradient(40deg, rgb(255, 255, 255) 30%, rgb(1, 57, 1) 50%, rgb(255, 255, 255) 86%);" rel="noopener noreferrer">Link 2</a>
-                    <a href="#link" style="border: 1px solid black; border-radius: 30px; background: linear-gradient(40deg, rgb(chocolate) 30%, rgb(1, 57, 1) 50rgb(chocolate)58) 86%;">Link 3</a>
-                  </div>
-                </div>
+                  <button class="btn btn-primary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                  <button class="btn btn-secondary"onclick="removeFromCart(this)"><i class="fas fa-cart-plus"></i> Remove from Cart</button>
               </div>
             </div>
-          </div>
+        </div>
+    </div>
+    <header>
+        <h1>Coffee House Menu</h1>
+    </header>
+
+    <main>
+      <div class="navbar" style="width: auto; height: auto; position: -webkit-sticky; border: 2px solid #ff6666; background-color: #f9f9f9; border-radius: 30px;">
+        <a href="http://192.168.100.53:8081/WebSite/public/index.html" style="text-decoration: none; color: #333; padding: 10px; border-radius: 30px; background-color: #ff6666; bottom: 9px; position: relative; font-size: small; text-decoration: overline;">Acasa</a>
+        <a href="#news" style="text-decoration: overline; color: #000000; padding: 10px; border-radius: 30px; background-color: #ff6666; position: relative; bottom: 9px; right: 4px; font-size: small;">Noutati</a>
+            <div class="dropdown">
+                <button class="dropbtn" style="position: relative; border-radius: 30px; width: 100px; height: 40px; position: relative; bottom: 10px; left: 110px; background-color: #ff6666; font-size: small; text-decoration-line: overline;">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content flowWaves flowWavesDepth" style="width: 600px;">
+                    <div class="header">
+                        <h2 style="font-size: medium; text-align: center;">Mega Menu</h2>
+                    </div>
+                    <div class="row" id="row-1">
+                        <div class="column">
+                            <div class="product-container">
+                                <h3>Produse din boabe de cafea Arabica</h3>
+                                <a href="#link">Link 1</a>
+                                <a href="#link">Link 2</a>
+                                <a href="#link">Link 3</a>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="product-container">
+                                <h3>Produse cafea capsule de cafea</h3>
+                                <a href="#link">Link 1</a>
+                                <a href="#link">Link 2</a>
+                                <a href="#link">Link 3</a>
+                            </div>
+                        </div>
+                        <div class="column" id="row-3">
+                            <div class="product-container">
+                                <h3>Cafea boabe</h3>
+                                <a href="#link">Link 1</a>
+                                <a href="#link">Link 2</a>
+                                <a href="#link">Link 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-    <nav>
-    </nav>
-  </body>
+
+    <!-- Bootstrap JS (optional) -->
+    <!-- Font Awesome (optional) -->
+    
+    <script>
+      document.getElementById('dropdownToggle').addEventListener('click', function(event) {
+        var dropdownContent = document.getElementById('dropdownContent');
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+        } else {
+            dropdownContent.style.display = 'block';
+        }
+        // Prevent the default action of the button
+        event.preventDefault(); 
+      });
+  
+      function addProductContainers(parentContainer) {
+        // Create product 1 container
+        let productContainer1 = document.createElement('div');
+        productContainer1.classList.add('cart-dropdown-item');
+        productContainer1.style.border = '1px solid black';
+        productContainer1.style.width = '100px';
+        productContainer1.style.height = '50px';
+        productContainer1.style.borderRadius = '5px';
+        productContainer1.style.backgroundColor = 'beige';
+        let productImage1 = document.createElement('img');
+        productImage1.src = 'https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        productImage1.alt = 'Product 1';
+        productImage1.style.width = '50%';
+        productImage1.style.height = '50%';
+        productImage1.style.objectFit = 'cover';
+        productContainer1.appendChild(productImage1);
+        parentContainer.appendChild(productContainer1);
+
+        // Create product 2 container
+        let productContainer2 = document.createElement('div');
+        productContainer2.classList.add('cart-dropdown-item');
+        productContainer2.style.border = '1px solid black';
+        productContainer2.style.width = '100px';
+        productContainer2.style.height = '50px';
+        productContainer2.style.borderRadius = '5px';
+        productContainer2.style.backgroundColor = 'beige';
+        let productImage2 = document.createElement('img');
+        productImage2.src = 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        productImage2.alt = 'Product 2';
+        productImage2.style.width = '50%';
+        productImage2.style.height = '50%';
+        productImage2.style.objectFit = 'cover';
+        productContainer2.appendChild(productImage2);
+        parentContainer.appendChild(productContainer2);
+
+        // Get the cart dropdown container
+        let cartDropdown = document.getElementById('cartDropdown');
+        cartDropdown.appendChild(productContainer1);
+        cartDropdown.appendChild(productContainer2);
+      }
+    function addProductToCart(btn, productName) {
+      let quantityInput = btn.parentElement.querySelector('.quantity-input');
+      let quantity = parseInt(quantityInput.value);
+      let cartCounter = document.getElementById('cartCounter');
+      let currentCount = parseInt(cartCounter.innerText);
+      cartCounter.innerText = currentCount + quantity;
+
+      // Create a new cart item
+      let cartItem = document.createElement('div');
+      cartItem.classList.add('cart-dropdown-item');
+      cartItem.style.border = '1px solid black';
+      cartItem.style.backgroundColor = 'whitesmoke';
+
+      // Add the product name and quantity to the cart item
+      let productNameElement = document.createElement('span');
+      productNameElement.textContent = productName;
+      cartItem.appendChild(productNameElement);
+      
+      let quantityElement = document.createElement('span');
+      quantityElement.textContent = ` x ${quantity}`;
+      cartItem.appendChild(quantityElement);
+
+      // Appending the cart item to the cart dropdown container
+      let cartDropdown = document.getElementById('cartDropdown');
+      cartDropdown.appendChild(cartItem);
+
+      // Show dropdown if hidden
+      cartDropdown.classList.add('active');
+    }
+  
+      function closeDropdown() {
+        var dropdownContent = document.getElementById('dropdownContent');
+        dropdownContent.style.display = 'none';
+      }
+  
+      function decrementQuantity(btn) {
+        let quantityInput = btn.nextElementSibling;
+        if (parseInt(quantityInput.value) > 1){
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+        }
+      }
+  
+      function incrementQuantity(btn) {
+        let quantityInput = btn.previousElementSibling;
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+      }
+  
+      function toggleCart() {
+        let dropdownContent = document.getElementById('dropdownContent');
+        let cartDropdown = document.getElementById('cartDropdown');
+        
+        if (cartDropdown.classList.contains('active')) {
+            // Cart is active, hide it and remove all product containers
+            cartDropdown.classList.remove('active');
+            // Removing all child elements
+            dropdownContent.innerHTML = '';
+        } else {
+            // Cart is inactive, show it and add product containers
+            cartDropdown.classList.add('active');
+            // Adding product containers to the dropdown
+            addProductContainers(cartDropdown);
+        }
+      }
+  
+      function removeFromCart(btn) {
+        let productName = btn.parentElement.querySelector('.description h3').innerText;
+        let quantityInput = btn.parentElement.querySelector('.quantity-input');
+        let quantity = parseInt(quantityInput.value);
+        let cartCounter = document.getElementById('cartCounter');
+        let currentCount = parseInt(cartCounter.innerText);
+        let newCount = Math.max(currentCount - quantity, 0);
+        cartCounter.innerText = newCount;
+
+        // Find and remove the product container from the cart dropdown container
+        let cartItems = document.querySelectorAll('.cart-dropdown-item');
+        cartItems.forEach(item => {
+          if (item.textContent.includes(productName)) {
+              // Removing the product container from the cart container
+              item.remove();
+          }
+        });
+
+        let productContainer = btn.parentElement.parentElement;
+        let productCount = productContainer.querySelector('.product-count');
+        if (productCount) {
+          let count = parseInt(productCount.innerText);
+          if (count > quantity) {
+              productCount.innerText = count - quantity;
+          } else {
+              productCount.remove();
+          }
+        }
+
+        // Hide dropdown if no items left
+        if (newCount === 0) {
+          let cartDropdown = document.getElementById('cartDropdown');
+          cartDropdown.classList.remove('active');
+       }
+      }
+  
+      function clearCart() {
+        let cartCounter = document.getElementById('cartCounter');
+        cartCounter.innerText = '0';
+        let cartDropdown = document.getElementById('cartDropdown');
+        // Clearing all the product containers
+        cartDropdown.innerHTML = '';
+        cartDropdown.classList.remove('active');
+        let productCounts = document.querySelectorAll('.product-count');
+        productCounts.forEach(count => {
+            count.remove();
+        });
+      }
+  
+      window.onload = function() {
+        // Clearing the cart
+        clearCart();
+        addProductContainers(document.getElementById('cartDropdown'));
+      };
+  </script>
+  
+    
+</body>
 </html>

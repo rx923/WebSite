@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registration</title>
   <base href="http://192.168.100.53:8081/">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
   <link rel="stylesheet" href="http://192.168.100.53:8081/css/form.css" type="text/css" media="screen">
   <style>
     /* Styles for the form container */
@@ -41,6 +42,7 @@
     /* Styles for the form inputs */
     .form-container input[type="text"],
     .form-container input[type="password"],
+    .form-container input[type="email"],
     .form-container button[type="submit"] {
       width: calc(100% - 40px); 
       padding: 10px;
@@ -131,22 +133,6 @@
       }
     }
 
-    .popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 300px;
-        height: 100px;
-        padding: 20px;
-        background: whitesmoke;
-        border: 1px solid black;
-        border-radius: 5px;
-        text-align: center;
-        animation: fadeInOut 2s ease-in-out;
-    }
-
     @keyframes fadeInOut {
         0% { opacity: 0; }
         10% { opacity: 1; }
@@ -161,7 +147,7 @@
         <!-- Close button -->
         <span class="close" onclick="closeForm()">&times;</span> 
         <h2>Inregistrare</h2>
-        <p style="border: 1px solid; background-color: whitesmoke; border-radius: 20px;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
+        <p style="border: 1px solid; background-color: rgb(0, 140, 165); border-radius: 20px;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
         <label for="email"><b>Email</b></label>
         <input type="email" placeholder="Introdu adresa de Email" name="email" id="email" required>
         <label for="password"><b>Parola</b></label>
@@ -179,9 +165,7 @@
         </div>
     </div>
 </form>
-<div id="popup" class="popup">
-  Cont Creat Cu Success!
-</div>
+
 <script>
   document.getElementById('InregistrareForm').addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -191,20 +175,11 @@
               headers: {
                   'Content-Type': 'application/json'
               },
-              body: JSON.stringify({ body: JSON.stringify({ 
-                                                        username: username,
-                                                        email: email,
-                                                        password: password
-                                                    })}),
+              body: JSON.stringify({ body: JSON.stringify({ username: username, email: email, password: password})}),
           });
-
           if (!response.ok) {
               throw new Error('Registration failed');
           }
-
-          // Show the popup upon successful registration
-          document.getElementById('popup').style.display = 'block';
-
           // Redirect to the login page after a delay (if needed)
           setTimeout(() => {
               window.location.href = '/login.html';

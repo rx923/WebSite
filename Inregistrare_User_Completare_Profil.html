@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="en/ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complete Your Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #c4cca6;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 100px;
+            padding: 20px;
+            background: lightskyblue;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            animation: fadeInOut 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Complete Your Profile</h1>
+        <form id="profileForm" action="/submit-profile-completion" method="POST">
+            <div class="mb-3">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required="true" style="width: 380px;">
+            </div>
+            <div class="mb-3">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required="true" style="width: 380px;">
+            </div>
+            <div class="mb-3">
+                <label for="fullName">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required="true" style="width: 380px;">
+            </div>
+            <div class="mb-3">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required="true" style="width: 380px;">
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number" required="true" pattern="[0-9]{10}" style="width: 380px;">
+            </div>
+            <div class="mb-3">
+                <label for="contactDetails">Contact Details:</label>
+                <textarea id="contact_details" name="contact_details" rows="4" required="true" style="width: 380px;"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="AddressDetails">Address Details:</label>
+                <textarea id="address" name="address" rows="4" required="true" style="width: 380px;"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="Country_Of_Residence">Country:</label>
+                <textarea id="country_of_residence" name="country_of_residence" rows="4" required="true" style="width: 380px;"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="popup" class="popup">
+        Cont Creat Cu Success!
+      </div>
+      <script>
+        document.getElementById('profileForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            const formData = new FormData(event.target);
+            const formJSON = Object.fromEntries(formData.entries());
+    
+            try {
+                const response = await fetch('/submit-profile-completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formJSON),
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Profile submission failed');
+                    res.display.error(300);
+                }
+                // Show the popup upon successful registration
+                document.getElementById('popup').style.display = 'block';
+                
+                // Redirect to Profile.html after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '/Profile.html';
+                }, 3000); // 3 seconds (3000 milliseconds)
+
+    
+            } catch (error) {
+                console.error('Profile submission error:', error);
+                // Handle profile submission error
+            }
+        });
+    </script>
+</body>
+</html>

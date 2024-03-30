@@ -6,22 +6,18 @@
     <title>Profile</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <style>
-        #navigation-bar{
-            width: 350px;
-            height: 350px;
-            border: 1px solid black;
-            border-radius: 20px;
-            background-color: black;
-        }
         body {
             font-family: Arial, sans-serif;
             margin: 0px;
             padding: 0px;
             overflow-x: hidden;
-            background-color: #696b54;
+            background-color: #f9f9f9;
         }
+
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -32,8 +28,6 @@
         }
 
         h1 {
-            height: 100px;
-            position: sticky;
             text-align: center;
             color: #333;
             background-color: #f9f9f9;
@@ -41,44 +35,37 @@
             border: 2px solid #ccc;
             border-radius: 8px;
             transition: background-color 0.3s ease;
-            box-shadow: 2px 2px 2px #555; /* Adjusted box shadow */
-        }
-
-        h1:hover {
-            background-color: #ddd;
+            box-shadow: 2px 2px 2px #555;
+            margin-bottom: 20px;
         }
 
         .profile-info {
             display: flex;
-            align-items: center;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        .profile-picture {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 75px;
-            height: 75px;
-            border-radius: 10px;
-            background-color: #555;
-            z-index: 1; /* Ensure it's above other content */
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
-        .profile-picture img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid #ddd;
+        .profile-info label {
+            flex-basis: 30%;
+            margin-bottom: 10px;
+        }
+
+        .profile-info input {
+            flex-basis: 65%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         .profile-details {
             flex-grow: 1;
+            position: sticky;
+            width: 100%;
+            margin-top: 20px;
         }
 
         .profile-details p {
-            margin: 10px 0;
+            margin: 10px 0px;
         }
 
         .profile-details strong {
@@ -87,149 +74,191 @@
         }
 
         .profile-details {
-            background-color: #f9f9f9; /* Add background color */
+            background-color: #f9f9f9;
             padding: 15px;
             border-radius: 8px;
-            border: 2px solid #ccc; /* Add border */
+            border: 2px solid #ccc;
         }
-
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .menu {
-            display: none;
+        /* Style for Configuration Icon */
+        .config-icon {
             position: absolute;
-            top: 40px; /* Adjust as needed */
-            right: 0;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
         }
-        .menu-content {
-            padding: 20px;
-            display: none;
+        /* Custom styling for the form */
+        .dropdown-item {
+            width: 300px; /* Adjust the width as needed */
         }
 
-        .menu-items {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        .menu ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+        .dropdown-item label {
+            font-weight: bold; /* Make labels bold */
         }
 
-        .menu ul li {
-            margin-bottom: 10px;
+        .dropdown-item input[type="password"],
+        .dropdown-item button[type="submit"] {
+            width: 100%; /* Make inputs and button full width */
         }
 
-        .menu ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .menu-items li {
-            margin-bottom: 10px;
-        }
-
-        .menu-items li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .menu-button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            height: 100px;
-            cursor: pointer;
-        }
-
-        .menu-button:hover {
-            background-color: #555;
-        }
-
-        .content {
-            height: 200px;
-            width: 300px;
-            flex-grow: 1;
-            padding: 20px;
-            border-radius: 30px;
-            background-color: #6f5454;
+        /* Adjust spacing between form elements */
+        .dropdown-item .mb-3 {
+            margin-bottom: 15px;
         }
     </style>
-</head>
-<body>
-    <main>
-        <h1>Account Profile</h1>
-        <nav class="collapse navbar-collapse" id="navigation-bar">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-
-        </nav>
-        <div class="container">
-            <button id="menuButton" class="menu-button">Menu</button>
-            <div id="menu" class="menu">
-                <div class="menu-content">
-                    <ul class="menu-items">
-                        <li>
-                            <a href="#">Option 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Option 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Option 3</a>
-                        </li>
-                    </ul>
+    </head>
+    <body>
+        <div class="config-icon dropdown">
+            <!-- Configuration Icon using Bootstrap Icon and Image -->
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-gear"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <form class="dropdown-item p-4" id="resetPasswordForm">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Reset Password</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <header>
+            <!-- User Information -->
+            <div class="container">
+                <h1>User Information</h1>
+                <div class="profile-info">
+                    <div class="profile-picture">
+                        <!-- Profile Picture -->
+                        <img id="profileImage" src= "profile-picture.jpg" alt="Profile Picture">
+                    </div>
+                    <div class="profile-details">
+                        <!-- User Details -->
+                        <p><strong>Username:</strong> JohnDoe</p>
+                        <p><strong>Email:</strong> johndoe@example.com</p>
+                        <p><strong>Location:</strong> New York City</p>
+                        <p><strong>Joined:</strong> January 1, 2022</p>
+                        <form id="profilePictureForm" enctype="multipart/form-data" action="/profile-photo" method="post">
+                            <label for="profilePicture">Upload Profile Picture:</label>
+                            <input type="file" id="profilePicture" name="profilePicture" accept="image/*" capture="environment">
+                            <button type="button" onclick="uploadProfilePicture()">Upload</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="content">
-            </div>
-        <script src="script.js">
+        </header>
+
+
+        <main>
+            <!-- Order History -->
+            <section class="container">
+                <h2>Order History</h2>
+                <div class="order-history">
+                    <!-- Display Orders with Dropdown for Details -->
+                    <div class="order">
+                        <p>Order #12345 - Status: Shipping</p>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="orderDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+                                View Details
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="orderDropdown1">
+                                <li><a class="dropdown-item" href="#">Order Details</a></li>
+                                <li><a class="dropdown-item" href="#">Track Order</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- More Orders... -->
+                </div>
+            </section>
+    
+            <!-- Wishlist -->
+            <nav class="container">
+                <h2>Wishlist</h2>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="wishlistDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        View Wishlist
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="wishlistDropdown">
+                        <!-- Wishlist Items -->
+                        <li><a class="dropdown-item" href="#">Product 1</a></li>
+                        <li><a class="dropdown-item" href="#">Product 2</a></li>
+                        <li><a class="dropdown-item" href="#">Product 3</a></li>
+                    </ul>
+                </div>
+            </nav>
+    
+            <!-- Cart Management -->
+            <section class="container">
+                <h2>Cart Management</h2>
+                <div class="cart">
+                    <!-- Cart Items -->
+                    <div class="cart-item">
+                        <p>Product Name</p>
+                        <button class="btn btn-danger">Remove</button>
+                    </div>
+                    <!-- More Cart Items... -->
+                    <!-- Add to Cart Button -->
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+        <!-- Logout Button -->
+        <div class="container">
+            <button class="btn btn-danger">Logout</button>
+        </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzDp/i/3A7L+0ETe1jhjVnnXf5Xf2/K1b0P5g5+0Hov/vfZcO5NAhdxg79Y4TV0E" crossorigin="anonymous"></script>
+
+    <nav class="window" style="width: 200px; height: 200px; border: 1px, solid, black">
+        <script>
             const menuButton = document.getElementById('menuButton');
             const menuContent = document.querySelector('.menu-content');
-
+            const uploadForm = document.getElementById('profilePictureForm'); // Corrected the form ID
+            const imageInput = document.getElementById('profilePicture'); // Corrected the input ID
             menuButton.addEventListener('click', toggleMenu);
-
+        
             function toggleMenu() {
                 menuContent.classList.toggle('show');
             }
+        
             const menu = document.getElementById('menu');
             const content = document.querySelector('.content');
-
+        
             let isMenuOpen = false;
-
+        
             content.addEventListener('touchstart', handleTouchStart, false);
             content.addEventListener('touchmove', handleTouchMove, false);
-
+        
             let xDown = null;
             let yDown = null;
-
+        
             function handleTouchStart(event) {
                 xDown = event.touches[0].clientX;
                 yDown = event.touches[0].clientY;
             }
-
+        
             function handleTouchMove(event) {
                 if (!xDown || !yDown) {
                     return;
                 }
-
+        
                 let xUp = event.touches[0].clientX;
                 let yUp = event.touches[0].clientY;
-
+        
                 let xDiff = xDown - xUp;
                 let yDiff = yDown - yUp;
-
+        
                 if (Math.abs(xDiff) > Math.abs(yDiff)) { /* Most significant */
                     if (xDiff > 0) {
                         /* left swipe */
@@ -239,42 +268,75 @@
                         openMenu();
                     }
                 }
-
+        
                 /* reset values */
                 xDown = null;
                 yDown = null;
             }
-
+        
             function openMenu() {
                 menu.style.right = '0';
                 isMenuOpen = true;
             }
-
+        
             function closeMenu() {
                 menu.style.right = '-200px';
                 isMenuOpen = false;
             }
-        </script>
-        </div>
-    </main>
-        <header>
-            <div class="container">
-                <h1>User Profile</h1>
-                <div class="profile-info">
-                    <div class="profile-picture">
-                        <img src="profile-picture.jpg" alt="Profile Picture">
-                    </div>
-                    <div class="profile-details">
-                        <p><strong>Username:</strong> JohnDoe</p>
-                        <p><strong>Email:</strong> johndoe@example.com</p>
-                        <p><strong>Location:</strong> New York City</p>
-                        <p><strong>Joined:</strong> January 1, 2022</p>
-                    </div>
-                </div>
-        </header>
-        <footer>
-        </footer>
-    <nav class="window" style="width: 200px; height: 200px; border: 1px, solid, black">
+                
+            uploadForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData();
+                formData.append('profilePicture', imageInput.files[0]); // Append the file input
+                
+                fetch('/profile-photo', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('profileImage').src = data.profilePictureUrl;
+                })
+                .catch(error => {
+                    console.error('Error uploading profile picture:', error);
+                });
+            });
 
+            function uploadProfilePicture() {
+                const formData = new FormData(uploadForm);
+                fetch('/profile-photo', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('profileImage').src = data.profilePictureUrl;
+                })
+                .catch(error => {
+                    console.error('Error uploading profile picture:', error);
+                });
+            }
+
+            // Wait for the DOM to be fully loaded
+            document.addEventListener("DOMContentLoaded", function() {
+                // Get the configuration icon element
+                const configIcon = document.querySelector('.config-icon');
+
+                // Add a click event listener to the configuration icon
+                configIcon.addEventListener('click', function(event) {
+                    // Prevent the default action of the click event
+                    event.preventDefault();
+
+                    // Toggle the dropdown menu when the configuration icon is clicked
+                    const dropdownMenu = this.querySelector('.dropdown-menu');
+                    const isOpen = new bootstrap.Dropdown(dropdownMenu).toggle();
+
+                    // Focus on the dropdown toggle button after toggling the dropdown
+                    if (!isOpen) {
+                        this.querySelector('.dropdown-toggle').focus();
+                    }
+                });
+            });
+        </script>
 </body>
 </html>
