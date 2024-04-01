@@ -32,5 +32,6 @@
     "doc": "docs",
     "test": "tests"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }

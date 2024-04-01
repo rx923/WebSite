@@ -8,9 +8,8 @@ const cookieParser = require('cookie-parser');
 const WebSocket = require('ws');
 const { hostname } = require('os');
 const { authController } = require('./controllers/auth');
-// const profileRouter = require('./controllers/profileRoutes');
-const profileCompletionRouter = require('./controllers/auth.js');
 const profileRoutes = require('./controllers/profileRoutes.js');
+const chatButtonForm = require('./chat-button-form-group');
 
 
 const app = express();
@@ -31,15 +30,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 app.use(cors());
-// app.use('/auth', authController); 
+
 app.post('/login', authController.login);
 app.post('/logout', authController.logout);
 app.use('/register', authController.register);
 app.use('/submit-profile-completion', authController.profileCompletion);
 app.post('/profile-photo', profileRoutes);
-// Mount the profile completion router
-// app.use('/submit-profile', profileCompletionRouter);
-// const upload = require('./multerConfig');
 
 // Your authentication middleware
 const requireAuth = (req, res, next) => {
@@ -49,6 +45,12 @@ const requireAuth = (req, res, next) => {
         res.redirect('/logged_in.html');
     }
 }
+
+
+app.use(chatButtonForm);
+
+
+app.post('/support-group')
 
 app.get('/logged_in', (req, res) => {
     const username = req.session.username;
@@ -60,29 +62,7 @@ app.get('/Profile.html', (req, res) => {
     res.render('profile', { user: userDetails });
 });
 
-// app.use(upload.single('profilePicture'));
-app.use('/profile', profileRoutes);
 
-
-app.post('/profile-photo', async(req, res) => {
-    try {
-    //Forwarding the request to profileRoutes.js
-    //Passing the req body to profileRoutes.js if necessary
-
-    const result = await fetch('http://192.168.100.53:8081/profile-photo', {
-        method: 'POST',
-        body: req.body,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    const data = await result.json();
-    res.status(result.status).json(data);
-    } catch (error) {
-        console.error('Error uploading profile photo:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
 
 // Create the server
 const server = http.createServer(app);

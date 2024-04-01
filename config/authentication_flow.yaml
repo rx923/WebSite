@@ -8,7 +8,9 @@
 
 authentication_flow:
   -step: receive login request
-  action: Check if the username and password are provided
+  action: Check if the username and password are provided.
+  -step: store username and password in JSON object.
+  action: compare username and password using function - 
   error_handling: Return 400 status code with error message if not provided
 
 - step: Authenticate user

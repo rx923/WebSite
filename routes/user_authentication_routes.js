@@ -27,7 +27,33 @@ module.exports = router;
 
 // Defining routes for the authentication functionality:
 router.post('/login', async (req, res) => {
-    // To be written;
+    try {
+        const { username, password } = req.body;
+
+        // Validate username and password
+        if (!username || !password) {
+            return res.status(400).json({ error: 'Username and password are required.' });
+        }
+
+        // Authenticate user and generate token
+        const authResult = await authenticateAndGenerateToken(req, username, password);
+
+        // Handle authentication result
+        if (authResult.error) {
+            return res.status(401).json({ error: authResult.error });
+        }
+
+        const { token, user } = authResult;
+
+        // Store user ID in session
+        req.session.user_id = user.id;
+
+        // Redirect or send response with token
+        return res.status(200).json({ token });
+    } catch (error) {
+        console.error('Error logging in:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
 });
 
 // Defining route for logout functionality:
@@ -87,27 +113,34 @@ async function generateAuthToken(req, userOrUserId, loginTimestamp) {
     }
 };
 
+// authenticateAndGenerateToken function
 async function authenticateAndGenerateToken(req, providedUsername, providedPassword) {
     try {
         // Authenticate user
+        console.log('Authenticating user:', providedUsername);
         const user = await User.findOne({ where: { username: providedUsername } });
-        console.log('User found:', user);
+
         if (!user) {
+            console.error('User not found:', providedUsername);
             return { error: 'Invalid username or password.' };
         }
 
-        // Check password validity
-        const isPasswordValid = await comparePasswords(providedPassword, user.password);
-        console.log('Password validity:', isPasswordValid);
+        // Compare the provided password with the hashed password stored in the database
+        const isPasswordValid = await bcrypt.compare(providedPassword, user.password);
+
         if (!isPasswordValid) {
+            console.error('Invalid password for user:', providedUsername);
             return { error: 'Invalid username or password.' };
         }
+
+        console.log('User authenticated successfully:', providedUsername);
 
         // Generate auth token
         const token = await generateAuthToken(req, user, Date.now());
 
         // Set expiration time
-        const expire = new Date(Date.now() + 3600000); // 1 hour expiration
+        // 1 hour expiration
+        const expire = new Date(Date.now() + 3600000); 
 
         // Store token in database with expiration time
         await storeTokenInDatabase(req.session.id, user.id, token, expire);
@@ -118,6 +151,7 @@ async function authenticateAndGenerateToken(req, providedUsername, providedPassw
         throw error;
     }
 };
+
 
 async function storeTokenInDatabase(sid, userId, token, expire) {
     try {
@@ -180,6 +214,7 @@ async function updateUserProfile(userId, userDetails) {
             location: userDetails.location,
             contact_details: userDetails.contact_details,
         });
+        
 
         console.log('User profile updated:', user);
         return user;

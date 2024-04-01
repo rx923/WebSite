@@ -1,52 +1,86 @@
 // profileRoutes.js
+
+// Import necessary modules
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const router = express.Router();
+const User = require('../models/userModel.js');
+const filePath = 'U:/Plan_Afacere/WebSite/uploads/profile-pictures/1711886313658-281979936.jpg';
 
-// Multer configuration for handling file uploads
-const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
-        // Specify the destination directory for uploads
-        cb(null, path.join(__dirname, '..', 'uploads'));
-    },
-    filename: function(req, file, cb) {
-        // Generate a unique filename using the original filename and a timestamp
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        // Use the original filename and add a unique suffix
-        cb(null, uniqueSuffix + path.extname(file.originalname));
-    }
-});
 
-const upload = multer({ storage: storage });
+function file_searching(filePath, fileName) {
+    return new Promise((resolve, reject) => {
+        fs.readdir(filePath, (err, files) => {
+            if (err) {
+                // Error reading directory
+                reject(err); 
+                return;
+            }
 
+            // Check if the fileName exists in the directory
+            if (files.includes(fileName)) {
+                // File found
+                resolve(true); 
+            } else {
+                // File not found
+                resolve(false); 
+            }
+        });
+    });
+}
+
+// Function to define storage for profile pictures
+function configureProfilePictureStorage() {
+    return multer.diskStorage({
+        destination: function (req, file, cb) {
+             // Destination folder where profile pictures will be stored temporarily
+            cb(null, 'uploads/profile-pictures');
+        },
+        filename: function (req, file, cb) {
+            // Generating a unique filename for the uploaded profile picture
+            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+            // Appending file extension
+            cb(null, uniqueSuffix + path.extname(file.originalname)); 
+        }
+    });
+}
+
+// Multer Instance with storage configuration
+// Use the configureProfilePictureStorage() function to define storage
+const upload = multer({ storage: configureProfilePictureStorage() }); 
 
 // POST route for uploading profile picture
-router.post('/profile-photo', upload.single('profilePicture'), async (req, res) => {
+// POST route for uploading profile pictures
+router.post('/profile-photos', upload.array('profilePictures', 12), async (req, res) => {
     try {
-        if (!req.file) {
-            return res.status(400).json({ message: 'No file uploaded' });
+        // Check if files were uploaded
+        if (!req.files || req.files.length === 0) {
+            return res.status(400).json({ message: 'No files uploaded' });
         }
-        const filePath = req.file.path;
-        const fileName = req.file.filename;
-        const fileSize = req.file.size;
-        const mimeType = req.file.mimetype;
-        // Assuming you have user authentication middleware
-        const user_id = req.user.id; 
+        console.log('profilePictures');
 
-        console.log('filePath: ', filePath);
-        console.log('fileName: ', fileName);
-        console.log('fileSize: ', fileSize);
-        console.log('mimeType: ', mimeType);
-        console.log('userId: ', user_id);
+        // Assuming you have user authentication middleware and req.user contains the authenticated user's information
+        const userId = req.user.id;
+        
 
-        // Here you can insert the file details into your database or perform other operations
+        // Update the user's profile to store the profile photo information
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
 
-        res.status(200).json({ message: 'Profile picture uploaded successfully', filePath: filePath });
+        // Save the file information to the user's profile
+        const profilePictures = req.files.map(file => file.filename);
+        user.profilePictures.push(...profilePictures);
+        await user.save();
+
+        res.status(200).json({ message: 'Profile pictures uploaded successfully', filenames: profilePictures });
     } catch(error) {
-        console.error('Error uploading profile picture:', error);
-        res.status(500).json({ message: 'Error uploading profile picture' });
+        console.error('Error uploading profile pictures:', error);
+        res.status(500).json({ message: 'Error uploading profile pictures' });
     }
 });
+
 
 module.exports = router;
