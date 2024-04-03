@@ -9,7 +9,7 @@ const WebSocket = require('ws');
 const { hostname } = require('os');
 const { authController } = require('./controllers/auth');
 const profileRoutes = require('./controllers/profileRoutes.js');
-const chatButtonForm = require('./chat-button-form-group');
+// const chatButtonForm = require('./chat-button-form-group');
 
 
 const app = express();
@@ -46,8 +46,15 @@ const requireAuth = (req, res, next) => {
     }
 }
 
+app.post('/send-message', (req, res) => {
+    //Retreiving the message from the request body
+    const message = req.body.message;
 
-app.use(chatButtonForm);
+    console.log('Received message:', message);
+
+    res.send('Message received successfully!');
+});
+
 
 
 app.post('/support-group')

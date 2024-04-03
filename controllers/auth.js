@@ -132,7 +132,7 @@ const authController = {
             console.log('Attempting to login with username:', username);
     
             // Authenticate user and generate token
-            const authResult = await authenticateAndGenerateToken(req, username, password);
+            const authResult = await authenticateAndCompare(req, username, password); // Changed to authenticateAndCompare
             console.log('Authentication result:', authResult);
             
             if (authResult.error) {
