@@ -1,0 +1,14 @@
+[
+    {"name": "Product 1", "link": "product_page_1.html"},
+    {"name": "Product 2", "link": "product_page_2.html"},
+    {"name": "Product 3", "link": "product_page_3.html"},
+    {"name": "Product 4", "link": "product_page_4.html"},
+    {"name": "Product 5", "link": "product_page_5.html"},
+    {"name": "Product 6", "link": "product_page_6.html"},
+    {"name": "Product 7", "link": "product_page_7.html"},
+    {"name": "Product 8", "link": "product_page_8.html"},
+    {"name": "Product 9", "link": "product_page_9.html"},
+    {"name": "Product 10", "link": "product_page_10.html"},
+    {"name": "Product 11", "link": "product_page_11.html"},
+    {"name": "Product 12", "link": "product_page_12.html"}
+]

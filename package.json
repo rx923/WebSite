@@ -13,6 +13,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "connect-pg-simple": "^9.0.1",
+    "connect-session-sequelize": "^7.1.7",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "cron": "^3.1.6",
@@ -32,6 +33,5 @@
     "doc": "docs",
     "test": "tests"
   },
-  "keywords": [],
-  "devDependencies": {}
+  "keywords": []
 }

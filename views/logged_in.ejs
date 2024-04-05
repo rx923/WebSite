@@ -16,6 +16,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
+            z-index: 9999;
         }
 
         .navbar-collapse {
@@ -29,9 +30,35 @@
             top: 60px;
             right: 10px;
         }
+        .form-select:focus{
+            border-radius: 30px;
+        }
+        .profilePictureContainer {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-left: 160px;
+            top: 90px;
+            z-index: 8001;
+            background-color: rgb(255, 195, 195);
+            border-radius: 50%; /* Creates a circular container */
+            overflow: hidden; /* Hides any overflow from the image */
+        }
+
+        .profilePictureContainer img {
+            width: 100%; /* Ensures the image fills the circular container */
+            height: auto;
+        }
+        .profileForm{
+            background-color: rgb(106, 106, 223);
+        }
     </style>
 </head>
 <body>
+
+    <div class="profilePictureContainer">
+        <img src="path_to_profile_picture" alt="Profile Picture">
+    </div>
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="https://www.google.com">
@@ -42,7 +69,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto" style="background-color: rgb(170, 92, 92); border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
+        <ul class="navbar-nav ml-auto" style="background-color: rgb(170, 92, 92); border-top-left-radius: 20px; border-bottom-left-radius: 20px; z-index: 9999;">
             <li class="nav-item active" style="margin-left: 10px; background-color: rgba(218, 165, 32, 0.29); border-radius: 10px;">
                 <a class="nav-link" href="#">Home</a>
             </li>
@@ -50,16 +77,49 @@
                 <a class="nav-link" href="#">Dashboard</a>
             </li>
             <li class="nav-item" style="margin-left: 10px; background-color: rgba(218, 165, 32, 0.29); border-radius: 10px;">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="http://192.168.100.53:8081/Profile.html">Profile</a>
             </li>
             <li class="nav-item" style="margin-left: 10px; background-color: rgba(218, 165, 32, 0.29); border-radius: 10px;">
-                <a class="nav-link" href="/logout">Logout</a>
+                <!-- <a class="nav-link" action="/logout" href="/logout">Logout</a> -->
+                <form  class="nav-link" id="logoutForm" action="/logout" method="POST">
+                    <button type="submit" class="nav-link" style="border-radius: 30px; border: none; background-color: chocolate;">Logout</button>
+                    </form>
+                <script>
+                    function logout() {
+                        document.getElementById('logout').submit
+                    }
+                </script>
             </li>
+            <li class="nav-item" style="margin-left: 10px; background-color: rgba(218, 165, 32, 0.29); border-radius: 10px;">
+                <a class="nav-link" href="comenzi.html">Comenzi</a>
+            </li>
+            <form class="d-flex"></form>
         </ul>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
         const logoutLinks = document.querySelectorAll('.logout-link');
+        const form = document.getElementById('profileForm');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+
+                const response = await fetch('/upload-profile-picture', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (response.ok) {
+                    console.log('Profile picture uploaded successfully');
+                }else{
+                    console.error('Failed to upload profile picture');
+                }
+            } catch (error) {
+                console.error('An error occured during profile picture upload: ', error);
+            }
+        });
     
         logoutLinks.forEach(function(logoutLink) {
             logoutLink.addEventListener('click', function(event) {
@@ -81,45 +141,100 @@
             });
         });
     });
+    </script>
+    <!-- Configuring the script for sending the uploaded image to the main profile page. -->
+    <script>
+    const uploadForm = document.getElementById('uploadForm');
+    uploadForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('profilePicture', imageInput.files[0]);
+
+        fetch('/upload-profile-picture', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            const profilePictureContainer = document.querySelector('.profilePictureContainer');
+            profilePictureContainer.innerHTML = `<img src="${data.path}" alt="Profile Picture">`;
+
+            console.log('Profile picture uploaded successfully');
+        })
+        .catch(error => {
+            console.error('Error uploading profile picture: ', error);
+        });
+    });
     </script>    
 </nav>
 
 <!-- Main Content -->
-<div class="container mt-5" style="background-color: rgb(247, 208, 156); border: 1px solid black; border-radius: 30px; margin-bottom: 0px; position: static; height: 330px;">
-    <h1 style="top: 100px; position: relative;">Welcome to Your Logged In Interface</h1>
-    <p style="top: 110px; position: relative;">Logged in as: <%= username %> </p>
+<div class="container mt-5" style="background-color: rgb(247, 208, 156); border: 1px solid black; border-radius: 30px; top: 120px; margin-bottom: 0px; position: relative; height: 450px; margin-top: 20px;">
+    <h1 style="top: 160px; position: relative;">Welcome to Your Logged In Interface</h1>
+    <p style="top: 170px; position: relative;">Logged in as: </p>
 </div>
 
-<div class="container mt-5" style="background-color: rgba(0, 0, 0, 0.508); width: 400px; height: 150px; border-radius: 30px;">
-    <h3 style="color: white;">Item Description</h3>
-    <p style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque sapien nec purus cursus, vel laoreet nisi convallis.</p>
-    <form action="add-to-cart">
-        <button type="submit" class="btn btn-primary" style="width: 110px; height: 40px; position: sticky; border-radius: 30px; display: inline-block;">Add to Cart</button>
-        <button type="submit" class="btn btn-secondary" style="width: 160px; height: 40px; position: sticky; border-radius: 30px; display: inline-block;">Remove from Cart</button>
-    </form>
+<div class="container mt-5" style="background-color: rgba(0, 0, 0, 0.508); width: 350px; height: 170px; border-radius: 30px; position: relative; top: 100px;">
+    <h3 style="color: white;">Main Product Pages</h3>
+    <ul id="productList" style="color: white; list-style-type: none; padding: 0;">
+        <!-- List items will be dynamically generated here -->
+    </ul>
 </div>
+<script>
+    // Function to fetch product list from backend and dynamically add links
+    async function fetchProductList(){
+        try {
+            const response = await fetch('/api/products');
+            const data = await response.json();
 
-<select class="form-select" aria-label="Default select example" id="form-stoc" style="width: 120px; border-radius: 30px; bottom: 570px; position: relative; background-color: darkseagreen">
-  <option selected>Stoc</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+            const productList = document.getElementById('productList');
+            //Clearing the existing list
+            productList.innerHTML = '';
+
+            data.forEach(product => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = product.link;
+                link.textContent = product.name;
+                link.style.fontSize = 'small';
+                listItem.appendChild(link);
+                productList.appendChild(listItem);
+            });
+        } catch(error) {
+            console.error('Error fetching product list:', error);
+        }
+    }
+
+    // Calling the function when the page loads.
+    document.addEventListener('DOMContentLoaded', fetchProductList);
+</script>
+
+<select class="form-select" aria-label="Default select example" id="form-stoc" style="width: 120px; border-radius: 30px; bottom: 530px; position: relative; background-color: darkseagreen; left: 10px;" onchange="window.location.href = this.value;">
+    <option selected disabled style="border-radius: 30px;">Stoc</option>
+    <option value="link_to_stoc_1">One</option>
+    <option value="link_to_stoc_2">Two</option>
+    <option value="link_to_stoc_3">Three</option>
 </select>
 
 
-<select class="form-select" aria-label="Default select example" id="form-verificare-Comenzi" style="width: 120px; border-radius: 30px; bottom: 608px; left: 144px; position: relative; background-color: darkseagreen;">
-  <option selected>Comenzi</option>
-  <option value="1">Urmarire</option>
-  <option value="2">Status Comenzi</option>
-  <option value="3">Verificare cos</option>
+
+<select class="form-select" aria-label="Default select example" id="form-verificare-Comenzi" style="width: 120px; border-radius: 30px; bottom: 568px; left: 145px; position: relative; background-color: darkseagreen;" onchange="window.location.href = this.value;">
+    <option selected disabled style="border-radius: 30px;">Comenzi</option>
+    <option value="link_to_comenzi_1">Urmarire</option>
+    <option value="link_to_comenzi_2">Status Comenzi</option>
+    <option value="link_to_comenzi_3">Verificare cos</option>
 </select>
 
-<select class="form-select" aria-label="Default select example" id="form-verificare-Produse" style="width: 120px; border-radius: 30px; bottom: 646px; left: 291px; position: relative; background-color: darkseagreen">
-  <option selected>Produse</option>
-  <option value="1">Optiuni</option>
-  <option value="2">Procesare Plata</option>
-  <option value="3">Modificare livrare</option>
+
+<select class="form-select" aria-label="Default select example" id="form-verificare-Produse" style="width: 120px; border-radius: 30px; bottom: 605px; left: 281px; position: relative; background-color: darkseagreen;" onchange="window.location.href = this.value;">
+    <option selected disabled style="border-radius: 30px;">Produse</option>
+    <option value="link_to_produse_1">Optiuni</option>
+    <option value="link_to_produse_2">Procesare Plata</option>
+    <option value="link_to_produse_3">Modificare livrare</option>
 </select>
+
+
+
 <!-- Bootstrap JS and jQuery (for Bootstrap functionality) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

@@ -118,6 +118,33 @@ async function authenticateAndCompare(req, providedUsername, providedPassword) {
     }
 };
 
+async function fetchUserData(id) {
+    // Fetch user data from the database based on the provided id
+    try {
+        // Retrieve user data from the database
+        const user = await User.findByPk(id);
+
+        // Check if user exists
+        if (!user) {
+            throw new Error('User not found');
+        }
+
+        // Construct user info object
+        const userInfo = {
+            username: user.username,
+            email: user.email,
+            location: user.location,
+            // Omitting 'joined' field since it's not available in the database
+        };
+
+        return userInfo;
+    } catch (error) {
+        console.error('Error fetching user information:', error);
+        throw error;
+    }
+}
+
+
 
 const authController = {
     login: async (req, res) => {
@@ -132,9 +159,9 @@ const authController = {
             console.log('Attempting to login with username:', username);
     
             // Authenticate user and generate token
-            const authResult = await authenticateAndCompare(req, username, password); // Changed to authenticateAndCompare
+            const authResult = await authenticateAndCompare(req, username, password);
             console.log('Authentication result:', authResult);
-            
+    
             if (authResult.error) {
                 console.error('Authentication error:', authResult.error);
                 return res.status(401).json({ error: authResult.error });
@@ -145,18 +172,23 @@ const authController = {
     
             // Set user_id in the session after successful login
             req.session.user_id = user.id;
+    
             // Associate the user ID with the session ID in the session table
             await mapSessionToUser(req.session.id, user.id);
     
             console.log('User logged in successfully:', user.username);
     
-            // Redirect to logged_in.html upon successful login
-            return res.redirect('/logged_in.html');
+            // Fetch user data from the database
+            const userData = await fetchUserData(user.id, user.username);
+    
+            // Render the profile page with user data
+            return res.render('profile', { user: userData });
         } catch (error) {
             console.error('Error logging in:', error);
             return res.status(500).json({ error: 'Internal server error' });
         }
     },
+    
     logout: async (req, res) => {
         try {
             if (!req.session || !req.session.user_id) {
