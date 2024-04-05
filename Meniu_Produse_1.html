@@ -413,23 +413,33 @@
       });
   
       function addProductContainers(parentContainer) {
-        // Create product 1 container
-        let productContainer1 = document.createElement('div');
-        productContainer1.classList.add('cart-dropdown-item');
-        productContainer1.style.border = '1px solid black';
-        productContainer1.style.width = '100px';
-        productContainer1.style.height = '50px';
-        productContainer1.style.borderRadius = '5px';
-        productContainer1.style.backgroundColor = 'beige';
-        let productImage1 = document.createElement('img');
-        productImage1.src = 'https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-        productImage1.alt = 'Product 1';
-        productImage1.style.width = '50%';
-        productImage1.style.height = '50%';
-        productImage1.style.objectFit = 'cover';
-        productContainer1.appendChild(productImage1);
-        parentContainer.appendChild(productContainer1);
-
+          // Loop to create product containers
+          for (let i = 1; i <= 9; i++) {
+              // Create product container
+              let productContainer = document.createElement('div');
+              productContainer.classList.add('product-container');
+              // Add your product container content here
+              // For example:
+              productContainer.innerHTML = `
+                  <img src="image_url" alt="Product ${i}">
+                  <div class="description">
+                      <h2>Product Name</h2>
+                      <p>Description of the product.</p>
+                      <div class="quantity-selector">
+                          <!-- Quantity selector buttons -->
+                          <button onclick="decrementQuantity(this)">-</button>
+                          <input type="text" class="quantity-input" value="1">
+                          <button onclick="incrementQuantity(this)">+</button>
+                      </div>
+                      <button class="btn btn-primary" onclick="addToCart(this.parentNode.parentNode)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                      <button class="btn btn-secondary" onclick="removeFromCart(this)"><i class="fas fa-cart-plus"></i> Remove from Cart</button>
+                  </div>
+              `;
+              // Append product container to parent container
+              parentContainer.appendChild(productContainer);
+          }
+      }
+  
         // Create product 2 container
         let productContainer2 = document.createElement('div');
         productContainer2.classList.add('cart-dropdown-item');
@@ -456,20 +466,40 @@
       let quantityInput = btn.parentElement.querySelector('.quantity-input');
       let quantity = parseInt(quantityInput.value);
       let cartCounter = document.getElementById('cartCounter');
-      let currentCount = parseInt(cartCounter.innerText);
-      cartCounter.innerText = currentCount + quantity;
+        let quantityInput = productContainer.querySelector('.quantity-input');
+        let quantity = parseInt(quantityInput.value);
+        let currentCount = parseInt(cartCounter.innerText);
+        cartCounter.innerText = currentCount + quantity;
 
-      // Create a new cart item
-      let cartItem = document.createElement('div');
-      cartItem.classList.add('cart-dropdown-item');
-      cartItem.style.border = '1px solid black';
-      cartItem.style.backgroundColor = 'whitesmoke';
+        // Get the cart dropdown container
+        let cartDropdown = document.getElementById('cartDropdown');
 
-      // Add the product name and quantity to the cart item
-      let productNameElement = document.createElement('span');
-      productNameElement.textContent = productName;
-      cartItem.appendChild(productNameElement);
-      
+        // Get product details from the product container
+        let productName = productContainer.querySelector('.description h2').textContent;
+        let productImageSrc = productContainer.querySelector('img').src;
+
+        // Check if the product already exists in the cart
+        let existingProduct = cartDropdown.querySelector(`img[src="${productImageSrc}"]`);
+        if (existingProduct) {
+            // If the product already exists, update its quantity
+            let quantitySpan = existingProduct.nextElementSibling;
+            let existingQuantity = parseInt(quantitySpan.textContent);
+            quantitySpan.textContent = existingQuantity + quantity;
+        } else {
+            // If the product doesn't exist, create a new cart item
+            let cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+
+            // Add the product image
+            let productImage = document.createElement('img');
+            productImage.src = productImageSrc;
+            cartItem.appendChild(productImage);
+
+            // Add the product name
+            let productNameElement = document.createElement('span');
+            productNameElement.textContent = productName;
+            cartItem.appendChild(productNameElement);
+
       let quantityElement = document.createElement('span');
       quantityElement.textContent = ` x ${quantity}`;
       cartItem.appendChild(quantityElement);
@@ -477,6 +507,7 @@
       // Appending the cart item to the cart dropdown container
       let cartDropdown = document.getElementById('cartDropdown');
       cartDropdown.appendChild(cartItem);
+        }
 
       // Show dropdown if hidden
       cartDropdown.classList.add('active');

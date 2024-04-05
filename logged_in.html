@@ -99,7 +99,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
         const logoutLinks = document.querySelectorAll('.logout-link');
-        const form = document.getElementById('profileFomr');
+        const form = document.getElementById('profileForm');
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
@@ -144,6 +144,7 @@
     </script>
     <!-- Configuring the script for sending the uploaded image to the main profile page. -->
     <script>
+    const uploadForm = document.getElementById('uploadForm');
     uploadForm.addEventListener('submit', (event) => {
         event.preventDefault();
         const formData = new FormData();
@@ -173,29 +174,84 @@
     <p style="top: 170px; position: relative;">Logged in as: </p>
 </div>
 
-<div class="container mt-5" style="background-color: rgba(0, 0, 0, 0.508); width: 350px; height: 170px; border-radius: 30px; position: relative; top: 100px;">
-    <h3 style="color: white;">Item Description</h3>
-    <p style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque sapien nec purus cursus, vel laoreet nisi convallis.</p>
-    <form action="add-to-cart">
-        <button type="submit" class="btn btn-primary" style="width: 110px; height: 40px; position: sticky; border-radius: 30px; display: inline-block;">Add to Cart</button>
-        <button type="submit" class="btn btn-secondary" style="width: 160px; height: 40px; position: sticky; border-radius: 30px; display: inline-block;">Remove from Cart</button>
-    </form>
+<div class="container mt-5" style="background-color: rgba(0, 0, 0, 0.508); width: 350px; height: 350px; border-radius: 30px; position: relative; top: 100px;">
+    <h3 style="color: white;">Produse Adaugate</h3>
+    <ul id="productList" style="color: white; list-style-type: none; padding: 0;">
+        <!-- List items will be dynamically generated here -->
+    </ul>
 </div>
+<script>
+    // Function to fetch product list from backend and dynamically add links
+    async function fetchProductList(){
+        try {
+            const response = await fetch('/api/products');
+            const data = await response.json();
 
-<select class="form-select" aria-label="Default select example" id="form-stoc" style="width: 120px; border-radius: 30px; bottom: 530px; position: relative; background-color: darkseagreen; left: 10px;">
-  <option selected>Stoc</option>
-  <option value="1" style="border: 1px solid black;">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
+            const productList = document.getElementById('productList');
+            // Clearing the existing list
+            productList.innerHTML = '';
 
+            data.forEach(product => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = product.link;
+                link.textContent = product.name;
+                
+                // Apply styles to the link
+                // Adjust font size to medium
+                link.style.fontSize = 'medium';
+                // Add 1px border
+                link.style.border = '1px solid black';
+                // Add border radius
+                link.style.borderRadius = '20px';
+                
+                listItem.style.maxWidth = '200px'; 
+                
+                listItem.appendChild(link);
+                productList.appendChild(listItem);
+            });
+        } catch(error) {
+            console.error('Error fetching product list:', error);
+        }
+    }
 
-<select class="form-select" aria-label="Default select example" id="form-verificare-Comenzi" style="width: 120px; border-radius: 30px; bottom: 568px; left: 145px; position: relative; background-color: darkseagreen;">
-  <option selected>Comenzi</option>
-  <option value="1">Urmarire</option>
-  <option value="2">Status Comenzi</option>
-  <option value="3">Verificare cos</option>
-</select>
+    // Calling the function when the page loads.
+    document.addEventListener('DOMContentLoaded', fetchProductList);
+</script>
+
+<div class="container mt-5" style="background-color: rgba(0, 0, 0, 0.508); width: 400px; border-radius: 30px; position: relative; margin-bottom: 100px; bottom: 750px; z-index: 9500;">
+    <h3 style="color: white;">Select Options</h3>
+    
+    <!-- First select -->
+    <div style="position: relative; display: inline-block;">
+        <select class="form-select" aria-label="Default select example" id="form-stoc" style="width: 120px; border-radius: 30px; background-color: darkseagreen;" onchange="window.location.href = this.value;">
+            <option selected disabled style="border-radius: 30px;">Stoc</option>
+            <option value="link_to_stoc_1">One</option>
+            <option value="link_to_stoc_2">Two</option>
+            <option value="link_to_stoc_3">Three</option>
+        </select>
+    </div>
+
+    <!-- Second select -->
+    <div style="position: relative; display: inline-block; margin-left: 4px;">
+        <select class="form-select" aria-label="Default select example" id="form-verificare-Comenzi" style="width: 120px; border-radius: 30px; background-color: darkseagreen;" onchange="window.location.href = this.value;">
+            <option selected disabled style="border-radius: 30px;">Comenzi</option>
+            <option value="link_to_comenzi_1">Urmarire</option>
+            <option value="link_to_comenzi_2">Status Comenzi</option>
+            <option value="link_to_comenzi_3">Verificare cos</option>
+        </select>
+    </div>
+
+    <!-- Third select -->
+    <div style="position: relative; display: inline-block; margin-left: 20px;">
+        <select class="form-select" aria-label="Default select example" id="form-verificare-Produse" style="width: 120px; border-radius: 30px; background-color: darkseagreen; margin-left: 235px; bottom: 38px; position: relative;" onchange="window.location.href = this.value;">
+            <option selected disabled style="border-radius: 30px;">Produse</option>
+            <option value="link_to_produse_1">Optiuni</option>
+            <option value="link_to_produse_2">Procesare Plata</option>
+            <option value="link_to_produse_3">Modificare livrare</option>
+        </select>
+    </div>
+</div>
 
 <select class="form-select" aria-label="Default select example" id="form-verificare-Produse" style="width: 120px; border-radius: 30px; bottom: 605px; left: 281px; position: relative; background-color: darkseagreen;">
   <option selected>Produse</option>
@@ -203,6 +259,9 @@
   <option value="2">Procesare Plata</option>
   <option value="3">Modificare livrare</option>
 </select>
+
+
+
 <!-- Bootstrap JS and jQuery (for Bootstrap functionality) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
