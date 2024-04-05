@@ -17,7 +17,10 @@
         /* background-color: #7dadce; */
     }
     body {
-        background: #ffffff;
+        background: radial-gradient(rgb(255, 248, 240), rgb(180, 162, 124));
+        overflow: visible;
+        border-radius: 30px;
+        /* background: #ffffff; */
         /* box-shadow:steelblue */
         /* background-image: url("U:\\Plan Afacere\\WebSite\\ComputerLaptop WebSite\\Imagine pagina principala\\jason-betz-klub_Ke-268-unsplash.jpg"); */
         /* Cover the entire background */

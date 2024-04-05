@@ -69,7 +69,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto" style="background-color: rgb(170, 92, 92); border-top-left-radius: 20px; border-bottom-left-radius: 20px; z-index: 9999;">
+        <ul class="navbar-nav ml-auto" style="background-color: rgb(170, 92, 92); border-top-left-radius: 20px; border-bottom-left-radius: 20px; z-index: 1;">
             <li class="nav-item active" style="margin-left: 10px; background-color: rgba(218, 165, 32, 0.29); border-radius: 10px;">
                 <a class="nav-link" href="#">Home</a>
             </li>
@@ -150,11 +150,11 @@
         const formData = new FormData();
         formData.append('profilePicture', imageInput.files[0]);
 
-        fetch('/uploadProfilePicture', {
+        fetch('/upload-profile-picture', {
             method: 'POST',
             body: formData
         })
-        .then(respnonse => response.json())
+        .then(response => response.json())
         .then(data => {
             const profilePictureContainer = document.querySelector('.profilePictureContainer');
             profilePictureContainer.innerHTML = `<img src="${data.path}" alt="Profile Picture">`;
@@ -253,12 +253,6 @@
     </div>
 </div>
 
-<select class="form-select" aria-label="Default select example" id="form-verificare-Produse" style="width: 120px; border-radius: 30px; bottom: 605px; left: 281px; position: relative; background-color: darkseagreen;">
-  <option selected>Produse</option>
-  <option value="1">Optiuni</option>
-  <option value="2">Procesare Plata</option>
-  <option value="3">Modificare livrare</option>
-</select>
 
 
 

@@ -1,19 +1,176 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    </head>
-    <body>
-        <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
-        <main>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+    <title>Clients Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx==" crossorigin="anonymous" />
 
-            <header>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <style>
+        /* Custom styles for sections */
+        section {
+            /* White background */
+            background-color: #fff; 
+            /* Groove border */
+            border: 1px groove black; 
+            /* Rounded corners */
+            border-radius: 30px; 
+            padding: 20px;
+            margin-bottom: 20px;
+            /* Added margin */
+            margin-left: 180px;
+            /* Added max-width */ 
+            max-width: 200px; 
+        }
 
-                </header>
-                <nav>
+        /* Custom styles for list items */
+        section ul.list-unstyled li {
+            /* Add some spacing between items */
+            margin-bottom: 5px;
+            /* Custom styling for list items */
+            font-weight: bold;
+            font-size: 16px;
+        }
 
-                </nav>
-            </main>
+        /* Hover effect for list item links */
+        section ul.list-unstyled li a {
+            /* Remove underline */
+            text-decoration: none;
+            /* Match text color to background */
+            color: #c0a080;
+        }
 
-            <footer>
-                </footer>
-        </body>
+        /* Hover effect for list item links */
+        section ul.list-unstyled li a:hover {
+            /* Darken text color on hover */
+            color: #604020;
+        }
+        .custom-list {
+            background-color: #58584b; 
+            border: 1px groove red;
+            text-decoration: underline;
+            margin-inline: 30px;
+            border-radius: 30px;
+            text-align: center;
+
+        }
+
+        .custom-list li a {
+            /* Red text color */
+            color: #dc3545;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="container">
+        <!-- Bootstrap heading class -->
+        <h1 class="display-4 text-center mb-4" style="border: 1px groove black; padding: 10px; border-radius: 30px; background-color: wheat;">Clients Page</h1> 
+    </header>
+    <nav class="container">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="clientDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Clients
+            </button>
+            <div class="dropdown-menu" aria-labelledby="clientDropdownMenu">
+                <a class="dropdown-item" href="#clientList">Client List</a>
+                <a class="dropdown-item" href="#clientTestimonials">Client Testimonials</a>
+                <a class="dropdown-item" href="#clientSuccessStories">Client Success Stories</a>
+                <a class="dropdown-item" href="#clientResources">Client Resources</a>
+                <a class="dropdown-item" href="#clientEvents">Client Events</a>
+                <a class="dropdown-item" href="#clientSupport">Client Support</a>
+                <a class="dropdown-item" href="#clientFeedbackForm">Client Feedback Form</a>
+                <a class="dropdown-item" href="#clientBenefits">Client Benefits</a>
+                <a class="dropdown-item" href="#clientCommunity">Client Community</a>
+                <a class="dropdown-item" href="#clientPortal">Client Portal</a>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <section id="clientList">
+            <h2 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client List</h2>
+            <!-- Display a list of clients here -->
+            <ul class="list-unstyled">
+                <li><a href="#">Client 1</a></li>
+                <li><a href="#">Client 2</a></li>
+                <li><a href="#">Client 3</a></li>
+                <!-- Add more clients as needed -->
+            </ul>
+        </section>
+
+        <section id="clientTestimonials">
+            <h3 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Testimonials</h3>
+            <!-- Showcase testimonials from satisfied clients here -->
+        </section>
+
+        <section id="clientSuccessStories">
+            <h4 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Success Stories</h4>
+            <!-- Share success stories or case studies here -->
+        </section>
+
+        <section id="clientResources">
+            <h5 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Resources</h5>
+            <!-- Provide resources or tools for clients here -->
+        </section>
+
+        <section id="clientEvents">
+            <h6 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Events</h6>
+            <!-- List upcoming events or webinars here -->
+        </section>
+
+        <section id="clientSupport">
+            <h7 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Support</h7>
+            <!-- Offer support options for clients here -->
+        </section>
+
+        <section id="clientFeedbackForm">
+            <h8 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Feedback Form</h8>
+            <!-- Include a feedback form here -->
+        </section>
+
+        <section id="clientBenefits">
+            <h9 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Benefits</h9>
+            <!-- Highlight the benefits of being a client here -->
+        </section>
+
+        <section id="clientCommunity">
+            <h10 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Community</h10>
+            <!-- Foster a sense of community among clients here -->
+        </section>
+
+        <section id="clientPortal">
+            <h11 class="h3" style="background-color: teal; border-radius: 30px; font-size:small;">Client Portal</h11>
+            <!-- Provide a client portal here -->
+        </section>
+    </main>
+    <footer class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 style="border: 1px groove black; background-color: #c0a080; border-radius: 30px; max-width: 200px;">Quick Links</h4>
+                <ul class="list-unstyled custom-list">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4 style="border: 1px groove black; background-color: #c0a080; border-radius: 30px; max-width: 200px;">Follow Us</h4>
+                <ul class="list-unstyled custom-list">
+                    <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> <!-- Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Bootstrap JS -->
+</body>
+</html>

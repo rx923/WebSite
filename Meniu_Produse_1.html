@@ -23,11 +23,13 @@
 
       /* Styles for the header */
       .page-header {
-        background: radial-gradient(ellipse at center, #ff9999 0%, #ff6666 50%, #ff3333 100%);
+        background: radial-gradient(ellipse at center, #d4a07a 0%, #c48762 50%, #ae6e49 100%);
         text-align: center;
         padding: 20px;
         color: #fff;
+        margin-left: 0px;
         font-size: 24px;
+        border-radius: 30px;
       }
 
       header {
@@ -117,7 +119,6 @@
         top: 35%; 
         /* Centering the dropdown horizontally */
         transform: translateX(-50%);
-
       }
       .dropdown-content .row {
         display: flex;
@@ -217,15 +218,20 @@
         cursor: pointer;
       }
       .clear-cart-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: red;
-        color: white;
-        border: none;
-        border-radius: 5px;
+        position: sticky;
+        top: 0;
+        right: 0;
         padding: 5px 10px;
-        cursor:pointer;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .cart-dropdown.active .clear-cart-btn {
+        background-color: #dddddd;
+        display: inline-block;
+        position: relative;
+        margin-left: 240px;
       }
 
       /* Styles for the cart badge */
@@ -239,32 +245,40 @@
         padding: 5px 10px;
         font-size: 14px;
       }
-       /* Styles for the cart dropdown */
-       .cart-dropdown {
-          position: absolute;
-          top: 70px;
-          right: 20px;
-          z-index: 1000;
-          display: none;
-          max-height: 300px;
-          overflow-y: auto;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-          height: 0; /* Initial height is 0 */
-          transition: height 0.3s ease; /* Smooth transition for height change */
+      /* Styles for the cart dropdown */
+      .cart-dropdown {
+        position: relative;
+        z-index: 1000;
+        display: none;
+        max-height: 600px;
+        overflow-y: auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        /* Height and transition removed */
+      }
+        /* Keyframes for dropdown animation */
+        @keyframes dropdownAnimation {
+          from {
+            height: 0; /* Start with height 0 */
+          }
+          to {
+            height: 300px; /* Increase height to 300px */
+          }
         }
         .cart-dropdown.active {
           display: block;
-          margin-left: 10px;
-          /* Adjust the width as needed */
-          /* Adjust the height as needed */
-          height: 210px;
-          left: 290px; 
-          width: 200px; 
+          /* Position the dropdown absolutely */
+          position: absolute;
+          top: 50px; /* Adjust as needed */
+          right: 20px; /* Adjust as needed */
+          /* Adjust the width and height as needed */
+          width: 300px;
+          height: 550px;
           border: 2px solid #ff6666;
+          /* Apply animation for smooth dropdown */
+          animation: dropdownAnimation 0.2s ease; 
         }
         .cart-dropdown-item {
           padding: 10px;
@@ -292,6 +306,19 @@
           width: 140px;
           border-radius: 30px; /* Text color for both buttons */
         }
+        .quantity-span {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          /* Transparent white background */
+          background-color: rgba(255, 255, 255, 0.7); 
+          /* Text color */
+          color: black; 
+           /* Padding around the number */
+          padding: 5px;
+          /* Rounded corners */
+          border-radius: 5px; 
+        }
     </style>
 </head>
 <body>
@@ -305,25 +332,54 @@
         <i class="fas fa-chevron-down"></i>
     </div>
 
-    <div class="cart-dropdown" id="cartDropdown"></div>
-    <!-- Container for cart items -->
-    <div id="cartItemsContainer"></div> 
-    <button class="'clear-cart-btn" onclick="clearCart()">Clear Cart </button>
-    <!-- Cart icon -->
-    <div class="cart-icon" onclick="toggleCart()">
-      <i class="fas fa-shopping-cart fa-2x" style="position: -webkit-sticky;"></i>
-        <span class="cart-badge" id="cartCounter">0</span>
-    </div>
-
+    <style>
+      .cart-items-container .cart-item-container {
+        width: 100px;
+        height: 100px;
+        /* Add any additional styles as needed */
+      }
+      .cart-items-container .cart-item {
+        display: unset;
+        /* Add any styles for the cart item */
+      }
+      .cart-items-container .cart-item img {
+        max-width: 100%;
+        max-height: 100%;
+        /* Add any additional image styles as needed */
+      }
+      .cart-item {
+        border: 1px solid black;
+        max-width: 100px;
+        max-height: 100px;
+        padding: 5px;
+        /* Adjust margin as needed */
+        margin-bottom: 10px; 
+        overflow: hidden;
+        /* Include padding and border in the width/height */
+        box-sizing: border-box; 
+      }
+    </style>
+  <!-- Container for cart items -->
+  <div id="cartDropdown" class="cart-dropdown">
+    <!-- Cart Items Container -->
+    <div id="cartItemsContainer" class="cart-items-container"></div>
+    <!-- Clear Cart Button -->
+    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+  </div>
+  <!-- Cart icon -->
+  <div class="cart-icon" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart fa-2x" style="position: -webkit-sticky;"></i>
+    <span class="cart-badge" id="cartCounter">0</span>
+  </div>
     <!-- Dropdown content -->
     <div class="dropdown-content" id="dropdownContent">
       <button class="close-button" onclick="closeDropdown()"><i class="fas fa-times"></i></button>
       <div class="row" id="cartItems"></div>
         <!-- Product containers -->
         <div class="product-container">
-            <img src="https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1">
+            <img src="https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1" style="width: 100px; height: 100px;">
             <div class="description">
-              <h3>Product 1</h3>
+              <h2>Product 1</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <div class="quantity-selector">
                 <button class="quantity-btn" onclick="decrementQuantity(this)">-</button>
@@ -335,7 +391,7 @@
             </div>
         </div>
         <div class="product-container">
-          <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 2">
+          <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 2" style="width: 100px; height: 100px;">
               <div class="description">
                   <h3>Product 2</h3>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -349,6 +405,9 @@
               </div>
             </div>
         </div>
+        <!-- New product container -->
+    </div>
+
     </div>
     <header>
         <h1>Coffee House Menu</h1>
@@ -377,7 +436,7 @@
                         </div>
                         <div class="column">
                             <div class="product-container">
-                                <h3>Produse cafea capsule de cafea</h3>
+                                <h4>Produse cafea capsule de cafea</h4>
                                 <a href="#link">Link 1</a>
                                 <a href="#link">Link 2</a>
                                 <a href="#link">Link 3</a>
@@ -385,134 +444,151 @@
                         </div>
                         <div class="column" id="row-3">
                             <div class="product-container">
-                                <h3>Cafea boabe</h3>
+                                <h5>Cafea boabe</h5>
                                 <a href="#link">Link 1</a>
                                 <a href="#link">Link 2</a>
                                 <a href="#link">Link 3</a>
                             </div>
+                        </div>
+                        <div class="column" id="row-4">
+                          <div class="product-container">
+                              <h6>Cafea boabe</h6>
+                              <a href="#link">Link 1</a>
+                              <a href="#link">Link 2</a>
+                              <a href="#link">Link 3</a>
+                          </div>
+                        </div>
+                        <div class="column" id="row-5">
+                          <div class="product-container">
+                              <h7>Cafea boabe</h7>
+                              <a href="#link">Link 1</a>
+                              <a href="#link">Link 2</a>
+                              <a href="#link">Link 3</a>
+                          </div>
+                        </div>
+                        <div class="column" id="row-6">
+                          <div class="product-container">
+                              <h8>Cafea boabe</h8>
+                              <a href="#link">Link 1</a>
+                              <a href="#link">Link 2</a>
+                              <a href="#link">Link 3</a>
+                          </div>
+                        </div>
+                        <div class="column" id="row-7">
+                          <div class="product-container">
+                              <h9>Cafea boabe</h9>
+                              <a href="#link">Link 1</a>
+                              <a href="#link">Link 2</a>
+                              <a href="#link">Link 3</a>
+                          </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <!-- Bootstrap JS (optional) -->
-    <!-- Font Awesome (optional) -->
-    
     <script>
       document.getElementById('dropdownToggle').addEventListener('click', function(event) {
-        var dropdownContent = document.getElementById('dropdownContent');
-        if (dropdownContent.style.display === 'block') {
-            dropdownContent.style.display = 'none';
-        } else {
-            dropdownContent.style.display = 'block';
-        }
-        // Prevent the default action of the button
-        event.preventDefault(); 
+          var dropdownContent = document.getElementById('dropdownContent');
+          if (dropdownContent.style.display === 'block') {
+              dropdownContent.style.display = 'none';
+          } else {
+              dropdownContent.style.display = 'block';
+              // Pass dropdownContent as the parent container
+              addProductContainers(dropdownContent); 
+          }
+          // Prevent the default action of the button
+          event.preventDefault(); 
       });
   
-      function addProductContainers(parentContainer) {
-          // Loop to create product containers
-          for (let i = 1; i <= 9; i++) {
-              // Create product container
-              let productContainer = document.createElement('div');
-              productContainer.classList.add('product-container');
-              // Add your product container content here
-              // For example:
-              productContainer.innerHTML = `
-                  <img src="image_url" alt="Product ${i}">
-                  <div class="description">
-                      <h2>Product Name</h2>
-                      <p>Description of the product.</p>
-                      <div class="quantity-selector">
-                          <!-- Quantity selector buttons -->
-                          <button onclick="decrementQuantity(this)">-</button>
-                          <input type="text" class="quantity-input" value="1">
-                          <button onclick="incrementQuantity(this)">+</button>
-                      </div>
-                      <button class="btn btn-primary" onclick="addToCart(this.parentNode.parentNode)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                      <button class="btn btn-secondary" onclick="removeFromCart(this)"><i class="fas fa-cart-plus"></i> Remove from Cart</button>
-                  </div>
-              `;
-              // Append product container to parent container
-              parentContainer.appendChild(productContainer);
-          }
-      }
-  
-        // Create product 2 container
-        let productContainer2 = document.createElement('div');
-        productContainer2.classList.add('cart-dropdown-item');
-        productContainer2.style.border = '1px solid black';
-        productContainer2.style.width = '100px';
-        productContainer2.style.height = '50px';
-        productContainer2.style.borderRadius = '5px';
-        productContainer2.style.backgroundColor = 'beige';
-        let productImage2 = document.createElement('img');
-        productImage2.src = 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-        productImage2.alt = 'Product 2';
-        productImage2.style.width = '50%';
-        productImage2.style.height = '50%';
-        productImage2.style.objectFit = 'cover';
-        productContainer2.appendChild(productImage2);
-        parentContainer.appendChild(productContainer2);
+      let productCounter = 0; // Counter to keep track of the number of products added
 
-        // Get the cart dropdown container
-        let cartDropdown = document.getElementById('cartDropdown');
-        cartDropdown.appendChild(productContainer1);
-        cartDropdown.appendChild(productContainer2);
-      }
-    function addProductToCart(btn, productName) {
-      let quantityInput = btn.parentElement.querySelector('.quantity-input');
-      let quantity = parseInt(quantityInput.value);
-      let cartCounter = document.getElementById('cartCounter');
-        let quantityInput = productContainer.querySelector('.quantity-input');
-        let quantity = parseInt(quantityInput.value);
+      function addToCart(product) {
+        let cartCounter = document.getElementById('cartCounter');
+        let quantity = 1; // Default quantity is 1 for each addition
+
+        // Check if the product is already in the cart
+        let existingProduct = document.querySelector(`.cart-item-container[data-product-id="${productCounter}"]`);
+        if (existingProduct) {
+            // If the product already exists, increment its quantity
+            let quantitySpan = existingProduct.querySelector('.quantity-span');
+            let currentQuantity = parseInt(quantitySpan.textContent.split(':')[1].trim());
+            quantitySpan.textContent = `Quantity: ${currentQuantity + 1}`;
+        } else {
+            // If the product is new, create a new container for it
+            productCounter++;
+
+            // Create a new container for the product
+            let cartItemContainer = document.createElement('div');
+            cartItemContainer.classList.add('cart-item-container');
+            cartItemContainer.setAttribute('data-product-id', productCounter);
+
+            // Set width, height, and border styles
+            cartItemContainer.style.width = '200px';
+            cartItemContainer.style.height = '200px';
+            cartItemContainer.style.border = '1px groove black';
+            cartItemContainer.style.borderRadius = '30px';
+
+            // Create a new cart item
+            let cartItem = createProductContainer(product);
+
+            // Append the cart item to the container
+            cartItemContainer.appendChild(cartItem);
+
+            // Add quantity to the container
+            let quantitySpan = document.createElement('span');
+            quantitySpan.classList.add('quantity-span');
+            quantitySpan.textContent = 'Quantity: ' + quantity;
+            cartItemContainer.appendChild(quantitySpan);
+
+            // Get the cart dropdown container
+            let cartDropdown = document.getElementById('cartDropdown');
+
+            // Append the container to the cart dropdown container
+            cartDropdown.appendChild(cartItemContainer);
+        }
+
+        // Update the cart counter
         let currentCount = parseInt(cartCounter.innerText);
         cartCounter.innerText = currentCount + quantity;
 
-        // Get the cart dropdown container
-        let cartDropdown = document.getElementById('cartDropdown');
+        // Show dropdown if hidden
+        cartDropdown.parentNode.classList.add('active');
+      }
 
-        // Get product details from the product container
-        let productName = productContainer.querySelector('.description h2').textContent;
-        let productImageSrc = productContainer.querySelector('img').src;
+      function createProductContainer(product) {
+        // Create a container for the product
+        let productContainer = document.createElement('div');
+        productContainer.classList.add('product-container');
 
-        // Check if the product already exists in the cart
-        let existingProduct = cartDropdown.querySelector(`img[src="${productImageSrc}"]`);
-        if (existingProduct) {
-            // If the product already exists, update its quantity
-            let quantitySpan = existingProduct.nextElementSibling;
-            let existingQuantity = parseInt(quantitySpan.textContent);
-            quantitySpan.textContent = existingQuantity + quantity;
-        } else {
-            // If the product doesn't exist, create a new cart item
-            let cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
+        // Set width and height
+        productContainer.style.width = '100px';
+        productContainer.style.height = '100px';
 
-            // Add the product image
-            let productImage = document.createElement('img');
-            productImage.src = productImageSrc;
-            cartItem.appendChild(productImage);
+        // Add border
+        productContainer.style.border = '1px solid black';
+        productContainer.style.borderRadius = '20px';
 
-            // Add the product name
-            let productNameElement = document.createElement('span');
-            productNameElement.textContent = productName;
-            cartItem.appendChild(productNameElement);
+        // Create and add the product image
+        let productImage = document.createElement('img');
+        productImage.src = product.link;
+        productImage.alt = product.name;
+        // Adjust the image size as needed
+        productImage.style.width = '80px'; 
+        // Adjust the image size as needed
+        productImage.style.height = '80px'; 
+        productContainer.appendChild(productImage);
 
-      let quantityElement = document.createElement('span');
-      quantityElement.textContent = ` x ${quantity}`;
-      cartItem.appendChild(quantityElement);
+        // Create and add the product name
+        let productName = document.createElement('div');
+        productName.textContent = product.name;
+        productName.style.textAlign = 'center';
+        productContainer.appendChild(productName);
 
-      // Appending the cart item to the cart dropdown container
-      let cartDropdown = document.getElementById('cartDropdown');
-      cartDropdown.appendChild(cartItem);
-        }
-
-      // Show dropdown if hidden
-      cartDropdown.classList.add('active');
-    }
-  
+        // Return the product container
+        return productContainer;
+      }
+    
       function closeDropdown() {
         var dropdownContent = document.getElementById('dropdownContent');
         dropdownContent.style.display = 'none';
@@ -521,88 +597,73 @@
       function decrementQuantity(btn) {
         let quantityInput = btn.nextElementSibling;
         if (parseInt(quantityInput.value) > 1){
-            quantityInput.value = parseInt(quantityInput.value) - 1;
+          quantityInput.value = parseInt(quantityInput.value) - 1;
         }
       }
   
       function incrementQuantity(btn) {
-        let quantityInput = btn.previousElementSibling;
-        quantityInput.value = parseInt(quantityInput.value) + 1;
+          let quantityInput = btn.previousElementSibling;
+          quantityInput.value = parseInt(quantityInput.value) + 1;
       }
   
       function toggleCart() {
         let dropdownContent = document.getElementById('dropdownContent');
         let cartDropdown = document.getElementById('cartDropdown');
-        
+
         if (cartDropdown.classList.contains('active')) {
             // Cart is active, hide it and remove all product containers
             cartDropdown.classList.remove('active');
-            // Removing all child elements
-            dropdownContent.innerHTML = '';
+            // Animate closure
+            cartDropdown.style.animation = "explode 0.5s ease";
+            setTimeout(() => {
+                cartDropdown.innerHTML = ''; // Clearing inner HTML
+                cartDropdown.style.animation = ""; // Remove animation after completion
+            }, 500); // Timeout to match animation duration
         } else {
-            // Cart is inactive, show it and add product containers
             cartDropdown.classList.add('active');
-            // Adding product containers to the dropdown
-            addProductContainers(cartDropdown);
+            // Add coffee-themed background when active
+            cartDropdown.style.background = "linear-gradient(to bottom, #8B4513, #D2B48C)";
+            if (dropdownContent.style.display !== 'block') {
+                // If dropdown content is not visible, add product containers
+                if (cartDropdown.children.length === 0) {
+                    // Only add product containers if none exist already
+                    addProductContainers(cartDropdown);
+                }
+            }
         }
-      }
-  
-      function removeFromCart(btn) {
-        let productName = btn.parentElement.querySelector('.description h3').innerText;
-        let quantityInput = btn.parentElement.querySelector('.quantity-input');
-        let quantity = parseInt(quantityInput.value);
-        let cartCounter = document.getElementById('cartCounter');
-        let currentCount = parseInt(cartCounter.innerText);
-        let newCount = Math.max(currentCount - quantity, 0);
-        cartCounter.innerText = newCount;
+    }
+    function addClearCartButton() {
+      // Create the clear cart button
+      let clearCartButton = document.createElement('button');
+      clearCartButton.textContent = 'Clear Cart';
+      clearCartButton.classList.add('clear-cart-button');
 
-        // Find and remove the product container from the cart dropdown container
-        let cartItems = document.querySelectorAll('.cart-dropdown-item');
-        cartItems.forEach(item => {
-          if (item.textContent.includes(productName)) {
-              // Removing the product container from the cart container
-              item.remove();
-          }
-        });
+      // Add event listener to clear the cart when the button is clicked
+      clearCartButton.addEventListener('click', function() {
+          clearCart();
+      });
 
-        let productContainer = btn.parentElement.parentElement;
-        let productCount = productContainer.querySelector('.product-count');
-        if (productCount) {
-          let count = parseInt(productCount.innerText);
-          if (count > quantity) {
-              productCount.innerText = count - quantity;
-          } else {
-              productCount.remove();
-          }
-        }
+      // Append the button to the cart dropdown container
+      let cartDropdown = document.getElementById('cartDropdown');
+      cartDropdown.appendChild(clearCartButton);
+    }
 
-        // Hide dropdown if no items left
-        if (newCount === 0) {
-          let cartDropdown = document.getElementById('cartDropdown');
-          cartDropdown.classList.remove('active');
-       }
-      }
-  
-      function clearCart() {
-        let cartCounter = document.getElementById('cartCounter');
-        cartCounter.innerText = '0';
-        let cartDropdown = document.getElementById('cartDropdown');
-        // Clearing all the product containers
-        cartDropdown.innerHTML = '';
-        cartDropdown.classList.remove('active');
-        let productCounts = document.querySelectorAll('.product-count');
-        productCounts.forEach(count => {
-            count.remove();
-        });
-      }
-  
-      window.onload = function() {
-        // Clearing the cart
-        clearCart();
-        addProductContainers(document.getElementById('cartDropdown'));
-      };
+    // Call the function to add the clear cart button when the window loads
+    window.onload = function() {
+        addClearCartButton();
+    };
+
+    function clearCart() {
+      let cartCounter = document.getElementById('cartCounter');
+      cartCounter.innerText = '0';
+      let cartDropdown = document.getElementById('cartDropdown');
+
+      // Clearing all the product containers
+      cartDropdown.innerHTML = '';
+      cartDropdown.classList.remove('active');
+    }
   </script>
   
-    
+  
 </body>
 </html>

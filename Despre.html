@@ -1,433 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" aria-atomic="false">
-      <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-      <base href="http://192.168.100.53:8081">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" aria-atomic="false">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico">
+  <base href="http://192.168.100.53:8081">
+  <title>Good Store Coffee</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\Desprepage\Despre.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\Desprepage\Main-Menu.js" type="text/js/javascript/JavaScript/Javascript" media="screen">
+  <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\Desprepage\Despre-Chat-Suport.js" type="text/javascript/js/JavaScript/javascript" media="screen">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Global styles */
+    body {
+      background: radial-gradient(rgb(255, 255, 255), rgb(107, 99, 253));
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+    }
 
-      <title>Good Store Coffee</title>
-      <link rel="icon" href="U:\Plan Afacere\WebSite\Icon\imagine-categorii.ico" type="icon/ico">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-      <!-- <link rel="stylesheet" href="U:\Plan Afacere\WebSite\ComputerLaptop WebSite\style-main\main.css" type="text/css" media="screen"> -->
-      <link rel="stylesheet" href="http://192.168.100.53:8080/U:/Plan_Afacere/WebSite/ComputerLaptop_WebSite/Desprepage/Despre.css" type="text/css" media="screen">
-      <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\Desprepage\Main-Menu.js" type="text/js/javascript/JavaScript/Javascript" media="screen">
-      <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\Desprepage\Despre-Chat-Suport.js" type="text/javascript/js/JavaScript/javascript" media="screen">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
+    .coffee-paragraph {
+      font-style: italic;
+      color: #7b5720; /* Dark brown */
+    }
 
-      <style>
-        /* Your existing default styles outside the media query */
-        body {
-          background: radial-gradient(rgb(255, 255, 255), rgb(10, 0, 199));
-          scroll-behavior: smooth;
-          scrollbar-shadow-color: #04AA6D;
-          font-family: Arial, sans-serif;
-        }
+    .coffee-link {
+      color: #4a2c00; /* Darker brown */
+    }
 
-        .container {
-          display: inline-block;
-          cursor: pointer;
-        }
+    .coffee-link:hover {
+      color: #1a1a1a; /* Black */
+    }
 
-        .bar1, .bar2, .bar3 {
-          width: 35px;
-          height: 5px;
-          background-color: #333;
-          margin: 6px, 0px;
-          transition:0.4s;
-        }
-        .change .bar1 {
-          -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-          transform: rotate(-45deg) translate(-9px, 6px);
-        }
-        .change .bar2{
-          opacity: 0;
-        }
-        .change .bar3 {
-          -webkit-transform: rotate(45deg) translate(-8px, -8px);
-          transform: rotate(45deg) translate(-8px, -8px);
-        }
-        .sidenav {
-          height: 350px;
-          border-top-right-radius: 20px;
-          border-bottom-right-radius: 20px;
-          width: 0px;
-          position: fixed;
-          z-index: 1;
-          top: 0px;
-          left: 0px;
-          background: linear-gradient(23deg, #e6e6e6 23%, #0095ff 70%, #00828e 85%);
-          overflow-x: hidden;
-          transition: 0.5s;
-          padding-top: 60px;
-        }
-        .sidenav a {
-          padding: 8px 8px 32px;
-          text-decoration: none;
-          font-size: 25px;
-          color: #818181;
-          display: block;
-          transition: 3s;
-        }
+    .container {
+      display: inline-block;
+      cursor: pointer;
+    }
 
-        .sidenav a:hover {
-          color: #f1f1f1;
-        }
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px, 0px;
+      transition:0.4s;
+    }
 
-        .sidenav .closebtn {
-          position: absolute;
-          top: 0px;
-          background-color: white;
-          max-width: 50px;
-          height: 10px;
-          border-radius: 30px;
-          right: 5px;
-          font-size: 36px;
-          margin-left: 50px;
-        }
-        @media screen and (max-height: 450px) {
-          .sidenav { padding-top: 15px;}
-          .sidenav a { font-size: 18px;}
-        }
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
 
-        @media only screen and (max-width: 1440px) and (min-height: 2560px),
-          only screen and (max-width: 1080px) and (min-height: 1920px),
-          only screen and (max-width: 1440px) and (min-height: 2960px) {
+    .change .bar2{
+      opacity: 0;
+    }
 
-          /* Your adjusted styles within the media query */
-          .container {
-            display: inline-block;
-            cursor: pointer;
-          }
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
 
-          .bar1, .bar2, .bar3 {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 6px 0;
-            transition: 0.4s;
-          }
+    .sidenav {
+      height: 350px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      width: 0px;
+      position: fixed;
+      z-index: 1;
+      top: 0px;
+      left: 0px;
+      /* Update background to linear gradient with coffee-themed colors */
+      background: linear-gradient(120deg, #8B4513, #663300, #4a2c00); /* Adjust gradient colors as needed */
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
 
-          /* Rotate first bar */
-          .change .bar1 {
-            transform: translate(0, 11px) rotate(-45deg);
-          }
+    .sidenav a {
+      padding: 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 3s;
+    }
 
-          /* Fade out the second bar */
-          .change .bar2 {
-            opacity: 0;
-          }
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
 
-          /* Rotate last bar */
-          .change .bar3 {
-            transform: translate(0, -11px) rotate(45deg);
-          }
+    .sidenav .closebtn {
+      position: absolute;
+       /* Adjust the top position as needed */
+      top: 10px;
+      /* Adjust the right position as needed */
+      right: 10px; 
+      background-color: white;
+      /* Set the width of the close button */
+      width: 35px; 
+      /* Set the height of the close button */
+      height: 35px; 
+      /* Make the close button circular */
+      border-radius: 50%; 
+      /* Adjust the font size as needed */
+      font-size: 24px; 
+      /* Center the text vertically */
+      line-height: 30px; 
+      /* Center the text horizontally */
+      text-align: center;
+      /* Add cursor pointer on hover */ 
+      cursor: pointer; 
+    }
 
-          /* Dropdown menu styles */
-          .icon-bar {
-            display: none;
-            position: absolute;
-            background-color: #555;
-            width: auto;
-            padding: 10px;
-            border-radius: 5px;
-          }
+    @media screen and (max-height: 450px) {
+      .sidenav { padding-top: 15px;}
+      .sidenav a { font-size: 18px;}
+    }
 
-          .icon-bar a {
-            display: block;
-            text-align: center;
-            padding: 8px;
-            transition: all 0.3s ease;
-            color: white;
-            font-size: 24px;
-            margin: 5px;
-          }
+    .table.table-bordered {
+      position: relative;
+      border-radius: 30px;
+      margin-top: 100px;
+      background-color: whitesmoke;
+    }
 
-          .icon-bar a:hover {
-            background-color: #000;
-          }
+    .table-bordered > tbody > tr > th,
+    .table-bordered > tbody > tr > td {
+      border: 1px solid;
+      border-color: black; /* You can adjust the color as needed */
+    }
 
-          .active {
-            background-color: #04AA6D;
-          }
-          #speedometer {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: white;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-          }
-          footer {
-            background: linear-gradient(white, whitesmoke, deepblue); /* Adjust the gradient colors as needed */
-            padding: 20px;
-          }
-          .chat-popup {
-            display: inline-block;
-          }
-          .table.table-bordered {
-            position: relative;
-            border-radius: 30px;
-            margin-top: 100px;
-            background-color: whitesmoke;
-          }
-          .table.table-bordered {
-            border-radius: 30px;
-            background-color: whitesmoke;
-          }
-          .table-bordered > tbody > tr > th,
-          .table-bordered > tbody > tr > td {
-            border: 1px solid;
-            border-color: black; /* You can adjust the color as needed */
-          }
-              
-        }
+    footer {
+      background: linear-gradient(white, whitesmoke, deepblue); /* Adjust the gradient colors as needed */
+      padding: 20px;
+    }
 
-      </style>
-      <style>
-        tr .bg-light {
-          border-radius: 30px;
-        }
-      </style>
-      <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
-  </head>
-  <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
-  <body style="background: radial-gradient(rgb(255, 255, 255), rgb(107, 99, 253));">
-    <div class="container" onclick="toggleMenu()">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-    <div id ="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a class="active" href="#Link"><i class="fa fa-home"></i> Acasa</a>
-      <a href="#Link"><i class="fa fa-search"></i> Cauta</a>
-      <a href="#Link"><i class="fa fa-envelope"></i> Inbox</a>
-      <a href="#Link"><i class="fa fa-globe"></i> Globe</a>
-      <a href="#Link"><i class="fa fa-trash"></i> Trash</a>
-    </div>
-    <script>
-      function toggleMenu() {
-        var sidenav = document.getElementById("mySidenav");
-        sidenav.style.width = (sidenav.style.width === "250px") ? "0" : "250px";
+    .chat-popup {
+      display: inline-block;
+    }
 
-        // Change the shape of the bars to cross when the menu is open
-        var container = document.querySelector('.container');
-        container.classList.toggle('change');
-      }
+    /* Adjust heading paragraph with coffee-themed linear gradient */
+    .border_box_text_descriere_GoodCoffeeStore {
+      font-size: small;
+      text-decoration: none;
+      /* Update background to coffee-themed linear gradient */
+      background: linear-gradient(to right, #8B4513, #663300);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      width: 250px;
+      margin-left: 170px;
+      border: 1px groove;
+      border-radius: 30px;
+    }
+
+    .border_box_text_descriere_GoodCoffeeStore p {
+      background: none;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      width: 220px;
+      margin-left: 5px;
+      border: 1px groove;
+      border-radius: 30px;
+    }
+
+    #video-frame {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #myVideo {
+      width: 40%;
+      height: 40%;
+    }
+
+    .content {
+      top: 200px;
+      position: relative;
+      font-size: small;
+      border: 1px groove black;
+      border-radius: 30px;
+    }
+
+    .form-control {
+      background: linear-gradient(to right, #8B4513, #663300);
+      color: white;
+      border-radius: 30px;
+      border: 1px solid transparent; /* Remove default border */
+    }
+
+    .form-control:focus {
+      border-color: #ced4da; /* Apply focus border color if needed */
+    }
+      /* Global styles */
+    body {
+      background: radial-gradient(rgb(255, 255, 255), rgb(107, 99, 253));
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+      /* Adjust background to linear gradient with light coffee colors */
+      background: linear-gradient(120deg, #f3e9e7, #b7865f);
+    }
+      /* Style for the table-responsive with linear gradient background */
+    .table-responsive {
+      background: linear-gradient(to right, #f3e9e7, #b7865f, #8B4513); /* Adjust gradient colors as needed */
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
     
-      function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            // Reset the shape of the bars when the menu is closed
-            var container = document.querySelector('.container');
-            container.classList.remove('change');
-        }
+    /* Remaining styles... */
+
+  </style>
+</head>
+<body>
+  <div class="container" onclick="toggleMenu()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="active" href="index.html"><i class="fa fa-home"></i> Acasa</a>
+    <a href="#Link"><i class="fa fa-search"></i> Cauta</a>
+    <a href="#Link"><i class="fa fa-envelope"></i> Inbox</a>
+    <a href="#Link"><i class="fa fa-globe"></i> Globe</a>
+    <a href="#Link"><i class="fa fa-trash"></i> Trash</a>
+  </div>
+
+  <header>
+    <h1 style="font-family: 'Arial', sans-serif; font-size: 24px; color: #663300; border: 1px solid #663300; padding: 10px; text-align: center; border-radius: 30px; width: 250px; margin-left: 170px; background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Despre Good Coffee Store</h1>
+    <div class="border_box_text_descriere_GoodCoffeeStore" id="border_box_text_descriere_GoodCoffeeStore_1">
+      <p class="card-text">
+        GoodCoffeeStore este fără îndoială cel mai bun site pentru iubitorii de cafea din întreaga lume. Produsele de top disponibile pentru comanda pe site-ul GoodCoffeeStore pot fi achiziționate în mai multe moduri.
+      </p>
+    </div>
+  </header>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <tbody>
+        <tr class="bg-light">
+          <th scope="row" class="col-3">Companie:</th>
+          <td colspan="2" class="col-9">Nume Companie</td>
+        </tr>
+        <tr class="bg-secondary text-white">
+          <th scope="row" class="col-3">Contact:</th>
+          <td class="col-6">Număr de telefon</td>
+          <td class="col-3">
+            <p class="card-text coffee-paragraph">Apasă butonul pentru a suna</p>
+            <a href="tel:+0741546550" class="btn btn-primary coffee-link">Suna Acum!</a>
+          </td>
+        </tr>
+        <tr class="bg-light text-white">
+          <th scope="row" class="col-3">Țară:</th>
+          <td colspan="2" class="col-9">Romania</td>
+        </tr>
+        <tr class="bg-light">
+          <td class="col-3">Nume persoana 1:</td>
+          <td class="col-6">Owner</td>
+          <td class="col-3"></td>
+        </tr>
+        <tr class="bg-secondary text-white">
+          <td class="col-3">Nume persoana 2:</td>
+          <td class="col-6">Asociat 1</td>
+          <td class="col-3"></td>
+        </tr>
+        <tr class="bg-light text-white">
+          <td class="col-3">Nume persoana 3:</td>
+          <td class="col-6">Asociat 2</td>
+          <td class="col-3"></td>
+        </tr>
+        <tr class="bg-light text-white">
+          <td class="col-3">Centru Comercial Locație:</td>
+          <td class="col-6">București</td>
+          <td class="col-3"></td>
+        </tr>
+        <tr class="bg-secondary text-white">
+          <td class="col-3">Nume persoana:</td>
+          <td class="col-6">Centru Comercial - Persoana 1, 2, 3</td>
+          <td class="col-3"></td>
+        </tr>
+        <tr class="bg-light text-white">
+          <td class="col-3">Țară:</td>
+          <td colspan="2" class="col-9">Romania</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a href="#">
+    <img src="https://gratisography.com/wp-content/uploads/2021/10/gratisography-fun-sign-free-stock-photo-1170x780.jpg" alt="Coffee Sign" style="height: 320px; width: 320px; margin-top: 20px;">
+  </a>
+
+  <main>
+    <figcaption>
+      <p class="card-text">Text test</p>
+    </figcaption>
+    <nav>
+      <div id="video-frame">
+        <iframe id="myVideo" width="40%" height="40%" src="https://www.youtube.com/embed/SgA1D0oGbXk?autoplay=1&controls=0&showinfo=0&autohide=1&" frameborder="0" mute=1; controls=0;></iframe>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="text-center">
+    <div class="chat-popup" id="myForm" style="width: 350px; background: linear-gradient(to right, #8B4513, #663300); border: 30px solid white; border-radius: 30px; padding: 20px;">
+      <form action="/support-group" method="POST" class="form-container">
+        <h1 class="mb-4 text-white">Chat</h1>
+        <div class="form-group">
+          <label for="msg" class="text-white"><b>Message</b></label>
+          <textarea class="form-control border rounded" rows="3" placeholder="Type message.." name="msg" required style="border-radius: 30px;"></textarea>
+        </div>
+        <!-- Modified input box with linear gradient background -->
+        <button type="submit" class="btn btn-primary btn-block rounded-pill mt-3">Send</button>
+        <button type="button" class="btn btn-secondary btn-block rounded-pill mt-3 cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    <button class="btn btn-primary border rounded-pill mt-3" onclick="openForm()">Open Chat</button>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var sidenav = document.getElementById("mySidenav");
+      sidenav.style.width = (sidenav.style.width === "160px") ? "0" : "160px";
+
+      // Change the shape of the bars to cross when the menu is open
+      var container = document.querySelector('.container');
+      container.classList.toggle('change');
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      // Reset the shape of the bars when the menu is closed
+      var container = document.querySelector('.container');
+      container.classList.remove('change');
+    }
+
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
     // Event listener for checking if the menu is open
     document.addEventListener('click', function(event) {
       var iconBar = document.getElementById("iconBar");
       var container = document.querySelector('.container');
-  
+
       if (!iconBar.contains(event.target) && event.target !== container) {
         iconBar.style.display = 'none';
         container.classList.remove('change');
       }
     });
-    </script>
-  <header>
-    <h1 style="font-family: 'Arial', sans-serif; font-size: 24px; color: #663300; border: 1px solid #663300; padding: 10px; text-align: center; border-radius: 30px; width: 250px; margin-left: 65px;">Despre Good Coffee Store</h1>
-    <div class="border_box_text_descriere_GoodCoffeeStore" id="border_box_text_descriere_GoodCoffeeStore_1">
-      <p class="card-text" style="font-size: small; text-decoration: none; background: linear-gradient(to right, #8B4513, #663300); color: white; padding: 10px; border-radius: 10px; width: 250px; margin-left: 70px;">
-        GoodCoffeeStore este fără îndoială cel mai bun site pentru iubitorii de cafea din întreaga lume. Produsele de top disponibile pentru comanda pe site-ul GoodCoffeeStore pot fi achiziționate în mai multe moduri.
-      </p>
-    </div>
-  </header>
-    
-
-    <div class="table-responsive">
-      <table class="table table-bordered">
-        <tbody>
-          <tr class="bg-light" style="background-color: #f8f9fa;">
-            <th style="border-radius: 30px;">Companie:</th>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Nume Companie</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;"><a href="#Link pentru locatia companiei" style="text-decoration: none;">Accesează link-ul pentru info.</a></td>
-          </tr>
-          <tr class="bg-secondary text-white">
-            <th style="border-radius: 30px;">Contact:</th>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Număr de telefon</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">
-              <p class="card-text" style="font-size: small;">Apasă butonul pentru a suna</p>
-              <a href="tel:+0741546550"><button class="btn btn-primary">Suna Acum!</button></a>
-            </td>
-          </tr>
-          <tr class="bg-light" style="background-color: #f8f9fa;">
-            <th style="border-radius: 30px;">Țară:</th>
-            <td colspan="2" style="border-radius: 30px; font-size: small; text-decoration: none;">Romania</td>
-          </tr>
-          <tr class="bg-light" style="background-color: #f8f9fa;">
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Nume persoana 1:</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Owner</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;"></td>
-          </tr>
-          <tr class="bg-secondary text-white">
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Nume persoana 2:</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Asociat 1</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;"></td>
-          </tr>
-          <tr class="bg-light" style="background-color: #f8f9fa;">
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Nume persoana 3:</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Asociat 2</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;"></td>
-          </tr>
-          <tr class="bg-light" style="background-color: #f8f9fa;">
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Centru Comercial Locație:</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">București</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;"></td>
-          </tr>
-          <tr class="bg-secondary text-white">
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Nume persoana:</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Centru Comercial - Persoana 1, 2, 3</td>
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;"></td>
-          </tr>
-          <tr class="bg-light" style="background-color: #f8f9fa;">
-            <td style="border-radius: 30px; font-size: small; text-decoration: none;">Țară:</td>
-            <td colspan="2" style="border-radius: 30px; font-size: small; text-decoration: none;">Romania</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    <a href="#">
-      <img src="https://gratisography.com/wp-content/uploads/2021/10/gratisography-fun-sign-free-stock-photo-1170x780.jpg" alt="Coffee Sign" style="height: 320px; width: 320px; margin-top: 20px;">
-    </a>
-
-    <main>
-      <figcaption>
-        <p class="card-text">Text test</p>
-      </figcaption>
-      <nav>
-        <div id="video-frame">
-          <iframe id="myVideo" width="40%" height="40%" src="https://www.youtube.com/embed/SgA1D0oGbXk?autoplay=1&controls=0&showinfo=0&autohide=1&" frameborder="0" mute=1; controls=0;></iframe>
-          <!-- Optional: some overlay text to describe the video -->
-          <div class="content">
-            <h1>Heading</h1>
-            <p class="card-text">Lorem ipsum...</p>
-            <!-- Use a button to pause/play the video with JavaScript -->
-            <button id="myBtn" class="btn btn-primary" onclick="toggleVideo()">Pause</button>
-          </div>
-        </div>
-      </nav>
-    </main>
-    <!-- Include the YouTube Player API script -->
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <footer class="text-center">
-      <div class="chat-popup border rounded p-3" id="myForm" style="border-radius: 30px; border: 1px solid black;">
-        <form action="/support_page.php" class="form-container" style="border-radius: 30px;">
-          <h1 class="mb-4">Chat</h1>
-          <div class="form-group">
-            <label for="msg"><b>Message</b></label>
-            <textarea class="form-control border rounded" rows="3" placeholder="Type message.." name="msg" required style="border-radius: 30px;"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block border rounded" style="border-radius: 30px;">Send</button>
-          <button type="button" class="btn btn-secondary btn-block border rounded cancel" onclick="closeForm()" style="border-radius: 30px;">Close</button>
-        </form>
-      </div>
-      <button class="btn btn-primary border rounded" onclick="openForm()" style="border-radius: 30px;">Open Chat</button>
-    </footer>
-    
-    
-    <div id="speedometer"></div>
-
-    <div id="cup-container"></div>
-    <!-- <script>
-      // Create a scene
-      const scene = new THREE.Scene();
-  
-      // Create a camera
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 5;
-  
-      // Create a renderer
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.getElementById('cup-container').appendChild(renderer.domElement);
-  
-      // Add background color
-      scene.background = new THREE.Color(0xffffff); // white background
-  
-      // Function to create a table
-      function createTable(x, y, z) {
-        const tableGeometry = new THREE.PlaneGeometry(1, 1); // table size
-        const tableMaterial = new THREE.MeshBasicMaterial({ color: 0x8B4513 }); // brown color
-        const table = new THREE.Mesh(tableGeometry, tableMaterial);
-        table.rotation.x = -Math.PI / 2; // rotate to lie flat
-        table.position.set(x, y, z);
-        scene.add(table);
-      }
-  
-      // Create tables in a grid pattern
-      const numTablesX = 5;
-      const numTablesZ = 5;
-      const spacing = 1.5; // spacing between tables
-  
-      for (let i = 0; i < numTablesX; i++) {
-        for (let j = 0; j < numTablesZ; j++) {
-          createTable(i * spacing, 0, j * spacing);
-        }
-      }
-  
-      // Create plate geometry
-      const plateGeometry = new THREE.CylinderGeometry(1.5, 1.5, 0.1, 32); // wider plate
-      const plateMaterial = new THREE.MeshPhongMaterial({ color: 0x8B4513 }); // brown color
-      const plate = new THREE.Mesh(plateGeometry, plateMaterial);
-      scene.add(plate);
-  
-      // Create cup base geometry
-      const cupBaseGeometry = new THREE.CylinderGeometry(1.2, 1.2, 0.2, 32); // wider base
-      const cupBaseMaterial = new THREE.MeshPhongMaterial({ color: 0x8B4513 });
-      const cupBase = new THREE.Mesh(cupBaseGeometry, cupBaseMaterial);
-      scene.add(cupBase);
-  
-      // Create cup body geometry
-      const cupBodyGeometry = new THREE.CylinderGeometry(1, 1, 2, 32); // smooth body
-      const cupBodyMaterial = new THREE.MeshPhongMaterial({ color: 0x8B4513, transparent: true, opacity: 0.7 }); // transparent material
-      const cupBody = new THREE.Mesh(cupBodyGeometry, cupBodyMaterial);
-      scene.add(cupBody);
-  
-      // Create handle geometry (custom shape)
-      const handleShape = new THREE.Shape();
-      handleShape.moveTo(0, 0);
-      handleShape.bezierCurveTo(0, 0.5, 0.5, 0.5, 0.5, 0);
-  
-      const handleExtrudeSettings = {
-        steps: 2,
-        depth: 0.5, // depth of the handle
-        bevelEnabled: false
-      };
-  
-      const handleGeometry = new THREE.ExtrudeGeometry(handleShape, handleExtrudeSettings);
-      const handleMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0.7 }); // transparent white handle
-      const handle = new THREE.Mesh(handleGeometry, handleMaterial);
-      handle.position.set(0.8, 0, 0); // Adjust position relative to cup
-      cupBody.add(handle); // add handle to cup body
-  
-      // Add lighting
-      const light = new THREE.PointLight(0xffffff, 1);
-      light.position.set(10, 10, 10);
-      scene.add(light);
-  
-      // Function to animate the scene
-      function animate() {
-        requestAnimationFrame(animate);
-  
-        renderer.render(scene, camera);
-      }
-  
-      animate();
-    </script> -->
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  </body>
-  
-  
-  </html>
+  </script>
+</body>
+</html>

@@ -70,6 +70,10 @@
       /* Text size */
       font-size: medium; 
     }
+    .td {
+      border: 1px solid black;
+      border-radius: 20px; /* Optional: To round the corners */
+    }
     .badge {
       font-size: 12px;
       padding: 6px 10px;
@@ -83,15 +87,17 @@
     }
     .card {
       position: relative;
+      max-width: 400px;
+      max-height: 100px;
       margin-top: 20px;
       height: 30px;
-      background-color: #8f8585;
-      border-radius: 20px;
+      background-color: lightsteelblue;
+      border-radius: 30px;
       border: 1px, solid;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
     .card-body {
-      position: sticky;
+      position: relative;
       padding: 20px;
       justify-items: center;
       text-align: left;
@@ -106,14 +112,14 @@
       width: 50px;
     }
     .sidenav {
-      height: 95%;
+      height: 850px;
       /* Initially hidden */
       width: 0; 
       position: fixed;
       z-index: 9990;
       /* Adjusted top position */
-      top: 60px; 
-      left: 75px;
+      top: 180px; 
+      left: 10px;
       background-color: #8f8585;
       border-radius: 30px;
       /* Add transition for smooth opening/closing */
@@ -199,7 +205,7 @@
       /* Title shadow */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
       /* Title animation */
-      animation: pulse 4s infinite; 
+      animation: pulse 5s infinite; 
     }
 
     @keyframes pulse {
@@ -213,9 +219,9 @@
         transform: scale(1);
       }
     }
-    .Comenzi-1{
+    .card-title {
       top: 20px;
-      position: relative  ;
+      position: relative;
     }
   </style>
 </head>
@@ -231,7 +237,7 @@
       <div id="navContainer">
         <!-- Input Tracking Order -->
         <div style="background-color: #c0a35e; border-radius: 30px; width: 80%; margin: 10px auto; margin-left: 20px; position: relative;">
-          <input type="text" placeholder="Enter Order Tracking Number">
+          <input type="text" placeholder="Enter Order Tracking Number" style="right: 20px;">
           <button class="btn btn-primary">Track Order</button>
         </div>
         <hr>
@@ -279,27 +285,11 @@
   </div>
   <!-- Adjust margin to accommodate side navigation -->
   <div class="container mt-5" style="margin-left: 0px; border: 1px solid black; background-color: #ddc99a;"> 
-    <div class="row mt-4">
+    <div class="row justify-content-center row mt-4">
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h7 class="card-title">Tabel-Comenzi-1</h7>
-            <a href="#Link" id="Comenzi-1" class="btn btn-primary">Comenzi 1</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h8 class="card-title">Tabel-Comenzi-2</h8>
-            <a href="#Link" id="Comenzi-2" class="btn btn-primary">Comenzi 2</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h9 class="card-title">Tabel-Comenzi-3</h9>
+        <div class="card" style="border-radius: 20px;">
+          <div class="card-body text-left" style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue;">
+            <h9 class="card-title text-center" style="position:sticky; margin-top: 20px;">Tabel-Comenzi-3</h9>
             <a href="#Link" id="Comenzi-3" class="btn btn-primary">Comenzi 3</a>
           </div>
         </div>
@@ -366,7 +356,7 @@
 </head>
 <body>
   <div class="container mt-5" style="margin-left: 0px;"> 
-    <h1 class="mb-4">Comenzi</h1>
+    <h1 class="mb-4" style="background-color: #c0a35e; border-radius: 30px;">Comenzi</h1>
     <div class="table-responsive">
       <table class="table table-bordered table-hover">
         <thead class="table-dark">
@@ -381,28 +371,28 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td><a href="customer_profile.html?id=1">John Doe</a></td>
-            <td><a href="product_details.html?id=1">Widget A</a></td>
-            <td>2</td>
-            <td>50.00 RON</td>
-            <td><span class="badge badge-success">Shipped</span></td>
+            <th scope="row" style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">1</th>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="customer_profile.html?id=1">John Doe</a></td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="product_details.html?id=1">Widget A</a></td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">2</td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">50.00 RON</td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><span class="badge badge-success">Shipped</span></td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td><a href="customer_profile.html?id=2">Jane Smith</a></td>
-            <td><a href="product_details.html?id=2">Widget B</a></td>
-            <td>1</td>
-            <td>30.00 RON</td>
-            <td><span class="badge badge-warning">Pending</span></td>
+            <th scope="row" style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">2</th>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="customer_profile.html?id=2">Jane Smith</a></td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="product_details.html?id=2">Widget B</a></td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">1</td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">30.00 RON</td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><span class="badge badge-warning">Pending</span></td>
           </tr>
           <tr>
-            <th scope="row">3</th>
-            <td><a href="customer_profile.html?id=3">Mike Johnson</a></td>
-            <td><a href="product_details.html?id=3">Widget C</a></td>
-            <td>3</td>
-            <td>75.00 RON</td>
-            <td><span class="badge badge-info">Processing</span></td>
+            <th scope="row" style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">3</th>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="customer_profile.html?id=3">Mike Johnson</a></td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="product_details.html?id=3">Widget C</a></td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">3</td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">75.00 RON</td>
+            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><span class="badge badge-info">Processing</span></td>
           </tr>
         </tbody>
       </table>
@@ -424,7 +414,7 @@
           // Margin top 100px
           element.style.marginTop = "100px"; 
           // Margin left 100px
-          element.style.marginLeft = "100px"; 
+          element.style.marginLeft = "20px"; 
         }
         
         // Apply styles to buttons

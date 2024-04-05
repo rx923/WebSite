@@ -9,6 +9,8 @@
     <!-- Bootstrap Icons CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzDp/i/3A7L+0ETe1jhjVnnXf5Xf2/K1b0P5g5+0Hov/vfZcO5NAhdxg79Y4TV0E" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,6 +39,7 @@
             transition: background-color 0.3s ease;
             box-shadow: 2px 2px 2px #555;
             margin-bottom: 20px;
+            max-width: 350px;
         }
 
         .profile-info {
@@ -88,7 +91,9 @@
         }
         /* Custom styling for the form */
         .dropdown-item {
-            width: 300px; /* Adjust the width as needed */
+            border-radius: 30px;
+            /* Adjust the width as needed */
+            width: 300px; 
         }
 
         .dropdown-item label {
@@ -104,58 +109,267 @@
         .dropdown-item .mb-3 {
             margin-bottom: 15px;
         }
+        /* Profile Details Styling */
+        #userInfoForm p {
+            background-color: #8B4513; /* Coffee themed color */
+            border: 1px solid #A0522D; /* Coffee themed border */
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+            /* Profile Picture Form Styling */
+        #profilePictureForm label,
+        #profilePictureForm input[type="file"],
+        #profilePictureForm button {
+            background: linear-gradient(to right, #8B4513, #A0522D, #8B4513); /* Coffee themed linear background */
+            border: none;
+            padding: 5px;
+            margin: 5px 0;
+            color: white;
+            border-radius: 5px;
+        }
+        #profileContainer #userInfoForm p {
+            /* Coffee themed color */
+            background-color: #8B4513; 
+            /* Coffee themed border */
+            border: 1px solid #A0522D; 
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        #profileContainer #userInfoForm p strong {
+            background: linear-gradient(to right, #8B4513, #A0522D, #8B4513); /* Coffee themed linear background */
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #profileContainer #userInfoForm p span {
+            background: linear-gradient(to right, #CD853F, #D2691E, #CD853F); /* Different linear background color */
+            padding: 5px;
+            border-radius: 5px;
+            /* Max width set to 120px */
+            max-width: 120px; 
+             /* Hide overflow text */
+            overflow: hidden;
+            /* Add ellipsis for overflow text */
+            text-overflow: ellipsis; 
+
+
+        }
+        /* Profile Picture Container Styling */
+        .profile-picture-container {
+            background: linear-gradient(to right, #cd863f7c, #d2691e77, #cd863f80); /* Coffee themed background */
+            /* Set width */
+            width: 100px; 
+            /* Set height */
+            height: 100px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Make it a circle */
+            border-radius: 30%; 
+        }
+
+        /* Profile Picture Styling */
+        /* Retaining the ID selector */
+        #profileImage { 
+            /* Set width */
+            width: 90px; 
+            /* Set height */
+            height: 90px; 
+            /* Make it a circle */
+            border-radius: 80%;
+            background-color: whitesmoke;
+            position: sticky;
+            margin-left: 20px; 
+            margin-right: 10px;
+        }
+        .form-control:focus + .form-label,
+        .form-control:active + .form-label {
+            color: #000; /* Set the color to black */
+        }
+        .mb-3 {
+            height: 70px;
+            margin-bottom: 10px; /* Adjust the margin bottom as needed */
+        }
+        #config-iconit-cont{
+            bottom: 10px;
+            position: relative;
+        }
+        .profilePicture{
+            position: relative;
+            left: 40px;
+
+        }
+        #dropdownMenuButton{
+            bottom: 10px;
+            position: relative;
+            left: 18px;
+        }
     </style>
+    
+
     </head>
     <body>
-        <div class="config-icon dropdown">
+        <div class="config-icon dropdown" id="config-iconita-cont">
             <!-- Configuration Icon using Bootstrap Icon and Image -->
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-gear"></i>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="border-radius: 20px; max-height: 400px; overflow-y: auto;">
                 <li>
-                    <form class="dropdown-item p-4" id="resetPasswordForm">
+                    <form class="dropdown-item p-4" id="resetPasswordForm" method="POST">
                         <div class="mb-3">
                             <label for="currentPassword" class="form-label">Current Password</label>
-                            <input type="password" class="form-control" id="currentPassword" required>
+                            <input type="password" class="form-control" id="currentPassword" required="true">
                         </div>
                         <div class="mb-3">
                             <label for="newPassword" class="form-label">New Password</label>
-                            <input type="password" class="form-control" id="newPassword" required>
+                            <input type="password" class="form-control" id="newPassword" required autocomplete="new-password">
                         </div>
                         <div class="mb-3">
                             <label for="confirmPassword" class="form-label">Confirm New Password</label>
-                            <input type="password" class="form-control" id="confirmPassword" required>
+                            <input type="password" class="form-control" id="confirmPassword" required autocomplete="new-password">
                         </div>
                         <button type="submit" class="btn btn-primary">Reset Password</button>
                     </form>
                 </li>
             </ul>
         </div>
+        <script>
+            // Add this JavaScript to your Profile.html page or include it from an external file
+            document.getElementById('resetPasswordForm').addEventListener('submit', async function(event) {
+                // Prevent the form from submitting normally
+                event.preventDefault(); 
+                
+                const currentPassword = document.getElementById('currentPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                // Check if new password matches the confirmation
+                if (newPassword !== confirmPassword) {
+                    alert('New password and confirm password do not match.');
+                    return;
+                }
+                
+                try {
+                    const response = await fetch('/reset-password', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            currentPassword,
+                            newPassword
+                        })
+                    });
+        
+                    // Logging statement to check if the fetch request is successful
+                    console.log('Fetch response:', response);
+        
+                    if (response.ok) {
+                        alert('Password reset successfully!');
+                    } else {
+                        const data = await response.json();
+                        alert(data.error || 'Something went wrong.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again later.');
+                }
+            });
+        </script>
         <header>
             <!-- User Information -->
-            <div class="container">
-                <h1>User Information</h1>
-                <div class="profile-info">
-                    <div class="profile-picture">
-                        <!-- Profile Picture -->
-                        <img id="profileImage" src= "profile-picture.jpg" alt="Profile Picture">
-                    </div>
-                    <div class="profile-details">
-                        <!-- User Details -->
-                        <p><strong>Username:</strong> JohnDoe</p>
-                        <p><strong>Email:</strong> johndoe@example.com</p>
-                        <p><strong>Location:</strong> New York City</p>
-                        <p><strong>Joined:</strong> January 1, 2022</p>
-                        <form id="profilePictureForm" enctype="multipart/form-data" action="/profile-photo" method="post">
-                            <label for="profilePicture">Upload Profile Picture:</label>
-                            <input type="file" id="profilePicture" name="profilePicture" accept="image/*" capture="environment">
-                            <button type="button" onclick="uploadProfilePicture()">Upload</button>
-                        </form>
-                    </div>
+            <div class="container" id="profileContainer">
+                <h1>Informatii Cont User</h1>
+                <!-- Changed class name -->
+                <div class="profile-picture-container"> 
+                    <!-- Profile Picture -->
+                    <img id="profileImage" src="default-profile-image.jpg" alt="Profile Picture">
+                    <!-- File input for uploading profile picture -->
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" capture="environment" onchange="displaySelectedProfilePicture(event)">
+                </div>
+                <script>
+                    // JavaScript function to display the selected profile picture
+                    function displaySelectedProfilePicture(event) {
+                        // Get the selected file
+                        const selectedFile = event.target.files[0]; 
+                        // Get the profile image element
+                        const profileImage = document.getElementById('profileImage'); 
+
+                        if (selectedFile) {
+                            // Set the src attribute to the temporary URL of the selected file
+                            profileImage.src = URL.createObjectURL(selectedFile); 
+                        } else {
+                            // If no file is selected, reset the src attribute to a default image or clear it
+                            profileImage.src = 'default-profile-image.jpg'; // Replace 'default-profile-image.jpg' with the path to your default profile image
+                        }
+                    }
+                </script>
+            </div>
+                <div class="profile-details">
+                    <!-- User Details -->
+                    <form id="userInfoForm" action="/user/profile" method="GET">
+                        <p><strong>Username:</strong> <span id="username"></span></p>
+                        <p><strong>Email:</strong> <span id="email"></span></p>
+                        <p><strong>Location:</strong> <span id="location"></span></p>
+                        <p><strong>Joined:</strong> <span id="joined"></span></p>
+                    </form>
+                    
+                    <form id="profilePictureForm" enctype="multipart/form-data" action="/profile-photo" method="post">
+                        <label for="profilePicture">Upload Profile Picture:</label>
+                        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" capture="environment">
+                        <button type="button" onclick="uploadProfilePicture()">Upload</button>
+                    </form>
                 </div>
             </div>
         </header>
+        <script>
+            // Example client-side JavaScript using fetch API
+
+            // Function to fetch user information
+            async function fetchUserProfile() {
+                try {
+                    const response = await fetch('/user/profile');
+                    if (response.ok) {
+                        const user = await response.json();
+                        // Update the profile page with user information
+                        updateUserProfile(user);
+                    } else {
+                        console.error('Failed to fetch user profile:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('An error occurred while fetching user profile:', error);
+                }
+            }
+
+            // Function to update the profile page with user information
+            function updateUserProfile(user) {
+                document.getElementById('profileImage').src = user.profilePicture;
+                document.getElementById('username').innerText = user.username;
+                document.getElementById('email').innerText = user.email;
+                document.getElementById('location').innerText = user.location;
+                document.getElementById('joined').innerText = user.joined;
+            }
+            // Call the fetchUserProfile function when the page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                fetchUserProfile();
+            });
+            //Fetching user information from the server
+            fetch('/user/profile')
+            .then(response => response.json())
+            .then(data => {
+                // Update profile information
+                document.getElementById('profileImage').src = data.profilePicture;
+                document.getElementById('username').textContent = data.username;
+                document.getElementById('email').textContent = data.email;
+                document.getElementById('location').textContent = data.location;
+                document.getElementById('joined').textContent = data.joined;
+            })
+            .catch(error => {
+                console.error('Error fetching user information', error);
+            });
+        </script>
 
 
         <main>
@@ -179,47 +393,147 @@
                     <!-- More Orders... -->
                 </div>
             </section>
-    
+            <style>
+                .dropdown-menu {
+                    /* Apply the wave animation */
+                    animation: wave 0.55s ease-in-out;
+                    /* Set the transform origin to the top */ 
+                    transform-origin: top;
+
+                }
+
+                @keyframes wave {
+                    0% {
+                        /* Start from fully collapsed */
+                        transform: scaleY(0); 
+                    }
+                    100% {
+                        /* Expand to full height */
+                        transform: scaleY(1); 
+                    }
+                }
+
+                .dropdown-item {
+                    padding: 0.5rem 1rem;
+                }
+
+                .dropdown-item:hover {
+                    background-color: #f8f9fa; /* Change background color on hover */
+                }
+                /* Coffee themed linear gradient */
+                .dropdown-list {
+                    left: 0px;
+                    list-style-type: none; 
+                    background: linear-gradient(to right, #CD853F, #D2691E, #CD853F);
+                }
+                /* Bootstrap styled dropdown items */
+                .dropdown-item {
+                    background: linear-gradient(to right, #7a5d46, #5d3e2f, #7e7e28); /* Coffee themed light gradient */
+                    /* color: white;  */
+                }
+                .dropdown-item:hover {
+                    /* Darker shade on hover */
+                    background-color: #A0522D; 
+                }
+            </style>
             <!-- Wishlist -->
-            <nav class="container">
-                <h2>Wishlist</h2>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="wishlistDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        View Wishlist
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="wishlistDropdown">
-                        <!-- Wishlist Items -->
-                        <li><a class="dropdown-item" href="#">Product 1</a></li>
-                        <li><a class="dropdown-item" href="#">Product 2</a></li>
-                        <li><a class="dropdown-item" href="#">Product 3</a></li>
-                    </ul>
+            <nav class="container wishlist-container bg-gradient">
+                <h2 class="border-bottom border-dark pb-2">Wishlist</h2>
+                <div class="container mt-5">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="wishlistDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            View Wishlist
+                        </button>
+                        <div class="dropdown-menu dropdown-list" aria-labelledby="wishlistDropdown">
+                            <!-- Wishlist Items -->
+                            <ul class="dropdown-list">
+                                <li><a class="dropdown-item" href="#Link-Produse" onclick="event.stopPropagation()">Product 1</a></li>
+                                <li><a class="dropdown-item" href="#Link-Produse" onclick="event.stopPropagation()">Product 2</a></li>
+                                <li><a class="dropdown-item" href="#Link-Produse" onclick="event.stopPropagation()">Product 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </nav>
-    
+            <script>
+                // Manually initialize the dropdown menu
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Find the dropdown toggle button
+                    var dropdownToggle = document.getElementById('wishlistDropdown');
+            
+                    // Find the dropdown menu
+                    var dropdownMenu = document.querySelector('.dropdown-menu');
+            
+                    // Initialize the dropdown with Bootstrap's Dropdown JavaScript API
+                    var wishlistDropdown = new bootstrap.Dropdown(dropdownToggle, {
+                        autoClose: true, // Automatically close the dropdown after an item is selected
+                        display: 'static' // Keep the dropdown open when an item is selected
+                    });
+                });
+            </script>
+            
+            <style>
+                .modify-order-btn {
+                    background-color: #A0522D; /* Coffee themed button */
+                    border-color: #A0522D;
+                }
+
+                .modify-order-btn:hover {
+                    background-color: #8B4513; /* Darker shade on hover */
+                    border-color: #8B4513;
+                }
+
+                .remove-from-cart-btn {
+                    background-color: #8B0000; /* Coffee themed button */
+                    border-color: #8B0000;
+                }
+
+                .remove-from-cart-btn:hover {
+                    background-color: #800000; /* Darker shade on hover */
+                    border-color: #800000;
+                }
+            </style>
             <!-- Cart Management -->
-            <section class="container">
-                <h2>Cart Management</h2>
+            <section class="container cart-management" style="background: linear-gradient(to right, #CD853F, #D2691E, #CD853F); border: 2px solid #8B4513; padding: 20px; margin-top: 200px;">
+                <h2 style="background: linear-gradient(to right, #FFF8DC, #F5DEB3, #FFF8DC); border-bottom: 1px solid #8B4513; padding: 10px; border-radius: 10px; max-width: 200px;">Cart Management</h2>
                 <div class="cart">
                     <!-- Cart Items -->
-                    <div class="cart-item">
-                        <p>Product Name</p>
-                        <button class="btn btn-danger">Remove</button>
+                    <div class="cart-item" style="background-color: #D2B48C; padding: 10px; margin-bottom: 10px; max-width: 200px; border-radius: 10px;">
+                        <p style="font-size: medium;">Product Name</p>
+                        <button class="btn btn-primary modify-order-btn">Modify Order</button>
                     </div>
                     <!-- More Cart Items... -->
                     <!-- Add to Cart Button -->
-                    <button class="btn btn-primary">Add to Cart</button>
+                    <button class="btn btn-danger remove-from-cart-btn">Remove from Cart</button>
                 </div>
             </section>
         </main>
 
         <footer>
+            <style>
+                #logoutButton {
+                position: absolute;
+                /* Adjust the top position as needed */
+                top: 10px; 
+                /* Adjust the right position as needed */
+                right: 385px; 
+                /* Ensure it's above other content */
+                z-index: 9999; 
+            }
+            </style>
         <!-- Logout Button -->
-        <div class="container">
-            <button class="btn btn-danger">Logout</button>
-        </div>
+        <button id="logoutButton" class="btn btn-danger">
+            <span class="bi bi-arrow-left"></span>
+        </button>
+        
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzDp/i/3A7L+0ETe1jhjVnnXf5Xf2/K1b0P5g5+0Hov/vfZcO5NAhdxg79Y4TV0E" crossorigin="anonymous"></script>
-
+        <script>
+            // JavaScript code to navigate back to the profile page when logout button is clicked
+            document.getElementById("logoutButton").addEventListener("click", function() {
+                // Redirect to the profile page
+                window.location.href = "/logged_in.html";
+            });
+        </script>
     <nav class="window" style="width: 200px; height: 200px; border: 1px, solid, black">
         <script>
             const menuButton = document.getElementById('menuButton');

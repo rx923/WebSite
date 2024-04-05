@@ -6,18 +6,20 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <base href="http://192.168.100.53:8081/">
     <link rel="stylesheet" href="http://192.168.100.53:8081/css/ALL_Styles.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://192.168.100.53:8081/css/main.css" type="text/css" media="all">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Good Store Coffee</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- <script src="Javascript/main.js"></script> -->
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
   </head>
-  <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
+  <!-- <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button> -->
   <!-- <canvas id="canvas" width="320px" height="320px" style="background-color:#333; position: -webkit-sticky;"></canvas> -->
   <!-- <script>
     const canvas = document.getElementById("canvas");
@@ -103,7 +105,7 @@
       ctx.rotate(-pos);
     }
   </script> -->
-  <body style="background-image: url('https://images.unsplash.com/photo-1623157873545-6c9a6ed76e26?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1708848599108-5870df685cf5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; overflow: visible; border-radius: 30px;">
+  <body style="background: linear-gradient(120deg, #f5deb3, #d2b48c, #a0522d);">
     <!-- <canvas id="myCanvas"></canvas>
     <script>
       const canvas = document.getElementById('myCanvas');
@@ -169,18 +171,19 @@
   
       window.addEventListener('resize', setCanvasSize);
     </script> -->
-    <header style="background: linear-gradient(to top left, #ffffff78 20%, #77b9d65b 60%, rgba(87, 87, 87, 0.42) 60%);border-top: 2px rgb(237, 239, 240) groove;border-left: 2px rgb(255, 255, 255) groove;border-right: 2px rgb(255, 255, 255) groove;border-bottom: 2px rgb(255, 255, 255) groove;border-radius: 25px;margin-bottom: 10px;margin-bottom: 1px;/* margin-top: 50px; */margin-left: 90px;/* border-style: ; */padding-top: 10px;width: 300px; height: 150px; z-index: 8000;">
-
-      <h1 style="background: linear-gradient(20deg, #d0813273 32%, rgb(255, 255, 255) 70%, rgb(216 104 76 / 66%) 85%); /* max-height: 270px;  */ margin-left: 40px; margin-right: 40px; text-align: center; font-weight:200; width: 240px; text-decoration:overline; text-size-adjust:inherit; border-top-style: 1px darkgreen groove; border-right-style: 1px darkgreen groove; border-left-style: 1px darkgreen groove; border-bottom-style: 1px darkgreen groove; border-radius: 25px; border-width:1px; /* padding: 10px; */ position: absolute; text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px rgb(231, 231, 231), 0 0 5px rgb(0, 21, 115);"> Big Store Coffee </h1>
+    <header style="background: linear-gradient(to top left, #ffffff78 20%, #77b9d65b 60%, rgba(87, 87, 87, 0.42) 60%); border-top: 2px rgba(237, 239, 240, 0); border-left: 2px rgba(255, 255, 255, 0); border-right: 2px rgba(255, 255, 255, 0); border-bottom: 2px rgba(255, 255, 255, 0); border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ margin-left: 90px; /* border-style: ; */ padding-top: 10px; width: 320px; height: 80px; z-index: 8000;">
+      <h1 style="background: linear-gradient(to right, #8B4513, #A0522D, #D2B48C); max-height: 100px; margin-left: 40px; margin-right: 40px; text-align: center; font-weight: lighter; font-size: larger; width: auto; padding: 10px; position: relative; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 25px rgba(231, 231, 231, 0.5), 0 0 5px rgba(0, 21, 115, 0.5); border-radius: 25px; border: 1px solid #006400; color: white;"> Big Store Coffee</h1>
+      
+      
       <style>
         .search-bar {
-          left: 2px;
-          top: 10px;
-          width: 270px;
+          left: 10px;
+          bottom: 30px;
+          width: 300px;
           position: relative;
           padding: 1px; 
           color: rgb(0, 0, 0); 
-          background-color: rgb(0, 23, 137); 
+          background: linear-gradient(to top right, #8B4513, #A0522D, #D2B48C);
           border: outset;
           border-width: 0.2vw 0.3vw; 
           border-color: rgb(195, 196, 91); 
@@ -188,7 +191,7 @@
           border-radius: 30px; 
           /* Adjust to properly center */
           /* transform: translateX(-50%);  */ 
-          z-index: 9999; 
+          z-index: 9990; 
           cursor: pointer; 
           /* display: ruby-base-container; */ 
           /* Set the width of the search bar */ 
@@ -467,54 +470,56 @@
       </script>
       <style>
         .arrow-icon {
-          width: 40px;
-          left: -90px;
-          position: relative;
-          top: 15px;
+          width: 80px;
+          left: 10px; /* Adjusted to position it on the right side */
+          position: fixed;
+          top: 119px;
           padding-bottom: 100px;
-          /* right: 50px; */
           transform: translateY(-40%);
           cursor: pointer;
           font-size: 20px;
-          background-color: #598e9d; 
+          background: linear-gradient(to right, #c07f51, #bc8c75, #9f6d2c); 
           padding: 10px;
           border-radius: 25px 25px 25px 25px; 
           box-shadow: 2px 2px 20px 2px rgb(255, 255, 255); 
-          z-index: 9999; 
+          z-index: 9599; 
         }
         .arrow-icon:hover {
-          background-color: #d86d6d;
-          border-radius: 20px; 
+            background-color: #d86d6d;
+            border-radius: 20px; 
         }
         .menu-container {
           position: absolute;
           border-radius: 30px;
-          top: 145px;
+          top: 205px;
           left: -420px;
           width: 313px;
           height: 350px;
-          background-color: rgba(0, 152, 173, 0.52);
+          background-color: rgb(52, 40, 40);
           transition: left 1s ease;
           z-index: 9999;
           overflow-x: hidden;
         }
       
         .close-btn {
-          text-align: center;
-          position: relative;
+          position: absolute;
+          /* Adjust top position as needed */
+          top: 20px; 
+          /* Adjust right position as needed */
+          right: 10px; 
           padding: 10px;
           border: 1px solid rgba(0, 0, 0, 0.174);
-          width: 40px;
-          left: 245px;
-          top: 5px;
-          height: 25px;
+          width: 70px;
+          height: 45px;
+          z-index: 9991;
           border-radius: 30px;
           cursor: pointer;
           font-size: 20px;
-          background-color: #1ac3e96b;
+          background-color: #000000;
         }
+
       </style>
-      <div class="arrow-icon" onclick="toggleMenu()"></div>
+      <i class="bi bi-chevron-down arrow-icon" style="margin-right: 340px; margin-bottom: 22px;" onclick="toggleMenu()"></i>
       <div class="menu-container" id="menu">
         <div class="close-btn" onclick="toggleMenu()">&#10006;</div> 
         <!-- Close button -->
@@ -553,23 +558,23 @@
         </script>
         <style>
           .table-container_lista_optiuni {
-            bottom: 125px;
             width: 300px;
             height: 330px;
-            position: relative;
-            border: 3px outset #1a7eec70;
-            display: inline-block;
+            /* Change from relative to absolute */
+            position: absolute; 
+            bottom: 10px;
+            /* Adjust positioning as needed */
+            right: 0; 
+            border: 3px outset #ffffff;
             border-radius: 30px;
             box-sizing: border-box;
-            grid-auto-flow: dense;
-            margin-bottom: 10px;
-            margin-top: 135px;
-            margin-left: 5px;
-            margin-right: 0px;
+            /* Adjust margin as needed */
+            margin-top: 165px; 
+            /* Adjust margin as needed */
+            margin-right: 5px; 
             animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
             background-size: 200% 200%;
-            align-items: baseline;
-            background: linear-gradient(130deg, #ffffff, #3400b847, #00897b);
+            background: linear-gradient(130deg, #8B4513, #A0522D, #D2B48C);
           }
           .glowing-background {
             background: linear-gradient(24deg, #f1d9a690 32%rgba(72, 138, 223, 0.524))70%, rgb(143, 40, 14)85%;
@@ -581,12 +586,13 @@
           }
           .tabel-1-lista-optiuni{
             margin-left: 1px;
+            padding-top: 100px;
+            position: sticky;
             background-color: linear-gradient(24deg, #c9c9c9 32%, rgb(44, 91, 154)70%,rgb(186, 93, 69)85%);
             margin-top: 100px;
             width: 260px;
             padding: 5px;
             align-items: center;
-            border: 1px groove rgba(0, 0, 0, 0.315);
             border-top-left-radius: 30px;
             border-bottom-right-radius: 30px;
             border-top-right-radius: 30px;
@@ -596,28 +602,28 @@
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Despre" style="width: 120px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky; text-decoration-line:none; font-weight:lighter; font-size: small;">Despre</a>
+            <div class="th glowing-background" id="tableheader-Despre" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
+              <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Despre</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Comenzi" style="width: 120px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky; text-decoration-line:none; font-weight:lighter; font-size: small;">Comenzi</a>
+            <div class="th glowing-background" id="tableheader-Comenzi" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
+              <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Comenzi</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Livrare" style="width: 120px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky; text-decoration-line:none; font-weight:lighter; font-size: small;">Livrare</a>
+            <div class="th glowing-background" id="tableheader-Livrare" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
+              <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Livrare</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Suport" style="width: 120px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky; text-decoration-line:none; font-weight:lighter; font-size: small;">Suport</a>
+            <div class="th glowing-background" id="tableheader-Suport" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
+              <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Suport</a>
             </div>
           </div>
           <div class="tr">
-            <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="width: 120px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; text-decoration-line:none; font-weight:lighter; font-size: small;">Informatii Aditionale</a>
+            <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
+              <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Informatii Aditionale</a>
             </div>
           </div>
         </div>
@@ -636,10 +642,14 @@
     </script>
     <style>
       #container_scrolling_for_the_side_nav {
-        position: fixed; /* Adjust position to fixed */
-        top: 140px; /* Adjust based on the header's height */
-        left: 0; /* Position at the left */
-        z-index: 9998; /* Ensure it appears below the header */
+        /* Adjust position to fixed */
+        position: fixed; 
+        /* Adjust based on the header's height */
+        top: 140px; 
+        /* Position at the left */
+        left: 0; 
+        /* Ensure it appears below the header */
+        z-index: 9998;
       }
     </style>
     <div id="container_scrolling_for_the_side_nav" class="container">
@@ -651,11 +661,12 @@
           z-index: 1;
           top: 200px;
           padding-block: 100px;
-          left: 0;
-          background: linear-gradient(135deg, #333333, #cccccc, #330455); /* Linear gradient background */
+          left: 0px;
+          /* Linear gradient background */
+          background: linear-gradient(135deg, #91725b, #bc6b49, #ff9e5a); 
           overflow-x: hidden;
           padding-top: 60px;
-          transition: 0.5s;
+          transition: 2s;
           max-width: 300px;
           max-height: 400px;
           border-radius: 30px;
@@ -668,12 +679,11 @@
           border-radius: 30px;
           font-size: 12px;
           color: white;
-          background-color: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 224, 1) 50%, rgba(0, 0, 0, 1) 100%);
+          background-image: linear-gradient(to right, #b3a89e, #a49993, #a7a725);
           display: block;
           transition: 0.3s;
-          width: 220px;
+          width: 150px;
           height: 3vh; 
-          background-color: #003d57; 
           border-radius: 30px;
           margin-top: 10px;
           border: 1px solid #333333; /* Light black border */
@@ -697,12 +707,11 @@
         .sidenav .closebtn {
           position: absolute;
           top: 0;
-          right: 25px;
+          right: 30px;
           font-size: 36px;
           margin-left: 50px;
-          position: absolute;
-          background: rgba(0, 16, 58, 0.471);
-          margin-bottom: 4px;
+          background: rgb(135, 135, 135);
+          margin-bottom: 3px;
           width: 50px;
         }
         /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -718,31 +727,33 @@
         </style>
       <div id="mySidenav" class="sidenav">
         <style>
-          .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-            cursor: pointer;
-            color: white;
-          }
+        .closebtn {
+          position: absolute;
+          top: 20px;
+          /* Adjusted right position */
+          right: 10px;
+          width: 100px;
+          height: 60px; 
+          font-size: 30px;
+          cursor: pointer;
+        }
         </style>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="width: 80px; height: 50px; bottom: 20px;">&times;</a>
         <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
         <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="http://192.168.100.53:8081/Clients.html" onclick="loadPage()">Clients</a>
-        <a href="Javascript:void(0)" onclick="loadPage('http://192.168.100.53:8081/Echipa.html')">Echipa</a>
+        <a href="Echipa.html" target="_blank" onclick="loadPage('http://192.168.100.53:8081/public/Echipa.html')">Echipa</a>
       </div>
     </div>
     <div id="content"></div>
     <style>
         .openTriangle {
-          position: relative;
-          bottom: 160px;
+          position: sticky;
+          bottom: 8020px;
           display: inline-block;
           width: 0px;
           height: 0px;
+          left: 10px;
           /* Left side of the triangle */
           border-left: 25px solid transparent;
           /* Right side of the triangle */
@@ -870,8 +881,10 @@
                 trail.style.opacity = "0";
                 setTimeout(function () {
                     trail.remove();
-                }, 3000); // Fade out time
-            }, 100); // Delay before starting to fade out
+                // Fade out time
+                }, 3000); 
+            // Delay before starting to fade out
+            }, 100); 
 
             // Play guitar sound
             var audio = new Audio('light_guitar_sound.mp3');
@@ -1118,13 +1131,13 @@
     </script>
     <style>
       .swipe-bar {
-        position: fixed;
-        bottom: 5360px;
-        left: 0;
+        position: relative;
+        top: 100px;
+        left: 0px;
         /* transform: translateY(-50%); */
         width: 20px;
         height: 100px;
-        background-color: #d18c8c;
+        background-color: #ab915a;
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
         border-bottom-right-radius: 20px;
@@ -1134,7 +1147,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 5px;
+        padding: 0px 5px;
       }
       /* .arrow {
         width: 0;
@@ -1184,16 +1197,24 @@
         overflow-y: auto;
         display: none;
         position: fixed;
-        top: 254px;
-        left: 40px;
+        top: 230px;
+        left: 20px;
         width: 230px;
-        height: 250px;
-        background: linear-gradient(60deg, rgb(176, 196, 222), rgb(128, 128, 128), rgb(255, 255, 255));
+        height: 350px;
+        fallback: #f9f9f9;
+        z-index: 9500;
+        background-color: #007bff; 
+        background: linear-gradient(60deg, #8b45139c, #bf73279c, #4b36218d); /* Coffee-themed gradient */
         border-radius: 30px;
         overflow-x: hidden;
         transition: 1s;
         padding-top: 60px;
       }
+      .dropdown-content_meniu_1si2.open {
+        display: block;
+      }
+
+      /* Style for the close button */
 
       .dropdown-content_meniu_1si2 a {
         padding: 10px 8px;
@@ -1211,6 +1232,7 @@
       .open {
         left: 0;
       }
+
     </style>
     <div class="swipe-bar" id="swipeBar">
       <div class="arrow"></div>
@@ -1220,104 +1242,141 @@
     <!-- <div id="swipeArea" style="height: 10vh; background-color: #003d57; width: 20px; height: 100px; border-radius: 30px;"></div> -->
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <div class="dropdown" style="overflow-anchor: auto;">
-        <button class="dropbtn" id="DROPBTN_Select a Menu" style="margin-bottom: 20px; position: relative; border-radius: 20px; bottom: 50px;">Select a Menu</button>
-          <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
-            <style>
-              .container-content-Menu-produse-1,
-              .container-content-Menu-produse-2,
-              .container-content-Menu-produse-3,
-              .container-content-Menu-produse-4,
-              .container-content-Menu-produse-5,
-              .container-content-Menu-produse-6,
-              .container-content-Menu-produse-7,
-              .container-content-Menu-produse-8,
-              .container-content-Menu-produse-9,
-              .container-content-Menu-produse-10{
-                background: linear-gradient(to bottom, #ffffff, #05337085, #8e6fff);
-                margin-bottom: 10px;
-                width: 190px; 
-                height: 20px; 
-                padding: 20px; 
-                border: 1px groovrgb(0, 0, 0)en; 
-                border-radius: 30px;
-              }
-              .container-content-Menu-produse-1 a,
-              .container-content-Menu-produse-2 a,
-              .container-content-Menu-produse-3 a,
-              .container-content-Menu-produse-4 a,
-              .container-content-Menu-produse-5 a,
-              .container-content-Menu-produse-6 a,
-              .container-content-Menu-produse-7 a,
-              .container-content-Menu-produse-8 a,
-              .container-content-Menu-produse-9 a,
-              .container-content-Menu-produse-10 a {
-                border-radius: 30px;
-                bottom: 12px;
-                position: relative;
-                
-              }
-
-              </style>
-            <div class="container-content-Menu-produse-1">
-              <div class="trail-element" >
-                <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
-              </div>
-            </div>
-            <div class="container-content-Menu-produse-2">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2"  onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
-              </div>
-            </div>
-            <div class="container-content-Menu-produse-3">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
-              </div>
-            </div>
-            <div class="container-content-Menu-produse-4">
+        <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
+          <style>
+            /* Container styles */
+            .container-content-Menu-produse-1,
+            .container-content-Menu-produse-2,
+            .container-content-Menu-produse-3,
+            .container-content-Menu-produse-4,
+            .container-content-Menu-produse-5,
+            .container-content-Menu-produse-6,
+            .container-content-Menu-produse-7,
+            .container-content-Menu-produse-8,
+            .container-content-Menu-produse-9,
+            .container-content-Menu-produse-10 {
+              background: linear-gradient(to bottom, #ffffff, #05337085, #8e6fff);
+              margin-bottom: 10px;
+              width: 190px; /* Adjust width as needed */
+              height: 20px; /* Adjust height as needed */
+              padding: 2px;
+              height: 1%;
+              border: 1px groove rgb(0, 0, 0);
+              border-radius: 30px;
+            }
+    
+            /* Link styles */
+            .container-content-Menu-produse-1 a,
+            .container-content-Menu-produse-2 a,
+            .container-content-Menu-produse-3 a,
+            .container-content-Menu-produse-4 a,
+            .container-content-Menu-produse-5 a,
+            .container-content-Menu-produse-6 a,
+            .container-content-Menu-produse-7 a,
+            .container-content-Menu-produse-8 a,
+            .container-content-Menu-produse-9 a,
+            .container-content-Menu-produse-10 a {
+              border-radius: 30px;
+              bottom: 0;
+              position: relative;
+              width: 100%;
+              height: 10%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none; /* Remove underline */
+              color: inherit; /* Inherit text color */
+            }
+    
+            /* Adjust glowing effect */
+            .container-content-Menu-produse-1 a:active,
+            .container-content-Menu-produse-2 a:active,
+            .container-content-Menu-produse-3 a:active,
+            .container-content-Menu-produse-4 a:active,
+            .container-content-Menu-produse-5 a:active,
+            .container-content-Menu-produse-6 a:active,
+            .container-content-Menu-produse-7 a:active,
+            .container-content-Menu-produse-8 a:active,
+            .container-content-Menu-produse-9 a:active,
+            .container-content-Menu-produse-10 a:active {
+              box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+            }
+          </style>
+          <!-- Container 1 -->
+          <div class="container-content-Menu-produse-1">
             <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4"  onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
+              <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
             </div>
+          </div>
+          <!-- Container 2 -->
+          <div class="container-content-Menu-produse-2">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
             </div>
-            <div class="container-content-Menu-produse-5">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
-              </div>
+          </div>
+          <!-- Container 3 -->
+          <div class="container-content-Menu-produse-3">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
             </div>
-            <div class="container-content-Menu-produse-6">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
-              </div>
+          </div>
+          <!-- Container 4 -->
+          <div class="container-content-Menu-produse-4">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4" onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
             </div>
-            <div class="container-content-Menu-produse-7">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
-              </div>
+          </div>
+          <!-- Container 5 -->
+          <div class="container-content-Menu-produse-5">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
             </div>
-            <div class="container-content-Menu-produse-8">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" onmouseover="createTrail(event, 8)" onmouseout="removeTrail(this)">Meniu Produse 8</a>
-              </div>
+          </div>
+          <!-- Container 6 -->
+          <div class="container-content-Menu-produse-6">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
             </div>
-            <div class="container-content-Menu-produse-9">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
-              </div>
+          </div>
+          <!-- Container 7 -->
+          <div class="container-content-Menu-produse-7">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
             </div>
-            <div class="container-content-Menu-produse-10">
-              <div class="trail-element">
-                <a href="http://192.168.100.53:8081/Meniu_Produse_10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
-              </div>
+          </div>
+          <!-- Container 8 -->
+          <div class="container-content-Menu-produse-8">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" onmouseover="createTrail(event, 8)" onmouseout="removeTrail(this)">Meniu Produse 8</a>
+            </div>
+          </div>
+          <!-- Container 9 -->
+          <div class="container-content-Menu-produse-9">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
+            </div>
+          </div>
+          <!-- Container 10 -->
+          <div class="container-content-Menu-produse-10">
+            <div class="trail-element">
+              <a href="http://192.168.100.53:8081/Meniu_Produse_10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script>
+      function openMenu() {
+        document.getElementById("dropdown-content-menu-1&2").classList.add("open");
+      }
+
+      function closeMenu() {
+        document.getElementById("dropdown-content-menu-1&2").classList.remove("open");
+      }
       document.addEventListener("DOMContentLoaded", function() {
         var swipeBar = document.getElementById("swipeBar");
         var swipeArea = document.getElementById("swipeArea");
         var dropdownMenu = document.querySelector(".dropdown-content_meniu_1si2");
-        var dropbtn = document.getElementById("DROPBTN_Select_a_Menu");
         var dropdownContent = document.getElementById("dropdown-content-Meniu-produse-1-10");
         var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2, .container-content-Menu-produse-3, .container-content-Menu-produse-4, .container-content-Menu-produse-5, .container-content-Menu-produse-6, .container-content-Menu-produse-7, .container-content-Menu-produse-8, .container-content-Menu-produse-9, .container-content-Menu-produse-10");
         var xStart = null;
@@ -1415,161 +1474,148 @@
       });
     </script>
     
+    <style>
+      /* Custom styles for carousel control buttons */
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: auto;
+        height: 30px;
+        top: 100px;
+        background: #007bff;
+        border-radius: 30px;
+        /* Adjust as needed */
+        margin-left: -20px; 
+        /* Ensure buttons appear above the carousel */
+        z-index: 1; 
+      }
+
+      .carousel-control-next {
+        /* Adjust as needed */
+        right: -20px; 
+        left: auto;
+      }
+    </style>
     
-    <!-- Slideshow container -->
-    <div class="slideshow-container" style="margin-left: 0px; margin-top: 600px; border: 1px solid rgb(255, 255, 255); width: 345px; height: 750px; top: 50px; border-radius: 30px; border-width: 10px;">
-      <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto; ">
-        <div class="numbertext-1" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); text-align: center; position: sticky; border-width: 2px; border-inline-end-style: groove; border-top-left-radius: 10px; border-bottom-right-radius: 10px; padding-bottom: 10px; padding-top: 10px; border-radius: 30px; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:small; background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%);">Produs_slide_1</div>
-        <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="max-width: 280px; max-height: 280px; position: relative; border: solid #ffffff 2px; border-radius:30px; padding-left: auto; padding-right: auto; margin-top: 10px; margin-left: 10px;" loading="lazy">
-        <div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #000000; border-spacing: 2px; border-collapse: collapse; border-top-width: 1px; border-radius: 30px; margin-bottom: 10px; border-bottom-width: 1px; background-color: #d4a539; position: relative; width: auto; height: auto; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159)">
-                                  În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. 
-                                  Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister. 
-                                  Lichidul negru și bogat curge din filtru, dezvăluind o bogăție de arome care promite să trezească simțurile. 
-                                  Privind cum picurii căzând în ritm regulat, ochii devin hipnotizați de spectacolul simplu, dar fermecător al cafelei care prinde viață. 
-                                  În cele din urmă, ceașca este pregătită, oferind o promisiune călduroasă de energie și confort într-o lume care se trezește treptat. 
-                                  Este momentul perfect pentru a te bucura de magia cafelei tale preferate.
-        </div>
-      </div>
-      <div class="mySlides fade" style="display: none; margin-bottom: 0px; max-width: auto;">
-    <div class="numbertext-2" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; position: relative; border-radius: 30px; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:small; background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%);">Produs_slide_2</div>
-      <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" style="max-width: 280px; max-height: 280px; position: sticky; border: solid #ffffff 2px; border-radius:10px; padding-left: 10px; margin-top: 10px; border-radius: 30px; padding-bottom: 10px; padding-right: auto;" loading="lazy">
-        <div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #000000; border-spacing: 2px; border-top-width: 1px; border-radius: 30px; border-bottom-width: 1px; width: auto; height: auto; background-color: #d4a539; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25 rgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
-                                                    Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. 
-                                                    Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter. 
-                                                    Pe suprafața cafelei, o ușoară spumă moale se desfășoară, promițând o experiență de degustare delicioasă. 
-                                                    Cu fiecare înghițitură, simți căldura și vitalitatea acestei băuturi revigorante. 
-                                                    Gustul profund și aromele subtile dansează pe papilele tale gustative, oferindu-ți o pauză perfectă în ziua ta agitată. 
-                                                    O ceașcă de cafea gata preparată este o plăcere simplă, dar inegalabilă, ce aduce confort și energie în fiecare moment.
+    <div class="container" style="border: 2px solid #7a7a7a; background-color: #fcf1b2; border-radius: 10px; padding: 20px; margin-top: 380px; max-width: 380px;">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                  <div class="row align-items-center">
+                      <div class="col-md-4">
+                          <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 30px;">
+                          <p style="color: #666; font-size: 14px; background-color: wheat; border-radius: 20px; margin-top: 10px;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
                         </div>
+                      <div class="col-md-8">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_1</h5>
+                          </div>
                       </div>
-                    <div class="mySlides fade" style="display: none; margin-bottom: auto; max-width: auto;">
-                  <div class="numbertext-3" style="margin: bottom 10px; margin-bottom: 10px; border: solid 1px rgb(0, 0, 0); border-radius: 30px; text-align: center; border-width: 2px; padding-bottom: 10px; padding-top: 10px; position: sticky; background-color: rgb(211, 208, 144); text-decoration-line: underline wavy; text-decoration-color: #d4a539; font-style: oblique; font-size:small; background: linear-gradient(50deg, #fff2b2  23%, #4d4201 70%, #fffd8c  85%); ">Produs_slide_3</div>
-      <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style=" position: sticky; max-height: 280px; max-width: 280px; border: solid #000000 2px; border-radius: 10px; padding-left: auto; padding-right: auto; margin-top: 10px; margin-left: 10px; border-radius: 30px; margin-bottom: 10px;" loading="lazy">
-    <div class="text" style="text-align: center; font-size: small; font-weight: lighter; border: solid; border-style: 2px; border-color: #000000; border-spacing: 2px; border-top-width: 1px; border-radius: 30px; background-color: #d4a539; width: auto; height: auto; text-shadow: 1px 1px 2px rgb(192, 173, 145), 0 0 25prgb(188, 180, 156), 0 0 5prgb(112, 120, 159);">
-                Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. 
-                Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate. 
-                Căldura ce se răspândește de sub ceașcă oferă o senzație de confort. 
-                Pe marginea ceștii, o mică picătură de rouă de cafea strălucește sub razele soarelui matinal. 
-                Cu fiecare înghițitură, gustul bogat și revigorant îți învăluie simțurile, aducându-ți o bucurie simplă, dar adâncă. 
-                Ceașca de cafea gata pregătită este o mică comoară într-un moment de relaxare și răsfăț personal.
-    </div>
+                  </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                  <div class="row align-items-center">
+                      <div class="col-md-4">
+                          <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 30px;">
+                          <p style="color: #666; font-size: 14px; background-color: wheat; border-radius: 20px; margin-top: 10px;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
+                        </div>
+                      <div class="col-md-8">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_2</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                  <div class="row align-items-center">
+                      <div class="col-md-4">
+                          <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 30px;">
+                          <p style="color: #666; font-size: 14px; background-color: wheat; border-radius: 20px; margin-top: 10px;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
+                        </div>
+                      <div class="col-md-8">
+                          <div class="carousel-caption d-none d-md-block">
+                              <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_3</h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Navigation -->
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
       </div>
-        <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; bottom: 0px; left: 10px;" onclick="plusSlides(-1)" >&#10094;</a>
-        <a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 60px; bottom: 0px;">&#10095;</a>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-      <script>
-        let slideIndex = 1;
-          function plusSlides(n) {
-            showSlides(slideIndex += n);
-          }
-
-          function currentSlide(n) {
-            showSlides(slideIndex = n);
-          }
-
-          function showSlides(n) {
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-
-            if (n > slides.length) {
-              slideIndex = 1;
-            }
-
-            if (n < 1) {
-              slideIndex = slides.length;
-            }
-
-            for (let i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-            }
-
-            for (let i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-            }
-
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-          }
-
-          // Initial display of slides
-          showSlides(slideIndex);
-      //  Automatically changing the slides: 
-      // let slideIndex = 0;
-      //   showSlides();
-
-      //   function showSlides() {
-      //     let slides = document.getElementsByClassName("mySlides");
-
-      //     for (let i = 0; i < slides.length; i++) {
-      //       slides[i].style.display = "none";
-      //     }
-
-      //     slideIndex++;
-      //     if (slideIndex > slides.length) {
-      //       slideIndex = 1;
-      //     }
-
-      //     slides[slideIndex - 1].style.display = "block";
-      //     fadeIn(slides[slideIndex - 1].querySelector(".text"), 0);
-      //     fadeIn(slides[slideIndex - 1].querySelector("img"), 0);
-
-      //     setTimeout(() => {
-      //       fadeOut(slides[slideIndex - 1].querySelector(".text"), 0);
-      //       fadeOut(slides[slideIndex - 1].querySelector("img"), 0);
-      //     }, 2000);
-
-      //     setTimeout(() => {
-      //       showSlides();
-      //     }, 4000); // Change slides every 4 seconds (including fade in/out times)
-      //   }
-
-      //   function fadeIn(element, opacity) {
-      //     element.style.opacity = opacity;
-      //     if (opacity < 1) {
-      //       opacity += 0.1;
-      //       setTimeout(() => fadeIn(element, opacity), 100);
-      //     }
-      //   }
-
-      //   function fadeOut(element, opacity) {
-      //     element.style.opacity = opacity;
-      //     let timer = 0;
-
-      //     let fadeOutInterval = setInterval(() => {
-      //       if (timer >= 0.09) {
-      //         clearInterval(fadeOutInterval);
-      //       } else {
-      //         opacity -= 0.1;
-      //         element.style.opacity = opacity;
-      //         timer += 0.1;
-      //       }
-      //     }, 100);
-      //   }
-
-      //   function adjustSizes() {
-      //     const slides = document.getElementsByClassName('mySlides');
-      //     const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
-          
-      //     for (let i = 0; i < slides.length; i++) {
-      //       const slide = slides[i];
-      //       const img = slide.querySelector('img');
-      //       const text = slide.querySelector('.text');
-
-      //       img.style.width = containerWidth + 'px';
-      //       text.style.fontSize = (containerWidth * 0.03) + 'px';
-      //     }
-      //   }
-
-      //   window.addEventListener('resize', adjustSizes);
-      //   adjustSizes();
-      </script>
+  </div>
+  
+  
+  
+      <!-- <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; bottom: 0px; left: 10px;" onclick="plusSlides(-1)" >&#10094;</a>
+      <a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 60px; bottom: 0px;">&#10095;</a> -->
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
     </div>
-    <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: #048dbf95; padding-top: 0px; padding-bottom: 100px; top: 20px;">
+    <script>
+      let slideIndex = 1;
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+    
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+    
+      function showSlides(n) {
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+    
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+    
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+    
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+    
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+    
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    
+      // Initial display of slides
+      showSlides(slideIndex);
+      
+    </script>
+    <style>
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    
+    <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: linear-gradient(to bottom right, #8B4513, #f6c3ac, #D2B48C); padding-top: 0px; padding-bottom: 100px; top: 20px; margin-top: 1200px;">
       <div class="is-mobile-preview"></div>
-      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="width: 390px;">
+      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="position: relative; width: 390px; top: 20px;">
         <style>
           #Acasa_menu_container {
             border: 1px;
@@ -1578,7 +1624,7 @@
             border-style: groove;
             border-radius: 20px;
             /* box-sizing: content-box; */
-            width: 340px;
+            width: 428px;
             left: 0px;
             height: 100px;
             /* margin: 50px; */
@@ -1587,7 +1633,7 @@
             display: inline-block;
             margin-bottom: 200px;
             margin-top: 50px;
-            background: linear-gradient(135deg, #ffffff 27%, rgb(235, 157, 157)66%, rgb(11, 103, 208) 75%);
+            background: linear-gradient(135deg, #8B4513 27%, #A0522D 66%, #D2B48C 75%);
             animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
             /* background-size: 200% 200%; */
           }
@@ -1648,28 +1694,36 @@
                   border: 1px #000000 solid;
                   list-style-type: none;
                   margin-top: auto;
+                }
+                /* Apply linear gradient background to the dropdown content */
+                .dropdown-content_ordered_list_categories {
+                  display: none;
+                  position: sticky;
+                  left: 0;
+                  top: calc(100% + 10px);
+                  border: 1px solid #000000;
+                  border-radius: 30px;
+                  min-width: 265px;
+                  box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
+                  background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D); /* Linear gradient with three different colors */
+                  z-index: 1;
+                  left: 80px;
+                  animation: slideIn 0.5s ease; /* Apply animation */
+                }
+                .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
+                  display: block;
                 }   
               </style>  
               <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
                 <style>
                   .li_continut_1_tip_lista {
-                    border-top-width: 1px;
+                    background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
                     padding: 1px;
-                    background-color: rgb(213 163 143);
-                    border: 1px rgb(0, 0, 0);
+                    border: 1px solid black;
                     border-radius: 30px;
-                    border-top: rgb(0, 0, 0) outset;
-                    border-bottom: rgb(0, 0, 0) outset;
-                    border-right: rgb(0, 0, 0) outset;
-                    border-left: rgb(0, 0, 0) outset;
-                    /* margin-bottom: 10px; */
-                    align-content: center;
-                    margin-left: 10px;
-                    margin-right: 40px;
-                    margin-top: 0px;
-                    margin-bottom: 10px;
+                    margin: 10px 40px;
                     height: 40px;
-                    font:menu;
+                    font: menu;
                   }
                 </style>
                   <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
@@ -1678,22 +1732,14 @@
                   </div>
                   <style>
                     .li_continut_2_tip_lista {
-                      background-color: rgb(202 136 136);
+                      background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
                       padding: 1px;
-                      border: 1px black;
+                      border: 1px solid black;
                       border-radius: 30px;
-                      border-top: rgb(0, 0, 0), outset;
-                      border-bottom: rgb(0, 0, 0) outset;
-                      border-right: rgb(255, 255, 255) outset;
-                      border-left: rgb(255, 255, 255) outset;
-                      margin-left: 10px;
-                      margin-right: 40px;
-                      margin-top: 10px;
-                      margin-bottom: 10px;
-                      align-content: center;
+                      margin: 10px 40px;
                       height: 40px;
-                      font:menu;
-                  }
+                      font: menu;
+                    }
                   </style>
                   <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
                     <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse2
@@ -1701,22 +1747,14 @@
                   </div>
                   <style>
                     .li_continut_3_tip_lista {
-                      background-color: rgb(213, 143, 143);
-                      padding: 1px;
-                      border: 1px black;
+                      border: 1px solid black;
                       border-radius: 30px;
-                      border-top: rgb(0, 0, 0) outset;
-                      border-bottom: rgb(0, 0, 0) outset;
-                      border-right: rgb(0, 0, 0) outset;
-                      border-left: rgb(0, 0, 0) outset;
-                      margin-left: 10px;
-                      margin-right: 40px;
-                      margin-top: 10px;
-                      margin-bottom: 10px;
-                      align-content: center;
+                      margin: 10px 40px;
                       height: 40px;
-                      font:menu;
-                  }
+                      font: menu;
+                      /* Apply coffee-themed gradient background */
+                      background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
+                    }
                   </style>
                   <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
                     <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse3
@@ -1730,11 +1768,11 @@
           #Menu_Categories {
             border: 1px solid #ffffff; /* Changed border shorthand for consistency */
             border-radius: 20px;
-            width: 340px;
+            width: 428px;
             height: 100px;
             position: relative;
             display: inline-block;
-            background: linear-gradient(135deg, #ffffff 27%, rgb(235, 157, 157)66%, rgb(11, 103, 208) 75%);
+            background: linear-gradient(135deg, #8B4513 27%, #A0522D 66%, #D2B48C 75%);
             animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 3s infinite alternate-reverse;
             margin-left: auto;
             margin-bottom: 200px;
@@ -1749,6 +1787,7 @@
             text-align: center;
           }
         
+          /* Apply the dropdown animation to the dropdown content */
           .dropdown_content_ordered_list_2 {
             display: none;
             position: absolute;
@@ -1758,8 +1797,9 @@
             border-radius: 30px;
             min-width: 265px;
             box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
-            background-color: white;
             z-index: 1;
+            /* Apply coffee-themed gradient background */
+            background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
           }
         
           .dropdown-list_items_2:hover .dropdown_content_ordered_list_2 {
@@ -1779,8 +1819,34 @@
             text-align: center;
             background-color: #ffed88;
             border-radius: 20px;
-            display: block; /* Ensure links fill their container */
-            line-height: 40px; /* Center the text vertically */
+            /* Ensure links fill their container */
+            display: block; 
+            /* Center the text vertically */
+            line-height: 40px; 
+          }
+            /* Define keyframes for the dropdown animation */
+          @keyframes dropdownFadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+            /* Adjust styles for li_categoria_1_lista, li_categoria_2_lista, and li_categoria_3_lista */
+          .li_categoria_1_lista,
+          .li_categoria_2_lista,
+          .li_categoria_3_lista {
+            border: 1px solid black;
+            border-radius: 30px;
+            padding: 1px;
+            margin: 10px 0;
+            height: 40px;
+            font: menu;
+            /* Apply coffee-themed gradient background */
+            background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
           }
         </style>
         <div class="menu-container_categories" id="Menu_Categories">
@@ -1809,11 +1875,11 @@
             #menu_produse_top {
               border: 1px groove #ffffff; /* Changed border shorthand for consistency */
               border-radius: 20px;
-              width: 340px;
+              width: 428px;
               height: 100px;
               position: relative;
               display: inline-block;
-              background: linear-gradient(135deg, #ffffff 27%, rgb(235, 157, 157)66%, rgb(11, 103, 208) 75%);
+              background: linear-gradient(135deg, #8B4513 27%, #A0522D 66%, #D2B48C 75%);
               animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
               margin-left: auto;
               margin-right: 0px;
@@ -1849,25 +1915,40 @@
               background: transparent;
               border-radius: 30px;
               z-index: 1;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              animation: fadeIn 0.5 ease;
             }
+            /* Add keyframes for the fadeIn animation */
+              @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+              }
           
             .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
               /* Show on hover */
               display: block; 
+            }
+
+            /* Show the dropdown when hovering over its container */
+            .dropdown-container:hover .dropdown-content_imagini_1 {
+              display: block;
             }
           
             /* Consistent styling for list items and links */
             .dropdown-content_imagini_1 .dropdown-container {
               margin-bottom: 20px;
               width: 230px;
-              height: 200px;
+              height: 260px;
               background-color: lightsteelblue;
               text-align: center;
               padding: 10px;
               border-radius: 30px;
 
             }
-          
             .dropdown-content_imagini_1 img {
               width: 100%;
               height: auto;
@@ -1875,9 +1956,10 @@
               margin-bottom: 10px;
             }
             .dropdown-content_imagini_1 a {
-              text-decoration: wavy blue;
+              text-decoration: wavy rgb(196, 196, 255);
               background-color: #63c6ea;
               border-radius: 20px;
+              max-width: 110px;
               padding: 2px 10px;
               color: #fff;
             }
@@ -1889,6 +1971,16 @@
               background: #084f66;
               margin: 0;
             }
+            #container_imagine-dropdown-1 {
+              animation: fadeIn 0.5s ease 0s forwards;
+            }
+            #container_imagine-dropdown-2 {
+              animation: fadeIn 0.5s ease 0.5s forwards;
+            }
+
+            #container_imagine-dropdown-3 {
+              animation: fadeIn 0.5s ease 1s forwards;
+            }
         </style>
         <div class="menu_container_produse_de_top" id="menu_produse_top">
           <div class="menu_container_1_produse_de_top" id="Produsetop1">
@@ -1896,32 +1988,28 @@
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
                 <a style="text-decoration: wavy blue;">Produse de top</a>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
-                    <div class="dropdown-container" id="container_imagine-dropdown-1">
-                      <img src="https://images.unsplash.com/photo-1566656117208-c23e67f4ce8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="eager">
-                      <em>
-                        <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background-color: #63c6ea;">Produsul de top 1</a>
-                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
-                      </em>
+                    <div class="dropdown-container" id="container_imagine-dropdown-1" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
+                        <img src="https://images.unsplash.com/photo-1566656117208-c23e67f4ce8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="eager">
+                        <em>
+                            <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul de top 1</a>
+                            <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
+                        </em>
                     </div>
-                    <div class="dropdown-container" id="container_imagine-dropdown-2">
-                      <img src="https://images.unsplash.com/photo-1630248904474-a7927610a5db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="eager">
-                      <em>
-                        <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM " id="Produsul-de-top-2-primary" style="background-color: #63c6ea;">Produsul de top 2</a>
-                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66">
-                            Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie. 
-                        </p>
-                      </em>
+                    <div class="dropdown-container" id="container_imagine-dropdown-2" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
+                        <img src="https://images.unsplash.com/photo-1630248904474-a7927610a5db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="eager">
+                        <em>
+                            <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM" id="Produsul-de-top-2-primary" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul de top 2</a>
+                            <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie.</p>
+                        </em>
                     </div>
-                    <div class="dropdown-container" id="container_imagine-dropdown-3">
-                      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="eager">
-                      <em>
-                        <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" rel="noopener noreferrer" style="background-color: #63c6ea;">Produsul de top 3</a>
-                          <p style="color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 2px; background: #084f66;">
-                            Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase. 
-                        </p>
-                      </em>
+                    <div class="dropdown-container" id="container_imagine-dropdown-3" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="eager">
+                        <em>
+                            <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul de top 3</a>
+                            <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase.</p>
+                        </em>
                     </div>
-                  </div>
+                </div>
               </li>
             </ol>
           </div>
@@ -1931,61 +2019,188 @@
     <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
       <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse vandute top">
         <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
-          <h3 style="margin-top: 600px; border: 1px solid whitesmoke; border-radius: 30px; background-color: lightgray; width: 250px;">Cele mai vandute produse</h3>
+          <h3 style="border: 1px solid whitesmoke; border-radius: 30px; background-color: lightgray; width: 350px; margin-top: 200px; margin-bottom: 200px;">Cele mai vandute produse</h3>
           <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
             <div class="image-container_produse_vandute_de_top_1 glowing-background" id="container-imagine-stanga" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
-              <a>
-                <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 80px; width:80px; position: relative; border-radius: 50px; " loading="eager">
-              </a>
-              <p style="text-align: center; text-rendering: optimizeSpeed; background-color: rgb(255, 255, 255); border: #005979 2px inset; border-radius: 10px; position: sticky;"> Experimentează rafinamentul și energia pură a unei cafele premium, în capsulele noastre de cafea cu valoare energetică mare și aromă intensă! Fiecare înghițitură este o călătorie către savoarea autentică a boabelor de cafea proaspăt prăjite, oferindu-ți o explozie de gusturi și arome unice.
-                Acest produs este soluția perfectă pentru cei ce caută o doză rapidă de energie în fiecare dimineață sau în timpul unei zile agitate. Cu o combinație perfect echilibrată între forța cafelei și aroma sa inconfundabilă, aceste capsule sunt partenerul tău ideal pentru a începe ziua în forță sau pentru a-ți recăpăta energia în orice moment al zilei.
-                Fă pași în fața oboselii și trăiește intensitatea fiecărei zile cu gustul irezistibil al cafelei din aceste capsule. Profită de aroma bogată și caracterul energizant al acestei cafele premium pentru a te bucura de o experiență de degustare excepțională.
-                Nu rata șansa de a transforma fiecare dimineață într-o experiență plină de gust și energie! Alege capsulele noastre de cafea cu valoare energetică mare și descoperă savoarea autentică a cafelei care te revitalizează într-un mod unic și plăcut.
-                </p>
+              <div class="row">
+                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 80px;">
+                  <a>
+                    <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
+                  </a>
+                </div>
+                <div class="col-md-10">
+                  <p style="text-align: center; background: linear-gradient(to right, #ad7c5e, #613613); border: #005979 2px inset; border-radius: 30px; height: 500px;">Experimentează rafinamentul și energia pură a unei cafele premium. Fiecare înghițitură este o călătorie către savoarea autentică a boabelor de cafea proaspăt prăjite. Acest produs este soluția perfectă pentru cei ce caută o doză rapidă de energie în fiecare dimineață sau în timpul unei zile agitate.</p>
+                </div>
+              </div>
             </div>
             <div class="image-container_produse_vandute_de_top_2 glowing-background" id="container-imagine-dreapta" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
-              <a>
-                <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
-              </a>
-              <p style="text-align: center; text-rendering: optimizeSpeed; background-color: rgb(255, 255, 255);; border: #005979 2px inset; border-radius: 10px; position: sticky;"> Bucură-te de o călătorie senzorială prin universul cafelei cu boabele noastre de cafea de tip Excelsa - un veritabil deliciu pentru pasionații de cafea! Cultivate în cele mai prielnice zone, aceste boabe sunt o combinație perfectă între aromă exotică și gust rafinat.
-                Excelsa, o varietate rară și prețioasă, te îmbie cu o paletă amplă de arome și un profil gustativ remarcabil. Cu nuanțe distincte de fructe și flori exotice, această cafea oferă o experiență unică, captivantă și plină de profunzime.
-                Aceste boabe de cafea reprezintă o alegere inspirată pentru cei ce apreciază cafeaua de cea mai înaltă calitate. Cu fiecare înghițitură, vei fi transportat într-o călătorie a simțurilor, descoperind straturi bogate de gust și arome complexe, ce redefinesc plăcerea unei cafele autentice.
-                Experimentează aroma distinctivă și calitatea excepțională a boabelor noastre de cafea de tip Excelsa, o alegere premium pentru cei ce caută o cafea cu caracter unic și o savoare deosebită. Delectează-ți simțurile și descoperă o cafea de excepție ce îți va răsfăța gusturile și te va fascina la fiecare ceașcă.
-                </p>
+              <div class="row">
+                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 80px;">
+                  <a>
+                    <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
+                  </a>
+                </div>
+                <div class="col-md-10">
+                  <p style="text-align: center; background: linear-gradient(to right, #ad7c5e, #613613); border: #005979 2px inset; border-radius: 30px; height: 500px;">Bucură-te de o călătorie senzorială prin universul cafelei cu boabele noastre de cafea de tip Excelsa. Cultivate în cele mai prielnice zone, aceste boabe sunt o combinație perfectă între aromă exotică și gust rafinat.</p>
+                </div>
               </div>
-              <div class="image-container_produse_vandute_de_top_3 glowing-background" id="container-imagine-centru" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
-                <a>
-                  <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
-                </a>
-                <p style="text-align: center; text-rendering: optimizeSpeed; background-color: rgb(255, 255, 255);; border: #005979 2px inset; border-radius: 10px; position: sticky;"> Bucură-te de perfecțiunea gustului cu macinarea extra fină dedicată cafelei Arabica! Această măcinătură de excepție este special creată pentru a evidenția toate subtilitățile și aromele rafinate ale boabelor de cafea Arabica, oferindu-ți o experiență senzorială de neegalat.
-                  Cu o granulație extrem de fină, această macinătură este perfectă pentru a extrage în mod optim aromele distincte ale cafelei Arabica. Fiecare ceașcă preparată devine o călătorie gustativă, plină de bogăția notelor florale, fructate și dulci, ce definește caracterul acestei cafele de excepție.
-                  Experimentează ritualul preparării cafelei la cel mai înalt nivel cu macinarea extra fină pentru cafea Arabica. Fiecare cafea preparată devine o operă de artă a gustului, ce te va încânta cu profunzimea și complexitatea sa.
-                  Descoperă lumea bogată și captivantă a cafelei Arabica prin intermediul acestei macinături extra fine, ce te va învălui într-o experiență aromatică inegalabilă. Savurează fiecare înghițitură și lasă-te purtat de notele subtile și elegante ce definesc cafeaua Arabica într-o manieră autentică și sofisticată.
-                  </p>
+            </div>
+            <div class="image-container_produse_vandute_de_top_3 glowing-background" id="container-imagine-centru" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
+              <div class="row">
+                <div class="col-md-2" style="border: 1px groove white; border-radius: 30px; width: 340px; margin-left: 10px; background-color: #005979; margin-left: 80px;">
+                  <a>
+                    <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
+                  </a>
+                </div>
+                <div class="col-md-10">
+                  <p style="text-align: center; background: linear-gradient(to right, #ad7c5e, #613613); border: #005979 2px inset; border-radius: 30px; height: 500px;">Bucură-te de perfecțiunea gustului cu macinarea extra fină dedicată cafelei Arabica. Cu o granulație extrem de fină, această macinătură este perfectă pentru a extrage în mod optim aromele distincte ale cafelei Arabica.</p>
+                </div>
+              </div>
+            </div>
+            <style>
+              /* Style for the ul list */
+              .additional-elements ul {
+                list-style-type: none;
+                padding: 0;
+              }
+            
+              .additional-elements ul li {
+                margin-bottom: 10px;
+                background-color: #ad7c5e; /* Coffee-themed background color */
+                border: 1px groove black; /* 1px groove black border */
+                border-radius: 5px;
+              }
+            
+              /* Style for the anchor tags */
+              .additional-elements ul li a {
+                text-decoration: none;
+                color: #333; /* Change the color as needed */
+                padding: 5px 10px;
+                display: inline-block;
+                transition: background-color 0.3s ease;
+              }
+            
+              .additional-elements ul li a:hover {
+                background-color: #613613; /* Darker shade for hover */
+                color: #fff; /* Text color on hover */
+              }
+            </style>
+            <!-- Additional Elements -->
+            <div class="additional-elements">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="additional-element" style="background-color: #e6e6e6; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                    <h4 style="text-align: center; background-color: #d3d3d3; border: 1px groove black; border-radius: 5px; padding: 10px; background-color: wheat; border-radius: 30px;">Recomandări</h4>
+                    <ul>
+                      <li style="max-width: 250px; border-radius: 30px;"><a href="#item-1" style="text-decoration: wavy; border-radius: 30px;">Item 1</a></li>
+                      <li style="max-width: 250px; border-radius: 30px;"><a href="#item-2" style="text-decoration: wavy; border-radius: 30px;">Item 2</a></li>
+                      <li style="max-width: 250px; border-radius: 30px;"><a href="#item-3" style="text-decoration: wavy; border-radius: 30px;">Item 3</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="additional-element" style="background-color: #e6e6e6; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                    <h5 style="text-align: center; background-color: #d3d3d3; border: 1px groove black; border-radius: 5px; padding: 10px; background-color: wheat; border-radius: 30px;">Oferte speciale</h5>
+                    <ul>
+                      <li style="max-width: 250px; border-radius: 30px;"><a href="#special-offer1" style="text-decoration: wavy; border-radius: 30px;">Special Offer 1</a></li>
+                      <li style="max-width: 250px; border-radius: 30px;"><a href="#special-offer2" style="text-decoration: wavy; border-radius: 30px;">Special Offer 2</a></li>
+                      <li style="max-width: 250px; border-radius: 30px;"><a href="#special-offer3" style="text-decoration: wavy; border-radius: 30px;">Special Offer 3</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    <div class="canvas" id="myCanvas"></div>
+    </div>
+    
+    
+    
+    
+    
+    <style>
+          .canvas-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .canvas-section {
+      margin: 10px;
+      padding: 20px;
+      background: #f2f2f2;
+      border: 2px groove black;
+      border-radius: 10px;
+    }
+    .slideshow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-container {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    .image-container img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .paragraph-style {
+      background: linear-gradient(to right, #ad7c5e, #613613);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: medium;
+    }
+    </style>
+    <div class="canvas" id="myCanvas">
+    </div>
     <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
-      <div class="canvas-section" id="leftCanvas" style="width: 50%; float: left;">
-        <h4 style="text-align: center; border: 2px solid black; border-radius: 30px;">Sectiunea Stanga</h4>
-        <div class="slideshow" id="leftSlideshow">
-          <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" style="height: 70px; width: 70px; border-radius: 25px;" loading="lazy">
-          <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg" alt="Cafea, Ceașcă, Cofeină, Espresso" style="height: 70px; width: 70px; border-radius: 25px;" loading="lazy">
-          <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg" alt="Cafea, Ceașcă, Halbă, Mic Dejun" style="height: 70px; width: 70px; border-radius: 25px;" loading="lazy">
+      <div class="row">
+        <div class="canvas-section col-md-6" id="leftCanvas">
+          <h4 class="text-center p-3 rounded">Sectiunea Stanga</h4>
+          <div class="slideshow" id="leftSlideshow">
+            <div class="image-container" style="border: 1px solid lightblue; background: linear-gradient(to right, #ad7c5e, #613613, #a67547); border-radius: 30px;">
+              <img src="https://cdn.pixabay.com/photo/2014/12/11/02/57/coffee-563800_1280.jpg" alt="Cafea, Lapte, Boabe De Cafea" class="img-fluid rounded-circle" loading="lazy">
+              <p class="text-center paragraph-style">Cafea, Lapte, Boabe De Cafea</p>
+            </div>
+            <div class="image-container" style="border: 1px solid lightblue; background: linear-gradient(to right, #ad7c5e, #613613, #a67547); border-radius: 30px;">
+              <img src="https://cdn.pixabay.com/photo/2019/11/11/15/32/coffee-4618705_1280.jpg" alt="Cafea, Ceașcă, Cofeină, Espresso" class="img-fluid rounded-circle" loading="lazy">
+              <p class="text-center paragraph-style">Cafea, Ceașcă, Cofeină, Espresso</p>
+            </div>
+            <div class="image-container" style="border: 1px solid lightblue; background: linear-gradient(to right, #ad7c5e, #613613, #a67547); border-radius: 30px;">
+              <img src="https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791045_1280.jpg" alt="Cafea, Ceașcă, Halbă, Mic Dejun" class="img-fluid rounded-circle" loading="lazy">
+              <p class="text-center paragraph-style">Cafea, Ceașcă, Halbă, Mic Dejun</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="canvas-section" id="rightCanvas" style="width: 50%; float: right;">
-        <h5 style="text-align: center; border: 2px solid black; border-radius: 30px;">Sectiunea Dreapta</h5>
-        <div class="slideshow" id="rightSlideshow">
-          <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" style="height: 70px; width: 70px; border-radius: 25px;">
-          <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Cafea, Ceașcă, Cappuccino, Latte" style="height: 70px; width: 70px; border-radius: 25px;">
-          <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" style="height: 70px; width: 70px; border-radius: 25px;">
+        <div class="canvas-section col-md-6" id="rightCanvas">
+          <h5 class="text-center p-3 rounded">Sectiunea Dreapta</h5>
+          <div class="slideshow" id="rightSlideshow">
+            <div class="image-container" style="border: 1px solid lightblue; background: linear-gradient(to right, #ad7c5e, #613613, #a67547); border-radius: 30px;">
+              <img src="https://cdn.pixabay.com/photo/2019/04/27/00/44/coffee-4159024_1280.jpg" alt="image-cdn-1" class="img-fluid rounded-circle" loading="lazy">
+              <p class="text-center paragraph-style">Coffee</p>
+            </div>
+            <div class="image-container" style="border: 1px solid lightblue; background: linear-gradient(to right, #ad7c5e, #613613, #a67547); border-radius: 30px;">
+              <img src="https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.jpg" alt="Cafea, Ceașcă, Cappuccino, Latte" class="img-fluid rounded-circle" loading="lazy">
+              <p class="text-center paragraph-style">Cafea, Ceașcă, Cappuccino, Latte</p>
+            </div>
+            <div class="image-container" style="border: 1px solid lightblue; background: linear-gradient(to right, #ad7c5e, #613613, #a67547); border-radius: 30px;">
+              <img src="https://cdn.pixabay.com/photo/2015/02/05/01/33/valentines-day-624440_1280.jpg" alt="Valentine'S Day, Inima, Ceașcă, Cafea" class="img-fluid rounded-circle" loading="lazy">
+              <p class="text-center paragraph-style">Valentine'S Day, Inima, Ceașcă, Cafea</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    
+    
     <script>
       // Function to adjust the size of canvas sections based on screen size
       function adjustCanvasSections() {

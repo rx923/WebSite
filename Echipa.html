@@ -1,26 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Good Store Coffee</title>
-      <link rel="icon" href="U:\Plan Afacere\WebSite\Icon\imagine-categorii.ico" type="icon/ico">
-      <base href="http://192.168.100.53:8081/">
-
-      <link rel="stylesheet" href="U:\Plan_Afacere\WebSite\ComputerLaptop_WebSite\style_main\main.css" type="text/css" media="screen">
-      <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
-      <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
-  </head>
-
-    <body>
-      <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <link rel="icon" href="U:\Plan Afacere\WebSite\Icon\imagine-categorii.ico" type="icon/ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .team-member {
+            border: 1px groove red;
+            border-radius: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+        .team-member h1, .team-member h2, .team-member p, .team-member i {
+            margin: 5px 0;
+        }
+        .team-member p i {
+            margin-right: 5px;
+        }
+        .profile-links a {
+            margin-right: 10px;
+        }
+        .social-links a {
+            margin-right: 10px;
+        }
+        .skills ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .skills ul li {
+            display: inline-block;
+            margin-right: 10px;
+            background-color: #f8f9fa;
+            color: #343a40;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        .projects ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .projects ul li {
+            margin-bottom: 5px;
+        }
+        .testimonials blockquote {
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+        }
+        .chat-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: bisque;">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+          <a class="navbar-brand" href="#">Team Members</a>
+          <!-- New container for the toggler icon -->
+          <div class="toggler-container">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+          </div>
+          <!-- End of new container -->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Team Members
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <!-- Dropdown items dynamically generated here -->
+                      </div>
+                  </li>
+                  <!-- Add the route for the Profile user here -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="Logare.html" id="profileLink">Profile</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <!-- Script to define the loadPage function and attach event listener -->
+    <script>
+      // Define the loadPage function to handle loading the form
+      function loadPage(event) {
+          // Prevent the default behavior of the link (i.e., navigating to a new page)
+          event.preventDefault();
       
+          // Create a new XMLHttpRequest object
+          var xhr = new XMLHttpRequest();
+      
+          // Configure the request
+          xhr.open('GET', 'Logare.html', true);
+      
+          // Set up a callback function to handle the response
+          xhr.onload = function() {
+              // Check if the request was successful
+              if (xhr.status === 200) {
+                  // Log the HTML content
+                  console.log('HTML content:', xhr.responseText);
+      
+                  // Create a temporary div element to hold the HTML content
+                  var tempDiv = document.createElement('div');
+                  tempDiv.innerHTML = xhr.responseText;
+      
+                  // Find the form element with the id "Logheaza-teForm"
+                  var loginForm = tempDiv.querySelector('#Logheaza-teForm');
+      
+                  // Log the login form element
+                  console.log('LoginForm:', loginForm);
+      
+                  // Check if the form element is found
+                  if (loginForm) {
+                      // Clear the current content of the loadedFormContainer
+                      document.getElementById('loadedFormContainer').innerHTML = '';
+      
+                      // Append the form element to the loadedFormContainer
+                      document.getElementById('loadedFormContainer').appendChild(loginForm);
+                  } else {
+                      console.error('Form "Logheaza-teForm" not found in Logare.html');
+                  }
+              } else {
+                  console.error('Error loading Logare.html:', xhr.statusText);
+              }
+          };
+      
+          // Send the request
+          xhr.send();
+      }
 
+      // Get the link element by its id
+      var profileLink = document.getElementById('profileLink');
 
+      // Add event listener to trigger the loadPage function when the profile link is clicked
+      profileLink.addEventListener('click', loadPage);
+  </script>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Individual Profiles -->
+            <div class="col-md-6">
+                <div class="team-member text-center">
+                    <img src="user-login-page.jpg" alt="Team Member 1" class="img-fluid rounded-circle mb-3">
+                    <h1 style="background-color: burlywood; border-radius: 30px;">Radu Ciutescu Dumitru</h1>
+                    <h2 style="background-color: #007bff; border-radius: 30px; width: 200px; margin-left: 70px;">CEO</h2>
+                    <p><i class="fas fa-phone"></i> <a href="tel:123-456-7890">123-456-7890</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:john@example.com">john@example.com</a></p>
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+                        <a href="#" class="btn btn-primary">LinkedIn</a>
+                        <a href="#" class="btn btn-info">Twitter</a>
+                        <!-- Add more social media links here -->
+                    </div>
+                    <!-- Skills and Expertise -->
+                    <div class="skills">
+                      <p><strong>Skills:</strong></p>
+                      <ul>
+                          <li>Leadership</li>
+                          <li>
+                              <ul style="list-style-type: none; padding-left: 0;">
+                                  <li><a href="/link1">Link1</a></li>
+                                  <li><a href="/link2">Link2</a></li>
+                                  <li><a href="/link3">Link3</a></li>
+                              </ul>
+                          </li>
+                          <li>Project Management</li>
+                          <li>
+                              <ol style="list-style-type: none; padding-left: 0;">
+                                  <li><a href="/etc1">ETC1</a></li>
+                                  <li><a href="/etc2">ETC2</a></li>
+                                  <li><a href="/etc3">ETC3</a></li>
+                              </ol>
+                          </li>
+                          <!-- Add more skills here -->
+                      </ul>
+                    </div>
+                    <!-- Projects or Contributions -->
+                    <div class="projects" style="border: 1px solid black; border-radius: 30px;">
+                        <p><strong>Notable Projects:</strong></p>
+                        <ul>
+                            <li style="background: #007bff; border-radius: 30px; max-width: 130px; position: relative; margin-left: 100px;">Project A</li>
+                            <li style="background: #007bff; border-radius: 30px; max-width: 130px; position: relative; margin-left: 100px;">Project B</li>
+                            <!-- Add more projects here -->
+                        </ul>
+                    </div>
+                    <!-- Testimonials -->
+                    <div class="testimonials">
+                        <p>
+                          <strong>Testimonials:</strong>
+                        </p>
+                        <blockquote>
+                            <p>"Radu is an exceptional leader with great vision and dedication."</p>
+                            <footer>John Doe</footer>
+                        </blockquote>
+                    </div>
+                    <!-- Interactive Features -->
+                    <div class="chat-button">
+                      <form action="/send-message" method="POST">
+                          <div class="form-group">
+                              <label for="message">Message:</label>
+                              <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-success">Send Message</button>
+                      </form>
+                    </div>
 
+                </div>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>
+    </div>
 
-    </body>
-  
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('messageForm').addEventListener('submit', function (event) {
+          event.preventDefault();
 
-    
-  </html>
+          const formData = new FormData(this);
+
+          fetch('/send-message', {
+            method: 'POST',
+            body: formData
+          })
+
+          .then(response => response.text())
+          .then(data => {
+            // Logging the response from the server
+            console.log(data);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
