@@ -79,7 +79,7 @@
 
 
 <body>
-    <form action="/login" id="Logheaza-teForm" method="post" class="form-container" style="position: absolute; top: 230px; right: 0px; left: 30px; display: block; min-width: 220px; max-height: 520px; background: linear-gradient(135deg, #f5deb3, #d2b48c, #a0522d, #8b0000); border-radius: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); display: inline-block; padding: 20px; z-index: 9999;">
+    <form action="/login" id="Logheaza-teForm" method="post" class="form-container" style="position: absolute; top: 230px; right: 0px; left: 30px; display: block; min-width: 220px; max-height: 520px; background: linear-gradient(135deg, #f5deb3, #d2b48c, #a0522d, #8b0000); border-radius: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); display: inline-block; padding: 20px; z-index: 9999;" autocomplete="on">
         <!-- Close button -->
         <div class="close-btn" onclick="closeForm()" style="position: absolute; width: 45px; height: 45px; text-align: center; right: 20px; top: 10px; border: 1px groove #8B4513; border-radius: 50%; background-color: #f8fafc; cursor: pointer; z-index: 9999;">&times;</div>
         <div class="imgcontainer">
@@ -88,18 +88,17 @@
         <div class="container-pagina-logare" id="form-container-1" style="width: 240px; background-color: #8B4513; border-radius: 20px; padding: 10px; height: 350px;">
             <label for="uname" style="margin-bottom: 5px; font-family: system-ui; display: block;">
                 <b style="background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); border-radius: 15px; padding: 5px; border: 1px solid #8B4513; text-align: center; margin-bottom: 5px;">Nume Utilizator:</b>
-                <input type="text" placeholder="Username/ User" id="username" name="username" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); box-shadow: 2px 2px 5px red, 4px 4px 5px blue, 6px 6px 5px white; height: 10px">
+                <input type="text" placeholder="Username/ User" id="username" name="username" autocomplete="username" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); box-shadow: 2px 2px 5px red, 4px 4px 5px blue, 6px 6px 5px white; height: 10px">
             </label>
             <label for="password" style="margin-bottom: 5px; font-family: system-ui; display: block;">
                 <b style="background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); border-radius: 15px; padding: 5px; border: 1px solid #8B4513; text-align: center; margin-bottom: 5px;">Parola:</b>
-                <input type="password" id="password" name="password" accept="file" placeholder="Scrie Parola" required="true" style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); box-shadow: 2px 2px 5px red, 4px 4px 5px blue, 6px 6px 5px white; height: 10px;">
+                <input type="password" id="password" name="password" accept="file" placeholder="Scrie Parola" autocomplete="current-password" required="true" style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); box-shadow: 2px 2px 5px red, 4px 4px 5px blue, 6px 6px 5px white; height: 10px;">
             </label>
             <button type="submit" id="submit-button-form" style="background-color: #875050; border-radius: 20px; padding: 15px 10px; margin-bottom: 10px; border: none; cursor: pointer; width: 100%;">Logheaza-te</button>
             <label for="password" style="margin-bottom: 5px; font-family: system-ui; display: block;">
                 <input type="checkbox" accept="file" checked="checked" name="remember" style="margin-right: 5px;">Memoreaza informatiile de conectare.
             </label>
         </div>
-    
         <div class="container" id="container_for_Cancel&Forgotten_Password" style="background-color: #8B4513; border-radius: 9px; margin-bottom: 10px; width: 190px; padding: 5px; cursor: pointer;">
             <button type="button" class="cancelbtn" style="border-radius: 10px; background-color: deepskyblue; margin-bottom: 1px; margin-top: 0px;">Anuleaza</button>
             <span class="psw" style="font-size: x-small; margin-left: 10px;">Ai uitat <a href="#Link">parola?</a></span>

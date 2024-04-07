@@ -15,7 +15,7 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background-color: #4a2e0f6c; /* Coffee-themed color */
+        background: linear-gradient(100deg, #F5DEB3, #D2B48C, #A0522D);
         border: solid 1px yellow;
         border-radius: 30px;
         border-style: ridge;
@@ -38,11 +38,15 @@
         text-align: center; /* Aligning the text to the right */
         color: #fff;
         margin: 0;
+        border-radius: 30px;
       }
 
       header h1 {
-        margin: 0; /* Removing default margin */
-        font-size: 20px; /* Adjusting font size */
+        /* Removing default margin */
+        margin: 0; 
+        /* Adjusting font size */
+        font-size: 20px; 
+        border-radius: 30px;
       }
 
       /* Styles for the main content */
@@ -63,7 +67,7 @@
         padding: 20px;
         margin-bottom: 20px;
         /* Linear gradient background */
-        background: linear-gradient(45deg, #ebb56b, #ff6666); 
+        background: linear-gradient(45deg, #F0F0F0, #E0E0E0);
         border: 2px solid #ff6666; 
         border-radius: 10px; 
         padding: 20px; 
@@ -83,7 +87,7 @@
         max-width: calc(100% - 120px); /* Adjust according to image width and margin */
       }
       .description h3 {
-        margin-top: 0;
+        margin-top: 0px;
       }
       .description p {
         border: 1px groove #000000;
@@ -92,6 +96,7 @@
         margin-top: 55px;
         margin-left: 2px;
         padding: 10px;
+        max-height: 140px;
       }
       .description button {
         margin-top: 10px; /* Add some space between paragraph and button */
@@ -218,20 +223,22 @@
         cursor: pointer;
       }
       .clear-cart-btn {
-        position: sticky;
-        top: 0;
-        right: 0;
-        padding: 5px 10px;
+        position: fixed;
+        bottom: 0px;
+        right: 20px;
+        padding: 10px 20px;
         background-color: #ffffff;
-        border: 1px solid #dddddd;
+        border: none;
         border-radius: 5px;
         cursor: pointer;
+        z-index: 1000;
       }
       .cart-dropdown.active .clear-cart-btn {
         background-color: #dddddd;
         display: inline-block;
         position: relative;
         margin-left: 240px;
+        margin-top: 10px;
       }
 
       /* Styles for the cart badge */
@@ -254,7 +261,7 @@
         overflow-y: auto;
         background-color: #fff;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        border-radius: 30px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         /* Height and transition removed */
       }
@@ -376,11 +383,11 @@
       <button class="close-button" onclick="closeDropdown()"><i class="fas fa-times"></i></button>
       <div class="row" id="cartItems"></div>
         <!-- Product containers -->
-        <div class="product-container">
+        <div class="product-container" id="Product_1">
             <img src="https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1" style="width: 100px; height: 100px;">
-            <div class="description">
+            <div class="description" style="background-color: #988579; border-radius: 30px;">
               <h2>Product 1</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Produs din cafea de calitate buna</p>
               <div class="quantity-selector">
                 <button class="quantity-btn" onclick="decrementQuantity(this)">-</button>
                 <input type="number" class="quantity-input" value="1">
@@ -390,11 +397,11 @@
               <button class="btn btn-secondary" onclick="removeFromCart(this)" ><i class="fas fa-cart-plus"></i> Remove from Cart</button>
             </div>
         </div>
-        <div class="product-container">
+        <div class="product-container" id="Product_2">
           <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 2" style="width: 100px; height: 100px;">
-              <div class="description">
+              <div class="description" style="background-color: #988579; border-radius: 30px;">
                   <h3>Product 2</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p>Produs din cafea de calitate superioara</p>
                   <div class="quantity-selector">
                     <button class="quantity-btn" onclick="decrementQuantity(this)">-</button>
                     <input type="number" class="quantity-input" value="1">
@@ -417,174 +424,145 @@
       <div class="navbar" style="width: auto; height: auto; position: -webkit-sticky; border: 2px solid #ff6666; background-color: #f9f9f9; border-radius: 30px;">
         <a href="http://192.168.100.53:8081/WebSite/public/index.html" style="text-decoration: none; color: #333; padding: 10px; border-radius: 30px; background-color: #ff6666; bottom: 9px; position: relative; font-size: small; text-decoration: overline;">Acasa</a>
         <a href="#news" style="text-decoration: overline; color: #000000; padding: 10px; border-radius: 30px; background-color: #ff6666; position: relative; bottom: 9px; right: 4px; font-size: small;">Noutati</a>
-            <div class="dropdown">
-                <button class="dropbtn" style="position: relative; border-radius: 30px; width: 100px; height: 40px; position: relative; bottom: 10px; left: 110px; background-color: #ff6666; font-size: small; text-decoration-line: overline;">Dropdown
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content flowWaves flowWavesDepth" style="width: 600px;">
-                    <div class="header">
-                        <h2 style="font-size: medium; text-align: center;">Mega Menu</h2>
-                    </div>
-                    <div class="row" id="row-1">
-                        <div class="column">
-                            <div class="product-container">
-                                <h3>Produse din boabe de cafea Arabica</h3>
-                                <a href="#link">Link 1</a>
-                                <a href="#link">Link 2</a>
-                                <a href="#link">Link 3</a>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="product-container">
-                                <h4>Produse cafea capsule de cafea</h4>
-                                <a href="#link">Link 1</a>
-                                <a href="#link">Link 2</a>
-                                <a href="#link">Link 3</a>
-                            </div>
-                        </div>
-                        <div class="column" id="row-3">
-                            <div class="product-container">
-                                <h5>Cafea boabe</h5>
-                                <a href="#link">Link 1</a>
-                                <a href="#link">Link 2</a>
-                                <a href="#link">Link 3</a>
-                            </div>
-                        </div>
-                        <div class="column" id="row-4">
-                          <div class="product-container">
-                              <h6>Cafea boabe</h6>
-                              <a href="#link">Link 1</a>
-                              <a href="#link">Link 2</a>
-                              <a href="#link">Link 3</a>
-                          </div>
-                        </div>
-                        <div class="column" id="row-5">
-                          <div class="product-container">
-                              <h7>Cafea boabe</h7>
-                              <a href="#link">Link 1</a>
-                              <a href="#link">Link 2</a>
-                              <a href="#link">Link 3</a>
-                          </div>
-                        </div>
-                        <div class="column" id="row-6">
-                          <div class="product-container">
-                              <h8>Cafea boabe</h8>
-                              <a href="#link">Link 1</a>
-                              <a href="#link">Link 2</a>
-                              <a href="#link">Link 3</a>
-                          </div>
-                        </div>
-                        <div class="column" id="row-7">
-                          <div class="product-container">
-                              <h9>Cafea boabe</h9>
-                              <a href="#link">Link 1</a>
-                              <a href="#link">Link 2</a>
-                              <a href="#link">Link 3</a>
-                          </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="dropdown">
+          <button class="dropbtn" style="position: relative; border-radius: 30px; width: 100px; height: 40px; position: relative; bottom: 10px; left: 110px; background-color: #ff6666; font-size: small; text-decoration-line: overline;">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content flowWaves flowWavesDepth" style="width: 350px; display: none; margin-top: 20px; background-color: #988579; height: 600px;">
+            <div class="header">
+              <h2 style="font-size: medium; text-align: center;">Mega Menu</h2>
             </div>
+            <div class="row" id="row-1">
+              <div class="column">
+                <div class="container" style="width: 300px; height: auto; background-color: #ffb28c; border-radius: 30px;">
+                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
+                  <div class="product-content" style="display: none;">
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
+                  </div>
+                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
+                  <div class="product-content" style="display: none;">
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
+                  </div>
+                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
+                  <div class="product-content" style="display: none;">
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
+                  </div>
+                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
+                  <div class="product-content" style="display: none;">
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
+                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
+    
+    <script>
+      // Add event listener to toggle dropdown content when dropdown button is clicked
+      document.querySelector('.dropbtn').addEventListener('click', function() {
+        var dropdownContent = this.nextElementSibling; // Find the dropdown content next to the dropdown button
+        // Toggle display of content
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+      });
+    
+      // Add event listener to toggle dropdown content for each product-container
+      document.querySelectorAll('.dropbtn-product').forEach(function(button) {
+        button.addEventListener('click', function() {
+          var content = this.nextElementSibling; // Find the dropdown content next to the clicked button
+          // Toggle display of content
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    </script>
+    
+    
+    
     <script>
       document.getElementById('dropdownToggle').addEventListener('click', function(event) {
-          var dropdownContent = document.getElementById('dropdownContent');
-          if (dropdownContent.style.display === 'block') {
-              dropdownContent.style.display = 'none';
-          } else {
-              dropdownContent.style.display = 'block';
-              // Pass dropdownContent as the parent container
-              addProductContainers(dropdownContent); 
-          }
-          // Prevent the default action of the button
-          event.preventDefault(); 
+        var dropdownContent = document.getElementById('dropdownContent');
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        // Prevent the default action of the button
+        event.preventDefault();
       });
-  
+    
       let productCounter = 0; // Counter to keep track of the number of products added
-
+    
       function addToCart(product) {
-        let cartCounter = document.getElementById('cartCounter');
-        let quantity = 1; // Default quantity is 1 for each addition
-
-        // Check if the product is already in the cart
-        let existingProduct = document.querySelector(`.cart-item-container[data-product-id="${productCounter}"]`);
-        if (existingProduct) {
-            // If the product already exists, increment its quantity
-            let quantitySpan = existingProduct.querySelector('.quantity-span');
-            let currentQuantity = parseInt(quantitySpan.textContent.split(':')[1].trim());
-            quantitySpan.textContent = `Quantity: ${currentQuantity + 1}`;
+        // If the product is new, create a new container for it
+        let existingProductContainer = document.querySelector(`.cart-item-container[data-product-id="${productCounter}"]`);
+        if (!existingProductContainer) {
+          // Create a new container for the product
+          let cartItemContainer = createCartItemContainer(product);
+    
+          // Append the container to the cart dropdown container
+          cartDropdown.appendChild(cartItemContainer);
+    
+          // Increment the cart counter
+          let cartCounter = document.getElementById('cartCounter');
+          cartCounter.innerText = parseInt(cartCounter.innerText) + 1;
         } else {
-            // If the product is new, create a new container for it
-            productCounter++;
-
-            // Create a new container for the product
-            let cartItemContainer = document.createElement('div');
-            cartItemContainer.classList.add('cart-item-container');
-            cartItemContainer.setAttribute('data-product-id', productCounter);
-
-            // Set width, height, and border styles
-            cartItemContainer.style.width = '200px';
-            cartItemContainer.style.height = '200px';
-            cartItemContainer.style.border = '1px groove black';
-            cartItemContainer.style.borderRadius = '30px';
-
-            // Create a new cart item
-            let cartItem = createProductContainer(product);
-
-            // Append the cart item to the container
-            cartItemContainer.appendChild(cartItem);
-
-            // Add quantity to the container
-            let quantitySpan = document.createElement('span');
-            quantitySpan.classList.add('quantity-span');
-            quantitySpan.textContent = 'Quantity: ' + quantity;
-            cartItemContainer.appendChild(quantitySpan);
-
-            // Get the cart dropdown container
-            let cartDropdown = document.getElementById('cartDropdown');
-
-            // Append the container to the cart dropdown container
-            cartDropdown.appendChild(cartItemContainer);
+          // If the product container already exists, increment its quantity
+          let quantitySpan = existingProductContainer.querySelector('.quantity-span');
+          let currentQuantity = parseInt(quantitySpan.textContent.split(':')[1].trim());
+          quantitySpan.textContent = `Quantity: ${currentQuantity + 1}`;
         }
-
-        // Update the cart counter
-        let currentCount = parseInt(cartCounter.innerText);
-        cartCounter.innerText = currentCount + quantity;
-
-        // Show dropdown if hidden
-        cartDropdown.parentNode.classList.add('active');
       }
-
+    
       function createProductContainer(product) {
         // Create a container for the product
         let productContainer = document.createElement('div');
         productContainer.classList.add('product-container');
-
+    
         // Set width and height
         productContainer.style.width = '100px';
         productContainer.style.height = '100px';
-
+        // Center align the content
+        productContainer.style.textAlign = 'center';
+    
         // Add border
         productContainer.style.border = '1px solid black';
         productContainer.style.borderRadius = '20px';
-
-        // Create and add the product image
+    
+        // Create the image element
         let productImage = document.createElement('img');
-        productImage.src = product.link;
+        // Set the src attribute to the specified URL
+        productImage.src = 'https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+        // Set the alt attribute to the product name
         productImage.alt = product.name;
-        // Adjust the image size as needed
-        productImage.style.width = '80px'; 
-        // Adjust the image size as needed
-        productImage.style.height = '80px'; 
+        // Set the width and height of the image
+        // Adjust the size as needed
+        productImage.style.width = '80px';
+        // Adjust the size as needed
+        productImage.style.height = '80px';
+        // Adjust margin for better alignment
+        productImage.style.marginTop = '10px';
+        // Round the corners
+        productImage.style.borderRadius = '20px';
+    
+        // Append the image to the product container
         productContainer.appendChild(productImage);
-
+    
         // Create and add the product name
         let productName = document.createElement('div');
+        productName.classList.add('product-name');
         productName.textContent = product.name;
-        productName.style.textAlign = 'center';
+        // Style the product name
+        // Adjust margin for better alignment
+        productName.style.marginTop = '5px';
+    
+        // Append the product name to the container
         productContainer.appendChild(productName);
-
+    
         // Return the product container
         return productContainer;
       }
@@ -718,60 +696,37 @@
         }
     
         if (cartDropdown.classList.contains('active')) {
-            // Cart is active, hide it and remove all product containers
-            cartDropdown.classList.remove('active');
-            // Animate closure
-            cartDropdown.style.animation = "explode 0.5s ease";
-            setTimeout(() => {
-                cartDropdown.innerHTML = ''; // Clearing inner HTML
-                cartDropdown.style.animation = ""; // Remove animation after completion
-            }, 500); // Timeout to match animation duration
+          // Cart is active, hide it
+          cartDropdown.classList.remove('active');
         } else {
           // Cart is not active, show it
-            cartDropdown.classList.add('active');
-            // Add coffee-themed background when active
-            cartDropdown.style.background = "linear-gradient(to bottom, #8B4513, #D2B48C)";
-            if (dropdownContent.style.display !== 'block') {
-                // If dropdown content is not visible, add product containers
-                if (cartDropdown.children.length === 0) {
-                    // Only add product containers if none exist already
-                    addProductContainers(cartDropdown);
-                }
+          cartDropdown.classList.add('active');
+          // Add coffee-themed background when active
+          cartDropdown.style.background = "linear-gradient(to bottom, #8B4513, #D2B48C)";
+          if (dropdownContent.style.display !== 'block') {
+            // If dropdown content is not visible, add product containers
+            if (cartDropdown.children.length === 0) {
+              // Only add product containers if none exist already
+              addProductContainers(cartDropdown);
             }
+          }
         }
-    }
-    function addClearCartButton() {
-      // Create the clear cart button
-      let clearCartButton = document.createElement('button');
-      clearCartButton.textContent = 'Clear Cart';
-      clearCartButton.classList.add('clear-cart-button');
-
-      // Add event listener to clear the cart when the button is clicked
-      clearCartButton.addEventListener('click', function() {
-          clearCart();
-      });
-
-      // Append the button to the cart dropdown container
-      let cartDropdown = document.getElementById('cartDropdown');
-      cartDropdown.appendChild(clearCartButton);
-    }
-
-    // Call the function to add the clear cart button when the window loads
-    window.onload = function() {
+      }
+    
+    
+      function clearCart() {
+        let cartCounter = document.getElementById('cartCounter');
+        cartCounter.innerText = '0';
+        let cartDropdown = document.getElementById('cartDropdown');
+    
+        // Clearing all the product containers
+        cartDropdown.innerHTML = '';
+    
+        // Re-append the clear cart button
         addClearCartButton();
-    };
-
-    function clearCart() {
-      let cartCounter = document.getElementById('cartCounter');
-      cartCounter.innerText = '0';
-      let cartDropdown = document.getElementById('cartDropdown');
-
-      // Clearing all the product containers
-      cartDropdown.innerHTML = '';
-      cartDropdown.classList.remove('active');
-    }
-  </script>
-  
-  
+    
+        cartDropdown.classList.remove('active');
+      }
+    </script>
 </body>
 </html>
