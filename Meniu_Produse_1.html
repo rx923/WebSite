@@ -589,27 +589,134 @@
         return productContainer;
       }
     
+    
+      function createCartItemContainer(product, productId) {
+        let cartItemContainer = document.createElement('div');
+        cartItemContainer.classList.add('cart-item-container');
+        cartItemContainer.setAttribute('data-product-id', productId);
+
+        // Set width, height, and border styles
+        cartItemContainer.style.width = '100px';
+        cartItemContainer.style.height = '100px';
+        cartItemContainer.style.border = '1px groove black';
+        cartItemContainer.style.borderRadius = '30px';
+
+        // Create a new cart item
+        let cartItem = createProductContainer(product);
+
+        // Append the cart item to the container
+        cartItemContainer.appendChild(cartItem);
+
+        // Add quantity to the container
+        let quantitySpan = document.createElement('span');
+        quantitySpan.classList.add('quantity-span');
+        quantitySpan.textContent = 'Quantity: 1'; // Default quantity is 1 for each addition
+        quantitySpan.style.backgroundColor = 'white'; // Set background color to white
+        quantitySpan.style.borderRadius = '30px';
+        cartItemContainer.appendChild(quantitySpan);
+
+        return cartItemContainer;
+      }
+    
+      function removeFromCart(btn) {
+        let productNameElement = btn.parentElement.querySelector('.product-name');
+        if (!productNameElement) {
+          console.error('Product name element not found.');
+          return;
+        }
+        let productName = productNameElement.innerText;
+        let quantityInput = btn.parentElement.querySelector('.quantity-input');
+        let quantity = parseInt(quantityInput.value);
+    
+        // Update the cart counter
+        let cartCounter = document.getElementById('cartCounter');
+        let currentCount = parseInt(cartCounter.innerText);
+        let newCount = Math.max(currentCount - quantity, 0);
+        cartCounter.innerText = newCount;
+    
+        // Find and update the product container in the cart dropdown container
+        let cartItems = document.querySelectorAll('.cart-item-container');
+        cartItems.forEach(item => {
+          let itemName = item.querySelector('.product-name').innerText;
+          if (itemName === productName) {
+            // Update quantity
+            let quantitySpan = item.querySelector('.quantity-span');
+            let currentQuantity = parseInt(quantitySpan.textContent.split(':')[1].trim());
+            let updatedQuantity = Math.max(currentQuantity - quantity, 0);
+            quantitySpan.textContent = `Quantity: ${updatedQuantity}`;
+    
+            // If quantity becomes zero, remove the container
+            if (updatedQuantity === 0) {
+              item.remove();
+            }
+          }
+        });
+    
+        // Show or hide clear cart button
+        let clearCartButton = document.querySelector('.clear-cart-btn');
+        if (newCount > 0) {
+          clearCartButton.style.display = 'block';
+        } else {
+          clearCartButton.style.display = 'none';
+        }
+    
+        // Ensure cart dropdown remains open
+        let cartDropdown = document.getElementById('cartDropdown');
+        cartDropdown.classList.add('active');
+      }
+    
       function closeDropdown() {
         var dropdownContent = document.getElementById('dropdownContent');
         dropdownContent.style.display = 'none';
       }
-  
+    
       function decrementQuantity(btn) {
         let quantityInput = btn.nextElementSibling;
-        if (parseInt(quantityInput.value) > 1){
-          quantityInput.value = parseInt(quantityInput.value) - 1;
+        let currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+          // Decrement the quantity input
+          quantityInput.value = currentQuantity - 1;
+          // Remove one item from the cart
         }
       }
-  
+    
       function incrementQuantity(btn) {
-          let quantityInput = btn.previousElementSibling;
-          quantityInput.value = parseInt(quantityInput.value) + 1;
+        let quantityInput = btn.previousElementSibling;
+        let currentQuantity = parseInt(quantityInput.value);
+        let previousQuantity = currentQuantity - 1; // Previous quantity before incrementing
+    
+        // Increment the quantity input
+        quantityInput.value = currentQuantity + 1;
+    
+        // Add the difference to the cart (number of products added)
+        let difference = currentQuantity - previousQuantity;
+        for (let i = 0; i < difference; i++) {
+          addToCart(btn);
+        }
       }
-  
+    
+      function addClearCartButton() {
+        let cartDropdown = document.getElementById('cartDropdown');
+        // Check if a clear button already exists
+        if (!document.querySelector('.clear-cart-btn')) {
+          let clearCartButton = document.createElement('button');
+          clearCartButton.classList.add('clear-cart-btn');
+          clearCartButton.innerText = 'Clear Cart';
+          clearCartButton.onclick = clearCart;
+          cartDropdown.appendChild(clearCartButton);
+        }
+      }
+    
       function toggleCart() {
         let dropdownContent = document.getElementById('dropdownContent');
         let cartDropdown = document.getElementById('cartDropdown');
-
+        let cartCounter = document.getElementById('cartCounter');
+    
+        if (parseInt(cartCounter.innerText) > 0) {
+          // Show the clear cart button
+          addClearCartButton();
+        }
+    
         if (cartDropdown.classList.contains('active')) {
             // Cart is active, hide it and remove all product containers
             cartDropdown.classList.remove('active');
@@ -620,6 +727,7 @@
                 cartDropdown.style.animation = ""; // Remove animation after completion
             }, 500); // Timeout to match animation duration
         } else {
+          // Cart is not active, show it
             cartDropdown.classList.add('active');
             // Add coffee-themed background when active
             cartDropdown.style.background = "linear-gradient(to bottom, #8B4513, #D2B48C)";
