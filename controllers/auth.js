@@ -9,7 +9,7 @@ const { sequelize, Session } = require('../models/sessionModel');
 // Adjusted import
 const { v4: uuidv4 } = require('uuid');
 const { mapSessionToUser, updateUserProfile, authenticateAndGenerateToken, updateSessionuser_id } = require('../routes/user_authentication_routes');
-
+const path = require('path');
 
 async function hashPassword(plaintextPassword) {
     try {
@@ -36,7 +36,8 @@ function generateSessionId(username) {
 // Ensure userId is a valid integer before storing it
 async function storeTokenInDatabase(sid, userId, token, expire) {
     try {
-        userId = parseInt(userId); // Ensure userId is a valid integer
+        // Ensure userId is a valid integer
+        userId = parseInt(userId); 
         if (isNaN(userId)) {
             throw new Error('Invalid user ID');
         }
@@ -95,28 +96,32 @@ async function registerUser(req, res, username, email, password, userDetails) {
 };
 
 
-async function authenticateAndCompare(req, providedUsername, providedPassword) {
+async function authenticateAndCompare(req, res, providedUsername, providedPassword) {
     try {
         // Authenticate user
         const user = await User.findOne({ where: { username: providedUsername } });
 
         if (!user) {
-            return { error: 'Invalid username or password.' };
+            // Render the wrong_username template and send it to the client
+            return res.render('wrong_username', { pageTitle: 'Wrong Username' });
         }
 
         // Compare the provided password with the hashed password stored in the database
         const isPasswordValid = await bcrypt.compare(providedPassword, user.password);
 
         if (!isPasswordValid) {
-            return { error: 'Invalid username or password.' };
+            // Render the wrong_password template and send it to the client
+            return res.render('wrong_password', { pageTitle: 'Wrong Password' });
         }
 
-        return { user }; // Return the user if authentication and password comparison are successful
+        // Return the user if authentication and password comparison are successful
+        return { user }; 
     } catch (error) {
         console.error('Error authenticating user:', error);
         throw error;
     }
 };
+
 
 async function fetchUserData(id) {
     // Fetch user data from the database based on the provided id
@@ -142,7 +147,7 @@ async function fetchUserData(id) {
         console.error('Error fetching user information:', error);
         throw error;
     }
-}
+};
 
 
 
@@ -153,39 +158,36 @@ const authController = {
     
             if (!username || !password) {
                 console.log('Missing username or password in request:', req.body);
-                return res.status(400).json({ error: 'Username and password are required.' });
+                // Render the login page with an error message
+                return res.status(404).render('wrong_username_password', { pageTitle: 'Wrong Username or Password' });
             }
     
             console.log('Attempting to login with username:', username);
     
-            // Authenticate user and generate token
-            const authResult = await authenticateAndCompare(req, username, password);
-            console.log('Authentication result:', authResult);
+            // Authenticate user
+            const user = await User.findOne({ where: { username } });
     
-            if (authResult.error) {
-                console.error('Authentication error:', authResult.error);
-                return res.status(401).json({ error: authResult.error });
+            // Declare constants for user existence and password validation
+            const userExists = !!user;
+            const isPasswordValid = userExists ? await bcrypt.compare(password, user.password) : false;
+    
+            // Check if the user exists and password is valid
+            if (!userExists || !isPasswordValid) {
+                console.error('User not found or incorrect password');
+                // Render the wrong username or password page
+                return res.status(401).sendFile(path.join(__dirname, '../public/wrong_password&username.html'));
             }
     
-            const { token, user } = authResult;
             req.session.loginTime = new Date();
-    
-            // Set user_id in the session after successful login
             req.session.user_id = user.id;
-    
-            // Associate the user ID with the session ID in the session table
             await mapSessionToUser(req.session.id, user.id);
-    
             console.log('User logged in successfully:', user.username);
-    
-            // Fetch user data from the database
             const userData = await fetchUserData(user.id, user.username);
-    
-            // Render the profile page with user data
-            return res.render('profile', { user: userData });
+            return res.redirect('/logged_in.html');
         } catch (error) {
             console.error('Error logging in:', error);
-            return res.status(500).json({ error: 'Internal server error' });
+            // Render the login page with an error message
+            return res.status(500).render('login', { error: 'Internal server error' });
         }
     },
     

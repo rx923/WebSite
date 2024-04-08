@@ -48,6 +48,43 @@ app.post('/logout', authController.logout);
 app.use('/register', authController.register);
 app.use('/submit-profile-completion', authController.profileCompletion);
 app.post('/profile-photo', profileRoutes);
+app.post('/send-message', (req, res) => {
+    //Retreiving the message from the request body
+    const message = req.body.message;
+
+    console.log('Received message:', message);
+
+    res.send('Message received successfully!');
+});
+app.post('/support-group')
+
+// Route for user password reset
+app.post('/reset-password', async (req, res) => {
+    const { currentPassword, newPassword } = req.body;
+    
+    try {
+        // Assuming you're using session middleware that populates req.user_id
+        const userId = req.user_id;
+
+        // Fetch the current password from the database
+        const storedPassword = await getCurrentPassword(userId);
+        
+        // Compare the current password provided by the user with the stored password
+        const passwordMatch = await bcrypt.compare(currentPassword, storedPassword);
+        if (!passwordMatch) {
+            return res.status(400).json({ error: 'Current password is incorrect.' });
+        }
+
+        // Update the password in the database
+        await updatePassword(userId, newPassword);
+
+        // Send success message
+        res.status(200).json({ message: 'Password reset successfully.' });
+    } catch (error) {
+        console.error('Error resetting password:', error);
+        res.status(500).json({ error: 'An error occurred. Please try again later.' });
+    }
+});
 
 // Your authentication middleware
 const requireAuth = (req, res, next) => {
@@ -86,68 +123,30 @@ app.get('/user/profile', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
-
-
-app.post('/send-message', (req, res) => {
-    //Retreiving the message from the request body
-    const message = req.body.message;
-
-    console.log('Received message:', message);
-
-    res.send('Message received successfully!');
-});
-
-
-
-app.post('/support-group')
-
 app.get('/logged_in', (req, res) => {
     const username = req.session.username;
     res.render('logged_in', { username: username });
 });
-
 app.get('/Profile.html', (req, res) => {
      // Assuming you have a view engine set up
     res.render('profile', { user: userDetails });
 });
-
-
-// Route for user password reset
-app.post('/reset-password', async (req, res) => {
-    const { currentPassword, newPassword } = req.body;
-    
-    // Assuming you're using session middleware that populates req.user
-    const userId = req.user.id;
-
-    try {
-        // Retrieve the stored password from the database
-        const storedPassword = await getCurrentPassword(userId);
-
-        // Compare the current password provided by the user with the stored password
-        const passwordMatch = await bcrypt.compare(currentPassword, storedPassword);
-        if (!passwordMatch) {
-            return res.status(400).json({ error: 'Current password is incorrect.' });
-        }
-
-        // Update the password in the database
-        await updatePassword(userId, newPassword);
-
-        res.status(200).json({ message: 'Password reset successfully.' });
-    } catch (error) {
-        console.error('Error: ', error);
-        res.status(500).json({ error: 'An error occurred. Please try again later.' });
-    }
-});
-
-
 //Route for the products
-
 app.get('/api/products', (req, res) => {
     res.sendFile(path.join(__dirname, 'Products_lists', 'produse.json'));
 });
+app.get('/wrong_username', (req, res) => {
+    res.render('wrong_username', { pageTitle: 'Wrong Username' });
+});
+app.get('/wrong_password', (req, res) => {
+    res.render('wrong_password', { pageTitle: 'Wrong Password' });
+});
 
-
-
+function getUserIdFromSession(sessionHash) {
+    // Logic to retrieve user ID from session based on hash
+    // Example:
+    return sessions[sessionHash].userId;
+}
 // Sync Sequelize models with the database
 sequelize.sync()
     .then(() => {
