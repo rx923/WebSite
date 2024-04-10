@@ -12,7 +12,7 @@ async function hashPassword(plaintextPassword) {
     try {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(plaintextPassword, salt);
-        console.log('Password hashed successfully');
+        console.log('Password hashed successfully', hashedPassword);
         return hashedPassword;
     } catch (error) {
         console.error('Error hashing password:', error);
@@ -74,24 +74,34 @@ async function storeTokenInDatabase(sessionId, userId, expire, token) {
 
 async function authenticateAndCompare(providedUsername, providedPassword) {
     try {
+        console.log('Authenticating user:', providedUsername);
+        console.log('Provided Password:', providedPassword);
+
         const user = await User.findOne({ where: { username: providedUsername } });
 
         if (!user) {
+            console.log('User not found:', providedUsername);
             return { error: 'Invalid username' };
         }
 
+        console.log('User found:', user.username);
+
+        // Check if the provided password matches the stored hashed password
         const isPasswordValid = await bcrypt.compare(providedPassword, user.password);
 
         if (!isPasswordValid) {
+            console.log('Invalid password for user:', providedUsername);
             return { error: 'Invalid password' };
         }
 
-        return { user }; 
+        console.log('User authenticated successfully:', providedUsername);
+        return { user };
     } catch (error) {
         console.error('Error authenticating user:', error);
         throw error;
     }
 };
+
 
 async function registerUser(req, res, username, email, hashedPassword, userDetails) {
     try {
@@ -171,22 +181,24 @@ const authController = {
         try {
             const { username, password } = req.body;
     
+            // Check for missing credentials
             if (!username || !password) {
                 console.log('Missing username or password in request:', req.body);
                 // Render the login page with an error message
-                return res.status(404).render('wrong_username_password', { pageTitle: 'Wrong Username or Password' });
+                return res.status(401).sendFile(path.join(__dirname, '../public/wrong_password&username.html'));
             }
     
-            console.log('Attempting to login with username:', username);
-    
             // Authenticate user and compare password
-            const authResult = await authenticateAndCompare(username, password); // Remove req, res here
-    
+            const authResult = await authenticateAndCompare(username, password);
+            console.log(authResult, {username}, {password});
+            // Check for authentication errors
             if (authResult.error) {
                 console.error('Authentication error:', authResult.error);
                 // Render the wrong username or password page
                 return res.status(401).sendFile(path.join(__dirname, '../public/wrong_password&username.html'));
             }
+    
+            console.log('Attempting to login with username:', username);
     
             const { user } = authResult;
     
@@ -195,12 +207,10 @@ const authController = {
     
             // Generate token
             const token = await generateToken(sessionId, user.id);
-    
             console.log('Token generated:', token);
     
-            // Set expiration time
             // 30 minutes expiration
-            const expire = new Date(Date.now() + (30 * 60 * 1000)); 
+            const expire = new Date(Date.now() + (30 * 60 * 1000));
     
             // Store token in database with expiration time
             const storedToken = await storeTokenInDatabase(sessionId, user.id, expire, token);
@@ -295,7 +305,8 @@ const authController = {
     profileCompletion: async (req, res) => {
         try {
             const { first_name, last_name, full_name, location, phone_number, contact_details, address } = req.body;
-
+    
+            // Sanitize input
             const sanitizedFirstName = validator.escape(first_name);
             const sanitizedLastName = validator.escape(last_name);
             const sanitizedFullName = validator.escape(full_name);
@@ -303,7 +314,8 @@ const authController = {
             const sanitizedPhoneNumber = validator.escape(phone_number);
             const sanitizedContactDetails = validator.escape(contact_details);
             const sanitizedAddress = validator.escape(address);
-
+    
+            // Check for empty fields
             if (
                 sanitizedFirstName.trim() === '' ||
                 sanitizedLastName.trim() === '' ||
@@ -315,7 +327,7 @@ const authController = {
             ) {
                 return res.status(400).json({ error: 'One or more required fields are empty' });
             }
-
+    
             const userDetails = {
                 first_name: sanitizedFirstName,
                 last_name: sanitizedLastName,
@@ -326,21 +338,23 @@ const authController = {
                 address: sanitizedAddress,
                 country_of_residence: 'Unknown'
             };
-
+    
             console.log('User details:', userDetails);
-
+    
+            // Retrieve registration data from session
             if (!req.session.registrationData) {
                 return res.status(400).json({ error: 'Registration data not found in session' });
             }
-
+    
             const { username, email, password } = req.session.registrationData;
-
+    
             console.log('Registration data:', { username, email, password });
-
+    
+            // Register user with complete profile
             const newUser = await registerUser(req, res, username, email, password, userDetails);
-
+    
             console.log('User registered successfully:', newUser);
-
+    
             return res.status(200).json({ message: 'Profile completed successfully' });
         } catch (error) {
             console.error('Error submitting profile:', error);
