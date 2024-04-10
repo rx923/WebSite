@@ -77,6 +77,27 @@ const User = sequelize.define('User', {
       type: DataTypes.STRING(255),
       allowNull: false,
   },
+  profilepicturefilename: {
+    type: DataTypes.STRING(255),
+    allowNull: true,
+  },
+  profilepicturefilepath: {
+    type: DataTypes.STRING(255),
+    allowNull: true,
+  },
+  profilepicturefilesize: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+  profilepicturemimetype: {
+    type: DataTypes.STRING(50),
+    allowNull: true,
+  },
+  profilepictureuploaddate: {
+    type: DataTypes.DATE,
+    allowNull: true,
+  },
+
 }, { tableName: 'users' });
 
 addPasswordHashHook(User);
