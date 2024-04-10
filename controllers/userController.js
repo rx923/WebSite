@@ -1,3 +1,6 @@
+const { login, logout, register } = require('../controllers/auth');
+
+
 // Function to handle user registration
 exports.register = async (req, res) => {
     try {

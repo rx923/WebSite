@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const { addPasswordHashHook, saltRounds } = require('./userHooks.js');
 const { sequelize: dbInstance } = require('../routes/db_config.js'); 
 
+
 const sequelize = new Sequelize({
   dialect: 'postgres',
   host: process.env.DB_HOST || '192.168.100.53',
@@ -16,66 +17,66 @@ const sequelize = new Sequelize({
 
 const User = sequelize.define('User', {
   id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      allowNull: false,
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
   },
   username: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      unique: true,
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    unique: true,
   },
   email: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      unique: true,
+    type: DataTypes.STRING(100),
+    allowNull: false,
+    unique: true,
   },
   password: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
+    type: DataTypes.STRING(100),
+    allowNull: false,
   },
   full_name: {
-      type: DataTypes.STRING(255), 
-      allowNull: false, 
+    type: DataTypes.STRING(255), 
+    allowNull: false, 
   },
   location: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
+    type: DataTypes.STRING(255),
+    allowNull: false,
   },
   phone_number: {
-      type: DataTypes.STRING(20), 
-      allowNull: false,
+    type: DataTypes.STRING(20), 
+    allowNull: false,
   },
   contact_details: {
-      type: DataTypes.TEXT(200),
-      allowNull: false,
+    type: DataTypes.TEXT(200),
+    allowNull: false,
   },
   address: {
-      type: DataTypes.TEXT(100),
-      allowNull: false,
+    type: DataTypes.TEXT(100),
+    allowNull: false,
   },
   country_of_residence: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
+    type: DataTypes.STRING(100),
+    allowNull: false,
   },
   createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.NOW,
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
   },
   updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: Sequelize.NOW,
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.NOW,
   },
   first_name: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
+    type: DataTypes.STRING(255),
+    allowNull: false,
   },
   last_name: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
+    type: DataTypes.STRING(255),
+    allowNull: false,
   },
   profilepicturefilename: {
     type: DataTypes.STRING(255),
@@ -183,20 +184,36 @@ User.findByUsername = async (username) => {
   }
 };
 
-
 const updateUserProfile = async (userId, profileData) => {
   try {
-      const user = await User.findByPk(userId);
-      if (!user) {
-          throw new Error('User not found');
-      }
-      
-      await user.update(profileData);
-      console.log('User profile updated successfully');
+    const user = await User.findByPk(userId);
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    // Check if profile picture data is provided
+    if (profileData.profilepicturefilename) {
+      // Update profile picture fields
+      user.profilepicturefilename = profileData.profilepicturefilename;
+      user.profilepicturefilepath = profileData.profilepicturefilepath;
+      user.profilepicturefilesize = profileData.profilepicturefilesize;
+      user.profilepicturemimetype = profileData.profilepicturemimetype;
+      user.profilepictureuploaddate = profileData.profilepictureuploaddate;
+    }
+
+    // Update other profile data
+    delete profileData.profilepicturefilename;
+    delete profileData.profilepicturefilepath;
+    delete profileData.profilepicturefilesize;
+    delete profileData.profilepicturemimetype;
+    delete profileData.profilepictureuploaddate;
+    await user.update(profileData);
+
+    console.log('User profile updated successfully');
   } catch (error) {
-      console.error('Error updating user profile:', error);
-      throw error;
+    console.error('Error updating user profile:', error);
+    throw error;
   }
 };
 
-module.exports = { User, registerUser, updateUserProfile, sequelize };
+module.exports = { User, registerUser, updateUserProfile, sequelize, Session };

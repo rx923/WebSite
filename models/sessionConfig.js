@@ -1,15 +1,19 @@
+// File configured for handling the database session creation of the users connecting
+
 const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const { sequelize } = require('./sessionModel');
+const pgSession = require('connect-pg-simple')(session);
+const { pool } = require('../routes/db_config');
+// const { generateRandomSecret } = require('../routes/db_config.js');
 
 const sessionMiddleware = session({
-    secret: 'your-secret-key',
+    store: new pgSession({
+        pool: pool,
+        tableName: 'sessions'
+    }),
+    // secret: generateRandomSecret(),
     resave: false,
     saveUninitialized: false,
-    store: new SequelizeStore({
-        db: sequelize,
-        tableName: 'sessions'
-    })
+    cookie: { secure: false }
 });
 
 module.exports = sessionMiddleware;

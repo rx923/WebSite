@@ -85,4 +85,4 @@ const synchronizeUserTable = async () => {
 // };
 
 // Exporting the functions and the pool
-module.exports = { initializeDatabase, pool, synchronizeUserTable, configureSession, sessionStore };
+module.exports = { initializeDatabase, pool, synchronizeUserTable, configureSession, sessionStore, generateRandomSecret };

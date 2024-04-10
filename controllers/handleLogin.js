@@ -1,6 +1,8 @@
+// Handling the user related routes upon user login status in the account
+
+
 // Import your login function from login.js
 const login = require('../controllers/login'); 
-
 const handleLogin = async (req, res) => {
     try {
         const { username, password } = req.body;

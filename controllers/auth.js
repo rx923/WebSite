@@ -1,15 +1,12 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { User } = require('../models/userModel.js');
 const sessionUtils = require('./sessionUtils');
 const { Op } = require('sequelize');
 const validator = require('validator');
-const { sequelize, Session } = require('../models/sessionModel');
-//const { mapSessionToUser } = require('./sessionUtils');
-// Adjusted import
+const { User, Session } = require('../models/userModel');
 const { v4: uuidv4 } = require('uuid');
-const { mapSessionToUser, updateUserProfile, authenticateAndGenerateToken, updateSessionuser_id } = require('../routes/user_authentication_routes');
 const path = require('path');
+const { authenticateAndGenerateToken } = require('../routes/user_authentication_routes');
 
 async function hashPassword(plaintextPassword) {
     try {
@@ -23,18 +20,32 @@ async function hashPassword(plaintextPassword) {
     }
 };
 
-
-
 function generateSessionId(username) {
     const sessionId = `${username}-${uuidv4()}`;
     console.log('Session ID generated:', sessionId);
     return sessionId;
 };
 
+async function generateToken(sessionId, userId, expire) {
+    try {
+        // Generate a unique hash for signing the token using bcrypt
+        const saltRounds = 10;
+        const secretKey = (await bcrypt.hash(`${userId}${sessionId}`, saltRounds)).toString();
+
+        // Use the generated hash as the secret key
+        const payload = { userId };
+        const token = jwt.sign(payload, secretKey, { expiresIn: '30m' });
+
+        return token;
+    } catch (error) {
+        console.error('Error generating token:', error);
+        throw error;
+    }
+};
 
 
-// Ensure userId is a valid integer before storing it
-async function storeTokenInDatabase(sid, userId, token, expire) {
+
+async function storeTokenInDatabase(sessionId, userId, expire, token) {
     try {
         // Ensure userId is a valid integer
         userId = parseInt(userId); 
@@ -43,14 +54,14 @@ async function storeTokenInDatabase(sid, userId, token, expire) {
         }
 
         const session = await Session.create({
-            sid: sid,
+            sid: sessionId, 
             user_id: userId,
-            sess: sid,
-            token: token, // Store the token in the database
+            token: token, 
             expire: expire, 
             createdAt: new Date(),
             updatedAt: new Date()
         });
+
         console.log('Token stored in the database:', session);
         return session;
     } catch (error) {
@@ -59,7 +70,30 @@ async function storeTokenInDatabase(sid, userId, token, expire) {
     }
 };
 
-async function registerUser(req, res, username, email, password, userDetails) {
+
+
+async function authenticateAndCompare(providedUsername, providedPassword) {
+    try {
+        const user = await User.findOne({ where: { username: providedUsername } });
+
+        if (!user) {
+            return { error: 'Invalid username' };
+        }
+
+        const isPasswordValid = await bcrypt.compare(providedPassword, user.password);
+
+        if (!isPasswordValid) {
+            return { error: 'Invalid password' };
+        }
+
+        return { user }; 
+    } catch (error) {
+        console.error('Error authenticating user:', error);
+        throw error;
+    }
+};
+
+async function registerUser(req, res, username, email, hashedPassword, userDetails) {
     try {
         console.log('User details received in registerUser:', userDetails);
 
@@ -69,8 +103,6 @@ async function registerUser(req, res, username, email, password, userDetails) {
         if (existingEmailUser || existingUsernameUser) {
             throw new Error('Account with this email address or username already exists.');
         }
-
-        const hashedPassword = await hashPassword(password);
 
         const newUser = await User.create({
             username: username,
@@ -83,7 +115,7 @@ async function registerUser(req, res, username, email, password, userDetails) {
             country_of_residence: userDetails.country_of_residence || null,
             full_name: userDetails.full_name || null,
             location: userDetails.location || null,
-            contact_details: userDetails.contact_details
+            contact_details: userDetails.contact_details || null
         });
 
         console.log('User created:', newUser);
@@ -95,51 +127,18 @@ async function registerUser(req, res, username, email, password, userDetails) {
     }
 };
 
-
-async function authenticateAndCompare(req, res, providedUsername, providedPassword) {
-    try {
-        // Authenticate user
-        const user = await User.findOne({ where: { username: providedUsername } });
-
-        if (!user) {
-            // Render the wrong_username template and send it to the client
-            return res.render('wrong_username', { pageTitle: 'Wrong Username' });
-        }
-
-        // Compare the provided password with the hashed password stored in the database
-        const isPasswordValid = await bcrypt.compare(providedPassword, user.password);
-
-        if (!isPasswordValid) {
-            // Render the wrong_password template and send it to the client
-            return res.render('wrong_password', { pageTitle: 'Wrong Password' });
-        }
-
-        // Return the user if authentication and password comparison are successful
-        return { user }; 
-    } catch (error) {
-        console.error('Error authenticating user:', error);
-        throw error;
-    }
-};
-
-
 async function fetchUserData(id) {
-    // Fetch user data from the database based on the provided id
     try {
-        // Retrieve user data from the database
         const user = await User.findByPk(id);
 
-        // Check if user exists
         if (!user) {
             throw new Error('User not found');
         }
 
-        // Construct user info object
         const userInfo = {
             username: user.username,
             email: user.email,
             location: user.location,
-            // Omitting 'joined' field since it's not available in the database
         };
 
         return userInfo;
@@ -149,7 +148,23 @@ async function fetchUserData(id) {
     }
 };
 
+async function updateUserProfile(req, res) {
+    try {
+        // Implementation for updating user profile
+    } catch (error) {
+        console.error('Error updating user profile:', error);
+        throw error;
+    }
+};
 
+async function mapSessionToUser(sessionId, userId) {
+    try {
+        // Implementation for mapping session to user
+    } catch (error) {
+        console.error('Error mapping session to user:', error);
+        throw error;
+    }
+};
 
 const authController = {
     login: async (req, res) => {
@@ -164,25 +179,49 @@ const authController = {
     
             console.log('Attempting to login with username:', username);
     
-            // Authenticate user
-            const user = await User.findOne({ where: { username } });
+            // Authenticate user and compare password
+            const authResult = await authenticateAndCompare(username, password); // Remove req, res here
     
-            // Declare constants for user existence and password validation
-            const userExists = !!user;
-            const isPasswordValid = userExists ? await bcrypt.compare(password, user.password) : false;
-    
-            // Check if the user exists and password is valid
-            if (!userExists || !isPasswordValid) {
-                console.error('User not found or incorrect password');
+            if (authResult.error) {
+                console.error('Authentication error:', authResult.error);
                 // Render the wrong username or password page
                 return res.status(401).sendFile(path.join(__dirname, '../public/wrong_password&username.html'));
             }
     
-            req.session.loginTime = new Date();
+            const { user } = authResult;
+    
+            // Generate a session ID
+            const sessionId = generateSessionId(username);
+    
+            // Generate token
+            const token = await generateToken(sessionId, user.id);
+    
+            console.log('Token generated:', token);
+    
+            // Set expiration time
+            // 30 minutes expiration
+            const expire = new Date(Date.now() + (30 * 60 * 1000)); 
+    
+            // Store token in database with expiration time
+            const storedToken = await storeTokenInDatabase(sessionId, user.id, expire, token);
+    
+            if (!storedToken) {
+                console.error('Failed to store token in database');
+                // Return 500 status code and a message to the user
+                return res.status(500).send('Failed to store token in database');
+            }
+    
+            // Log the session of the user
+            const loginTime = new Date();
+            console.log(`Session started for user ${user.username} at ${loginTime}`);
+    
+            // Set session variables
+            req.session.loginTime = loginTime;
             req.session.user_id = user.id;
             await mapSessionToUser(req.session.id, user.id);
+    
             console.log('User logged in successfully:', user.username);
-            const userData = await fetchUserData(user.id, user.username);
+            // Redirect to logged in page
             return res.redirect('/logged_in.html');
         } catch (error) {
             console.error('Error logging in:', error);
@@ -221,7 +260,7 @@ const authController = {
             res.redirect('/index.html');
         } catch (error) {
             console.error('Error logging out:', error);
-            res.status(500).json({ message: 'Internal server error' });
+            return res.status(500).json({ message: 'Internal server error' });
         }
     },
     register: async (req, res) => {
@@ -229,28 +268,28 @@ const authController = {
             if (!req.body) {
                 return res.status(400).json({ error: 'Request body is missing.' });
             }
-
+    
             const { username, email, password } = req.body;
-
+    
             if (!username || !email || !password) {
                 return res.status(400).json({ error: 'Username, email, and password are required.' });
             }
-
+    
             if (password.length < 6 || password.length > 20) {
                 return res.status(400).json({ error: 'Password must be between 6 and 20 characters.' });
             }
-
+    
             const hashedPassword = await hashPassword(password);
-
+    
+            // Save username, email, and hashed password to session
             req.session.registrationData = { username, email, password: hashedPassword };
-
+    
             console.log('Registration data saved to session:', req.session.registrationData);
-
+    
             res.redirect('/Inregistrare_User_Completare_Profil.html');
-
         } catch (error) {
             console.error('Error registering user:', error.message);
-            res.status(500).json({ error: 'Internal server error' });
+            return res.status(500).json({ error: 'Internal server error' });
         }
     },
     profileCompletion: async (req, res) => {
@@ -303,13 +342,11 @@ const authController = {
             console.log('User registered successfully:', newUser);
 
             return res.status(200).json({ message: 'Profile completed successfully' });
-
         } catch (error) {
             console.error('Error submitting profile:', error);
             return res.status(500).json({ message: 'Error submitting profile' });
         }
     }
 };
-
 
 module.exports = { authController, registerUser, hashPassword, updateUserProfile, mapSessionToUser, authenticateAndGenerateToken };
