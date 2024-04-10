@@ -177,7 +177,7 @@
       
       <style>
         .search-bar {
-          left: 10px;
+          left: 2px;
           bottom: 30px;
           width: 300px;
           position: relative;
@@ -519,7 +519,7 @@
         }
 
       </style>
-      <i class="bi bi-chevron-down arrow-icon" style="margin-right: 340px; margin-bottom: 22px;" onclick="toggleMenu()"></i>
+      <i class="bi bi-chevron-down arrow-icon" style="margin-right: 340px; margin-bottom: 22px; position: absolute;" onclick="toggleMenu()"></i>
       <div class="menu-container" id="menu">
         <div class="close-btn" onclick="toggleMenu()">&#10006;</div> 
         <!-- Close button -->
@@ -598,6 +598,13 @@
             border-top-right-radius: 30px;
             border-bottom-left-radius: 30px;
           }
+          .box-model_produse_vandute_de_top_1 p {
+            background-color: #f5f5f5; /* Light coffee background color */
+            padding: 20px; /* Add padding for better readability */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            text-align: center;
+          }
+
         </style>
       <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
         <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
@@ -722,7 +729,8 @@
           /* The sidenav */
           /* Page content */
         .main {
-          margin-left: 200px; /* Same as the width of the sidenav */
+          /* Same as the width of the sidenav */
+          margin-left: 200px; 
         }
         </style>
       <div id="mySidenav" class="sidenav">
@@ -880,7 +888,7 @@
             setTimeout(function () {
                 trail.style.opacity = "0";
                 setTimeout(function () {
-                    trail.remove();
+                  trail.remove();
                 // Fade out time
                 }, 3000); 
             // Delay before starting to fade out
@@ -1130,25 +1138,7 @@
       }
     </script>
     <style>
-      .swipe-bar {
-        position: relative;
-        top: 100px;
-        left: 0px;
-        /* transform: translateY(-50%); */
-        width: 20px;
-        height: 100px;
-        background-color: #ab915a;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-        z-index: 1000;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px 5px;
-      }
+
       /* .arrow {
         width: 0;
         height: 0;
@@ -1160,22 +1150,39 @@
       .arrow:hover {
         border-right-color: red;
       }
+      .swipe-bar {
+        position: relative;
+        top: 100px;
+        left: 0px;
+        width: 40px;
+        height: 100px;
+        background-color: #ab915a;
+        border-radius: 20px;
+        z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        justify-content: center; /* Center arrow horizontally */
+        align-items: center;
+        padding: 0px 5px;
+      }
       /* Arrow style */
       .swipe-bar:after {
         content: '';
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(360deg);
+        left: 50%; /* Initially position arrow in the center */
+        transform: translate(-50%, -50%) rotate(0deg);
         width: 15px;
         height: 15px;
         border-right: 2px solid #000;
         border-bottom: 2px solid #000;
-        transition: transform 0.3s ease-in-out;
+        /* Add transition for left movement */
+        transition: left 0.3s ease-in-out, transform 0.3s ease-in-out; 
       }
         /* Arrow animation on hover */
       .swipe-bar:hover:after {
-        transform: translate(-50%, -50%) rotate(135deg);
+        left: calc(100% - 15px); /* Move arrow to the right when hovered */
+        transform: translate(-50%, -50%) rotate(90deg);
       }
       @keyframes fadeAway {
         0% { opacity: 1; transform: scale(1); }
@@ -1198,13 +1205,12 @@
         display: none;
         position: fixed;
         top: 230px;
-        left: 20px;
+        left: 45px;
         width: 230px;
-        height: 350px;
-        fallback: #f9f9f9;
+        height: 250px;
         z-index: 9500;
-        background-color: #007bff; 
-        background: linear-gradient(60deg, #8b45139c, #bf73279c, #4b36218d); /* Coffee-themed gradient */
+        background: linear-gradient(120deg, #ad6b4e, #e0b18b, #e8d1bd); /* Medium to light coffee-themed gradient */
+        border: 2px solid #000; /* Solid border color */
         border-radius: 30px;
         overflow-x: hidden;
         transition: 1s;
@@ -1220,7 +1226,7 @@
         padding: 10px 8px;
         text-decoration: none;
         font-size: 20px;
-        color: #000;
+        color: #00000005;
         display: block;
         transition: 0.3s;
       }
@@ -1230,7 +1236,7 @@
       }
 
       .open {
-        left: 0;
+        left: 0px;
       }
 
     </style>
@@ -1242,237 +1248,172 @@
     <!-- <div id="swipeArea" style="height: 10vh; background-color: #003d57; width: 20px; height: 100px; border-radius: 30px;"></div> -->
     <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <div class="dropdown" style="overflow-anchor: auto;">
-        <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10 glowing-background" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
-          <style>
-            /* Container styles */
-            .container-content-Menu-produse-1,
-            .container-content-Menu-produse-2,
-            .container-content-Menu-produse-3,
-            .container-content-Menu-produse-4,
-            .container-content-Menu-produse-5,
-            .container-content-Menu-produse-6,
-            .container-content-Menu-produse-7,
-            .container-content-Menu-produse-8,
-            .container-content-Menu-produse-9,
-            .container-content-Menu-produse-10 {
-              background: linear-gradient(to bottom, #ffffff, #05337085, #8e6fff);
-              margin-bottom: 10px;
-              width: 190px; /* Adjust width as needed */
-              height: 20px; /* Adjust height as needed */
-              padding: 2px;
-              height: 1%;
-              border: 1px groove rgb(0, 0, 0);
-              border-radius: 30px;
-            }
-    
-            /* Link styles */
-            .container-content-Menu-produse-1 a,
-            .container-content-Menu-produse-2 a,
-            .container-content-Menu-produse-3 a,
-            .container-content-Menu-produse-4 a,
-            .container-content-Menu-produse-5 a,
-            .container-content-Menu-produse-6 a,
-            .container-content-Menu-produse-7 a,
-            .container-content-Menu-produse-8 a,
-            .container-content-Menu-produse-9 a,
-            .container-content-Menu-produse-10 a {
-              border-radius: 30px;
-              bottom: 0;
-              position: relative;
-              width: 100%;
-              height: 10%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-decoration: none; /* Remove underline */
-              color: inherit; /* Inherit text color */
-            }
-    
-            /* Adjust glowing effect */
-            .container-content-Menu-produse-1 a:active,
-            .container-content-Menu-produse-2 a:active,
-            .container-content-Menu-produse-3 a:active,
-            .container-content-Menu-produse-4 a:active,
-            .container-content-Menu-produse-5 a:active,
-            .container-content-Menu-produse-6 a:active,
-            .container-content-Menu-produse-7 a:active,
-            .container-content-Menu-produse-8 a:active,
-            .container-content-Menu-produse-9 a:active,
-            .container-content-Menu-produse-10 a:active {
-              box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
-            }
-          </style>
-          <!-- Container 1 -->
-          <div class="container-content-Menu-produse-1">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
-            </div>
+          <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
+            <button type="button" class="btn btn-danger" onclick="closeMenu()" style="left: 140px; bottom: 60px; position: relative; border-radius: 30px;">X</button>
+            <style>
+                  /* Container styles */
+                  .container-content-Menu-produse-1,
+                  .container-content-Menu-produse-2 {
+                    background: linear-gradient(to bottom, #ffffff, #05337085, #8e6fff);
+                    margin-bottom: 10px;
+                    /* Adjust width as needed */
+                    width: 190px; 
+                    /* Adjust height as needed */
+                    height: 20px; 
+                    padding: 2px;
+                    height: 1%;
+                    border: 1px groove rgb(0, 0, 0);
+                    border-radius: 30px;
+                  }
+  
+                  /* Link styles */
+                  .container-content-Menu-produse-1 a,
+                  .container-content-Menu-produse-2 a {
+                    border-radius: 30px;
+                    bottom: 0;
+                    position: relative;
+                    width: 100%;
+                    height: 10%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none; /* Remove underline */
+                    color: inherit; /* Inherit text color */
+                  }
+  
+                  /* Adjust glowing effect */
+                  .container-content-Menu-produse-1 a:active,
+                  .container-content-Menu-produse-2 a:active {
+                    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+                  }
+              </style>
+              <!-- Container 1 -->
+              <div class="container-content-Menu-produse-1">
+                  <div class="trail-element">
+                      <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
+                  </div>
+              </div>
+              <!-- Container 2 -->
+              <div class="container-content-Menu-produse-2">
+                  <div class="trail-element">
+                      <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
+                  </div>
+              </div>
           </div>
-          <!-- Container 2 -->
-          <div class="container-content-Menu-produse-2">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
-            </div>
-          </div>
-          <!-- Container 3 -->
-          <div class="container-content-Menu-produse-3">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_3.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-3" onmouseover="createTrail(event, 3)" onmouseout="removeTrail(this)">Meniu Produse 3</a>
-            </div>
-          </div>
-          <!-- Container 4 -->
-          <div class="container-content-Menu-produse-4">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_4.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-4" onmouseover="createTrail(event, 4)" onmouseout="removeTrail(this)">Meniu Produse 4</a>
-            </div>
-          </div>
-          <!-- Container 5 -->
-          <div class="container-content-Menu-produse-5">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_5.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-5" onmouseover="createTrail(event, 5)" onmouseout="removeTrail(this)">Meniu Produse 5</a>
-            </div>
-          </div>
-          <!-- Container 6 -->
-          <div class="container-content-Menu-produse-6">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_6.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-6" onmouseover="createTrail(event, 6)" onmouseout="removeTrail(this)">Meniu Produse 6</a>
-            </div>
-          </div>
-          <!-- Container 7 -->
-          <div class="container-content-Menu-produse-7">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_7.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-7" onmouseover="createTrail(event, 7)" onmouseout="removeTrail(this)">Meniu Produse 7</a>
-            </div>
-          </div>
-          <!-- Container 8 -->
-          <div class="container-content-Menu-produse-8">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_8.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-8" onmouseover="createTrail(event, 8)" onmouseout="removeTrail(this)">Meniu Produse 8</a>
-            </div>
-          </div>
-          <!-- Container 9 -->
-          <div class="container-content-Menu-produse-9">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_9.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-9" onmouseover="createTrail(event, 9)" onmouseout="removeTrail(this)">Meniu Produse 9</a>
-            </div>
-          </div>
-          <!-- Container 10 -->
-          <div class="container-content-Menu-produse-10">
-            <div class="trail-element">
-              <a href="http://192.168.100.53:8081/Meniu_Produse_10.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-10" onmouseover="createTrail(event, 10)" onmouseout="removeTrail(this)">Meniu Produse 10</a>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-    <script>
+  </div>
+  <script>
       function openMenu() {
         document.getElementById("dropdown-content-menu-1&2").classList.add("open");
+        document.getElementById("swipeBar").classList.add("open");
       }
-
+  
       function closeMenu() {
         document.getElementById("dropdown-content-menu-1&2").classList.remove("open");
+        document.getElementById("swipeBar").classList.remove("open");
       }
-      document.addEventListener("DOMContentLoaded", function() {
-        var swipeBar = document.getElementById("swipeBar");
-        var swipeArea = document.getElementById("swipeArea");
-        var dropdownMenu = document.querySelector(".dropdown-content_meniu_1si2");
-        var dropdownContent = document.getElementById("dropdown-content-Meniu-produse-1-10");
-        var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2, .container-content-Menu-produse-3, .container-content-Menu-produse-4, .container-content-Menu-produse-5, .container-content-Menu-produse-6, .container-content-Menu-produse-7, .container-content-Menu-produse-8, .container-content-Menu-produse-9, .container-content-Menu-produse-10");
-        var xStart = null;
-        var xEnd = null;
-    
-        swipeBar.addEventListener("click", toggleNav);
-        swipeArea.addEventListener("touchstart", handleTouchStart, false);
-        swipeArea.addEventListener("touchmove", handleTouchMove, false);
-        dropbtn.addEventListener("click", function() {
-          dropdownContent.style.display = "block";
-        });
-    
-        function handleTouchStart(event) {
-          xStart = event.touches[0].clientX;
-        }
-    
-        function handleTouchMove(event) {
-          if (!xStart) {
-            return;
+      document.addEventListener("DOMContentLoaded", function () {
+          var swipeBar = document.getElementById("swipeBar");
+          var swipeArea = document.getElementById("swipeArea");
+          var dropdownMenu = document.querySelector(".dropdown-content_meniu_1si2");
+          var dropdownContent = document.getElementById("dropdown-content-Meniu-produse-1-10");
+          var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2");
+          var xStart = null;
+          var xEnd = null;
+  
+          swipeBar.addEventListener("click", toggleNav);
+          swipeArea.addEventListener("touchstart", handleTouchStart, false);
+          swipeArea.addEventListener("touchmove", handleTouchMove, false);
+          dropbtn.addEventListener("click", function () {
+            dropdownContent.style.display = "block";
+          });
+  
+          function handleTouchStart(event) {
+            xStart = event.touches[0].clientX;
           }
-    
-          xEnd = event.touches[0].clientX;
-          var xDiff = xStart - xEnd;
-          if (xDiff > 0) { // Swiped to right
-            toggleNav();
+  
+          function handleTouchMove(event) {
+              if (!xStart) {
+                return;
+              }
+  
+              xEnd = event.touches[0].clientX;
+              var xDiff = xStart - xEnd;
+              if (xDiff > 0) { // Swiped to right
+                toggleNav();
+              }
           }
-        }
-        function toggleNav() {
-          if (dropdownMenu.style.display === "block") {
-            dropdownMenu.style.display = "none";
-          } else {
-            dropdownMenu.style.display = "block";
-          }
-        }
-    
-        // Close the side navigation when clicking outside the menu
-        window.addEventListener("click", function(event) {
-          if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
-            dropdownMenu.classList.remove("open");
-          }
-        });
-    
-        // Hide all containers by default and toggle their display on click
-        containers.forEach(function(container) {
-          container.style.display = "none";
-          container.addEventListener("click", function() {
-            if (container.style.display === "none" || container.style.display === "") {
-              container.style.display = "block";
+  
+          function toggleNav() {
+            if (dropdownMenu.style.display === "block") {
+              dropdownMenu.style.display = "none";
             } else {
-              container.style.display = "none";
+              dropdownMenu.style.display = "block";
             }
-          });
-        });
-    
-        function createTrail(event, number) {
-          const cursor = document.querySelector(".cursor");
-          const trail = document.createElement('div');
-          trail.classList.add('trail');
-          // Find the respective anchor element based on the number parameter
-          const link = event.target;
-          link.appendChild(trail);
-          // Add a class to apply animation
-          link.classList.add('animated-link')
-          trail.style.left = event.offsetX + 'px';
-          let opacity = 1;
-          const fadeTrail = setInterval(() => {
-            opacity -= -2; // Adjust the decrement value for speed of fade
-            trail.style.opacity = opacity;
-            if (opacity <= 0) {
-              clearInterval(fadeTrail);
-              trail.remove();
-            }
-          }, 10); // Adjust the interval for smoother or faster fading
-          // Follow cursor on mousemove within the link
-          link.addEventListener("mousemove", (e) => {
-            let x = e.pageX;
-            let y = e.pageY;
-            cursor.style.top = y + "px";
-            cursor.style.left = x + "px";
-            // Update trail position based on cursor movement
-            trail.style.left = e.pageX - link.offsetLeft + 'px';
-            trail.style.top = e.pageY - link.offsetTop + 'px';
-          });
-        }
-    
-        function removeTrail(link) {
-          // Remove trail element on mouseout
-          const trail = link.querySelector('.trail');
-          if (trail) {
-            trail.remove();
           }
-          // Remove animation class on mouseout
-          link.classList.remove('animated-link');
-        }
+  
+          // Close the side navigation when clicking outside the menu
+          window.addEventListener("click", function (event) {
+              if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
+                dropdownMenu.classList.remove("open");
+              }
+          });
+  
+          // Hide all containers by default and toggle their display on click
+          containers.forEach(function (container) {
+              container.style.display = "none";
+              container.addEventListener("click", function () {
+                  if (container.style.display === "none" || container.style.display === "") {
+                    container.style.display = "block";
+                  } else {
+                    container.style.display = "none";
+                  }
+              });
+          });
+  
+          function createTrail(event, number) {
+              const cursor = document.querySelector(".cursor");
+              const trail = document.createElement('div');
+              trail.classList.add('trail');
+              // Find the respective anchor element based on the number parameter
+              const link = event.target;
+              link.appendChild(trail);
+              // Add a class to apply animation
+              link.classList.add('animated-link')
+              trail.style.left = event.offsetX + 'px';
+              let opacity = 1;
+              const fadeTrail = setInterval(() => {
+                  opacity -= -2; // Adjust the decrement value for speed of fade
+                  trail.style.opacity = opacity;
+                  if (opacity <= 0) {
+                    clearInterval(fadeTrail);
+                    trail.remove();
+                  }
+              }, 10); // Adjust the interval for smoother or faster fading
+              // Follow cursor on mousemove within the link
+              link.addEventListener("mousemove", (e) => {
+                let x = e.pageX;
+                let y = e.pageY;
+                cursor.style.top = y + "px";
+                cursor.style.left = x + "px";
+                // Update trail position based on cursor movement
+                trail.style.left = e.pageX - link.offsetLeft + 'px';
+                trail.style.top = e.pageY - link.offsetTop + 'px';
+              });
+          }
+  
+          function removeTrail(link) {
+              // Remove trail element on mouseout
+              const trail = link.querySelector('.trail');
+              if (trail) {
+                trail.remove();
+              }
+              // Remove animation class on mouseout
+              link.classList.remove('animated-link');
+          }
       });
-    </script>
+  </script>
+  
     
     <style>
       /* Custom styles for carousel control buttons */
@@ -1503,8 +1444,8 @@
               <div class="carousel-item active">
                   <div class="row align-items-center">
                       <div class="col-md-4">
-                          <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 30px;">
-                          <p style="color: #666; font-size: 14px; background-color: wheat; border-radius: 20px; margin-top: 10px;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
+                          <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                          <p style="color: #666666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 10px; margin-top: 10px; font-size: small;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
                         </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
@@ -1517,8 +1458,8 @@
               <div class="carousel-item">
                   <div class="row align-items-center">
                       <div class="col-md-4">
-                          <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 30px;">
-                          <p style="color: #666; font-size: 14px; background-color: wheat; border-radius: 20px; margin-top: 10px;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
+                          <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                          <p style="color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
                         </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
@@ -1531,8 +1472,8 @@
               <div class="carousel-item">
                   <div class="row align-items-center">
                       <div class="col-md-4">
-                          <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 30px;">
-                          <p style="color: #666; font-size: 14px; background-color: wheat; border-radius: 20px; margin-top: 10px;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
+                          <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                          <p style="color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
                         </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
@@ -1707,7 +1648,7 @@
                   box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
                   background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D); /* Linear gradient with three different colors */
                   z-index: 1;
-                  left: 80px;
+                  left: 50px;
                   animation: slideIn 0.5s ease; /* Apply animation */
                 }
                 .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
@@ -1791,15 +1732,16 @@
           .dropdown_content_ordered_list_2 {
             display: none;
             position: absolute;
-            left: 0;
+            left: 20px;
             top: 100%; /* Position it below the parent item */
             border: 1px solid #000000;
             border-radius: 30px;
             min-width: 265px;
             box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
             z-index: 1;
+            animation: slideIn 0.5s ease;
             /* Apply coffee-themed gradient background */
-            background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
+            background: linear-gradient(to bottom, #8b451378, #a0512d9c, #d2b48c8b);
           }
         
           .dropdown-list_items_2:hover .dropdown_content_ordered_list_2 {
@@ -1880,7 +1822,7 @@
               position: relative;
               display: inline-block;
               background: linear-gradient(135deg, #8B4513 27%, #A0522D 66%, #D2B48C 75%);
-              animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
+              animation: flowWaves 4s infinite alternate-reverse;
               margin-left: auto;
               margin-right: 0px;
             }
@@ -1905,28 +1847,31 @@
             .dropdown-content_imagini_1 {
               display: none;
               position: absolute;
-              /* Adjusted left position */
-              left: 100px;
-              /* Center the dropdown horizontally */
-              transform: translateX(-50%); 
+              right: 15px;
+              transform: translateX(-50%);
               top: calc(100% + 10px);
               padding: 39px;
               background-blend-mode: color-dodge;
-              background: transparent;
+              background: rgba(255, 255, 255, 0.531);
               border-radius: 30px;
+              width: 400px;
               z-index: 1;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              animation: fadeIn 0.5 ease;
+              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+              animation: fadeIn 0.5s ease-in-out forwards; /* Adjust animation duration as needed */
             }
+
             /* Add keyframes for the fadeIn animation */
-              @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+                transform: translateY(-20px); /* Start from above and move downwards */
               }
+              to {
+                opacity: 1;
+                transform: translateY(0); /* End at original position */
+              }
+            }
+
           
             .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
               /* Show on hover */
@@ -1961,10 +1906,10 @@
               border-radius: 20px;
               max-width: 110px;
               padding: 2px 10px;
-              color: #fff;
+              color: #6eb5ff;
             }
             .dropdown-content_imagini_1 p {
-              color: rgb(255, 255, 255);
+              color: #003366;
               border: 2px solid rgb(255, 255, 255);
               border-radius: 20px;
               padding: 2px;
@@ -1972,14 +1917,14 @@
               margin: 0;
             }
             #container_imagine-dropdown-1 {
-              animation: fadeIn 0.5s ease 0s forwards;
+              animation: forwards 0.5s ease 0s forwards;
             }
             #container_imagine-dropdown-2 {
-              animation: fadeIn 0.5s ease 0.5s forwards;
+              animation: forwards 0.5s ease 0.5s forwards;
             }
 
             #container_imagine-dropdown-3 {
-              animation: fadeIn 0.5s ease 1s forwards;
+              animation: forwards 0.5s ease 1s forwards;
             }
         </style>
         <div class="menu_container_produse_de_top" id="menu_produse_top">
@@ -1988,24 +1933,24 @@
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
                 <a style="text-decoration: wavy blue;">Produse de top</a>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
-                    <div class="dropdown-container" id="container_imagine-dropdown-1" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
+                    <div class="dropdown-container" id="container_imagine-dropdown-1" style="background: linear-gradient(to right, rgba(255, 204, 110, 0.771), #d2b48c9f, #A0522D);">
                         <img src="https://images.unsplash.com/photo-1566656117208-c23e67f4ce8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="eager">
                         <em>
-                            <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul de top 1</a>
+                            <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background: linear-gradient(to bottom, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 1</a>
                             <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
                         </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-2" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
                         <img src="https://images.unsplash.com/photo-1630248904474-a7927610a5db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="eager">
                         <em>
-                            <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM" id="Produsul-de-top-2-primary" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul de top 2</a>
+                            <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM" id="Produsul-de-top-2-primary" style="background: linear-gradient(to right, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 2</a>
                             <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie.</p>
                         </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-3" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
                         <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="eager">
                         <em>
-                            <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul de top 3</a>
+                            <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" style="background: linear-gradient(to right, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 3</a>
                             <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase.</p>
                         </em>
                     </div>
@@ -2023,7 +1968,7 @@
           <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
             <div class="image-container_produse_vandute_de_top_1 glowing-background" id="container-imagine-stanga" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
               <div class="row">
-                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 80px;">
+                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 30px;">
                   <a>
                     <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
                   </a>
@@ -2035,7 +1980,7 @@
             </div>
             <div class="image-container_produse_vandute_de_top_2 glowing-background" id="container-imagine-dreapta" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
               <div class="row">
-                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 80px;">
+                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 30px;">
                   <a>
                     <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
                   </a>
@@ -2047,7 +1992,7 @@
             </div>
             <div class="image-container_produse_vandute_de_top_3 glowing-background" id="container-imagine-centru" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
               <div class="row">
-                <div class="col-md-2" style="border: 1px groove white; border-radius: 30px; width: 340px; margin-left: 10px; background-color: #005979; margin-left: 80px;">
+                <div class="col-md-2" style="border: 1px groove white; border-radius: 30px; width: 340px; margin-left: 10px; background-color: #005979; margin-left: 30px;">
                   <a>
                     <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
                   </a>
@@ -2162,7 +2107,7 @@
     <div class="canvas" id="myCanvas">
     </div>
     <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
-      <div class="row">
+      <div class="row" style="max-width: 350px;">
         <div class="canvas-section col-md-6" id="leftCanvas">
           <h4 class="text-center p-3 rounded">Sectiunea Stanga</h4>
           <div class="slideshow" id="leftSlideshow">

@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="http://192.168.100.53:8081">
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <!-- <link rel="stylesheet" href="http://192.168.100.53:8081/css/form.css" type="text/css" media="screen"> -->
     <style>
@@ -73,12 +73,132 @@
             width: auto;
         }
     }
+
+    /* Container styles */
+    .dropdown-container {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+    }
+
+    /* Dropdown button styles */
+    .dropdown-btn {
+        background-color: #f8f9fa;
+        color: #212529;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Dropdown content styles */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f8f9fa;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Dropdown content links styles */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Show dropdown content on hover */
+    .dropdown-container:hover .dropdown-content {
+        display: block;
+    }
+    .container {
+        max-width: 250px;
+        max-height: 150px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .error-message {
+        background-color: #f8d7da; /* Red background */
+        color: #721c24; /* Dark red text */
+        border: 1px solid #f5c6cb; /* Red border */
+        padding: 15px;
+        border-radius: 30px;
+    }
+
+    /* Media Query for smaller screens */
+    @media only screen and (max-width: 768px) {
+        .container {
+        max-width: 250px;
+        max-height: 150px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+    }
+    /* Media Query for smaller screens */
+    @media only screen and (max-width: 768px) {
+        .container {
+            max-width: 90%; /* Adjust as needed */
+            max-height: auto;
+            border-radius: 15px;
+        }
+    }
+
     </style>
   </head>
+  <div id="errorContainer" style="display: none;"></div>
 
 
 
 <body>
+    <div id="popup" style="display: none;">
+        <div class="container" id="errorContainer">
+            <div class="error-message"></div>
+        </div>
+    </div>
+    <!-- Container for incorrect username -->
+    <div class="container" id="incorrectUsernameContainer" style="display: none;">
+        <div class="error-message">
+            <h1>Incorrect Username</h1>
+            <p>The username you entered is incorrect. Please try again.</p>
+            <a href="/index.html" class="btn btn-primary">Go back to login page</a>
+        </div>
+    </div>
+
+        <!-- Container for incorrect password -->
+    <div class="container" id="incorrectPasswordContainer" style="display: none;">
+        <div class="error-message">
+            <h1>Incorrect Password</h1>
+            <p>The password you entered is incorrect. Please try again.</p>
+            <a href="/index.html" class="btn btn-primary">Go back to login page</a>
+        </div>
+    </div>
+
+    <!-- Dropdown container -->
+    <div class="dropdown-container" style="display: none;">
+        <div class="dropdown-content">
+            <p id="usernameError" style="display: none;"></p>
+            <p id="passwordError" style="display: none;"></p>
+            <!-- Adding container for bothError -->
+            <p id="bothError" style="display: none;"></p>
+        </div>
+    </div>
+
+
     <form action="/login" id="Logheaza-teForm" method="post" class="form-container" style="position: absolute; top: 230px; right: 0px; left: 30px; display: block; min-width: 220px; max-height: 520px; background: linear-gradient(135deg, #f5deb3, #d2b48c, #a0522d, #8b0000); border-radius: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); display: inline-block; padding: 20px; z-index: 9999;" autocomplete="on">
         <!-- Close button -->
         <div class="close-btn" onclick="closeForm()" style="position: absolute; width: 45px; height: 45px; text-align: center; right: 20px; top: 10px; border: 1px groove #8B4513; border-radius: 50%; background-color: #f8fafc; cursor: pointer; z-index: 9999;">&times;</div>
@@ -87,25 +207,30 @@
         </div>
         <div class="container-pagina-logare" id="form-container-1" style="width: 240px; background-color: #8B4513; border-radius: 20px; padding: 10px; height: 350px;">
             <label for="uname" style="margin-bottom: 5px; font-family: system-ui; display: block;">
-                <b style="background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); border-radius: 15px; padding: 5px; border: 1px solid #8B4513; text-align: center; margin-bottom: 5px;">Nume Utilizator:</b>
+                <b style="background: linear-gradient(20deg, #7dadce94, #0099ff, #f0f0f0); border-radius: 15px; padding: 5px; border: 1px solid #8B4513; text-align: center; margin-bottom: 5px;">Nume Utilizator:</b>
                 <input type="text" placeholder="Username/ User" id="username" name="username" autocomplete="username" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); box-shadow: 2px 2px 5px red, 4px 4px 5px blue, 6px 6px 5px white; height: 10px">
             </label>
             <label for="password" style="margin-bottom: 5px; font-family: system-ui; display: block;">
                 <b style="background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); border-radius: 15px; padding: 5px; border: 1px solid #8B4513; text-align: center; margin-bottom: 5px;">Parola:</b>
                 <input type="password" id="password" name="password" accept="file" placeholder="Scrie Parola" autocomplete="current-password" required="true" style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359); box-shadow: 2px 2px 5px red, 4px 4px 5px blue, 6px 6px 5px white; height: 10px;">
             </label>
-            <button type="submit" id="submit-button-form" style="background-color: #875050; border-radius: 20px; padding: 15px 10px; margin-bottom: 10px; border: none; cursor: pointer; width: 100%;">Logheaza-te</button>
+            <button type="submit" id="submit-button-form" style="background-color: #875050; border-radius: 20px; padding: 10px 5px; margin-bottom: 10px; border: none; cursor: pointer; width: 100%;">Logheaza-te</button>
             <label for="password" style="margin-bottom: 5px; font-family: system-ui; display: block;">
                 <input type="checkbox" accept="file" checked="checked" name="remember" style="margin-right: 5px;">Memoreaza informatiile de conectare.
             </label>
         </div>
-        <div class="container" id="container_for_Cancel&Forgotten_Password" style="background-color: #8B4513; border-radius: 9px; margin-bottom: 10px; width: 190px; padding: 5px; cursor: pointer;">
+        <div class="container" id="container_for_Cancel&Forgotten_Password" style="background-color: #8B4513; border-radius: 9px; margin-bottom: 10px; width: 190px; padding: 5px; cursor: pointer; height: 30px;">
             <button type="button" class="cancelbtn" style="border-radius: 10px; background-color: deepskyblue; margin-bottom: 1px; margin-top: 0px;">Anuleaza</button>
             <span class="psw" style="font-size: x-small; margin-left: 10px;">Ai uitat <a href="#Link">parola?</a></span>
         </div>
     </form>
     
     <script>
+        // Function to show container based on response status
+        function showContainer(containerId) {
+            document.getElementById(containerId).style.display = 'block';
+        }
+    
         document.getElementById('Logheaza-teForm').addEventListener('submit', async (event) => {
             event.preventDefault();
             const username = document.getElementById('username').value;
@@ -113,17 +238,6 @@
             const rememberCheckbox = document.getElementById('remember');
     
             try {
-                // Check if the remember checkbox is checked
-                if (rememberCheckbox.checked) {
-                    // Store username and password in localStorage
-                    localStorage.setItem('username', username);
-                    localStorage.setItem('password', password);
-                } else {
-                    // Clear stored credentials if checkbox is not checked
-                    localStorage.removeItem('username');
-                    localStorage.removeItem('password');
-                }
-    
                 const response = await fetch('/login', {
                     method: 'POST',
                     headers: {
@@ -133,7 +247,34 @@
                 });
     
                 if (!response.ok) {
-                    throw new Error('Failed to log in.');
+                    console.error('Failed to log in.');
+    
+                    // Display error messages in containers based on response status
+                    if (response.status === 401) {
+                        showContainer('incorrectUsernameContainer');
+                    } else if (response.status === 402) {
+                        showContainer('incorrectPasswordContainer');
+                    } else if (response.status === 404) {
+                        // Load the error container for both wrong username and password
+                        const errorResponse = await fetch('/both_wrong.html');
+                        const errorHtml = await errorResponse.text();
+                        const parser = new DOMParser();
+                        const errorDoc = parser.parseFromString(errorHtml, 'text/html');
+                        const errorContainer = errorDoc.getElementById('errorContainer');
+                        // Insert the error container into the main page
+                        document.getElementById('popup').innerHTML = errorContainer.innerHTML;
+                        // Show popup message
+                        document.getElementById('popup').style.display = 'block';
+                    }
+    
+                    // Hide popup after 2 seconds
+                    setTimeout(() => {
+                        document.getElementById('popup').style.display = 'none';
+                    }, 2000);
+    
+                    // Display the dropdown container
+                    document.querySelector('.dropdown-container').style.display = 'block';
+                    return;
                 }
     
                 const data = await response.json();
@@ -141,23 +282,24 @@
                     throw new Error('Token not received.');
                 }
     
+                // Store login time in milliseconds
+                const loginTime = Date.now();
+    
+                // Set expiration time for cookies (far future if "Remember Me" is checked)
+                const expirationDate = rememberCheckbox.checked ? new Date('Fri, 31 Dec 9999 23:59:59 GMT') : null;
+    
+                // Check if the remember checkbox is checked
+                if (rememberCheckbox.checked) {
+                    // Store username and password in cookies with far future expiration
+                    document.cookie = `username=${username}; expires=${expirationDate.toUTCString()}; path=/`;
+                    document.cookie = `password=${password}; expires=${expirationDate.toUTCString()}; path=/`;
+                }
+    
                 // Redirect to logged_in.html upon successful login
                 window.location.href = '/logged_in.html';
             } catch (error) {
                 console.error(error.message);
-                // Handle login error, e.g., display error message to user
-            }
-        });
-    
-        // Check if stored credentials exist and autofill the login form
-        document.addEventListener('DOMContentLoaded', () => {
-            const storedUsername = localStorage.getItem('username');
-            const storedPassword = localStorage.getItem('password');
-            if (storedUsername && storedPassword) {
-                document.getElementById('username').value = storedUsername;
-                document.getElementById('password').value = storedPassword;
             }
         });
     </script>
-    
 </body>

@@ -172,20 +172,20 @@
           const response = await fetch('/register', {
               method: 'POST',
               headers: {
-                  'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
               },
               body: JSON.stringify({ body: JSON.stringify({ username: username, email: email, password: password})}),
           });
           if (!response.ok) {
-              throw new Error('Registration failed');
+            throw new Error('Registration failed');
           }
           // Redirect to the login page after a delay (if needed)
           setTimeout(() => {
-              window.location.href = '/login.html';
+            window.location.href = '/login.html';
           }, 3000); // Redirect after 3 seconds (adjust as needed)
       } catch (error) {
-          console.error('Registration error:', error);
-          // Handle registration error
+        console.error('Registration error:', error);
+        // Handle registration error
       }
   });
 </script>
