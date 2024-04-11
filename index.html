@@ -19,223 +19,137 @@
     <!-- <script src="Javascript/main.js"></script> -->
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
   </head>
-  <!-- <button onclick="history.back()" style="bottom: 6px; position: relative;">Go Back</button> -->
-  <!-- <canvas id="canvas" width="320px" height="320px" style="background-color:#333; position: -webkit-sticky;"></canvas> -->
-  <!-- <script>
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    let radius = canvas.height / 2;
-    ctx.translate(radius, radius);
-    radius = radius * 0.91   
-    drawClock();
-    setInterval(drawClock, 1000);
-    function drawClock() {
-    drawFace(ctx, radius);
-    }
-
-    function drawFace(ctx, radius) {
-      const grad = ctx.createRadialGradient(0, 0 ,radius * 0.95, 0, 0, radius * 1.05);
-      grad.addColorStop(0, '#333');
-      grad.addColorStop(0.5, 'white');
-      grad.addColorStop(1, '#333');
-
-      ctx.beginPath();
-      ctx.arc(0, 0, radius, 0, 2 * Math.PI);
-      ctx.fillStyle = 'white';
-      ctx.fill();
-
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = radius*0.1;
-      ctx.stroke();
-
-      ctx.beginPath();
-      ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
-      ctx.fillStyle = '#333';
-      ctx.fill();
-  }
-
-    function drawClock(){
-      drawFace(ctx, radius);
-      drawNumbers(ctx, radius);
-      drawTime(ctx, radius);
-    }
-
-    function drawNumbers(ctx, radius) {
-      ctx.font = radius * 0.15 + "px arial";
-      ctx.textBaseline = "middle";
-      ctx.textAlign = "center";
   
-      for(let num = 1; num < 13; num++){
-      let ang = num * Math.PI / 6;
-        ctx.rotate(ang);
-        ctx.translate(0, -radius * 0.85);
-        ctx.rotate(-ang);
-        ctx.fillText(num.toString(), 0, 0);
-        ctx.rotate(ang);
-        ctx.translate(0, radius * 0.85);
-        ctx.rotate(-ang);
-      }
-    }
-
-    function drawTime(ctx, radius) {
-      const now = new Date();
-      let hour = now.getHours();
-      let minute = now.getMinutes();
-      let second = now.getSeconds();
-      //hour
-      hour = hour%12;
-      hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-      drawHand(ctx, hour, radius*0.5, radius*0.07);
-      //minute
-      minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
-      drawHand(ctx, minute, radius*0.8, radius*0.07);
-      // second
-      second = (second*Math.PI/30);
-      drawHand(ctx, second, radius*0.9, radius*0.02);
-    }
-
-    function drawHand(ctx, pos, length, width) {
-      ctx.beginPath();
-      ctx.lineWidth = width;
-      ctx.lineCap = "round";
-      ctx.moveTo(0,0);
-      ctx.rotate(pos);
-      ctx.lineTo(0, -length);
-      ctx.stroke();
-      ctx.rotate(-pos);
-    }
-  </script> -->
-  <body style="background: linear-gradient(120deg, #f5deb3, #d2b48c, #a0522d);">
-    <!-- <canvas id="myCanvas"></canvas>
-    <script>
-      const canvas = document.getElementById('myCanvas');
-      const ctx = canvas.getContext('2d');
-      let size = window.innerWidth > 768 ? 60 : 30; // Adjust the size based on screen width
-      const pulseAmount = 10; // How much the heart will pulse (in pixels)
-      const pulseSpeed = 0.005; // Pulse speed factor
-      const frameRate = 1000 / 30; // Frame rate for 30 fps (in milliseconds)
-  
-      function setCanvasSize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-  
-      function drawHeart() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = 'darkblue'; // Change color to dark blue
-  
-        const x = canvas.width / 2;
-        const y = canvas.height / 2 - 20;
-  
-        ctx.beginPath();
-        ctx.moveTo(x, y + size / 4);
-        ctx.quadraticCurveTo(x, y, x + size / 4, y);
-        ctx.quadraticCurveTo(x + size / 2, y, x + size / 2, y + size / 4);
-        ctx.quadraticCurveTo(x + size / 2, y, x + size * 3 / 4, y);
-        ctx.quadraticCurveTo(x + size, y, x + size, y + size / 4);
-        ctx.quadraticCurveTo(x + size, y + size / 2, x + size * 3 / 4, y + size * 3 / 4);
-        ctx.lineTo(x + size / 2, y + size);
-        ctx.lineTo(x + size / 4, y + size * 3 / 4);
-        ctx.quadraticCurveTo(x, y + size / 2, x, y + size / 4);
-        ctx.closePath();
-  
-        ctx.fill();
-  
-        // Draw the glowing curved line with a slight 3D effect
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = 'lightgreen';
-        ctx.lineCap = 'round';
-        const gradient = ctx.createLinearGradient(x, y + size / 4, x, y - size / 2);
-        gradient.addColorStop(0, 'rgba(0,255,0,0)');
-        gradient.addColorStop(0.5, 'rgba(0,255,0,0.8)');
-        gradient.addColorStop(1, 'rgba(0,255,0,0)');
-        ctx.strokeStyle = gradient;
-  
-        ctx.beginPath();
-        ctx.moveTo(x, y + size / 4);
-        ctx.bezierCurveTo(x - size / 2, y + size / 3, x + size / 2, y - size / 2, x, y - size / 2);
-        ctx.stroke();
-      }
-  
-      function animateHeart() {
-        size = window.innerWidth > 768 ? 60 + pulseAmount * Math.sin(performance.now() * pulseSpeed) : 30 + pulseAmount * Math.sin(performance.now() * pulseSpeed);
-  
-        setCanvasSize();
-        drawHeart();
-  
-        requestAnimationFrame(animateHeart);
-      }
-  
-      setCanvasSize();
-      animateHeart();
-  
-      window.addEventListener('resize', setCanvasSize);
-    </script> -->
+  <body style="background: linear-gradient(30deg, rgba(255, 255, 255, 0.2), #9ea3b0, #66757c);">
     <header style="background: linear-gradient(to top left, #ffffff78 20%, #77b9d65b 60%, rgba(87, 87, 87, 0.42) 60%); border-top: 2px rgba(237, 239, 240, 0); border-left: 2px rgba(255, 255, 255, 0); border-right: 2px rgba(255, 255, 255, 0); border-bottom: 2px rgba(255, 255, 255, 0); border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ margin-left: 90px; /* border-style: ; */ padding-top: 10px; width: 320px; height: 80px; z-index: 8000;">
       <h1 style="background: linear-gradient(to right, #8B4513, #A0522D, #D2B48C); max-height: 100px; margin-left: 40px; margin-right: 40px; text-align: center; font-weight: lighter; font-size: larger; width: auto; padding: 10px; position: relative; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 25px rgba(231, 231, 231, 0.5), 0 0 5px rgba(0, 21, 115, 0.5); border-radius: 25px; border: 1px solid #006400; color: white;"> Big Store Coffee</h1>
-      
-      
       <style>
-        .search-bar {
-          left: 2px;
-          bottom: 30px;
-          width: 300px;
-          position: relative;
-          padding: 1px; 
-          color: rgb(0, 0, 0); 
-          background: linear-gradient(to top right, #8B4513, #A0522D, #D2B48C);
-          border: outset;
-          border-width: 0.2vw 0.3vw; 
-          border-color: rgb(195, 196, 91); 
-          /* Center the search bar horizontally */
-          border-radius: 30px; 
-          /* Adjust to properly center */
-          /* transform: translateX(-50%);  */ 
-          z-index: 9990; 
-          cursor: pointer; 
-          /* display: ruby-base-container; */ 
-          /* Set the width of the search bar */ 
-          /* Set maximum width if needed * /* 
-          Adjust top position */ 
-          transform: translateY(100%); 
-          margin-right: 40vw; 
-          margin-top: 0px; 
-          margin-bottom: 20px; 
-          /* Use block level element */ 
-          display: inline-block; 
-          /* Center align the content */ 
-          /* text-align: center; */ 
-          /* Center the block element */
-          margin:10px;
-        }
-        .search-bar input[type="text"] {
-          border: 3px outset rgb(0, 0, 0);
-          background-color: whitesmoke;
-          border-radius: 25px;
-          /* Adjust input field width */
-          width: 300px;
-          padding: 10px;
-          outline: none;
-        }
-        #submit-cauta-bara-de-cautare {
-          /* Coffee-themed color */
-          background-color: #8B4513; 
-          /* Text color */
-          color: white; 
-          /* Remove default button border */
-          border: none; 
-          /* Adjust padding as needed */
-          padding: 10px 20px; 
-          /* Add some border radius for a softer look */
-          border-radius: 15px;
-          left: 55px;
-          border-radius: 30px;
-          position: relative; 
-          /* Change cursor to pointer on hover */
-          cursor: pointer; 
-          /* Add any additional styles you need */
+      .search-bar {
+        left: 10px;
+        bottom: 30px;
+        width: 300px;
+        position: relative;
+        padding: 1px; 
+        color: rgb(0, 0, 0); 
+        background: linear-gradient(to top right, #ffffff, #0065ca, #0079b9);
+        border: outset;
+        border-width: 0.2vw 0.3vw; 
+        border-color: rgb(0, 0, 0); 
+        /* Center the search bar horizontally */
+        border-radius: 30px; 
+        /* Adjust to properly center */
+        /* transform: translateX(-50%);  */ 
+        z-index: 9990; 
+        cursor: pointer; 
+        /* display: ruby-base-container; */ 
+        /* Set the width of the search bar */ 
+        /* Set maximum width if needed * /* 
+        Adjust top position */ 
+        transform: translateY(100%); 
+        margin-right: 40vw; 
+        margin-top: 0px; 
+        margin-bottom: 20px; 
+        /* Use block level element */ 
+        display: inline-block; 
+        /* Center align the content */ 
+        /* text-align: center; */ 
+        /* Center the block element */
+        margin:10px;
       }
-      </style>
+      .search-bar input[type="text"] {
+        border: 3px outset rgb(0, 0, 0);
+        background-color: whitesmoke;
+        border-radius: 25px;
+        /* Adjust input field width */
+        width: 300px;
+        padding: 10px;
+        outline: none;
+      }
+    #submit-cauta-bara-de-cautare {
+      /* Coffee-themed color */
+      background-color: #8B4513; 
+      /* Text color */
+      color: white; 
+      /* Remove default button border */
+      border: none; 
+      /* Adjust padding as needed */
+      padding: 10px 20px; 
+      /* Add some border radius for a softer look */
+      border-radius: 15px;
+      left: 55px;
+      border-radius: 30px;
+      position: relative; 
+      /* Change cursor to pointer on hover */
+      cursor: pointer; 
+      /* Add any additional styles you need */
+    }
+    .canvas-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .canvas-section {
+      margin: 10px;
+      padding: 20px;
+      background: #f2f2f2;
+      border: 2px groove black;
+      border-radius: 10px;
+    }
+    .slideshow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-container {
+      position: fixed;
+      max-width: 150px;
+      max-height: 200px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background-color: transparent;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      opacity: 0; /* Initially hide the container */
+      /* Add transition effect for opacity and left position */
+      transition: opacity 0.3s ease, left 0.5s ease; 
+    }
+    .image-container.fade-in {
+      opacity: 1;
+    }
+    .image-container img {
+      /* position: absolute; */
+      max-width: 100%;
+      bottom: 100px;
+      max-height: 100%;
+      display: block;
+    }
+    #image-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Ensure the container is above other elements */
+      cursor: zoom-out; /* Change cursor to zoom-out when hovering over the image */
+    }
+    .text-center {
+      text-align: center;
+    }
+    .paragraph-style {
+      background: linear-gradient(to right, #ad7c5e, #613613);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: medium;
+    }
+    
+    </style>
       <div class="search-bar">
         <!-- Search input -->
         <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala" style="resize: none;">
@@ -478,29 +392,29 @@
           transform: translateY(-40%);
           cursor: pointer;
           font-size: 20px;
-          background: linear-gradient(to right, #c07f51, #bc8c75, #9f6d2c); 
+          background: linear-gradient(to right, #ffffff, #009a9dca, #024dd89c); 
           padding: 10px;
           border-radius: 25px 25px 25px 25px; 
           box-shadow: 2px 2px 20px 2px rgb(255, 255, 255); 
           z-index: 9599; 
         }
         .arrow-icon:hover {
-            background-color: #d86d6d;
-            border-radius: 20px; 
+          background-color: #5f5050;
+          border-radius: 20px; 
         }
         .menu-container {
           position: absolute;
-          border-radius: 30px;
-          top: 205px;
+          border-radius: 20px;
+          top: 155px;
           left: -420px;
           width: 313px;
           height: 350px;
-          background-color: rgb(52, 40, 40);
-          transition: left 1s ease;
+          border: 2px groove;
+          background-color: transparent;
           z-index: 9999;
+          transition:ease-in-out 1s left;
           overflow-x: hidden;
         }
-      
         .close-btn {
           position: absolute;
           /* Adjust top position as needed */
@@ -508,14 +422,14 @@
           /* Adjust right position as needed */
           right: 10px; 
           padding: 10px;
-          border: 1px solid rgba(0, 0, 0, 0.174);
+          border: 1px solid rgba(0, 0, 0, 0.109);
           width: 70px;
           height: 45px;
           z-index: 9991;
           border-radius: 30px;
           cursor: pointer;
           font-size: 20px;
-          background-color: #000000;
+          background-color: #004159b7;
         }
 
       </style>
@@ -565,7 +479,7 @@
             bottom: 10px;
             /* Adjust positioning as needed */
             right: 0; 
-            border: 3px outset #ffffff;
+            border: 3px outset #00000085;
             border-radius: 30px;
             box-sizing: border-box;
             /* Adjust margin as needed */
@@ -574,7 +488,7 @@
             margin-right: 5px; 
             animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
             background-size: 200% 200%;
-            background: linear-gradient(130deg, #8B4513, #A0522D, #D2B48C);
+            background: linear-gradient(to bottom, rgb(221, 221, 221), rgb(41, 134, 180) 50%);
           }
           .glowing-background {
             background: linear-gradient(24deg, #f1d9a690 32%rgba(72, 138, 223, 0.524))70%, rgb(143, 40, 14)85%;
@@ -670,7 +584,7 @@
           padding-block: 100px;
           left: 0px;
           /* Linear gradient background */
-          background: linear-gradient(135deg, #91725b, #bc6b49, #ff9e5a); 
+          background: linear-gradient(135deg, /* Adjust direction as needed */ rgba(255, 255, 255, 0.8), /* Light gray with 80% opacity */ rgba(0, 0, 0, 0.329));
           overflow-x: hidden;
           padding-top: 60px;
           transition: 2s;
@@ -678,7 +592,7 @@
           max-height: 400px;
           border-radius: 30px;
           border: 1px #ffffff00 solid;
-          transition: 0.5s;
+          transition: 1s;
         }
         .sidenav a {
           padding: 8px 8px 8px 32px;
@@ -686,7 +600,7 @@
           border-radius: 30px;
           font-size: 12px;
           color: white;
-          background-image: linear-gradient(to right, #b3a89e, #a49993, #a7a725);
+          background-image: linear-gradient(to right, #b3a89e, #a49993, #75756380);
           display: block;
           transition: 0.3s;
           width: 150px;
@@ -713,11 +627,12 @@
           /* Position and style the close button (top right corner) */
         .sidenav .closebtn {
           position: absolute;
-          top: 0;
-          right: 30px;
-          font-size: 36px;
-          margin-left: 50px;
-          background: rgb(135, 135, 135);
+          top: 0px;
+          /* height: 30px; */
+          right: 20px;
+          font-size: 30px;
+          margin-left: 20px;
+          background: rgb(0 123 255 / 48%);
           margin-bottom: 3px;
           width: 50px;
         }
@@ -737,10 +652,10 @@
         <style>
         .closebtn {
           position: absolute;
-          top: 20px;
+          top: 30px;
           /* Adjusted right position */
           right: 10px;
-          width: 100px;
+          width: 50px;
           height: 60px; 
           font-size: 30px;
           cursor: pointer;
@@ -767,7 +682,7 @@
           /* Right side of the triangle */
           border-right: 25px solid transparent;
           /* Bottom side of the triangle */
-          border-bottom: 43.3px groove rgb(255, 255, 255);
+          border-bottom: 43.3px groove rgb(0, 89, 198);
           /* Change cursor on hover */
           cursor: pointer;
           z-index: 8000;
@@ -791,7 +706,7 @@
           width: auto;
           height: auto;
           opacity: 1;
-          transition: opacity 3s;
+          transition: opacity 1ms;
           z-index: 9999; /* Ensure it appears above other elements */
         }
         @keyframes fadeOut {
@@ -890,9 +805,9 @@
                 setTimeout(function () {
                   trail.remove();
                 // Fade out time
-                }, 3000); 
+                }, 1000); 
             // Delay before starting to fade out
-            }, 100); 
+            }, 10); 
 
             // Play guitar sound
             var audio = new Audio('light_guitar_sound.mp3');
@@ -1437,16 +1352,19 @@
       }
     </style>
     
-    <div class="container" style="border: 2px solid #7a7a7a; background-color: #fcf1b2; border-radius: 10px; padding: 20px; margin-top: 380px; max-width: 380px;">
+    <div class="container" style="border: 2px solid #7a7a7a; background-color: #fcf1b2; border-radius: 10px; padding: 20px; margin-top: 420px; max-width: 380px;">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
               <!-- Slide 1 -->
               <div class="carousel-item active">
                   <div class="row align-items-center">
                       <div class="col-md-4">
-                          <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
-                          <p style="color: #666666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 10px; margin-top: 10px; font-size: small;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
-                        </div>
+                        <div id="imageContainer" class="image-container"></div>
+                          <!-- <a href="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> -->
+                            <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                          </a>
+                          <p style="height:100px; color: #666666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 10px; margin-top: 10px; font-size: small;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
+                      </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
                               <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_1</h5>
@@ -1458,9 +1376,12 @@
               <div class="carousel-item">
                   <div class="row align-items-center">
                       <div class="col-md-4">
-                          <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
-                          <p style="color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
-                        </div>
+                        <div id="imageContainer" class="image-container"></div>
+                          <!-- <a href="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D"> -->
+                            <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                          </a>
+                          <p style="height:100px; color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
+                      </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
                               <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_2</h5>
@@ -1472,9 +1393,12 @@
               <div class="carousel-item">
                   <div class="row align-items-center">
                       <div class="col-md-4">
-                          <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
-                          <p style="color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
-                        </div>
+                        <div id="imageContainer" class="image-container"></div>
+                          <!-- <a href="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> -->
+                            <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                          </a>
+                          <p style="height:100px; color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
+                      </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
                               <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_3</h5>
@@ -1494,6 +1418,74 @@
           </a>
       </div>
   </div>
+  <script>
+  // Function to display the image with smooth zoom effect
+  function displayImage(imageUrl) {
+      // Create a new container for the image
+      var imageContainer = document.createElement('div');
+      imageContainer.classList.add('image-container');
+
+      // Create a new image element
+      var img = document.createElement('img');
+      img.src = imageUrl;
+      img.classList.add('zoom-in'); // Add zoom-in class for the smooth zoom effect
+
+      // Add rounded border to the image
+      img.style.borderRadius = '20px';
+
+      // Add the image to the container
+      imageContainer.appendChild(img);
+
+      // Append the container to the body
+      document.body.appendChild(imageContainer);
+
+      // Get the clicked image
+      var clickedImage = event.target.closest('.carousel-item').querySelector('.d-block.img-fluid');
+
+      // Calculate the position of the container relative to the clicked image
+      var clickedImageRect = clickedImage.getBoundingClientRect();
+      var containerWidth = imageContainer.offsetWidth;
+      var containerHeight = imageContainer.offsetHeight;
+      var containerTop = clickedImageRect.top + window.scrollY;
+      var containerLeft = clickedImageRect.right;
+
+      // Adjust the position to the right side of the clicked image
+      containerTop += (clickedImageRect.height - containerHeight) / 2;
+      containerLeft += 10; // Adjust as needed to add space between the clicked image and the container
+
+      // Set the initial position of the container to be outside the viewport on the left
+      imageContainer.style.top = containerTop + 'px';
+      imageContainer.style.left = '-100%';
+
+      // Wait for a moment to allow transition effect
+      setTimeout(function() {
+          // Fade in the container
+          imageContainer.classList.add('fade-in');
+          // Slide the container into view from left to right
+          imageContainer.style.left = containerLeft + 'px';
+      }, 10);
+
+      // Add event listener to close the image when clicking outside of it or on the image
+      imageContainer.addEventListener('click', function(event) {
+          // Slide the container out to the left when closing
+          imageContainer.style.left = '-100%';
+          // Fade out the container while sliding
+          imageContainer.classList.remove('fade-in');
+          setTimeout(function() {
+              // Remove the container after the transition is complete
+              imageContainer.remove();
+          }, 500); // Set the timeout to match the transition duration
+      });
+  }
+
+  // Add event listeners to all images with the specified class to display them when clicked
+  document.querySelectorAll('.carousel-item .d-block.img-fluid').forEach(function(img) {
+      img.addEventListener('click', function(event) {
+          var imageUrl = this.src;
+          displayImage(imageUrl);
+      });
+  });
+  </script>
   
   
   
@@ -1554,7 +1546,7 @@
       }
     </style>
     
-    <nav style="display: grid; border: 1px groove black; margin-top: 100px; border-radius: 30px; background: linear-gradient(to bottom right, #8B4513, #f6c3ac, #D2B48C); padding-top: 0px; padding-bottom: 100px; top: 20px; margin-top: 1200px;">
+    <nav style="display: grid; border: 1px groove black; border-radius: 30px; background: linear-gradient(to bottom right, #8B4513, #f6c3ac, #D2B48C); padding-top: 0px; padding-bottom: 100px; top: 20px; margin-top: 130px;">
       <div class="is-mobile-preview"></div>
       <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="position: relative; width: 390px; top: 20px;">
         <style>
@@ -2065,44 +2057,7 @@
     
     
     <style>
-          .canvas-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .canvas-section {
-      margin: 10px;
-      padding: 20px;
-      background: #f2f2f2;
-      border: 2px groove black;
-      border-radius: 10px;
-    }
-    .slideshow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .image-container {
-      width: 150px;
-      margin-bottom: 20px;
-    }
-    .image-container img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-    .text-center {
-      text-align: center;
-    }
-    .paragraph-style {
-      background: linear-gradient(to right, #ad7c5e, #613613);
-      color: white;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: medium;
-    }
+
     </style>
     <div class="canvas" id="myCanvas">
     </div>

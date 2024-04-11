@@ -7,745 +7,296 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-
-    <title>Meniu Produse 1</title>
+    <title>Menu Products 1</title>
     <style>
-      /* Styles for the whole page */
-      body {
-        font-family: Arial, sans-serif;
-        background: linear-gradient(100deg, #F5DEB3, #D2B48C, #A0522D);
-        border: solid 1px yellow;
-        border-radius: 30px;
-        border-style: ridge;
-      }
-      .main-content {
-        margin-left: 250px;
-        padding: 20px;
-        padding-top: 60px;
-        transition: margin-left 0.3s;
-      }
-
-      .main {
-        margin-left: 0; /* Adjust margin-left to match the width of the side navigation menu */
-        padding: 20px;
-        transition: margin-left 0.3s; /* Add smooth transition effect */
-        padding-top: 60px; /* Adjust padding-top to leave space for the header */
-        width: calc(100% - 250px);
-        margin-left: 250px;
-      }
-      /* Styles for the header */
-
-      .closebtn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 30px;
-        cursor: pointer;
-        z-index: 2;
-        color: white;
-      }
-      header {
-        background: #3d2518;
-        padding: 20px;
-        text-align: center;
-        color: #fff;
-        margin: 0;
-        border-radius: 30px;
-      }
-
-      header h1 {
-        /* Removing default margin */
-        margin: 0; 
-        /* Adjusting font size */
-        font-size: 20px; 
-        border-radius: 30px;
-      }
-
-      /* Styles for the main content */
-      main {
-        padding: 20px;
-      }
-
-      /* Styles for the product containers */
-      .product-container {
-        display: flex;
-        position: relative;
-        margin-top: 40px;
-        width: 300px;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px groove;
-        border-radius: 20px;
-        padding: 20px;
-        margin-bottom: 20px;
-        /* Linear gradient background */
-        background: linear-gradient(45deg, #F0F0F0, #E0E0E0);
-        border: 2px solid #ff6666;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-      }
-      .product-details {
-        display: flex;
-        align-items: center;
-      }
-      .product-details img {
-        max-width: 100px;
-        max-height: 100px;
-        border-radius: 10px;
-        margin-right: 20px; /* Adjust margin as needed */
-      }
-      .description {
-        max-width: calc(100% - 120px); /* Adjust according to image width and margin */
-      }
-      .description h3 {
-        max-width: calc(100% - 120px);
-      }
-      .description p {
-        border: 1px groove #000000;
-        border-radius: 5px;
-        background-color: chocolate;
-        margin-top: 55px;
-        margin-left: 2px;
-        padding: 10px;
-        max-height: 140px;
-      }
-      .description button {
-        margin-top: 10px; /* Add some space between paragraph and button */
-      }
-      /* Dropdown styles */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .dropdown-content {
-        display: none;
-        z-index: 9999;
-        position: absolute;
-        border-radius: 30px;
-        background-color: #f9f9f9;
-        min-width: 200px;
-        height: 200px;
-        z-index: 1;
-        left: 50%;
-        top: 35%;
-        transform: translateX(-50%);
-      }
-      .dropdown-content .row {
-        display: flex;
-      }
-
-      .dropdown-content .column {
-        flex: 1;
-        padding: 10px;
-      }
-
-      /* Styles for the navigation circle */
-      .nav-circle {
-        position: sticky;
-        bottom: 620px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #ff6666;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-      }
-
-      /* Styles for the down arrow icon */
-      .nav-circle i {
-        color: #fff;
-        font-size: 24px;
-      }
-      .product-container img {
-        border: 1px solid rgba(0, 0, 0, 0.296);
-        border-radius: 30px;
-        width: 120px;
-        height: 145px;
-        border-radius: 10px;
-        margin-bottom: 47px;
-      }
-
-
-      .product-container h3 {
-        margin-top: 20px;
-        position: relative;
-        top: 17px;
-        margin-left: 2px;
-        border: 1px solid black;
-        border-radius: 10px;
-        background-color: bisque;
-        color: #333;
-      }
-      .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #b46000;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      cursor: pointer;
-      }
-
-      .close-button:hover {
-        background-color: #ff3333;
-      }
-       /* Styles for the quantity selector */
-       .quantity-selector {
-        display: flex;
-        align-items: center;
-      }
-
-      .quantity-btn {
-        background-color: #ff6666;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-
-      .quantity-input {
-        width: 50px;
-        text-align: center;
-        margin: 0 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 5px;
-      }
-      /* Styles for the cart icon */
-      .cart-icon {
-        position: absolute;
-        top: 13px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 3;
-      }
-      .clear-cart-btn {
-        position: fixed;
-        bottom: 0px;
-        right: 20px;
-        padding: 10px 20px;
-        background-color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 1000;
-      }
-      .cart-dropdown.active .clear-cart-btn {
-        background-color: #dddddd;
-        display: inline-block;
-        position: relative;
-        margin-left: 240px;
-        margin-top: 10px;
-      }
-
-      /* Styles for the cart badge */
-      .cart-badge {
-        position: absolute;
-        top: 6px;
-        right: 1px;
-        background-color: #54232300;
-        color: white;
-        border-radius: 50%;
-        padding: 5px 10px;
-        font-size: 14px;
-      }
-      /* Styles for the cart dropdown */
-      .cart-dropdown {
-        position: relative;
-        z-index: 1000;
-        display: none;
-        max-height: 600px;
-        overflow-y: auto;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 30px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-        /* Keyframes for dropdown animation */
-        @keyframes dropdownAnimation {
-          from {
-            height: 0; /* Start with height 0 */
-          }
-          to {
-            height: 300px; /* Increase height to 300px */
-          }
+        /* Styles for the whole page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(100deg, #F5DEB3, #D2B48C, #A0522D);
+            border: solid 1px yellow;
+            border-radius: 30px;
+            border-style: ridge;
+            position: relative; /* Added to position side navigation and cart */
         }
-        .cart-dropdown.active {
-          display: block;
-          /* Position the dropdown absolutely */
-          position: absolute;
-          top: 50px; /* Adjust as needed */
-          right: 20px; /* Adjust as needed */
-          /* Adjust the width and height as needed */
-          width: 300px;
-          height: 550px;
-          border: 2px solid #ff6666;
-          /* Apply animation for smooth dropdown */
-          animation: dropdownAnimation 0.2s ease; 
+
+        /* Styles for the side navigation */
+        .sidenav {
+            width: 0; /* Adjusted to start with the side navigation closed */
+            background-color: #f3f3f3;
+            padding-top: 60px;
+            border-right: solid 1px #ddd;
+            border-radius: 0 30px 30px 0;
+            z-index: 9000;
+            overflow-x: hidden;
+            transition: 0.5s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
         }
-        .cart-dropdown-item {
-          padding: 10px;
-          border-bottom: 1px solid #ccc;
-          font-size: 14px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            display: block;
         }
-        .product-count {
-          position: absolute;
-          top: 5px;
-          right: 5px;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background-color: #007bff;
+        .sidenav a:hover {
+            background-color: #ddd;
+        }
+        .sidenav .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Styles for the main content */
+        .main-content {
+            margin-left: 250px; /* Adjusted to accommodate the side navigation */
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+        .main {
+            padding: 20px;
+            width: calc(100% - 250px);
+        }
+
+        /* Styles for the header */
+        header {
+            background: #3d2518;
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            margin: 0;
+            border-radius: 30px;
+            position: fixed;
+            top: 0;
+            width: auto; /* Header width set to auto */
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0; 
+            font-size: 20px; 
+            border-radius: 30px;
+        }
+
+        /* Styles for the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            border-radius: 30px;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            height: 200px;
+            right: 100%;
+            top: 35%;
+            transform: translateY(-50%);
+        }
+        .dropdown-content .row {
+            display: flex;
+        }
+        .dropdown-content .column {
+            flex: 1;
+            padding: 10px;
+        }
+
+        /* Styles for the navigation and cart circles */
+        .nav-circle, .cart-circle, .nav-menu {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #ff6666;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px 2px #3d2518;
+            z-index: 1000;
+        }
+        .nav-circle i, .cart-circle i, .nav-menu i {
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Cart dropdown styles */
+        .cart-dropdown {
+            position: fixed;
+            top: 70px;
+            right: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+        .cart-dropdown ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .cart-dropdown li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+        }
+        .cart-dropdown li:hover {
+            background-color: #f9f9f9;
+        }
+        .cart-dropdown li:last-child {
+            border-bottom: none;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+            }
+            .main {
+                width: 100%;
+            }
+            .sidenav {
+              z-index: 6000;
+                width: 100%;
+                border-radius: 0;
+                height: auto;
+                padding-top: 20px;
+            }
+            header {
+                width: 100%;
+                border-radius: 0;
+            }
+            .nav-circle, .cart-circle, .nav-menu {
+                top: 80px;
+                left: calc(100% - 70px);
+            }
+        }
+        .openbtn {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          background-color: #ff6666;
           color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .btn.btn-primary, .btn.btn-secondary {
-          color: #497e52;
-          width: 140px;
-          border-radius: 30px;
-        }
-        .quantity-span {
-          position: absolute;
-          bottom: 5px;
-          right: 5px;
-          background-color: rgba(255, 255, 255, 0.7);
-          color: black;
-          padding: 5px;
+          padding: 10px 20px;
+          border: none;
           border-radius: 5px;
+          cursor: pointer;
+          z-index: 5000;
+        }
+
+        .openbtn:hover {
+          background-color: #ff9999;
         }
     </style>
-  </head>
-  <body>
-    <div class="sidenav" id="mySidenav">
-      <div class="toggle-btn" onclick="toggleNav()">
-          <div class="toggle-bar"></div>
-          <div class="toggle-bar"></div>
-          <div class="toggle-bar"></div>
-      </div>
-    </div>
-    <!-- Navigation circle -->
-    <div class="nav-circle" id="dropdownToggle">
-        <i class="fas fa-chevron-down"></i>
-    </div>
-    <script>
-      function toggleNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var main = document.querySelector("main");
-        if (sidenav.style.left === "0px") {
-          sidenav.style.left = "-250px";
-          main.style.marginLeft = "0px";
-        } else{
-          sidenav.style.left="0px";
-          main.style.marginLeft="250px";
-        }
-      }
-    </script>
-
-    <style>
-      .cart-items-container .cart-item-container {
-        width: 100px;
-        height: 100px;
-        /* Add any additional styles as needed */
-      }
-      .cart-items-container .cart-item {
-        display: unset;
-        /* Add any styles for the cart item */
-      }
-      .cart-items-container .cart-item img {
-        max-width: 100%;
-        max-height: 100%;
-        /* Add any additional image styles as needed */
-      }
-      .cart-item {
-        border: 1px solid black;
-        max-width: 100px;
-        max-height: 100px;
-        padding: 5px;
-        /* Adjust margin as needed */
-        margin-bottom: 10px; 
-        overflow: hidden;
-        /* Include padding and border in the width/height */
-        box-sizing: border-box; 
-      }
-    </style>
-  <!-- Container for cart items -->
-  <div id="cartDropdown" class="cart-dropdown">
-    <!-- Cart Items Container -->
-    <div id="cartItemsContainer" class="cart-items-container"></div>
-    <!-- Clear Cart Button -->
-    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-  </div>
-  <!-- Cart icon -->
-  <div class="cart-icon" onclick="toggleCart()">
-    <i class="fas fa-shopping-cart fa-2x" style="position: -webkit-sticky;"></i>
-    <span class="cart-badge" id="cartCounter">0</span>
-  </div>
-    <!-- Dropdown content -->
-    <div class="dropdown-content" id="dropdownContent">
-      <button class="close-button" onclick="closeDropdown()"><i class="fas fa-times"></i></button>
-      <div class="row" id="cartItems"></div>
-        <!-- Product containers -->
-        <div class="product-container" id="Product_1">
-            <img src="https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 1" style="width: 100px; height: 100px;">
-            <div class="description" style="background-color: #988579; border-radius: 30px;">
-              <h2>Product 1</h2>
-              <p>Produs din cafea de calitate buna</p>
-              <div class="quantity-selector">
-                <button class="quantity-btn" onclick="decrementQuantity(this)">-</button>
-                <input type="number" class="quantity-input" value="1">
-                <button class="quantity-btn" onclick="incrementQuantity(this)">+</button>
-              </div>
-              <button class="btn btn-primary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-              <button class="btn btn-secondary" onclick="removeFromCart(this)" ><i class="fas fa-cart-plus"></i> Remove from Cart</button>
-            </div>
-        </div>
-        <div class="product-container" id="Product_2">
-          <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Product 2" style="width: 100px; height: 100px;">
-              <div class="description" style="background-color: #988579; border-radius: 30px;">
-                  <h3>Product 2</h3>
-                  <p>Produs din cafea de calitate superioara</p>
-                  <div class="quantity-selector">
-                    <button class="quantity-btn" onclick="decrementQuantity(this)">-</button>
-                    <input type="number" class="quantity-input" value="1">
-                    <button class="quantity-btn" onclick="incrementQuantity(this)">+</button>
-                  </div>
-                  <button class="btn btn-primary" onclick="addToCart(this)"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-                  <button class="btn btn-secondary"onclick="removeFromCart(this)"><i class="fas fa-cart-plus"></i> Remove from Cart</button>
-              </div>
-            </div>
-        </div>
-        <!-- New product container -->
-    </div>
-
-    </div>
+</head>
+<body>
     <header>
-        <h1>Coffee House Menu</h1>
-    </header>
-
-    <main>
-      <div class="navbar" style="width: 360px; height: auto; position: relative; border: 2px solid #ff6666; background-color: #f9f9f9; border-radius: 30px; right: 20px;">
-        <a href="http://192.168.100.53:8081/WebSite/public/index.html" style="text-decoration: none; color: #333; padding: 10px; border-radius: 30px; background-color: #ff6666; bottom: 9px; position: relative; font-size: small; text-decoration: overline;">Acasa</a>
-        <a href="#news" style="text-decoration: overline; color: #000000; padding: 10px; border-radius: 30px; background-color: #ff6666; position: relative; bottom: 9px; right: 4px; font-size: small;">Noutati</a>
-        <div class="dropdown">
-          <button class="dropbtn" style="position: relative; border-radius: 30px; width: 100px; height: 40px; position: relative; bottom: 10px; left: 110px; background-color: #ff6666; font-size: small; text-decoration-line: overline;">Dropdown
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content flowWaves flowWavesDepth" style="width: 350px; display: none; margin-top: 20px; background-color: #988579; height: 600px;">
-            <div class="header">
-              <h2 style="font-size: medium; text-align: center;">Mega Menu</h2>
+        <h1>Menu Products 1</h1>
+        <!-- Cart Icon -->
+        <div class="dropdown" id="cartDropdown">
+            <span onclick="toggleCartDropdown()" class="cart-circle"><i class="fas fa-shopping-cart"></i></span>
+            <!-- Cart Dropdown -->
+            <div id="cartContent" class="cart-dropdown">
+                <ul id="cartItemList">
+                    <!-- Cart Items Will Be Added Dynamically -->
+                </ul>
             </div>
-            <div class="row" id="row-1">
-              <div class="column">
-                <div class="container" style="width: 300px; height: auto; background-color: #ffb28c; border-radius: 30px;">
-                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
-                  <div class="product-content" style="display: none;">
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
-                  </div>
-                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
-                  <div class="product-content" style="display: none;">
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
-                  </div>
-                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
-                  <div class="product-content" style="display: none;">
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
-                  </div>
-                  <button class="dropbtn-product btn btn-primary">Produse din boabe de cafea Arabica</button>
-                  <div class="product-content" style="display: none;">
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 1</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 2</a>
-                    <a href="#link" class="btn btn-link" style="display: block; padding: 5px; color: #000; border: 1px solid; border-radius: 20px;">Link 3</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </main>
-    
+        <!-- Dropdown Circle -->
+        <div class="dropdown" id="productDropdown">
+            <span onclick="toggleDropdown()" class="nav-circle"><i class="fas fa-ellipsis-v"></i></span>
+            <div id="productContent" class="dropdown-content">
+                <div class="row">
+                    <div class="column">
+                        <a href="#">Option 1</a>
+                        <a href="#">Option 2</a>
+                    </div>
+                    <div class="column">
+                        <a href="#">Option 3</a>
+                        <a href="#">Option 4</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="sidenav" id="mySidenav">
+      <button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2>Menu</h2>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="nav-menu">&#9776;</span>
+    <div class="main-content" id="mainContent" style="margin-top: 450px;">
+        <main>
+            <div class="product-container">
+                <div class="product-details">
+                    <img src="https://via.placeholder.com/150" alt="Product Image">
+                    <div class="description">
+                        <h3>Product Name 1</h3>
+                        <p>Description of the product goes here. It can span multiple lines.</p>
+                        <button onclick="addToCart('Product Name 1')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <span onclick="toggleDropdown()" class="nav-circle"><i class="fas fa-ellipsis-v"></i></span>
+                    <div id="dropdownMenu" class="dropdown-content">
+                        <div class="row">
+                            <div class="column">
+                                <a href="#">Option 1</a>
+                                <a href="#">Option 2</a>
+                            </div>
+                            <div class="column">
+                                <a href="#">Option 3</a>
+                                <a href="#">Option 4</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
     <script>
-      // Add event listener to toggle dropdown content when dropdown button is clicked
-      document.querySelector('.dropbtn').addEventListener('click', function() {
-        var dropdownContent = this.nextElementSibling; // Find the dropdown content next to the dropdown button
-        // Toggle display of content
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-      });
-    
-      // Add event listener to toggle dropdown content for each product-container
-      document.querySelectorAll('.dropbtn-product').forEach(function(button) {
-        button.addEventListener('click', function() {
-          var content = this.nextElementSibling; // Find the dropdown content next to the clicked button
-          // Toggle display of content
-          content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        });
-      });
-    </script>
-    
-    
-    
-    <script>
-      document.getElementById('dropdownToggle').addEventListener('click', function(event) {
-        var dropdownContent = document.getElementById('dropdownContent');
-        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-        // Prevent the default action of the button
-        event.preventDefault();
-      });
-    
-      let productCounter = 0; // Counter to keep track of the number of products added
-    
-      function addToCart(product) {
-        // If the product is new, create a new container for it
-        let existingProductContainer = document.querySelector(`.cart-item-container[data-product-id="${productCounter}"]`);
-        if (!existingProductContainer) {
-          // Create a new container for the product
-          let cartItemContainer = createCartItemContainer(product);
-    
-          // Append the container to the cart dropdown container
-          cartDropdown.appendChild(cartItemContainer);
-    
-          // Increment the cart counter
-          let cartCounter = document.getElementById('cartCounter');
-          cartCounter.innerText = parseInt(cartCounter.innerText) + 1;
-        } else {
-          // If the product container already exists, increment its quantity
-          let quantitySpan = existingProductContainer.querySelector('.quantity-span');
-          let currentQuantity = parseInt(quantitySpan.textContent.split(':')[1].trim());
-          quantitySpan.textContent = `Quantity: ${currentQuantity + 1}`;
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
         }
-      }
-    
-      function createProductContainer(product) {
-        // Create a container for the product
-        let productContainer = document.createElement('div');
-        productContainer.classList.add('product-container');
-    
-        // Set width and height
-        productContainer.style.width = '100px';
-        productContainer.style.height = '100px';
-        // Center align the content
-        productContainer.style.textAlign = 'center';
-    
-        // Add border
-        productContainer.style.border = '1px solid black';
-        productContainer.style.borderRadius = '20px';
-    
-        // Create the image element
-        let productImage = document.createElement('img');
-        // Set the src attribute to the specified URL
-        productImage.src = 'https://images.unsplash.com/photo-1580661869408-55ab23f2ca6e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-        // Set the alt attribute to the product name
-        productImage.alt = product.name;
-        // Set the width and height of the image
-        // Adjust the size as needed
-        productImage.style.width = '80px';
-        // Adjust the size as needed
-        productImage.style.height = '80px';
-        // Adjust margin for better alignment
-        productImage.style.marginTop = '10px';
-        // Round the corners
-        productImage.style.borderRadius = '20px';
-    
-        // Append the image to the product container
-        productContainer.appendChild(productImage);
-    
-        // Create and add the product name
-        let productName = document.createElement('div');
-        productName.classList.add('product-name');
-        productName.textContent = product.name;
-        // Style the product name
-        // Adjust margin for better alignment
-        productName.style.marginTop = '5px';
-    
-        // Append the product name to the container
-        productContainer.appendChild(productName);
-    
-        // Return the product container
-        return productContainer;
-      }
-    
-    
-      function createCartItemContainer(product, productId) {
-        let cartItemContainer = document.createElement('div');
-        cartItemContainer.classList.add('cart-item-container');
-        cartItemContainer.setAttribute('data-product-id', productId);
 
-        // Set width, height, and border styles
-        cartItemContainer.style.width = '100px';
-        cartItemContainer.style.height = '100px';
-        cartItemContainer.style.border = '1px groove black';
-        cartItemContainer.style.borderRadius = '30px';
-
-        // Create a new cart item
-        let cartItem = createProductContainer(product);
-
-        // Append the cart item to the container
-        cartItemContainer.appendChild(cartItem);
-
-        // Add quantity to the container
-        let quantitySpan = document.createElement('span');
-        quantitySpan.classList.add('quantity-span');
-        quantitySpan.textContent = 'Quantity: 1'; // Default quantity is 1 for each addition
-        quantitySpan.style.backgroundColor = 'white'; // Set background color to white
-        quantitySpan.style.borderRadius = '30px';
-        cartItemContainer.appendChild(quantitySpan);
-
-        return cartItemContainer;
-      }
-    
-      function removeFromCart(btn) {
-        let productNameElement = btn.parentElement.querySelector('.product-name');
-        if (!productNameElement) {
-          console.error('Product name element not found.');
-          return;
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
         }
-        let productName = productNameElement.innerText;
-        let quantityInput = btn.parentElement.querySelector('.quantity-input');
-        let quantity = parseInt(quantityInput.value);
-    
-        // Update the cart counter
-        let cartCounter = document.getElementById('cartCounter');
-        let currentCount = parseInt(cartCounter.innerText);
-        let newCount = Math.max(currentCount - quantity, 0);
-        cartCounter.innerText = newCount;
-    
-        // Find and update the product container in the cart dropdown container
-        let cartItems = document.querySelectorAll('.cart-item-container');
-        cartItems.forEach(item => {
-          let itemName = item.querySelector('.product-name').innerText;
-          if (itemName === productName) {
-            // Update quantity
-            let quantitySpan = item.querySelector('.quantity-span');
-            let currentQuantity = parseInt(quantitySpan.textContent.split(':')[1].trim());
-            let updatedQuantity = Math.max(currentQuantity - quantity, 0);
-            quantitySpan.textContent = `Quantity: ${updatedQuantity}`;
-    
-            // If quantity becomes zero, remove the container
-            if (updatedQuantity === 0) {
-              item.remove();
+
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdownMenu");
+            if (dropdown.style.display === "none") {
+                dropdown.style.display = "block";
+            } else {
+                dropdown.style.display = "none";
             }
-          }
-        });
-    
-        // Show or hide clear cart button
-        let clearCartButton = document.querySelector('.clear-cart-btn');
-        if (newCount > 0) {
-          clearCartButton.style.display = 'block';
-        } else {
-          clearCartButton.style.display = 'none';
         }
-    
-        // Ensure cart dropdown remains open
-        let cartDropdown = document.getElementById('cartDropdown');
-        cartDropdown.classList.add('active');
-      }
-    
-      function closeDropdown() {
-        var dropdownContent = document.getElementById('dropdownContent');
-        dropdownContent.style.display = 'none';
-      }
-    
-      function decrementQuantity(btn) {
-        let quantityInput = btn.nextElementSibling;
-        let currentQuantity = parseInt(quantityInput.value);
-        if (currentQuantity > 1) {
-          // Decrement the quantity input
-          quantityInput.value = currentQuantity - 1;
-          // Remove one item from the cart
-        }
-      }
-    
-      function incrementQuantity(btn) {
-        let quantityInput = btn.previousElementSibling;
-        let currentQuantity = parseInt(quantityInput.value);
-        let previousQuantity = currentQuantity - 1; // Previous quantity before incrementing
-    
-        // Increment the quantity input
-        quantityInput.value = currentQuantity + 1;
-    
-        // Add the difference to the cart (number of products added)
-        let difference = currentQuantity - previousQuantity;
-        for (let i = 0; i < difference; i++) {
-          addToCart(btn);
-        }
-      }
-    
-      function addClearCartButton() {
-        let cartDropdown = document.getElementById('cartDropdown');
-        // Check if a clear button already exists
-        if (!document.querySelector('.clear-cart-btn')) {
-          let clearCartButton = document.createElement('button');
-          clearCartButton.classList.add('clear-cart-btn');
-          clearCartButton.innerText = 'Clear Cart';
-          clearCartButton.onclick = clearCart;
-          cartDropdown.appendChild(clearCartButton);
-        }
-      }
-    
-      function toggleCart() {
-        let dropdownContent = document.getElementById('dropdownContent');
-        let cartDropdown = document.getElementById('cartDropdown');
-        let cartCounter = document.getElementById('cartCounter');
-    
-        if (parseInt(cartCounter.innerText) > 0) {
-          // Show the clear cart button
-          addClearCartButton();
-        }
-    
-        if (cartDropdown.classList.contains('active')) {
-          // Cart is active, hide it
-          cartDropdown.classList.remove('active');
-        } else {
-          // Cart is not active, show it
-          cartDropdown.classList.add('active');
-          // Add coffee-themed background when active
-          cartDropdown.style.background = "linear-gradient(to bottom, #8B4513, #D2B48C)";
-          if (dropdownContent.style.display !== 'block') {
-            // If dropdown content is not visible, add product containers
-            if (cartDropdown.children.length === 0) {
-              // Only add product containers if none exist already
-              addProductContainers(cartDropdown);
+
+        function toggleCartDropdown() {
+            var cartDropdown = document.getElementById("cartContent");
+            if (cartDropdown.style.display === "none") {
+                cartDropdown.style.display = "block";
+            } else {
+                cartDropdown.style.display = "none";
             }
-          }
         }
-      }
-    
-    
-      function clearCart() {
-        let cartCounter = document.getElementById('cartCounter');
-        cartCounter.innerText = '0';
-        let cartDropdown = document.getElementById('cartDropdown');
-    
-        // Clearing all the product containers
-        cartDropdown.innerHTML = '';
-    
-        // Re-append the clear cart button
-        addClearCartButton();
-    
-        cartDropdown.classList.remove('active');
-      }
     </script>
 </body>
 </html>
