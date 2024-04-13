@@ -6,6 +6,7 @@ const { addPasswordHashHook, saltRounds } = require('./userHooks.js');
 const { sequelize: dbInstance } = require('../routes/db_config.js'); 
 
 
+
 const sequelize = new Sequelize({
   dialect: 'postgres',
   host: process.env.DB_HOST || '192.168.100.53',
@@ -15,94 +16,92 @@ const sequelize = new Sequelize({
   database: process.env.DB_NAME || 'AccountCreation',
 });
 
+
 const User = sequelize.define('User', {
   id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-    allowNull: false,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
   },
   username: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
-    unique: true,
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: true,
   },
   email: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
-    unique: true,
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: true,
   },
   password: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
+      type: DataTypes.STRING(100),
+      allowNull: false,
   },
   full_name: {
-    type: DataTypes.STRING(255), 
-    allowNull: false, 
+      type: DataTypes.STRING(255),
+      allowNull: false,
   },
   location: {
-    type: DataTypes.STRING(255),
-    allowNull: false,
+      type: DataTypes.STRING(255),
+      allowNull: false,
   },
   phone_number: {
-    type: DataTypes.STRING(20), 
-    allowNull: false,
+      type: DataTypes.STRING(20),
+      allowNull: false,
   },
   contact_details: {
-    type: DataTypes.TEXT(200),
-    allowNull: false,
+      type: DataTypes.TEXT(200),
+      allowNull: false,
   },
   address: {
-    type: DataTypes.TEXT(100),
-    allowNull: false,
+      type: DataTypes.TEXT(100),
+      allowNull: false,
   },
   country_of_residence: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
+      type: DataTypes.STRING(100),
+      allowNull: false,
   },
   createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: Sequelize.NOW,
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW,
   },
   updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: Sequelize.NOW,
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: Sequelize.NOW,
   },
   first_name: {
-    type: DataTypes.STRING(255),
-    allowNull: false,
+      type: DataTypes.STRING(255),
+      allowNull: false,
   },
   last_name: {
-    type: DataTypes.STRING(255),
-    allowNull: false,
+      type: DataTypes.STRING(255),
+      allowNull: false,
   },
   profilepicturefilename: {
-    type: DataTypes.STRING(255),
-    allowNull: true,
+      type: DataTypes.STRING(255),
+      allowNull: true,
   },
   profilepicturefilepath: {
-    type: DataTypes.STRING(255),
-    allowNull: true,
+      type: DataTypes.STRING(255),
+      allowNull: true,
   },
   profilepicturefilesize: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
+      type: DataTypes.INTEGER,
+      allowNull: true,
   },
   profilepicturemimetype: {
-    type: DataTypes.STRING(50),
-    allowNull: true,
+      type: DataTypes.STRING(50),
+      allowNull: true,
   },
   profilepictureuploaddate: {
-    type: DataTypes.DATE,
-    allowNull: true,
+      type: DataTypes.DATE,
+      allowNull: true,
   },
 
 }, { tableName: 'users' });
-
-addPasswordHashHook(User);
-
 
 const Session = sequelize.define('Session', {
   sid: {
@@ -134,6 +133,7 @@ const Session = sequelize.define('Session', {
   },
 }, { tableName: 'sessions' });
 
+addPasswordHashHook(User);
 
 
 (async () => {
@@ -153,21 +153,6 @@ const Session = sequelize.define('Session', {
   }
 })();
 
-const registerUser = async (username, email, password) => {
-  try {
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
-    const newUser = await User.create({
-      username,
-      email,
-      password: hashedPassword
-    });
-    console.log('User created:', newUser);
-    return newUser;
-  } catch (error) {
-    console.error('Error registering user:', error.message);
-    throw error;
-  }
-};
 
 User.findByUsername = async (username) => {
   try {
@@ -216,4 +201,4 @@ const updateUserProfile = async (userId, profileData) => {
   }
 };
 
-module.exports = { User, registerUser, updateUserProfile, sequelize, Session };
+module.exports = { User, updateUserProfile, sequelize, Session };

@@ -1,5 +1,3 @@
-// profileRoutes.js
-
 // Import necessary modules
 const express = require('express');
 const multer = require('multer');
@@ -7,8 +5,6 @@ const path = require('path');
 const fs = require('fs');
 const router = express.Router();
 const User = require('../models/userModel.js');
-
-
 
 // Function to define storage for profile pictures
 function configureProfilePictureStorage() {
@@ -57,41 +53,39 @@ router.post('/profile-photos', upload.array('profilePictures', 12), async (req, 
         res.status(500).json({ message: 'Error uploading profile pictures' });
     }
 });
-// Function to handle profile picture upload
-// Function to handle profile picture upload
+
+// Function to handle profile picture upload during profile completion
 router.post('/upload-profile-picture', upload.single('profilePicture'), async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
 
-        const profilePicture = req.file;
-        const fileName = profilePicture.filename;
-        const fileSize = profilePicture.size;
-        const mimeType = profilePicture.mimetype;
-        const uploadDate = new Date();
+        // Assuming you have user authentication middleware and req.user contains the authenticated user's information
+        const userId = req.user.id;
 
         // Update the user's profile to store the profile photo information
-        const userId = req.user.id;
         const user = await User.findById(userId);
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        user.profilePictureFileName = fileName;
-        user.profilePictureFilePath = profilePicture.path;
-        user.profilePictureFileSize = fileSize;
-        user.profilePictureMimeType = mimeType;
-        user.profilePictureUploadDate = uploadDate;
+        // Save the profile picture information to the user's profile
+        const profilePicture = await saveProfilePicture(req.file);
+        user.profilePictureFileName = profilePicture.filename;
+        user.profilePictureFilePath = profilePicture.filepath;
+        user.profilePictureFileSize = profilePicture.filesize;
+        user.profilePictureMimeType = profilePicture.mimetype;
+        user.profilePictureUploadDate = profilePicture.uploadDate;
         await user.save();
 
         return res.status(200).json({
             message: 'Profile picture uploaded successfully',
-            fileName,
-            filePath: profilePicture.path,
-            fileSize,
-            mimeType,
-            uploadDate
+            fileName: profilePicture.filename,
+            filePath: profilePicture.filepath,
+            fileSize: profilePicture.filesize,
+            mimeType: profilePicture.mimetype,
+            uploadDate: profilePicture.uploadDate
         });
     } catch (error) {
         console.error('Error uploading profile picture:', error);
@@ -99,27 +93,25 @@ router.post('/upload-profile-picture', upload.single('profilePicture'), async (r
     }
 });
 
-// Function to search for a file in a directory
-function file_searching(filePath, fileName) {
-    return new Promise((resolve, reject) => {
-        fs.readdir(filePath, (err, files) => {
-            if (err) {
-                // Error reading directory
-                reject(err);
-                return;
-            }
+// Function to save profile picture to a file
+async function saveProfilePicture(profilePicture) {
+    try {
+        // Save the profile picture to a file
+        const profilePictureFilename = `profile_${Date.now()}_${profilePicture.originalname}`;
+        const profilePictureFilePath = path.join(__dirname, '..', 'profile_pictures', profilePictureFilename);
+        await profilePicture.mv(profilePictureFilePath);
 
-            // Check if the fileName exists in the directory
-            if (files.includes(fileName)) {
-                // File found
-                resolve(true);
-            } else {
-                // File not found
-                resolve(false);
-            }
-        });
-    });
-};
-
+        return {
+            filename: profilePictureFilename,
+            filepath: profilePictureFilePath,
+            filesize: profilePicture.size,
+            mimetype: profilePicture.mimetype,
+            uploadDate: new Date()
+        };
+    } catch (error) {
+        console.error('Error saving profile picture:', error);
+        throw error;
+    }
+}
 
 module.exports = router;

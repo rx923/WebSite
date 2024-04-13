@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const { saltRounds } = require('../config/constants');
+const { Sequelize, DataTypes } = require('sequelize');
 
 const addPasswordHashHook = (User) => {
     User.addHook('beforeCreate', async (user) => {

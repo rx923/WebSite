@@ -1,18 +1,34 @@
+// Authentication page which is handling the user login routes.
+// imported modules constants are set to be using different exported modules and handle user related authentication. 
+
+
+
+
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const sessionUtils = require('./sessionUtils');
 const { Op } = require('sequelize');
 const validator = require('validator');
 const { User, Session } = require('../models/userModel');
+const { addPasswordHashHook} = require('../models/userHooks');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
+const fs = require('fs');
 const { authenticateAndGenerateToken } = require('../routes/user_authentication_routes');
+
 
 async function hashPassword(plaintextPassword) {
     try {
-        const salt = await bcrypt.genSalt(10);
+        // Generate a salt with 10 rounds
+        const saltRounds = 10;
+        const salt = await bcrypt.genSalt(saltRounds);
+
+        // Hash the plaintext password using the generated salt
         const hashedPassword = await bcrypt.hash(plaintextPassword, salt);
-        console.log('Password hashed successfully', hashedPassword);
+
+        // Log the hashed password for debugging (optional)
+        console.log('Password hashed successfully:', hashedPassword);
+
         return hashedPassword;
     } catch (error) {
         console.error('Error hashing password:', error);
@@ -53,11 +69,11 @@ async function storeTokenInDatabase(sessionId, userId, expire, token) {
 
         const session = await Session.create({
             sid: sessionId, 
-            user_id: userId,
             token: token, 
             expire: expire, 
             createdAt: new Date(),
-            updatedAt: new Date()
+            updatedAt: new Date(),
+            userId: userId // Foreign key association
         });
 
         console.log('Token stored in the database:', session);
@@ -70,36 +86,60 @@ async function storeTokenInDatabase(sessionId, userId, expire, token) {
 
 async function authenticateAndCompare(providedUsername, providedPassword) {
     try {
-        console.log('Authenticating user:', providedUsername);
+        // Log the provided username and password
+        console.log('Provided username:', providedUsername);
+        console.log('Provided password:', providedPassword);
 
+        // Find the user by username
         const user = await User.findOne({ where: { username: providedUsername } });
 
+        // If user does not exist, return error
         if (!user) {
             console.log('User not found:', providedUsername);
-            return { error: 'Invalid username' };
+            return { success: false, message: 'Invalid username' };
         }
 
-        console.log('User found:', user.username);
+        // Retrieve hashed password from the database
+        const storedHashedPassword = user.password;
 
-        // Check if the provided password matches the stored hashed password
-        const isPasswordValid = await bcrypt.compare(providedPassword, user.password);
+        // Log the retrieved hashed password
+        console.log('Retrieved hashed password:', storedHashedPassword);
 
+        // Compare the provided plaintext password with the stored hashed password
+        const isPasswordValid = await bcrypt.compare(providedPassword, storedHashedPassword);
+
+        // Log the result of password comparison
+        console.log('Password comparison result:', isPasswordValid);
+
+        // If password is invalid, return error
         if (!isPasswordValid) {
             console.log('Invalid password for user:', providedUsername);
-            return { error: 'Invalid password' };
+            return { success: false, message: 'Invalid password' };
         }
 
+        // User authenticated successfully
         console.log('User authenticated successfully:', providedUsername);
-        return { user };
+
+        // Return success with the authenticated user object
+        return { success: true, user: user };
+
     } catch (error) {
         console.error('Error authenticating user:', error);
-        throw error;
+        // Return internal server error
+        return { success: false, message: 'Internal server error' };
     }
 };
 
+async function saveProfilePicture(profilePicture, userId) {
+    try {
+        if (!profilePicture) {
+            throw new Error('No profile picture provided');
+        }
 
-
-
+        // Construct a unique filename for the profile picture
+        const profilePictureFilename = `profile_${userId}_${Date.now()}_${profilePicture.name}`;
+        console.log('Profile Picture Filename:', profilePictureFilename); // Log the filename
+        
         const profilePictureFilePath = path.join(__dirname, '..', 'profile_pictures', profilePictureFilename);
         console.log('Profile Picture Filepath:', profilePictureFilePath); // Log the filepath
 
@@ -118,7 +158,6 @@ async function authenticateAndCompare(providedUsername, providedPassword) {
         throw error;
     }
 };
-
 
 async function registerUser(req, res, username, email, hashedPassword, userDetails, profilePicture) {
     try {
@@ -207,67 +246,35 @@ async function mapSessionToUser(sessionId, userId) {
     }
 };
 
+
 const authController = {
     login: async (req, res) => {
         try {
             const { username, password } = req.body;
     
-            // Check for missing credentials
-            if (!username || !password) {
-                console.log('Missing username or password in request:', req.body);
-                // Render the login page with an error message
-                return res.status(401).sendFile(path.join(__dirname, '../public/wrong_password&username.html'));
-            }
-    
-            // Authenticate user and compare password
+            // Authenticate user and compare passwords
             const authResult = await authenticateAndCompare(username, password);
-            console.log(authResult, {username}, {password});
-            // Check for authentication errors
-            if (authResult.error) {
-                console.error('Authentication error:', authResult.error);
-                // Render the wrong username or password page
-                return res.status(401).sendFile(path.join(__dirname, '../public/wrong_password&username.html'));
+    
+            // If authentication fails, throw an error
+            if (!authResult || !authResult.user) {
+                console.log('Authentication failed for user:', username);
+                throw new Error('Invalid username or password');
             }
     
-            console.log('Attempting to login with username:', username);
+            const user = authResult.user;
     
-            const { user } = authResult;
+            // Generate a JWT token
+            const token = await generateToken(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000)); // Set expiration to 30 minutes
+            
+            // Store the token in the database
+            await storeTokenInDatabase(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000), token);
     
-            // Generate a session ID
-            const sessionId = generateSessionId(username);
-    
-            // Generate token
-            const token = await generateToken(sessionId, user.id);
-            console.log('Token generated:', token);
-    
-            // 30 minutes expiration
-            const expire = new Date(Date.now() + (30 * 60 * 1000));
-    
-            // Store token in database with expiration time
-            const storedToken = await storeTokenInDatabase(sessionId, user.id, expire, token);
-    
-            if (!storedToken) {
-                console.error('Failed to store token in database');
-                // Return 500 status code and a message to the user
-                return res.status(500).send('Failed to store token in database');
-            }
-    
-            // Log the session of the user
-            const loginTime = new Date();
-            console.log(`Session started for user ${user.username} at ${loginTime}`);
-    
-            // Set session variables
-            req.session.loginTime = loginTime;
-            req.session.user_id = user.id;
-            await mapSessionToUser(req.session.id, user.id);
-    
-            console.log('User logged in successfully:', user.username);
-            // Redirect to logged in page
+            // Redirect the user to the logged-in page
             return res.redirect('/logged_in.html');
+    
         } catch (error) {
             console.error('Error logging in:', error);
-            // Render the login page with an error message
-            return res.status(500).render('login', { error: 'Internal server error' });
+            return res.status(401).render('login', { error: 'Invalid username or password' });
         }
     },
     
