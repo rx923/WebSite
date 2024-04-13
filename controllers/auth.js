@@ -43,8 +43,6 @@ async function generateToken(sessionId, userId, expire) {
     }
 };
 
-
-
 async function storeTokenInDatabase(sessionId, userId, expire, token) {
     try {
         // Ensure userId is a valid integer
@@ -70,12 +68,9 @@ async function storeTokenInDatabase(sessionId, userId, expire, token) {
     }
 };
 
-
-
 async function authenticateAndCompare(providedUsername, providedPassword) {
     try {
         console.log('Authenticating user:', providedUsername);
-        console.log('Provided Password:', providedPassword);
 
         const user = await User.findOne({ where: { username: providedUsername } });
 
@@ -103,7 +98,29 @@ async function authenticateAndCompare(providedUsername, providedPassword) {
 };
 
 
-async function registerUser(req, res, username, email, hashedPassword, userDetails) {
+
+
+        const profilePictureFilePath = path.join(__dirname, '..', 'profile_pictures', profilePictureFilename);
+        console.log('Profile Picture Filepath:', profilePictureFilePath); // Log the filepath
+
+        // Save the profile picture to a file
+        await profilePicture.mv(profilePictureFilePath);
+
+        return {
+            filename: profilePictureFilename,
+            filepath: profilePictureFilePath,
+            filesize: profilePicture.size,
+            mimetype: profilePicture.mimetype,
+            uploadDate: new Date()
+        };
+    } catch (error) {
+        console.error('Error saving profile picture:', error);
+        throw error;
+    }
+};
+
+
+async function registerUser(req, res, username, email, hashedPassword, userDetails, profilePicture) {
     try {
         console.log('User details received in registerUser:', userDetails);
 
@@ -114,10 +131,16 @@ async function registerUser(req, res, username, email, hashedPassword, userDetai
             throw new Error('Account with this email address or username already exists.');
         }
 
+        let profilePictureInfo = null;
+
+        if (profilePicture) {
+            profilePictureInfo = await saveProfilePicture(profilePicture);
+        }
+
         const newUser = await User.create({
             username: username,
             email: email,
-            password: hashedPassword,
+            password: hashedPassword, // Use the hashed password passed as an argument
             first_name: userDetails.first_name || null,
             last_name: userDetails.last_name || null,
             phone_number: userDetails.phone_number || null,
@@ -125,10 +148,18 @@ async function registerUser(req, res, username, email, hashedPassword, userDetai
             country_of_residence: userDetails.country_of_residence || null,
             full_name: userDetails.full_name || null,
             location: userDetails.location || null,
-            contact_details: userDetails.contact_details || null
+            contact_details: userDetails.contact_details || null,
+            profilepicturefilename: profilePictureInfo ? profilePictureInfo.filename : null,
+            profilepicturefilepath: profilePictureInfo ? profilePictureInfo.filepath : null,
+            profilepicturefilesize: profilePictureInfo ? profilePictureInfo.filesize : null,
+            profilepicturemimetype: profilePictureInfo ? profilePictureInfo.mimetype : null,
+            profilepictureuploaddate: profilePictureInfo ? profilePictureInfo.uploadDate : null
         });
 
         console.log('User created:', newUser);
+
+        // Save username, email, and hashed password to session
+        req.session.registrationData = { username, email, password: hashedPassword };
 
         return newUser;
     } catch (error) {
