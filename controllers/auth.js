@@ -15,7 +15,7 @@ const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs');
 const { authenticateAndGenerateToken } = require('../routes/user_authentication_routes');
-
+const saltRounds = 10;
 
 async function hashPassword(plaintextPassword) {
     try {
@@ -86,9 +86,8 @@ async function storeTokenInDatabase(sessionId, userId, expire, token) {
 
 async function authenticateAndCompare(providedUsername, providedPassword) {
     try {
-        // Log the provided username and password
-        console.log('Provided username:', providedUsername);
-        console.log('Provided password:', providedPassword);
+        // Declare variables
+        let storedHashedPassword, isPasswordValid;
 
         // Find the user by username
         const user = await User.findOne({ where: { username: providedUsername } });
@@ -96,25 +95,19 @@ async function authenticateAndCompare(providedUsername, providedPassword) {
         // If user does not exist, return error
         if (!user) {
             console.log('User not found:', providedUsername);
-            return { success: false, message: 'Invalid username' };
+            return { success: false, message: 'Invalid username', statusCode: 500 };
         }
 
         // Retrieve hashed password from the database
-        const storedHashedPassword = user.password;
-
-        // Log the retrieved hashed password
-        console.log('Retrieved hashed password:', storedHashedPassword);
+        storedHashedPassword = user.password;
 
         // Compare the provided plaintext password with the stored hashed password
-        const isPasswordValid = await bcrypt.compare(providedPassword, storedHashedPassword);
-
-        // Log the result of password comparison
-        console.log('Password comparison result:', isPasswordValid);
+        isPasswordValid = await bcrypt.compare(providedPassword, storedHashedPassword);
 
         // If password is invalid, return error
         if (!isPasswordValid) {
             console.log('Invalid password for user:', providedUsername);
-            return { success: false, message: 'Invalid password' };
+            return { success: false, message: 'Invalid password', statusCode: 500 };
         }
 
         // User authenticated successfully
@@ -126,9 +119,10 @@ async function authenticateAndCompare(providedUsername, providedPassword) {
     } catch (error) {
         console.error('Error authenticating user:', error);
         // Return internal server error
-        return { success: false, message: 'Internal server error' };
+        return { success: false, message: 'Internal server error', statusCode: 500 };
     }
 };
+
 
 async function saveProfilePicture(profilePicture, userId) {
     try {
@@ -255,26 +249,28 @@ const authController = {
             // Authenticate user and compare passwords
             const authResult = await authenticateAndCompare(username, password);
     
-            // If authentication fails, throw an error
-            if (!authResult || !authResult.user) {
+            // Handle authentication result as needed
+            if (authResult.success) {
+                const user = authResult.user;
+                // Generate a JWT token
+                const token = await generateToken(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000)); // Set expiration to 30 minutes
+                // Store the token in the database
+                await storeTokenInDatabase(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000), token);
+    
+                // Store user session
+                req.session.user = user;
+    
+                // Redirect the user to the logged-in page
+                return res.redirect('/logged_in.html');
+            } else {
+                // Authentication failed
                 console.log('Authentication failed for user:', username);
-                throw new Error('Invalid username or password');
+                return res.status(authResult.statusCode).render('login', { error: authResult.message });
             }
-    
-            const user = authResult.user;
-    
-            // Generate a JWT token
-            const token = await generateToken(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000)); // Set expiration to 30 minutes
-            
-            // Store the token in the database
-            await storeTokenInDatabase(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000), token);
-    
-            // Redirect the user to the logged-in page
-            return res.redirect('/logged_in.html');
     
         } catch (error) {
             console.error('Error logging in:', error);
-            return res.status(401).render('login', { error: 'Invalid username or password' });
+            return res.status(500).render('login', { error: 'Internal server error' });
         }
     },
     
