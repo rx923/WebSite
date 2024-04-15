@@ -1,9 +1,6 @@
 // Authentication page which is handling the user login routes.
 // imported modules constants are set to be using different exported modules and handle user related authentication. 
 
-
-
-
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const sessionUtils = require('./sessionUtils');
@@ -15,8 +12,11 @@ const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs');
 const { authenticateAndGenerateToken } = require('../routes/user_authentication_routes');
+const { json } = require('body-parser');
 const saltRounds = 10;
 
+
+//Hashing password during user registration
 async function hashPassword(plaintextPassword) {
     try {
         // Generate a salt with 10 rounds
@@ -35,6 +35,17 @@ async function hashPassword(plaintextPassword) {
         throw error;
     }
 };
+//Hashing password during login for comparing both the stored database password and the plaintext password with the requried hash
+const hashPasswordDuringLogin = async (password) => {
+    try {
+        const hashedPassword = await bcrypt.hash(password, 10); // Use a cost factor of 10
+        return hashedPassword;
+    } catch (error) {
+        console.error('Error hashing password:', error);
+        throw error;
+    }
+};
+
 
 function generateSessionId(username) {
     const sessionId = `${username}-${uuidv4()}`;
@@ -84,37 +95,39 @@ async function storeTokenInDatabase(sessionId, userId, expire, token) {
     }
 };
 
-async function authenticateAndCompare(providedUsername, providedPassword) {
+const authenticateAndCompare = async (username, providedPassword) => {
     try {
-        // Declare variables
-        let storedHashedPassword, isPasswordValid;
+        // Retrieve user from the database based on the provided username
+        const user = await User.findOne({ where: { username } });
 
-        // Find the user by username
-        const user = await User.findOne({ where: { username: providedUsername } });
-
-        // If user does not exist, return error
+        // If user is not found, return error
         if (!user) {
-            console.log('User not found:', providedUsername);
-            return { success: false, message: 'Invalid username', statusCode: 500 };
-        }
+            console.log('User not found:', username);
+            return { success: false, message: 'User not found', statusCode: 404 };
+        };
 
-        // Retrieve hashed password from the database
-        storedHashedPassword = user.password;
+        // Retrieve hashed password from the user object
+        const storedHashedPassword = user.password;
+        console.log(storedHashedPassword);
 
-        // Compare the provided plaintext password with the stored hashed password
-        isPasswordValid = await bcrypt.compare(providedPassword, storedHashedPassword);
+        // Hash the provided password for comparison
+        const hashedProvidedPassword = await hashPasswordDuringLogin(providedPassword);
+        console.log(hashedProvidedPassword);
+        // Compare the hashed provided password with the stored hashed password
+        const isPasswordValid = await bcrypt.compare(hashedProvidedPassword, storedHashedPassword);
+        console.log(isPasswordValid);
 
-        // If password is invalid, return error
+        // If passwords don't match, return error
         if (!isPasswordValid) {
-            console.log('Invalid password for user:', providedUsername);
-            return { success: false, message: 'Invalid password', statusCode: 500 };
-        }
+            console.log('Invalid password for user:', username);
+            return { success: false, message: 'Invalid password', statusCode: 401 };
+        };
 
         // User authenticated successfully
-        console.log('User authenticated successfully:', providedUsername);
+        console.log('User authenticated successfully:', username);
 
         // Return success with the authenticated user object
-        return { success: true, user: user };
+        return { success: true, user };
 
     } catch (error) {
         console.error('Error authenticating user:', error);
@@ -122,7 +135,6 @@ async function authenticateAndCompare(providedUsername, providedPassword) {
         return { success: false, message: 'Internal server error', statusCode: 500 };
     }
 };
-
 
 async function saveProfilePicture(profilePicture, userId) {
     try {
@@ -274,6 +286,7 @@ const authController = {
         }
     },
     
+    
     logout: async (req, res) => {
         try {
             if (!req.session || !req.session.user_id) {
@@ -389,7 +402,17 @@ const authController = {
     
             console.log('User registered successfully:', newUser);
     
+            // Destroy session after profile completion
+            req.session.destroy((err) => {
+                if (err) {
+                    console.error('Error destroying session:', err);
+                    return res.status(500).json({ error: 'Error destroying session' });
+                }
+                console.log('Session destroyed after profile completion');
+            });
+
             return res.status(200).json({ message: 'Profile completed successfully' });
+
         } catch (error) {
             console.error('Error submitting profile:', error);
             return res.status(500).json({ message: 'Error submitting profile' });
