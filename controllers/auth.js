@@ -3,7 +3,7 @@
 
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const sessionUtils = require('./sessionUtils');
+// const sessionUtils = require('./sessionUtils');
 const { Op } = require('sequelize');
 const validator = require('validator');
 const { User, Session } = require('../models/userModel');
@@ -11,9 +11,11 @@ const { addPasswordHashHook} = require('../models/userHooks');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs');
-const { authenticateAndGenerateToken } = require('../routes/user_authentication_routes');
+const { router, updateUserProfile, mapSessionToUser, authenticateAndGenerateToken, updateSessionuser_id, generateAuthToken, storeTokenInDatabase } = require('../routes/user_authentication_routes');
 const { json } = require('body-parser');
-const saltRounds = 10;
+const handleLogin = require('../controllers/handleLogin');
+const { handleLogout, clearSessionFromDatabase } = require('./logout');
+
 
 
 //Hashing password during user registration
@@ -33,106 +35,6 @@ async function hashPassword(plaintextPassword) {
     } catch (error) {
         console.error('Error hashing password:', error);
         throw error;
-    }
-};
-//Hashing password during login for comparing both the stored database password and the plaintext password with the requried hash
-const hashPasswordDuringLogin = async (password) => {
-    try {
-        const hashedPassword = await bcrypt.hash(password, 10); // Use a cost factor of 10
-        return hashedPassword;
-    } catch (error) {
-        console.error('Error hashing password:', error);
-        throw error;
-    }
-};
-
-
-function generateSessionId(username) {
-    const sessionId = `${username}-${uuidv4()}`;
-    console.log('Session ID generated:', sessionId);
-    return sessionId;
-};
-
-async function generateToken(sessionId, userId, expire) {
-    try {
-        // Generate a unique hash for signing the token using bcrypt
-        const saltRounds = 10;
-        const secretKey = (await bcrypt.hash(`${userId}${sessionId}`, saltRounds)).toString();
-
-        // Use the generated hash as the secret key
-        const payload = { userId };
-        const token = jwt.sign(payload, secretKey, { expiresIn: '30m' });
-
-        return token;
-    } catch (error) {
-        console.error('Error generating token:', error);
-        throw error;
-    }
-};
-
-async function storeTokenInDatabase(sessionId, userId, expire, token) {
-    try {
-        // Ensure userId is a valid integer
-        userId = parseInt(userId); 
-        if (isNaN(userId)) {
-            throw new Error('Invalid user ID');
-        }
-
-        const session = await Session.create({
-            sid: sessionId, 
-            token: token, 
-            expire: expire, 
-            createdAt: new Date(),
-            updatedAt: new Date(),
-            userId: userId // Foreign key association
-        });
-
-        console.log('Token stored in the database:', session);
-        return session;
-    } catch (error) {
-        console.error('Error storing token in database:', error);
-        return null;
-    }
-};
-
-const authenticateAndCompare = async (username, providedPassword) => {
-    try {
-        // Retrieve user from the database based on the provided username
-        const user = await User.findOne({ where: { username } });
-
-        // If user is not found, return error
-        if (!user) {
-            console.log('User not found:', username);
-            return { success: false, message: 'User not found', statusCode: 404 };
-        };
-
-        // Retrieve hashed password from the user object
-        const storedHashedPassword = user.password;
-        console.log(storedHashedPassword);
-
-        // Hash the provided password for comparison
-        const hashedProvidedPassword = await hashPasswordDuringLogin(providedPassword);
-        console.log(hashedProvidedPassword);
-        // Compare the hashed provided password with the stored hashed password
-        const isPasswordValid = await bcrypt.compare(hashedProvidedPassword, storedHashedPassword);
-        console.log(isPasswordValid);
-
-        // If passwords don't match, return error
-        if (!isPasswordValid) {
-            console.log('Invalid password for user:', username);
-            return { success: false, message: 'Invalid password', statusCode: 401 };
-        };
-
-        // User authenticated successfully
-        console.log('User authenticated successfully:', username);
-
-        // Return success with the authenticated user object
-        return { success: true, user };
-
-    } catch (error) {
-        console.error('Error authenticating user:', error);
-        // Return internal server error
-        return { success: false, message: 'Internal server error', statusCode: 500 };
     }
 };
 
@@ -234,92 +136,79 @@ async function fetchUserData(id) {
     }
 };
 
-async function updateUserProfile(req, res) {
-    try {
-        // Implementation for updating user profile
-    } catch (error) {
-        console.error('Error updating user profile:', error);
-        throw error;
-    }
-};
-
-async function mapSessionToUser(sessionId, userId) {
-    try {
-        // Implementation for mapping session to user
-    } catch (error) {
-        console.error('Error mapping session to user:', error);
-        throw error;
-    }
-};
-
-
 const authController = {
     login: async (req, res) => {
         try {
             const { username, password } = req.body;
     
-            // Authenticate user and compare passwords
-            const authResult = await authenticateAndCompare(username, password);
-    
-            // Handle authentication result as needed
-            if (authResult.success) {
-                const user = authResult.user;
-                // Generate a JWT token
-                const token = await generateToken(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000)); // Set expiration to 30 minutes
-                // Store the token in the database
-                await storeTokenInDatabase(req.sessionID, user.id, new Date(Date.now() + 30 * 60 * 1000), token);
-    
-                // Store user session
-                req.session.user = user;
-    
-                // Redirect the user to the logged-in page
-                return res.redirect('/logged_in.html');
-            } else {
-                // Authentication failed
-                console.log('Authentication failed for user:', username);
-                return res.status(authResult.statusCode).render('login', { error: authResult.message });
+            // Check if the user exists in the database
+            const user = await User.findOne({ where: { username: username } });
+            if (!user) {
+                // User does not exist
+                return res.status(401).render('incorrect_password', { error: 'Invalid username or password.' });
             }
     
+            // Authenticate user and retrieve user object
+            const result = await authenticateAndGenerateToken(req, username, password);
+    
+            // Handle authentication result
+            if (result.error) {
+                console.error('Error authenticating user:', result.error);
+    
+                // Render the appropriate view based on the error
+                if (result.error === 'Invalid username or password.') {
+                    return res.status(401).render('incorrect_password', { error: 'Invalid username or password.' });
+                } else {
+                    // Handle other potential errors
+                    return res.status(500).render('error', { message: 'Internal server error. Please try again later.' });
+                }
+            } else {
+                // Generate auth token
+                const token = await generateAuthToken(req, result.user, Date.now());
+                // Set expiration time (1 hour expiration)
+                const expire = new Date(Date.now() + 3600000);
+                // Generate session ID
+                const sessionId = req.sessionID;
+                // Map session to user
+                await mapSessionToUser(sessionId, result.user.id);
+                // Update session with user ID and expiration time
+                await updateSessionuser_id(sessionId, result.user.id, expire);
+                // Store token in database with expiration time
+                await storeTokenInDatabase(req.sessionID, result.user.id, token, expire);
+                // Redirect the user to the logged-in page
+                return res.redirect('/logged_in.html');
+            }
         } catch (error) {
             console.error('Error logging in:', error);
-            return res.status(500).render('login', { error: 'Internal server error' });
+            // Handle different types of errors here if needed
+            return res.status(500).json({ error: 'An unexpected error occurred during login.' });
         }
     },
     
     
     logout: async (req, res) => {
         try {
-            if (!req.session || !req.session.user_id) {
-                console.error('User session not found.');
-                return res.status(400).json({ error: 'User session not found.' });
+            // Check if the user session exists and is active
+            if (req.session) {
+                // Destroy session
+                req.session.destroy();
+                console.log('User logged out successfully.');
+                
+                // Set logout message
+                const logoutMessage = "You have successfully logged out. Thank you!";
+                
+                // Redirect to main page with logout message
+                return res.redirect('/index.html?logoutMessage=' + encodeURIComponent(logoutMessage));
+            } else {
+                console.error('User session not found or inactive.');
+                return res.status(400).json({ error: 'User session not found or inactive.' });
             }
-
-            const loginTime = new Date(req.session.loginTime);
-            const logoutTime = new Date();
-            const sessionDuration = sessionUtils.getSessionDuration(loginTime, logoutTime);
-
-            console.log(`Session ended for user ${req.session.user_id}`);
-
-            const user = await User.findByPk(req.session.user_id);
-
-            if (!user) {
-                console.error('User not found.');
-                return res.status(400).json({ error: 'User not found.' });
-            }
-
-            console.log('Session duration:', sessionUtils.formatSessionDuration(sessionDuration));
-            console.log('Session ended');
-
-            delete req.session.user_id;
-            req.session.destroy();
-
-            console.log('User logged out successfully.');
-            res.redirect('/index.html');
         } catch (error) {
             console.error('Error logging out:', error);
             return res.status(500).json({ message: 'Internal server error' });
         }
     },
+    
     register: async (req, res) => {
         try {
             if (!req.body) {
@@ -335,12 +224,10 @@ const authController = {
             if (password.length < 6 || password.length > 20) {
                 return res.status(400).json({ error: 'Password must be between 6 and 20 characters.' });
             }
-    
-            const hashedPassword = await hashPassword(password);
-    
             // Save username, email, and hashed password to session
-            req.session.registrationData = { username, email, password: hashedPassword };
-    
+            req.session.registrationData = { username, email, password };
+
+
             console.log('Registration data saved to session:', req.session.registrationData);
     
             res.redirect('/Inregistrare_User_Completare_Profil.html');
@@ -399,7 +286,7 @@ const authController = {
     
             // Register user with complete profile
             const newUser = await registerUser(req, res, username, email, password, userDetails);
-    
+            const hashedPassword = await hashPassword(password);
             console.log('User registered successfully:', newUser);
     
             // Destroy session after profile completion
@@ -420,4 +307,4 @@ const authController = {
     }
 };
 
-module.exports = { authController, registerUser, hashPassword, updateUserProfile, mapSessionToUser, authenticateAndGenerateToken };
+module.exports = { authController, registerUser, hashPassword, updateUserProfile, mapSessionToUser };

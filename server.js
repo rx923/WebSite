@@ -11,8 +11,8 @@ const { authController } = require('./controllers/auth');
 const profileRoutes = require('./controllers/profileRoutes.js');
 const { getCurrentPassword, updatePassword } = require('./routes/passwordService');
 const { error } = require('console');
-const sessionMiddleware = require('./models/sessionConfig');
-
+const {sessionMiddleware} = require('./models/sessionConfig');
+const sessionDeletions  = require('./routes/sessionDeletions.js');
 const { sequelize } = require('./models/sessionModel');
 
 
@@ -56,6 +56,9 @@ app.post('/send-message', (req, res) => {
 
     res.send('Message received successfully!');
 });
+
+
+
 app.post('/support-group')
 
 // Route for user password reset
@@ -154,8 +157,7 @@ sequelize.sync()
     })
     .catch(error => {
         console.error('Database sync error:', error);
-    });
-
+});
 
 
 // Create the server
@@ -167,10 +169,16 @@ const wss = new WebSocket.Server({ server });
 wss.on('connection', (ws) => {
     // Handle WebSocket connections here
 });
+sessionDeletions();
+
+
 
 // Start listening
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT} ${hostname}`);
 });
+
+
+// setInterval(deleteInactiveSessions, 10 * 60 * 1000); // 10 minutes
 
 module.exports = app;

@@ -25,14 +25,14 @@ const sequelize = new Sequelize({
 router.get('/profile', async (req, res) => {
   try {
       if (!req.session.user) {
-          return res.status(401).json({ error: "Unauthorized" });
+        return res.status(401).json({ error: "Unauthorized" });
       }
 
       // Finding user in the database using the session ID
       const user = await User.findByPk(req.session.user.id);
 
       if (!user) {
-          return res.status(404).json({ error: 'User not found' });
+        return res.status(404).json({ error: 'User not found' });
       }
 
       // Construct user info object
@@ -46,22 +46,22 @@ router.get('/profile', async (req, res) => {
       // Sending user information as JSON response
       res.json(userInfo);
   } catch (error) {
-      console.error('Error fetching user information: ', error);
-      res.status(500).json({ error: 'Internal server error' });
+    console.error('Error fetching user information: ', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 router.get('/user/profile', async (req, res) => {
   try {
       if (!req.session.user) {
-          return res.status(401).json({ error: "Unauthorized" });
+        return res.status(401).json({ error: "Unauthorized" });
       }
 
       // Finding user in the database using the session ID
       const user = await User.findByPk(req.session.user.id);
 
       if (!user) {
-          return res.status(404).json({ error: 'User not found' });
+        return res.status(404).json({ error: 'User not found' });
       }
 
       // Construct user info object

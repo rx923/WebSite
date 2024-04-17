@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <!-- Add your login form here -->
+    <form action="/login" method="post">
+        <!-- Your form fields -->
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+    <!-- Error message div -->
+    <div id="error-message" class="error-message" style="display: none;">
+        User not found: The username you provided does not exist.
+    </div>
+    <!-- Your JavaScript code to toggle the error message -->
+    <script>
+        // Function to show the error message
+        function showErrorMessage() {
+            document.getElementById('error-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

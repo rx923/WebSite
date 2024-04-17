@@ -8,8 +8,11 @@ const handleLogin = async (req, res) => {
         const { username, password } = req.body;
         const result = await login(username, password);
         if (result.success) {
-            // Create a new session for the user
-            req.session.user = { username }; 
+            // Store relevant user information in the session
+            req.session.user = {
+                username: username,
+                userId: result.userId // Assuming `userId` is returned from the login function
+            }; 
             res.status(200).json({ message: "Login successful." });
             // Set session start time
             req.session.startTime = Date.now();

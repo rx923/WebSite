@@ -12,26 +12,6 @@ exports.register = async (req, res) => {
     }
 };
 
-// Function to handle user login
-exports.login = async (req, res) => {
-    try {
-        // Login logic goes here
-        // Example: Fetch user from database, compare passwords, generate JWT token, etc.
-    } catch (error) {
-        console.error(error);
-        return res.status(500).send('Internal Server Error');
-    }
-};
 
-// Function to handle user logout
-exports.logout = (req, res) => {
-    try {
-        // Logout logic goes here
-        // Example: Clear session data, delete JWT token, etc.
-    } catch (error) {
-        console.error(error);
-        return res.status(500).send('Internal Server Error');
-    }
-};
 
-module.exports ={ login, logout, register };
+module.exports ={ register };

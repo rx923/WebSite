@@ -6,9 +6,9 @@ const crypto = require('crypto');
 const User = require('../models/userModel');
 const path = require('path');
 const { pool } = require('../routes/db_config');
-const { mapSessionToUser } = require('../path/to/mapSessionToUser');
-const { registerUser } = require('./auth.js');
-const { authenticateAndGenerateToken } = require('./controllers/auth.js');
+const { mapSessionToUser } = require('../routes/user_authentication_routes');
+const { registerUser } = require('../controllers/auth.js');
+const { authenticateAndGenerateToken } = require('../routes/user_authentication_routes.js');
 
 
 
@@ -87,28 +87,35 @@ router.post('/login', async (req, res) => {
 
     try {
         // Authenticate the user and generate token
-        const { token, user } = await authenticateAndGenerateToken(username, password);
+        const authResult = await authenticateAndGenerateToken(username, password);
+
+        // Handle the authentication result
+        if (authResult.error) {
+            // Handle specific error cases
+            if (authResult.error.includes('An account with this email already exists.')) {
+                return res.status(400).json({ error: 'An account with this email already exists.' });
+            } else if (authResult.error.includes('An account with this username already exists.')) {
+                return res.status(400).json({ error: 'An account with this username already exists.' });
+            } else {
+                // Handle other unexpected errors
+                console.error('Error logging in user:', authResult.error);
+                return res.status(401).json({ error: 'Invalid username or password.' });
+            }
+        }
 
         // Set user ID in the session using the correct column name 'user_id'
-        req.session.user_id = user.id;
+        req.session.user_id = authResult.user.id;
 
         // Map the session to the user's ID
-        await mapSessionToUser(req.session.id, user.id);
+        await mapSessionToUser(req.session.id, authResult.user.id);
 
-        // Redirect to the appropriate page after successful login
-        res.redirect('/logged_in.html');
+        // No need for redirection here since it's handled in the main authController
+
+        // Send response indicating successful login
+        return res.status(200).json({ message: 'Login successful' });
     } catch (error) {
-        if (error.message.includes('An account with this email already exists.')) {
-            // Handle the case where the email is already in use
-            res.status(400).json({ error: 'An account with this email already exists.' });
-        } else if (error.message.includes('An account with this username already exists.')) {
-            // Handle the case where the username is already in use
-            res.status(400).json({ error: 'An account with this username already exists.' });
-        } else {
-            // Handle other unexpected errors
-            console.error('Error logging in user:', error);
-            res.status(401).json({ error: 'Invalid username or password.' });
-        }
+        console.error('Error logging in user:', error);
+        return res.status(500).json({ error: 'Internal server error' });
     }
 });
 
@@ -117,14 +124,14 @@ router.post('/login', async (req, res) => {
 
 
 
-// Route handler for user login
-router.get('/logged_in', (req, res) => {
-    // Example: Get the username from the request
-    const username = req.session.user.username;
+// // Route handler for user login
+// router.get('/logged_in', (req, res) => {
+//     // Example: Get the username from the request
+//     const username = req.session.user.username;
 
-    // Example: Send the logged_in.html file along with the username as a query parameter
-    res.sendFile(path.join(__dirname, './public/logged_in.html') + `?username=${username}`);
-});
+//     // Example: Send the logged_in.html file along with the username as a query parameter
+//     res.sendFile(path.join(__dirname, './public/logged_in.html') + `?username=${username}`);
+// });
 
 // Route handler for user logout
 router.get('/logout', (req, res) => {
