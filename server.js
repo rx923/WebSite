@@ -14,14 +14,9 @@ const { error } = require('console');
 const {sessionMiddleware} = require('./models/sessionConfig');
 const sessionDeletions  = require('./routes/sessionDeletions.js');
 const { sequelize } = require('./models/sessionModel');
-
-
-
-
+const { User } = require("./models/userModel.js"); 
 
 // const chatButtonForm = require('./chat-button-form-group');
-
-
 const app = express();
 const PORT = process.env.PORT || 8081;
 
@@ -63,14 +58,17 @@ app.post('/support-group')
 
 // Route for user password reset
 app.post('/reset-password', async (req, res) => {
-    const { currentPassword, newPassword } = req.body;
-    
     try {
-        // Assuming you're using session middleware that populates req.user_id
-        const userId = req.user_id;
+        const { email, currentPassword, newPassword } = req.body;
+
+        // Fetch the user from the database based on the provided email
+        const user = await User.findByEmail(email);
+        if (!user) {
+            return res.status(404).json({ error: 'User not found.' });
+        }
 
         // Fetch the current password from the database
-        const storedPassword = await getCurrentPassword(userId);
+        const storedPassword = await getCurrentPassword(email);
         
         // Compare the current password provided by the user with the stored password
         const passwordMatch = await bcrypt.compare(currentPassword, storedPassword);
@@ -79,7 +77,7 @@ app.post('/reset-password', async (req, res) => {
         }
 
         // Update the password in the database
-        await updatePassword(userId, newPassword);
+        await updatePassword(email, newPassword);
 
         // Send success message
         res.status(200).json({ message: 'Password reset successfully.' });

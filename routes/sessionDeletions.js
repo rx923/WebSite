@@ -59,7 +59,7 @@ async function clearInactiveSessions() {
 }
 
 // Function to perform panic clearance (commented out for now)
-/*
+
 async function panicClearance() {
     try {
         // Implement panic clearance logic here
@@ -82,7 +82,7 @@ async function panicClearance() {
         console.error('Error during panic clearance:', error);
     }
 }
-*/
+
 
 // Schedule the function to run periodically (e.g., once a day)
 // Runs every 24 hours

@@ -169,6 +169,8 @@ const authController = {
                 const expire = new Date(Date.now() + 3600000);
                 // Generate session ID
                 const sessionId = req.sessionID;
+                console.log(sessionId);
+                console.log(req.sessionID);
                 // Map session to user
                 await mapSessionToUser(sessionId, result.user.id);
                 // Update session with user ID and expiration time
@@ -189,7 +191,7 @@ const authController = {
     logout: async (req, res) => {
         try {
             // Check if the user session exists and is active
-            if (req.session) {
+            if (req.sessionID) {
                 // Destroy session
                 req.session.destroy();
                 console.log('User logged out successfully.');
