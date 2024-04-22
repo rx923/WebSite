@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Complete Your Profile</title>
+    <title>Completare Profil user</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
@@ -17,7 +17,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 350px;
             margin: 50px auto;
             background-color: #c4cca6;
             padding: 20px;
@@ -81,47 +81,48 @@
 <body>
     <div class="container">
         <h1>Complete Your Profile</h1>
-        <form id="profileForm" action="/submit-profile-completion" method="POST">
+        <form id="profileForm" action="/submit-profile-completion" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="fullName">Full Name:</label>
-                <input type="text" id="full_name" name="full_name" required="true" style="width: 380px;">
+                <input type="text" id="full_name" name="full_name" required="true" style="max-width: 250px;">
             </div>
             <div class="mb-3">
                 <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name" required="true" style="width: 380px;">
+                <input type="text" id="last_name" name="last_name" required="true" style="max-width: 250px;">
             </div>
             <div class="mb-3">
-                <label for="fullName">First Name:</label>
-                <input type="text" id="first_name" name="first_name" required="true" style="width: 380px;">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required="true" style="max-width: 250px;">
             </div>
             <div class="mb-3">
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required="true" style="width: 380px;">
+                <input type="text" id="location" name="location" required="true" style="max-width: 250px;">
             </div>
             <div class="mb-3">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" id="phone_number" name="phone_number" required="true" pattern="[0-9]{10}" style="width: 380px;">
+                <label for="phone_number">Phone Number:</label>
+                <input type="tel" id="phone_number" name="phone_number" required="true" pattern="[0-9]{10}" style="max-width: 250px;">
             </div>
             <div class="mb-3">
-                <label for="contactDetails">Contact Details:</label>
-                <textarea id="contact_details" name="contact_details" rows="4" required="true" style="width: 380px;"></textarea>
+                <label for="contact_details">Contact Details:</label>
+                <textarea id="contact_details" name="contact_details" rows="4" required="true" style="max-width: 250px;"></textarea>
             </div>
             <div class="mb-3">
-                <label for="AddressDetails">Address Details:</label>
-                <textarea id="address" name="address" rows="4" required="true" style="width: 380px;"></textarea>
+                <label for="address">Address Details:</label>
+                <textarea id="address" name="address" rows="4" required="true" style="max-width: 250px;"></textarea>
             </div>
             <div class="mb-3">
-                <label for="Country_Of_Residence">Country:</label>
-                <textarea id="country_of_residence" name="country_of_residence" rows="4" required="true" style="width: 380px;"></textarea>
+                <label for="country_of_residence">Country:</label>
+                <textarea id="country_of_residence" name="country_of_residence" rows="4" required="true" style="max-width: 250px;"></textarea>
             </div>
             <div class="mb-3">
                 <label for="profilePicture">Profile Picture:</label>
                 <input type="file" id="profilePicture" name="profilePicture" accept="image/*" required>
+                <button id="takePhotoBtn" type="button">Take Photo</button>
             </div>
-            <!-- End of added input field -->
             <button type="submit">Submit</button>
         </form>
     </div>
+    
     <div id="popup" class="popup">
         Cont Creat Cu Success!
       </div>
@@ -157,6 +158,40 @@
             } catch (error) {
                 console.error('Profile submission error:', error);
                 // Handle profile submission error
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('takePhotoBtn').addEventListener('click', async () => {
+            try {
+                // Accessing the device camera and capture a photo
+                const mediaStream = await navigation.mediaDevices.getUserMedia({ video: true });
+                const videoElement = document.createElement('video');
+                videoElement.srcObject = mediaStream;
+                videoElement.autoplay = true;
+
+
+                // Appending the video element to the document body
+                document.body.appendChild(videoElement);
+
+                // Capturing a frame from the video stream as an image
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = videoElement.videoWidth;
+                canvas.height = videoElement.videoHeight;
+                context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+                // COnverting the captured frame to a data URL
+                const imageDataUrl = canvas.toDataURL('image/jpeg');
+
+                // CLosing the video stream and removing the video element
+                mediaStream.getVideoTracks()[0].stop();
+                videoElement.remove();
+
+                //Set the data URL as the value of the file input
+                document.getElementById('profilePicture').value = imageDataUrl;
+            } catch (error) {
+                console.error('Error capturing photo: ', error);
             }
         });
     </script>

@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -20,135 +21,143 @@
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
   </head>
   
-  <body style="background: linear-gradient(30deg, rgba(255, 255, 255, 0.2), #9ea3b0, #66757c);">
-    <header style="background: linear-gradient(to top left, #ffffff78 20%, #77b9d65b 60%, rgba(87, 87, 87, 0.42) 60%); border-top: 2px rgba(237, 239, 240, 0); border-left: 2px rgba(255, 255, 255, 0); border-right: 2px rgba(255, 255, 255, 0); border-bottom: 2px rgba(255, 255, 255, 0); border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ margin-left: 90px; /* border-style: ; */ padding-top: 10px; width: 320px; height: 80px; z-index: 8000;">
-      <h1 style="background: linear-gradient(to right, #8B4513, #A0522D, #D2B48C); max-height: 100px; margin-left: 40px; margin-right: 40px; text-align: center; font-weight: lighter; font-size: larger; width: auto; padding: 10px; position: relative; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 25px rgba(231, 231, 231, 0.5), 0 0 5px rgba(0, 21, 115, 0.5); border-radius: 25px; border: 1px solid #006400; color: white;"> Big Store Coffee</h1>
+  <body style="background: linear-gradient(30deg, white, #6a6a6a);">
+    <header style="background: linear-gradient(to top left, #6a6a6a, #ffffff); border: none; border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ margin-left: 90px; /* border-style: ; */ padding-top: 10px; width: 320px; height: 350px; z-index: 8000; position: relative; overflow: hidden; left: 10px;">
+      <!-- <div style="margin-top:-10px; position: absolute; z-index: 1; width: 100%; height: 400px; background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.159) 20%, rgba(255, 255, 255, 0) 30%, rgba(38, 38, 38, 0) 80%); background-size: 200% 100%; animation: flowWave 3s alternate-reverse infinite;"></div> -->
+      <h1 style="background: linear-gradient(to right, #6a6a6a, white); max-height: 100px; margin-left: 40px; margin-right: 40px; text-align: center; font-weight: 600; font-size: larger; width: auto; padding: 10px; position: relative; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 25px rgba(231, 231, 231, 0.5), 0 0 5px rgba(0, 21, 115, 0.5); border-radius: 25px; border: 1px groove transparent; color: white;">Big Store Coffee</h1>
       <style>
-      .search-bar {
-        left: 10px;
-        bottom: 30px;
-        width: 300px;
-        position: relative;
-        padding: 1px; 
-        color: rgb(0, 0, 0); 
-        background: linear-gradient(to top right, #ffffff, #0065ca, #0079b9);
-        border: outset;
-        border-width: 0.2vw 0.3vw; 
-        border-color: rgb(0, 0, 0); 
-        /* Center the search bar horizontally */
-        border-radius: 30px; 
-        /* Adjust to properly center */
-        /* transform: translateX(-50%);  */ 
-        z-index: 9990; 
-        cursor: pointer; 
-        /* display: ruby-base-container; */ 
-        /* Set the width of the search bar */ 
-        /* Set maximum width if needed * /* 
-        Adjust top position */ 
-        transform: translateY(100%); 
-        margin-right: 40vw; 
-        margin-top: 0px; 
-        margin-bottom: 20px; 
-        /* Use block level element */ 
-        display: inline-block; 
-        /* Center align the content */ 
-        /* text-align: center; */ 
-        /* Center the block element */
-        margin:10px;
+        @keyframes flowWave {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: -100% 0;
+          }
+        }
+        .search-bar {
+          left: 2px;
+          bottom: 65px;
+          width: 300px;
+          position: relative;
+          padding: 1px; 
+          color: rgb(0, 0, 0); 
+          background: linear-gradient(to top right, #ffffff, #6a6a6a);
+          border: outset transparent;
+          border-width: 0.2vw 0.3vw; 
+          border-color: rgb(0, 0, 0); 
+          /* Center the search bar horizontally */
+          border-radius: 30px; 
+          /* Adjust to properly center */
+          /* transform: translateX(-50%);  */ 
+          z-index:950; 
+          cursor: pointer; 
+          /* display: ruby-base-container; */ 
+          /* Set the width of the search bar */ 
+          /* Set maximum width if needed * /* 
+          Adjust top position */ 
+          transform: translateY(100%); 
+          margin-right: 40vw; 
+          margin-top: 0px; 
+          margin-bottom: 20px; 
+          /* Use block level element */ 
+          display: inline-block; 
+          /* Center align the content */ 
+          /* text-align: center; */ 
+          /* Center the block element */
+          margin:10px;
+        }
+        .search-bar input[type="text"] {
+          border: 3px outset transparent;
+          background-color: whitesmoke;
+          border-radius: 25px;
+          /* Adjust input field width */
+          width: 300px;
+          padding: 10px;
+          outline: none;
+        }
+        #submit-cauta-bara-de-cautare {
+          /* Light blue color */
+          background-color: #00a8e070; 
+          /* Text color */
+          color: white; 
+          /* Remove default button border */
+          border: none; 
+          /* Adjust padding as needed */
+          padding: 10px 20px; 
+          /* Add some border radius for a softer look */
+          border-radius: 15px;
+          left: 55px;
+          border-radius: 30px;
+          position: relative; 
+          /* Change cursor to pointer on hover */
+          cursor: pointer; 
+          /* Add any additional styles you need */
+        }
+      .canvas-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
       }
-      .search-bar input[type="text"] {
-        border: 3px outset rgb(0, 0, 0);
-        background-color: whitesmoke;
-        border-radius: 25px;
-        /* Adjust input field width */
-        width: 300px;
+      .canvas-section {
+        margin: 10px;
+        padding: 20px;
+        background: #f2f2f2;
+        border: 2px groove black;
+        border-radius: 10px;
+      }
+      .slideshow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-container {
+        position: fixed;
+        max-width: 150px;
+        max-height: 200px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        background-color: transparent;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        opacity: 0; /* Initially hide the container */
+        /* Add transition effect for opacity and left position */
+        transition: opacity 0.3s ease, left 0.5s ease; 
+      }
+      .image-container.fade-in {
+        opacity: 1;
+      }
+      .image-container img {
+        /* position: absolute; */
+        max-width: 100%;
+        bottom: 100px;
+        max-height: 100%;
+        display: block;
+      }
+      #image-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Ensure the container is above other elements */
+        cursor: zoom-out; /* Change cursor to zoom-out when hovering over the image */
+      }
+      .text-center {
+        text-align: center;
+      }
+      .paragraph-style {
+        background: linear-gradient(to right, #ad7c5e, #613613);
+        color: white;
         padding: 10px;
-        outline: none;
+        border-radius: 10px;
+        font-size: medium;
       }
-    #submit-cauta-bara-de-cautare {
-      /* Coffee-themed color */
-      background-color: #8B4513; 
-      /* Text color */
-      color: white; 
-      /* Remove default button border */
-      border: none; 
-      /* Adjust padding as needed */
-      padding: 10px 20px; 
-      /* Add some border radius for a softer look */
-      border-radius: 15px;
-      left: 55px;
-      border-radius: 30px;
-      position: relative; 
-      /* Change cursor to pointer on hover */
-      cursor: pointer; 
-      /* Add any additional styles you need */
-    }
-    .canvas-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .canvas-section {
-      margin: 10px;
-      padding: 20px;
-      background: #f2f2f2;
-      border: 2px groove black;
-      border-radius: 10px;
-    }
-    .slideshow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .image-container {
-      position: fixed;
-      max-width: 150px;
-      max-height: 200px;
-      overflow: hidden;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      background-color: transparent;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-      z-index: 9999;
-      opacity: 0; /* Initially hide the container */
-      /* Add transition effect for opacity and left position */
-      transition: opacity 0.3s ease, left 0.5s ease; 
-    }
-    .image-container.fade-in {
-      opacity: 1;
-    }
-    .image-container img {
-      /* position: absolute; */
-      max-width: 100%;
-      bottom: 100px;
-      max-height: 100%;
-      display: block;
-    }
-    #image-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999; /* Ensure the container is above other elements */
-      cursor: zoom-out; /* Change cursor to zoom-out when hovering over the image */
-    }
-    .text-center {
-      text-align: center;
-    }
-    .paragraph-style {
-      background: linear-gradient(to right, #ad7c5e, #613613);
-      color: white;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: medium;
-    }
-    
     </style>
       <div class="search-bar">
         <!-- Search input -->
@@ -193,83 +202,94 @@
             this.searchBar.style.backgroundColor = 'lightblue';
             // Change width as needed
             this.searchBar.style.width = '150px'; 
-      
+
             // Initialize the dropdown styles
-            this.searchDropdown.style.display = 'none';
-            // Adjust positioning
-            this.searchDropdown.style.position = 'fixed'; 
-            this.searchDropdown.style.zIndex = '9997';
-            this.searchDropdown.style.backgroundColor = '#008080';
-            this.searchDropdown.style.maxWidth = '140px';
+            this.searchDropdown.style.visibility = 'hidden'; // Initially hide the dropdown
+            this.searchDropdown.style.opacity = '0'; // Initially make the dropdown transparent
+            this.searchDropdown.style.position = 'absolute'; 
+            this.searchDropdown.style.zIndex = '1000'; // Adjust the z-index value as needed
+            this.searchDropdown.style.background = 'linear-gradient(135deg, #E0FFFF, #ADD8E6, #AFEEEE)';
+            this.searchDropdown.style.maxWidth = '180px';
             this.searchDropdown.style.top = '50px';
             // this.searchDropdown.style.left = '80px';
             this.searchDropdown.style.right = '60px';
             this.searchDropdown.style.borderRadius = '20px';
-            this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
+            // this.searchDropdown.style.border = '5px groove rgba(0, 0, 0, 0)';
             this.searchDropdown.style.padding = '2px';
             this.searchDropdown.style.margin = '2px';
+
+            // Apply slow dropdown effect
+            this.searchDropdown.style.transition = 'visibility 0s, opacity 1s ease-in-out';
+
+        }
+      
+        handleSearchInput() {
+          this.searchTerm = this.searchBar.value.trim().toLowerCase();
+
+          if (this.searchTerm === '') {
+            // Hide the dropdown with a delay for the slow dropdown effect
+            this.searchDropdown.style.visibility = 'hidden';
+            this.searchDropdown.style.opacity = '0';
+            return;
           }
-      
-          handleSearchInput() {
-            this.searchTerm = this.searchBar.value.trim().toLowerCase();
-      
-            if (this.searchTerm === '') {
-              this.searchDropdown.style.display = 'none';
-              return;
-            }
-      
-            const matchingProducts = this.getRecommendations(this.searchTerm);
-      
-            this.searchDropdown.innerHTML = '';
-      
-            matchingProducts.slice(0, 5).forEach((product) => {
-              const dropdownItem = this.createDropdownItem({ name: product });
-              this.searchDropdown.appendChild(dropdownItem);
-            });
-      
-            const searchBarRect = this.searchBar.getBoundingClientRect();
-            // this.searchDropdown.style.top = `${searchBarRect.bottom + window.scrollY}px`;
-            // this.searchDropdown.style.left = `${searchBarRect.left}px`;
-            this.searchDropdown.style.width = `${searchBarRect.width}px`;
-            this.searchDropdown.style.display = 'block';
-      
-            this.searchDropdown.style.overflowY = matchingProducts.length > 3 ? 'scroll' : '';
-      
-            // Enable scrolling within the menu and search results
-            this.searchDropdown.addEventListener('wheel', (event) => {
+
+          // Show the dropdown with a delay for the slow dropdown effect
+          this.searchDropdown.style.visibility = 'visible';
+          this.searchDropdown.style.opacity = '1';
+
+          // Your other search input handling logic here
+          const matchingProducts = this.getRecommendations(this.searchTerm);
+
+          this.searchDropdown.innerHTML = '';
+
+          matchingProducts.slice(0, 5).forEach((product) => {
+            const dropdownItem = this.createDropdownItem({ name: product });
+            this.searchDropdown.appendChild(dropdownItem);
+          });
+
+          const searchBarRect = this.searchBar.getBoundingClientRect();
+          this.searchDropdown.style.width = `${searchBarRect.width}px`;
+          this.searchDropdown.style.display = 'block';
+
+          this.searchDropdown.style.overflowY = matchingProducts.length > 3 ? 'scroll' : '';
+
+          // Enable scrolling within the menu and search results
+          this.searchDropdown.addEventListener('wheel', (event) => {
               if (event.deltaY > 0) {
                 this.searchDropdown.scrollTop += 30; // Scroll down
               } else {
                 this.searchDropdown.scrollTop -= 30; // Scroll up
               }
               event.preventDefault();
-            });
-          }
+          });
+        }
+
       
-          createDropdownItem(product) {
-            const dropdownItem = document.createElement('div');
-            dropdownItem.classList.add('dropdown-item');
-            dropdownItem.style.border = '2px groove black';
-            dropdownItem.style.borderRadius = '30px';
-            dropdownItem.style.margin = '5px 0';
-            dropdownItem.style.padding = '5px';
-            dropdownItem.style.backgroundColor = 'coral';
-      
-            const productLink = document.createElement('a');
-            productLink.textContent = product.name;
-            productLink.href = this.productLinks[product.name];
-            productLink.style.textDecoration = 'none';
-      
-            productLink.addEventListener('click', (event) => {
-              event.preventDefault();
-              this.searchBar.value = product.name;
-              this.redirectToProduct(product.name, this.searchBar.value);
-            });
-      
-            dropdownItem.appendChild(productLink);
-      
-            return dropdownItem;
-          }
+        createDropdownItem(product) {
+          const dropdownItem = document.createElement('div');
+          dropdownItem.classList.add('dropdown-item');
+          dropdownItem.style.border = '2px groove black';
+          dropdownItem.style.borderRadius = '30px';
+          dropdownItem.style.margin = '5px 0';
+          dropdownItem.style.padding = '5px';
+          dropdownItem.style.backgroundColor = 'white'; // Change background color to white
+
+          const productLink = document.createElement('a');
+          productLink.textContent = product.name;
+          productLink.href = this.productLinks[product.name];
+          productLink.style.textDecoration = 'none';
+
+          productLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            this.searchBar.value = product.name;
+            this.redirectToProduct(product.name, this.searchBar.value);
+          });
+
+          dropdownItem.appendChild(productLink);
+
+          return dropdownItem;
+      }
+
       
           redirectToProduct(productName, searchTerm) {
             const productLink = this.productLinks[productName];
@@ -392,8 +412,8 @@
           transform: translateY(-40%);
           cursor: pointer;
           font-size: 20px;
-          background: linear-gradient(to right, #ffffff, #009a9dca, #024dd89c); 
-          padding: 10px;
+          background: linear-gradient(to right, #ffffff, #6a6a6a); 
+          padding: 5px;
           border-radius: 25px 25px 25px 25px; 
           box-shadow: 2px 2px 20px 2px rgb(255, 255, 255); 
           z-index: 9599; 
@@ -403,16 +423,15 @@
           border-radius: 20px; 
         }
         .menu-container {
-          position: absolute;
+          position: fixed;
           border-radius: 20px;
           top: 155px;
-          left: -420px;
+          left: -470px;
           width: 313px;
           height: 350px;
-          border: 2px groove;
-          background-color: transparent;
-          z-index: 9999;
-          transition:ease-in-out 1s left;
+          background-color: none;
+          z-index: 1000;
+          transition:ease-in-out 0.3s left;
           overflow-x: hidden;
         }
         .close-btn {
@@ -420,20 +439,19 @@
           /* Adjust top position as needed */
           top: 20px; 
           /* Adjust right position as needed */
-          right: 10px; 
+          right: 40px; 
           padding: 10px;
-          border: 1px solid rgba(0, 0, 0, 0.109);
-          width: 70px;
+          width: 45px;
           height: 45px;
           z-index: 9991;
           border-radius: 30px;
           cursor: pointer;
           font-size: 20px;
-          background-color: #004159b7;
+          background: rgb(193, 193, 193);
         }
 
       </style>
-      <i class="bi bi-chevron-down arrow-icon" style="margin-right: 340px; margin-bottom: 22px; position: absolute;" onclick="toggleMenu()"></i>
+      <i class="bi bi-chevron-down arrow-icon" style="margin-bottom: 22px; margin-right: 15px; position: fixed;" onclick="toggleMenu()"></i>
       <div class="menu-container" id="menu">
         <div class="close-btn" onclick="toggleMenu()">&#10006;</div> 
         <!-- Close button -->
@@ -472,23 +490,22 @@
         </script>
         <style>
           .table-container_lista_optiuni {
-            width: 300px;
+            width: 290px;
             height: 330px;
             /* Change from relative to absolute */
             position: absolute; 
             bottom: 10px;
             /* Adjust positioning as needed */
             right: 0; 
-            border: 3px outset #00000085;
             border-radius: 30px;
             box-sizing: border-box;
             /* Adjust margin as needed */
             margin-top: 165px; 
             /* Adjust margin as needed */
-            margin-right: 5px; 
+            left: 1px;
             animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
             background-size: 200% 200%;
-            background: linear-gradient(to bottom, rgb(221, 221, 221), rgb(41, 134, 180) 50%);
+            background: linear-gradient(120deg, white, #6a6a6a);
           }
           .glowing-background {
             background: linear-gradient(24deg, #f1d9a690 32%rgba(72, 138, 223, 0.524))70%, rgb(143, 40, 14)85%;
@@ -518,38 +535,53 @@
             border-radius: 10px; /* Add border-radius for rounded corners */
             text-align: center;
           }
-
+          .th {
+            overflow: hidden; /* Hide overflowing text */
+            white-space: nowrap; /* Prevent text from wrapping */
+            text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+          }
         </style>
-      <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
-        <div class ="tabel-1-lista-optiuni" id="upper-side-table-style">
-          <div class="tr">
-            <div class="th glowing-background" id="tableheader-Despre" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Despre</a>
-            </div>
-          </div>
-          <div class="tr">
-            <div class="th glowing-background" id="tableheader-Comenzi" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Comenzi</a>
-            </div>
-          </div>
-          <div class="tr">
-            <div class="th glowing-background" id="tableheader-Livrare" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Livrare</a>
-            </div>
-          </div>
-          <div class="tr">
-            <div class="th glowing-background" id="tableheader-Suport" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Suport</a>
-            </div>
-          </div>
-          <div class="tr">
-            <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="background-color: #e8f2af; width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid black; margin-bottom: 2px;">
-              <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; text-decoration-line:underline; font-weight:lighter; font-size: medium;">Informatii Aditionale</a>
-            </div>
+        <script>
+          // Add click event listener to each div with class "th"
+          document.querySelectorAll('.th').forEach(function(th) {
+              th.addEventListener('click', function() {
+                  // Find the first <a> element inside the clicked div and navigate to its href
+                  var link = this.querySelector('a');
+                  if (link) {
+                      window.location.href = link.href;
+                  }
+              });
+          });
+        </script>
+        <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
+          <div class="tabel-1-lista-optiuni" id="upper-side-table-style">
+              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                  <div class="th glowing-background" id="tableheader-Despre" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                      <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Despre</a>
+                  </div>
+              </div>
+              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                  <div class="th glowing-background" id="tableheader-Comenzi" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                      <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Comenzi</a>
+                  </div>
+              </div>
+              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                  <div class="th glowing-background" id="tableheader-Livrare" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                      <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Livrare</a>
+                  </div>
+              </div>
+              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                  <div class="th glowing-background" id="tableheader-Suport" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                      <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky; font-weight: bold; font-size: smaller; color: black;">Suport</a>
+                  </div>
+              </div>
+              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                  <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                      <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; font-weight:bold; font-size: smaller; color: black;">Informatii Aditionale</a>
+                  </div>
+              </div>
           </div>
         </div>
-      </div>
-      
     </header>
     <script>
   
@@ -564,19 +596,20 @@
     <style>
       #container_scrolling_for_the_side_nav {
         /* Adjust position to fixed */
-        position: fixed; 
+        position: relative; 
         /* Adjust based on the header's height */
-        top: 140px; 
+        top: 240px; 
         /* Position at the left */
         left: 0; 
         /* Ensure it appears below the header */
         z-index: 9998;
+        width: 300px;
       }
     </style>
-    <div id="container_scrolling_for_the_side_nav" class="container">
+    <div id="container_scrolling_for_the_side_nav">
       <style>
         .sidenav {
-          height: 270px;
+          height: 300px;
           width: 220px;
           position: fixed;
           z-index: 1;
@@ -584,30 +617,33 @@
           padding-block: 100px;
           left: 0px;
           /* Linear gradient background */
-          background: linear-gradient(135deg, /* Adjust direction as needed */ rgba(255, 255, 255, 0.8), /* Light gray with 80% opacity */ rgba(0, 0, 0, 0.329));
+          background: linear-gradient(to bottom, #ffffff, #6a6a6a);
+          /* Adjust direction as needed */ 
           overflow-x: hidden;
           padding-top: 60px;
-          transition: 2s;
-          max-width: 300px;
-          max-height: 400px;
+          transition: 0.3s;
+          max-width: 250px;
           border-radius: 30px;
-          border: 1px #ffffff00 solid;
-          transition: 1s;
+          border: 0px transparent groove;
+          transition: 0.3s;
         }
         .sidenav a {
-          padding: 8px 8px 8px 32px;
+          padding: 2px;
+          text-align: left;
           text-decoration: double;
           border-radius: 30px;
-          font-size: 12px;
+          font-size: 14px;
           color: white;
-          background-image: linear-gradient(to right, #b3a89e, #a49993, #75756380);
+          background-color: #6a6a6a;
+          font-weight: 600;
+          font-size: medium;
           display: block;
           transition: 0.3s;
           width: 150px;
-          height: 3vh; 
+          height: 4vh; 
           border-radius: 30px;
           margin-top: 10px;
-          border: 1px solid #333333; /* Light black border */
+          border: 2px solid rgba(0, 0, 0, 0.3); /* Light black border */
         }
         /* The side navigation menu */
         /* The navigation menu links */
@@ -617,25 +653,31 @@
           border: 1px groove white;
           border-radius: 30px;
           border-inline: 3px 2px 2px 2px;
-          animation: pulse 4s, infinite alternate-reverse;
+          animation: pulse 0.3s, infinite alternate-reverse;
         }
           /* Highlight the current link */
         .sidenav a.active {
-          background-color: #04aa6d;
+          /* background-color: #04aa6d; */
           color: white;
         }
-          /* Position and style the close button (top right corner) */
+        /* Position and style the close button (top right corner) */
         .sidenav .closebtn {
           position: absolute;
-          top: 0px;
-          /* height: 30px; */
-          right: 20px;
-          font-size: 30px;
-          margin-left: 20px;
-          background: rgb(0 123 255 / 48%);
-          margin-bottom: 3px;
-          width: 50px;
+          top: 5px; /* Adjust the top position as needed */
+          right: 5px; /* Adjust the right position as needed */
+          font-size: 25px;
+          width: 30px; /* Adjust the width of the button */
+          height: 30px; /* Adjust the height of the button */
+          border-radius: 50%; /* Make the button circular */
+          background:gray; /* Adjust the background color and opacity */
+          border: none; /* Remove border */
+          color: rgb(0, 0, 0); /* Set text color */
+          text-align: center; /* Center the X sign horizontally */
+          line-height: 30px; /* Center the X sign vertically */
+          cursor: pointer; /* Add cursor pointer on hover */
+          padding: 3px; /* Adjust padding to center the X within the circle */
         }
+
         /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
         #main {
           transition: margin-left .5s;
@@ -652,16 +694,19 @@
         <style>
         .closebtn {
           position: absolute;
-          top: 30px;
+          top: 20px;
           /* Adjusted right position */
           right: 10px;
-          width: 50px;
+          border: 2px solid black;
+          background-color: gray;
+          width: 30px;
           height: 60px; 
-          font-size: 30px;
+          font-size: 20px;
           cursor: pointer;
+          border-radius: 30px; /* Added border-radius */
         }
         </style>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="width: 80px; height: 50px; bottom: 20px;">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="width: 40px; height: 40px; bottom: 10px; right: 10px; font-size: medium;">✖</a>
         <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
         <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="http://192.168.100.53:8081/Clients.html" onclick="loadPage()">Clients</a>
@@ -676,13 +721,13 @@
           display: inline-block;
           width: 0px;
           height: 0px;
-          left: 10px;
+          left: 20px;
           /* Left side of the triangle */
           border-left: 25px solid transparent;
           /* Right side of the triangle */
           border-right: 25px solid transparent;
           /* Bottom side of the triangle */
-          border-bottom: 43.3px groove rgb(0, 89, 198);
+          border-bottom: 43.3px groove #6a6a6a;
           /* Change cursor on hover */
           cursor: pointer;
           z-index: 8000;
@@ -795,24 +840,6 @@
         var main = document.getElementById("main");
 
         if (sidenav.classList.contains("sideNavOpen")) {
-            // Create a white trail effect
-            var trail = document.createElement("div");
-            trail.classList.add("trail");
-            document.body.appendChild(trail);
-
-            setTimeout(function () {
-                trail.style.opacity = "0";
-                setTimeout(function () {
-                  trail.remove();
-                // Fade out time
-                }, 1000); 
-            // Delay before starting to fade out
-            }, 10); 
-
-            // Play guitar sound
-            var audio = new Audio('light_guitar_sound.mp3');
-            audio.play();
-
             // Close the navigation menu
             sidenav.style.width = "0";
             main.style.marginLeft = "0";
@@ -838,26 +865,32 @@
                     if (formId) {
                         var form = document.getElementById(formId);
                         if (form) {
-                            // Add the popup class
-                            form.classList.add("form-container-popup");
-                            form.style.display = "block";
-                            // Adjust width if needed
-                            form.style.minWidth = "220px";
-                            // Adjust height if needed
-                            form.style.height = "auto";
-                            form.style.position = "absolute";
-                            // Adjust top position as required
-                            form.style.top = "185px";
-                            // Adjust right position as required
-                            form.style.right = "100px";
-                            // Close the side navigation menu
-                            closeNav();
+                          // Add the popup class
+                          form.classList.add("form-container-popup");
+                          form.style.display = "block";
+                          // Adjust width if needed
+                          form.style.minWidth = "220px";
+                          // Adjust height if needed
+                          form.style.height = "auto";
+                          form.style.position = "absolute";
+                          // Adjust top position as required
+                          form.style.top = "185px";
+                          // Adjust right position as required
+                          form.style.right = "100px";
+                          // Close the side navigation menu
+                          closeNav();
                         } else {
-                            console.error("Form element with id " + formId + " not found.");
+                          console.error("Form element with id " + formId + " not found.");
                         }
+                        if (formURL.includes("Logare.html")) {
+                          // If it's the login form, add event listener to the forgot password link
+                          document.getElementById("forgot-password-link").addEventListener("click", function() {
+                            loadForgotPasswordForm();
+                          });
+                      }
                     }
                 } else {
-                    console.error("Failed to load form. Status code: " + this.status);
+                  console.error("Failed to load form. Status code: " + this.status);
                 }
             }
         };
@@ -875,10 +908,20 @@
       function closeForm() {
         var forms = document.getElementsByClassName("form-container");
         for (var i = 0; i < forms.length; i++) {
-            forms[i].style.display = "none";
+          forms[i].style.display = "none";
         }
       
       }
+      function loadForgotPasswordForm() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("form-container-1").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "forgot-password.html", true);
+        xhttp.send();
+    }
     </script>
     <script>
       var urls = [
@@ -1067,11 +1110,11 @@
       }
       .swipe-bar {
         position: relative;
-        top: 100px;
+        bottom: 45px;
         left: 0px;
         width: 40px;
         height: 100px;
-        background-color: #ab915a;
+        background-color: #ffffff;
         border-radius: 20px;
         z-index: 1000;
         cursor: pointer;
@@ -1119,39 +1162,52 @@
         overflow-y: auto;
         display: none;
         position: fixed;
-        top: 230px;
-        left: 45px;
+        top: 500px;
+        left: 10px;
         width: 230px;
         height: 250px;
         z-index: 9500;
-        background: linear-gradient(120deg, #ad6b4e, #e0b18b, #e8d1bd); /* Medium to light coffee-themed gradient */
-        border: 2px solid #000; /* Solid border color */
+        background: linear-gradient(120deg, white, #6a6a6a);
+        border: 1px transparent #000;
         border-radius: 30px;
         overflow-x: hidden;
-        transition: 1s;
         padding-top: 60px;
-      }
-      .dropdown-content_meniu_1si2.open {
+        /* Set initial opacity to 0 */
+        opacity: 0;
+        /* Set initial visibility to hidden */
+        visibility: hidden;
+        /* Apply transition to opacity and visibility */
+        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    }
+
+    .dropdown-content_meniu_1si2.open {
         display: block;
-      }
+        /* Change opacity to 1 when menu is open */
+        opacity: 1;
+        /* Change visibility to visible when menu is open */
+        visibility: visible;
+    }
 
-      /* Style for the close button */
-
-      .dropdown-content_meniu_1si2 a {
+    .dropdown-content_meniu_1si2 a {
         padding: 10px 8px;
         text-decoration: none;
-        font-size: 20px;
+        font-size: medium;
+        font-weight: lighter;
         color: #00000005;
         display: block;
         transition: 0.3s;
-      }
+    }
 
-      .dropdown-content_meniu_1si2 a:hover {
+    .dropdown-content_meniu_1si2 a:hover {
         background-color: #ffffff52;
-      }
-
+    }
       .open {
         left: 0px;
+      }
+      .btn-danger{
+        background-color: gray;
+        border-radius: 50px;
+        border: none;
       }
 
     </style>
@@ -1161,173 +1217,164 @@
       <div class="arrow"></div>
     </div>
     <!-- <div id="swipeArea" style="height: 10vh; background-color: #003d57; width: 20px; height: 100px; border-radius: 30px;"></div> -->
-    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
-      <div class="dropdown" style="overflow-anchor: auto;">
+    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2" style="left: 40px; left: 45px; top: 354px; position: fixed;">
+      <div class="dropdown" style="overflow-anchor: auto; border-radius: 30px; background-color: transparent; max-width: 223px; max-height: 250px;">
           <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
-            <button type="button" class="btn btn-danger" onclick="closeMenu()" style="left: 140px; bottom: 60px; position: relative; border-radius: 30px;">X</button>
+            <button type="button" class="btn btn-danger close-button" onclick="closeMenu()" style="position: absolute; bottom: 140px; right: 10px; border-radius: 30px;">✖</button>
             <style>
-                  /* Container styles */
-                  .container-content-Menu-produse-1,
-                  .container-content-Menu-produse-2 {
-                    background: linear-gradient(to bottom, #ffffff, #05337085, #8e6fff);
-                    margin-bottom: 10px;
-                    /* Adjust width as needed */
-                    width: 190px; 
-                    /* Adjust height as needed */
-                    height: 20px; 
-                    padding: 2px;
-                    height: 1%;
-                    border: 1px groove rgb(0, 0, 0);
-                    border-radius: 30px;
-                  }
-  
-                  /* Link styles */
-                  .container-content-Menu-produse-1 a,
-                  .container-content-Menu-produse-2 a {
-                    border-radius: 30px;
-                    bottom: 0;
-                    position: relative;
-                    width: 100%;
-                    height: 10%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-decoration: none; /* Remove underline */
-                    color: inherit; /* Inherit text color */
-                  }
-  
-                  /* Adjust glowing effect */
-                  .container-content-Menu-produse-1 a:active,
-                  .container-content-Menu-produse-2 a:active {
-                    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
-                  }
+                /* Container styles */
+                .container-content-Menu-produse-1,
+                .container-content-Menu-produse-2 {
+                  background: linear-gradient(to bottom, #ffffff, #6a6a6a);
+                  margin-bottom: 10px;
+                  /* Adjust width as needed */
+                  width: 190px; 
+                  /* Adjust height as needed */
+                  height: 20px; 
+                  padding: 2px;
+                  height: 1%;
+                  border: 1px groove rgb(0, 0, 0);
+                  border-radius: 30px;
+                }
+
+                /* Link styles */
+                .container-content-Menu-produse-1 a,
+                .container-content-Menu-produse-2 a {
+                  border-radius: 30px;
+                  bottom: 0;
+                  position: static;
+                  width: 100%;
+                  height: 50px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-decoration: none; /* Remove underline */
+                  color: inherit; /* Inherit text color */
+                }
+
+                /* Adjust glowing effect */
+                .container-content-Menu-produse-1 a:active,
+                .container-content-Menu-produse-2 a:active {
+                  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+                }
               </style>
               <!-- Container 1 -->
               <div class="container-content-Menu-produse-1">
                   <div class="trail-element">
-                      <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Meniu Produse 1</a>
+                      <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Produse 1</a>
                   </div>
               </div>
               <!-- Container 2 -->
               <div class="container-content-Menu-produse-2">
                   <div class="trail-element">
-                      <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Meniu Produse 2</a>
+                      <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Produse 2</a>
                   </div>
               </div>
           </div>
       </div>
-  </div>
-  <script>
+    </div>
+    <script>
       function openMenu() {
-        document.getElementById("dropdown-content-menu-1&2").classList.add("open");
         document.getElementById("swipeBar").classList.add("open");
+        document.getElementById("dropdown-content-menu-1&2").classList.add("open");
       }
   
       function closeMenu() {
-        document.getElementById("dropdown-content-menu-1&2").classList.remove("open");
         document.getElementById("swipeBar").classList.remove("open");
+        document.getElementById("dropdown-content-menu-1&2").classList.remove("open");
       }
+  
       document.addEventListener("DOMContentLoaded", function () {
-          var swipeBar = document.getElementById("swipeBar");
-          var swipeArea = document.getElementById("swipeArea");
-          var dropdownMenu = document.querySelector(".dropdown-content_meniu_1si2");
-          var dropdownContent = document.getElementById("dropdown-content-Meniu-produse-1-10");
-          var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2");
-          var xStart = null;
-          var xEnd = null;
-  
-          swipeBar.addEventListener("click", toggleNav);
-          swipeArea.addEventListener("touchstart", handleTouchStart, false);
-          swipeArea.addEventListener("touchmove", handleTouchMove, false);
-          dropbtn.addEventListener("click", function () {
-            dropdownContent.style.display = "block";
-          });
-  
-          function handleTouchStart(event) {
-            xStart = event.touches[0].clientX;
-          }
-  
-          function handleTouchMove(event) {
-              if (!xStart) {
-                return;
-              }
-  
-              xEnd = event.touches[0].clientX;
-              var xDiff = xStart - xEnd;
-              if (xDiff > 0) { // Swiped to right
-                toggleNav();
-              }
-          }
-  
-          function toggleNav() {
-            if (dropdownMenu.style.display === "block") {
-              dropdownMenu.style.display = "none";
-            } else {
-              dropdownMenu.style.display = "block";
+        var swipeBar = document.getElementById("swipeBar");
+        var swipeArea = document.getElementById("swipeArea");
+        var dropdownMenu = document.querySelector(".dropdown-content_meniu_1si2");
+        var dropdownContent = document.getElementById("dropdown-content-Meniu-produse-1-10");
+        var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2");
+        var xStart = null;
+        var xEnd = null;
+
+        swipeBar.addEventListener("click", openMenu);
+        swipeArea.addEventListener("touchstart", handleTouchStart, false);
+        swipeArea.addEventListener("touchmove", handleTouchMove, false);
+
+        function handleTouchStart(event) {
+          xStart = event.touches[0].clientX;
+        }
+
+        function handleTouchMove(event) {
+            if (!xStart) {
+              return;
             }
-          }
-  
-          // Close the side navigation when clicking outside the menu
-          window.addEventListener("click", function (event) {
-              if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
-                dropdownMenu.classList.remove("open");
+
+            xEnd = event.touches[0].clientX;
+            var xDiff = xStart - xEnd;
+            if (xDiff > 0) { // Swiped to right
+              openMenu();
+            }
+        }
+
+        // Close the side navigation when clicking outside the menu
+        window.addEventListener("click", function (event) {
+            if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
+              closeMenu();
+            }
+        });
+
+        // Hide all containers by default and toggle their display on click
+        containers.forEach(function (container) {
+            container.style.display = "none";
+            container.addEventListener("click", function () {
+              if (container.style.display === "none" || container.style.display === "") {
+                container.style.display = "block";
+              } else {
+                container.style.display = "none";
               }
-          });
+            });
+        });
   
-          // Hide all containers by default and toggle their display on click
-          containers.forEach(function (container) {
-              container.style.display = "none";
-              container.addEventListener("click", function () {
-                  if (container.style.display === "none" || container.style.display === "") {
-                    container.style.display = "block";
-                  } else {
-                    container.style.display = "none";
-                  }
-              });
-          });
+        function createTrail(event, number) {
+            const cursor = document.querySelector(".cursor");
+            const trail = document.createElement('div');
+            trail.classList.add('trail');
+            // Find the respective anchor element based on the number parameter
+            const link = event.target;
+            link.appendChild(trail);
+            // Add a class to apply animation
+            link.classList.add('animated-link')
+            trail.style.left = event.offsetX + 'px';
+            let opacity = 1;
+            const fadeTrail = setInterval(() => {
+                opacity -= -2; // Adjust the decrement value for speed of fade
+                trail.style.opacity = opacity;
+                if (opacity <= 0) {
+                  clearInterval(fadeTrail);
+                  trail.remove();
+                }
+            }, 10); // Adjust the interval for smoother or faster fading
+            // Follow cursor on mousemove within the link
+            link.addEventListener("mousemove", (e) => {
+              let x = e.pageX;
+              let y = e.pageY;
+              cursor.style.top = y + "px";
+              cursor.style.left = x + "px";
+              // Update trail position based on cursor movement
+              trail.style.left = e.pageX - link.offsetLeft + 'px';
+              trail.style.top = e.pageY - link.offsetTop + 'px';
+            });
+        }
   
-          function createTrail(event, number) {
-              const cursor = document.querySelector(".cursor");
-              const trail = document.createElement('div');
-              trail.classList.add('trail');
-              // Find the respective anchor element based on the number parameter
-              const link = event.target;
-              link.appendChild(trail);
-              // Add a class to apply animation
-              link.classList.add('animated-link')
-              trail.style.left = event.offsetX + 'px';
-              let opacity = 1;
-              const fadeTrail = setInterval(() => {
-                  opacity -= -2; // Adjust the decrement value for speed of fade
-                  trail.style.opacity = opacity;
-                  if (opacity <= 0) {
-                    clearInterval(fadeTrail);
-                    trail.remove();
-                  }
-              }, 10); // Adjust the interval for smoother or faster fading
-              // Follow cursor on mousemove within the link
-              link.addEventListener("mousemove", (e) => {
-                let x = e.pageX;
-                let y = e.pageY;
-                cursor.style.top = y + "px";
-                cursor.style.left = x + "px";
-                // Update trail position based on cursor movement
-                trail.style.left = e.pageX - link.offsetLeft + 'px';
-                trail.style.top = e.pageY - link.offsetTop + 'px';
-              });
-          }
-  
-          function removeTrail(link) {
-              // Remove trail element on mouseout
-              const trail = link.querySelector('.trail');
-              if (trail) {
-                trail.remove();
-              }
-              // Remove animation class on mouseout
-              link.classList.remove('animated-link');
-          }
+        function removeTrail(link) {
+            // Remove trail element on mouseout
+            const trail = link.querySelector('.trail');
+            if (trail) {
+              trail.remove();
+            }
+            // Remove animation class on mouseout
+            link.classList.remove('animated-link');
+        }
       });
   </script>
+  
   
     
     <style>
@@ -1337,7 +1384,7 @@
         width: auto;
         height: 30px;
         top: 100px;
-        background: #007bff;
+        background: none;
         border-radius: 30px;
         /* Adjust as needed */
         margin-left: -20px; 
@@ -1352,20 +1399,19 @@
       }
     </style>
     
-    <div class="container" style="border: 2px solid #7a7a7a; background-color: #fcf1b2; border-radius: 10px; padding: 20px; margin-top: 420px; max-width: 380px;">
+    <div class="container" style="border: 2px solid #7a7a7a; background-color: #6a6a6a; border-radius: 10px; padding: 20px; margin-top: 280px; max-width: 380px;">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
               <!-- Slide 1 -->
               <div class="carousel-item active">
                   <div class="row align-items-center">
-                      <div class="col-md-4">
+                      <div class="col-md-4" style="position: static;">
                         <div id="imageContainer" class="image-container"></div>
-                          <!-- <a href="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> -->
-                            <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                            <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 10px; position: static;">
                           </a>
-                          <p style="height:100px; color: #666666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 10px; margin-top: 10px; font-size: small;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
+                          <p style="height:100px; color: #666666; font-size: 14px; background-color: white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
                       </div>
-                      <div class="col-md-8">
+                      <div class="col-md-8" style="position: static;">
                           <div class="carousel-caption d-none d-md-block">
                               <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_1</h5>
                           </div>
@@ -1375,16 +1421,15 @@
               <!-- Slide 2 -->
               <div class="carousel-item">
                   <div class="row align-items-center">
-                      <div class="col-md-4">
+                      <div class="col-md-4" style="position: static;">
                         <div id="imageContainer" class="image-container"></div>
-                          <!-- <a href="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D"> -->
-                            <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                            <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 10px; position: static;">
                           </a>
-                          <p style="height:100px; color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
+                          <p style="height:100px; color: #666; font-size: 14px; background-color: white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
                       </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
-                              <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_2</h5>
+                              <h6 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_2</h6>
                           </div>
                       </div>
                   </div>
@@ -1394,14 +1439,13 @@
                   <div class="row align-items-center">
                       <div class="col-md-4">
                         <div id="imageContainer" class="image-container"></div>
-                          <!-- <a href="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> -->
-                            <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 10px;">
+                            <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 10px; position: static;">
                           </a>
-                          <p style="height:100px; color: #666; font-size: 14px; background-color: rgb(176, 109, 78); border-radius: 20px; margin-top: 10px; font-size: small;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
+                          <p style="height:100px; color: #666; font-size: 14px; background-color:white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
                       </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
-                              <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_3</h5>
+                              <h7 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_3</h7>
                           </div>
                       </div>
                   </div>
@@ -1546,9 +1590,9 @@
       }
     </style>
     
-    <nav style="display: grid; border: 1px groove black; border-radius: 30px; background: linear-gradient(to bottom right, #8B4513, #f6c3ac, #D2B48C); padding-top: 0px; padding-bottom: 100px; top: 20px; margin-top: 130px;">
+    <nav style="display: grid; border: 1px groove black; border-radius: 30px; background: linear-gradient(to bottom right, rgba(19, 65, 139, 0.553), #ffffff, #00a2ff87); padding-top: 0px; padding-bottom: 100px; top: 20px; margin-top: 130px;">
       <div class="is-mobile-preview"></div>
-      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="position: relative; width: 390px; top: 20px;">
+      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="position: relative; width: 390px; left:3px; border-radius: 20px; top: 20px; background: rgba(255, 255, 255, 0.307);">
         <style>
           #Acasa_menu_container {
             border: 1px;
@@ -1557,7 +1601,7 @@
             border-style: groove;
             border-radius: 20px;
             /* box-sizing: content-box; */
-            width: 428px;
+            width: 405px;
             left: 0px;
             height: 100px;
             /* margin: 50px; */
@@ -1566,7 +1610,7 @@
             display: inline-block;
             margin-bottom: 200px;
             margin-top: 50px;
-            background: linear-gradient(135deg, #8B4513 27%, #A0522D 66%, #D2B48C 75%);
+            background: #6a6a6a;
             animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
             /* background-size: 200% 200%; */
           }
@@ -1701,11 +1745,11 @@
           #Menu_Categories {
             border: 1px solid #ffffff; /* Changed border shorthand for consistency */
             border-radius: 20px;
-            width: 428px;
+            width: 405px;
             height: 100px;
             position: relative;
             display: inline-block;
-            background: linear-gradient(135deg, #8B4513 27%, #A0522D 66%, #D2B48C 75%);
+            background: #6a6a6a;
             animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 3s infinite alternate-reverse;
             margin-left: auto;
             margin-bottom: 200px;
@@ -1809,11 +1853,11 @@
             #menu_produse_top {
               border: 1px groove #ffffff; /* Changed border shorthand for consistency */
               border-radius: 20px;
-              width: 428px;
+              width: 405px;
               height: 100px;
               position: relative;
               display: inline-block;
-              background: linear-gradient(135deg, #8B4513 27%, #A0522D 66%, #D2B48C 75%);
+              background: #6a6a6a;
               animation: flowWaves 4s infinite alternate-reverse;
               margin-left: auto;
               margin-right: 0px;
@@ -1956,41 +2000,41 @@
     <div class="container-produse_vandute_de_top_1" id="Produse-vandute-top-container">
       <div class="dropdown-container_produse_vandute_de_top_1" id="dropdown-container-Produse vandute top">
         <div class="bordered-box_produse_vandute_de_top_1" id="bordered-box-1">
-          <h3 style="border: 1px solid whitesmoke; border-radius: 30px; background-color: lightgray; width: 350px; margin-top: 200px; margin-bottom: 200px;">Cele mai vandute produse</h3>
+          <h3 style="border: 1px solid whitesmoke; border-radius: 30px; background-color: lightgray; width: 350px; margin-top: 100px; margin-bottom: 30px;">Cele mai vandute produse</h3>
           <div class="box-model_produse_vandute_de_top_1" id="Cele-Mai-Vandute-Produse-box-model">
-            <div class="image-container_produse_vandute_de_top_1 glowing-background" id="container-imagine-stanga" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
+            <div class="image-container_produse_vandute_de_top_1 glowing-background" id="container-imagine-stanga" style="border-radius: 30px; border: 1px solid transparent; margin-bottom: 30px;">
               <div class="row">
-                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 30px;">
+                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #6a6a6a; margin-left: 30px;">
                   <a>
                     <img src="https://gratisography.com/wp-content/uploads/2023/06/gratisography-happy-coffee-free-stock-photo-1170x780.jpg" alt="Image 1" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
                   </a>
                 </div>
                 <div class="col-md-10">
-                  <p style="text-align: center; background: linear-gradient(to right, #ad7c5e, #613613); border: #005979 2px inset; border-radius: 30px; height: 500px;">Experimentează rafinamentul și energia pură a unei cafele premium. Fiecare înghițitură este o călătorie către savoarea autentică a boabelor de cafea proaspăt prăjite. Acest produs este soluția perfectă pentru cei ce caută o doză rapidă de energie în fiecare dimineață sau în timpul unei zile agitate.</p>
+                  <p style="text-align: center; background: linear-gradient(to right, #ffffff, #6a6a6a); border: transparent 2px inset; border-radius: 30px; height: 500px;">Experimentează rafinamentul și energia pură a unei cafele premium. Fiecare înghițitură este o călătorie către savoarea autentică a boabelor de cafea proaspăt prăjite. Acest produs este soluția perfectă pentru cei ce caută o doză rapidă de energie în fiecare dimineață sau în timpul unei zile agitate.</p>
                 </div>
               </div>
             </div>
-            <div class="image-container_produse_vandute_de_top_2 glowing-background" id="container-imagine-dreapta" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
+            <div class="image-container_produse_vandute_de_top_2 glowing-background" id="container-imagine-dreapta" style="border-radius: 30px; border: 1px solid transparent; margin-bottom: 30px;">
               <div class="row">
-                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #005979; margin-left: 30px;">
+                <div class="col-md-2" style="border: 1px groove white; width: 340px; border-radius: 30px; margin-left: 10px; background-color: #6a6a6a; margin-left: 30px;">
                   <a>
                     <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-319H-free-stock-photo-1170x780.jpg" alt="Image 2" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
                   </a>
                 </div>
                 <div class="col-md-10">
-                  <p style="text-align: center; background: linear-gradient(to right, #ad7c5e, #613613); border: #005979 2px inset; border-radius: 30px; height: 500px;">Bucură-te de o călătorie senzorială prin universul cafelei cu boabele noastre de cafea de tip Excelsa. Cultivate în cele mai prielnice zone, aceste boabe sunt o combinație perfectă între aromă exotică și gust rafinat.</p>
+                  <p style="text-align: center; background: linear-gradient(to right, #ffffff, #6a6a6a); border: transparent 2px inset; border-radius: 30px; height: 500px;">Bucură-te de o călătorie senzorială prin universul cafelei cu boabele noastre de cafea de tip Excelsa. Cultivate în cele mai prielnice zone, aceste boabe sunt o combinație perfectă între aromă exotică și gust rafinat.</p>
                 </div>
               </div>
             </div>
-            <div class="image-container_produse_vandute_de_top_3 glowing-background" id="container-imagine-centru" style="border-radius: 30px; border: 1px solid blanchedalmond; margin-bottom: 30px;">
+            <div class="image-container_produse_vandute_de_top_3 glowing-background" id="container-imagine-centru" style="border-radius: 30px; border: 1px solid transparent; margin-bottom: 30px;">
               <div class="row">
-                <div class="col-md-2" style="border: 1px groove white; border-radius: 30px; width: 340px; margin-left: 10px; background-color: #005979; margin-left: 30px;">
+                <div class="col-md-2" style="border: 1px groove white; border-radius: 30px; width: 340px; margin-left: 10px; background-color: #6a6a6a; margin-left: 30px;">
                   <a>
                     <img src="https://gratisography.com/wp-content/uploads/2018/05/gratisography-364H-free-stock-photo-1170x780.jpg" alt="Image 3" style="height: 80px; width:80px; position: relative; border-radius: 50px;" loading="eager">
                   </a>
                 </div>
                 <div class="col-md-10">
-                  <p style="text-align: center; background: linear-gradient(to right, #ad7c5e, #613613); border: #005979 2px inset; border-radius: 30px; height: 500px;">Bucură-te de perfecțiunea gustului cu macinarea extra fină dedicată cafelei Arabica. Cu o granulație extrem de fină, această macinătură este perfectă pentru a extrage în mod optim aromele distincte ale cafelei Arabica.</p>
+                  <p style="text-align: center; background: linear-gradient(to right, white, #6a6a6a); border: transparent 2px inset; border-radius: 30px; height: 500px;">Bucură-te de perfecțiunea gustului cu macinarea extra fină dedicată cafelei Arabica. Cu o granulație extrem de fină, această macinătură este perfectă pentru a extrage în mod optim aromele distincte ale cafelei Arabica.</p>
                 </div>
               </div>
             </div>

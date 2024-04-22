@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafea boabe Julius Meinl Trend Caffe Crema Intenso - Product Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        .product-description {
+            color: #6c757d; /* Lighter text color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Cafea boabe Julius Meinl Trend Caffe Crema Intenso</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/account">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm5.5 1a5.5 5.5 0 1 0-11 0 5.5 5.5 0 0 0 11 0zM4.5 9a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                        Account
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product details section -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Product image -->
+                <img src="https://s13emagst.akamaized.net/products/29512/29511847/images/res_d24e0ec8d927212274405bf5e4aa86ce.jpg?width=720&height=720&hash=55DD973646F9A67E6A10B824D02E8E8B" alt="Product Name" class="img-fluid">
+                <!-- Product availability -->
+                <p class="text-muted mt-2">Disponibil: In Stoc</p>
+            </div>
+            <div class="col-lg-6">
+                <!-- Product description -->
+                <h2 class="mt-4">Cafea boabe Julius Meinl Trend Caffe Crema Intenso</h2>
+                <p class="product-description">Cafea boabe Julius Meinl Trend Caffe Crema Intenso, 1 Kg TREND COLLECTION Compus din boabe alese provenite din America de Sud si Asia, acest amestec bogat se caracterizeaza printr-o aroma completa si puternica, un gust persistent si o textura foarte cremoasa. Ideala pentru preparatele cu lapte. Espressor Potrivita pentru prepararea la espressoare automate/manuale. Origini sustenabile. Din pasiune pentru cafea Credem cu tarie ca bunastarea de astazi si nivelul ridicat de trai trebuie sa lase lumea in continuare la fel de frumoasa si diversa pentru generatiile viitoare. Vrem ca si copiii nostri sa cunoasca lumea, diferitele sale popoare, natura in toata frumusetea si diversitatea ei. Depinde de noi toti sa facem acest lucru posibil. Noi, Julius Meinl, ne-am angajat sa realizam acest lucru. Descopera gama intreaga de cafea boabe</p>
+                <!-- Product price -->
+                <p id="product-price"></p>
+                <p class="delivery-info"><i class="fas fa-truck"></i> Livrare: Gratuita</p>
+                <!-- Dynamic delivery time -->
+                <div id="dynamic-delivery-info"></div>
+                <!-- Script to calculate and display delivery information -->
+                <script>
+                    // Get the current date
+                    var currentDate = new Date();
+
+                    // Calculate the soonest delivery date (example: 2 days from the current date)
+                    var soonestDeliveryDate = new Date(currentDate.getTime() + (2 * 24 * 60 * 60 * 1000)); // Add 2 days
+
+                    // Format the delivery date
+                    var deliveryDay = soonestDeliveryDate.getDate();
+                    var deliveryMonth = soonestDeliveryDate.toLocaleString('default', { month: 'long' });
+                    var deliveryYear = soonestDeliveryDate.getFullYear();
+                    var deliveryHour = soonestDeliveryDate.getHours();
+                    var deliveryMinute = soonestDeliveryDate.getMinutes();
+
+                    // Create a paragraph element for dynamic delivery time
+                    var deliveryInfo = document.createElement("p");
+                    deliveryInfo.className = "delivery-info";
+                    deliveryInfo.innerHTML = '<i class="fas fa-truck"></i> Livrare estimată: ' + deliveryDay + ' ' + deliveryMonth + ' ' + deliveryYear + ' ' + deliveryHour + ':' + (deliveryMinute < 10 ? '0' : '') + deliveryMinute;
+
+                    // Append the dynamic delivery time paragraph to its container
+                    document.getElementById("dynamic-delivery-info").appendChild(deliveryInfo);
+                </script>
+                <script>
+                    // Function to fetch real-time currency conversion rate and update product price
+                    function fetchAndUpdateProductPrice(competitorPrices) {
+                        // Fetch real-time currency conversion rate
+                        fetch('https://api.exchangerate-api.com/v4/latest/USD')
+                        .then(response => response.json())
+                        .then(data => {
+                            // Extract conversion rate for RON
+                            const conversionRate = data.rates.RON;
+
+                            // Calculate price in RON (assuming the base price is $20)
+                            const priceInUSD = 70;
+                            const priceInRON = priceInUSD * conversionRate;
+
+                            // Call the fetchUserLocation function to get the user's location
+                            fetchUserLocation()
+                                .then(userLocation => {
+                                    // Call the calculateOptimalPrice function to calculate the optimal price
+                                    let optimalPrice = calculateOptimalPrice(competitorPrices, userLocation, priceInRON);
+
+                                    // Apply additional conditions for price adjustments based on exchange rate fluctuations
+                                    const previousConversionRate = localStorage.getItem('previousConversionRate');
+                                    if (previousConversionRate) {
+                                        const exchangeRateChangePercentage = ((conversionRate - previousConversionRate) / previousConversionRate) * 100;
+                                        if (exchangeRateChangePercentage > 20) {
+                                            // If exchange rate decreased by more than 20%, increase price by 10%
+                                            optimalPrice *= 1.1;
+                                        } else if (exchangeRateChangePercentage < -20) {
+                                            // If exchange rate increased by more than 20%, decrease price by maximum of 30%
+                                            optimalPrice *= 0.7; // Reduce price by 30%
+                                        }
+                                    }
+
+                                    // Store current conversion rate in local storage for future comparison
+                                    localStorage.setItem('previousConversionRate', conversionRate);
+
+                                    // Update product price on the page
+                                    const productPriceElement = document.getElementById('product-price');
+                                    if (productPriceElement) {
+                                        productPriceElement.innerText = `Price: RON ${optimalPrice.toFixed(2)}`;
+                                    } else {
+                                        console.error('Product price element not found.');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching user location:', error);
+                                });
+                        })
+                        .catch(error => {
+                            console.error('Error fetching currency conversion:', error);
+                        });
+                    }
+                
+                    // Function to fetch user location data
+                    function fetchUserLocation() {
+                        // Mock implementation for fetching user location (replace with actual implementation)
+                        return new Promise((resolve, reject) => {
+                            // Simulate fetching user location data
+                            const userLocation = ["RO", "AT", "DE", "ES", "FR", "UK"];
+                            // Randomly select a location from the list
+                            const randomIndex = Math.floor(Math.random() * userLocation.length);
+                            const selectedLocation = userLocation[randomIndex];
+                            resolve(selectedLocation);
+                        });
+                    }
+                
+                    // Function to calculate optimal price based on competitor prices, user location, and price in RON
+                    function calculateOptimalPrice(competitorPrices, userLocation, priceInRON) {
+                        // Example calculation: take the average of competitor prices and adjust based on user location
+                        const averagePrice = Object.values(competitorPrices).reduce((acc, curr) => acc + curr, 0) / Object.keys(competitorPrices).length;
+                        let optimalPrice = averagePrice;
+                
+                        // Adjust price based on user location
+                        switch (userLocation) {
+                            case 'RO':
+                                optimalPrice *= 1.05; // Increase price by 5% for users in Romania
+                                break;
+                            case 'AT':
+                                optimalPrice *= 1.07; // Increase price by 7% for users in Austria
+                                break;
+                            case 'DE':
+                                optimalPrice *= 1.06; // Increase price by 6% for users in Germany
+                                break;
+                            case 'ES':
+                                optimalPrice *= 1.08; // Increase price by 8% for users in Spain
+                                break;
+                            case 'FR':
+                                optimalPrice *= 1.09; // Increase price by 9% for users in France
+                                break;
+                            case 'UK':
+                                optimalPrice *= 1.11; // Increase price by 11% for users in the UK
+                                break;
+                            default:
+                                break;
+                        }
+                
+                        return optimalPrice; // Return the optimal price
+                    }
+                    
+                    // Define competitor prices
+                    const competitorPrices = {
+                        product1: 62.99,
+                        product2: 78.99,
+                        product3: 57.79,
+                        product4: 59.60,
+                        product5: 86.04,
+                        product6: 59.99,
+                        product7: 62.25,
+                        product8: 70.99,
+                        product9: 80.40,
+                        product10: 69.95,
+                        product10: 91.99,
+                        // Add more competitor prices as needed
+                    };
+                
+                    // Call fetchAndUpdateProductPrice initially
+                    fetchAndUpdateProductPrice(competitorPrices);
+                
+                    // Set interval to update product price every 12 hours
+                    setInterval(() => {
+                        fetchAndUpdateProductPrice(competitorPrices);
+                    }, 12 * 60 * 60 * 1000); // 12 hours in milliseconds
+                </script>
+
+
+                <!-- Add to cart form -->
+                <form action="/add-to-cart" method="POST">
+                    <input type="hidden" name="product_id" value="1"> <!-- Change the value to the actual product ID -->
+                    <input type="number" name="quantity" value="1" min="1" class="form-control mb-3"> <!-- Input field for quantity -->
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>

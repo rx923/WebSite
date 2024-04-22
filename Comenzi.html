@@ -123,7 +123,7 @@
       background-color: #8f8585;
       border-radius: 30px;
       /* Add transition for smooth opening/closing */
-      transition: 0.2s;
+      transition: 0.1s;
     }
     /* .sidenav.active {
       left: 0; 
@@ -205,7 +205,7 @@
       /* Title shadow */
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
       /* Title animation */
-      animation: pulse 5s infinite; 
+      animation: pulse cubic-bezier(1, 0, 0, 1) infinite; 
     }
 
     @keyframes pulse {
@@ -227,7 +227,7 @@
 </head>
 <body>
   <!-- Adjust margin to accommodate side navigation -->
-  <div class="container mt-5"> 
+  <div class="container mt-5" style="border: 1px solid black; background-color: lightslategrey;"> 
     <!-- Title with fancy styling and animation -->
     <h1 class="comenzi-title">Comenzi Produse</h1>
     <button onclick="history.back()" style="bottom: 6px; position: fixed;">Go Back</button>
@@ -313,7 +313,7 @@
       margin-top: 50px;
     }
     h1 {
-      color: #007bff; /* Header text color */
+      color: #6a6a6a; /* Header text color */
     }
     table {
       background-color: #ffffff; /* Table background color */
@@ -324,11 +324,11 @@
     }
     tbody th {
       /* Border for table cells */
-      border: 1px groove black; 
+      border: 1px groove #6a6a6a; 
       /* Border radius */
       border-radius: 30px; 
       /* Background color for table cells */
-      background-color: #f8f9fa; 
+      background-color: #ffffff; 
       /* Padding for table cells */
       padding: 10px; 
       /* Align text vertically */
@@ -337,7 +337,7 @@
       font-size: medium; 
     }
     .table-dark th {
-      background-color: #343a40; /* Table header background color */
+      background-color: #6a6a6a; /* Table header background color */
       color: #ffffff; /* Table header text color */
     }
     .badge {
@@ -356,7 +356,7 @@
 </head>
 <body>
   <div class="container mt-5" style="margin-left: 0px;"> 
-    <h1 class="mb-4" style="background-color: #c0a35e; border-radius: 30px;">Comenzi</h1>
+    <h1 class="mb-4" style="background-color: #6a6a6a; border-radius: 30px; color: #ffffff; padding: 10px;">Comenzi</h1>
     <div class="table-responsive">
       <table class="table table-bordered table-hover">
         <thead class="table-dark">
@@ -371,28 +371,28 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row" style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">1</th>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="customer_profile.html?id=1">John Doe</a></td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="product_details.html?id=1">Widget A</a></td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">2</td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">50.00 RON</td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><span class="badge badge-success">Shipped</span></td>
+            <th scope="row" style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">1</th>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><a href="customer_profile.html?id=1">John Doe</a></td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><a href="product_details.html?id=1">Widget A</a></td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">2</td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">50.00 RON</td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><span class="badge badge-success">Shipped</span></td>
           </tr>
           <tr>
-            <th scope="row" style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">2</th>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="customer_profile.html?id=2">Jane Smith</a></td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="product_details.html?id=2">Widget B</a></td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">1</td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">30.00 RON</td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><span class="badge badge-warning">Pending</span></td>
+            <th scope="row" style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">2</th>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><a href="customer_profile.html?id=2">Jane Smith</a></td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><a href="product_details.html?id=2">Widget B</a></td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">1</td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">30.00 RON</td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><span class="badge badge-warning">Pending</span></td>
           </tr>
           <tr>
-            <th scope="row" style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">3</th>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="customer_profile.html?id=3">Mike Johnson</a></td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><a href="product_details.html?id=3">Widget C</a></td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">3</td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue">75.00 RON</td>
-            <td style="border: 1px solid black; border-radius: 30px; background-color: lightsteelblue"><span class="badge badge-info">Processing</span></td>
+            <th scope="row" style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">3</th>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><a href="customer_profile.html?id=3">Mike Johnson</a></td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><a href="product_details.html?id=3">Widget C</a></td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">3</td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff">75.00 RON</td>
+            <td style="border: 1px solid #6a6a6a; border-radius: 30px; background-color: #ffffff"><span class="badge badge-info">Processing</span></td>
           </tr>
         </tbody>
       </table>

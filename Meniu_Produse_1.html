@@ -3,300 +3,920 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-    <title>Menu Products 1</title>
+    <title>Product Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Styles for the whole page */
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(100deg, #F5DEB3, #D2B48C, #A0522D);
-            border: solid 1px yellow;
-            border-radius: 30px;
-            border-style: ridge;
-            position: relative; /* Added to position side navigation and cart */
+            background-color: #ffffff;
+            padding-top: 80px; /* Adjusted for top navigation */
         }
-
-        /* Styles for the side navigation */
-        .sidenav {
-            width: 0; /* Adjusted to start with the side navigation closed */
-            background-color: #f3f3f3;
-            padding-top: 60px;
-            border-right: solid 1px #ddd;
-            border-radius: 0 30px 30px 0;
-            z-index: 9000;
-            overflow-x: hidden;
-            transition: 0.5s;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
         }
-        .sidenav a {
-            padding: 10px 20px;
-            text-decoration: none;
+        
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        
+        .card-item {
+            width: 200px;
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .card-item img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        
+        .card-v2-title-wrapper {
+            margin: 10px 0;
             font-size: 18px;
             color: #333;
-            display: block;
+            border-radius: 20px;
+            max-width: 200px;
+            margin-left: 60px;
+            align-self: center;
+            border: 1px groove black;
         }
-        .sidenav a:hover {
-            background-color: #ddd;
+        
+        .card-v2-info p {
+            margin-bottom: 10px;
+            color: #666;
+            font-size: 14px;
         }
-        .sidenav .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 30px;
+        
+        .btn {
+            background-color: #ff6666;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ff9999;
+        }
+        
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .pagination-button {
+            margin: 0 5px;
             cursor: pointer;
         }
-
-        /* Styles for the main content */
-        .main-content {
-            margin-left: 250px; /* Adjusted to accommodate the side navigation */
-            padding: 20px;
-            transition: margin-left 0.3s;
-        }
-        .main {
-            padding: 20px;
-            width: calc(100% - 250px);
-        }
-
-        /* Styles for the header */
-        header {
-            background: #3d2518;
-            padding: 40px;
-            text-align: center;
-            color: #fff;
-            margin: 0;
-            border-radius: 30px;
-            position: fixed;
-            top: 0;
-            width: auto; /* Header width set to auto */
-            z-index: 1000;
-        }
-        header h1 {
-            margin: 0; 
-            font-size: 20px; 
-            border-radius: 30px;
-        }
-
-        /* Styles for the dropdown */
+        
         .dropdown {
             position: relative;
             display: inline-block;
-            margin-top: 20px;
         }
-        .dropdown-content {
+        
+        .dropdown-menu {
             display: none;
-            position: absolute;
-            border-radius: 30px;
-            background-color: #f9f9f9;
-            min-width: 200px;
-            height: 200px;
-            right: 100%;
-            top: 35%;
-            transform: translateY(-50%);
-        }
-        .dropdown-content .row {
-            display: flex;
-        }
-        .dropdown-content .column {
-            flex: 1;
-            padding: 10px;
-        }
-
-        /* Styles for the navigation and cart circles */
-        .nav-circle, .cart-circle, .nav-menu {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background-color: #ff6666;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0px 0px 5px 2px #3d2518;
+            position: absolute; /* Change position to absolute */
+            top: 100%; /* Adjust as needed */
+            left: 0; /* Adjust as needed */
             z-index: 1000;
+            width: 300px;
+            max-height: 400px; /* Set a fixed max-height for scrolling */
+            overflow-y: auto;
+            background-color: #6a6a6a;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            transition: opacity 0.8s ease-in-out;
         }
-        .nav-circle i, .cart-circle i, .nav-menu i {
-            color: white;
-            font-size: 24px;
-        }
-
-        /* Cart dropdown styles */
-        .cart-dropdown {
-            position: fixed;
-            top: 70px;
-            right: 10px;
-            background-color: #fff;
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            max-height: 300px;
-            overflow-y: auto;
-            display: none;
-            z-index: 1000;
+            background-color: #fff;
         }
-        .cart-dropdown ul {
-            list-style-type: none;
-            padding: 0;
+        
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        
+        .cart-item-details p {
             margin: 0;
         }
-        .cart-dropdown li {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
+        
+        .quantity-controls button {
+            background-color: #ff6666;
+            color: #fff;
+            border: none;
+            padding: 3px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .quantity-controls button:hover {
+            background-color: #ff9999;
+        }
+        
+        .remove-item {
+            background-color: #666;
+            color: #fff;
+            border: none;
+            padding: 3px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .remove-item:hover {
+            background-color: #999;
+        }
+        .side-nav-btn {
+            width: 50px;
+            position: fixed;
+            background: #6a6a6a;
+            border: white;
+            top: 5px;
+            left: 5px; /* Change left positioning */
+            z-index: 2000; /* Ensure button appears above other content */
+        }
+        .star-rating {
+            font-size: 24px;
+            display: none;
+        }
+
+        .star {
+            color: #ccc; /* Default color for empty stars */
             cursor: pointer;
         }
-        .cart-dropdown li:hover {
-            background-color: #f9f9f9;
+
+        .star.checked {
+            color: #ffcc00; /* Color for filled stars */
         }
-        .cart-dropdown li:last-child {
-            border-bottom: none;
+        .sidenav {
+            height: 100%;
+            width: 250px; /* Set initial width */
+            position: fixed;
+            z-index: 9000;
+            top: 0;
+            left: -250px; /* Changed to initially hide the menu */
+            background: #6a6a6a;
+            border-right: 1px solid #ccc; /* Added border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added shadow */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            }
+        .nav-links {
+            padding: 60px 20px 20px; /* Adjust padding as needed */
         }
 
-        /* Responsive design */
-        @media screen and (max-width: 768px) {
-            .main-content {
-                margin-left: 0;
-            }
-            .main {
-                width: 100%;
-            }
-            .sidenav {
-              z-index: 6000;
-                width: 100%;
-                border-radius: 0;
-                height: auto;
-                padding-top: 20px;
-            }
-            header {
-                width: 100%;
-                border-radius: 0;
-            }
-            .nav-circle, .cart-circle, .nav-menu {
-                top: 80px;
-                left: calc(100% - 70px);
-            }
-        }
-        .openbtn {
-          position: fixed;
-          top: 20px;
-          left: 20px;
-          background-color: #ff6666;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          z-index: 5000;
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
         }
 
-        .openbtn:hover {
-          background-color: #ff9999;
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 30px;
+            color: #6a6a6a;
+            cursor: pointer;
+            border-radius: 30px;
+            background: wheat;
+        }
+
+        .closebtn:hover {
+            color: #f1f1f1;
+        }
+
+        #mySidenav {
+            height: 100%;
+            width: 0; /* Initially hidden */
+            position: fixed;
+            z-index: 9000;
+            top: 0;
+            left: 0;
+            background: #6a6a6a;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        #mySidenav a {
+            padding: 2px 15px;
+            text-decoration: none;
+            font-size: medium;
+            color: #818181;
+            background: white;
+            display: block;
+            transition: 0.5s;
+        }
+
+        #mySidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 30px;
+            color: #6a6a6a;
+            cursor: pointer;
+            border-radius: 30px;
+            background:wheat;
+        }
+
+        .closebtn:hover {
+            color: #f1f1f1;
+        }
+
+        #main {
+            transition: margin-left 0.5s;
+            padding: 16px;
+            margin-left: 0; /* Ensure main content starts at the correct position */
+        }
+        .nav-links a {
+            background-color: white;
+            color: #000; /* Black text color */
+            font-size: small;
+            font-weight: 600;
+            text-decoration: none; /* Remove default underline */
+            padding: 10px 20px; /* Add padding for better spacing */
+            border-radius: 5px; /* Optional: Add rounded corners */
+            display: inline-block; /* Display links horizontally */
+            margin-right: 10px; /* Optional: Add right margin between links */
+        }
+
+        .nav-links a:hover {
+            background-color: #6a6a6a; /* Light gray background color on hover */
+            color: #000; /* Change text color on hover if needed */
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Menu Products 1</h1>
-        <!-- Cart Icon -->
-        <div class="dropdown" id="cartDropdown">
-            <span onclick="toggleCartDropdown()" class="cart-circle"><i class="fas fa-shopping-cart"></i></span>
-            <!-- Cart Dropdown -->
-            <div id="cartContent" class="cart-dropdown">
-                <ul id="cartItemList">
-                    <!-- Cart Items Will Be Added Dynamically -->
-                </ul>
-            </div>
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- Close button positioned at the top right corner -->
+        <!-- Links that will initially be hidden -->
+        <div id="navLinks" class="nav-links">
+            <a href="http://192.168.100.53:8081/Logare.html">Logare</a>
+            <a href="http://192.168.100.53:8081/Categorii_Produse.html">Categorii Produse</a>
+            <a href="http://192.168.100.53:8081/Contul_Meu.html">My Account</a>
+            <!-- Add more links as needed -->
         </div>
-        <!-- Dropdown Circle -->
-        <div class="dropdown" id="productDropdown">
-            <span onclick="toggleDropdown()" class="nav-circle"><i class="fas fa-ellipsis-v"></i></span>
-            <div id="productContent" class="dropdown-content">
-                <div class="row">
-                    <div class="column">
-                        <a href="#">Option 1</a>
-                        <a href="#">Option 2</a>
-                    </div>
-                    <div class="column">
-                        <a href="#">Option 3</a>
-                        <a href="#">Option 4</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="sidenav" id="mySidenav">
-      <button class="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h2>Menu</h2>
-        <a href="#">Products</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
     </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="nav-menu">&#9776;</span>
-    <div class="main-content" id="mainContent" style="margin-top: 450px;">
-        <main>
-            <div class="product-container">
-                <div class="product-details">
-                    <img src="https://via.placeholder.com/150" alt="Product Image">
-                    <div class="description">
-                        <h3>Product Name 1</h3>
-                        <p>Description of the product goes here. It can span multiple lines.</p>
-                        <button onclick="addToCart('Product Name 1')">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <span onclick="toggleDropdown()" class="nav-circle"><i class="fas fa-ellipsis-v"></i></span>
-                    <div id="dropdownMenu" class="dropdown-content">
-                        <div class="row">
-                            <div class="column">
-                                <a href="#">Option 1</a>
-                                <a href="#">Option 2</a>
-                            </div>
-                            <div class="column">
-                                <a href="#">Option 3</a>
-                                <a href="#">Option 4</a>
-                            </div>
+
+    <!-- Main Content -->
+    <div id="main">
+        <button class="btn btn-primary side-nav-btn" onclick="toggleNav()">&#9776;</button>
+    </div>
+
+    <script>
+        // Function to toggle the side navigation
+        function toggleNav() {
+            var sideNav = document.getElementById("mySidenav");
+            var mainContent = document.getElementById("main");
+            var navState = sideNav.getAttribute("data-navstate");
+            
+            if (navState === "open" || navState === null) {
+                sideNav.style.width = "0"; // Close the side navigation
+                mainContent.style.marginLeft = "0"; // Move the main content back to its original position
+                document.getElementById("navLinks").style.display = "none"; // Hide the links
+                sideNav.setAttribute("data-navstate", "closed"); // Update navigation state
+            } else {
+                sideNav.style.width = "250px"; // Open the side navigation
+                mainContent.style.marginLeft = "250px"; // Push the main content to the right to make space for the side navigation
+                document.getElementById("navLinks").style.display = "block"; // Display the links
+                sideNav.setAttribute("data-navstate", "open"); // Update navigation state
+            }
+        }
+    
+        // Function to close the side navigation
+        function closeNav() {
+            var sideNav = document.getElementById("mySidenav");
+            var mainContent = document.getElementById("main");
+            sideNav.style.width = "0"; // Close the side navigation
+            mainContent.style.marginLeft = "0"; // Move the main content back to its original position
+            document.getElementById("navLinks").style.display = "none"; // Hide the links
+            sideNav.setAttribute("data-navstate", "closed"); // Update navigation state
+        }
+    </script>
+    <div id="main">
+        <header class="bg-dark text-white fixed-top">
+            <div class="container d-flex justify-content-between align-items-center py-2">
+                <h1 class="m-0" style="font-size: medium; text-align: center; left: 100px; position: relative;">Product Page</h1>
+                <div>
+                    <button class="btn btn-primary side-nav-btn" onclick="toggleNav()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="dropdown cart-btn">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="cartDropdownButton" aria-haspopup="true" aria-expanded="false" style="margin-left: 200px;">
+                            <i class="fas fa-shopping-cart"></i> Cart (<span id="cartItemCount">0</span>)
+                        </button>
+                        <div class="dropdown-menu" id="cartDropdownMenu" aria-labelledby="cartDropdownButton">
+                            <!-- Cart items will be added dynamically here -->
+                            <!-- Example of a cart item -->
+                            <!-- <div class="cart-item" data-product-id="${productId}">
+                                <img src="https://via.placeholder.com/70" alt="${productName}">
+                                <div class="cart-item-details">
+                                    <p>${productName} - $${productPrice}</p>
+                                    <div class="quantity-controls">
+                                        <button class="decrement-quantity" onclick="decrementQuantity($, {productId}, $, {productPrice})">-</button>
+                                        <span class="quantity">1</span>
+                                        <button class="increment-quantity" onclick="incrementQuantity($, {productId}, $, {productPrice})">+</button>
+                                    </div>
+                                </div>
+                                <button class="remove-item" onclick="removeFromCart($, {productId}, $, {productPrice})">Remove</button>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </header>
+            <script>
+                // Get references to the button and dropdown menu
+                var cartDropdownButton = document.getElementById('cartDropdownButton');
+                var cartDropdownMenu = document.getElementById('cartDropdownMenu');
+
+                // Function to toggle the visibility of the dropdown
+                function toggleDropdown() {
+                    cartDropdownMenu.classList.toggle('show');
+                }
+
+                // Event listener to toggle the dropdown when the button is clicked
+                cartDropdownButton.addEventListener('click', toggleDropdown);
+
+                // Close the dropdown if the user clicks outside of it
+                window.addEventListener('click', function(event) {
+                    if (!event.target.matches('#cartDropdownButton')) {
+                        if (cartDropdownMenu.classList.contains('show')) {
+                            cartDropdownMenu.classList.remove('show');
+                        }
+                    }
+                });
+            </script>
+
+        <div class="container mt-5">
+            <div id="productContainers" class="row"></div>
+            <div class="row product-container" id="productContainer">
+                <!-- Product items will be dynamically added here -->
+                <!-- Each product item -->
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <!-- Product image -->
+                        <img src="path/to/your/image.jpg" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <!-- Product title -->
+                            <h5 class="card-title">Product Title</h5>
+                            <!-- Product description -->
+                            <p class="card-text">Product description goes here.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <!-- Other product details or buttons -->
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                </div>
+                                <small class="text-muted">$XX.XX</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of product item -->
+            </div>
+            <div class="pagination-container" id="paginationContainer">
+                <!-- Pagination controls will be added dynamically here -->
+            </div>
+        </div>
     </div>
+
+    <div class="star-rating" data-rating="0">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        function openNav() {
-          document.getElementById("mySidenav").style.width = "250px";
-        }
+        $(document).ready(function() {
+            // Initialize Bootstrap dropdowns
+            $('.dropdown-toggle').dropdown();
+        });
 
-        function closeNav() {
-          document.getElementById("mySidenav").style.width = "0";
-        }
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.star-rating .star');
 
-        function toggleDropdown() {
-            var dropdown = document.getElementById("dropdownMenu");
-            if (dropdown.style.display === "none") {
-                dropdown.style.display = "block";
+        stars.forEach(function(star, index) {
+            star.addEventListener('click', function() {
+            const rating = index + 1;
+            const starContainer = this.parentElement;
+            starContainer.dataset.rating = rating;
+            updateStarRating(starContainer, rating);
+            });
+        });
+        });
+
+        function updateStarRating(starContainer, rating) {
+        const stars = starContainer.querySelectorAll('.star');
+
+        stars.forEach(function(star, index) {
+            if (index < rating) {
+            star.classList.add('checked');
             } else {
-                dropdown.style.display = "none";
+            star.classList.remove('checked');
             }
-        }
-
-        function toggleCartDropdown() {
-            var cartDropdown = document.getElementById("cartContent");
-            if (cartDropdown.style.display === "none") {
-                cartDropdown.style.display = "block";
-            } else {
-                cartDropdown.style.display = "none";
-            }
+        });
         }
     </script>
+
+
+    <script>
+        // Define individual product images for each item
+        var productImages = [
+            "https://s13emagst.akamaized.net/products/43431/43430482/images/res_fb72a9d03a7dcbb2bab37805212af983.png?width=720&height=720&hash=BA7412A27D7392072E494FFAD033D846",
+            "https://s13emagst.akamaized.net/products/29978/29977663/images/res_32c629fed6911f17248d27ff74cf777c.jpg?width=720&height=720&hash=21B86E8B388AD3746841D9AE34013758",
+            "https://s13emagst.akamaized.net/products/29512/29511847/images/res_d24e0ec8d927212274405bf5e4aa86ce.jpg?width=720&height=720&hash=55DD973646F9A67E6A10B824D02E8E8B",
+            "https://s13emagst.akamaized.net/products/31548/31547040/images/res_5f865ce659e378fe543e53eee37a5f64.jpg?width=720&height=720&hash=E71A8D30D1FB1FA1C674241CF92ADCB3",
+            "https://s13emagst.akamaized.net/products/43431/43430475/images/res_6e117319c1ae3f51c47348e39298b9bc.jpg?width=720&height=720&hash=9979F54E73A309F9EFC215252A4A633C",
+            "https://s13emagst.akamaized.net/products/37626/37625088/images/res_eb7085d5fd3d3cd07404d0e262b072b3.jpg?width=720&height=720&hash=CCCF69FE4D6A787AB835EC2976BEEB9B",
+            "https://s13emagst.akamaized.net/products/43431/43430482/images/res_fb72a9d03a7dcbb2bab37805212af983.png?width=720&height=720&hash=BA7412A27D7392072E494FFAD033D846",
+            "https://s13emagst.akamaized.net/products/36573/36572072/images/res_33cd65c5d0f866cfa81a83ca5fd79be2.jpg?width=720&height=720&hash=641EBFC96C7C48A4F17AF2183917A465",
+            "https://s13emagst.akamaized.net/products/43431/43430476/images/res_ed4a370d06c105834858ff2a35eaf864.jpg?width=720&height=720&hash=EFB7F1577CEE85607495E651537C56EF",
+            "https://s13emagst.akamaized.net/products/43431/43430477/images/res_7ba3cd802f4195150726a35589bf3c33.jpg?width=720&height=720&hash=33B56EE118F014724FC2FC5E3FDCF968",
+            "https://s13emagst.akamaized.net/products/51252/51251482/images/res_601bae8f1fab1510dc7371107ba1d6f7.jpg?width=720&height=720&hash=29B8789B88F2E4966F2776EC8ACDF344",
+            "https://s13emagst.akamaized.net/products/51196/51195201/images/res_cc14ab5382ed63d64ba835eaa87a5847.png?width=720&height=720&hash=5104A13D065C217CD5270084E4864EAB",
+            "https://s13emagst.akamaized.net/products/57180/57179015/images/res_3aa87c08b07d223fbc146fce20425f77.jpg?width=720&height=720&hash=813B2C5F001CD0F5EB82F09BB83FB7A9",
+            "https://s13emagst.akamaized.net/products/69031/69030493/images/res_46ac19694f29028013c438cf4573b7d1.jpg?width=720&height=720&hash=04EECFA776E32EBC4C1CB80E463707D7",
+            "https://s13emagst.akamaized.net/products/48002/48001254/images/res_e461729e0bc7c018e4ce2c25cf11b5b9.jpg?width=720&height=720&hash=2E0E8EE54FCBBD6F51A9999EE3A82A24",
+            "https://s13emagst.akamaized.net/products/29730/29729285/images/res_c8ac79ddbc2bbb4517df0bb0c9c4fba8.jpg?width=720&height=720&hash=78293D82CB8B32EA48B19D5DCC24BEF1",
+            "https://s13emagst.akamaized.net/products/39195/39194313/images/res_44878437ddde5959be861e9857d5912b.jpg?width=720&height=720&hash=008F0A52D7531FDF8AC939CA510770F6",
+            "https://s13emagst.akamaized.net/products/3311/3310426/images/res_654f04fe1656273611f0dc4f48495b55.jpg?width=720&height=720&hash=7C95D7B02981892AC3215A94BDE409B9",
+            "https://s13emagst.akamaized.net/products/31548/31547051/images/res_2c73d29de88acca35ea804ecc9ac0e99.jpg?width=720&height=720&hash=51272D9E4AFF803495C915DB670FA386",
+            "https://s13emagst.akamaized.net/products/45807/45806186/images/res_595db40a21c5b5c6f0ac08e2abfb2753.jpg?width=720&height=720&hash=70F8B4948DEF36D86D7C1F605E4D1EDC",
+            "https://s13emagst.akamaized.net/products/37575/37574443/images/res_daa73faf8c0be56e56272535c2bd2f4c.jpg?width=720&height=720&hash=D5A057DE759F3C73E3909EC013FC04FE",
+            "https://s13emagst.akamaized.net/products/61264/61263992/images/res_aa79fb500b2715ca04fb522e4c4b568e.png?width=720&height=720&hash=A1C662E8A3761DAA2F1FBE6E9DB68411",
+            "https://s13emagst.akamaized.net/products/39195/39194310/images/res_b3b617442906e17efceab5ff18571987.jpg?width=720&height=720&hash=5EE7C444513A6737327734E9CC004FBA",
+            "https://s13emagst.akamaized.net/products/13837/13836835/images/res_3f656943d56aa2517959b68c0869a8c4.jpg?width=720&height=720&hash=26EF78582C82D7D33372C2C281B72335",
+            "https://s13emagst.akamaized.net/products/48360/48359735/images/res_68dc84ca72f2e67cc0939ffa26825655.jpg?width=720&height=720&hash=A695684D0B876859B7AC13EBD0A338DE",
+            "https://s13emagst.akamaized.net/products/64975/64974254/images/res_f5ba9b9fed302ba8e05ce5338003962a.jpg?width=720&height=720&hash=0F273B6917AECD9BD47EAC9E81B9A269",
+            "https://s13emagst.akamaized.net/products/27534/27533641/images/res_5f4dc49f3de52cb6d6c7857292fbc3be.jpg?width=720&height=720&hash=EA7526F01FA0F4AD09FCFA30CA9FA572",
+            "https://s13emagst.akamaized.net/products/64975/64974256/images/res_e5d088ad72963279139798b2d03b6ab0.jpg?width=720&height=720&hash=864B7499E8747CA1CC85ED7C73D31804",
+            "https://s13emagst.akamaized.net/products/39195/39194309/images/res_14b4343886b0ec8d1aba389e4cef494b.jpg?width=720&height=720&hash=A3CF8B3454FB17C02877AA4FDEDEF356",
+            "https://s13emagst.akamaized.net/products/43903/43902106/images/res_b3a1b16b2316ba824fa4db8b7cdc15c1.jpg?width=720&height=720&hash=97BDDE317B7F5155E18923C50ED5EA0C",
+            "https://s13emagst.akamaized.net/products/37575/37574441/images/res_be8d3ffc182348624bacaba179f3ec35.jpg?width=720&height=720&hash=182FC1B295258200FC31942C913694F0",
+            "https://s13emagst.akamaized.net/products/41981/41980006/images/res_d10be7976ff819a214cdb7628435f185.jpg?width=720&height=720&hash=F0A301D4E5E355C259D3AE6EF8C6A9B8",
+            "https://s13emagst.akamaized.net/products/36573/36572072/images/res_33cd65c5d0f866cfa81a83ca5fd79be2.jpg?width=720&height=720&hash=641EBFC96C7C48A4F17AF2183917A465",
+            "https://s13emagst.akamaized.net/products/19916/19915285/images/res_44d33d4429787277451593182d1ff5aa.jpg?width=720&height=720&hash=D87CF04B93C9B816A919371AECA1CB4B",
+            "https://s13emagst.akamaized.net/products/36179/36178925/images/res_b1b75e2ee453adc697f309f67d693bb5.jpg?width=720&height=720&hash=13B7EE04910AA2BED4C29EE0EA754230",
+            "https://s13emagst.akamaized.net/products/44140/44139071/images/res_598535e1ff82282e183873888bd2f0dd.jpg?width=720&height=720&hash=46AED509E446DB54C1E2618E49F0B3A2",
+            "https://s13emagst.akamaized.net/products/36417/36416219/images/res_5625e4e481adade695849764cc2452c5.jpg?width=720&height=720&hash=EB31BB90D0EE181307EBC1626EB66035",
+            "https://s13emagst.akamaized.net/products/36581/36580253/images/res_307319c5b480b8f702c72052413e1338.jpg?width=720&height=720&hash=7671AD485E54D3B1FB83132FCA7D156C",
+            "https://s13emagst.akamaized.net/products/62007/62006253/images/res_95f046d7a80f91d87b04debfce267517.jpg?width=720&height=720&hash=D943EC0A4FC6BF7D387031A497A0715C",
+            "https://s13emagst.akamaized.net/products/53483/53482940/images/res_1aab1b9b205932799c6d2a04521b09fa.jpg?width=720&height=720&hash=C9606046794F2F09C2851375E8006DA0",
+            "https://s13emagst.akamaized.net/products/29399/29398373/images/res_9e73214b0b39bf4ce5e4ac7a238b9c41.jpg?width=720&height=720&hash=1A59350236962BA94B701B30A3656008",
+            "https://s13emagst.akamaized.net/products/44238/44237897/images/res_9794833ba045f0d0650af4da31da66b9.jpg?width=720&height=720&hash=F36E433DC54777291C422749472C0001",
+            "https://s13emagst.akamaized.net/products/39324/39323548/images/res_8800d74a9444ebf8c610f63763e3f607.jpg?width=720&height=720&hash=D36D4C6542E55CF9AE97E9E2A2752872",
+            "https://s13emagst.akamaized.net/products/32851/32850910/images/res_d58bc462a14c324e0132a3b5ca385d46.jpg?width=720&height=720&hash=1F6F90044926AFB3F48E4D4CF2B15DE1",
+            "https://s13emagst.akamaized.net/products/53483/53482941/images/res_d31bc6cca4c0a2a86660225739e6a24a.jpg?width=720&height=720&hash=8059BABA891DDE1518D43CACC6A8F71F",
+            "https://s13emagst.akamaized.net/products/43903/43902103/images/res_75cb5b569d8886cedbe2ab881a57275d.jpg?width=720&height=720&hash=CAD534F03749FC02FF9577DE3F92C339",
+            "https://s13emagst.akamaized.net/products/66288/66287088/images/res_ae51d1f741afcafa6e0b89c525121a12.jpg?width=720&height=720&hash=91C6B6F3AB8897D432E9479E0AB9337E",
+            "https://s13emagst.akamaized.net/products/39195/39194313/images/res_44878437ddde5959be861e9857d5912b.jpg?width=720&height=720&hash=008F0A52D7531FDF8AC939CA510770F6",
+            "https://s13emagst.akamaized.net/products/37202/37201536/images/res_1b1de3d62606c426d2d98e63ae7c43da.jpg?width=720&height=720&hash=A54259DD082E39127A5ED58CF01EB876",
+            "https://s13emagst.akamaized.net/products/66288/66287086/images/res_2c01dce73fc827dfeb559d13774ece0c.jpg?width=720&height=720&hash=A1FF129970997D888A60D9FC14E3FCB1",
+            "https://s13emagst.akamaized.net/products/66288/66287092/images/res_cac7de5b7f59cff44b0caaa5fc759dbe.jpg?width=720&height=720&hash=C2A505CB372E853B252DF0C6AA4CB257",
+            "https://s13emagst.akamaized.net/products/66288/66287089/images/res_b0ea07dab5c2775e67fe98333b80c7f4.jpg?width=720&height=720&hash=6B928661665AFDD4F1AE897876367B83",
+            "https://s13emagst.akamaized.net/products/45807/45806179/images/res_2ad08fc7a23103d1cc65626f00cde7f4.jpg?width=720&height=720&hash=F543B8D2320E633F982CE965530F3DBA",
+            "https://s13emagst.akamaized.net/products/46334/46333748/images/res_7a13a9c9212dfea07bc47fb4390fb0b5.jpg?width=720&height=720&hash=977FF254BA88991DCBC10D04BC9CCF85",
+            "https://s13emagst.akamaized.net/products/39748/39747641/images/res_a2834b06fd7c07fc65981397480863ea.jpg?width=720&height=720&hash=6A71A6A675615E4A66AE7612044E5549",
+            "https://s13emagst.akamaized.net/products/44140/44139074/images/res_c14d57b9b24bf79dc6205c6e3041269f.jpg?width=720&height=720&hash=5E766951BB7DB9D4D912A708E62A6A3A",
+            "https://s13emagst.akamaized.net/products/29399/29398385/images/res_4409de77fd80f14f5a8927a769adca19.jpg?width=720&height=720&hash=32829C08778C308EBE8BDD520D063A0C",
+            "https://s13emagst.akamaized.net/products/17128/17127931/images/res_1263d8fe739016a4133bcbdaac690a3a.jpg?width=720&height=720&hash=D1F45A761ABF57BFF131734251314DE4",
+            "https://s13emagst.akamaized.net/products/52355/52354390/images/res_3202041d52036b401716863f204649e8.png?width=720&height=720&hash=7CD4383362BA6839E26C3C2DC516661E",
+            "https://s13emagst.akamaized.net/products/66288/66287091/images/res_ca6aa59a04568812772be655165f1236.jpg?width=720&height=720&hash=2206B68A423E1D7DFC4BA0CA9711176C",
+            "https://s13emagst.akamaized.net/products/66402/66401177/images/res_f27149c28cdc5ab3561000b07d43bb5a.jpg?width=720&height=720&hash=508B2A9DE32374BFC7912DC4A5919A28",
+            "https://s13emagst.akamaized.net/products/53524/53523313/images/res_d76eaee24328f309d7677c3b9169a7fd.jpg?width=720&height=720&hash=29100831395FA49864697F015DD392FC",
+            "https://s13emagst.akamaized.net/products/36573/36572072/images/res_33cd65c5d0f866cfa81a83ca5fd79be2.jpg?width=720&height=720&hash=641EBFC96C7C48A4F17AF2183917A465",
+            "https://s13emagst.akamaized.net/products/39195/39194310/images/res_b3b617442906e17efceab5ff18571987.jpg?width=720&height=720&hash=5EE7C444513A6737327734E9CC004FBA",
+            "https://s13emagst.akamaized.net/products/33556/33555338/images/res_1b3fd5c417a1430fd32b6dfc1372e281.jpg?width=720&height=720&hash=CAF59E959AB17753A36B0CAC73914DA6",
+            "https://s13emagst.akamaized.net/products/52099/52098671/images/res_b337d9d497c562957da9c947294be5f9.jpg?width=720&height=720&hash=774ABD1BB1228A35780DACAB66830CF4",
+            "https://s13emagst.akamaized.net/products/19752/19751162/images/res_90df85528926d2236d4d5606ee6dc873.jpg?width=720&height=720&hash=440D074DEF547721C370C55AE42C7372",
+            "https://s13emagst.akamaized.net/products/36581/36580254/images/res_1a6a01ddf6d733b838a2b614eb35489b.jpg?width=720&height=720&hash=BC93EF8F455781D41F17838A6DEEB5C9",
+            "https://s13emagst.akamaized.net/products/15272/15271353/images/res_52c260c78c0ad4f5a26fef84092be7cf.jpg?width=720&height=720&hash=1922BD93D9DDAD51487B525F68F8F719",
+            "https://s13emagst.akamaized.net/products/29399/29398376/images/res_ae8729177afbcdab1f51c86aa5a9db87.jpg?width=720&height=720&hash=A04D1BADD5F0CCE65781FAFC77431ADD",
+            "https://s13emagst.akamaized.net/products/15272/15271353/images/res_52c260c78c0ad4f5a26fef84092be7cf.jpg?width=720&height=720&hash=1922BD93D9DDAD51487B525F68F8F719",
+            "https://s13emagst.akamaized.net/products/45807/45806183/images/res_8d425b8329696dfba3617ab33cf6c2fb.jpg?width=720&height=720&hash=465A467F82DA3B983226BB6CD1795523",
+            "https://s13emagst.akamaized.net/products/29399/29398384/images/res_9eb58d78d6e9004963c1ea4e6573be70.jpg?width=720&height=720&hash=A7CBA678BA789ABB18CC61CFE30BB8B9",
+            "https://s13emagst.akamaized.net/products/29399/29398384/images/res_9eb58d78d6e9004963c1ea4e6573be70.jpg?width=720&height=720&hash=A7CBA678BA789ABB18CC61CFE30BB8B9",
+            "https://s13emagst.akamaized.net/products/44140/44139073/images/res_fdb04b9e7b0373fc639f6bd484c3d588.jpg?width=720&height=720&hash=6E89B4AA0A6166B0A999F3CAF5433031",
+            "https://s13emagst.akamaized.net/products/45807/45806190/images/res_c8cf80b945469ca0a941851ccdcca99b.jpg?width=720&height=720&hash=00B6650F8CE778509B7B46D563328F3B",
+            "https://s13emagst.akamaized.net/products/29399/29398384/images/res_9eb58d78d6e9004963c1ea4e6573be70.jpg?width=720&height=720&hash=A7CBA678BA789ABB18CC61CFE30BB8B9",
+            "https://s13emagst.akamaized.net/products/39748/39747641/images/res_a2834b06fd7c07fc65981397480863ea.jpg?width=720&height=720&hash=6A71A6A675615E4A66AE7612044E5549",
+            "https://s13emagst.akamaized.net/products/29399/29398386/images/res_ebf3027aa3168e273527667b55532c45.jpg?width=720&height=720&hash=239EBD9EC43D8EFB373E82D32D032ADA",
+            "https://s13emagst.akamaized.net/products/45807/45806187/images/res_7d281e1fd13ff98be74c2bd4b7fbf79f.jpg?width=720&height=720&hash=B25DCBD6A86372872B4FC12CDECF898D",
+            "https://s13emagst.akamaized.net/products/45807/45806185/images/res_9a37b0b394f7fb5b250e2e15654ee2d4.jpg?width=720&height=720&hash=7A8BF60DAB78868F83EE2644DB9A1375",
+            "https://s13emagst.akamaized.net/products/17416/17415348/images/res_1d8c627dc2c5d21c90f2cd554bc8dcd0.jpg?width=720&height=720&hash=488E82D1DA65FD332D20FA7633C7D3F0",
+            "https://s13emagst.akamaized.net/products/29399/29398379/images/res_95ac02476761dbaba6fd438f274fc159.jpg?width=720&height=720&hash=D236055B872665A2F9DC94A81815030F",
+            "https://s13emagst.akamaized.net/products/21096/21095493/images/res_8cc92d5a61b270a879ba61c67e1684a8.jpg?width=720&height=720&hash=C1D4AC8F8A0724311E1595BD0CE689BE",
+            "https://s13emagst.akamaized.net/products/20993/20992332/images/res_588dd721fa6fdcc2084d746400accc92.jpg?width=720&height=720&hash=4CDACA0E20D5AC1926BBF7BD60F4F8C5",
+            "https://s13emagst.akamaized.net/products/50616/50615692/images/res_af7e0c29b9fac79143ec74091549b04e.jpg?width=720&height=720&hash=A955D152498B3D23AEAE9C5A3129FAFE",
+            "https://s13emagst.akamaized.net/products/61264/61263992/images/res_aa79fb500b2715ca04fb522e4c4b568e.png?width=720&height=720&hash=A1C662E8A3761DAA2F1FBE6E9DB68411",
+            "https://s13emagst.akamaized.net/products/69697/69696092/images/res_6cd9ed1e415befa9604e7b3bfc657835.png?width=720&height=720&hash=6D26B6C26E9CB1EEE30EB917DBA8257A",
+            "https://s13emagst.akamaized.net/products/40086/40085473/images/res_c6ba11452eeea422f70e99586aff0ab9.jpg?width=720&height=720&hash=971F4A3DBF07DCAD69C709DE642E7634",
+            "https://s13emagst.akamaized.net/products/19916/19915291/images/res_aa6c55615e87e312083a2b8dcb5ed28f.jpg?width=720&height=720&hash=99DD99B800C179431728AAA265E25171",
+            "https://s13emagst.akamaized.net/products/48360/48359735/images/res_68dc84ca72f2e67cc0939ffa26825655.jpg?width=720&height=720&hash=A695684D0B876859B7AC13EBD0A338DE",
+            "https://s13emagst.akamaized.net/products/62007/62006252/images/res_0ce195c1a3eed45f29fe247fc65673aa.jpg?width=720&height=720&hash=016022CB5D6444D4F1A7419B368217A6",
+            "https://s13emagst.akamaized.net/products/62007/62006251/images/res_b26ec9a33b0bc88e3713d756ab8f56c3.jpg?width=720&height=720&hash=FC34D7AC6DD19BF00ED0425DFE81A6D9",
+            "https://s13emagst.akamaized.net/products/33556/33555324/images/res_e8dbe0673ab7cd6df0dcc87e084b77ca.jpg?width=720&height=720&hash=B74B9FF7DA3B2F2FFD30F8FDAE12DBB7",
+            "https://s13emagst.akamaized.net/products/64975/64974256/images/res_e5d088ad72963279139798b2d03b6ab0.jpg?width=720&height=720&hash=864B7499E8747CA1CC85ED7C73D31804",
+            "https://s13emagst.akamaized.net/products/46334/46333739/images/res_5ad033b2a07483dff35ba74a2082e90f.jpg?width=720&height=720&hash=49CFC78029E65BB058B180666137D12D",
+            "https://s13emagst.akamaized.net/products/51113/51112964/images/res_77d51ad1095ee63fd1df8a6aa61b8345.png?width=720&height=720&hash=4BBC56768C48F88DF5EBC0D525CB4CEB",
+            "https://s13emagst.akamaized.net/products/35098/35097675/images/res_313fa9a65a50798346b31cde17277e0c.jpg?width=720&height=720&hash=640654BBDF8389FB93CE0D236C076C39",
+            "https://s13emagst.akamaized.net/products/19916/19915283/images/res_3d1237f5bb6fe31438896752c718d69c.jpg?width=720&height=720&hash=F922681E9CA63B1B3D4F7C2A64BAA710",
+            "https://s13emagst.akamaized.net/products/32851/32850908/images/res_0a3cfed4e66bd5d6002e119a9c105c42.jpg?width=720&height=720&hash=2B42A736ABE6D5611CE189BC61DBB4A1"
+            // Add more image URLs as needed
+        ];
+
+        var coffeeCapsulesImages = [];
+        var coffeeCupsImages = [];
+
+        // Assuming productImages contains both coffee capsules and coffee cups images alternately
+        for (let i = 0; i < productImages.length; i++) {
+            if (i % 2 === 0) {
+                // Even index: coffee capsules
+                coffeeCapsulesImages.push(productImages[i]);
+
+            } else {
+                // Odd index: coffee cups
+                coffeeCupsImages.push(productImages[i]);
+            }
+        }
+
+        // Function to dynamically load images for each product container
+        function loadProductImages() {
+            // Get all product containers
+            var productContainers = document.querySelectorAll('.product-container');
+
+            // Loop through each product container
+            productContainers.forEach(function(container, index) {
+                // Get the corresponding image URL from productImages array
+                var imageURL = productImages[index];
+
+                // Get the product image element inside the container
+                var productImage = container.querySelector('.product-image');
+
+                // Set the src attribute of the product image element to the corresponding image URL
+                productImage.src = imageURL;
+            });
+        }
+
+        // Call the function to load product images when the page is loaded
+        window.onload = loadProductImages;
+        // Product images array
+        // Function to dynamically add product items
+        function addProductItems() {
+            var containers = document.querySelectorAll(".productContainer");
+
+            // Loop through each container and corresponding image URL to create product item HTML
+            containers.forEach(function(container, index) {
+                var imageUrl = productImages[index]; // Get the image URL for the current product
+                var html = '<div class="col-md-4">' +
+                                '<div class="card mb-4 shadow-sm">' +
+                                    '<img src="' + imageUrl + '" class="card-img-top" alt="Product Image">' + // Populate src attribute with imageUrl
+                                    '<div class="card-body">' +
+                                        '<h5 class="card-title">Product Title</h5>' +
+                                        '<p class="card-text">Product description goes here.</p>' +
+                                        '<div class="d-flex justify-content-between align-items-center">' +
+                                            '<div class="btn-group">' +
+                                                '<button type="button" class="btn btn-sm btn-outline-secondary">View</button>' +
+                                            '</div>' +
+                                            '<small class="text-muted">$XX.XX</small>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>';
+
+                // Append the HTML to the current container
+                container.innerHTML += html;
+            });
+        }
+
+        // Call the function to add product items when the page loads
+        window.onload = addProductItems;
+                
+
+
+        function addToCart(productId, productName, productPrice) {
+            // Update cart item count in the UI
+            var cartItemCountSpan = document.getElementById("cartItemCount");
+            var itemCount = parseInt(cartItemCountSpan.innerText) || 0;
+            itemCount++;
+            cartItemCountSpan.innerText = itemCount;
+
+            // Check if the product is already in the cart
+            var existingCartItem = document.querySelector(`.cart-item[data-product-id="${productId}"]`);
+            if (existingCartItem) {
+                // If the product already exists, update its quantity
+                var quantitySpan = existingCartItem.querySelector('.quantity');
+                var quantity = parseInt(quantitySpan.innerText) || 0;
+                quantity++;
+                quantitySpan.innerText = quantity;
+            } else {
+                // If the product doesn't exist, add a new cart item
+                var cartItemHTML = `
+                <div class="cart-item" data-product-id="${productId}">
+                    <img src="${productImages[productId - 1]}" alt="${productName}">
+                    <div class="cart-item-details">
+                        <p>${productName} - $${productPrice}</p>
+                        <div class="quantity-controls">
+                            <button class="decrement-quantity" onclick="decrementQuantity(${productId}, ${productPrice})">-</button>
+                            <span class="quantity">1</span>
+                            <button class="increment-quantity" onclick="incrementQuantity(${productId}, ${productPrice})">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-item" onclick="removeFromCart(${productId}, ${productPrice})">Remove</button>
+                </div>`;
+                var dropdownMenu = document.querySelector('.dropdown-menu');
+                dropdownMenu.insertAdjacentHTML('beforeend', cartItemHTML);
+            }
+
+            // Save cart items in localStorage
+            saveCartItems(productId, productName, productPrice);
+        }
+
+        function saveCartItems(productId, productName, productPrice) {
+            // Retrieve existing cart items from sessionStorage
+            var existingCartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+
+            // Create a new cart item object
+            var cartItem = {
+                productId: productId,
+                productName: productName,
+                productPrice: productPrice,
+                quantity: 1
+            };
+
+            // Add the new cart item to the existing cart items
+            existingCartItems.push(cartItem);
+
+            // Save the updated cart items back to sessionStorage
+            sessionStorage.setItem('cartItems', JSON.stringify(existingCartItems));
+        }
+        function incrementQuantity(productId, productPrice) {
+            var cartItem = document.querySelector(`.cart-item[data-product-id="${productId}"]`);
+            if (cartItem) {
+                var quantitySpan = cartItem.querySelector('.quantity');
+                var quantity = parseInt(quantitySpan.innerText) || 0;
+                quantity++;
+                quantitySpan.innerText = quantity;
+
+                // Update total product quantity
+                updateTotalProductQuantity(productId, quantity);
+            }
+        }
+        function decrementQuantity(productId, productPrice) {
+            var cartItem = document.querySelector(`.cart-item[data-product-id="${productId}"]`);
+            if (cartItem) {
+                var quantitySpan = cartItem.querySelector('.quantity');
+                var quantity = parseInt(quantitySpan.innerText) || 0;
+                if (quantity > 1) {
+                    quantity--;
+                    quantitySpan.innerText = quantity;
+
+                    // Update total product quantity
+                    updateTotalProductQuantity(productId, quantity);
+                }
+            }
+        }
+        function removeFromCart(productId, productPrice) {
+            var cartItemCountSpan = document.getElementById("cartItemCount");
+            var itemCount = parseInt(cartItemCountSpan.innerText) || 0;
+            if (itemCount > 0) {
+                itemCount--;
+                cartItemCountSpan.innerText = itemCount;
+
+                // Remove the cart item from the dropdown menu
+                var cartItem = document.querySelector(`.cart-item[data-product-id="${productId}"]`);
+                if (cartItem) {
+                    cartItem.parentNode.removeChild(cartItem);
+                }
+            }
+        }
+        function updateTotalProductQuantity(productId, quantity) {
+            var totalQuantity = 0;
+
+            // Iterate over all cart items to calculate the total quantity
+            var cartItems = document.querySelectorAll('.cart-item');
+            cartItems.forEach(function(cartItem) {
+                var itemQuantity = parseInt(cartItem.querySelector('.quantity').innerText) || 0;
+                totalQuantity += itemQuantity;
+
+                // Check if the quantity of the current item is 0 and remove it from the cart
+                if (itemQuantity === 0) {
+                    cartItem.parentNode.removeChild(cartItem);
+                }
+            });
+
+            // Subtract the quantity of the item being removed from the total
+            if (quantity < 0) {
+                // Subtracting a negative quantity adds to the total
+                totalQuantity += quantity; 
+            }
+
+            // Update the display of the total product quantity in the cart UI
+            var cartItemCountSpan = document.getElementById("cartItemCount");
+            if (cartItemCountSpan) {
+                cartItemCountSpan.innerText = totalQuantity;
+            }
+        }
+
+        // Define coffee capsules and coffee cups images
+        var coffeeCapsulesImages = [];
+        for (let i = 1; i <= 50; i++) {
+            coffeeCapsulesImages.push(`https://via.placeholder.com/150?text=Coffee+Capsules+${i}`);
+        }
+
+        var coffeeCupsImages = [];
+        for (let i = 1; i <= 50; i++) {
+            coffeeCupsImages.push(`https://via.placeholder.com/150?text=Coffee+Cups+${i}`);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var productContainers = document.getElementById("productContainers");
+
+            var currentPage = 1;
+            var productsPerPage = 20;
+            var totalPages = Math.ceil(100 / productsPerPage); // Assuming there are 100 products in total
+
+            function changePage(page) {
+                currentPage = page;
+                generateProductItems(currentPage, productsPerPage); // Pass productsPerPage as a parameter
+                updatePaginationButtons(); // Update pagination buttons after changing page
+            }
+
+            function generatePaginationControls() {
+                var paginationContainer = document.getElementById("paginationContainer");
+                paginationContainer.innerHTML = ''; // Clear previous pagination controls
+
+                for (var i = 1; i <= totalPages; i++) {
+                    var pageButton = document.createElement("button");
+                    pageButton.innerText = i;
+                    pageButton.className = "btn btn-secondary pagination-button";
+                    pageButton.addEventListener("click", function() {
+                        var page = parseInt(this.innerText); // Get the page number from the button text
+                        changePage(page);
+                    });
+                    paginationContainer.appendChild(pageButton);
+                }
+            }
+
+            function updatePaginationButtons() {
+                var paginationButtons = document.querySelectorAll(".pagination-button");
+                paginationButtons.forEach(function(button, index) {
+                    if (index + 1 === currentPage) {
+                        button.classList.add("active");
+                    } else {
+                        button.classList.remove("active");
+                    }
+                });
+            }
+
+            function generateProductItems(page, productsPerPage) { // Add productsPerPage as a parameter
+                var productContainer = document.getElementById("productContainer");
+                productContainer.innerHTML = ''; // Clear previous products
+                var startIndex = (page - 1) * productsPerPage + 1;
+                var endIndex = Math.min(startIndex + productsPerPage - 1, 100); // Assuming there are 100 products in total
+
+                function generateRandomDescription() {
+                    // Array of possible product descriptions
+                    var descriptions = [
+                        "Produs din boabe de cafea, espresso",
+                        "Nespresso coffee capsule",
+                        "Cafea epsresso lugno",
+                        "Espresso latte",
+                        "Espresso machiatto",
+                        "Espresso intenso"
+                        // Add more descriptions as needed
+                    ];
+
+                    // Generate a random index to select a description
+                    var randomIndex = Math.floor(Math.random() * descriptions.length);
+
+                    return descriptions[randomIndex];
+                }
+
+                // Loop through the product range
+                for (var i = startIndex; i <= endIndex; i++) {
+                    var productItem = document.createElement("div");
+                        productItem.className = "card-item card-standard js-product-data js-card-clickable";
+
+                    // Determine if the product is a coffee capsule or coffee cup
+                    var isCoffeeCapsule = i <= 50;
+
+                    // Get a random image URL based on the product type
+                    var imageUrl = isCoffeeCapsule ? coffeeCapsulesImages[i - 1] : coffeeCupsImages[i - 51];
+                    console.log(imageUrl);
+                    // Generate a random paragraph description for each product
+                    var randomDescription = generateRandomDescription();
+
+                    // Define the URL for the individual product page
+                    var productPageUrl = `http://192.168.100.53:8081/Produs${i}.html?id=${i}`;
+                    // Create the anchor tag with the product image and link to the product page
+                    var productImageLink = document.createElement("a");
+                        productImageLink.href = productPageUrl;
+                        productImageLink.className = "img-component position-relative card-v2-thumb-inner";
+                    var productImage = document.createElement("img");
+                        productImage.src = imageUrl;
+                        productImage.alt = "Product Image " + i;
+                        productImageLink.appendChild(productImage);
+
+                    // Append the anchor tag to the product item
+                    productItem.appendChild(productImageLink);
+
+                    // Create the product title wrapper
+                    var titleWrapper = document.createElement("div");
+                        titleWrapper.className = "card-v2-title-wrapper";
+                    var productName = isCoffeeCapsule ? "Coffee Capsule " : "Coffee Cup ";
+                        productName += i;
+                        titleWrapper.innerHTML = '<h3 class="visible-xs-inline-block">' + productName + '</h3>';
+                        productItem.appendChild(titleWrapper);
+
+                    // Create the product rating and price info
+                    var infoDiv = document.createElement("div");
+                        infoDiv.className = "card-v2-info pad-hrz-xs";
+                        infoDiv.innerHTML = `
+                            <div class="card-v2-rating mrg-btm-xxs visible-xs-inline-block">
+                                <span class="mrg-btm-xxs semibold font-size-sm text-success">Rating: 4.5</span>
+                            </div>
+                            <span class="legal-price-label font-size-ms mrg-btm-none">Price: $10.00</span>
+                            <div class="card-v2-pricing">
+                                <span class="product-new-price btn btn-sm btn-primary btn-emag btn-block yeahIWantThisProduct" onclick="addToCart(${i}, 'Product ${i}', 10)">Add to Cart</span>
+                                <em class="em em-cart_fill"></em>
+                            </div>
+                            <div class="star-rating-inner">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                        `;
+                    productItem.appendChild(infoDiv);
+
+                    // Add the product container to the product container
+                    productContainer.appendChild(productItem);
+                }
+            }
+
+            // Call the function to generate initial product items and pagination controls on page load
+            generateProductItems(currentPage, productsPerPage); // Pass productsPerPage as a parameter
+            generatePaginationControls();
+            updatePaginationButtons(); // Update pagination buttons initially
+        });
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

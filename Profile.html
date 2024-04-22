@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profile</title>
+    <title>Pagina Profil</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap Icons CSS -->
@@ -26,7 +26,7 @@
         .container {
             max-width: 800px;
             margin: 50px auto;
-            background-color: #c4cca6;
+            background-color: #6a6a6a;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -80,7 +80,7 @@
         }
 
         .profile-details {
-            background-color: #f9f9f9;
+            background-color: #6a6a6a;
             padding: 15px;
             border-radius: 8px;
             border: 2px solid #ccc;
@@ -114,9 +114,10 @@
         }
         /* Profile Details Styling */
         #userInfoForm p {
-            background-color: #8B4513; /* Coffee themed color */
-            border: 1px solid #A0522D; /* Coffee themed border */
+            background-color: #ffffff; 
+            border: 1px solid #000000; 
             padding: 5px;
+            max-width: 250px;
             margin: 5px 0;
             border-radius: 5px;
         }
@@ -124,13 +125,15 @@
         #profilePictureForm label,
         #profilePictureForm input[type="file"],
         #profilePictureForm button {
-            background: linear-gradient(to right, #8B4513, #A0522D, #8B4513); /* Coffee themed linear background */
+            background: gray; /* Coffee themed linear background */
             border: none;
             padding: 5px;
             margin: 5px 0;
             color: white;
             border-radius: 5px;
+            
         }
+
         #profileContainer #userInfoForm p {
             /* Coffee themed color */
             background-color: #8B4513; 
@@ -160,7 +163,7 @@
         }
         /* Profile Picture Container Styling */
         .profile-picture-container {
-            background: linear-gradient(to right, #cd863f7c, #d2691e77, #cd863f80); /* Coffee themed background */
+            background: white; /* Coffee themed background */
             /* Set width */
             width: 100px; 
             /* Set height */
@@ -168,6 +171,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             /* Make it a circle */
             border-radius: 30%; 
         }
@@ -228,17 +232,22 @@
             box-shadow: 0 6px 12px rgba(0,0,0,.175);
         }
         .sidebar-dropdown.show {
+            position: absolute;
+            transform: translate3d(-198px, 19px, 0px);
+            top: 0px;
+            left: 0px;
+            will-change: transform;
+            border-radius: 30px;
             display: block;
             left: 0px; /* Set the left position to 0 when the dropdown menu is shown */
         }
         .sidebar-dropdown li {
             list-style-type: none;
-            border: 1px solid #ccc;
             margin-bottom: 5px;
             border-radius: 5px;
         }
         .sidebar-dropdown .dropdown-item-container {
-            padding: 10px;
+            padding: 0px;
         }
         .sidebar-dropdown .dropdown-item {
             display: block;
@@ -250,6 +259,240 @@
         .sidebar-dropdown .dropdown-item:hover {
             background-color: #e9ecef;
         }
+        .btn.btn-secondary.dropdown-toggle {
+            bottom: 11px;
+            left: 18px;
+            position: relative;
+        }
+
+        .btn-danger{
+            background-color: #6c757d;
+            border-radius: 10px;
+            border: none;
+        }
+        .modify-order-btn {
+            background-color: #6a6a6a; /* Coffee themed button */
+        }
+
+        .modify-order-btn:hover {
+            background-color: blue; /* Darker shade on hover */
+            border-color: #8B4513;
+        }
+
+        .remove-from-cart-btn {
+            background-color: #8B0000; /* Coffee themed button */
+            border-color: #8B0000;
+        }
+
+        .remove-from-cart-btn:hover {
+            background-color: #800000; /* Darker shade on hover */
+            border-color: #800000;
+        }
+
+        .dropdown-menu {
+            position: relative;
+            left: 80px;
+            /* Apply the wave animation */
+            animation: wave 0.55s ease-in-out;
+            /* Set the transform origin to the top */ 
+            transform-origin: top;
+
+        }
+
+        @keyframes wave {
+            0% {
+                /* Start from fully collapsed */
+                transform: scaleY(0); 
+            }
+            100% {
+                /* Expand to full height */
+                transform: scaleY(1); 
+            }
+        }
+
+        .dropdown-item {
+            background: #6a6a6a;
+            display: block;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa; /* Change background color on hover */
+        }
+        /* Coffee themed linear gradient */
+        .dropdown-list {
+            left: 0px;
+            list-style-type: none; 
+            background: linear-gradient(to right, #CD853F, #D2691E, #CD853F);
+        }
+        .dropdown-item:hover {
+            /* Darker shade on hover */
+            background-color: #A0522D; 
+        }
+        #logoutButton {
+            position: absolute;
+            /* Adjust the top position as needed */
+            top: 13px; 
+            /* Adjust the right position as needed */
+            right: 370px; 
+            /* Ensure it's above other content */
+            z-index: 9999; 
+        }
+
+        /* Profile Section */
+        .profile-section {
+            margin-bottom: 30px;
+        }
+
+        .profile-section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+        }
+
+        /* Orders Section */
+        .orders-section {
+            margin-bottom: 30px;
+        }
+
+        .order {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order p {
+            margin: 5px 0;
+        }
+
+        .order-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Wishlist Section */
+        .wishlist-section {
+            margin-bottom: 30px;
+        }
+
+        .wishlist-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .wishlist-item p {
+            margin: 5px 0;
+        }
+
+        /* Account Settings Section */
+        .account-settings-section {
+            margin-bottom: 30px;
+        }
+
+        .account-settings-section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .account-settings-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .account-settings-section li {
+            margin-bottom: 10px;
+        }
+
+        .account-settings-section li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .account-settings-section li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Communication Preferences Section */
+        .communication-preferences-section {
+            margin-bottom: 30px;
+        }
+
+        .communication-preferences-section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Support Requests Section */
+        .support-requests-section {
+            margin-bottom: 30px;
+        }
+
+        .support-requests-section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Subscription Management Section */
+        .subscription-management-section {
+            margin-bottom: 30px;
+        }
+
+        .subscription-management-section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Account Activity Section */
+        .account-activity-section {
+            margin-bottom: 30px;
+        }
+
+        .account-activity-section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        /* Social Media Integration Section */
+        .social-media-integration-section {
+            margin-bottom: 30px;
+        }
+
+        .social-media-integration-section h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
     </style>
     
 
@@ -260,29 +503,34 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" id="passwordResetDropdown" data-toggle="dropdown" aria-expanded="false">
                 <i class="bi bi-gear"></i>
             </button>
-            <ul class="dropdown-menu sidebar-dropdown" aria-labelledby="passwordResetDropdown">
-                <li style="border: 1px solid #ccc;">
+            <ul class="dropdown-menu sidebar-dropdown" aria-labelledby="passwordResetDropdown" style="right: 20px; position: relative;">
+                <li>
                     <div class="dropdown-item-container">
                         <a href="#" class="dropdown-item">Menu Item 1</a>
                     </div>
                 </li>
-                <li style="border: 1px solid #ccc;">
+                <li>
                     <div class="dropdown-item-container">
                         <a href="#" class="dropdown-item">Menu Item 2</a>
                     </div>
                 </li>
-                <li style="border: 1px solid #ccc;">
+                <li>
                     <div class="dropdown-item-container">
                         <a href="#" class="dropdown-item">Menu Item 3</a>
                     </div>
                 </li>
-                <li style="border: 1px solid #ccc;">
+                <li>
                     <div class="dropdown-item-container">
                         <a href="#" class="dropdown-item">Menu Item 4</a>
                     </div>
                 </li>
                 <li>
-                    <form class="dropdown-item p-4" id="resetPasswordForm" method="POST">
+                    <form class="dropdown-item p-4" id="resetPasswordForm" method="POST" action="/reset-password">
+                        <p style="font-size: medium; font-weight: 700; background-color: #ccc; border-radius: 20px;">Resetare Parola</p>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required="true">
+                        </div>
                         <div class="mb-3">
                             <label for="currentPassword" class="form-label">Current Password</label>
                             <input type="password" class="form-control" id="currentPassword" required="true">
@@ -300,52 +548,80 @@
                 </li>
             </ul>
         </div>
-        
-        
         <script>
-            document.getElementById('passwordResetDropdown').addEventListener('click', function() {
-                var dropdownMenu = document.querySelector('.sidebar-dropdown');
-                dropdownMenu.classList.toggle('show');
-            });
-    
-            // Handle password reset form submission
-            document.getElementById('resetPasswordForm').addEventListener('submit', async function(event) {
-                // Prevent the form from submitting normally
-                event.preventDefault(); 
-                
-                const currentPassword = document.getElementById('currentPassword').value;
-                const newPassword = document.getElementById('newPassword').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
-                
-                // Check if new password matches the confirmation
+            // Get the form element
+            const resetPasswordForm = document.getElementById("resetPasswordForm");
+        
+            // Add an event listener for form submission
+            resetPasswordForm.addEventListener("submit", async (event) => {
+                event.preventDefault(); // Prevent the default form submission
+        
+                // Get the form data
+                const email = document.getElementById("email").value;
+                const currentPassword = document.getElementById("currentPassword").value;
+                const newPassword = document.getElementById("newPassword").value;
+                const confirmPassword = document.getElementById("confirmPassword").value;
+        
+                // Check if passwords match
                 if (newPassword !== confirmPassword) {
-                    alert('New password and confirm password do not match.');
+                    alert("Passwords do not match.");
                     return;
                 }
-                
+        
+                // Construct the request body
+                const requestBody = {
+                    email: email,
+                    currentPassword: currentPassword,
+                    newPassword: newPassword
+                };
+        
                 try {
-                    const response = await fetch('/reset-password', {
-                        method: 'POST',
+                    // Send a POST request to the backend route
+                    const response = await fetch("/reset-password", {
+                        method: "POST",
                         headers: {
-                            'Content-Type': 'application/json'
+                            "Content-Type": "application/json"
                         },
-                        body: JSON.stringify({
-                            currentPassword,
-                            newPassword
-                        })
+                        body: JSON.stringify(requestBody)
                     });
         
+                    // Check the response status
                     if (response.ok) {
-                        alert('Password reset successfully!');
+                        // Password reset successful
+                        alert("Password updated successfully. Please log in again.");
+                        // Redirect or perform any other action as needed
                     } else {
-                        const data = await response.json();
-                        alert(data.error || 'Something went wrong.');
+                        // Password reset failed
+                        const errorData = await response.json();
+                        // Display the error message on the page
+                        displayErrorMessage(errorData.error);
                     }
                 } catch (error) {
-                    console.error('Error:', error);
-                    alert('An error occurred. Please try again later.');
+                    console.error("Error resetting password:", error);
+                    alert("Internal server error. Please try again later.");
                 }
             });
+        
+            // Function to display the error message on the page
+            function displayErrorMessage(errorMessage) {
+                // Create the error message element
+                const errorMessageElement = document.createElement("div");
+                errorMessageElement.classList.add("error-container");
+                errorMessageElement.innerHTML = `
+                    <div class="icon">!</div>
+                    <h2>Error</h2>
+                    <p class="error-message">${errorMessage}</p>
+                `;
+        
+                // Get the container to append the error message
+                const container = document.getElementById("errorMessageContainer");
+                
+                // Clear any existing error messages
+                container.innerHTML = "";
+                
+                // Append the error message to the container
+                container.appendChild(errorMessageElement);
+            }
         </script>
         <header>
             <!-- User Information -->
@@ -359,13 +635,22 @@
                     <input type="file" id="profilePicture" name="profilePicture" accept="image/*" capture="environment" onchange="displaySelectedProfilePicture(event)">
                 </div>
                 <script>
+                    function updateProfilePicture(event) {
+                        const selectedFile = event.target.files[0]; 
+                        if (selectedFile) {
+                            // Assuming the image is uploaded and stored at 'path_to_new_profile_picture'
+                            const newPath = 'path_to_new_profile_picture'; 
+                            // Store the new path in local storage
+                            localStorage.setItem('newProfilePicturePath', newPath);
+                        }
+                    }
                     // JavaScript function to display the selected profile picture
                     function displaySelectedProfilePicture(event) {
                         // Get the selected file
                         const selectedFile = event.target.files[0]; 
                         // Get the profile image element
                         const profileImage = document.getElementById('profileImage'); 
-
+                
                         if (selectedFile) {
                             // Set the src attribute to the temporary URL of the selected file
                             profileImage.src = URL.createObjectURL(selectedFile); 
@@ -373,25 +658,31 @@
                             // If no file is selected, reset the src attribute to a default image or clear it
                             profileImage.src = 'default-profile-image.jpg'; // Replace 'default-profile-image.jpg' with the path to your default profile image
                         }
+                
+                        // Show the message after image selection
+                        document.getElementById('fileSelectionMessage').style.display = 'block';
+                
+                        // Hide the file input
+                        document.getElementById('profilePicture').style.display = 'none';
                     }
                 </script>
             </div>
-                <div class="profile-details">
-                    <!-- User Details -->
-                    <form id="userInfoForm" action="/user/profile" method="GET">
-                        <p><strong>Username:</strong> <span id="username"></span></p>
-                        <p><strong>Email:</strong> <span id="email"></span></p>
-                        <p><strong>Location:</strong> <span id="location"></span></p>
-                        <p><strong>Joined:</strong> <span id="joined"></span></p>
-                    </form>
-                    
-                    <form id="profilePictureForm" enctype="multipart/form-data" action="/profile-photo" method="post">
-                        <label for="profilePicture">Upload Profile Picture:</label>
-                        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" capture="environment">
-                        <button type="button" onclick="uploadProfilePicture()">Upload</button>
-                    </form>
-                </div>
+            <div class="profile-details">
+                <!-- User Details -->
+                <form id="userInfoForm" action="/user/profile" method="GET">
+                    <p><strong>Username:</strong> <span id="username"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Location:</strong> <span id="location"></span></p>
+                    <p><strong>Joined:</strong> <span id="joined"></span></p>
+                </form>
+                
+                <form id="profilePictureForm" enctype="multipart/form-data" action="/profile-photo" method="post">
+                    <label for="profilePicture">Upload Profile Picture:</label>
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" capture="environment">
+                    <button type="button" onclick="uploadProfilePicture()">Upload</button>
+                </form>
             </div>
+        </div>
         </header>
         <script>
             // Example client-side JavaScript using fetch API
@@ -450,7 +741,7 @@
                     <div class="order">
                         <p>Order #12345 - Status: Shipping</p>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="orderDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="orderDropdown1" data-bs-toggle="dropdown" aria-expanded="false" style="bottom: 20px;">
                                 View Details
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="orderDropdown1">
@@ -462,55 +753,27 @@
                     <!-- More Orders... -->
                 </div>
             </section>
-            <style>
-                .dropdown-menu {
-                    position: relative;
-                    left: 80px;
-                    /* Apply the wave animation */
-                    animation: wave 0.55s ease-in-out;
-                    /* Set the transform origin to the top */ 
-                    transform-origin: top;
-
-                }
-
-                @keyframes wave {
-                    0% {
-                        /* Start from fully collapsed */
-                        transform: scaleY(0); 
-                    }
-                    100% {
-                        /* Expand to full height */
-                        transform: scaleY(1); 
-                    }
-                }
-
-                .dropdown-item {
-                    display: block;
-                    padding: 10px;
-                    color: #000;
-                    text-decoration: none;
-                    transition: 0.3s;
-                }
-
-                .dropdown-item:hover {
-                    background-color: #f8f9fa; /* Change background color on hover */
-                }
-                /* Coffee themed linear gradient */
-                .dropdown-list {
-                    left: 0px;
-                    list-style-type: none; 
-                    background: linear-gradient(to right, #CD853F, #D2691E, #CD853F);
-                }
-                /* Bootstrap styled dropdown items */
-                .dropdown-item {
-                    background: linear-gradient(to right, #7a5d46, #5d3e2f, #7e7e28); /* Coffee themed light gradient */
-                    /* color: white;  */
-                }
-                .dropdown-item:hover {
-                    /* Darker shade on hover */
-                    background-color: #A0522D; 
-                }
-            </style>
+            <!-- Wishlist -->
+            <!-- Order History -->
+            <section class="container">
+                <h2>Order History</h2>
+                <div class="order-history">
+                    <!-- Display Orders with Dropdown for Details -->
+                    <div class="order">
+                        <p>Order #12345 - Status: Shipping</p>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="orderDropdown1" data-bs-toggle="dropdown" aria-expanded="false" style="bottom: 20px;">
+                                View Details
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="orderDropdown1">
+                                <li><a class="dropdown-item" href="#">Order Details</a></li>
+                                <li><a class="dropdown-item" href="#">Track Order</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- More Orders... -->
+                </div>
+            </section>
             <!-- Wishlist -->
             <nav class="container wishlist-container bg-gradient">
                 <h2 class="border-bottom border-dark pb-2">Wishlist</h2>
@@ -546,34 +809,12 @@
                     });
                 });
             </script>
-            
-            <style>
-                .modify-order-btn {
-                    background-color: #A0522D; /* Coffee themed button */
-                    border-color: #A0522D;
-                }
-
-                .modify-order-btn:hover {
-                    background-color: #8B4513; /* Darker shade on hover */
-                    border-color: #8B4513;
-                }
-
-                .remove-from-cart-btn {
-                    background-color: #8B0000; /* Coffee themed button */
-                    border-color: #8B0000;
-                }
-
-                .remove-from-cart-btn:hover {
-                    background-color: #800000; /* Darker shade on hover */
-                    border-color: #800000;
-                }
-            </style>
             <!-- Cart Management -->
-            <section class="container cart-management" style="background: linear-gradient(to right, #CD853F, #D2691E, #CD853F); border: 2px solid #8B4513; padding: 20px; margin-top: 200px;">
-                <h2 style="background: linear-gradient(to right, #FFF8DC, #F5DEB3, #FFF8DC); border-bottom: 1px solid #8B4513; padding: 10px; border-radius: 10px; max-width: 200px;">Cart Management</h2>
+            <section class="container cart-management" style="background:#6a6a6a; border: 2px solid #8B4513; padding: 20px; margin-top: 200px;">
+                <h2 style="background: white; border-bottom: 1px solid #8B4513; padding: 10px; border-radius: 10px; max-width: 200px;">Cart Management</h2>
                 <div class="cart">
                     <!-- Cart Items -->
-                    <div class="cart-item" style="background-color: #D2B48C; padding: 10px; margin-bottom: 10px; max-width: 200px; border-radius: 10px;">
+                    <div class="cart-item" style="background-color: white; padding: 10px; margin-bottom: 10px; max-width: auto; border-radius: 10px;">
                         <p style="font-size: medium;">Product Name</p>
                         <button class="btn btn-primary modify-order-btn">Modify Order</button>
                     </div>
@@ -582,25 +823,53 @@
                     <button class="btn btn-danger remove-from-cart-btn">Remove from Cart</button>
                 </div>
             </section>
+            <!-- Payment Methods -->
+            <section class="container">
+                <h2>Payment Methods</h2>
+                <!-- Add payment methods options -->
+            </section>
+
+            <!-- Account Settings -->
+            <section class="container">
+                <h2>Account Settings</h2>
+                <!-- Add account settings options -->
+            </section>
+
+            <!-- Communication Preferences -->
+            <section class="container">
+                <h2>Communication Preferences</h2>
+                <!-- Add communication preferences options -->
+            </section>
+
+            <!-- Support Requests -->
+            <section class="container">
+                <h2>Support Requests</h2>
+                <!-- Add support request history -->
+            </section>
+
+            <!-- Subscription Management -->
+            <section class="container">
+                <h2>Subscription Management</h2>
+                <!-- Add subscription management options -->
+            </section>
+
+            <!-- Account Activity -->
+            <section class="container">
+                <h2>Account Activity</h2>
+                <!-- Add account activity details -->
+            </section>
+
+            <!-- Social Media Integration -->
+            <section class="container">
+                <h2>Social Media Integration</h2>
+                <!-- Add social media integration options -->
+            </section>
         </main>
 
         <footer>
-            <style>
-                #logoutButton {
-                position: absolute;
-                /* Adjust the top position as needed */
-                top: 10px; 
-                /* Adjust the right position as needed */
-                right: 385px; 
-                /* Ensure it's above other content */
-                z-index: 9999; 
-            }
-            </style>
-        <!-- Logout Button -->
-        <button id="logoutButton" class="btn btn-danger">
-            <span class="bi bi-arrow-left"></span>
-        </button>
-        
+            <button id="logoutButton" class="btn btn-danger">
+                <span class="bi bi-arrow-left"></span>
+            </button>
         </footer>
         <script>
             // JavaScript code to navigate back to the profile page when logout button is clicked
@@ -610,122 +879,122 @@
             });
         </script>
     <nav class="window" style="width: 200px; height: 200px; border: 1px, solid, black">
-        <script>
-            const menuButton = document.getElementById('menuButton');
-            const menuContent = document.querySelector('.menu-content');
-            const uploadForm = document.getElementById('profilePictureForm'); // Corrected the form ID
-            const imageInput = document.getElementById('profilePicture'); // Corrected the input ID
-            menuButton.addEventListener('click', toggleMenu);
-        
-            function toggleMenu() {
-                menuContent.classList.toggle('show');
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const menuContent = document.querySelector('.menu-content');
+        const uploadForm = document.getElementById('profilePictureForm'); // Corrected the form ID
+        const imageInput = document.getElementById('profilePicture'); // Corrected the input ID
+        menuButton.addEventListener('click', toggleMenu);
+    
+        function toggleMenu() {
+            menuContent.classList.toggle('show');
+        }
+    
+        const menu = document.getElementById('menu');
+        const content = document.querySelector('.content');
+    
+        let isMenuOpen = false;
+    
+        content.addEventListener('touchstart', handleTouchStart, false);
+        content.addEventListener('touchmove', handleTouchMove, false);
+    
+        let xDown = null;
+        let yDown = null;
+    
+        function handleTouchStart(event) {
+            xDown = event.touches[0].clientX;
+            yDown = event.touches[0].clientY;
+        }
+    
+        function handleTouchMove(event) {
+            if (!xDown || !yDown) {
+                return;
             }
-        
-            const menu = document.getElementById('menu');
-            const content = document.querySelector('.content');
-        
-            let isMenuOpen = false;
-        
-            content.addEventListener('touchstart', handleTouchStart, false);
-            content.addEventListener('touchmove', handleTouchMove, false);
-        
-            let xDown = null;
-            let yDown = null;
-        
-            function handleTouchStart(event) {
-                xDown = event.touches[0].clientX;
-                yDown = event.touches[0].clientY;
-            }
-        
-            function handleTouchMove(event) {
-                if (!xDown || !yDown) {
-                    return;
+    
+            let xUp = event.touches[0].clientX;
+            let yUp = event.touches[0].clientY;
+    
+            let xDiff = xDown - xUp;
+            let yDiff = yDown - yUp;
+    
+            if (Math.abs(xDiff) > Math.abs(yDiff)) { /* Most significant */
+                if (xDiff > 0) {
+                    /* left swipe */
+                    closeMenu();
+                } else {
+                    /* right swipe */
+                    openMenu();
                 }
-        
-                let xUp = event.touches[0].clientX;
-                let yUp = event.touches[0].clientY;
-        
-                let xDiff = xDown - xUp;
-                let yDiff = yDown - yUp;
-        
-                if (Math.abs(xDiff) > Math.abs(yDiff)) { /* Most significant */
-                    if (xDiff > 0) {
-                        /* left swipe */
-                        closeMenu();
-                    } else {
-                        /* right swipe */
-                        openMenu();
-                    }
-                }
-        
-                /* reset values */
-                xDown = null;
-                yDown = null;
             }
-        
-            function openMenu() {
-                menu.style.right = '0';
-                isMenuOpen = true;
-            }
-        
-            function closeMenu() {
-                menu.style.right = '-200px';
-                isMenuOpen = false;
-            }
-                
-            uploadForm.addEventListener('submit', (event) => {
+    
+            /* reset values */
+            xDown = null;
+            yDown = null;
+        }
+    
+        function openMenu() {
+            menu.style.right = '0';
+            isMenuOpen = true;
+        }
+    
+        function closeMenu() {
+            menu.style.right = '-200px';
+            isMenuOpen = false;
+        }
+            
+        uploadForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData();
+            formData.append('profilePicture', imageInput.files[0]); // Append the file input
+            
+            fetch('/profile-photo', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('profileImage').src = data.profilePictureUrl;
+            })
+            .catch(error => {
+                console.error('Error uploading profile picture:', error);
+            });
+        });
+
+        function uploadProfilePicture() {
+            const formData = new FormData(uploadForm);
+            fetch('/profile-photo', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('profileImage').src = data.profilePictureUrl;
+            })
+            .catch(error => {
+                console.error('Error uploading profile picture:', error);
+            });
+        }
+
+        // Wait for the DOM to be fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the configuration icon element
+            const configIcon = document.querySelector('.config-icon');
+
+            // Add a click event listener to the configuration icon
+            configIcon.addEventListener('click', function(event) {
+                // Prevent the default action of the click event
                 event.preventDefault();
-                const formData = new FormData();
-                formData.append('profilePicture', imageInput.files[0]); // Append the file input
-                
-                fetch('/profile-photo', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('profileImage').src = data.profilePictureUrl;
-                })
-                .catch(error => {
-                    console.error('Error uploading profile picture:', error);
-                });
+
+                // Toggle the dropdown menu when the configuration icon is clicked
+                const dropdownMenu = this.querySelector('.dropdown-menu');
+                const isOpen = new bootstrap.Dropdown(dropdownMenu).toggle();
+
+                // Focus on the dropdown toggle button after toggling the dropdown
+                if (!isOpen) {
+                    this.querySelector('.dropdown-toggle').focus();
+                }
             });
-
-            function uploadProfilePicture() {
-                const formData = new FormData(uploadForm);
-                fetch('/profile-photo', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('profileImage').src = data.profilePictureUrl;
-                })
-                .catch(error => {
-                    console.error('Error uploading profile picture:', error);
-                });
-            }
-
-            // Wait for the DOM to be fully loaded
-            document.addEventListener("DOMContentLoaded", function() {
-                // Get the configuration icon element
-                const configIcon = document.querySelector('.config-icon');
-
-                // Add a click event listener to the configuration icon
-                configIcon.addEventListener('click', function(event) {
-                    // Prevent the default action of the click event
-                    event.preventDefault();
-
-                    // Toggle the dropdown menu when the configuration icon is clicked
-                    const dropdownMenu = this.querySelector('.dropdown-menu');
-                    const isOpen = new bootstrap.Dropdown(dropdownMenu).toggle();
-
-                    // Focus on the dropdown toggle button after toggling the dropdown
-                    if (!isOpen) {
-                        this.querySelector('.dropdown-toggle').focus();
-                    }
-                });
-            });
-        </script>
+        });
+    </script>
 </body>
 </html>
