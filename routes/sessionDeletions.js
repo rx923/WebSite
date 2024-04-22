@@ -96,7 +96,7 @@ const panicInterval = setInterval(panicClearance, 1000);
 const panicDuration = 3600000; 
 setTimeout(() => {
     // Stop the interval after 1 hour
-    clearInterval(panicInterval); 
+    clearInterval(panicInterval);   
     console.log('Panic clearance stopped after 1 hour.');
 }, panicDuration);
 */

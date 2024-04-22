@@ -3,7 +3,6 @@ const path = require('path');
 const cors = require('cors');
 const http = require('http');
 const session = require('express-session');
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const WebSocket = require('ws');
 const { hostname } = require('os');
@@ -15,6 +14,11 @@ const {sessionMiddleware} = require('./models/sessionConfig');
 const sessionDeletions  = require('./routes/sessionDeletions.js');
 const { sequelize } = require('./models/sessionModel');
 const { User } = require("./models/userModel.js"); 
+const bodyParser = require('body-parser');
+const { fetchUserProfile } = require('./controllers/userController.js');
+const { deleteInactiveSessions } = require('./routes/sessionDeletions.js');
+const { generateRandomPasswordAndUpdate } = require('./routes/passwordService'); // Import the function
+
 
 // const chatButtonForm = require('./chat-button-form-group');
 const app = express();
@@ -60,25 +64,8 @@ app.post('/support-group')
 app.post('/reset-password', async (req, res) => {
     try {
         const { email, currentPassword, newPassword } = req.body;
-
-        // Fetch the user from the database based on the provided email
-        const user = await User.findByEmail(email);
-        if (!user) {
-            return res.status(404).json({ error: 'User not found.' });
-        }
-
-        // Fetch the current password from the database
-        const storedPassword = await getCurrentPassword(email);
-        
-        // Compare the current password provided by the user with the stored password
-        const passwordMatch = await bcrypt.compare(currentPassword, storedPassword);
-        if (!passwordMatch) {
-            return res.status(400).json({ error: 'Current password is incorrect.' });
-        }
-
-        // Update the password in the database
         await updatePassword(email, newPassword);
-
+        // await sendPasswordResetEmail(email, newPassword);
         // Send success message
         res.status(200).json({ message: 'Password reset successfully.' });
     } catch (error) {
@@ -86,6 +73,7 @@ app.post('/reset-password', async (req, res) => {
         res.status(500).json({ error: 'An error occurred. Please try again later.' });
     }
 });
+
 
 // Your authentication middleware
 const requireAuth = (req, res, next) => {
@@ -96,34 +84,27 @@ const requireAuth = (req, res, next) => {
     }
 }
 
-// Route to fetch user information
 app.get('/user/profile', async (req, res) => {
     try {
-        if (!req.session.user) {
+        // Check if the user is logged in
+        if (!req.session || !req.sessionID) {
             return res.status(401).json({ error: 'Unauthorized' });
         }
+        
+        // Fetch user profile based on the session's username
+        const userProfile = await fetchUserProfile(req.session.user.username);
 
-        // Assuming you have access to a User model
-        const user = await user.findByPk(req.session.user.id);
-
-        if (!user) {
+        if (!userProfile) {
             return res.status(404).json({ error: 'User not found' });
         }
-
-        // Constructing user object with relevant information
-        const userInfo = {
-            username: user.username,
-            email: user.email,
-            location: user.location,
-        };
-
-        // Sending user information as JSON response
-        res.json(userInfo);
+        
+        res.render('Profile.ejs', { user: userProfile }); 
     } catch (error) {
-        console.error('Error fetching user information: ', error);
+        console.error('Error fetching user profile:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
 app.get('/logged_in', (req, res) => {
     const username = req.session.username;
     res.render('logged_in', { username: username });
@@ -158,6 +139,21 @@ sequelize.sync()
 });
 
 
+
+app.post('/forgot-password', async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        // Generate a random password and update it in the database
+        const temporaryPassword = await generateRandomPasswordAndUpdate(email, res);
+        
+        console.log('Temporary Password:', temporaryPassword);
+        res.redirect('/password_reset_success.html');
+    } catch (error) {
+        console.error('Error generating and updating password:', error);
+        res.status(500).json({ error: 'Failed to reset password.' });
+    }
+});
 // Create the server
 const server = http.createServer(app);
 
@@ -167,6 +163,8 @@ const wss = new WebSocket.Server({ server });
 wss.on('connection', (ws) => {
     // Handle WebSocket connections here
 });
+
+
 sessionDeletions();
 
 
@@ -175,7 +173,6 @@ sessionDeletions();
 server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT} ${hostname}`);
 });
-
 
 // setInterval(deleteInactiveSessions, 10 * 60 * 1000); // 10 minutes
 

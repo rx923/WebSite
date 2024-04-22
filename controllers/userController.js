@@ -1,17 +1,25 @@
-const { login, logout, register } = require('../controllers/auth');
+const User = require('../models/userModel.js');
 
-
-// Function to handle user registration
-exports.register = async (req, res) => {
+async function fetchUserProfile(username) {
     try {
-        // Registration logic goes here
-        // Example: Fetch data from request body, validate inputs, save user to database, etc.
+        // Find the user based on the username
+        const user = await User.findOne({ where: { username } });
+        console.log(user);
+        // Construct user information object
+        const userInfo = {
+            username: user.username,
+            location: user.location,
+            joined: user.createdAt,
+            email: user.email
+        };
+        console.log(userInfo);
+
+        return userInfo;
     } catch (error) {
-        console.error(error);
-        return res.status(500).send('Internal Server Error');
+        throw new Error('Error fetching user profile: ' + error.message);
     }
-};
+}
 
 
 
-module.exports ={ register };
+module.exports = { fetchUserProfile };

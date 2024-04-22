@@ -163,6 +163,11 @@ const authController = {
                     return res.status(500).render('error', { message: 'Internal server error. Please try again later.' });
                 }
             } else {
+                req.session.user = {
+                    id: result.user.id,
+                    username: result.user.username,
+                    // Add other user information as needed
+                };
                 // Generate auth token
                 const token = await generateAuthToken(req, result.user, Date.now());
                 // Set expiration time (1 hour expiration)

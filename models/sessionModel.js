@@ -39,4 +39,4 @@ const Session = sequelize.define('Session', {
     tableName: 'sessions',
     timestamps: true // Set timestamps to false to exclude createdAt and updatedAt fields
 });
-module.exports = {sequelize, Session};
+module.exports = { sequelize, Session };
