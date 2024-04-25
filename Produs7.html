@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavazza Espresso Cremoso - Product Page</title>
+    <title>Cafea de Cicoare, 10 capsule compatibile Nespresso, Italian Coffee</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -13,19 +13,22 @@
         .product-description {
             color: #6c757d; /* Lighter text color */
         }
+        .mt-4{
+            font-size: small;
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Lavazza Espresso Cremoso</a>
+        <a class="navbar-brand" href="#" style="font-size: small;">Cafea de Cicoare</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="http://192.168.100.53:8081/Meniu_Produse_1.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/products">Products</a>
@@ -49,26 +52,14 @@
         <div class="row">
             <div class="col-lg-6">
                 <!-- Product image -->
-                <img src="https://s13emagst.akamaized.net/products/43431/43430482/images/res_fb72a9d03a7dcbb2bab37805212af983.png?width=720&height=720&hash=BA7412A27D7392072E494FFAD033D846" alt="Product Name" class="img-fluid">
+                <img src="https://s13emagst.akamaized.net/products/36573/36572072/images/res_33cd65c5d0f866cfa81a83ca5fd79be2.jpg?width=720&height=720&hash=641EBFC96C7C48A4F17AF2183917A465" alt="Product Name" class="img-fluid">
                 <!-- Product availability -->
                 <p class="text-muted mt-2">Disponibil: In Stoc</p>
             </div>
             <div class="col-lg-6">
                 <!-- Product description -->
-                <h2 class="mt-4">Lavazza Espresso Cremoso capsule compatibile Dolce Gusto 16 buc</h2>
-                <p class="product-description">Lavazza Espresso Cremoso sunt capsule de cafea compatibile cu sistemul Nescafe Dolce Gusto. Aceste capsule contin cafea Arabica din America Centrala și de Sud si Robusta din Asia. 
-                    O capsula de cafea Lavazza Espresso Cremoso poate fi folosita pentru prepararea unui singur espresso (35 ml). Aceasta cafea este o cafea cu un corp plin, echilibrata cu note de ciocolata si fructe uscate.
-                    Caracteristici:
-                    - Compatibilitate: Nescafe Dolce Gusto
-                    - Tip Bautura: Espresso
-                    - Compozitie: Arabica si Robusta
-                    - Origine cafea: America Centrala si de Sud (Arabica), Asia (Robusta)
-                    - Intensitate: 7/13
-                    - Țară de origine: Torino, Italia
-                    - Mod Ambalare: cutie cu 16 capsule
-                    Brandul Lavazza a fost creat in orasul Turin din Italia, in 1895 de Luigi Lavazza, care a pornit o afacere de familie, ce in timp a devenit o companie prezenta in peste 90 de tari din toata lumea. Desavarsirea artei si stiintei cafelei are loc deja de patru generatii.
-                     In acest timp brandul a continuat descopere si sa reinventeze, impartasind iubirea pentru cafeaua adevarata si aratand lumii o mica parte a extraordinarului lucrurilor simple de zi cu zi. 
-                    In plus, din 2004 Fundatia Lavazza ajuta fermierii de cafea si coopereaza cu ei pentru a face fata efectelor schimbarilor climatice, promoveaza practici bune de agricultura si sustine dezvoltarea sociala sustenabila.</p>
+                <h2 class="mt-4">Cafea de Cicoare, 10 capsule compatibile Nespresso, Italian Coffee</h2>
+                <p class="product-description">Cafeaua de cicioare este o alternativa perfecta la clasica cafea decofeinizata. Este produsa din radacina de cicoare (Chicorium Intybus), care este recoltata toamna, curatata de pamant, se usuca si in sfarsit se prajeste, ca apoi sa fie transformata in pulbere. Aceasta pulbere trebuie fiarta pentru cateva minute, iar apoi filtrata. Asa se obtine aceasta bautura sanatoasa, cu gust amar, foarte asemanatoare cu cafeaua, dar cu avantajul de a nu contine cofeina. Este in special recomandata pentru persoanele cu grup sangvin 0, carora cafeaua clasica le poate dauna.</p>
                 <!-- Product price -->
                 <p id="product-price"></p>
                 <p class="delivery-info"><i class="fas fa-truck"></i> Livrare: Gratuita</p>
@@ -108,7 +99,7 @@
                             const conversionRate = data.rates.RON;
 
                             // Calculate price in RON (assuming the base price is $20)
-                            const priceInUSD = 20;
+                            const priceInUSD = 17;
                             const priceInRON = priceInUSD * conversionRate;
 
                             // Call the fetchUserLocation function to get the user's location
@@ -198,11 +189,11 @@
                 
                     // Define competitor prices
                     const competitorPrices = {
-                        product1: 19,
+                        product1: 16.90,
                         product2: 16,
-                        product3: 21,
-                        product4: 23,
-                        product5: 35
+                        product3: 17,
+                        product4: 17.50,
+                        product5: 18
                         // Add more competitor prices as needed
                     };
                 

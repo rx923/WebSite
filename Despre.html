@@ -13,12 +13,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     /* Global styles */
-    body {
-      background: radial-gradient(circle, #87CEEB, #4682B4, #4169E1);
-      scroll-behavior: smooth;
-      font-family: Arial, sans-serif;
-    }
-
     .coffee-paragraph {
       font-style: italic;
       color: #7b5720; /* Dark brown */
@@ -69,7 +63,7 @@
       top: 0px;
       left: 0px;
       /* Update background to linear gradient with coffee-themed colors */
-      background: linear-gradient(120deg, #8B4513, #663300, #4a2c00); /* Adjust gradient colors as needed */
+      background: linear-gradient(to top, white, #6a6a6a); /* Adjust gradient colors as needed */
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 60px;
@@ -78,8 +72,12 @@
     .sidenav a {
       padding: 8px 8px 32px;
       text-decoration: none;
-      font-size: 25px;
-      color: #818181;
+      font-size: medium;
+      color: #000000;
+      background: linear-gradient(to bottom, white, #6a6a6a);
+      width: 160px;
+      height: 30px;
+      border-radius: 30px;
       display: block;
       transition: 3s;
     }
@@ -96,13 +94,13 @@
       right: 10px; 
       background-color: white;
       /* Set the width of the close button */
-      width: 35px; 
+      width: 40px; 
       /* Set the height of the close button */
-      height: 35px; 
+      height: 40px; 
       /* Make the close button circular */
       border-radius: 50%; 
       /* Adjust the font size as needed */
-      font-size: 24px; 
+      font-size: large; 
       /* Center the text vertically */
       line-height: 30px; 
       /* Center the text horizontally */
@@ -136,6 +134,12 @@
 
     .chat-popup {
       display: inline-block;
+      width: 350px;
+      background: #ffffff; /* White background */
+      border: 30px solid #ffffff; /* White border */
+      border-radius: 30px;
+      padding: 20px;
+      color: #6a6a6a; /* Text color */
     }
 
     /* Adjust heading paragraph with coffee-themed linear gradient */
@@ -143,7 +147,7 @@
       font-size: small;
       text-decoration: none;
       /* Update background to blue-themed linear gradient */
-      background: linear-gradient(to right, #83b5e3, #5782ac, #2e4a7e); /* Adjust gradient colors as needed */
+      background: #865858; /* Adjust gradient colors as needed */
       color: white;
       padding: 10px;
       border-radius: 10px;
@@ -167,13 +171,14 @@
 
     #video-frame {
       display: flex;
+      max-width: 500px;
       justify-content: center;
       align-items: center;
     }
 
     #myVideo {
-      width: 40%;
-      height: 40%;
+      width: 80%;
+      height: 60%;
     }
 
     .content {
@@ -185,10 +190,9 @@
     }
 
     .form-control {
-      background: linear-gradient(to right, #8B4513, #663300);
+      background: linear-gradient(to right, #ffffff, #b3b3b3);
       color: white;
       border-radius: 30px;
-      border: 1px solid transparent; /* Remove default border */
     }
 
     .form-control:focus {
@@ -196,24 +200,39 @@
     }
       /* Global styles */
     body {
-      background: radial-gradient(rgb(255, 255, 255), rgb(107, 99, 253));
+      background: linear-gradient(30deg, white, rgb(106, 106, 106));
       scroll-behavior: smooth;
       font-family: Arial, sans-serif;
       /* Adjust background to linear gradient with light coffee colors */
-      background: linear-gradient(120deg, #f3e9e7, #b7865f);
     }
     /* Style for the table-responsive with linear gradient background */
     .table-responsive {
-      background: linear-gradient(to right, #83b5e3, #5782ac, #2e4a7e); /* Adjust gradient colors as needed */
+      background: linear-gradient(to right, #ffffff, #5782ac); /* Adjust gradient colors as needed */
       padding: 15px;
-      border-radius: 15px;
+      border-radius: 30px;
       margin-top: 20px;
     }
     /* Remaining styles... */
+    .card-text{
+      font-size: small;
+      font-weight:lighter;
+    }
+    h1{
+      font-family: 'Arial', sans-serif; 
+      font-size: 24px; 
+      color: #663300; 
+      border: 1px solid #663300; 
+      padding: 10px; 
+      text-align: center; 
+      border-radius: 30px; 
+      width: 250px; 
+      margin-left: 170px; 
+      background: linear-gradient(to right, #B0C4DE, #87CEFA, #4682B4);
+    }
 
   </style>
 </head>
-<body style="background: radial-gradient(circle, #87CEEB, #4682B4, #4169E1);">
+<body >
   <div class="container" onclick="toggleMenu()">
     <div class="bar1"></div>
     <div class="bar2"></div>
@@ -224,12 +243,10 @@
     <a class="active" href="index.html"><i class="fa fa-home"></i> Acasa</a>
     <a href="#Link"><i class="fa fa-search"></i> Cauta</a>
     <a href="#Link"><i class="fa fa-envelope"></i> Inbox</a>
-    <a href="#Link"><i class="fa fa-globe"></i> Globe</a>
-    <a href="#Link"><i class="fa fa-trash"></i> Trash</a>
   </div>
 
   <header>
-    <h1 style="font-family: 'Arial', sans-serif; font-size: 24px; color: #663300; border: 1px solid #663300; padding: 10px; text-align: center; border-radius: 30px; width: 250px; margin-left: 170px; background: linear-gradient(to right, #B0C4DE, #87CEFA, #4682B4);">Despre Good Coffee Store</h1>
+    <h1>Despre Good Coffee Store</h1>
     <div class="border_box_text_descriere_GoodCoffeeStore" id="border_box_text_descriere_GoodCoffeeStore_1">
       <p class="card-text">
         GoodCoffeeStore este fără îndoială cel mai bun site pentru iubitorii de cafea din întreaga lume. Produsele de top disponibile pentru comanda pe site-ul GoodCoffeeStore pot fi achiziționate în mai multe moduri.
@@ -238,7 +255,7 @@
   </header>
 
   <div class="table-responsive">
-    <table class="table table-bordered" style="border-radius: 30px;">
+    <table class="table table-bordered">
       <tbody>
         <tr class="bg-light">
           <th scope="row" class="col-3">Companie:</th>
@@ -289,13 +306,9 @@
     </table>
   </div>
 
-  <a href="#">
-    <img src="https://gratisography.com/wp-content/uploads/2021/10/gratisography-fun-sign-free-stock-photo-1170x780.jpg" alt="Coffee Sign" style="height: 320px; width: 320px; margin-top: 20px;">
-  </a>
 
   <main>
     <figcaption>
-      <p class="card-text">Text test</p>
     </figcaption>
     <nav>
       <div id="video-frame">
@@ -306,19 +319,19 @@
   </main>
 
   <footer class="text-center">
-    <div class="chat-popup" id="myForm" style="width: 350px; background: linear-gradient(to right, #8B4513, #663300); border: 30px solid white; border-radius: 30px; padding: 20px;">
+    <div class="chat-popup" id="myForm">
       <form action="/support-group" method="POST" class="form-container">
-        <h1 class="mb-4 text-white">Chat</h1>
+        <h2 class="mb-4 text-white">Chat</h2>
         <div class="form-group">
-          <label for="msg" class="text-white"><b>Message</b></label>
-          <textarea class="form-control border rounded" rows="3" placeholder="Type message.." name="msg" required style="border-radius: 30px;"></textarea>
+          <label for="msg" class="text-white"><b style="background: #6a6a6a; border-radius: 20px; font-size: small;">Mesaj catre grupul de suport</b></label>
+          <textarea class="form-control border rounded" rows="3" placeholder="Scrie un mesaj.." name="msg" required></textarea>
         </div>
         <!-- Modified input box with linear gradient background -->
-        <button type="submit" class="btn btn-primary btn-block rounded-pill mt-3">Send</button>
-        <button type="button" class="btn btn-secondary btn-block rounded-pill mt-3 cancel" onclick="closeForm()">Close</button>
+        <button type="submit" class="btn btn-primary btn-block rounded-pill mt-3">Trimite</button>
+        <button type="button" class="btn btn-secondary btn-block rounded-pill mt-3 cancel" onclick="closeForm()">Inchide</button>
       </form>
     </div>
-    <button class="btn btn-primary border rounded-pill mt-3" onclick="openForm()">Open Chat</button>
+    <button class="btn btn-primary border rounded-pill mt-3" onclick="openForm()">Deschide Chat-ul</button>
   </footer>
 
   <script>

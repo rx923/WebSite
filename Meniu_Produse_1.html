@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            background-color: #ffffff;
+            
             padding-top: 80px; /* Adjusted for top navigation */
         }
         
@@ -25,10 +25,10 @@
         }
         
         .card-item {
-            width: 200px;
+            width: 300px;
             margin-bottom: 30px;
             padding: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #000000;
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -36,23 +36,26 @@
         }
         
         .card-item img {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             margin-bottom: 15px;
         }
         
         .card-v2-title-wrapper {
             margin: 10px 0;
-            font-size: 18px;
+            font-size: small;
             color: #333;
-            border-radius: 20px;
-            max-width: 200px;
-            margin-left: 60px;
+            border-radius: 10px;
+            width: 250px;
+            margin-left: 10px;
             align-self: center;
             border: 1px groove black;
         }
-        
+        .visible-xs-inline-block{
+            font-size: medium;
+            font-weight:normal;
+        }
         .card-v2-info p {
             margin-bottom: 10px;
             color: #666;
@@ -60,7 +63,9 @@
         }
         
         .btn {
-            background-color: #ff6666;
+            align-items: center;
+            max-width: fit-content;
+            background-color: #6a6a6a;
             color: #fff;
             border: none;
             padding: 8px 16px;
@@ -69,9 +74,9 @@
             transition: background-color 0.3s;
         }
         
-        .btn:hover {
+        /* .btn:hover {
             background-color: #ff9999;
-        }
+        } */
         
         .pagination-container {
             display: flex;
@@ -91,12 +96,12 @@
         
         .dropdown-menu {
             display: none;
-            position: absolute; /* Change position to absolute */
-            top: 100%; /* Adjust as needed */
-            left: 0; /* Adjust as needed */
+            position: absolute;
+            top: 102%;
+            left: -70px; /* Adjust as needed */
             z-index: 1000;
             width: 300px;
-            max-height: 400px; /* Set a fixed max-height for scrolling */
+            max-height: 400px;
             overflow-y: auto;
             background-color: #6a6a6a;
             border: 1px solid #ccc;
@@ -215,11 +220,14 @@
             position: absolute;
             top: 3px;
             right: 10px;
-            font-size: 30px;
+            width: 40px;
+            height: 40px;
+            font-size: 10px;
             color: #6a6a6a;
             cursor: pointer;
             border-radius: 30px;
             background: wheat;
+            line-height: 30px;
         }
 
         .closebtn:hover {
@@ -231,42 +239,33 @@
             width: 0; /* Initially hidden */
             position: fixed;
             z-index: 9000;
-            top: 0;
+            top: 60px;
             left: 0;
-            background: #6a6a6a;
+            background: linear-gradient(to top right, white, #6a6a6a);
+            max-height: 450px;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
+            border-radius: 30px;
         }
 
         #mySidenav a {
-            padding: 2px 15px;
+            padding: 5px 10px 2px 4px;
             text-decoration: none;
-            font-size: medium;
-            color: #818181;
-            background: white;
+            color: #000000;
+            background:linear-gradient(to top right, white, #6a6a6a);
+            border: 1px, groove rgb(255, 255, 255);
             display: block;
+            font-weight: bold;
+            font-size: medium;
             transition: 0.5s;
+            border-radius: 30px;
         }
 
         #mySidenav a:hover {
             color: #f1f1f1;
         }
 
-        .closebtn {
-            position: absolute;
-            top: 3px;
-            right: 10px;
-            font-size: 30px;
-            color: #6a6a6a;
-            cursor: pointer;
-            border-radius: 30px;
-            background:wheat;
-        }
-
-        .closebtn:hover {
-            color: #f1f1f1;
-        }
 
         #main {
             transition: margin-left 0.5s;
@@ -289,18 +288,36 @@
             background-color: #6a6a6a; /* Light gray background color on hover */
             color: #000; /* Change text color on hover if needed */
         }
+        .star-rating-inner{
+            left: 30px;
+        }
+        .mrg-btm-none {
+            background: #ffffff;
+            
+        }
+        #cartDropdownButton{
+            left: 30px;
+            margin-left: 100px;
+        }
     </style>
 </head>
-<body>
-
+<body style="background: #6a6a6a;">
     <!-- Side Navigation -->
     <div id="mySidenav" class="sidenav">
+        <button class="btn btn-secondary d-md-none" onclick="goToIndex('index.html')" style="z-index: 0; display: flex; align-items: center; top: 10px; left: 10px; border-radius: 30px; position: absolute; background: #696969;">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <script>
+            function goToIndex() {
+                window.location.href = 'index.html'; // Navigate to index.html
+            }
+        </script>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- Close button positioned at the top right corner -->
         <!-- Links that will initially be hidden -->
         <div id="navLinks" class="nav-links">
             <a href="http://192.168.100.53:8081/Logare.html">Logare</a>
             <a href="http://192.168.100.53:8081/Categorii_Produse.html">Categorii Produse</a>
-            <a href="http://192.168.100.53:8081/Contul_Meu.html">My Account</a>
+            <a href="http://192.168.100.53:8081/Contul_Meu.html">Contul Meu</a>
             <!-- Add more links as needed -->
         </div>
     </div>
@@ -317,7 +334,7 @@
             var mainContent = document.getElementById("main");
             var navState = sideNav.getAttribute("data-navstate");
             
-            if (navState === "open" || navState === null) {
+            if (navState === "open") {
                 sideNav.style.width = "0"; // Close the side navigation
                 mainContent.style.marginLeft = "0"; // Move the main content back to its original position
                 document.getElementById("navLinks").style.display = "none"; // Hide the links
@@ -349,7 +366,7 @@
                         <i class="fas fa-bars"></i>
                     </button>
                     <div class="dropdown cart-btn">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="cartDropdownButton" aria-haspopup="true" aria-expanded="false" style="margin-left: 200px;">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="cartDropdownButton" aria-haspopup="true" aria-expanded="false" style="margin-left: 100px;">
                             <i class="fas fa-shopping-cart"></i> Cart (<span id="cartItemCount">0</span>)
                         </button>
                         <div class="dropdown-menu" id="cartDropdownMenu" aria-labelledby="cartDropdownButton">
@@ -372,28 +389,35 @@
                 </div>
             </div>
         </header>
-            <script>
-                // Get references to the button and dropdown menu
-                var cartDropdownButton = document.getElementById('cartDropdownButton');
-                var cartDropdownMenu = document.getElementById('cartDropdownMenu');
-
-                // Function to toggle the visibility of the dropdown
-                function toggleDropdown() {
-                    cartDropdownMenu.classList.toggle('show');
-                }
-
-                // Event listener to toggle the dropdown when the button is clicked
-                cartDropdownButton.addEventListener('click', toggleDropdown);
-
-                // Close the dropdown if the user clicks outside of it
-                window.addEventListener('click', function(event) {
-                    if (!event.target.matches('#cartDropdownButton')) {
-                        if (cartDropdownMenu.classList.contains('show')) {
-                            cartDropdownMenu.classList.remove('show');
-                        }
+        <script>
+            // Get references to the button and dropdown menu
+            var cartDropdownButton = document.getElementById('cartDropdownButton');
+            var cartDropdownMenu = document.getElementById('cartDropdownMenu');
+        
+            // Function to toggle the visibility of the dropdown
+            function toggleDropdown() {
+                // Toggle the 'show' class on the dropdown menu
+                cartDropdownMenu.classList.toggle('show');
+            }
+        
+            // Event listener to toggle the dropdown when the button is clicked
+            cartDropdownButton.addEventListener('click', toggleDropdown);
+        
+            // Close the dropdown if the user clicks outside of it
+            window.addEventListener('click', function(event) {
+                // Check if the clicked element is not the cart button
+                if (!event.target.matches('#cartDropdownButton')) {
+                    // Check if the dropdown menu is currently shown
+                    if (cartDropdownMenu.classList.contains('show')) {
+                        // Remove the 'show' class from the dropdown menu
+                        cartDropdownMenu.classList.remove('show');
                     }
-                });
-            </script>
+                }
+            });
+        
+            // Log the cartDropdownMenu to check if it exists
+            console.log(cartDropdownMenu);
+        </script>
 
         <div class="container mt-5">
             <div id="productContainers" class="row"></div>
@@ -482,12 +506,11 @@
             "https://s13emagst.akamaized.net/products/31548/31547040/images/res_5f865ce659e378fe543e53eee37a5f64.jpg?width=720&height=720&hash=E71A8D30D1FB1FA1C674241CF92ADCB3",
             "https://s13emagst.akamaized.net/products/43431/43430475/images/res_6e117319c1ae3f51c47348e39298b9bc.jpg?width=720&height=720&hash=9979F54E73A309F9EFC215252A4A633C",
             "https://s13emagst.akamaized.net/products/37626/37625088/images/res_eb7085d5fd3d3cd07404d0e262b072b3.jpg?width=720&height=720&hash=CCCF69FE4D6A787AB835EC2976BEEB9B",
-            "https://s13emagst.akamaized.net/products/43431/43430482/images/res_fb72a9d03a7dcbb2bab37805212af983.png?width=720&height=720&hash=BA7412A27D7392072E494FFAD033D846",
             "https://s13emagst.akamaized.net/products/36573/36572072/images/res_33cd65c5d0f866cfa81a83ca5fd79be2.jpg?width=720&height=720&hash=641EBFC96C7C48A4F17AF2183917A465",
             "https://s13emagst.akamaized.net/products/43431/43430476/images/res_ed4a370d06c105834858ff2a35eaf864.jpg?width=720&height=720&hash=EFB7F1577CEE85607495E651537C56EF",
             "https://s13emagst.akamaized.net/products/43431/43430477/images/res_7ba3cd802f4195150726a35589bf3c33.jpg?width=720&height=720&hash=33B56EE118F014724FC2FC5E3FDCF968",
             "https://s13emagst.akamaized.net/products/51252/51251482/images/res_601bae8f1fab1510dc7371107ba1d6f7.jpg?width=720&height=720&hash=29B8789B88F2E4966F2776EC8ACDF344",
-            "https://s13emagst.akamaized.net/products/51196/51195201/images/res_cc14ab5382ed63d64ba835eaa87a5847.png?width=720&height=720&hash=5104A13D065C217CD5270084E4864EAB",
+            "https://s13emagst.akamaized.net/products/45807/45806186/images/res_595db40a21c5b5c6f0ac08e2abfb2753.jpg?width=720&height=720&hash=70F8B4948DEF36D86D7C1F605E4D1EDC",
             "https://s13emagst.akamaized.net/products/57180/57179015/images/res_3aa87c08b07d223fbc146fce20425f77.jpg?width=720&height=720&hash=813B2C5F001CD0F5EB82F09BB83FB7A9",
             "https://s13emagst.akamaized.net/products/69031/69030493/images/res_46ac19694f29028013c438cf4573b7d1.jpg?width=720&height=720&hash=04EECFA776E32EBC4C1CB80E463707D7",
             "https://s13emagst.akamaized.net/products/48002/48001254/images/res_e461729e0bc7c018e4ce2c25cf11b5b9.jpg?width=720&height=720&hash=2E0E8EE54FCBBD6F51A9999EE3A82A24",
@@ -495,7 +518,6 @@
             "https://s13emagst.akamaized.net/products/39195/39194313/images/res_44878437ddde5959be861e9857d5912b.jpg?width=720&height=720&hash=008F0A52D7531FDF8AC939CA510770F6",
             "https://s13emagst.akamaized.net/products/3311/3310426/images/res_654f04fe1656273611f0dc4f48495b55.jpg?width=720&height=720&hash=7C95D7B02981892AC3215A94BDE409B9",
             "https://s13emagst.akamaized.net/products/31548/31547051/images/res_2c73d29de88acca35ea804ecc9ac0e99.jpg?width=720&height=720&hash=51272D9E4AFF803495C915DB670FA386",
-            "https://s13emagst.akamaized.net/products/45807/45806186/images/res_595db40a21c5b5c6f0ac08e2abfb2753.jpg?width=720&height=720&hash=70F8B4948DEF36D86D7C1F605E4D1EDC",
             "https://s13emagst.akamaized.net/products/37575/37574443/images/res_daa73faf8c0be56e56272535c2bd2f4c.jpg?width=720&height=720&hash=D5A057DE759F3C73E3909EC013FC04FE",
             "https://s13emagst.akamaized.net/products/61264/61263992/images/res_aa79fb500b2715ca04fb522e4c4b568e.png?width=720&height=720&hash=A1C662E8A3761DAA2F1FBE6E9DB68411",
             "https://s13emagst.akamaized.net/products/39195/39194310/images/res_b3b617442906e17efceab5ff18571987.jpg?width=720&height=720&hash=5EE7C444513A6737327734E9CC004FBA",
@@ -856,8 +878,7 @@
                     var isCoffeeCapsule = i <= 50;
 
                     // Get a random image URL based on the product type
-                    var imageUrl = isCoffeeCapsule ? coffeeCapsulesImages[i - 1] : coffeeCupsImages[i - 51];
-                    console.log(imageUrl);
+                    var imageUrl = isCoffeeCapsule ? productImages[i - 1] : productImages[i - 51];
                     // Generate a random paragraph description for each product
                     var randomDescription = generateRandomDescription();
 
@@ -892,7 +913,7 @@
                             </div>
                             <span class="legal-price-label font-size-ms mrg-btm-none">Price: $10.00</span>
                             <div class="card-v2-pricing">
-                                <span class="product-new-price btn btn-sm btn-primary btn-emag btn-block yeahIWantThisProduct" onclick="addToCart(${i}, 'Product ${i}', 10)">Add to Cart</span>
+                                <span class="product-new-price btn btn-sm btn-primary btn-block " onclick="addToCart(${i}, 'Product ${i}', 10)">Add to Cart</span>
                                 <em class="em em-cart_fill"></em>
                             </div>
                             <div class="star-rating-inner">

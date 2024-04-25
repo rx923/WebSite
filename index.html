@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
     <base href="http://192.168.100.53:8081/">
-    <link rel="stylesheet" href="http://192.168.100.53:8081/css/ALL_Styles.css" type="text/css" media="all">
-    <link rel="stylesheet" href="http://192.168.100.53:8081/css/main.css" type="text/css" media="all">
+    <!-- <link rel="stylesheet" href="http://192.168.100.53:8081/css/ALL_Styles.css" type="text/css" media="all"> -->
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery -->
@@ -17,99 +16,186 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Good Store Coffee</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- <script src="Javascript/main.js"></script> -->
+    <link rel="stylesheet" href="css/main.css" media="all">
+    <script src="http://192.168.100.53:8081/js/main.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
-  </head>
-  
-  <body style="background: linear-gradient(30deg, white, #6a6a6a);">
-    <header style="background: linear-gradient(to top left, #6a6a6a, #ffffff); border: none; border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ margin-left: 90px; /* border-style: ; */ padding-top: 10px; width: 320px; height: 350px; z-index: 8000; position: relative; overflow: hidden; left: 10px;">
-      <!-- <div style="margin-top:-10px; position: absolute; z-index: 1; width: 100%; height: 400px; background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.159) 20%, rgba(255, 255, 255, 0) 30%, rgba(38, 38, 38, 0) 80%); background-size: 200% 100%; animation: flowWave 3s alternate-reverse infinite;"></div> -->
-      <h1 style="background: linear-gradient(to right, #6a6a6a, white); max-height: 100px; margin-left: 40px; margin-right: 40px; text-align: center; font-weight: 600; font-size: larger; width: auto; padding: 10px; position: relative; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5), 0 0 25px rgba(231, 231, 231, 0.5), 0 0 5px rgba(0, 21, 115, 0.5); border-radius: 25px; border: 1px groove transparent; color: white;">Big Store Coffee</h1>
-      <style>
-        @keyframes flowWave {
-          0% {
-            background-position: 0 0;
-          }
-          100% {
-            background-position: -100% 0;
-          }
-        }
-        .search-bar {
-          left: 2px;
-          bottom: 65px;
-          width: 300px;
-          position: relative;
-          padding: 1px; 
-          color: rgb(0, 0, 0); 
-          background: linear-gradient(to top right, #ffffff, #6a6a6a);
-          border: outset transparent;
-          border-width: 0.2vw 0.3vw; 
-          border-color: rgb(0, 0, 0); 
-          /* Center the search bar horizontally */
-          border-radius: 30px; 
-          /* Adjust to properly center */
-          /* transform: translateX(-50%);  */ 
-          z-index:950; 
-          cursor: pointer; 
-          /* display: ruby-base-container; */ 
-          /* Set the width of the search bar */ 
-          /* Set maximum width if needed * /* 
-          Adjust top position */ 
-          transform: translateY(100%); 
-          margin-right: 40vw; 
-          margin-top: 0px; 
-          margin-bottom: 20px; 
-          /* Use block level element */ 
-          display: inline-block; 
-          /* Center align the content */ 
-          /* text-align: center; */ 
-          /* Center the block element */
-          margin:10px;
-        }
-        .search-bar input[type="text"] {
-          border: 3px outset transparent;
-          background-color: whitesmoke;
-          border-radius: 25px;
-          /* Adjust input field width */
-          width: 300px;
-          padding: 10px;
-          outline: none;
-        }
-        #submit-cauta-bara-de-cautare {
-          /* Light blue color */
-          background-color: #00a8e070; 
-          /* Text color */
-          color: white; 
-          /* Remove default button border */
-          border: none; 
-          /* Adjust padding as needed */
-          padding: 10px 20px; 
-          /* Add some border radius for a softer look */
-          border-radius: 15px;
-          left: 55px;
-          border-radius: 30px;
-          position: relative; 
-          /* Change cursor to pointer on hover */
-          cursor: pointer; 
-          /* Add any additional styles you need */
-        }
-      .canvas-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
+    <style>
+      .search-bar {
+        left: 2px;
+        bottom: 65px;
+        width: 300px;
+        position: relative;
+        padding: 1px; 
+        color: rgb(0, 0, 0); 
+        background: linear-gradient(to top right, #ffffff, #6a6a6a);
+        border: outset transparent;
+        border-width: 0.2vw 0.3vw; 
+        border-color: rgb(0, 0, 0); 
+        /* Center the search bar horizontally */
+        border-radius: 30px; 
+        /* Adjust to properly center */
+        /* transform: translateX(-50%);  */ 
+        z-index:950; 
+        cursor: pointer; 
+        /* display: ruby-base-container; */ 
+        /* Set the width of the search bar */ 
+        /* Set maximum width if needed * /* 
+        Adjust top position */ 
+        transform: translateY(100%); 
+        margin-right: 40vw; 
+        margin-top: 0px; 
+        margin-bottom: 20px; 
+        /* Use block level element */ 
+        display: inline-block; 
+        /* Center align the content */ 
+        /* text-align: center; */ 
+        /* Center the block element */
+        margin:10px;
       }
-      .canvas-section {
-        margin: 10px;
-        padding: 20px;
-        background: #f2f2f2;
-        border: 2px groove black;
-        border-radius: 10px;
+      .search-bar input[type="text"] {
+        border: 3px outset transparent;
+        background-color: white;
+        border-radius: 25px;
+        /* Adjust input field width */
+        width: 300px;
+        padding: 10px;
+        outline: none;
+        font-size: small;
+        font-weight: bold;
       }
-      .slideshow {
-        display: flex;
-        flex-direction: column;
+      #submit-cauta-bara-de-cautare {
+        /* Light blue color */
+        background-color: #6a6a6a; 
+        /* Text color */
+        color: white; 
+        /* Remove default button border */
+        border: none; 
+        /* Adjust padding as needed */
+        padding: 10px 10px; 
+        /* Add some border radius for a softer look */
+        font-weight: bold;
+        font-size: small;
+        left: 50px;
+        width: 40px;
+        border-radius: 30px;
+        position: relative; 
+        /* Change cursor to pointer on hover */
+        cursor: pointer; 
+        /* Add any additional styles you need */
+      }
+      /* Style for the 2nd sidenavigation */
+      .menu-container {
+        position: fixed;
+        border-radius: 20px;
+        top: 155px;
+        left: -470px;
+        width: 313px;
+        height: 350px;
+        background-color: none;
+        z-index: 1000;
+        transition:ease-in-out 0.3s left;
+        overflow-x: hidden;
+      }
+      .tabel-1-lista-optiuni{
+        margin-left: 1px;
+        padding-top: 10px;
+        position: sticky;
+        margin-top: 60px;
+        width: 260px;
+        padding: 5px;
         align-items: center;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+
+      /* 3rd side navigation configuration */
+      .swipe-bar {
+        position: absolute;
+        top: 10cap; /* Adjusted initial position to the top */
+        left: 0px; /* Moved off-screen initially */
+        width: 40px;
+        height: 100px;
+        background: linear-gradient(to top right, white, #6a6a6a);
+        border-radius: 20px;
+        z-index: 700;
+        cursor: pointer;
+        display: block;
+        transition: left 0.8s ease-in-out; /* Added transition for left movement */
+      }
+      .swipe-bar:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        width: 15px;
+        height: 15px;
+        border-right: 2px solid #000;
+        border-bottom: 2px solid #000;
+      }
+      /* Style for the carousel images */
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: auto;
+        height: 30px;
+        top: 100px;
+        background: none;
+        border-radius: 30px;
+        /* Adjust as needed */
+        margin-left: -20px; 
+        /* Ensure buttons appear above the carousel */
+        z-index: 1; 
+      }
+
+      .carousel-control-next {
+        /* Adjust as needed */
+        right: -20px; 
+        left: auto;
+      }
+
+      /* Styling for the products within the 3rd side navigation */
+      .menu-container {
+        position: fixed;
+        border-radius: 20px;
+        top: 155px;
+        left: -470px;
+        width: 313px;
+        height: 350px;
+        background-color: none;
+        z-index: 1000;
+        transition:ease-in-out 0.3s left;
+        overflow-x: hidden;
+      }
+      .dropdown-content.fade-out {
+        animation: fadeAway 3s ease;
+      }
+
+      .dropdown-content.fade-in {
+        display: inline-block;
+        animation: none;
+      }
+      .dropdown-content {
+        display: none;
+      }
+      .dropdown-content_meniu_1si2{
+        left:42px; 
+        top: 170px;
+        color: #00000005;
+        position: absolute;
+      }
+      .dropdown-content_meniu_1si2 a {
+        padding: 2px 5px;
+        text-decoration: none;
+        font-size: medium;
+        font-weight: lighter;
+        color: #00000005;
+        display: block;
+        transition: 0.3s;
+      }
+      .dropdown-content_meniu_1si2 a:hover {
+        background-color: #ffffff52;
       }
       .image-container {
         position: fixed;
@@ -148,22 +234,37 @@
         z-index: 9999; /* Ensure the container is above other elements */
         cursor: zoom-out; /* Change cursor to zoom-out when hovering over the image */
       }
-      .text-center {
-        text-align: center;
-      }
-      .paragraph-style {
-        background: linear-gradient(to right, #ad7c5e, #613613);
-        color: white;
-        padding: 10px;
-        border-radius: 10px;
-        font-size: medium;
+      .table-container_lista_optiuni {
+        width: 230px;
+        height: 280px;
+        /* Change from relative to absolute */
+        position: absolute; 
+        bottom: 10px;
+        /* Adjust positioning as needed */
+        right: 0; 
+        border-radius: 30px;
+        box-sizing: border-box;
+        /* Adjust margin as needed */
+        margin-top: 0px; 
+        /* Adjust margin as needed */
+        left: 0px;
+        animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
+        background-size: 200% 200%;
+        background: linear-gradient(120deg, white, #6a6a6a);
       }
     </style>
+  </head>
+  
+  <body style="background: linear-gradient(30deg, white, #6a6a6a);">
+    <header style="background: linear-gradient(to top left, #6a6a6a, #ffffff); border: none; border-radius: 25px; margin-bottom: 10px; margin-bottom: 1px; /* margin-top: 50px; */ margin-left: 90px; /* border-style: ; */ padding-top: 10px; width: 320px; height: 350px; z-index: 1004; position: static; overflow: hidden; left: 10px;">
+      <!-- <div style="margin-top:-10px; position: absolute; z-index: 1; width: 100%; height: 400px; background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.159) 20%, rgba(255, 255, 255, 0) 30%, rgba(38, 38, 38, 0) 80%); background-size: 200% 100%; animation: flowWave 3s alternate-reverse infinite;"></div> -->
+      <h1 style="background: linear-gradient(to right, #6a6a6a, white); max-height: 50px; margin-left: 40px; margin-right: 40px; text-align: center; font-weight: bold; font-size: large; width: auto; padding: 10px; position: relative; text-shadow: 1px 1px 2px #6c757d, 0 0 25px #6c757d, 0 0 5px #f8f9fa; border-radius: 25px; border: 1px groove transparent; color: rgb(0, 0, 0);">Big Store Coffee</h1>
       <div class="search-bar">
         <!-- Search input -->
         <input type="text" placeholder="Search..." id="introducere-text-bara-de-cautare-principala" style="resize: none;">
+
         <!-- Rest of your search bar content -->
-        <button type="submit" id="submit-cauta-bara-de-cautare" onclick="submitSearch()">Cauta</button>
+        <button type="submit" id="submit-cauta-bara-de-cautare" onclick="submitSearch()">&#x1F50D</button>
         <div id="searchDropdown" class="dropdown-content"></div>
       </div>
       <script>
@@ -199,16 +300,16 @@
       
           initialize() {
             this.searchBar.addEventListener('input', this.handleSearchInput.bind(this));
-            this.searchBar.style.backgroundColor = 'lightblue';
             // Change width as needed
-            this.searchBar.style.width = '150px'; 
+            this.searchBar.style.width = '200px'; 
 
             // Initialize the dropdown styles
+
             this.searchDropdown.style.visibility = 'hidden'; // Initially hide the dropdown
             this.searchDropdown.style.opacity = '0'; // Initially make the dropdown transparent
             this.searchDropdown.style.position = 'absolute'; 
             this.searchDropdown.style.zIndex = '1000'; // Adjust the z-index value as needed
-            this.searchDropdown.style.background = 'linear-gradient(135deg, #E0FFFF, #ADD8E6, #AFEEEE)';
+            this.searchDropdown.style.background = 'linear-gradient(135deg, #6a6a6a, #ffffff)';
             this.searchDropdown.style.maxWidth = '180px';
             this.searchDropdown.style.top = '50px';
             // this.searchDropdown.style.left = '80px';
@@ -220,8 +321,7 @@
 
             // Apply slow dropdown effect
             this.searchDropdown.style.transition = 'visibility 0s, opacity 1s ease-in-out';
-
-        }
+          }
       
         handleSearchInput() {
           this.searchTerm = this.searchBar.value.trim().toLowerCase();
@@ -268,9 +368,9 @@
         createDropdownItem(product) {
           const dropdownItem = document.createElement('div');
           dropdownItem.classList.add('dropdown-item');
-          dropdownItem.style.border = '2px groove black';
+          dropdownItem.style.border = '1px groove white';
           dropdownItem.style.borderRadius = '30px';
-          dropdownItem.style.margin = '5px 0';
+          dropdownItem.style.margin = '5px 0px';
           dropdownItem.style.padding = '5px';
           dropdownItem.style.backgroundColor = 'white'; // Change background color to white
 
@@ -278,6 +378,10 @@
           productLink.textContent = product.name;
           productLink.href = this.productLinks[product.name];
           productLink.style.textDecoration = 'none';
+          productLink.style.color = 'black';
+          productLink.style.fontWeight = '300';
+          productLink.style.fontSize = 'small';
+
 
           productLink.addEventListener('click', (event) => {
             event.preventDefault();
@@ -288,7 +392,7 @@
           dropdownItem.appendChild(productLink);
 
           return dropdownItem;
-      }
+		    }
 
       
           redirectToProduct(productName, searchTerm) {
@@ -344,12 +448,11 @@
           // Check if the search button and dropdown exist
           if (searchButton && searchDropdown) {
             // Adding the styles of the search button
-            searchButton.style.backgroundColor = 'green';
+            // searchButton.style.backgroundColor = 'green';
             searchButton.style.color = 'white';
             searchButton.style.border = 'none';
-            searchButton.style.padding = '8px 16px';
+            // searchButton.style.padding = '8px 16px';
             searchButton.style.cursor = 'pointer';
-
             // Display the list of products in the dropdown
             searchDropdown.innerHTML = '';
 
@@ -402,310 +505,79 @@
           }
         }
       </script>
-      <style>
-        .arrow-icon {
-          width: 80px;
-          left: 10px; /* Adjusted to position it on the right side */
-          position: fixed;
-          top: 119px;
-          padding-bottom: 100px;
-          transform: translateY(-40%);
-          cursor: pointer;
-          font-size: 20px;
-          background: linear-gradient(to right, #ffffff, #6a6a6a); 
-          padding: 5px;
-          border-radius: 25px 25px 25px 25px; 
-          box-shadow: 2px 2px 20px 2px rgb(255, 255, 255); 
-          z-index: 9599; 
-        }
-        .arrow-icon:hover {
-          background-color: #5f5050;
-          border-radius: 20px; 
-        }
-        .menu-container {
-          position: fixed;
-          border-radius: 20px;
-          top: 155px;
-          left: -470px;
-          width: 313px;
-          height: 350px;
-          background-color: none;
-          z-index: 1000;
-          transition:ease-in-out 0.3s left;
-          overflow-x: hidden;
-        }
-        .close-btn {
-          position: absolute;
-          /* Adjust top position as needed */
-          top: 20px; 
-          /* Adjust right position as needed */
-          right: 40px; 
-          padding: 10px;
-          width: 45px;
-          height: 45px;
-          z-index: 9991;
-          border-radius: 30px;
-          cursor: pointer;
-          font-size: 20px;
-          background: rgb(193, 193, 193);
-        }
-
-      </style>
-      <i class="bi bi-chevron-down arrow-icon" style="margin-bottom: 22px; margin-right: 15px; position: fixed;" onclick="toggleMenu()"></i>
+      <i class="bi bi-chevron-down arrow-icon" onclick="toggleMenu()"></i>
       <div class="menu-container" id="menu">
         <div class="close-btn" onclick="toggleMenu()">&#10006;</div> 
         <!-- Close button -->
-        <script defer>
-          function toggleMenu() {
-            var menu = document.getElementById('menu');
-        
-            if (menu.classList.contains('open')) {
-              // if menu is open, close it
-              menu.classList.remove('open');
-            } else {
-              // if menu is closed, open it
-              menu.classList.add('open');
-            }
-          }
-        
-          function openMenu() {
-            var menu = document.getElementById('menu');
-        
-            if (menu) {
-              menu.classList.add('open');
-            } else {
-              console.error("Menu element not found.");
-            }
-          }
-        
-          function closeMenu() {
-            var menu = document.getElementById('menu');
-        
-            if (menu) {
-              menu.classList.remove('open');
-            } else {
-              console.error("Menu element not found.");
-            }
-          }
-        </script>
-        <style>
-          .table-container_lista_optiuni {
-            width: 290px;
-            height: 330px;
-            /* Change from relative to absolute */
-            position: absolute; 
-            bottom: 10px;
-            /* Adjust positioning as needed */
-            right: 0; 
-            border-radius: 30px;
-            box-sizing: border-box;
-            /* Adjust margin as needed */
-            margin-top: 165px; 
-            /* Adjust margin as needed */
-            left: 1px;
-            animation: flowWaves 4s infinite linear, flowWavesDepth 6s infinite linear;
-            background-size: 200% 200%;
-            background: linear-gradient(120deg, white, #6a6a6a);
-          }
-          .glowing-background {
-            background: linear-gradient(24deg, #f1d9a690 32%rgba(72, 138, 223, 0.524))70%, rgb(143, 40, 14)85%;
-            background-size: 300% 350%;
-            animation: glowing 20s ease-in-out infinite;
-          }
-          .glowing-background:hover {
-            box-shadow: 1px 1px 10px 10px rgb(238, 235, 178);
-          }
-          .tabel-1-lista-optiuni{
-            margin-left: 1px;
-            padding-top: 100px;
-            position: sticky;
-            background-color: linear-gradient(24deg, #c9c9c9 32%, rgb(44, 91, 154)70%,rgb(186, 93, 69)85%);
-            margin-top: 100px;
-            width: 260px;
-            padding: 5px;
-            align-items: center;
-            border-top-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            border-top-right-radius: 30px;
-            border-bottom-left-radius: 30px;
-          }
-          .box-model_produse_vandute_de_top_1 p {
-            background-color: #f5f5f5; /* Light coffee background color */
-            padding: 20px; /* Add padding for better readability */
-            border-radius: 10px; /* Add border-radius for rounded corners */
-            text-align: center;
-          }
-          .th {
-            overflow: hidden; /* Hide overflowing text */
-            white-space: nowrap; /* Prevent text from wrapping */
-            text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
-          }
-        </style>
-        <script>
-          // Add click event listener to each div with class "th"
-          document.querySelectorAll('.th').forEach(function(th) {
-              th.addEventListener('click', function() {
-                  // Find the first <a> element inside the clicked div and navigate to its href
-                  var link = this.querySelector('a');
-                  if (link) {
-                      window.location.href = link.href;
-                  }
-              });
-          });
-        </script>
         <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
           <div class="tabel-1-lista-optiuni" id="upper-side-table-style">
-              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
-                  <div class="th glowing-background" id="tableheader-Despre" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
-                      <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Despre</a>
-                  </div>
+            <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+              <div class="th glowing-background" id="tableheader-Despre" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                  <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Despre</a>
               </div>
-              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
-                  <div class="th glowing-background" id="tableheader-Comenzi" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
-                      <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Comenzi</a>
-                  </div>
+            </div>
+            <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+              <div class="th glowing-background" id="tableheader-Comenzi" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Comenzi</a>
               </div>
-              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
-                  <div class="th glowing-background" id="tableheader-Livrare" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
-                      <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Livrare</a>
-                  </div>
+            </div>
+            <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+              <div class="th glowing-background" id="tableheader-Livrare" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Livrare</a>
               </div>
-              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
-                  <div class="th glowing-background" id="tableheader-Suport" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
-                      <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky; font-weight: bold; font-size: smaller; color: black;">Suport</a>
-                  </div>
+            </div>
+            <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+              <div class="th glowing-background" id="tableheader-Suport" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky; font-weight: bold; font-size: smaller; color: black;">Suport</a>
               </div>
-              <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
-                  <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
-                      <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; font-weight:bold; font-size: smaller; color: black;">Informatii Aditionale</a>
-                  </div>
+            </div>
+            <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+              <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; font-weight:bold; font-size: smaller; color: black;">Informatii Aditionale</a>
               </div>
+            </div>
           </div>
         </div>
-    </header>
-    <script>
-    // Function to hide all forms
-      function hideAllForms() {
-        var forms = document.getElementsByClassName("form-container");
-        for (var i = 0; i < forms.length; i++) {
-          forms[i].style.display = "none";
-        }
-      }
-    </script>
-    <style>
-      #container_scrolling_for_the_side_nav {
-        /* Adjust position to fixed */
-        position: relative; 
-        /* Adjust based on the header's height */
-        top: 240px; 
-        /* Position at the left */
-        left: 0; 
-        /* Ensure it appears below the header */
-        z-index: 9998;
-        width: 300px;
-      }
-    </style>
-    <div id="container_scrolling_for_the_side_nav">
-      <style>
-        .sidenav {
-          height: 300px;
-          width: 220px;
-          position: fixed;
-          z-index: 1;
-          top: 200px;
-          padding-block: 100px;
-          left: 0px;
-          /* Linear gradient background */
-          background: linear-gradient(to bottom, #ffffff, #6a6a6a);
-          /* Adjust direction as needed */ 
-          overflow-x: hidden;
-          padding-top: 60px;
-          transition: 0.3s;
-          max-width: 250px;
-          border-radius: 30px;
-          border: 0px transparent groove;
-          transition: 0.3s;
-        }
-        .sidenav a {
-          padding: 2px;
-          text-align: left;
-          text-decoration: double;
-          border-radius: 30px;
-          font-size: 14px;
-          color: white;
-          background-color: #6a6a6a;
-          font-weight: 600;
-          font-size: medium;
-          display: block;
-          transition: 0.3s;
-          width: 150px;
-          height: 4vh; 
-          border-radius: 30px;
-          margin-top: 10px;
-          border: 2px solid rgba(0, 0, 0, 0.3); /* Light black border */
-        }
-        /* The side navigation menu */
-        /* The navigation menu links */
-        /* When you mouse over the navigation links, change their color */
-        .sidenav a:hover {
-          color: #f1f1f1;
-          border: 1px groove white;
-          border-radius: 30px;
-          border-inline: 3px 2px 2px 2px;
-          animation: pulse 0.3s, infinite alternate-reverse;
-        }
-          /* Highlight the current link */
-        .sidenav a.active {
-          /* background-color: #04aa6d; */
-          color: white;
-        }
-        /* Position and style the close button (top right corner) */
-        .sidenav .closebtn {
-          position: absolute;
-          top: 5px; /* Adjust the top position as needed */
-          right: 5px; /* Adjust the right position as needed */
-          font-size: 25px;
-          width: 30px; /* Adjust the width of the button */
-          height: 30px; /* Adjust the height of the button */
-          border-radius: 50%; /* Make the button circular */
-          background:gray; /* Adjust the background color and opacity */
-          border: none; /* Remove border */
-          color: rgb(0, 0, 0); /* Set text color */
-          text-align: center; /* Center the X sign horizontally */
-          line-height: 30px; /* Center the X sign vertically */
-          cursor: pointer; /* Add cursor pointer on hover */
-          padding: 3px; /* Adjust padding to center the X within the circle */
+        <script>
+      </script>
+      <script>
+        // Script for first sidenavigation
+        function toggleMenu() {
+          var menu = document.getElementById('menu');
+
+          if (menu.style.left === '-470px') {
+            // if menu is closed, open it
+            menu.style.left = '0px';
+          } else {
+            // if menu is open, close it
+            menu.style.left = '-470px';
+          }
         }
 
-        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-        #main {
-          transition: margin-left .5s;
-          padding: 20px;
+        function openMenu() {
+          var menu = document.getElementById('menu');
+
+          if (menu) {
+            menu.classList.add('open');
+          } else {
+            console.error("Menu element not found.");
+          }
         }
-          /* The sidenav */
-          /* Page content */
-        .main {
-          /* Same as the width of the sidenav */
-          margin-left: 200px; 
+
+        function closeMenu() {
+          var menu = document.getElementById('menu');
+          if (menu) {
+            menu.style.left = '-470px';
+          } else {
+            console.error("Menu element not found.");
+          }
         }
-        </style>
+      </script>
+    </header>
+
+    <div id="container_scrolling_for_the_side_nav">
       <div id="mySidenav" class="sidenav">
-        <style>
-        .closebtn {
-          position: absolute;
-          top: 20px;
-          /* Adjusted right position */
-          right: 10px;
-          border: 2px solid black;
-          background-color: gray;
-          width: 30px;
-          height: 60px; 
-          font-size: 20px;
-          cursor: pointer;
-          border-radius: 30px; /* Added border-radius */
-        }
-        </style>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="width: 40px; height: 40px; bottom: 10px; right: 10px; font-size: medium;">✖</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="width: 40px; height: 40px; bottom: 10px; right: 10px;">✖</a>
         <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
         <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
         <a href="http://192.168.100.53:8081/Clients.html" onclick="loadPage()">Clients</a>
@@ -713,560 +585,31 @@
       </div>
     </div>
     <div id="content"></div>
-    <style>
-        .openTriangle {
-          position: sticky;
-          bottom: 8020px;
-          display: inline-block;
-          width: 0px;
-          height: 0px;
-          left: 20px;
-          /* Left side of the triangle */
-          border-left: 25px solid transparent;
-          /* Right side of the triangle */
-          border-right: 25px solid transparent;
-          /* Bottom side of the triangle */
-          border-bottom: 43.3px groove #6a6a6a;
-          /* Change cursor on hover */
-          cursor: pointer;
-          z-index: 8000;
-        }
-       .openText {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 14px;
-          color: black;
-        }
-        .trail {
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-color: rgba(255, 255, 255, 0.368);
-          border-radius: 30px;
-          width: auto;
-          height: auto;
-          opacity: 1;
-          transition: opacity 1ms;
-          z-index: 9999; /* Ensure it appears above other elements */
-        }
-        @keyframes fadeOut {
-          from { opacity: 0.8; }
-          to { opacity: 0; }
-        }
-      </style>
     <div class="openTriangle" onclick="toggleNav()"></div>
       <!-- <span id="triangle">&#9658;</span> -->
     <div id="openText"></div>
-    <script src="your-scripts.js"></script>
-    <script>
-      function toggleNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementById("openText");
-        var openTriangle = document.querySelector(".openTriangle");
-        var main = document.getElementById("main");
-        if (sidenav.classList.contains("sideNavOpen")) {
-          sidenav.classList.remove("sideNavOpen");
-          setTimeout(function () {
-            openText.innerText = "";
-            // right-pointing arrow
-            openTriangle.innerHTML = "";
-          }, 500);
-          main.style.marginLeft = "0px";
-        } else {
-          sidenav.classList.add("sideNavOpen");
-          setTimeout(function () {
-            openText.innerText = "";
-            // left-pointing arrow
-            openTriangle.innerHTML = "";
-          }, 500);
-          // Adjust width if needed
-          sidenav.style.width = "350px";
-          openText.innerText = "";
-          // Change this value if necessary
-          main.style.marginLeft = "250px";
-        }
-      }
-      document.addEventListener('DOMContentLoaded', function () {
-        var sidenav = document.getElementById("mySidenav");
-        var main = document.getElementById("main");
-        var body = document.body;
-        var closeButton = document.querySelector('.closebtn');
-
-        sidenav.classList.remove("sideNavOpen");
-        sidenav.style.width = "0";
-        main.style.marginLeft = "0";
-        body.style.backgroundColor = "white";
-
-        closeButton.addEventListener('click', function () {
-          closeNav();
-        });
-
-        body.addEventListener('click', function (event) {
-          if (event.target !== sidenav && !sidenav.contains(event.target)) {
-            closeNav();
-          }
-        });
-      });
-      function openNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openText = document.getElementById("openText");
-        var openTriangle = document.querySelector(".openTriangle");
-        sidenav.style.top = "30px";
-        sidenav.style.borderRadius = "30px";
-        sidenav.style.marginLeft = "30px";
-        sidenav.style.bottom = "20vw";
-        sidenav.style.height = "auto";
-        sidenav.style.width = "350px";
-        setTimeout(function () {
-          openText.innerText = "close";
-          // left-pointing arrow
-          openTriangle.innerHTML = "";
-        }, 500);
-
-        openText.innerText = "";
-        sidenav.classList.add("sideNavOpen");
-        // Adjust margin if needed
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-      }
-      function closeNav() {
-        var sidenav = document.getElementById("mySidenav");
-        var openTriangle = document.querySelector(".openTriangle");
-        var main = document.getElementById("main");
-
-        if (sidenav.classList.contains("sideNavOpen")) {
-            // Close the navigation menu
-            sidenav.style.width = "0";
-            main.style.marginLeft = "0";
-            document.body.style.backgroundColor = "white";
-            sidenav.classList.remove("sideNavOpen");
-            // Right-pointing arrow
-            openTriangle.innerHTML = "";
-
-            // Reset to main triangle form after a delay
-            setTimeout(function () {
-                // Main triangle form
-                openTriangle.innerHTML = "&#9658;";
-            }, 500);
-        }
-      }
-      function loadForm(formURL, formId) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                if (this.status == 200) {
-                    document.getElementById("content").innerHTML = this.responseText;
-                    // document.getElementById("formId") = this.responseText;
-                    if (formId) {
-                        var form = document.getElementById(formId);
-                        if (form) {
-                          // Add the popup class
-                          form.classList.add("form-container-popup");
-                          form.style.display = "block";
-                          // Adjust width if needed
-                          form.style.minWidth = "220px";
-                          // Adjust height if needed
-                          form.style.height = "auto";
-                          form.style.position = "absolute";
-                          // Adjust top position as required
-                          form.style.top = "185px";
-                          // Adjust right position as required
-                          form.style.right = "100px";
-                          // Close the side navigation menu
-                          closeNav();
-                        } else {
-                          console.error("Form element with id " + formId + " not found.");
-                        }
-                        if (formURL.includes("Logare.html")) {
-                          // If it's the login form, add event listener to the forgot password link
-                          document.getElementById("forgot-password-link").addEventListener("click", function() {
-                            loadForgotPasswordForm();
-                          });
-                      }
-                    }
-                } else {
-                  console.error("Failed to load form. Status code: " + this.status);
-                }
-            }
-        };
-        xhttp.open("GET", formURL, true);
-        xhttp.send();
-      }
-      function showForm(formId) {
-      var forms = document.getElementsByClassName("form-container");
-      for (var i = 0; i < forms.length; i++) {
-        forms[i].style.display = "none";
-      }
-      document.getElementById(formId).style.display = "block";
-      openNav();
-      }
-      function closeForm() {
-        var forms = document.getElementsByClassName("form-container");
-        for (var i = 0; i < forms.length; i++) {
-          forms[i].style.display = "none";
-        }
-      
-      }
-      function loadForgotPasswordForm() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("form-container-1").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "forgot-password.html", true);
-        xhttp.send();
-    }
-    </script>
-    <script>
-      var urls = [
-        'http://192.168.100.53:8081/WebSite/server/' + encodedPath,
-      ];
     
-      function fetchContent(urlIndex) {
-        fetch(urls[urlIndex])
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text();
-          })
-          .then(data => {
-            document.getElementById("content").innerHTML = data;
     
-            // Load additional resources (CSS and JS) if needed
-            loadResourcesForPage(cssLinks);
-    
-            if (formId) {
-              var form = document.getElementById(formId);
-              if (form) {
-                form.style.display = "block";
-                form.style.width = "300px";
-                form.style.height = "auto";
-                form.style.position = "absolute";
-                form.style.top = "50px";
-                form.style.right = "50px";
-              }
-            }
-    
-            // Fetch CSS styles
-            fetchCSS(cssLinks);
-          })
-          .catch(error => {
-            console.error('Error:', error);
-    
-            // If fetching from the current URL fails, try the next one
-            if (urlIndex < urls.length - 1) {
-              fetchContent(urlIndex + 1);
-            }
-          });
-      }
-    
-      // Function to fetch CSS styles
-      function fetchCSS(cssLinks) {
-        cssLinks.forEach(link => {
-          fetch(link)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              return response.text();
-            })
-            .then(css => {
-              var style = document.createElement('style');
-              style.innerHTML = css;
-              document.head.appendChild(style);
-            })
-            .catch(error => {
-              console.error('Error fetching CSS:', error);
-            });
-        });
-      }
-      // Start fetching content from the first URL
-      fetchContent(0);
-    </script>
-    <!-- It is not necessary to load the styles dynamically. Commented out the script below -->
-    <!-- <script>
-      function loadResourcesForPage(links) {
-        // Function to load CSS dynamically
-        function loadCSS(cssPath) {
-          var link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.type = 'text/css';
-          link.href = cssPath;
-          document.head.appendChild(link);
-        }
-    
-        // Iterate through the provided links and load CSS dynamically
-        links.forEach(cssPath => {
-          loadCSS(cssPath);
-        });
-      }
-    
-      var cssLinks = [
-      'http://192.168.100.53:8081/WebSite/public/css/acasa.css',
-      'http://192.168.100.53:8081/public/css/Account-creation.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/afiliati.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/animations.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/bordered_box_produse_vandute_de_top_1.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/bordered_rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/bordered-box.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/box_model_produse_vandute_de_top_1.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/canvas.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Categori-1-tip-lista.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Comenzi.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Contact.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/container_produse_vandute_de_top_1.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/content.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Continut1tiplista.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/continut2tiplista.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/continut3tiplista.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Despre.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/dropdown_container_produse_vandute_de_top_1.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/dropdown_content_meniu_1&2.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/dropdown_content_ordered_list_2.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Echipa.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/footer.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/form.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/image-container_produse_vandute_de_top_1.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/images-animations.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/InformatiiAditionalepage.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Inregistrare-forma-design.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/lists_styles.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Livrare.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Logare-forma-design.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/main.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/Meniu Produse_1_2_3_4_5_6_7_8_9_10.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu_container_produse_de_top.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container_acasa.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container_categories.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container-modified-content.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container3 .modified-dropdown .dropdown-image.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-container3 .modified-dropdown.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu-image.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/menu.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/nav-menu-ul.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/navigation.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/ol_li_a.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/persoane_contact.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/responsive-iframe.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/search-bar.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/selectors.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/side-navigation.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/slideshow-container-style.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/style_canvas.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/support.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/tables.css',
-      'http://192.168.100.53:8081/Plan_Afacere/WebSite/public/css/type-device-style.css',
-      'http://192.168.100.53:8081/public/css/css/ul.css'
-      ];
-    loadResourcesForPage(cssLinks);
-    </script> -->
-    <script>
-      function validateForm() {
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('psw').value;
-        const confirmPassword = document.getElementById('psw-repeat').value;
-    
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          alert('Introduceti o adresa de email valida');
-          return false;
-        }
-    
-        // Validate password length and match
-        if (password.length < 6) {
-          alert('Parola trebuie sa aiba cel putin 6 caractere');
-          return false;
-        }
-      
-        if (password !== confirmPassword) {
-          alert('Parolele nu coincid');
-          return false;
-        }
-      
-        // Submit the form if validation passes
-        return true; 
-      }
-    </script>
-    <style>
-
-      /* .arrow {
-        width: 0;
-        height: 0;
-        border-top: 6px solid transparent;
-        border-bottom: 6px solid transparent;
-        border-right: 9px solid #000;
-        transition: border-right-color 0.3s ease-in-out;
-      } */
-      .arrow:hover {
-        border-right-color: red;
-      }
-      .swipe-bar {
-        position: relative;
-        bottom: 45px;
-        left: 0px;
-        width: 40px;
-        height: 100px;
-        background-color: #ffffff;
-        border-radius: 20px;
-        z-index: 1000;
-        cursor: pointer;
-        display: flex;
-        justify-content: center; /* Center arrow horizontally */
-        align-items: center;
-        padding: 0px 5px;
-      }
-      /* Arrow style */
-      .swipe-bar:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%; /* Initially position arrow in the center */
-        transform: translate(-50%, -50%) rotate(0deg);
-        width: 15px;
-        height: 15px;
-        border-right: 2px solid #000;
-        border-bottom: 2px solid #000;
-        /* Add transition for left movement */
-        transition: left 0.3s ease-in-out, transform 0.3s ease-in-out; 
-      }
-        /* Arrow animation on hover */
-      .swipe-bar:hover:after {
-        left: calc(100% - 15px); /* Move arrow to the right when hovered */
-        transform: translate(-50%, -50%) rotate(90deg);
-      }
-      @keyframes fadeAway {
-        0% { opacity: 1; transform: scale(1); }
-        100% { opacity: 0; transform: scale(2) rotate(360deg); }
-      }
-
-      .dropdown-content.fade-out {
-        animation: fadeAway 3s ease;
-      }
-
-      .dropdown-content.fade-in {
-        display: inline-block;
-        animation: none;
-      }
-      .dropdown-content {
-        display: none;
-      }
-      .dropdown-content_meniu_1si2 {
-        overflow-y: auto;
-        display: none;
-        position: fixed;
-        top: 500px;
-        left: 10px;
-        width: 230px;
-        height: 250px;
-        z-index: 9500;
-        background: linear-gradient(120deg, white, #6a6a6a);
-        border: 1px transparent #000;
-        border-radius: 30px;
-        overflow-x: hidden;
-        padding-top: 60px;
-        /* Set initial opacity to 0 */
-        opacity: 0;
-        /* Set initial visibility to hidden */
-        visibility: hidden;
-        /* Apply transition to opacity and visibility */
-        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-    }
-
-    .dropdown-content_meniu_1si2.open {
-        display: block;
-        /* Change opacity to 1 when menu is open */
-        opacity: 1;
-        /* Change visibility to visible when menu is open */
-        visibility: visible;
-    }
-
-    .dropdown-content_meniu_1si2 a {
-        padding: 10px 8px;
-        text-decoration: none;
-        font-size: medium;
-        font-weight: lighter;
-        color: #00000005;
-        display: block;
-        transition: 0.3s;
-    }
-
-    .dropdown-content_meniu_1si2 a:hover {
-        background-color: #ffffff52;
-    }
-      .open {
-        left: 0px;
-      }
-      .btn-danger{
-        background-color: gray;
-        border-radius: 50px;
-        border: none;
-      }
-
-    </style>
-    <div class="swipe-bar" id="swipeBar">
+    <div class="swipe-bar" id="swipeBar" onclick="openMenu()">
       <div class="arrow"></div>
       <div class="arrow"></div>
       <div class="arrow"></div>
     </div>
     <!-- <div id="swipeArea" style="height: 10vh; background-color: #003d57; width: 20px; height: 100px; border-radius: 30px;"></div> -->
-    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2" style="left: 40px; left: 45px; top: 354px; position: fixed;">
+    <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2">
       <div class="dropdown" style="overflow-anchor: auto; border-radius: 30px; background-color: transparent; max-width: 223px; max-height: 250px;">
           <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
-            <button type="button" class="btn btn-danger close-button" onclick="closeMenu()" style="position: absolute; bottom: 140px; right: 10px; border-radius: 30px;">✖</button>
-            <style>
-                /* Container styles */
-                .container-content-Menu-produse-1,
-                .container-content-Menu-produse-2 {
-                  background: linear-gradient(to bottom, #ffffff, #6a6a6a);
-                  margin-bottom: 10px;
-                  /* Adjust width as needed */
-                  width: 190px; 
-                  /* Adjust height as needed */
-                  height: 20px; 
-                  padding: 2px;
-                  height: 1%;
-                  border: 1px groove rgb(0, 0, 0);
-                  border-radius: 30px;
-                }
-
-                /* Link styles */
-                .container-content-Menu-produse-1 a,
-                .container-content-Menu-produse-2 a {
-                  border-radius: 30px;
-                  bottom: 0;
-                  position: static;
-                  width: 100%;
-                  height: 50px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  text-decoration: none; /* Remove underline */
-                  color: inherit; /* Inherit text color */
-                }
-
-                /* Adjust glowing effect */
-                .container-content-Menu-produse-1 a:active,
-                .container-content-Menu-produse-2 a:active {
-                  box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
-                }
-              </style>
+            <button type="button" class="btn btn-danger close-button" onclick="closeMenu()" style="position: absolute; bottom: 85px; right: 10px; border-radius: 50px; width: 40px; height: 40px; line-height: 30px; font-size: 10px;">✖</button>
               <!-- Container 1 -->
               <div class="container-content-Menu-produse-1">
                   <div class="trail-element">
-                      <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Produse 1</a>
+                      <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html" style="color: #000;">Produse</a>
                   </div>
               </div>
               <!-- Container 2 -->
               <div class="container-content-Menu-produse-2">
                   <div class="trail-element">
-                      <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Produse 2</a>
+                      <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)" style="color: #000;">Produse</a>
                   </div>
               </div>
           </div>
@@ -1274,15 +617,27 @@
     </div>
     <script>
       function openMenu() {
-        document.getElementById("swipeBar").classList.add("open");
-        document.getElementById("dropdown-content-menu-1&2").classList.add("open");
+        var swipeBar = document.getElementById("swipeBar");
+        var dropdownContent = document.getElementById("dropdown-content-menu-1&2");
+        if (swipeBar && dropdownContent) {
+          swipeBar.classList.add("open");
+          dropdownContent.classList.add("open");
+        } else {
+          console.error("One or both elements not found.");
+        }
       }
-  
+
       function closeMenu() {
-        document.getElementById("swipeBar").classList.remove("open");
-        document.getElementById("dropdown-content-menu-1&2").classList.remove("open");
+        var swipeBar = document.getElementById("swipeBar");
+        var dropdownContent = document.getElementById("dropdown-content-menu-1&2");
+        if (swipeBar && dropdownContent) {
+          swipeBar.classList.remove("open");
+          dropdownContent.classList.remove("open");
+        } else {
+          console.error("One or both elements not found.");
+        }
       }
-  
+
       document.addEventListener("DOMContentLoaded", function () {
         var swipeBar = document.getElementById("swipeBar");
         var swipeArea = document.getElementById("swipeArea");
@@ -1291,6 +646,11 @@
         var containers = document.querySelectorAll(".container-content-Menu-produse-1, .container-content-Menu-produse-2");
         var xStart = null;
         var xEnd = null;
+
+        if (!swipeBar || !swipeArea || !dropdownMenu || !dropdownContent) {
+          console.error("One or more elements not found.");
+          return;
+        }
 
         swipeBar.addEventListener("click", openMenu);
         swipeArea.addEventListener("touchstart", handleTouchStart, false);
@@ -1301,116 +661,50 @@
         }
 
         function handleTouchMove(event) {
-            if (!xStart) {
-              return;
-            }
+          if (!xStart) {
+            return;
+          }
 
-            xEnd = event.touches[0].clientX;
-            var xDiff = xStart - xEnd;
-            if (xDiff > 0) { // Swiped to right
-              openMenu();
-            }
+          xEnd = event.touches[0].clientX;
+          var xDiff = xStart - xEnd;
+          if (xDiff > 0) { // Swiped to right
+            openMenu();
+          }
         }
 
         // Close the side navigation when clicking outside the menu
         window.addEventListener("click", function (event) {
-            if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
-              closeMenu();
-            }
+          if (!event.target.closest(".dropdown-content_meniu_1si2") && !event.target.closest("#swipeArea")) {
+            closeMenu();
+          }
         });
 
         // Hide all containers by default and toggle their display on click
         containers.forEach(function (container) {
-            container.style.display = "none";
-            container.addEventListener("click", function () {
-              if (container.style.display === "none" || container.style.display === "") {
-                container.style.display = "block";
-              } else {
-                container.style.display = "none";
-              }
-            });
-        });
-  
-        function createTrail(event, number) {
-            const cursor = document.querySelector(".cursor");
-            const trail = document.createElement('div');
-            trail.classList.add('trail');
-            // Find the respective anchor element based on the number parameter
-            const link = event.target;
-            link.appendChild(trail);
-            // Add a class to apply animation
-            link.classList.add('animated-link')
-            trail.style.left = event.offsetX + 'px';
-            let opacity = 1;
-            const fadeTrail = setInterval(() => {
-                opacity -= -2; // Adjust the decrement value for speed of fade
-                trail.style.opacity = opacity;
-                if (opacity <= 0) {
-                  clearInterval(fadeTrail);
-                  trail.remove();
-                }
-            }, 10); // Adjust the interval for smoother or faster fading
-            // Follow cursor on mousemove within the link
-            link.addEventListener("mousemove", (e) => {
-              let x = e.pageX;
-              let y = e.pageY;
-              cursor.style.top = y + "px";
-              cursor.style.left = x + "px";
-              // Update trail position based on cursor movement
-              trail.style.left = e.pageX - link.offsetLeft + 'px';
-              trail.style.top = e.pageY - link.offsetTop + 'px';
-            });
-        }
-  
-        function removeTrail(link) {
-            // Remove trail element on mouseout
-            const trail = link.querySelector('.trail');
-            if (trail) {
-              trail.remove();
+          container.style.display = "none";
+          container.addEventListener("click", function () {
+            if (container.style.display === "none" || container.style.display === "") {
+              container.style.display = "block";
+            } else {
+              container.style.display = "none";
             }
-            // Remove animation class on mouseout
-            link.classList.remove('animated-link');
-        }
+          });
+        });
       });
-  </script>
-  
-  
-    
-    <style>
-      /* Custom styles for carousel control buttons */
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: auto;
-        height: 30px;
-        top: 100px;
-        background: none;
-        border-radius: 30px;
-        /* Adjust as needed */
-        margin-left: -20px; 
-        /* Ensure buttons appear above the carousel */
-        z-index: 1; 
-      }
-
-      .carousel-control-next {
-        /* Adjust as needed */
-        right: -20px; 
-        left: auto;
-      }
-    </style>
-    
-    <div class="container" style="border: 2px solid #7a7a7a; background-color: #6a6a6a; border-radius: 10px; padding: 20px; margin-top: 280px; max-width: 380px;">
+    </script>
+    <div class="container" style="border: 2px solid #7a7a7a; background-color: #6a6a6a; border-radius: 10px; padding: 20px; margin-top: 0px; max-width: 380px;">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
               <!-- Slide 1 -->
               <div class="carousel-item active">
                   <div class="row align-items-center">
-                      <div class="col-md-4" style="position: static;">
+                      <div class="col-md-4">
                         <div id="imageContainer" class="image-container"></div>
-                            <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="max-width: 100px; max-height: 100px; border-radius: 10px; position: static;">
+                            <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 1" style="width: 80px; height: 80px; border-radius: 50px; position: static;">
                           </a>
-                          <p style="height:100px; color: #666666; font-size: 14px; background-color: white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
+                        <p style="height:100px; color: #666666; font-size: 14px; background-color: white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">În timp ce cafeaua se pregătește cu răbdare, aroma sa se eliberează în aer, îmbrățișând simțurile într-un dans seducător. Aburii calzi se ridică lent din ceașca de porțelan, creând o atmosferă de anticipare plină de mister.</p>
                       </div>
-                      <div class="col-md-8" style="position: static;">
+                      <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
                               <h5 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_1</h5>
                           </div>
@@ -1420,11 +714,11 @@
               <!-- Slide 2 -->
               <div class="carousel-item">
                   <div class="row align-items-center">
-                      <div class="col-md-4" style="position: static;">
+                      <div class="col-md-4">
                         <div id="imageContainer" class="image-container"></div>
-                            <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="max-width: 100px; max-height: 100px; border-radius: 10px; position: static;">
+                            <img src="https://images.unsplash.com/photo-1560876556-353382c038b5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8OXx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 2" style="width: 80px; height: 80px; border-radius: 50px; position: static;">
                           </a>
-                          <p style="height:100px; color: #666; font-size: 14px; background-color: white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
+                        <p style="height:100px; color: #666; font-size: 14px; background-color: white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">Ceașca de cafea aburindă stă în fața ta, emanând o aromă îmbietoare. Lichidul bogat și negru se găsește în interior, gata să-ți îmbrățișeze buzele cu savoarea sa plină de caracter.</p>
                       </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
@@ -1438,13 +732,13 @@
                   <div class="row align-items-center">
                       <div class="col-md-4">
                         <div id="imageContainer" class="image-container"></div>
-                            <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="max-width: 100px; max-height: 100px; border-radius: 10px; position: static;">
+                            <img src="https://images.unsplash.com/photo-1611665858858-610823e0998c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block img-fluid" alt="Slide 3" style="width: 80px; height: 80px; border-radius: 50px; position: static;">
                           </a>
-                          <p style="height:100px; color: #666; font-size: 14px; background-color:white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
+                        <p style="height:100px; color: #666; font-size: 14px; background-color:white; border-radius: 10px; margin-top: 10px; font-size: small; font-weight: 600;">Ceașca mică, așezată grațios pe o farfurioară albă, pare o bijuterie a dimineții. Aroma seducătoare se ridică delicat din lichidul negru, umplând aerul cu promisiunea unei zile pline de vitalitate.</p>
                       </div>
                       <div class="col-md-8">
                           <div class="carousel-caption d-none d-md-block">
-                              <h7 style="color: #333; font-size: 18px; font-weight: bold;">Produs_slide_3</h7>
+                              <h7 style="color: #333; font-size: 18px; font-weight: bold;">Produs slide 3</h7>
                           </div>
                       </div>
                   </div>
@@ -1462,8 +756,8 @@
       </div>
   </div>
   <script>
-  // Function to display the image with smooth zoom effect
-  function displayImage(imageUrl) {
+    // Function to display the image with smooth zoom effect
+    function displayImage(imageUrl) {
       // Create a new container for the image
       var imageContainer = document.createElement('div');
       imageContainer.classList.add('image-container');
@@ -1479,353 +773,134 @@
       // Add the image to the container
       imageContainer.appendChild(img);
 
+      // Create button container
+      var buttonContainer = document.createElement('div');
+      buttonContainer.classList.add('button-container');
+
+      // Style button container
+      // Set background color to transparent blue
+      buttonContainer.style.backgroundColor = 'none'; 
+      buttonContainer.style.width = '130px'; // Set width
+      buttonContainer.style.height = '20px'; // Set height
+      buttonContainer.style.position = 'absolute'; // Set position to absolute
+      buttonContainer.style.top = '10px'; // Align with the top of the image container
+      buttonContainer.style.left = '10px'; // Align with the left of the image container
+      buttonContainer.style.display = 'flex'; // Ensure buttons are horizontally aligned
+      buttonContainer.style.justifyContent = 'center'; // Center buttons horizontally
+      buttonContainer.style.alignItems = 'center'; // Center buttons vertically
+      buttonContainer.style.borderRadius = '10px'; // Add border radius
+      buttonContainer.style.fontWeight = 'small'; // Add border radius
+
+      // Create "Go to Product Page" button
+      var goToProductPageButton = document.createElement('a');
+      // Set your product page URL here
+      goToProductPageButton.href = 'https://google.com'; 
+      goToProductPageButton.textContent = 'Navigheaza';
+      // Add Bootstrap button classes
+      goToProductPageButton.classList.add('btn', 'btn-primary', 'mr-2'); 
+      // Set background color to transparent
+      goToProductPageButton.style.backgroundColor = 'transparent'; 
+      // Set border color to transparent
+      goToProductPageButton.style.borderColor = 'transparent'; 
+      buttonContainer.appendChild(goToProductPageButton);
+
+      // Add the button container to the image container
+      imageContainer.appendChild(buttonContainer);
+
       // Append the container to the body
       document.body.appendChild(imageContainer);
 
-      // Get the clicked image
-      var clickedImage = event.target.closest('.carousel-item').querySelector('.d-block.img-fluid');
-
-      // Calculate the position of the container relative to the clicked image
-      var clickedImageRect = clickedImage.getBoundingClientRect();
-      var containerWidth = imageContainer.offsetWidth;
-      var containerHeight = imageContainer.offsetHeight;
-      var containerTop = clickedImageRect.top + window.scrollY;
-      var containerLeft = clickedImageRect.right;
-
-      // Adjust the position to the right side of the clicked image
-      containerTop += (clickedImageRect.height - containerHeight) / 2;
-      containerLeft += 10; // Adjust as needed to add space between the clicked image and the container
-
-      // Set the initial position of the container to be outside the viewport on the left
-      imageContainer.style.top = containerTop + 'px';
-      imageContainer.style.left = '-100%';
-
-      // Wait for a moment to allow transition effect
-      setTimeout(function() {
-          // Fade in the container
-          imageContainer.classList.add('fade-in');
-          // Slide the container into view from left to right
-          imageContainer.style.left = containerLeft + 'px';
-      }, 10);
-
       // Add event listener to close the image when clicking outside of it or on the image
       imageContainer.addEventListener('click', function(event) {
-          // Slide the container out to the left when closing
-          imageContainer.style.left = '-100%';
-          // Fade out the container while sliding
-          imageContainer.classList.remove('fade-in');
-          setTimeout(function() {
-              // Remove the container after the transition is complete
-              imageContainer.remove();
-          }, 500); // Set the timeout to match the transition duration
+        // Slide the container out to the left when closing
+        imageContainer.style.left = '-100%';
+        // Fade out the container while sliding
+        imageContainer.classList.remove('fade-in');
+        setTimeout(function() {
+          // Remove the container after the transition is complete
+          imageContainer.remove();
+        }, 500); // Set the timeout to match the transition duration
       });
-  }
+    }
 
-  // Add event listeners to all images with the specified class to display them when clicked
-  document.querySelectorAll('.carousel-item .d-block.img-fluid').forEach(function(img) {
+    // Add event listeners to all images with the specified class to display them when clicked
+    document.querySelectorAll('.carousel-item .d-block.img-fluid').forEach(function(img) {
       img.addEventListener('click', function(event) {
-          var imageUrl = this.src;
-          displayImage(imageUrl);
+        var imageUrl = this.src;
+        displayImage(imageUrl);
       });
-  });
+    });
+
+
+
+
+    let slideIndex = 1;
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+
+    // Initial display of slides
+    showSlides(slideIndex);
   </script>
-  
-  
-  
-      <!-- <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; bottom: 0px; left: 10px;" onclick="plusSlides(-1)" >&#10094;</a>
+    <!-- <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; bottom: 0px; left: 10px;" onclick="plusSlides(-1)" >&#10094;</a>
       <a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 60px; bottom: 0px;">&#10095;</a> -->
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
-    <script>
-      let slideIndex = 1;
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-    
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-    
-      function showSlides(n) {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-    
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-    
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-    
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-    
-        for (let i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-    
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-      }
-    
-      // Initial display of slides
-      showSlides(slideIndex);
-      
-    </script>
-    <style>
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-    
-    <nav style="display: grid; border: 1px groove black; border-radius: 30px; background: linear-gradient(to bottom right, rgba(19, 65, 139, 0.553), #ffffff, #00a2ff87); padding-top: 0px; padding-bottom: 100px; top: 20px; margin-top: 130px;">
+    <nav style="display: grid; border: 1px groove black; border-radius: 30px; background: linear-gradient(to bottom right, rgb(255, 255, 255), #6a6a6a); padding-top: 0px; padding-bottom: 100px; top: 20px; margin-top: 130px;">
       <div class="is-mobile-preview"></div>
-      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="position: relative; width: 390px; left:3px; border-radius: 20px; top: 20px; background: rgba(255, 255, 255, 0.307);">
-        <style>
-          #Acasa_menu_container {
-            border: 1px;
-            border-color: #ffffff;
-            border-width: 1px;
-            border-style: groove;
-            border-radius: 20px;
-            /* box-sizing: content-box; */
-            width: 405px;
-            left: 0px;
-            height: 100px;
-            /* margin: 50px; */
-            list-style-type: none;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 200px;
-            margin-top: 50px;
-            background: #6a6a6a;
-            animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 10s infinite alternate-reverse;
-            /* background-size: 200% 200%; */
-          }
-          </style>
+      <div class="bordered-rectangle_for_the_first_3_categories_Acasa_Categorii_Produse_Produse_de_top" id="bordered_rectangle-for-design" style="position: relative; width: 390px; left:3px; border-radius: 20px; top: 20px;">
         <div class="menu-container_acasa" id="Acasa_menu_container">
-          <style>
-            #meniu_ordered_1 {
-              list-style-type: none;
-              text-align: center;
-              border: 0px solid rgb(255 255 255);
-              border-radius: 20px;
-              border-style:solid;
-              box-sizing:border-box;
-              position: sticky;
-              display: block;
-            }
-            .menu-container_acasa .menu-ordered_list_1 {
-              list-style-type: none;
-              text-align: center;
-              border-style:solid;
-              position: sticky;
-              box-sizing:border-box;
-            }
-            </style>
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
               <a rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
-              <style>
-                .menu-ordered_list_1 .dropdown-list_items_1 .dropdown-content_ordered_list_categories {
-                  list-style-type: none;
-                  text-align: center;
-                  /* margin-right: 10px; */
-                  padding-top: 0px;
-                  margin-left: 0px;
-                  margin-right: 0px;
-                  border: 1px #000000;
-                  border-style: solid;
-                  border-radius: 30px;
-                  /* display: flexbox; */
-                  position: absolute;
-                  /* margin-top: 20px; */
-                  min-width: 265px;
-                  box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
-                  z-index: 1;
-                  display: none;
-                }
-                .menu-ordered_list_1:hover .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
-                  display: block;
-                  text-align: center;
-                  /* inline-size: 2px; */
-                  border: 1px #000000 solid;
-                  background-color: white;
-                  list-style-type: none;
-                  margin-top: 80px;
-                  display: block;
-                  text-align: center;
-                  inline-size: 2px;
-                  border: 1px #000000 solid;
-                  list-style-type: none;
-                  margin-top: auto;
-                }
-                /* Apply linear gradient background to the dropdown content */
-                .dropdown-content_ordered_list_categories {
-                  display: none;
-                  position: sticky;
-                  left: 0;
-                  top: calc(100% + 10px);
-                  border: 1px solid #000000;
-                  border-radius: 30px;
-                  min-width: 265px;
-                  box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
-                  background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D); /* Linear gradient with three different colors */
-                  z-index: 1;
-                  left: 50px;
-                  animation: slideIn 0.5s ease; /* Apply animation */
-                }
-                .dropdown-list_items_1:hover .dropdown-content_ordered_list_categories {
-                  display: block;
-                }   
-              </style>  
               <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
-                <style>
-                  .li_continut_1_tip_lista {
-                    background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
-                    padding: 1px;
-                    border: 1px solid black;
-                    border-radius: 30px;
-                    margin: 10px 40px;
-                    height: 40px;
-                    font: menu;
-                  }
-                </style>
-                  <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
-                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse1
-                    </a>
-                  </div>
-                  <style>
-                    .li_continut_2_tip_lista {
-                      background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
-                      padding: 1px;
-                      border: 1px solid black;
-                      border-radius: 30px;
-                      margin: 10px 40px;
-                      height: 40px;
-                      font: menu;
-                    }
-                  </style>
-                  <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
-                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse2
-                    </a>
-                  </div>
-                  <style>
-                    .li_continut_3_tip_lista {
-                      border: 1px solid black;
-                      border-radius: 30px;
-                      margin: 10px 40px;
-                      height: 40px;
-                      font: menu;
-                      /* Apply coffee-themed gradient background */
-                      background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
-                    }
-                  </style>
-                  <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
-                    <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; background-color: #ffed88; border-radius: 20px; margin-top: 20px; max-width: 100px;">Produse3
-                    </a>
-                  </div>
-                </ol>
+                <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
+                  <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse1
+                  </a>
+                </div>
+                <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
+                  <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse2
+                  </a>
+                </div>
+                <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
+                  <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse3
+                  </a>
+                </div>
+              </ol>
             </li>  
           </ol>
         </div>
-        <style>
-          #Menu_Categories {
-            border: 1px solid #ffffff; /* Changed border shorthand for consistency */
-            border-radius: 20px;
-            width: 405px;
-            height: 100px;
-            position: relative;
-            display: inline-block;
-            background: #6a6a6a;
-            animation: flowWaves 4s infinite alternate-reverse, flowWavesDepth 3s infinite alternate-reverse;
-            margin-left: auto;
-            margin-bottom: 200px;
-          }
-        
-          .menu-container_categories .menu-ordered_list_2 {
-            list-style-type: none;
-          }
-        
-          .dropdown-list_items_2 {
-            position: relative;
-            text-align: center;
-          }
-        
-          /* Apply the dropdown animation to the dropdown content */
-          .dropdown_content_ordered_list_2 {
-            display: none;
-            position: absolute;
-            left: 20px;
-            top: 100%; /* Position it below the parent item */
-            border: 1px solid #000000;
-            border-radius: 30px;
-            min-width: 265px;
-            box-shadow: 2px 2px 16px 2px rgb(255, 255, 255);
-            z-index: 1;
-            animation: slideIn 0.5s ease;
-            /* Apply coffee-themed gradient background */
-            background: linear-gradient(to bottom, #8b451378, #a0512d9c, #d2b48c8b);
-          }
-        
-          .dropdown-list_items_2:hover .dropdown_content_ordered_list_2 {
-            display: block; /* Show on hover */
-          }
-        
-          /* Consistent styling for list items and links */
-          .dropdown_content_ordered_list_2 > div {
-            padding: 1px;
-            margin: 10px 40px;
-            height: 40px;
-            font: menu;
-          }
-        
-          .dropdown_content_ordered_list_2 a {
-            text-decoration: wavy blue;
-            text-align: center;
-            background-color: #ffed88;
-            border-radius: 20px;
-            /* Ensure links fill their container */
-            display: block; 
-            /* Center the text vertically */
-            line-height: 40px; 
-          }
-            /* Define keyframes for the dropdown animation */
-          @keyframes dropdownFadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(-10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-            /* Adjust styles for li_categoria_1_lista, li_categoria_2_lista, and li_categoria_3_lista */
-          .li_categoria_1_lista,
-          .li_categoria_2_lista,
-          .li_categoria_3_lista {
-            border: 1px solid black;
-            border-radius: 30px;
-            padding: 1px;
-            margin: 10px 0;
-            height: 40px;
-            font: menu;
-            /* Apply coffee-themed gradient background */
-            background: linear-gradient(to bottom, #8B4513, #A0522D, #D2B48C);
-          }
-        </style>
         <div class="menu-container_categories" id="Menu_Categories">
           <ol class="menu-ordered_list_2" id="meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
@@ -1848,141 +923,27 @@
             </li>
           </ol>
         </div>
-          <style>
-            #menu_produse_top {
-              border: 1px groove #ffffff; /* Changed border shorthand for consistency */
-              border-radius: 20px;
-              width: 405px;
-              height: 100px;
-              position: relative;
-              display: inline-block;
-              background: #6a6a6a;
-              animation: flowWaves 4s infinite alternate-reverse;
-              margin-left: auto;
-              margin-right: 0px;
-            }
-            .menu_container_1_produse_de_top .menu-container_2_ordered_list {
-              list-style-type: none;
-            }
-            .dropdown-continut_lista_1 {
-              position: relative;
-              text-align: center;
-            }
-            .dropdown-continut_lista_1 .dropdown-content_imagini_1 {
-              /* Initially hidden */
-              opacity: 0;
-              /* Fading animation */
-              transition: opacity 0.5s ease-in-out;
-            }
-
-            .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
-              /* Show on hover */
-              opacity: 1; 
-            }
-            .dropdown-content_imagini_1 {
-              display: none;
-              position: absolute;
-              right: 15px;
-              transform: translateX(-50%);
-              top: calc(100% + 10px);
-              padding: 39px;
-              background-blend-mode: color-dodge;
-              background: rgba(255, 255, 255, 0.531);
-              border-radius: 30px;
-              width: 400px;
-              z-index: 1;
-              box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-              animation: fadeIn 0.5s ease-in-out forwards; /* Adjust animation duration as needed */
-            }
-
-            /* Add keyframes for the fadeIn animation */
-            @keyframes fadeIn {
-              from {
-                opacity: 0;
-                transform: translateY(-20px); /* Start from above and move downwards */
-              }
-              to {
-                opacity: 1;
-                transform: translateY(0); /* End at original position */
-              }
-            }
-
-          
-            .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
-              /* Show on hover */
-              display: block; 
-            }
-
-            /* Show the dropdown when hovering over its container */
-            .dropdown-container:hover .dropdown-content_imagini_1 {
-              display: block;
-            }
-          
-            /* Consistent styling for list items and links */
-            .dropdown-content_imagini_1 .dropdown-container {
-              margin-bottom: 20px;
-              width: 230px;
-              height: 260px;
-              background-color: lightsteelblue;
-              text-align: center;
-              padding: 10px;
-              border-radius: 30px;
-
-            }
-            .dropdown-content_imagini_1 img {
-              width: 100%;
-              height: auto;
-              border-radius: 30px;
-              margin-bottom: 10px;
-            }
-            .dropdown-content_imagini_1 a {
-              text-decoration: wavy rgb(196, 196, 255);
-              background-color: #63c6ea;
-              border-radius: 20px;
-              max-width: 110px;
-              padding: 2px 10px;
-              color: #6eb5ff;
-            }
-            .dropdown-content_imagini_1 p {
-              color: #003366;
-              border: 2px solid rgb(255, 255, 255);
-              border-radius: 20px;
-              padding: 2px;
-              background: #084f66;
-              margin: 0;
-            }
-            #container_imagine-dropdown-1 {
-              animation: forwards 0.5s ease 0s forwards;
-            }
-            #container_imagine-dropdown-2 {
-              animation: forwards 0.5s ease 0.5s forwards;
-            }
-
-            #container_imagine-dropdown-3 {
-              animation: forwards 0.5s ease 1s forwards;
-            }
-        </style>
         <div class="menu_container_produse_de_top" id="menu_produse_top">
           <div class="menu_container_1_produse_de_top" id="Produsetop1">
             <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
                 <a style="text-decoration: wavy blue;">Produse de top</a>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
-                    <div class="dropdown-container" id="container_imagine-dropdown-1" style="background: linear-gradient(to right, rgba(255, 204, 110, 0.771), #d2b48c9f, #A0522D);">
+                    <div class="dropdown-container" id="container_imagine-dropdown-1" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.771), #8e8e8e, #ffffff);">
                         <img src="https://images.unsplash.com/photo-1566656117208-c23e67f4ce8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="eager">
                         <em>
                             <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background: linear-gradient(to bottom, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 1</a>
                             <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
                         </em>
                     </div>
-                    <div class="dropdown-container" id="container_imagine-dropdown-2" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
+                    <div class="dropdown-container" id="container_imagine-dropdown-2" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.771), #8e8e8e, #ffffff);">
                         <img src="https://images.unsplash.com/photo-1630248904474-a7927610a5db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="eager">
                         <em>
                             <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM" id="Produsul-de-top-2-primary" style="background: linear-gradient(to right, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 2</a>
                             <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie.</p>
                         </em>
                     </div>
-                    <div class="dropdown-container" id="container_imagine-dropdown-3" style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">
+                    <div class="dropdown-container" id="container_imagine-dropdown-3" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.771), #8e8e8e, #ffffff);">
                         <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="eager">
                         <em>
                             <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" style="background: linear-gradient(to right, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 3</a>
@@ -2037,40 +998,12 @@
                 </div>
               </div>
             </div>
-            <style>
-              /* Style for the ul list */
-              .additional-elements ul {
-                list-style-type: none;
-                padding: 0;
-              }
-            
-              .additional-elements ul li {
-                margin-bottom: 10px;
-                background-color: #ad7c5e; /* Coffee-themed background color */
-                border: 1px groove black; /* 1px groove black border */
-                border-radius: 5px;
-              }
-            
-              /* Style for the anchor tags */
-              .additional-elements ul li a {
-                text-decoration: none;
-                color: #333; /* Change the color as needed */
-                padding: 5px 10px;
-                display: inline-block;
-                transition: background-color 0.3s ease;
-              }
-            
-              .additional-elements ul li a:hover {
-                background-color: #613613; /* Darker shade for hover */
-                color: #fff; /* Text color on hover */
-              }
-            </style>
             <!-- Additional Elements -->
             <div class="additional-elements">
               <div class="row">
                 <div class="col-md-6">
-                  <div class="additional-element" style="background-color: #e6e6e6; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-                    <h4 style="text-align: center; background-color: #d3d3d3; border: 1px groove black; border-radius: 5px; padding: 10px; background-color: wheat; border-radius: 30px;">Recomandări</h4>
+                  <div class="additional-element" style="background-color: #ffffff; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #6a6a6a;">
+                    <h4 style="text-align: center; background-color: #d3d3d3; border: 1px groove black; border-radius: 5px; padding: 10px; background-color: #ffffff; border-radius: 30px;">Recomandări</h4>
                     <ul>
                       <li style="max-width: 250px; border-radius: 30px;"><a href="#item-1" style="text-decoration: wavy; border-radius: 30px;">Item 1</a></li>
                       <li style="max-width: 250px; border-radius: 30px;"><a href="#item-2" style="text-decoration: wavy; border-radius: 30px;">Item 2</a></li>
@@ -2079,8 +1012,8 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="additional-element" style="background-color: #e6e6e6; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-                    <h5 style="text-align: center; background-color: #d3d3d3; border: 1px groove black; border-radius: 5px; padding: 10px; background-color: wheat; border-radius: 30px;">Oferte speciale</h5>
+                  <div class="additional-element" style="background-color: #ffffff; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #6a6a6a;">
+                    <h5 style="text-align: center; background-color: #d3d3d3; border: 1px groove black; border-radius: 5px; padding: 10px; background-color: #ffffff; border-radius: 30px;">Oferte speciale</h5>
                     <ul>
                       <li style="max-width: 250px; border-radius: 30px;"><a href="#special-offer1" style="text-decoration: wavy; border-radius: 30px;">Special Offer 1</a></li>
                       <li style="max-width: 250px; border-radius: 30px;"><a href="#special-offer2" style="text-decoration: wavy; border-radius: 30px;">Special Offer 2</a></li>
@@ -2094,14 +1027,6 @@
         </div>
       </div>
     </div>
-    
-    
-    
-    
-    
-    <style>
-
-    </style>
     <div class="canvas" id="myCanvas">
     </div>
     <div class="canvas-container" id="Informatii-Aditionale-Template-Pentru-Linkuri">
@@ -2142,30 +1067,7 @@
         </div>
       </div>
     </div>
-    
-    
-    <script>
-      // Function to adjust the size of canvas sections based on screen size
-      function adjustCanvasSections() {
-        const canvasContainer = document.getElementById('Informatii-Aditionale-Template-Pentru-Linkuri');
-        const leftCanvas = document.getElementById('leftCanvas');
-        const rightCanvas = document.getElementById('rightCanvas');
-    
-        const containerWidth = canvasContainer.offsetWidth;
-    
-        leftCanvas.style.width = containerWidth / 2 + 'px';
-        rightCanvas.style.width = containerWidth / 2 + 'px';
-      }
-    
-      // Call the adjustCanvasSections function when the window is resized
-      window.addEventListener('resize', adjustCanvasSections);
-    
-      // Call adjustCanvasSections initially to set sizes based on the initial window size
-      adjustCanvasSections();
-    </script>
-    <!-- <script type="text/javascript" src="style.js"></script> -->
     <footer>
-      
       <section style="border: #684b08 solid 3px; max-width: auto; height: 60px; margin-bottom: 20px; margin-top: 700px; border-radius: 10px; background: lightsteelblue; ">
         <button style="width: 80px; margin-top: 0px; margin-left: 10px; margin-right: auto; margin-bottom: auto; border-radius: 20px;">Selecteaza</button>
         <button style="width: 80px; margin-top: 0px; margin-left: 10px; margin-bottom: auto; margin-right: 10px; border-radius: 20px;">Selecteaza</button>
@@ -2174,33 +1076,4 @@
     <canvas style="width: 200px; height: 200px; background: white; border-radius: 30px;">
     </canvas>
   </body>
-  <script>
-    function applyUpDownEffect(startY, currentY) {
-      const diffY = currentY - startY;
-    
-      if (diffY > 0) {
-        document.body.style.transform = `translateY(${diffY}px)`;
-      } else {
-        document.body.style.transform = `translateY(${diffY}px)`;
-      }
-    }
-    
-    function resetTransform() {
-      document.body.style.transform = 'translateY(0)';
-    }
-    
-    document.addEventListener('touchstart', (e) => {
-      startY = e.touches[0].clientY;
-    });
-    
-    document.addEventListener('touchmove', (e) => {
-      const currentY = e.touches[0].clientY;
-      applyUpDownEffect(startY, currentY);
-    });
-    
-    document.addEventListener('touchend', () => {
-      resetTransform();
-    });
-  </script>
-  
 </html>

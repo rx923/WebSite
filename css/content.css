@@ -1,8 +1,0 @@
-@media only screen and (min-width:412px) and (min-height:912px) and (orientation:landscape) {
-    .content {
-        border: 2px; 
-        border-style: solid;
-        color: black; 
-        border-width: 1px;
-    }
-}

@@ -10,7 +10,8 @@
   <style>
     /* Styles for the form container */
     .form-container {
-      position: relative;
+      position: fixed;
+      bottom: 200px;
       width: 100%;
       right: 20px;
       max-width: 280px;
@@ -49,6 +50,8 @@
       margin-bottom: 10px; 
       border: none;
       border-radius: 10px;
+      font-weight: 500;
+      font-size: smaller;
       background-color: #fff; /* Updated to plain white */
       color: #000; /* Changed text color to black for better contrast */
       box-sizing: border-box;
@@ -141,12 +144,12 @@
   </style>
 </head>
 <body>
-  <form action="/register" id="InregistrareForm" class="form-container" method="post" formtarget="_self" style="position: relative; width: 100%; right: 20px; max-width: 280px; max-height: 400px; padding: 20px; background: linear-gradient(135deg, white, #6a6a6a); border-radius: 20px; margin: 0 auto; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); overflow: auto; z-index: 9999;">
+  <form action="/register" id="InregistrareForm" class="form-container" method="post" formtarget="_self" style="position: absolute; width: 100%; left: -30px; max-height: 600px; padding: 20px; background: linear-gradient(135deg, white, #6a6a6a); border-radius: 20px; margin: 0 auto; top: 50px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); overflow: auto; z-index: 9999;">
     <div class="container_pagina_inregistrare">
         <!-- Close button -->
         <span class="close" onclick="closeForm()">&times;</span> 
         <h2>Inregistrare</h2>
-        <p style="border: 3px groove transparent; background-color: #ffffff; border-radius: 20px; padding: 10px; font-size: small;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
+        <p style="border: 3px groove transparent; background-color: #ffffff; border-radius: 20px; padding: 10px; font-size: small; font-weight: 700;">Completeaza campurile de mai jos cu datele personale pentru a crea un cont!</p>
         <label for="email"><b>Email</b></label>
         <input type="email" placeholder="Introdu adresa de Email" name="email" id="email" required>
         <label for="password"><b>Parola</b></label>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation Mockup</title>
+    <!-- Add any necessary CSS files or stylesheets here -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <aside class="main-side-navigation">
+        <div id="container_scrolling_for_the_side_nav">
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="width: 40px; height: 40px; bottom: 10px; right: 10px;">✖</a>
+                <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Logare.html', 'Logheaza-teForm')">Logheaza-te</a>
+                <a href="javascript:void(0)" onclick="loadForm('http://192.168.100.53:8081/Inregistrare.html', 'InregistrareForm')">Inregistrare</a>
+                <a href="http://192.168.100.53:8081/Clients.html" onclick="loadPage()">Clients</a>
+                <a href="Echipa.html" target="_blank" onclick="loadPage('http://192.168.100.53:8081/public/Echipa.html')">Echipa</a>
+            </div>
+        </div>
+        <div id="content"></div>
+        <div class="openTriangle" onclick="toggleNav()"></div>
+        <div class="swipe-bar" id="swipeBar">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+        <div class="dropdown-content_meniu_1si2" id="dropdown-content-menu-1&2" style="left:42px; top: 170px; position: fixed;">
+            <div class="dropdown" style="overflow-anchor: auto; border-radius: 30px; background-color: transparent; max-width: 223px; max-height: 250px;">
+                <div class="dropdown-content" id="dropdown-content-Meniu-produse-1-10" style="display: contents; border: 2px solid blue; border-radius: 20px; width: auto; height: auto; margin-bottom: 100px; background: linear-gradient(50deg, #fff2b226  23%, #01404dde 70%, #ebebeb5c  85%);">
+                    <button type="button" class="btn btn-danger close-button" onclick="closeMenu()" style="position: absolute; bottom: 85px; right: 10px; border-radius: 50px; width: 40px; height: 40px; line-height: 30px; font-size: 10px;">✖</button>
+                    <!-- Container 1 -->
+                    <div class="container-content-Menu-produse-1">
+                        <div class="trail-element">
+                            <a href="http://192.168.100.53:8081/Meniu_Produse_1.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-1" onmouseover="createTrail(event, 1)" onmouseout="removeTrail(this)" type="html">Produse</a>
+                        </div>
+                    </div>
+                    <!-- Container 2 -->
+                    <div class="container-content-Menu-produse-2">
+                        <div class="trail-element">
+                            <a href="http://192.168.100.53:8081/Meniu_Produse_2.html" rel="noopener noreferrer" class="glowing-background" id="meniu-produse-number-2" onmouseover="createTrail(event, 2)" onmouseout="removeTrail(this)">Produse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <i class="bi bi-chevron-down arrow-icon" style="margin-bottom: 22px; margin-right: 15px; position: fixed;" onclick="toggleMenu()"></i>
+        <div class="menu-container" id="menu">
+            <div class="close-btn" onclick="toggleMenu()">&#10006;</div> 
+            <div class="table-container_lista_optiuni" id="tabel-tip-lista-optiuni" class="vibrateBackground">
+                <div class="tabel-1-lista-optiuni" id="upper-side-table-style">
+                    <!-- Your table content here -->
+                    <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                        <div class="th glowing-background" id="tableheader-Despre" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                            <a href="http://192.168.100.53:8081/Despre.html" rel="noopener noreferrer" id="style-first-link-Despre" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Despre</a>
+                        </div>
+                    </div>
+                    <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                        <div class="th glowing-background" id="tableheader-Comenzi" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                            <a href="http://192.168.100.53:8081/Comenzi.html" rel="noopener noreferrer" id="style-second-link-Comenzi" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Comenzi</a>
+                        </div>
+                    </div>
+                    <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                        <div class="th glowing-background" id="tableheader-Livrare" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                            <a href="http://192.168.100.53:8081/Livrare.html" rel="noopener noreferrer" id="style-third-link-Livrare" style="position: -webkit-sticky; font-weight:bold; font-size: smaller; color: black;">Livrare</a>
+                        </div>
+                    </div>
+                    <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                        <div class="th glowing-background" id="tableheader-Suport" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                            <a href="http://192.168.100.53:8081/Suport.html" rel="noopener noreferrer" id="style-fourth-link-Suport" style="position: -webkit-sticky; font-weight: bold; font-size: smaller; color: black;">Suport</a>
+                        </div>
+                    </div>
+                    <div class="tr" style="background: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; border-radius: 30px;">
+                        <div class="th glowing-background" id="tableheader-Informatii-Aditionale" style="background-color: linear-gradient(to bottom, #ffffff, #6a6a6a); width: 220px; position: -webkit-sticky; padding: 5px; border-radius: 30px; border: 2px solid rgba(0, 0, 0, 0.3); margin-bottom: 2px; font-weight: lighter; font-size: medium;">
+                            <a href="http://192.168.100.53:8081/Informatii_Aditionale.html" rel="noopener noreferrer-Informatii-Aditionale" style="position: relative; font-weight:bold; font-size: smaller; color: black;">Informatii Aditionale</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Add any necessary JavaScript files or scripts here -->
+    <script src="script.js"></script>
+</body>
+</html>
