@@ -15,10 +15,12 @@ authentication_flow:
 
 - step: Authenticate user
   action: Verify username and password
+  message: Return 200 success server side and redirect to the corresponding page
   error_handling: Return 401 status code with error message if authentication fails
 
 - step: Generate authentication token
   action: Create JWT token for authenticated user
+  message: Map token to unique user ID
   error_handling: Return 500 status code with error message if token generation fails
 
 
@@ -28,8 +30,10 @@ authentication_flow:
 
 - step: Map session to user
   action: Associate the session ID with the user ID in the session table
+  message: Return successful server side mapping of the session mapped to the user.
   error_hadling: Return 500 status code with error message if mapping fails
 
 - step: Redirect to logged_in.html
-  action: Redirect the user to the logged_in.html page
+  action: Redirect the user to the Account.html page
+  message: Action's and responses to log user related redirections not yet configured. However will consider adding additional responses. 
   error_handling: Retunr 500 status code with error message if redirection fails.

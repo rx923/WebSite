@@ -76,7 +76,9 @@ async function registerUser(req, res, username, email, hashedPassword, userDetai
 
         if (existingEmailUser || existingUsernameUser) {
             throw new Error('Account with this email address or username already exists.');
+        
         }
+
 
         let profilePictureInfo = null;
 
@@ -183,7 +185,7 @@ const authController = {
                 // Store token in database with expiration time
                 await storeTokenInDatabase(req.sessionID, result.user.id, token, expire);
                 // Redirect the user to the logged-in page
-                return res.redirect('/logged_in.html');
+                return res.redirect('/Account.html');
             }
         } catch (error) {
             console.error('Error logging in:', error);
