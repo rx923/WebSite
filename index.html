@@ -758,119 +758,143 @@
   <script>
     // Function to display the image with smooth zoom effect
     function displayImage(imageUrl) {
-      // Create a new container for the image
-      var imageContainer = document.createElement('div');
-      imageContainer.classList.add('image-container');
-
-      // Create a new image element
-      var img = document.createElement('img');
-      img.src = imageUrl;
-      img.classList.add('zoom-in'); // Add zoom-in class for the smooth zoom effect
-
-      // Add rounded border to the image
-      img.style.borderRadius = '20px';
-
-      // Add the image to the container
-      imageContainer.appendChild(img);
-
-      // Create button container
-      var buttonContainer = document.createElement('div');
-      buttonContainer.classList.add('button-container');
-
-      // Style button container
-      // Set background color to transparent blue
-      buttonContainer.style.backgroundColor = 'none'; 
-      buttonContainer.style.width = '130px'; // Set width
-      buttonContainer.style.height = '20px'; // Set height
-      buttonContainer.style.position = 'absolute'; // Set position to absolute
-      buttonContainer.style.top = '10px'; // Align with the top of the image container
-      buttonContainer.style.left = '10px'; // Align with the left of the image container
-      buttonContainer.style.display = 'flex'; // Ensure buttons are horizontally aligned
-      buttonContainer.style.justifyContent = 'center'; // Center buttons horizontally
-      buttonContainer.style.alignItems = 'center'; // Center buttons vertically
-      buttonContainer.style.borderRadius = '10px'; // Add border radius
-      buttonContainer.style.fontWeight = 'small'; // Add border radius
-
-      // Create "Go to Product Page" button
-      var goToProductPageButton = document.createElement('a');
-      // Set your product page URL here
-      goToProductPageButton.href = 'https://google.com'; 
-      goToProductPageButton.textContent = 'Navigheaza';
-      // Add Bootstrap button classes
-      goToProductPageButton.classList.add('btn', 'btn-primary', 'mr-2'); 
-      // Set background color to transparent
-      goToProductPageButton.style.backgroundColor = 'transparent'; 
-      // Set border color to transparent
-      goToProductPageButton.style.borderColor = 'transparent'; 
-      buttonContainer.appendChild(goToProductPageButton);
-
-      // Add the button container to the image container
-      imageContainer.appendChild(buttonContainer);
-
-      // Append the container to the body
-      document.body.appendChild(imageContainer);
-
-      // Add event listener to close the image when clicking outside of it or on the image
-      imageContainer.addEventListener('click', function(event) {
-        // Slide the container out to the left when closing
+        // Create a new container for the image
+        var imageContainer = document.createElement('div');
+        imageContainer.classList.add('image-container');
+  
+        // Create a new image element
+        var img = document.createElement('img');
+        img.src = imageUrl;
+        img.classList.add('zoom-in'); // Add zoom-in class for the smooth zoom effect
+  
+        // Add rounded border to the image
+        img.style.borderRadius = '20px';
+  
+        // Add the image to the container
+        imageContainer.appendChild(img);
+  
+        // Create button container
+        var buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button-container');
+  
+        // Style button container
+        // Set background color to transparent blue
+        buttonContainer.style.backgroundColor = 'none'; 
+        buttonContainer.style.width = '130px'; // Set width
+        buttonContainer.style.height = '20px'; // Set height
+        buttonContainer.style.position = 'absolute'; // Set position to absolute
+        buttonContainer.style.top = '10px'; // Align with the top of the image container
+        buttonContainer.style.left = '10px'; // Align with the left of the image container
+        buttonContainer.style.display = 'flex'; // Ensure buttons are horizontally aligned
+        buttonContainer.style.justifyContent = 'center'; // Center buttons horizontally
+        buttonContainer.style.alignItems = 'center'; // Center buttons vertically
+        buttonContainer.style.borderRadius = '10px'; // Add border radius
+        buttonContainer.style.fontWeight = 'small'; // Add border radius
+  
+        // Create "Go to Product Page" button
+        var goToProductPageButton = document.createElement('a');
+        // Set your product page URL here
+        goToProductPageButton.href = 'https://google.com'; 
+        goToProductPageButton.textContent = 'Navigheaza';
+        // Add Bootstrap button classes
+        goToProductPageButton.classList.add('btn', 'btn-primary', 'mr-2'); 
+        // Set background color to transparent
+        goToProductPageButton.style.backgroundColor = 'transparent'; 
+        // Set border color to transparent
+        goToProductPageButton.style.borderColor = 'transparent'; 
+        buttonContainer.appendChild(goToProductPageButton);
+  
+        // Add the button container to the image container
+        imageContainer.appendChild(buttonContainer);
+  
+        // Append the container to the body
+        document.body.appendChild(imageContainer);
+  
+        // Get the clicked image
+        var clickedImage = event.target.closest('.carousel-item').querySelector('.d-block.img-fluid');
+  
+        // Calculate the position of the container relative to the clicked image
+        var clickedImageRect = clickedImage.getBoundingClientRect();
+        var containerWidth = imageContainer.offsetWidth;
+        var containerHeight = imageContainer.offsetHeight;
+        var containerTop = clickedImageRect.top + window.scrollY;
+        var containerLeft = clickedImageRect.right;
+  
+        // Adjust the position to the right side of the clicked image
+        containerTop += (clickedImageRect.height - containerHeight) / 2;
+        containerLeft += 10; // Adjust as needed to add space between the clicked image and the container
+  
+        // Set the initial position of the container to be outside the viewport on the left
+        imageContainer.style.top = containerTop + 'px';
         imageContainer.style.left = '-100%';
-        // Fade out the container while sliding
-        imageContainer.classList.remove('fade-in');
+  
+        // Wait for a moment to allow transition effect
         setTimeout(function() {
-          // Remove the container after the transition is complete
-          imageContainer.remove();
-        }, 500); // Set the timeout to match the transition duration
-      });
-    }
-
+            // Fade in the container
+            imageContainer.classList.add('fade-in');
+            // Slide the container into view from left to right
+            imageContainer.style.left = containerLeft + 'px';
+        }, 10);
+  
+        // Add event listener to close the image when clicking outside of it or on the image
+        imageContainer.addEventListener('click', function(event) {
+            // Slide the container out to the left when closing
+            imageContainer.style.left = '-100%';
+            // Fade out the container while sliding
+            imageContainer.classList.remove('fade-in');
+            setTimeout(function() {
+                // Remove the container after the transition is complete
+                imageContainer.remove();
+            }, 500); // Set the timeout to match the transition duration
+        });
+      }
+  
     // Add event listeners to all images with the specified class to display them when clicked
     document.querySelectorAll('.carousel-item .d-block.img-fluid').forEach(function(img) {
-      img.addEventListener('click', function(event) {
-        var imageUrl = this.src;
-        displayImage(imageUrl);
-      });
+        img.addEventListener('click', function(event) {
+            var imageUrl = this.src;
+            displayImage(imageUrl);
+        });
     });
-
-
-
-
-    let slideIndex = 1;
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-
-    // Initial display of slides
-    showSlides(slideIndex);
   </script>
+  <script>
+      let slideIndex = 1;
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+    
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+    
+      function showSlides(n) {
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+    
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+    
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+    
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+    
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+    
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    
+      // Initial display of slides
+      showSlides(slideIndex);
+      
+    </script>
     <!-- <a class="prev" style="position: sticky; border: 3px groove black;background: rgb(59, 122, 238);border-radius: 20px; bottom: 0px; left: 10px;" onclick="plusSlides(-1)" >&#10094;</a>
       <a class="next" onclick="plusSlides(1)" style="position: sticky;border: 3px groove black;border-radius: 20px;background: rgb(59, 122, 238);left: 60px; bottom: 0px;">&#10095;</a> -->
       <span class="dot" onclick="currentSlide(1)"></span>
@@ -883,7 +907,7 @@
         <div class="menu-container_acasa" id="Acasa_menu_container">
           <ol class="menu-ordered_list_1" id="meniu_ordered_1">
             <li class="dropdown-list_items_1" id="continut_clasa_dropdown0">
-              <a rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="text-decoration: wavy blue;">Acasa</a>
+              <a rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="font-weight: bold; font-size: medium;">Acasa</a>
               <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
                 <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
                   <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse1
@@ -904,7 +928,7 @@
         <div class="menu-container_categories" id="Menu_Categories">
           <ol class="menu-ordered_list_2" id="meniu_ordered_2">
             <li class="dropdown-list_items_2" id="continut_clasa_dropdown_1">
-              <a style="text-decoration: wavy blue;">Categorii Produse
+              <a style="font-weight: bold; font-size: medium;">Categorii Produse
                 <ol class="dropdown_content_ordered_list_2" id="Categorii_Produse_1_dropdown"> 
                   <div class="li_categoria_1_lista" id="Categoria_1_tip_lista">
                     <a href="http://192.168.100.53:8081/Categoria-1-tip-lista.html" rel="noopener noreferrer" style="text-decoration: wavy blue;">Category 1
@@ -927,27 +951,27 @@
           <div class="menu_container_1_produse_de_top" id="Produsetop1">
             <ol class="menu-container_2_ordered_list" id="Menu-Produse-de-top-1">
               <li class="dropdown-continut_lista_1" id="continut-lista-dropdown">
-                <a style="text-decoration: wavy blue;">Produse de top</a>
+                <a style="font-weight: bold; font-size: medium;">Produse de top</a>
                   <div class="dropdown-content_imagini_1" id="dropdown-content-images1">
                     <div class="dropdown-container" id="container_imagine-dropdown-1" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.771), #8e8e8e, #ffffff);">
                         <img src="https://images.unsplash.com/photo-1566656117208-c23e67f4ce8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee1" loading="eager">
                         <em>
                             <a href="https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-qJlGIllS0Zg" id="Produsul-de-top-1-primary" style="background: linear-gradient(to bottom, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 1</a>
-                            <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
+                            <p style="background: linear-gradient(to right, white, #6a6a6a); font-size: small; font-weight: bold;">Capsulele de cafea de top oferă o intensitate remarcabilă și o aromă excepțională, reprezentând echilibrul perfect între forță și rafinament.</p>
                         </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-2" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.771), #8e8e8e, #ffffff);">
                         <img src="https://images.unsplash.com/photo-1630248904474-a7927610a5db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee2" loading="eager">
                         <em>
                             <a href="https://unsplash.com/photos/white-ceramic-mug-with-coffee-J6MtKLtX5HM" id="Produsul-de-top-2-primary" style="background: linear-gradient(to right, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 2</a>
-                            <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie.</p>
+                            <p style="background: linear-gradient(to right, white, #6a6a6a); font-size: small; font-weight: bold;">Produsul nostru de top pentru Ice Coffee este o explozie răcoritoare de savoare și energie.</p>
                         </em>
                     </div>
                     <div class="dropdown-container" id="container_imagine-dropdown-3" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.771), #8e8e8e, #ffffff);">
                         <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width: 50px; height: 50px; border-radius: 30px;" alt="Coffee3" loading="eager">
                         <em>
                             <a href="https://unsplash.com/photos/clear-glass-mug-with-whip-cream-on-top--DRC1OsqoiU" id="Produsul-de-top-3-primary" style="background: linear-gradient(to right, #f0f0f0, #e0e0e0, #d0d0d0);">Produsul de top 3</a>
-                            <p style="background: linear-gradient(to right, #F5DEB3, #D2B48C, #A0522D);">Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase.</p>
+                            <p style="background: linear-gradient(to right, white, #6a6a6a); font-size: small; font-weight: bold;">Intră în universul răcoritor al frappucino-ului cu scorțișoară și gheață, o combinație irezistibilă de arome intense și texturi cremoase.</p>
                         </em>
                     </div>
                 </div>

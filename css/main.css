@@ -197,25 +197,20 @@ opacity: 0;
 /* Fading animation */
 transition: opacity 0.5s ease-in-out;
 }
-
-.dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
-/* Show on hover */
-opacity: 1; 
-}
 .dropdown-content_imagini_1 {
-display: none;
-position: absolute;
-right: 15px;
-transform: translateX(-50%);
-top: calc(100% + 10px);
-padding: 39px;
-background-blend-mode: color-dodge;
-background: rgb(114, 114, 114);
-border-radius: 30px;
-width: 400px;
-z-index: 1;
-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-animation: fadeIn 0.5s ease-in-out forwards; /* Adjust animation duration as needed */
+    display: none;
+    position: absolute;
+    left: 0px;
+    transform: translateX(-50%);
+    top: calc(100% + 10px);
+    padding: 20px;
+    background-blend-mode: color-dodge;
+    background: rgb(114, 114, 114);
+    border-radius: 30px;
+    width: 270px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out forwards; /* Adjust animation duration as needed */
 }
 
 /* Add keyframes for the fadeIn animation */
@@ -230,8 +225,9 @@ to {
 }
 }
 .dropdown-continut_lista_1:hover .dropdown-content_imagini_1 {
-/* Show on hover */
-display: block; 
+    /* Show on hover */
+    display: block; 
+    opacity: 1; 
 }
 /* Show the dropdown when hovering over its container */
 .dropdown-container:hover .dropdown-content_imagini_1 {
@@ -254,20 +250,21 @@ border-radius: 30px;
 margin-bottom: 10px;
 }
 .dropdown-content_imagini_1 a {
-text-decoration: wavy rgb(196, 196, 255);
-background-color: #63c6ea;
-border-radius: 20px;
-max-width: 110px;
-padding: 2px 10px;
-color: #6eb5ff;
+    text-decoration: wavy rgb(196, 196, 255);
+    background-color: #63c6ea;
+    border-radius: 20px;
+    max-width: 110px;
+    padding: 2px 10px;
+    color: #6a6a6a;
+    font-weight: 500;
+    font-size: small;
 }
 .dropdown-content_imagini_1 p {
-color: #003366;
-border: 2px solid rgb(255, 255, 255);
-border-radius: 20px;
-padding: 2px;
-background: #084f66;
-margin: 0;
+    color: black;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 2px;
+    margin: 0;
 }
 #container_imagine-dropdown-1 {
 animation: forwards 0.5s ease 0s forwards;
