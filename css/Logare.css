@@ -1,0 +1,151 @@
+@media only screen and (min-width:412px) and (min-height:915px) {
+    /* Close button style */
+    .close-btn {
+        position: absolute;
+        width: 40px; /* Adjusted width */
+        height: 40px; /* Adjusted height */
+        text-align: center;
+        border: none; /* Removed border */
+        border-radius: 50%; /* Make the button circular */
+        background-color: #008bd0; /* Changed background color */
+        color: white; /* Set text color */
+        cursor: pointer;
+        z-index: 9999;
+        /* Center the button */
+        top: 10px;
+        right: 10px;
+        /* Center the X sign vertically */
+        line-height: 20px; 
+    }
+    /* Form container style */
+    #Logheaza-teForm {
+        position: absolute;
+        top: 230px;
+        right: 0px;
+        left: 100px;
+        display: block;
+        width: 230px;
+        /* Adjusted maximum height */
+        max-height: 320px; 
+        background: linear-gradient(135deg, white, #6a6a6a);
+        border-radius: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        /* display: inline-block; */
+        padding: 10px;
+        z-index: 9999;
+    }
+    /* Input box style */
+    #Logheaza-teForm input[type="text"],
+    #Logheaza-teForm input[type="password"] {
+        width: 180px; /* Adjusted maximum width */
+        padding: 5px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 20px;
+        background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359);
+        box-shadow: 2px 2px 5px white, 4px 4px 5px #6a6a6a, 6px 6px 5px white; /* Added box shadow with multiple colors */
+    }
+
+    /* Additional styling for labels and buttons */
+    #Logheaza-teForm label {
+        border-radius: 30px;
+        padding: 0px;
+        margin-bottom: 10px;
+        background-color: transparent; /* Adjusted background color */
+    }
+
+    #Logheaza-teForm button[type="submit"] {
+        background: linear-gradient(to bottom, white, #6a6a6a);
+        border-radius: 20px;
+        padding: 15px 10px;
+        margin-top: 20px;
+        border: none;
+        cursor: pointer;
+        width: auto;
+    }
+}
+
+/* Container styles */
+.dropdown-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+/* Dropdown button styles */
+.dropdown-btn {
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f8f9fa;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Dropdown content links styles */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+/* Show dropdown content on hover */
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+.container {
+    bottom: 32px;
+    position: relative;
+    max-width: 250px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.error-message {
+    background-color: #f8d7da; /* Red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Red border */
+    padding: 15px;
+    border-radius: 30px;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 250px;
+        max-height: 150px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 90%; /* Adjust as needed */
+        max-height: auto;
+        border-radius: 15px;
+    }
+}

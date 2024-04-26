@@ -1,263 +1,75 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="http://192.168.100.53:8081">
-    <title>Pagina Logare</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-    <!-- <link rel="stylesheet" href="http://192.168.100.53:8081/css/form.css" type="text/css" media="screen"> -->
-    <style>
-        @media only screen and (min-width:412px) and (min-height:915px) {
-        /* Close button style */
-        .close-btn {
-            position: absolute;
-            width: 40px; /* Adjusted width */
-            height: 40px; /* Adjusted height */
-            text-align: center;
-            border: none; /* Removed border */
-            border-radius: 50%; /* Make the button circular */
-            background-color: #008bd0; /* Changed background color */
-            color: white; /* Set text color */
-            cursor: pointer;
-            z-index: 9999;
-            /* Center the button */
-            top: 10px;
-            right: 10px;
-            /* Center the X sign vertically */
-            line-height: 20px; 
-        }
-        /* Form container style */
-        #Logheaza-teForm {
-            position: absolute;
-            top: 230px;
-            right: 0px;
-            left: 100px;
-            display: block;
-            width: 230px;
-            /* Adjusted maximum height */
-            max-height: 320px; 
-            background: linear-gradient(135deg, white, #6a6a6a);
-            border-radius: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            padding: 10px;
-            z-index: 9999;
-        }
-        /* Input box style */
-        #Logheaza-teForm input[type="text"],
-        #Logheaza-teForm input[type="password"] {
-            width: 180px; /* Adjusted maximum width */
-            padding: 5px;
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 20px;
-            background: linear-gradient(20deg, #7dadce94, #4cb6ffa8, #3995d359);
-            box-shadow: 2px 2px 5px white, 4px 4px 5px #6a6a6a, 6px 6px 5px white; /* Added box shadow with multiple colors */
-        }
-
-        /* Additional styling for labels and buttons */
-        #Logheaza-teForm label {
-            border-radius: 30px;
-            padding: 0px;
-            margin-bottom: 10px;
-            background-color: transparent; /* Adjusted background color */
-        }
-
-        #Logheaza-teForm button[type="submit"] {
-            background: linear-gradient(to bottom, white, #6a6a6a);
-            border-radius: 20px;
-            padding: 15px 10px;
-            margin-top: 20px;
-            border: none;
-            cursor: pointer;
-            width: auto;
-        }
-    }
-
-    /* Container styles */
-    .dropdown-container {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 9999;
-    }
-
-    /* Dropdown button styles */
-    .dropdown-btn {
-        background-color: #f8f9fa;
-        color: #212529;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-    }
-
-    /* Dropdown content styles */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f8f9fa;
-        min-width: 160px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-    /* Dropdown content links styles */
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        cursor: pointer;
-    }
-
-    /* Show dropdown content on hover */
-    .dropdown-container:hover .dropdown-content {
-        display: block;
-    }
-    .container {
-        bottom: 32px;
-        position: relative;
-        max-width: 250px;
-        border-radius: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .error-message {
-        background-color: #f8d7da; /* Red background */
-        color: #721c24; /* Dark red text */
-        border: 1px solid #f5c6cb; /* Red border */
-        padding: 15px;
-        border-radius: 30px;
-    }
-
-    /* Media Query for smaller screens */
-    @media only screen and (max-width: 768px) {
-        .container {
-            max-width: 250px;
-            max-height: 150px;
-            border-radius: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-    }
-    /* Media Query for smaller screens */
-    @media only screen and (max-width: 768px) {
-        .container {
-            max-width: 90%; /* Adjust as needed */
-            max-height: auto;
-            border-radius: 15px;
-        }
-    }
-
-    </style>
-  </head>
-  <div id="errorContainer" style="display: none;"></div>
-
-
-
-<body>
-    <div id="popup" style="display: none;">
-        <div class="container" id="errorContainer">
-            <div class="error-message"></div>
-        </div>
-    </div>
-    <!-- This Container will need to be displayed to the user if the user has entered a wrong username. Dispalying this container witht he required styling applied to it. -->
-    <!-- Container for incorrect username -->
-    <div class="container" id="incorrectUsernameContainer" style="display: none;">
-        <div class="error-message">
-            <h1>Incorrect Username</h1>
-            <p>The username you entered is incorrect. Please try again.</p>
-            <a href="/index.html" class="btn btn-primary">Go back to login page</a>
-        </div>
-    </div>
-    <!-- This Container will need to be displayed to the user if the user has entered a wrong password. Dispalying this container witht he required styling applied to it. -->
-    <!-- Container for incorrect password -->
-    <div class="container" id="incorrectPasswordContainer" style="display: none;">
-        <div class="error-message">
-            <h1>Incorrect Password</h1>
-            <p>The password you entered is incorrect. Please try again.</p>
-            <a href="/index.html" class="btn btn-primary">Go back to login page</a>
-        </div>
-    </div>
-    <!-- This Container will need to be displayed to the user if the user has entered a wrong username & password however there is another page configured for displaying the required error message. Dispalying this container witht he required styling applied to it. -->
-    <!-- Dropdown container -->
-    <div class="dropdown-container" style="display: none;">
-        <div class="dropdown-content">
-            <p id="usernameError" style="display: none;"></p>
-            <p id="passwordError" style="display: none;"></p>
-            <!-- Adding container for bothError -->
-            <p id="bothError" style="display: none;"></p>
-        </div>
-    </div>
-
-
-    <form action="/login" id="Logheaza-teForm" method="post" class="form-container" style="width: 280px; position: absolute; top: 230px; right: 0px; left: 0px; display: block; max-height: 520px; background: linear-gradient(135deg, white, #6a6a6a); display: inline-block; padding: 20px; z-index: 9999; border-radius: 30px;" autocomplete="on">
-        <!-- Close button -->
-        <div class="close-btn" onclick="closeForm()" style="position: absolute; text-align: center; right: 20px; top: 2px; font-size: medium; font-weight: bold; border-radius: 50%; background-color: #6a6a6a; cursor: pointer; z-index: 9999;">&times;</div>
-        <div class="imgcontainer">
-            <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" type="img" media="all" alt="Avatar" class="img" style="height: 31px; width: 31px;" loading="lazy">
-        </div>
-        <div class="container-pagina-logare" id="form-container-1" style="width: 240px; background-color: #6a6a6a; border-radius: 20px; padding: 10px; height: 350px;">
-            <label for="uname" style="margin-bottom: 5px; font-family: system-ui; display: block;">
-                <b style="background: linear-gradient(20deg, white, #6a6a6a); border-radius: 30px; padding: 5px; border: 1px groove none; text-align: center; bottom: 10px;">Utilizator:</b>
-                <input type="text" placeholder="Username/ User" id="username" name="username" autocomplete="username" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, white, #6a6a6a); height: 20px; font-size: small;">
-            </label>
-            <label for="password" style="margin-bottom: 5px; font-family: system-ui; display: block;">
-                <b style="background: linear-gradient(20deg, white, #6a6a6a); border-radius: 20px; padding: 5px; border: 1px groove none; text-align: center; margin-bottom: 5px;">Parola:</b>
-                <input type="password" id="password" name="password" accept="file" placeholder="Scrie Parola" autocomplete="current-password" required="true" style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, white, #6a6a6a); height: 20px; font-size: small;">
-            </label>
-            <button type="submit" id="submit-button-form" style="background: linear-gradient(to bottom, white, #6a6a6a); border-radius: 20px; padding: 10px 5px; margin-bottom: 10px; border: none; cursor: pointer; width: 100%;">Logheaza-te</button>
-            <label for="password" style="margin-bottom: 5px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; display: block;  background-color: transparent; border-radius: 30px; font-size: small; text-align: center; font-weight: 600; border: 1px solid white;">
-                <input type="checkbox" accept="file" checked="checked" name="remember" style="margin-right: 5px; margin-top: 15px;">Memoreaza informatiile de conectare.
-            </label>
-        </div>
-        <div class="container" id="container_for_Cancel&Forgotten_Password" style="background: linear-gradient white; border-radius: 9px; margin-bottom: 10px; width: 190px; padding: 2px; cursor: pointer; height: 30px;">
-            <!-- <button type="button" class="cancelbtn" style="border-radius: 10px; background-color: rgb(255, 255, 255); margin-bottom: 1px; margin-top: 0px;">Anuleaza</button> -->
-            <span class="psw" style="font-size: x-small; margin-left: 10px; font-weight: 500;">Ai uitat <a href="http://192.168.100.53:8081/forgot-password.html">parola?</a></span>
-        </div>
-    </form>
-    
-    <script>
-        document.getElementById('Logheaza-teForm').addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const rememberCheckbox = document.getElementById('remember');
-    
-            try {
-                const response = await fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ username, password }),
-                });
-    
-                if (!response.ok) {
-                    console.error('Failed to log in.');
-                    // Handle any other errors or display a generic error message
-                    return;
-                } else {
-                    // Redirect to logged_in.html upon successful login
-                    window.location.href = '/Account.html';
-                    console.log('Redirecting to Account.html');
-                }
-            } catch (error) {
-                console.error(error.message);
-            }
-        });
-    </script>
-    
-    
-</body>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="http://192.168.100.53:8081">
+        <title>Pagina Logare</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
+        <!-- <link rel="stylesheet" href="http://192.168.100.53:8081/css/form.css" type="text/css" media="screen"> -->
+        <link rel="stylesheet" href="./css/Logare.css" type="text/css" media="screen">
+        <script src="js/Logare-front-end-form-handler.js" type="text/javascript"></script>
+    </head>
+    <div id="errorContainer" style="display: none;"></div>
+        <body>
+            <div id="popup" style="display: none;">
+                <div class="container">
+                    <div class="error-message"></div>
+                </div>
+            </div>
+            <!-- This Container will need to be displayed to the user if the user has entered a wrong username. Dispalying this container witht he required styling applied to it. -->
+            <!-- Container for incorrect username -->
+            <div class="container" id="incorrectUsernameContainer" style="display: none;">
+                <div class="error-message">
+                    <h1>Incorrect Username</h1>
+                    <p>The username you entered is incorrect. Please try again.</p>
+                    <a href="/index.html" class="btn btn-primary">Go back to login page</a>
+                </div>
+            </div>
+            <!-- This Container will need to be displayed to the user if the user has entered a wrong password. Dispalying this container witht he required styling applied to it. -->
+            <!-- Container for incorrect password -->
+            <div class="container" id="incorrectPasswordContainer" style="display: none;">
+                <div class="error-message">
+                    <h1>Incorrect Password</h1>
+                    <p>The password you entered is incorrect. Please try again.</p>
+                    <a href="/index.html" class="btn btn-primary">Go back to login page</a>
+                </div>
+            </div>
+            <!-- This Container will need to be displayed to the user if the user has entered a wrong username & password however there is another page configured for displaying the required error message. Dispalying this container witht he required styling applied to it. -->
+            <!-- Dropdown container -->
+            <div class="dropdown-container" style="display: none;">
+                <div class="dropdown-content">
+                    <p id="usernameError" style="display: none;"></p>
+                    <p id="passwordError" style="display: none;"></p>
+                    <!-- Adding container for bothError -->
+                    <p id="bothError" style="display: none;"></p>
+                </div>
+            </div>
+            <form action="/login" id="Logheaza-teForm" method="post" class="form-container" style="width: 280px; position: absolute; top: 230px; right: 0px; left: 0px; display: block; max-height: 520px; background: linear-gradient(135deg, white, #6a6a6a); display: inline-block; padding: 20px; z-index: 9999; border-radius: 30px;" autocomplete="on">
+                <!-- Close button -->
+                <div class="close-btn" onclick="closeForm()" style="position: absolute; text-align: center; right: 20px; top: 2px; font-size: medium; font-weight: bold; border-radius: 50%; background-color: #6a6a6a; cursor: pointer; z-index: 9999;">&times;</div>
+                <div class="imgcontainer">
+                    <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" loading="eager" alt="Avatar" class="img" style="height: 31px; width: 31px;">
+                </div>
+                <div class="container-pagina-logare" id="form-container-1" style="width: 240px; background-color: #6a6a6a; border-radius: 20px; padding: 10px; height: 350px;">
+                    <label for="uname" style="margin-bottom: 5px; font-family: system-ui; display: block;">
+                        <b style="background: linear-gradient(20deg, white, #6a6a6a); border-radius: 30px; padding: 5px; border: 1px groove none; text-align: center; bottom: 10px;">Utilizator:</b>
+                        <input type="text" placeholder="Username/ User" id="username" name="username" autocomplete="username" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, white, #6a6a6a); height: 20px; font-size: small;">
+                    </label>
+                    <label for="password" style="margin-bottom: 5px; font-family: system-ui; display: block;">
+                        <b style="background: linear-gradient(20deg, white, #6a6a6a); border-radius: 20px; padding: 5px; border: 1px groove none; text-align: center; margin-bottom: 5px;">Parola:</b>
+                        <input type="password" id="password" name="password" accept="file" placeholder="Scrie Parola" autocomplete="current-password" required="true" style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 20px; background: linear-gradient(20deg, white, #6a6a6a); height: 20px; font-size: small;">
+                    </label>
+                    <button type="submit" id="submit-button-form" style="background: linear-gradient(to bottom, white, #6a6a6a); border-radius: 20px; padding: 10px 5px; margin-bottom: 10px; border: none; cursor: pointer; width: 100%;">Logheaza-te</button>
+                    <label for="password" style="margin-bottom: 5px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; display: block;  background-color: transparent; border-radius: 30px; font-size: small; text-align: center; font-weight: 600; border: 1px solid white;">
+                        <input type="checkbox" accept="file" checked="checked" name="remember" style="margin-right: 5px; margin-top: 15px;">Memoreaza informatiile de conectare.
+                    </label>
+                </div>
+                <div class="container" id="container_for_Cancel&Forgotten_Password" style="background: linear-gradient white; border-radius: 9px; margin-bottom: 10px; width: 190px; padding: 2px; cursor: pointer; height: 30px;">
+                    <!-- <button type="button" class="cancelbtn" style="border-radius: 10px; background-color: rgb(255, 255, 255); margin-bottom: 1px; margin-top: 0px;">Anuleaza</button> -->
+                    <span class="psw" style="font-size: x-small; margin-left: 10px; font-weight: 500;">Ai uitat <a href="http://192.168.100.53:8081/forgot-password.html">parola?</a></span>
+                </div>
+            </form>
+        </body>
+</html>

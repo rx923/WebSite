@@ -1,0 +1,63 @@
+.search-bar {
+    left: 2px;
+    bottom: 65px;
+    width: 300px;
+    position: relative;
+    padding: 1px; 
+    color: rgb(0, 0, 0); 
+    background: linear-gradient(to top right, #ffffff, #6a6a6a);
+    border: outset transparent;
+    border-width: 0.2vw 0.3vw; 
+    border-color: rgb(0, 0, 0); 
+    /* Center the search bar horizontally */
+    border-radius: 30px; 
+    /* Adjust to properly center */
+    /* transform: translateX(-50%);  */ 
+    z-index:950; 
+    cursor: pointer; 
+    /* display: ruby-base-container; */ 
+    /* Set the width of the search bar */ 
+    /* Set maximum width if needed * /* 
+    Adjust top position */ 
+    transform: translateY(100%); 
+    margin-right: 40vw; 
+    margin-top: 0px; 
+    margin-bottom: 20px; 
+    /* Use block level element */ 
+    display: inline-block; 
+    /* Center align the content */ 
+    /* text-align: center; */ 
+    /* Center the block element */
+    margin:10px;
+  }
+  .search-bar input[type="text"] {
+    border: 3px outset transparent;
+    background-color: white;
+    border-radius: 25px;
+    /* Adjust input field width */
+    width: 300px;
+    padding: 10px;
+    outline: none;
+    font-size: small;
+    font-weight: bold;
+  }
+  #submit-cauta-bara-de-cautare {
+    /* Light blue color */
+    background-color: #6a6a6a; 
+    /* Text color */
+    color: white; 
+    /* Remove default button border */
+    border: none; 
+    /* Adjust padding as needed */
+    padding: 10px 10px; 
+    /* Add some border radius for a softer look */
+    font-weight: bold;
+    font-size: small;
+    left: 50px;
+    width: 40px;
+    border-radius: 30px;
+    position: relative; 
+    /* Change cursor to pointer on hover */
+    cursor: pointer; 
+    /* Add any additional styles you need */
+  }

@@ -141,7 +141,7 @@ function loadForm(formURL, formId) {
             closeNav();
             if (formURL.includes("Logare.html")) {
               // If it's the login form, add event listener to the forgot password link
-              var forgotPasswordLink = document.getElementById("forgot-password-link");
+              var forgotPasswordLink = document.getElementById("container_for_Cancel&Forgotten_Password");
               if (forgotPasswordLink) {
                 forgotPasswordLink.addEventListener("click", loadForgotPasswordForm);
               } else {

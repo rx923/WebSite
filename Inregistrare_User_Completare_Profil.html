@@ -7,76 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3054/3054889.png" type="icon/ico" style="width: auto; height: auto;">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0px;
-            padding: 0px;
-            overflow-x: hidden;
-            background-color: #f9f9f9;
-        }
-
-        .container {
-            max-width: 350px;
-            margin: 50px auto;
-            background-color: #c4cca6;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 100px;
-            padding: 20px;
-            background: lightskyblue;
-            border: 1px solid black;
-            border-radius: 5px;
-            text-align: center;
-            animation: fadeInOut 2s ease-in-out;
-        }
-    </style>
+    <link rel="stylesheet" href="http://192.168.100.53:8081/css/Inregistrare_User_Completare_Profil.css" media="all">
 </head>
 <body>
     <div class="container">
@@ -127,47 +58,8 @@
         Cont Creat Cu Success!
       </div>
       <script>
-        document.getElementById('takePhotoBtn').addEventListener('click', async () => {
-            try {
-                // Accessing the device camera and capture a photo
-                const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
-                const videoElement = document.createElement('video');
-                videoElement.srcObject = mediaStream;
-                videoElement.autoplay = true;
-    
-                // Appending the video element to the document body
-                document.body.appendChild(videoElement);
-    
-                // Capturing a frame from the video stream as an image
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.width = videoElement.videoWidth;
-                canvas.height = videoElement.videoHeight;
-                context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-    
-                // Converting the captured frame to a data URL
-                const imageDataUrl = canvas.toDataURL('image/jpeg');
-    
-                // Closing the video stream and removing the video element
-                mediaStream.getVideoTracks()[0].stop();
-                videoElement.remove();
-    
-                // Set the data URL as the value of the file input
-                document.getElementById('profilePicture').value = imageDataUrl;
-            } catch (error) {
-                console.error('Error capturing photo: ', error);
-            }
-        });
-    
-        document.getElementById('profileForm').addEventListener('submit', async (event) => {
-            event.preventDefault();
-    
-            const formData = new FormData(event.target);
-    
-            // Add the profile picture data to the form data
-            const profilePictureDataUrl = document.getElementById('profilePicture').value;
-            formData.append('profilePicture', profilePictureDataUrl);
-    
+        // Function to submit profile completion
+        async function submitProfileCompletion(formData) {
             try {
                 const response = await fetch('/submit-profile-completion', {
                     method: 'POST',
@@ -179,7 +71,7 @@
                 }
                 // Show the popup upon successful submission
                 document.getElementById('popup').style.display = 'block';
-                
+    
                 // Redirect to Profile.html after 3 seconds
                 setTimeout(() => {
                     window.location.href = '/Profile.html';
@@ -188,7 +80,60 @@
                 console.error('Profile submission error:', error);
                 // Handle profile submission error
             }
+        }
+    
+        // Add event listener for capturing photo
+        document.getElementById('takePhotoBtn').addEventListener('click', async () => {
+            try {
+                const permission = await navigator.permissions.query({ name: 'camera' });
+                if (permission.state === 'granted' || permission.state === 'prompt') {
+                    const mediaStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+    
+                    // Accessing the device camera and capture a photo
+                    const videoElement = document.createElement('video');
+                    videoElement.srcObject = mediaStream;
+                    videoElement.autoplay = true;
+    
+                    // Appending the video element to the document body
+                    document.body.appendChild(videoElement);
+    
+                    // Capturing a frame from the video stream as an image
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.width = videoElement.videoWidth;
+                    canvas.height = videoElement.videoHeight;
+                    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+    
+                    // Converting the captured frame to a Blob object
+                    canvas.toBlob((blob) => {
+                        const formData = new FormData();
+                        formData.append('profilePicture', blob, 'profile.jpg');
+                        // Call function to submit profile completion
+                        submitProfileCompletion(formData);
+                    }, 'image/jpeg');
+    
+                    // Closing the video stream and removing the video element
+                    mediaStream.getVideoTracks()[0].stop();
+                    videoElement.remove();
+                } else {
+                    console.error('Permission to access camera denied by user');
+                }
+            } catch (error) {
+                console.error('Error capturing photo: ', error);
+            }
+        });
+    
+        // Add event listener for profile form submission
+        document.getElementById('profileForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            const formData = new FormData(event.target);
+    
+            // Call function to submit profile completion
+            await submitProfileCompletion(formData);
         });
     </script>
+    
+    
 </body>
 </html>

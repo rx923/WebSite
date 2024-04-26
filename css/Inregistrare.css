@@ -1,0 +1,133 @@
+    /* Styles for the form container */
+    .form-container {
+        position: fixed;
+        bottom: 200px;
+        width: 100%;
+        right: 20px;
+        max-width: 280px;
+        max-height: 700px;
+        padding: 20px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(112, 128, 144, 1), rgba(0, 0, 139, 1), rgb(151 255 105));
+        border-radius: 20px;
+        margin: 0px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: auto;
+        z-index: 9999;
+      }
+    
+      /* Styles for the form header */
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #4c4c4c;
+      }
+    
+      /* Styles for the form labels */
+      .form-container label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #4c4c4c;
+      }
+    
+      /* Styles for the form inputs */
+      .form-container input[type="text"],
+      .form-container input[type="password"],
+      .form-container input[type="email"],
+      .form-container button[type="submit"] {
+        width: calc(100% - 40px); 
+        padding: 10px;
+        margin-bottom: 10px; 
+        border: none;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: smaller;
+        background-color: #fff; /* Updated to plain white */
+        color: #000; /* Changed text color to black for better contrast */
+        box-sizing: border-box;
+      }
+    
+      /* Styles for the remember me checkbox */
+      .form-container input[type="checkbox"] {
+        margin-bottom: 10px;
+      }
+    
+      /* Styles for the terms and conditions link */
+      .form-container a {
+        color: #4c4c4c;
+        text-decoration: none;
+      }
+    
+      /* Styles for the submit button */
+      .form-container button[type="submit"] {
+        border: none;
+        border-radius: 30px;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+    
+      /* Hover effect for the submit button */
+      .form-container button[type="submit"]:hover {
+        background-color: #ffbf80;
+      }
+    
+      /* Clearfix to contain floated elements */
+      .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        color: white;
+        background-color: slategrey;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        text-align: center;
+        line-height: 30px;
+        animation: pulsate 1.5s infinite alternate;
+      }
+    
+      @keyframes pulsate {
+        0% {
+          background-color: slategrey;
+        }
+        100% {
+          background-color: darkslategrey;
+        }
+      }
+    
+      /* Animation for drawing line around input fields */
+      @keyframes drawLine {
+        0% {
+          box-shadow: 0 0 0 0px red, 0 0 0 0px blue, 0 0 0 0px white;
+        }
+        100% {
+          box-shadow: 0 0 0 2px red, 0 0 0 4px blue, 0 0 0 6px white;
+        }
+      }
+    
+      @keyframes delayedShadow {
+        0% {
+          box-shadow: none;
+        }
+        100% {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+      }
+  
+      @keyframes fadeInOut {
+          0% { opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { opacity: 0; }
+      }

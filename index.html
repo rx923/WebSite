@@ -16,73 +16,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Good Store Coffee</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./css/main.css" media="all" type="text/css">
+    <link rel="stylesheet" href="./css/search-bar.css" media="all" type="text/css">
     <script src="http://192.168.100.53:8081/js/main.js" type="text/javascript"></script>
+    <script src="../js/first-side-navigation.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/a9ab13ca51.js" crossorigin="anonymous"></script>
     <style>
-      .search-bar {
-        left: 2px;
-        bottom: 65px;
-        width: 300px;
-        position: relative;
-        padding: 1px; 
-        color: rgb(0, 0, 0); 
-        background: linear-gradient(to top right, #ffffff, #6a6a6a);
-        border: outset transparent;
-        border-width: 0.2vw 0.3vw; 
-        border-color: rgb(0, 0, 0); 
-        /* Center the search bar horizontally */
-        border-radius: 30px; 
-        /* Adjust to properly center */
-        /* transform: translateX(-50%);  */ 
-        z-index:950; 
-        cursor: pointer; 
-        /* display: ruby-base-container; */ 
-        /* Set the width of the search bar */ 
-        /* Set maximum width if needed * /* 
-        Adjust top position */ 
-        transform: translateY(100%); 
-        margin-right: 40vw; 
-        margin-top: 0px; 
-        margin-bottom: 20px; 
-        /* Use block level element */ 
-        display: inline-block; 
-        /* Center align the content */ 
-        /* text-align: center; */ 
-        /* Center the block element */
-        margin:10px;
-      }
-      .search-bar input[type="text"] {
-        border: 3px outset transparent;
-        background-color: white;
-        border-radius: 25px;
-        /* Adjust input field width */
-        width: 300px;
-        padding: 10px;
-        outline: none;
-        font-size: small;
-        font-weight: bold;
-      }
-      #submit-cauta-bara-de-cautare {
-        /* Light blue color */
-        background-color: #6a6a6a; 
-        /* Text color */
-        color: white; 
-        /* Remove default button border */
-        border: none; 
-        /* Adjust padding as needed */
-        padding: 10px 10px; 
-        /* Add some border radius for a softer look */
-        font-weight: bold;
-        font-size: small;
-        left: 50px;
-        width: 40px;
-        border-radius: 30px;
-        position: relative; 
-        /* Change cursor to pointer on hover */
-        cursor: pointer; 
-        /* Add any additional styles you need */
-      }
       /* Style for the 2nd sidenavigation */
       .menu-container {
         position: fixed;
@@ -298,7 +239,6 @@
       
             this.initialize();
           }
-      
           initialize() {
             this.searchBar.addEventListener('input', this.handleSearchInput.bind(this));
             // Change width as needed
@@ -539,41 +479,7 @@
             </div>
           </div>
         </div>
-        <script>
-      </script>
-      <script>
-        // Script for first sidenavigation
-        function toggleMenu() {
-          var menu = document.getElementById('menu');
 
-          if (menu.style.left === '-470px') {
-            // if menu is closed, open it
-            menu.style.left = '0px';
-          } else {
-            // if menu is open, close it
-            menu.style.left = '-470px';
-          }
-        }
-
-        function openMenu() {
-          var menu = document.getElementById('menu');
-
-          if (menu) {
-            menu.classList.add('open');
-          } else {
-            console.error("Menu element not found.");
-          }
-        }
-
-        function closeMenu() {
-          var menu = document.getElementById('menu');
-          if (menu) {
-            menu.style.left = '-470px';
-          } else {
-            console.error("Menu element not found.");
-          }
-        }
-      </script>
     </header>
 
     <div id="container_scrolling_for_the_side_nav">
@@ -648,10 +554,10 @@
         var xStart = null;
         var xEnd = null;
 
-        if (!swipeBar || !swipeArea || !dropdownMenu || !dropdownContent) {
-          console.error("One or more elements not found.");
-          return;
-        }
+        // if (!swipeBar || !swipeArea || !dropdownMenu || !dropdownContent) {
+        //   console.error("One or more elements not found.");
+        //   return;
+        // }
 
         swipeBar.addEventListener("click", openMenu);
         swipeArea.addEventListener("touchstart", handleTouchStart, false);
@@ -911,15 +817,15 @@
               <a rel="noopener noreferrer" id="ComputerLaptop-Link-Acasa" style="font-weight: bold; font-size: medium;">Acasa</a>
               <ol class="dropdown-content_ordered_list_categories" id="continut_acasa_dropdown">
                 <div class="li_continut_1_tip_lista" id="Continut_1_tip_lista">
-                  <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse1
+                  <a href="./continut-1-tip-lista/Continut1tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse1
                   </a>
                 </div>
                 <div class="li_continut_2_tip_lista" id="Continut_2_tip_lista">
-                  <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse2
+                  <a href="./continut-2-tip-lista/Continut2tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse2
                   </a>
                 </div>
                 <div class="li_continut_3_tip_lista" id="Continut_3_tip_lista">
-                  <a href="\WebSite/ComputerLaptop_WebSite/Continut-dropdown-Acasa/continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse3
+                  <a href="./continut-3-tip-lista/Continut3tiplista.html" rel="noopener noreferrer" style="text-decoration: wavy blue; text-align: center; border-radius: 20px; margin-top: 20px; max-width: 100px; font-size: medium; font-weight: bold;">Produse3
                   </a>
                 </div>
               </ol>
