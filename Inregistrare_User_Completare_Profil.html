@@ -100,19 +100,19 @@
             </div>
             <div class="mb-3">
                 <label for="phone_number">Phone Number:</label>
-                <input type="tel" id="phone_number" name="phone_number" required="true" pattern="[0-9]{10}" style="max-width: 250px;">
+                <input type="tel" id="phone_number" name="phone_number" required="true" pattern="[0-9]{10}" style="width: 250px;">
             </div>
             <div class="mb-3">
                 <label for="contact_details">Contact Details:</label>
-                <textarea id="contact_details" name="contact_details" rows="4" required="true" style="max-width: 250px;"></textarea>
+                <textarea id="contact_details" name="contact_details" rows="4" required="true" style="width: 250px;"></textarea>
             </div>
             <div class="mb-3">
                 <label for="address">Address Details:</label>
-                <textarea id="address" name="address" rows="4" required="true" style="max-width: 250px;"></textarea>
+                <textarea id="address" name="address" rows="4" required="true" style="width: 250px;"></textarea>
             </div>
             <div class="mb-3">
                 <label for="country_of_residence">Country:</label>
-                <textarea id="country_of_residence" name="country_of_residence" rows="4" required="true" style="max-width: 250px;"></textarea>
+                <textarea id="country_of_residence" name="country_of_residence" rows="4" required="true" style="width: 250px;"></textarea>
             </div>
             <div class="mb-3">
                 <label for="profilePicture">Profile Picture:</label>
@@ -127,71 +127,66 @@
         Cont Creat Cu Success!
       </div>
       <script>
-        document.getElementById('profileForm').addEventListener('submit', async (event) => {
-            event.preventDefault();
-    
-            const formData = new FormData(event.target);
-            const formJSON = Object.fromEntries(formData.entries());
-    
-            try {
-                const response = await fetch('/submit-profile-completion', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formJSON),
-                });
-    
-                if (!response.ok) {
-                    throw new Error('Profile submission failed');
-                    res.display.error(300);
-                }
-                // Show the popup upon successful registration
-                document.getElementById('popup').style.display = 'block';
-                
-                // Redirect to Profile.html after 3 seconds
-                setTimeout(() => {
-                    window.location.href = '/Profile.html';
-                }, 3000); // 3 seconds (3000 milliseconds)
-
-    
-            } catch (error) {
-                console.error('Profile submission error:', error);
-                // Handle profile submission error
-            }
-        });
-    </script>
-    <script>
         document.getElementById('takePhotoBtn').addEventListener('click', async () => {
             try {
                 // Accessing the device camera and capture a photo
-                const mediaStream = await navigation.mediaDevices.getUserMedia({ video: true });
+                const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
                 const videoElement = document.createElement('video');
                 videoElement.srcObject = mediaStream;
                 videoElement.autoplay = true;
-
-
+    
                 // Appending the video element to the document body
                 document.body.appendChild(videoElement);
-
+    
                 // Capturing a frame from the video stream as an image
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
                 canvas.width = videoElement.videoWidth;
                 canvas.height = videoElement.videoHeight;
                 context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-
-                // COnverting the captured frame to a data URL
+    
+                // Converting the captured frame to a data URL
                 const imageDataUrl = canvas.toDataURL('image/jpeg');
-
-                // CLosing the video stream and removing the video element
+    
+                // Closing the video stream and removing the video element
                 mediaStream.getVideoTracks()[0].stop();
                 videoElement.remove();
-
-                //Set the data URL as the value of the file input
+    
+                // Set the data URL as the value of the file input
                 document.getElementById('profilePicture').value = imageDataUrl;
             } catch (error) {
                 console.error('Error capturing photo: ', error);
+            }
+        });
+    
+        document.getElementById('profileForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+    
+            const formData = new FormData(event.target);
+    
+            // Add the profile picture data to the form data
+            const profilePictureDataUrl = document.getElementById('profilePicture').value;
+            formData.append('profilePicture', profilePictureDataUrl);
+    
+            try {
+                const response = await fetch('/submit-profile-completion', {
+                    method: 'POST',
+                    body: formData,
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Profile submission failed');
+                }
+                // Show the popup upon successful submission
+                document.getElementById('popup').style.display = 'block';
+                
+                // Redirect to Profile.html after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '/Profile.html';
+                }, 3000); // 3 seconds (3000 milliseconds)
+            } catch (error) {
+                console.error('Profile submission error:', error);
+                // Handle profile submission error
             }
         });
     </script>
