@@ -371,7 +371,7 @@
           }
       
           sanitizeURL(url) {
-            const validProtocols = ['http://', 'https://', 'ftp://', 'mailto:'];
+            const validProtocols = ['http://', 'https://'];
             const isValidProtocol = validProtocols.some(protocol => url.startsWith(protocol));
             return isValidProtocol ? url : '#';
           }
